@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+/* Colores principales */
+:root {
+    --light: #f6f6f9;
+    --primary: #1976D2;
+    --light-primary: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #363949;
+    --danger: #D32F2F;
+	--light-danger: #FECDD3;
+    --warning: #FBC02D;
+    --light-warning: #FFF2C6;
+    --success: #388E3C;
+    --light-success: #BBF7D0;
+}
+
+/* Propiedades generales */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', Arial;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--grey);
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bx{
+    font-size: 1.8rem;
+}
+
+
+/* ------------ */
+/* Menu Lateral */
+/* ------------ */
+
+.menu-lateral{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--light);
+    height: 100%;
+    width: 250px;
+    transition: all 0.4 ease;
+    overflow: hidden;
+}
+
+.menu-lateral .titulo-pag{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 60px;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.menu-lateral .titulo-pag .bx{
+    font-size: 2.1rem;
+    color: var(--primary);
+    padding-left: 20px;
+}
+
+.menu-lateral .titulo-pag .titulo-nombre span{
+    color: var(--primary);
+}
+
+.menu-lateral .lista-menu{
+    width: 90%;
+    margin-top: 50px;
+}
+
+.menu-lateral .lista-menu li{
+    height: 55px;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 15px;
+}
+
+
+.menu-lateral .lista-menu li.active{
+    background-color: var(--grey);
+    font-weight: 600;
+}
+
+.menu-lateral .lista-menu li:hover{
+    background-color: var(--grey);
+}
+
+.menu-lateral .lista-menu li a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4 ease;
+}
+
+.menu-lateral .lista-menu li a{
+    width: 100%;
+    height: 100%;
+    color: var(--dark);
+}
+
+.menu-lateral .lista-menu li a{
+    width: 175px;
+}
+
+.menu-lateral .lista-menu li a .bx{
+    min-width: 40px;
+    display: flex;
+    font-size: 1.7rem;
+    justify-content: center;
+}
+
+.menu-lateral .lista-menu a.logout{
+    color: var(--danger);
+}
+
+
+/* ---------------- */
+/* Contenido Pagina */
+/* ---------------- */
+.contenido{
+    position: relative;
+    /* Interfaz adaptativa dimensiones */
+    width: calc(100% - 230px);
+    left: 250px;
+    transition: all 0.4s ease;
+}
+
+.menu-lateral.close~.contenido{
+    width: calc(100% - 60px);
+    left: 60px;
+    transition: all 0.4 ease;
+}
+
+
+
+/* ------------- */
+/* Menu Superior */
+/* ------------- */
+
+.contenido nav{
+    height: 50px;
+    background-color: var(--light);
+    padding: 0 24px 0 0;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.contenido nav .bx.bx-menu{
+    cursor: pointer;
+    color: var(--dark);
+    z-index: 101;
+}
+
+.contenido nav::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 var(--light);
+}
+
+
+/* ------------------- */
+/* Contenido Principal */
+/* ------------------- */
+
+.contenido main{
+    padding: 50px 50px 33px 25px;
+}
+
+.contenido main .cabecera{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.contenido main .cabecera .titulo h1{
+    font-size: 35px;
+    font-weight: 700;
+    flex-wrap: wrap;
+    color: var(--dark);
+    margin-bottom: 7px;
+}
+
+.contenido main .cabecera .titulo .breadcrumb{
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    bottom: 45px;
+}
+
+.contenido main .breadcrumb a{
+    color: var(--primary);
+}
+
+.contenido main .breadcrumb span{
+    color: var(--dark-grey);
+}
+
+.contenido main .cabecera a.boton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 40px;
+    margin-left: auto;
+    color: var(--light);
+}
+
+
+/* Muestras de resumenes */
+.contenido main .resumen ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+}
+
+.contenido main .resumen ul li{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--light);
+}
+
+.contenido main .resumen ul li .bx{
+    padding: 25px;
+    border-radius: 15px;
+    background-color: var(--light-primary);
+    color: var(--primary);
+}
+
+.contenido main .resumen ul li h3{
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Logos propios */
+.contenido main .resumen ul li .bx.clogo{
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+
+}
+
+.contenido main .resumen ul li .bx.clogo img{
+    width: 60px;
+    height: 60px;
+}
+
+.contenido main .resumen ul a:nth-child(1) li .bx.clogo{
+    background-color: var(--light-primary);
+}
+
+.contenido main .resumen ul a:nth-child(2) li .bx.clogo{
+    background-color: var(--light-primary);
+}
+
+.contenido main .resumen ul a:nth-child(3) li .bx.clogo{
+    background-color: var(--light-primary);
+}
+
+.contenido main .resumen ul a:nth-child(4) li .bx.clogo{
+    background-color: var(--light-primary);
+}
+
+
+/* Divs repartidos */
+.contenido main .informacion{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 25px;
+    margin-top: 25px;
+    color: var(--dark);
+}
+
+.contenido main .infodatos{
+    flex-grow: 1;
+    flex-basis: 500px;
+    background-color: var(--light);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+
+/* ------------ */
+/* Pagina Login */
+/* ------------ */
+.barra-login{
+    height: 50px;
+    background-color: var(--light);
+    padding: 0 24px 0 0;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.barra-login .titulo-pag{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 60px;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.barra-login .titulo-pag .bx{
+    font-size: 2.1rem;
+    color: var(--primary);
+    padding-left: 20px;
+}
+
+.barra-login .titulo-pag .titulo-nombre span{
+    color: var(--primary);
+}
+
+.barra-login .login{
+    margin-left: auto;
+    display: flex;
+    gap: 25px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.barra-login .login div{
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.barra-login .login div:first-child{
+    color: var(--primary);
+}
+
+.barra-login .login div:first-child:hover{
+    color: var(--dark);
+}
+
+/* ----------- */
+/* Pagina Mapa */
+/* ----------- */
+
+.contenido main .mapa{
+    position: fixed;
+    width: 85%;
+    height: 70%;
+    border-radius: 25px;
+}
+
+.contenido main .mapa #map{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.contenido main .mapaizq{
+    flex-grow: 1;
+    flex-basis: 300px;
+    height: 300px;
+    border-radius: 25px;
+}
+
+.contenido main .mapaizq #map{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+
+/* ------------ */
+/* Pagina Flota */
+/* ------------ */
+
+.contenido main .tablas{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.contenido main .tablas .cabecera{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contenido main .tablas .cabecera span{
+    margin-left: 5%;
+}
+
+.contenido main .tablas table{
+    width: 100%;
+}
+
+.contenido main .tablas table thead{
+    text-align: left;
+    font-size: 13px;
+
+}
+
+
+/*.contenido main .tablas table tr td:first-child{
+    display: flex;
+    align-items: center;
+    grid-gap: 12px;
+    padding-left: 6px;
+}*/
+
+.contenido main .tablas table td{
+    padding: 16px 0;
+}
+
+.contenido main .tablas table td img{
+    width: 225px;
+    height: 60px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.contenido main .tablas table td .bx{
+    cursor: pointer;
+}
+
+/* ----------- */
+/* Pagina Ruta */
+/* ----------- */
+.contenido main .rutas{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.contenido main .rutas .divRepartido{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.contenido main .rutas .divRepartido .input h3{
+    margin-bottom: 20px;
+}
+
+.contenido main .rutas .divRepartido .input select{
+    padding: 5px;
+}
+
+.contenido main .mapa-ruta{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    border-radius: 25px;
+}
+
+.contenido main .mapa-ruta #map{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.contenido main .informacion{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-flow: row;
+    margin-top: 35px;
+}
+
+.contenido main .informacion .info{
+    width: 100%;
+}
+
+.contenido main .informacion .info h4{
+    margin-bottom: 10px;
+}
+
+.contenido main .resumenAvion{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-top: 35px;
+}
+
+.contenido main .resumenAvion .barraResumen{
+    width: 100%;
+    height: 75px;
+    background-color: var(--grey);
+    margin-top: 15px;
+    border-radius: 25px;
+    
+}
+
+.contenido main .resumenAvion .barraResumen .rutaAvion{
+    position: absolute;
+    height: 75px;
+    background-color: var(--success);
+    color: var(--light);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.contenido main .resumenAvion .barraHorarios{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido main .resumenAvion .barraHorarios .horario{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.contenido main .resumenAvion .input{
+    width: 100%;
+    margin-top: 60px;
+
+}
+
+.contenido main .resumenAvion .input #crearRuta{
+    display: block;
+    align-items: center;
+    margin : 0 auto;
+    padding: 10px 15px;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+}
+
+
+
+/* ----------- */
+/* Pagina Sede */
+/* ----------- */
+.contenido main .infodatos h3{
+    margin-bottom: 20px;
+}
+
+.contenido main .infodatos p{
+    margin-bottom: 8px;
+}
+
+.contenido main .infodividido{
+    float: left;
+}
+
+.contenido main .infodividido.margin{
+    margin-left: 40px;
+}
+
+.contenido main .infodividido p:last-child{
+    margin-top: 30px;
+}
+
+.contenido main .resumen.sede ul a:nth-child(1) li .bx{
+    background-color: var(--light-success);
+    color: var(--success);
+}
+
+.contenido main .resumen.sede ul a:nth-child(2) li .bx{
+    background-color: var(--light-warning);
+    color: var(--warning);
+}
+
+.contenido main .resumen.sede ul a:nth-child(3) li .bx{
+    background-color: var(--light-primary);
+    color: var(--primary);
+}
+
+.contenido main .resumen.sede ul a:nth-child(4) li .bx{
+    background-color: var(--light-success);
+    color: var(--success);
+}
+
+/* Media */
+@media screen and (max-width: 800px) {
+    .menu-lateral{
+        width: 80px;
+    }
+
+    .menu-lateral .titulo-pag{
+        gap: 30px;
+    }
+
+    .menu-lateral .lista-menu li a{
+        gap: 20px;
+    }
+
+    .contenido{
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+}
