@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Flota;
+use App\Models\Flota;
+use App\Models\Avion;
 
 class FlotaController extends Controller
 {
@@ -20,6 +21,28 @@ class FlotaController extends Controller
 
     public function comprarAirbus()
     {
-        return view('flota.caAirbus');
+        $aviones = Avion::all();
+
+        return view('flota.caAirbus', compact($aviones));
+    }
+
+    public function comprar($id)
+    {
+        $avion = Avion::where('id', $id)->first();
+
+        Flota::create([
+            'uid' => auth()->id(),
+            'id_avion' => $id,
+            'matricula' => 'EC-TEST',
+            'modelo' => $avion->modelo,
+            'fechaDeFabricacion' => $avion->fechaDeFabricacion,
+            'estado' => 100,
+            'status' => 'On ground',
+            'precio' => $avion->precio,
+            'rango' => $avion->rango,
+            'img' => $avion->img,
+        ]);
+
+        return redirect()->route('flota.index');
     }
 }

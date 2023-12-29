@@ -7,6 +7,7 @@ use App\Http\Controllers\MapaController;
 use App\Http\Controllers\EspaciosController;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
+use App\Http\Controllers\AvionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ Route::get('home', function () {
 
 Route::get('flota', [FlotaController::class, 'index'])->name('flota.index');
 Route::get('flota/comprarAviones', [FlotaController::class, 'comprarAviones'])->name('flota.comprarAviones');
-Route::get('flota/comprarAviones/Airbus', [FlotaController::class, 'comprarAirbus'])->name('flota.comprarAirbus');
+Route::get('flota/comprarAviones/Airbus', [AvionController::class, 'comprarAirbus'])->name('flota.comprarAirbus');
+Route::get('flota/comprarAviones/{id}', [FlotaController::class, 'comprar'])->name('flota.comprar');
 
 Route::get('espacios', [EspaciosController::class, 'index'])->name('espacios.index');
 

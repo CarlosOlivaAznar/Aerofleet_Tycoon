@@ -5,19 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Flota extends Model
+class Avion extends Model
 {
     use HasFactory;
 
-    protected $table = 'flota';
+    protected $table = 'aviones';
     protected $fillable = [
-        'uid',
-        'id_avion',
-        'matricula',
         'modelo',
         'fechaDeFabricacion',
-        'estado',
-        'status',
         'precio',
         'rango',
         'img',
