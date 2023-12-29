@@ -44,51 +44,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <img class="img-avion" src="{{ asset('images/new/airbus/a320neo.png') }}">
-                      </td>
-                      <td>a320</td>
-                      <td>19-10-2023</td>
-                      <td>78%</td>
-                      <td>On Air</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="img-avion" src="../../images/new/airbus/a320neo.png">
-                      </td>
-                      <td>a320</td>
-                      <td>19-10-2023</td>
-                      <td>78%</td>
-                      <td>On Air</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="img-avion" src="../../images/new/airbus/a320neo.png">
-                      </td>
-                      <td>a320</td>
-                      <td>19-10-2023</td>
-                      <td>78%</td>
-                      <td>On Air</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="img-avion" src="../../images/new/airbus/a320neo.png">
-                      </td>
-                      <td>a320</td>
-                      <td>19-10-2023</td>
-                      <td>78%</td>
-                      <td>On Air</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="img-avion" src="../../images/new/airbus/a320neo.png">
-                      </td>
-                      <td>a320</td>
-                      <td>19-10-2023</td>
-                      <td>78%</td>
-                      <td>On Air</td>
-                </tr>
+              @foreach ($flota as $avion)
+              <tr>
+                <td>
+                  <img class="img-avion" src="{{ asset($avion->img) }}">
+                </td>
+                <td>{{ $avion->modelo }}</td>
+                <td>{{ $avion->fechaDeFabricacion }}</td>
+                <td>{{ $avion->estado }}%</td>
+                <td>{{ $avion->status }}</td>
+              </tr> 
+              @endforeach
             </tbody>
         </table>
       </div>

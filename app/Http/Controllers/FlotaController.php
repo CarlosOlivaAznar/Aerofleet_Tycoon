@@ -11,7 +11,9 @@ class FlotaController extends Controller
 {
     public function index()
     {
-        return view('flota.index');
+        $flota = Flota::where('uid', '=', auth()->id())->get();
+
+        return view('flota.index', ['flota' => $flota]);
     }
 
     public function comprarAviones()
