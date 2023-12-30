@@ -61,6 +61,17 @@ class FlotaController extends Controller
 
     public function vender($id)
     {
+        $avion = Flota::where('id', $id)->first();
+
+        // Comprobamos que el uid del usuario logeado coincide con el uid del avion de la flota
+        if($avion->uid === auth()->id()) {
+            $user = User::find(auth()->id());;
+            $user->saldo = $user->saldo + ($avion->precio * ($avion->estado / 100));
+
+            $user->update();
+            $avion->delete();
+        }
+
         return redirect()->route('flota.index');
     }
 }
