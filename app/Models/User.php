@@ -42,4 +42,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    // Funcion estatica que hace una llamada a la base de datos para retornar el saldo en formato string del usuario que esta logeado
+    // Se utiliza para mostrar en la parte superior derecha el saldo del usuario
+    public static function getSaldoString()
+    {
+        $user = User::where('id', '=', auth()->id())
+                    ->select('saldo')
+                    ->first();
+        
+        $saldo = number_format($user->saldo, 0, ',', '.');
+        
+        return $saldo;
+    }
+
+    public static function getSaldo()
+    {
+        $user = User::where('id', '=', auth()->id())
+                    ->select('saldo')
+                    ->first();
+        
+        return $user->saldo;
+    }
 }

@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Flota;
 use App\Models\Avion;
+use App\Models\User;
 
 class FlotaController extends Controller
 {
     public function index()
     {
         $flota = Flota::where('uid', '=', auth()->id())->get();
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
 
         return view('flota.index', ['flota' => $flota]);
     }
