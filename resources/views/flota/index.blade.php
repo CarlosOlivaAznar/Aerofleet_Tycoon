@@ -41,6 +41,7 @@
                     <th>Fecha de Fabricacion</th>
                     <th>Estado</th>
                     <th>Status</th>
+                    <th>Aciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +54,7 @@
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->estado }}%</td>
                 <td>{{ $avion->status }}</td>
+                <td><a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
               </tr> 
               @endforeach
             </tbody>

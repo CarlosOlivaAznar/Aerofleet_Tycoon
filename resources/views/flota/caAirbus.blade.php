@@ -20,9 +20,9 @@
         <div class="titulo">
           <h1>Airbus</h1>
           <ul class="breadcrumb">
-            <li><a href="index.html">Flota</a></li>
+            <li><a href="{{ route('flota.index') }}">Flota</a></li>
             <li>/</li>
-            <li><a href="comprarAviones.html">Comprar Aviones</a></li>
+            <li><a href="{{ route('flota.comprarAviones') }}">Comprar Aviones</a></li>
             <li>/</li>
             <li><span>Airbus</span></li>
           </ul>
@@ -52,7 +52,7 @@
                 <td>{{ $avion->modelo }}</td>
                 <td>{{ $avion->precio }}</td>
                 <td>{{ $avion->rango }}km</td>
-                <td><a href="{{ route('flota.comprar', ['id' => $avion->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
+                <td><a class="comprar" href="{{ route('flota.comprar', ['id' => $avion->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
             </tr>
             @endforeach
           </tbody>

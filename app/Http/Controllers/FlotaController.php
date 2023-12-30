@@ -58,4 +58,9 @@ class FlotaController extends Controller
         
         return redirect()->route('flota.index');
     }
+
+    public function vender($id)
+    {
+        return redirect()->route('flota.index');
+    }
 }

@@ -32,6 +32,7 @@ Route::get('flota', [FlotaController::class, 'index'])->name('flota.index');
 Route::get('flota/comprarAviones', [FlotaController::class, 'comprarAviones'])->name('flota.comprarAviones');
 Route::get('flota/comprarAviones/Airbus', [AvionController::class, 'comprarAirbus'])->name('flota.comprarAirbus');
 Route::get('flota/comprarAviones/{id}', [FlotaController::class, 'comprar'])->name('flota.comprar');
+Route::get('flota/venderAvion/{id}', [FlotaController::class, 'vender'])->name('flota.vender');
 
 Route::get('espacios', [EspaciosController::class, 'index'])->name('espacios.index');
 

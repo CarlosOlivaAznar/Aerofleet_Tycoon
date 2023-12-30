@@ -20,7 +20,7 @@
         <div class="titulo">
           <h1>Comprar Aviones</h1>
           <ul class="breadcrumb">
-            <li><a href="index.html">Flota</a></li>
+            <li><a href="{{ route('flota.index') }}">Flota</a></li>
             <li>/</li>
             <li><span>Comprar Aviones</span></li>
           </ul>

@@ -474,6 +474,27 @@ a{
     cursor: pointer;
 }
 
+.contenido main .tablas table td a.comprar{
+    color: var(--light-success);
+}
+
+.contenido main .tablas table td a.comprar .bx{
+    background-color: var(--success);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.contenido main .tablas table td a.vender{
+    color: var(--light-danger);
+}
+
+.contenido main .tablas table td a.vender .bx{
+    background-color: var(--danger);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
 /* ----------- */
 /* Pagina Ruta */
 /* ----------- */
