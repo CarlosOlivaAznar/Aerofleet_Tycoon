@@ -35,19 +35,27 @@ class FlotaController extends Controller
     {
         $avion = Avion::where('id', $id)->first();
 
-        Flota::create([
-            'uid' => auth()->id(),
-            'id_avion' => $id,
-            'matricula' => 'EC-TEST',
-            'modelo' => $avion->modelo,
-            'fechaDeFabricacion' => $avion->fechaDeFabricacion,
-            'estado' => 100,
-            'status' => 'On ground',
-            'precio' => $avion->precio,
-            'rango' => $avion->rango,
-            'img' => $avion->img,
-        ]);
+        $user = User::find(auth()->id());;
+        
+        if ($user->saldo - $avion->precio >= 0) {
+            Flota::create([
+                'uid' => auth()->id(),
+                'id_avion' => $id,
+                'matricula' => 'EC-TEST',
+                'modelo' => $avion->modelo,
+                'fechaDeFabricacion' => $avion->fechaDeFabricacion,
+                'estado' => 100,
+                'status' => 'On ground',
+                'precio' => $avion->precio,
+                'rango' => $avion->rango,
+                'img' => $avion->img,
+            ]);
 
+            // Actualizamos el saldo del usuario
+            $user->saldo = $user->saldo - $avion->precio;
+            $user->update();
+        }
+        
         return redirect()->route('flota.index');
     }
 }

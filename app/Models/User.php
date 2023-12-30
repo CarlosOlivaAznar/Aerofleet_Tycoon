@@ -63,6 +63,6 @@ class User extends Authenticatable
                     ->select('saldo')
                     ->first();
         
-        return $user->saldo;
+        return $user;
     }
 }
