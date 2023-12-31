@@ -19,7 +19,7 @@
         <div class="titulo">
           <h1>Espacios</h1>
         </div>
-        <a href="comprarEspacios.html" class="boton">
+        <a href="{{ route('espacios.aeropuertos') }}" class="boton">
           <i class="bx bx-plus-circle"></i>
           <span>Comprar Espacios</span>
         </a>
@@ -42,38 +42,16 @@
             </tr>
           </thead>
           <tbody>
+            @foreach ($espacios as $espacio)
             <tr>
-              <td>LEBL</td>
-              <td>Barcelona</td>
-              <td>4</td>
-              <td>5</td>
-              <td>20.000 / 25.000 / 30.000</td>
-              <td><i class="bx bx-plus"></i></td>
+              <td>{{ $espacio->aeropuerto->icao }}</td>
+              <td>{{ $espacio->aeropuerto->nombre }}</td>
+              <td>4 (inop)</td>
+              <td>{{ $espacio->numeroDeEspacios }} (inop)</td>
+              <td>{{ $espacio->aeropuerto->costeOperacional1 }} / {{ $espacio->aeropuerto->costeOperacional2 }} / {{ $espacio->aeropuerto->costeOperacional3 }}</td>
+              <td><i class="bx bx-plus"></i>(inop)</td>
             </tr>
-            <tr>
-              <td>EGSS</td>
-              <td>London Stansted</td>
-              <td>1</td>
-              <td>1</td>
-              <td>10.000 / 15.000 / 20.000</td>
-              <td><i class="bx bx-plus"></i></td>
-            </tr>
-            <tr>
-              <td>LEMG</td>
-              <td>Malaga</td>
-              <td>1</td>
-              <td>1</td>
-              <td>7.000 / 13.000 / 17.000</td>
-              <td><i class="bx bx-plus"></i></td>
-            </tr>
-            <tr>
-              <td>LEAL</td>
-              <td>Alicante</td>
-              <td>1</td>
-              <td>1</td>
-              <td>11.000 / 16.000 / 19.000</td>
-              <td><i class="bx bx-plus"></i></td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

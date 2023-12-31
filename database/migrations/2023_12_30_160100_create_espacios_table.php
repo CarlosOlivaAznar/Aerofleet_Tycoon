@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('espacios', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('aeropuerto_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('numeroDeEspacios');
             $table->timestamps();
         });

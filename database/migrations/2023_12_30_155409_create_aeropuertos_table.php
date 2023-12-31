@@ -20,6 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('costeOperacional2');
             $table->unsignedBigInteger('costeOperacional3');
             $table->unsignedBigInteger('costeAlquiler');
+            $table->double('latitud', 10, 6);
+            $table->double('longitud', 10, 6);
             $table->timestamps();
         });
     }
