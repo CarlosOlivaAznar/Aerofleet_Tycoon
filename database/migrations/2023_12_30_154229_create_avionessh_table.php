@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('modelo');
             $table->date('fechaDeFabricacion');
             $table->double('precio');
-            $table->unsigneInt('estado');
+            $table->unsignedInteger('estado');
             $table->unsignedInteger('rango');
             $table->string('img');
             $table->string('compañia');

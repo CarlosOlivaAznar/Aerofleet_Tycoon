@@ -12,9 +12,13 @@ class Avion extends Model
     protected $table = 'aviones';
     protected $fillable = [
         'modelo',
-        'fechaDeFabricacion',
         'precio',
         'rango',
         'img',
     ];
+
+    public function flota()
+    {
+        return $this->hasMany(Flota::class);
+    }
 }

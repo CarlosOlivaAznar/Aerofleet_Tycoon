@@ -49,13 +49,13 @@
               @foreach ($flota as $avion)
               <tr>
                 <td>
-                  <img class="img-avion" src="{{ asset($avion->img) }}">
+                  <img class="img-avion" src="{{ asset($avion->avion->img) }}">
                 </td>
-                <td>{{ $avion->modelo }}</td>
+                <td>{{ $avion->avion->modelo }}</td>
                 <td>{{ $avion->fechaDeFabricacion }}</td>
-                <td>{{ $avion->estado }}%</td>
-                <td>{{ $avion->status }}</td>
-                <td>{{ $avion->precio * ($avion->estado / 100) }}</td>
+                <td>{{ $avion->condicion }}%</td>
+                <td>{{ $avion->estado }}</td>
+                <td>{{ $avion->avion->precio * ($avion->condicion / 100) }}</td>
                 <td><a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
               </tr> 
               @endforeach

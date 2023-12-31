@@ -11,15 +11,21 @@ class Flota extends Model
 
     protected $table = 'flota';
     protected $fillable = [
-        'uid',
-        'id_avion',
+        'user_id',
+        'avion_id',
         'matricula',
-        'modelo',
         'fechaDeFabricacion',
+        'condicion',
         'estado',
-        'status',
-        'precio',
-        'rango',
-        'img',
     ];
+
+    public function avion()
+    {
+        return $this->belongsTo(Avion::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

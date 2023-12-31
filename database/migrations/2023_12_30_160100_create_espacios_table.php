@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flota', function (Blueprint $table) {
+        Schema::create('espacios', function (Blueprint $table) {
             $table->id();
-            $table->unsignedinteger('user_id');
-            $table->unsignedinteger('avion_id');
-            $table->string('matricula');
-            $table->date('fechaDeFabricacion');
-            $table->unsignedinteger('condicion');
-            $table->string('estado')->nullable();
+            $table->unsignedBigInteger('id_aeropuerto');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flota');
+        Schema::dropIfExists('espacios');
     }
 };

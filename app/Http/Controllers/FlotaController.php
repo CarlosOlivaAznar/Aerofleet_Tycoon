@@ -12,7 +12,7 @@ class FlotaController extends Controller
 {
     public function index()
     {
-        $flota = Flota::where('uid', '=', auth()->id())->get();
+        $flota = Flota::where('user_id', '=', auth()->id())->get();
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
@@ -39,16 +39,12 @@ class FlotaController extends Controller
         
         if ($user->saldo - $avion->precio >= 0) {
             Flota::create([
-                'uid' => auth()->id(),
-                'id_avion' => $id,
+                'user_id' => auth()->id(),
+                'avion_id' => $id,
                 'matricula' => 'EC-TEST',
-                'modelo' => $avion->modelo,
-                'fechaDeFabricacion' => $avion->fechaDeFabricacion,
-                'estado' => 100,
-                'status' => 'On ground',
-                'precio' => $avion->precio,
-                'rango' => $avion->rango,
-                'img' => $avion->img,
+                'fechaDeFabricacion' => date('Y-m-d'),
+                'condicion' => 100,
+                'estado' => 'On ground',
             ]);
 
             // Actualizamos el saldo del usuario
@@ -64,9 +60,9 @@ class FlotaController extends Controller
         $avion = Flota::where('id', $id)->first();
 
         // Comprobamos que el uid del usuario logeado coincide con el uid del avion de la flota
-        if($avion->uid === auth()->id()) {
+        if($avion->user_id === auth()->id()) {
             $user = User::find(auth()->id());;
-            $user->saldo = $user->saldo + ($avion->precio * ($avion->estado / 100));
+            $user->saldo = $user->saldo + ($avion->avion->precio * ($avion->condicion / 100));
 
             $user->update();
             $avion->delete();
