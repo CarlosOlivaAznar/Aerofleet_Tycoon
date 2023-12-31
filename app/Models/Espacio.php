@@ -11,6 +11,12 @@ class Espacio extends Model
 
     protected $table = 'espacios';
     protected $fillable = [
-        'uid',
+        'aeropuerto_id',
+        'numeroDeEspacios',
     ];
+
+    public function aeropuerto()
+    {
+        return $this->belongsTo(Aeropuerto::class);
+    }
 }

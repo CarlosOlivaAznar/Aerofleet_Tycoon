@@ -10,4 +10,9 @@ class Aeropuerto extends Model
     use HasFactory;
 
     protected $table = 'aeropuertos';
+
+    public function espacio()
+    {
+        return $this->hasMany(Espacio::class);
+    }
 }
