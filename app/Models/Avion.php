@@ -21,4 +21,9 @@ class Avion extends Model
     {
         return $this->hasMany(Flota::class);
     }
+
+    public function avionsh()
+    {
+        return $this->hasMany(Avionsh::class);
+    }
 }

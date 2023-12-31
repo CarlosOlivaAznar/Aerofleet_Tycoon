@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('avionessh', function (Blueprint $table) {
             $table->id();
-            $table->string('modelo');
+            $table->unsignedInteger('avion_id');
             $table->date('fechaDeFabricacion');
-            $table->double('precio');
-            $table->unsignedInteger('estado');
-            $table->unsignedInteger('rango');
             $table->string('img');
             $table->string('compañia');
             $table->timestamps();
