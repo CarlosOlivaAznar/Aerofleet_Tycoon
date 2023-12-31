@@ -38,6 +38,7 @@
               <th>Espacios Ocupados</th>
               <th>Espacios Disponibles</th>
               <th>Coste por Operacion</th>
+              <th>Precio por espacio</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -49,6 +50,7 @@
               <td>4 (inop)</td>
               <td>{{ $espacio->numeroDeEspacios }} (inop)</td>
               <td>{{ $espacio->aeropuerto->costeOperacional1 }} / {{ $espacio->aeropuerto->costeOperacional2 }} / {{ $espacio->aeropuerto->costeOperacional3 }}</td>
+              <td>{{ $espacio->aeropuerto->costeOperacional1 * 1000 }}</td>
               <td><i class="bx bx-plus"></i>(inop)</td>
             </tr>
             @endforeach
