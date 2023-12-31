@@ -60,65 +60,23 @@
               <th>Modelo</th>
               <th>Fecha de Fabricacion</th>
               <th>Estado</th>
+              <th>Compañia</th>
+              <th>Comprar</th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($avionessh as $avionsh)
             <tr>
               <td>
-                <img class="img-avion" src="../../images/a320_volotea.png">
+                <img class="img-avion" src="{{ asset($avionsh->img) }}">
               </td>
-              <td>a320</td>
-              <td>19-10-2023</td>
-              <td>78%</td>
+              <td>{{ $avionsh->avion->modelo }}</td>
+              <td>{{ $avionsh->fechaDeFabricacion }}</td>
+              <td>78%(inop)</td>
+              <td>{{ $avionsh->compañia }}</td>
+              <td></td>
             </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/a350_airCaribes.png">
-              </td>
-              <td>a350</td>
-              <td>19-10-2023</td>
-              <td>85%</td>
-            </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/737_aea.png">
-              </td>
-              <td>737-800</td>
-              <td>19-10-2023</td>
-              <td>61%</td>
-            </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/a321_vueling.png">
-              </td>
-              <td>a321</td>
-              <td>19-10-2023</td>
-              <td>91%</td>
-            </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/a320_vueling.png">
-              </td>
-              <td>a320</td>
-              <td>19-10-2023</td>
-              <td>100%</td>
-            </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/737_ryanair.png">
-              </td>
-              <td>737-800</td>
-              <td>19-10-2023</td>
-              <td>42%</td>
-            </tr>
-            <tr>
-              <td>
-                <img class="img-avion" src="../../images/747_lufthansa.png">
-              </td>
-              <td>747-800</td>
-              <td>19-10-2023</td>
-              <td>81%</td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('fechaDeFabricacion');
             $table->string('img');
             $table->string('compañia');
+            $table->unsignedinteger('condicion');
             $table->timestamps();
         });
     }

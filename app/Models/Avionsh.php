@@ -15,6 +15,7 @@ class Avionsh extends Model
         'fechaDeFabricacion',
         'img',
         'compañia',
+        'condicion',
     ];
 
     public function avion()

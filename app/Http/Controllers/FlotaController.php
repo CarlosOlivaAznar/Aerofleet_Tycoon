@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Flota;
 use App\Models\Avion;
+use App\Models\Avionsh;
 use App\Models\User;
 
 class FlotaController extends Controller
@@ -21,7 +22,8 @@ class FlotaController extends Controller
 
     public function comprarAviones()
     {
-        return view('flota.comprarAviones');
+        $avionessh = Avionsh::all();
+        return view('flota.comprarAviones', ['avionessh' => $avionessh]);
     }
 
     public function comprarAirbus()
