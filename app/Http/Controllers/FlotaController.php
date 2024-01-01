@@ -28,9 +28,8 @@ class FlotaController extends Controller
 
     public function comprarAirbus()
     {
-        $aviones = Avion::all();
-
-        return view('flota.caAirbus', compact($aviones));
+        $aviones = Avion::where('fabricante', 'Airbus')->get();
+        return view('flota.caAirbus', ['aviones' => $aviones]);
     }
 
     public function comprar($id)

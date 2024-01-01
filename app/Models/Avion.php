@@ -12,6 +12,8 @@ class Avion extends Model
     protected $table = 'aviones';
     protected $fillable = [
         'modelo',
+        'fabricante',
+        'capacidad',
         'precio',
         'rango',
         'img',
