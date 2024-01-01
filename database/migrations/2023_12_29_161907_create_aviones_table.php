@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('aviones', function (Blueprint $table) {
             $table->id();
             $table->string('modelo');
+            $table->string('fabricante');
             $table->double('precio');
+            $table->unsignedBigInteger('capacidad');
             $table->unsignedInteger('rango');
             $table->string('img');
             $table->timestamps();
