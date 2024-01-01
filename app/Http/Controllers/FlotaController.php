@@ -32,6 +32,12 @@ class FlotaController extends Controller
         return view('flota.caAirbus', ['aviones' => $aviones]);
     }
 
+    public function comprarBoeing()
+    {
+        $aviones = Avion::where('fabricante', 'Boeing')->get();
+        return view('flota.caBoeing', ['aviones' => $aviones]);
+    }
+
     public function comprar($id)
     {
         $avion = Avion::where('id', $id)->first();

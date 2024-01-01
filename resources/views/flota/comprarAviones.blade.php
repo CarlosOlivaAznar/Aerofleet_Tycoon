@@ -33,7 +33,7 @@
             <i class="bx clogo"><img src="{{ asset('icons/airbus.svg') }}" alt=""></i>
             <h3>Airbus</h3>
           </li></a>
-          <a href="#"><li>
+          <a href="{{ route('flota.comprarBoeing') }}"><li>
             <i class="bx clogo"><img src="{{ asset('icons/boeing.svg') }}" alt=""></i>
             <h3>Boeing</h3>
           </li></a>
