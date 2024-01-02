@@ -41,7 +41,6 @@ class FlotaController extends Controller
     public function comprar($id)
     {
         $avion = Avion::where('id', $id)->first();
-
         $user = User::find(auth()->id());;
         
         if ($user->saldo - $avion->precio >= 0) {
@@ -59,6 +58,29 @@ class FlotaController extends Controller
             $user->update();
         }
         
+        return redirect()->route('flota.index');
+    }
+
+    public function comprarSegundaMano($id)
+    {
+        $avionsh = Avionsh::where('id', $id)->first();
+        $user = User::find(auth()->id());;
+
+        if ($user->saldo - $avionsh->avion->precio >= 0) {
+            Flota::create([
+                'user_id' => auth()->id(),
+                'avion_id' => $avionsh->avion_id,
+                'matricula' => 'EC-TEST',
+                'fechaDeFabricacion' => $avionsh->fechaDeFabricacion,
+                'condicion' => $avionsh->condicion,
+                'estado' => 'On ground',
+            ]);
+
+            // Actualizamos el saldo del usuario
+            $user->saldo = $user->saldo - $avionsh->avion->precio;
+            $user->update();
+        }
+
         return redirect()->route('flota.index');
     }
 

@@ -74,7 +74,7 @@
               <td>{{ $avionsh->fechaDeFabricacion }}</td>
               <td>78%(inop)</td>
               <td>{{ $avionsh->compañia }}</td>
-              <td></td>
+              <td><a class="comprar" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
             </tr>
             @endforeach
           </tbody>
