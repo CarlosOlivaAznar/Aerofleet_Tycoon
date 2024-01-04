@@ -65,6 +65,7 @@ class FlotaController extends Controller
     {
         $avionsh = Avionsh::where('id', $id)->first();
         $user = User::find(auth()->id());;
+        $avionNuevo = Avionsh::avionAleatiorio();
 
         if ($user->saldo - $avionsh->avion->precio >= 0) {
             Flota::create([
@@ -79,6 +80,16 @@ class FlotaController extends Controller
             // Actualizamos el saldo del usuario
             $user->saldo = $user->saldo - $avionsh->avion->precio;
             $user->update();
+
+            // Borramos el avion de segunda mano y introducimos uno nuevo en la tabla
+            $avionsh->delete();
+            Avionsh::create([
+                'avion_id' => $avionNuevo[0],
+                'fechaDeFabricacion' => date("Y-m-d", mt_rand(strtotime("2000-01-01"), strtotime("2015-12-31"))),
+                'img' => $avionNuevo[1],
+                'compañia' => $avionNuevo[2],
+                'condicion' => rand(30, 80),
+            ]);
         }
 
         return redirect()->route('flota.index');
