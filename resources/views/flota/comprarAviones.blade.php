@@ -58,9 +58,10 @@
             <tr>
               <th>Avion</th>
               <th>Modelo</th>
+              <th>Compañia</th>
               <th>Fecha de Fabricacion</th>
               <th>Estado</th>
-              <th>Compañia</th>
+              <th>Precio</th>
               <th>Comprar</th>
             </tr>
           </thead>
@@ -71,9 +72,10 @@
                 <img class="img-avion" src="{{ asset($avionsh->img) }}">
               </td>
               <td>{{ $avionsh->avion->modelo }}</td>
-              <td>{{ $avionsh->fechaDeFabricacion }}</td>
-              <td>78%(inop)</td>
               <td>{{ $avionsh->compañia }}</td>
+              <td>{{ $avionsh->fechaDeFabricacion }}</td>
+              <td>{{ $avionsh->condicion }}%</td>
+              <td>{{ $avionsh->avion->precio * ($avionsh->condicion / 100) }}</td>
               <td><a class="comprar" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
             </tr>
             @endforeach

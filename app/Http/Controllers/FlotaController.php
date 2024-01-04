@@ -78,7 +78,7 @@ class FlotaController extends Controller
             ]);
 
             // Actualizamos el saldo del usuario
-            $user->saldo = $user->saldo - $avionsh->avion->precio;
+            $user->saldo = $user->saldo - ($avionsh->avion->precio * ($avionsh->condicion / 100));
             $user->update();
 
             // Borramos el avion de segunda mano y introducimos uno nuevo en la tabla
