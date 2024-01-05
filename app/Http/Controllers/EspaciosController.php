@@ -29,17 +29,25 @@ class EspaciosController extends Controller
     public function comprar(Request $request)
     {
         $aeropuerto = Aeropuerto::where('icao', $request->aeropuerto)->first();
-        $user = User::find(auth()->id());;
+        $user = User::find(auth()->id());
 
-        Espacio::create([
-            'aeropuerto_id' => $aeropuerto->id,
-            'user_id' => auth()->id(),
-            'numeroDeEspacios' => $request->espacios,
-        ]);
+        if($user->saldo - $aeropuerto->costeOperacional1 * 1000 >= 0){
 
-        // Actualizamos el saldo del usuario
-        $user->saldo = $user->saldo - $aeropuerto->costeOperacional1 * 1000;
-        $user->update();
+            Espacio::create([
+                'aeropuerto_id' => $aeropuerto->id,
+                'user_id' => auth()->id(),
+                'numeroDeEspacios' => $request->espacios,
+            ]);
+
+            // Actualizamos el saldo del usuario
+            $user->saldo = $user->saldo - $aeropuerto->costeOperacional1 * 1000;
+            $user->update();
+
+            // Mostramos mensaje de exito
+            session()->flash('exito', 'El espacio ha sido comprado correctamente');
+        } else {
+            session()->flash('error', 'No tiene sufiente saldo');
+        }
 
         return redirect()->route('espacios.index');
     }
