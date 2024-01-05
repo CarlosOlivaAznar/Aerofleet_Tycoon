@@ -56,6 +56,12 @@ class FlotaController extends Controller
             // Actualizamos el saldo del usuario
             $user->saldo = $user->saldo - $avion->precio;
             $user->update();
+
+            // Mostramos mensaje
+            session()->flash('exito', 'El avion se ha comprado correctamente');
+        } else {
+            // Mensaje error
+            session()->flash('error', 'No tiene suficiente saldo');
         }
         
         return redirect()->route('flota.index');

@@ -385,6 +385,38 @@ a{
     color: var(--dark);
 }
 
+/* Mensajes de alerta */
+.alerta {
+    padding: 20px;
+    background-color: #f44336;
+    color: var(--light);
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    border-radius: 25px;
+  }
+
+.alerta.exito {background-color: var(--success);}
+.alerta.warning {background-color: var(--warning);}
+.alerta.error {background-color: var(--danger);}
+  
+  /* The close button */
+  .cerrarbtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .cerrarbtn:hover {
+    color: var(--dark);
+  }
+
 /* ----------- */
 /* Pagina Mapa */
 /* ----------- */

@@ -26,7 +26,9 @@
         </a>
       </div>
 
-      
+
+      <!-- Alertas -->
+      @include('partials.alertas')
 
       <div class="tablas">
         <div class="cabecera">
