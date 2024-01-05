@@ -96,6 +96,11 @@ class FlotaController extends Controller
                 'compañia' => $avionNuevo[2],
                 'condicion' => rand(30, 80),
             ]);
+
+            // Mostramos mensaje
+            session()->flash('exito', 'El avion se ha comprado correctamente');
+        } else {
+            session()->flash('error', 'No tiene suficiente saldo');
         }
 
         return redirect()->route('flota.index');
@@ -112,6 +117,11 @@ class FlotaController extends Controller
 
             $user->update();
             $avion->delete();
+
+            // Mostramos mensaje
+            session()->flash('exito', 'El avion se ha vendido correctamente');
+        } else {
+            session()->flash('error', 'Error al vender el avion');
         }
 
         return redirect()->route('flota.index');
