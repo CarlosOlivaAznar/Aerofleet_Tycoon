@@ -54,7 +54,7 @@
               <td>{{ $espacio->numeroDeEspacios }} (inop)</td>
               <td>{{ $espacio->aeropuerto->costeOperacional1 }} / {{ $espacio->aeropuerto->costeOperacional2 }} / {{ $espacio->aeropuerto->costeOperacional3 }}</td>
               <td>{{ $espacio->aeropuerto->costeOperacional1 * 1000 }}</td>
-              <td><i class="bx bx-plus"></i>(inop)</td>
+              <td><a class="vender" href="{{ route('espacios.vender', ['id' => $espacio->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
             </tr>
             @endforeach
           </tbody>

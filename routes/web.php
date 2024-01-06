@@ -39,6 +39,7 @@ Route::get('flota/vender/{id}', [FlotaController::class, 'vender'])->name('flota
 Route::get('espacios', [EspaciosController::class, 'index'])->name('espacios.index');
 Route::get('espacios/comprarEspacios', [EspaciosController::class, 'aeropuertos'])->name('espacios.aeropuertos');
 Route::post('espacios', [EspaciosController::class, 'comprar'])->name('espacios.comprar');
+Route::get('espacios/vender/{id}', [EspaciosController::class, 'vender'])->name('espacios.vender');
 
 Route::get('mapa', [MapaController::class, 'index'])->name('mapa.index');
 

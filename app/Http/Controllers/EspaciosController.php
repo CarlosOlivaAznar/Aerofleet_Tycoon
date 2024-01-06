@@ -51,4 +51,35 @@ class EspaciosController extends Controller
 
         return redirect()->route('espacios.index');
     }
+
+    public function vender($id)
+    {
+        $espacio = Espacio::where('id', $id)->first();
+        $user = User::find(auth()->id());
+        
+        if($espacio->user_id === auth()->id()){
+            if($espacio->numeroDeEspacios > 1){
+                $espacio->numeroDeEspacios--;
+                $espacio->update();
+
+                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional1 * 1000;
+                $user->update();
+
+                session()->flash('exito', 'Se ha vendido un espacio de: ' . $espacio->aeropuerto->nombre);
+            } elseif($espacio->numeroDeEspacios === 1) {
+                $espacio->delete();
+
+                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional1 * 1000;
+                $user->update();
+
+                session()->flash('exito', 'Se han vendido todos los espacios de: ' . $espacio->aeropuerto->nombre);
+            } else {
+                session()->flash('error', 'Error al vender el espacio de ' . $espacio->aeropuerto->nombre);
+            }
+        } else {
+            session()->flash('error', 'Error al autentificar el usuario propietario del espacio');
+        }
+
+        return redirect()->route('espacios.index');
+    }
 }
