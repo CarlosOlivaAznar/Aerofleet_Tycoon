@@ -34,7 +34,7 @@
           </script>
         </div>
         <div class="infodatos">
-          <h3>Aeropuerto de Zaragoza</h3>
+          <h3>{{ $sede->aeropuerto->nombre }}</h3>
           <div class="infodividido">
             <p>Hangares disponibles:</p>
             <p>Aviones en mantenimiento:</p>
@@ -44,12 +44,12 @@
             <p>Costes totales:</p>
           </div>
           <div class="infodividido margin">
-            <p>1</p>
-            <p>1</p>
-            <p>5.000 / 7.000 / 15.000</p>
-            <p>250.000€ / mes</p>
-            <p>30.000€ / mes</p>
-            <p>280.000€ / mes</p>
+            <p>{{ count($sede->hangar) }}</p>
+            <p>1(inop)</p>
+            <p>{{ $sede->aeropuerto->costeOperacional1 }} / 7.000inop / 15.000inop</p>
+            <p>{{ $sede->aeropuerto->costeOperacional1 * 50 }} / mes</p>
+            <p>30.000€ / mes (inop)</p>
+            <p>280.000€ / mes(inop)</p>
           </div>
         </div>
       </div>
@@ -75,6 +75,7 @@
         </ul>
       </div>
 
+      @foreach ($sede->hangar as $hangar)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-building"></i>
@@ -100,6 +101,8 @@
           </tbody>
         </table>
       </div>
+      @endforeach
+      
 
     </main>
   </div>

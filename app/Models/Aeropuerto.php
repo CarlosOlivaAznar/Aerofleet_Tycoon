@@ -15,4 +15,9 @@ class Aeropuerto extends Model
     {
         return $this->hasMany(Espacio::class);
     }
+
+    public function sede()
+    {
+        return $this->hasMany(Sede::class);
+    }
 }

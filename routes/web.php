@@ -46,6 +46,7 @@ Route::get('mapa', [MapaController::class, 'index'])->name('mapa.index');
 Route::get('rutas', [RutasController::class, 'index'])->name('rutas.index');
 
 Route::get('sede', [SedeController::class, 'index'])->name('sede.index');
+Route::get('sede/comprarHangar', [SedeController::class, 'comprarHangar'])->name('sede.comprarHangar');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

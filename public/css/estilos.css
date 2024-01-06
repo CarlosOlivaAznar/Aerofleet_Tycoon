@@ -460,6 +460,7 @@ a{
     padding: 30px;
     background-color: var(--light);
     color: var(--dark);
+    margin-bottom: 30px;
 }
 
 .contenido main .tablas .cabecera{
