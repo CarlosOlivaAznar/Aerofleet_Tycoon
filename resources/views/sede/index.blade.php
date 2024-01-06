@@ -46,8 +46,8 @@
           <div class="infodividido margin">
             <p>{{ count($sede->hangar) }}</p>
             <p>1(inop)</p>
-            <p>{{ $sede->aeropuerto->costeOperacional1 }} / 7.000inop / 15.000inop</p>
-            <p>{{ ($sede->aeropuerto->costeOperacional1 * 50) * count($sede->hangar) }} / mes</p>
+            <p>{{ $sede->aeropuerto->costeOperacional }} / 7.000inop / 15.000inop</p>
+            <p>{{ ($sede->aeropuerto->costeOperacional * 50) * count($sede->hangar) }} / mes</p>
             <p>{{ $sede->ingenieros * 30000 }}€ / mes</p>
             <p>280.000€ / mes(inop)</p>
           </div>

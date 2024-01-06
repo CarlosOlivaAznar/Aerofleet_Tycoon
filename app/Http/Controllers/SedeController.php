@@ -26,13 +26,13 @@ class SedeController extends Controller
         $user = User::find(auth()->id());
         $sede = Sede::where('user_id', auth()->id())->first();
 
-        if($user->saldo - $sede->aeropuerto->costeOperacional1 * 525 >= 0){
+        if($user->saldo - $sede->aeropuerto->costeOperacional * 525 >= 0){
             Hangar::create([
                 'sede_id' => $sede->id,
                 'espacios' => 1,
             ]);
 
-            $user->saldo -= $sede->aeropuerto->costeOperacional1 * 525;
+            $user->saldo -= $sede->aeropuerto->costeOperacional * 525;
             $user->update();
 
             session()->flash('exito', 'Hangar comprado correctamente');

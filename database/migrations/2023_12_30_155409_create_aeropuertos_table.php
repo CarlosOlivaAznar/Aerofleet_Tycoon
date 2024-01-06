@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string('icao');
             $table->string('nombre');
             $table->unsignedBigInteger('espaciosTotales');
-            $table->unsignedBigInteger('costeOperacional1');
-            $table->unsignedBigInteger('costeOperacional2');
-            $table->unsignedBigInteger('costeOperacional3');
-            $table->unsignedBigInteger('costeAlquiler');
+            $table->unsignedBigInteger('costeOperacional');
             $table->double('latitud', 10, 6);
             $table->double('longitud', 10, 6);
             $table->timestamps();
