@@ -41,7 +41,7 @@ class FlotaController extends Controller
     public function comprar($id)
     {
         $avion = Avion::where('id', $id)->first();
-        $user = User::find(auth()->id());;
+        $user = User::find(auth()->id());
         
         if ($user->saldo - $avion->precio >= 0) {
             Flota::create([

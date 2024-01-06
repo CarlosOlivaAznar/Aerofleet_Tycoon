@@ -56,7 +56,7 @@
       
       <div class="resumen sede">
         <ul>
-          <a href="#"><li>
+          <a href="{{ route('sede.comprarHangar') }}"><li>
             <i class="bx bx-building"></i>
             <h3>Comprar Hangar</h3>
           </li></a>
@@ -75,12 +75,15 @@
         </ul>
       </div>
 
+      <!-- Alertas -->
+      @include('partials.alertas')
+
       @foreach ($sede->hangar as $hangar)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-building"></i>
           <h3>Hangar 1</h3>
-          <span>Espacios disponibles hangar: 2</span>
+          <span>Espacios disponibles hangar: {{ $hangar->espacios}}</span>
         </div>
         <table>
           <thead>
