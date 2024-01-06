@@ -713,6 +713,14 @@ a{
     color: var(--success);
 }
 
+.contenido main .botonTexto{
+    color: var(--light);
+    background-color: var(--success);
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 25px;
+}
+
 /* Media */
 @media screen and (max-width: 800px) {
     .menu-lateral{

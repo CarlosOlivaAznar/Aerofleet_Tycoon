@@ -42,4 +42,35 @@ class SedeController extends Controller
 
         return redirect()->route('sede.index');
     }
+
+    public function contratarIngenieros()
+    {
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $sede->ingenieros++;
+        $sede->update();
+
+        session()->flash('exito', 'Ingeniero contratado correctamente');
+        return redirect()->route('sede.index');
+    }
+
+    public function ampliarHangar($id)
+    {
+        $hangar = Hangar::where('id', $id)->first();
+        $user = User::find(auth()->id());
+        if($hangar->espacios === 6){
+            session()->flash('error', 'Limite maximo de espacios alcanzado');
+        } elseif($user->saldo - 250000 >= 0) {
+            $hangar->espacios++;
+            $hangar->update();
+
+            $user->saldo -= 250000;
+            $user->update();
+
+            session()->flash('exito', 'Hangar ampliado correctamente');
+        } else {
+            session()->flash('error', 'Saldo insuficiente');
+        }
+
+        return redirect()->route('sede.index');
+    }
 }

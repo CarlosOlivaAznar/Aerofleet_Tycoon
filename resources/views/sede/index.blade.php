@@ -47,8 +47,8 @@
             <p>{{ count($sede->hangar) }}</p>
             <p>1(inop)</p>
             <p>{{ $sede->aeropuerto->costeOperacional1 }} / 7.000inop / 15.000inop</p>
-            <p>{{ $sede->aeropuerto->costeOperacional1 * 50 }} / mes</p>
-            <p>30.000€ / mes (inop)</p>
+            <p>{{ ($sede->aeropuerto->costeOperacional1 * 50) * count($sede->hangar) }} / mes</p>
+            <p>{{ $sede->ingenieros * 30000 }}€ / mes</p>
             <p>280.000€ / mes(inop)</p>
           </div>
         </div>
@@ -60,7 +60,7 @@
             <i class="bx bx-building"></i>
             <h3>Comprar Hangar</h3>
           </li></a>
-          <a href="#"><li>
+          <a href="{{ route('sede.contratarIngenieros') }}"><li>
             <i class="bx bx-user-plus"></i>
             <h3>Contratar Ingenieros</h3>
           </li></a>
@@ -68,22 +68,22 @@
             <i class="bx bx-trending-up"></i>
             <h3>Mejoras</h3>
           </li></a>
-          <a href="#"><li>
-            <i class="bx bx-building"></i>
-            <h3>Ampliar Hangar</h3>
-          </li></a>
         </ul>
       </div>
 
       <!-- Alertas -->
       @include('partials.alertas')
 
+      
+      <?php $contador = 0 ?>
       @foreach ($sede->hangar as $hangar)
+      <?php $contador++ ?>
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-building"></i>
-          <h3>Hangar 1</h3>
+          <h3>Hangar {{ $contador }}</h3>
           <span>Espacios disponibles hangar: {{ $hangar->espacios}}</span>
+          <a class="botonTexto" href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}">Ampliar Hangar</a>
         </div>
         <table>
           <thead>

@@ -47,6 +47,8 @@ Route::get('rutas', [RutasController::class, 'index'])->name('rutas.index');
 
 Route::get('sede', [SedeController::class, 'index'])->name('sede.index');
 Route::get('sede/comprarHangar', [SedeController::class, 'comprarHangar'])->name('sede.comprarHangar');
+Route::get('sede/contratarIngenieros', [SedeController::class, 'contratarIngenieros'])->name('sede.contratarIngenieros');
+Route::get('sede/ampliarHangar/{id}', [SedeController::class, 'ampliarHangar'])->name('sede.ampliarHangar');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
