@@ -34,7 +34,7 @@
             <h3>Destino 1</h3>
             <select name="destino1" id="destino1">
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->aeropuerto->icao }}">{{ $espacio->aeropuerto->nombre }}</option>
+              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
               @endforeach
             </select>
             <select name="horaDep" id="horaDep">
@@ -55,7 +55,7 @@
             <h3>Destino 2</h3>
             <select name="destino2" id="destino2">
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->aeropuerto->icao }}">{{ $espacio->aeropuerto->nombre }}</option>
+              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
               @endforeach
             </select>
           </div>

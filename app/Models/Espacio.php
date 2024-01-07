@@ -25,4 +25,9 @@ class Espacio extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function ruta()
+    {
+        $this->hasMany(Espacio::class);
+    }
 }

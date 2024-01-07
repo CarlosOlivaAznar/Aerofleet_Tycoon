@@ -28,4 +28,9 @@ class Flota extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function ruta()
+    {
+        return $this->hasMany(Ruta::class);
+    }
 }
