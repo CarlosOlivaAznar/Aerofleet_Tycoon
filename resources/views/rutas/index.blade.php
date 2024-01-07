@@ -19,7 +19,7 @@
         <div class="titulo">
           <h1>Rutas</h1>
         </div>
-        <a href="crearRuta.html" class="boton">
+        <a href="{{ route('rutas.crearRuta') }}" class="boton">
           <i class="bx bx-plus-circle"></i>
           <span>Crear Ruta</span>
         </a>

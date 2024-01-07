@@ -44,6 +44,8 @@ Route::get('espacios/vender/{id}', [EspaciosController::class, 'vender'])->name(
 Route::get('mapa', [MapaController::class, 'index'])->name('mapa.index');
 
 Route::get('rutas', [RutasController::class, 'index'])->name('rutas.index');
+Route::get('rutas/crearRuta', [RutasController::class, 'crearRuta'])->name('rutas.crearRuta');
+Route::post('rutas/nuevaRuta', [RutasController::class, 'nuevaRuta'])->name('rutas.nuevaRuta');
 
 Route::get('sede', [SedeController::class, 'index'])->name('sede.index');
 Route::get('sede/comprarHangar', [SedeController::class, 'comprarHangar'])->name('sede.comprarHangar');
