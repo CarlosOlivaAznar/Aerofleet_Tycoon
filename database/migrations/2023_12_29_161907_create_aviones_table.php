@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('capacidad');
             $table->unsignedInteger('rango');
             $table->string('img');
+            $table->unsignedFloat('costePorKm');
+            $table->unsignedFloat('tiempoPorKm');
             $table->timestamps();
         });
     }

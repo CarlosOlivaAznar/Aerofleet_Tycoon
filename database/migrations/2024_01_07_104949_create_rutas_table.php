@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedInteger('flota_id');
             $table->unsignedBigInteger('espacio_departure_id');
             $table->unsignedBigInteger('espacio_arrival_id');
-            $table->dateTime('horaInicio');
-            $table->dateTime('horaFin');
-            $table->unsignedBigInteger('distancia');
-            $table->unsignedBigInteger('tiempoEstimado');
+            $table->string('horaInicio');
+            $table->string('horaFin');
+            $table->unsignedFloat('distancia');
+            $table->string('tiempoEstimado');
             $table->timestamps();
         });
     }
