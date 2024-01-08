@@ -38,14 +38,14 @@
               @endforeach
             </select>
             <select name="horaDep" id="horaDep">
-              <option value="06:00z">06:00z</option>
-              <option value="06:00z">07:30z</option>
-              <option value="06:00z">08:00z</option>
-              <option value="06:00z">09:30z</option>
-              <option value="06:00z">10:00z</option>
-              <option value="06:00z">11:30z</option>
-              <option value="06:00z">12:00z</option>
-              <option value="06:00z">13:30z</option>
+              <option value="06:00:00">06:00z</option>
+              <option value="06:00:00">07:30z</option>
+              <option value="06:00:00">08:00z</option>
+              <option value="06:00:00">09:30z</option>
+              <option value="06:00:00">10:00z</option>
+              <option value="06:00:00">11:30z</option>
+              <option value="06:00:00">12:00z</option>
+              <option value="06:00:00">13:30z</option>
             </select>
           </div>
           <div class="input">
