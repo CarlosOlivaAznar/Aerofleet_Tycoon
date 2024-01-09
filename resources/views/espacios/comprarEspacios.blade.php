@@ -40,7 +40,7 @@
             </div>
             <div class="input">
               <h3>Espacios a comprar</h3>
-              <input type="number" name="espacios">
+              <input type="number" name="espacios" min="1">
             </div>
             <div class="input submit">
               <input type="submit" value="Comprar Espacios" id="comprarEspacios">

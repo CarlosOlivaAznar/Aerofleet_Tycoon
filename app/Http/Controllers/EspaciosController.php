@@ -33,12 +33,16 @@ class EspaciosController extends Controller
         $user = User::find(auth()->id());
 
         if($user->saldo - $aeropuerto->costeOperacional * 1000 >= 0){
-
-            Espacio::create([
-                'aeropuerto_id' => $aeropuerto->id,
-                'user_id' => auth()->id(),
-                'numeroDeEspacios' => $request->espacios,
-            ]);
+            if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->first()){
+                $espacio->numeroDeEspacios += $request->espacios;
+                $espacio->update();
+            } else {
+                Espacio::create([
+                    'aeropuerto_id' => $aeropuerto->id,
+                    'user_id' => auth()->id(),
+                    'numeroDeEspacios' => $request->espacios,
+                ]);
+            }
 
             // Actualizamos el saldo del usuario
             $user->saldo = $user->saldo - $aeropuerto->costeOperacional * 1000;
