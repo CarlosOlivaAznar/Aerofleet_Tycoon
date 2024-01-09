@@ -37,6 +37,7 @@
           <thead>
             <tr>
               <th>Avion</th>
+              <th>Matricula</th>
               <th>Origen</th>
               <th>Destino</th>
               <th>Distancia</th>
@@ -50,13 +51,14 @@
             @foreach ($rutas as $ruta)
             <tr>
               <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt=""></i></td>
+              <td>{{ $ruta->flota->matricula }}</td>
               <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
               <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
               <td>{{ $ruta->distancia }}km</td>
               <td>{{ $ruta->tiempoEstimado }}</td>
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
-              <td></td>
+              <td><a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a></td>
             </tr>
             @endforeach
           </tbody>

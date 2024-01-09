@@ -102,4 +102,17 @@ class RutasController extends Controller
 
         return $distancia;
     }
+
+    public function borrarRuta($id)
+    {
+        $ruta = Ruta::where('id', $id)->first();
+
+        if($ruta->user_id === auth()->id()){
+            $ruta->delete();
+        } else {
+            session()->flash('error', 'error al eliminar la ruta');
+        }
+
+        return redirect()->route('rutas.index');
+    }
 }
