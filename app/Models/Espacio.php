@@ -16,6 +16,18 @@ class Espacio extends Model
         'numeroDeEspacios',
     ];
 
+    public function espaciosDisponibles()
+    {
+        return $this->numeroDeEspacios - $this->espaciosOcupados();
+    }
+
+    public function espaciosOcupados()
+    {
+        $espaciosDep = count(Ruta::where('espacio_departure_id', $this->id)->get());
+        $espaciosArr = count(Ruta::where('espacio_arrival_id', $this->id)->get());
+        return $espaciosDep + $espaciosArr;
+    }
+
     public function aeropuerto()
     {
         return $this->belongsTo(Aeropuerto::class);

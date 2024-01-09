@@ -14,6 +14,7 @@ class EspaciosController extends Controller
     public function index()
     {
         $espacios = Espacio::where('user_id', auth()->id())->get();
+
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
         

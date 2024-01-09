@@ -109,6 +109,7 @@ class RutasController extends Controller
 
         if($ruta->user_id === auth()->id()){
             $ruta->delete();
+            session()->flash('exito', 'Ruta eliminada correctamente');
         } else {
             session()->flash('error', 'error al eliminar la ruta');
         }
