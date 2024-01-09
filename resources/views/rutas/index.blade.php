@@ -41,42 +41,24 @@
               <th>Destino</th>
               <th>Distancia</th>
               <th>Tiempo</th>
+              <th>Hora de salida</th>
+              <th>Hora de llegada</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($rutas as $ruta)
             <tr>
-              <td><i class="bx"><img src="../../images/new/airbus/a320neo.png" alt=""></i></td>
-              <td>LEBL</td>
-              <td>LEMD</td>
-              <td>460mn</td>
-              <td>1:30h</td>
+              <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt=""></i></td>
+              <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
+              <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
+              <td>{{ $ruta->distancia }}km</td>
+              <td>{{ $ruta->tiempoEstimado }}</td>
+              <td>{{ $ruta->horaInicio }}</td>
+              <td>{{ $ruta->horaFin }}</td>
               <td></td>
             </tr>
-            <tr>
-              <td><i class="bx"><img src="../../images/new/airbus/a320neo.png" alt=""></i></td>
-              <td>LEBL</td>
-              <td>EGSS</td>
-              <td>1130mn</td>
-              <td>2:25h</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><i class="bx"><img src="../../images/new/airbus/a320neo.png" alt=""></i></td>
-              <td>LEBL</td>
-              <td>LEAL</td>
-              <td>205mn</td>
-              <td>0:45h</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><i class="bx"><img src="../../images/new/airbus/a320neo.png" alt=""></i></td>
-              <td>LEBL</td>
-              <td>LEMG</td>
-              <td>40mn</td>
-              <td>0:30h</td>
-              <td></td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

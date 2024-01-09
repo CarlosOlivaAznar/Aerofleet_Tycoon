@@ -39,13 +39,13 @@
             </select>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
-              <option value="06:00:00">07:30z</option>
-              <option value="06:00:00">08:00z</option>
-              <option value="06:00:00">09:30z</option>
-              <option value="06:00:00">10:00z</option>
-              <option value="06:00:00">11:30z</option>
-              <option value="06:00:00">12:00z</option>
-              <option value="06:00:00">13:30z</option>
+              <option value="07:30:00">07:30z</option>
+              <option value="08:00:00">08:00z</option>
+              <option value="09:30:00">09:30z</option>
+              <option value="10:00:00">10:00z</option>
+              <option value="11:30:00">11:30z</option>
+              <option value="12:00:00">12:00z</option>
+              <option value="13:30:00">13:30z</option>
             </select>
           </div>
           <div class="input">

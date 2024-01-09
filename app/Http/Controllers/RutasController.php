@@ -15,7 +15,8 @@ class RutasController extends Controller
 {
     public function index()
     {
-        return view('rutas.index');
+        $rutas = Ruta::where('user_id', auth()->id())->get();
+        return view('rutas.index', ['rutas' => $rutas]);
     }
 
     public function crearRuta()
@@ -42,7 +43,8 @@ class RutasController extends Controller
                     $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
 
                     $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
-                    $horaLlegada = $horaInicial->addMinutes($tiempoRuta);
+                    $horaLlegada = Carbon::createFromFormat('H:i:s', $request->horaDep);
+                    $horaLlegada->addMinutes($tiempoRuta);
                     $horaRuta = Carbon::createFromFormat('H:i:s', '00:00:00');
                     $horaRuta->addMinutes($tiempoRuta);
 
@@ -51,6 +53,7 @@ class RutasController extends Controller
                         
                         Ruta::create([
                             'flota_id' => $avion->id,
+                            'user_id' => auth()->id(),
                             'espacio_departure_id' => $espacioDep->id,
                             'espacio_arrival_id' => $espacioArr->id,
                             'horaInicio' => $horaInicial->format('H:i:s'),

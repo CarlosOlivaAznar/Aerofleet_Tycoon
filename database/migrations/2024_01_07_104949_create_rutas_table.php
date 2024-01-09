@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('rutas', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('flota_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('espacio_departure_id');
             $table->unsignedBigInteger('espacio_arrival_id');
             $table->string('horaInicio');

@@ -12,6 +12,7 @@ class Ruta extends Model
     protected $table = 'rutas';
     protected $fillable = [
         'flota_id',
+        'user_id',
         'espacio_departure_id',
         'espacio_arrival_id',
         'horaInicio',
@@ -22,16 +23,21 @@ class Ruta extends Model
 
     public function flota()
     {
-        $this->belongsTo(Ruta::class);
+        return $this->belongsTo(Flota::class);
     }
 
-    public function espacioDep()
+    public function espacio_departure()
     {
-        $this->belongsTo(Espacio::class);
+        return $this->belongsTo(Espacio::class);
     }
 
-    public function espacioArr()
+    public function espacio_arrival()
     {
-        $this->belongsTo(Espacio::class);
+        return $this->belongsTo(Espacio::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
