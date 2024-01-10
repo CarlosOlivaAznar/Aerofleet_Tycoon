@@ -58,7 +58,10 @@
                 <td>{{ $avion->condicion }}%</td>
                 <td>{{ $avion->estado }}</td>
                 <td>{{ number_format($avion->avion->precio * ($avion->condicion / 100), 0, ',', '.') }}</td>
-                <td><a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
+                <td>
+                  <a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a>
+                  <a class="comprar" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}"><i class="bx bx-add-to-queue"></i></a>
+                </td>
               </tr> 
               @endforeach
             </tbody>

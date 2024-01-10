@@ -17,7 +17,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Crear Ruta</h1>
+          <h1>Crear Ruta Avion</h1>
           <ul class="breadcrumb">
             <li><a href="{{ route('rutas.index') }}">Ruta</a></li>
             <li>/</li>
@@ -64,7 +64,7 @@
           </div>
           <div class="input">
             <h3>Avion</h3>
-            <select name="avion" id="avion">
+            <select name="avion" id="avion" disabled>
               @foreach ($flota as $avion)
               <option value="{{ $avion->id }}">{{ $avion->avion->modelo }}, {{ $avion->matricula }}</option>
               @endforeach
@@ -102,7 +102,45 @@
           <p>350.000€</p>
         </div>
       </div>   
-      
+
+      <div class="resumenAvion">
+        <h4>Ruta actual del avion:</h4>
+        <div class="barraResumen">
+          <div class="rutaAvion" style="width: 15%; margin-left: 0%;">LEMD - LEBL</div>
+          <div class="rutaAvion" style="width: 15%; margin-left: 18%;">LEBL - LEMD</div>
+          <div class="rutaAvion" style="width: 20%; margin-left: 42%;">LEMD - EGSS</div>
+          <div class="rutaAvion" style="width: 20%; margin-left: 65%;">EGSS - LEMD</div>
+        </div>
+        <div class="barraHorarios">
+          <div class="horario">06:00z</div>
+          <div class="horario">07:00z</div>
+          <div class="horario">08:00z</div>
+          <div class="horario">09:00z</div>
+          <div class="horario">10:00z</div>
+          <div class="horario">11:00z</div>
+          <div class="horario">12:00z</div>
+          <div class="horario">13:00z</div>
+          <div class="horario">14:00z</div>
+          <div class="horario">15:00z</div>
+          <div class="horario">16:00z</div>
+          <div class="horario">17:00z</div>
+          <div class="horario">18:00z</div>
+          <div class="horario">19:00z</div>
+          <div class="horario">20:00z</div>
+          <div class="horario">21:00z</div>
+          <div class="horario">22:00z</div>
+          <div class="horario">23:00z</div>
+          <div class="horario">24:00z</div>
+          <div class="horario">00:00z</div>
+          <div class="horario">01:00z</div>
+          <div class="horario">02:00z</div>
+          <div class="horario">03:00z</div>
+          <div class="horario">04:00z</div>
+        </div>
+        <div class="input">
+          <input id="crearRuta" type="submit" value="Crear nueva ruta">
+        </div>
+      </div>
     </form>
     </main>
   </div>
