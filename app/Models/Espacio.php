@@ -23,8 +23,8 @@ class Espacio extends Model
 
     public function espaciosOcupados()
     {
-        $espaciosDep = count(Ruta::where('espacio_departure_id', $this->id)->get());
-        $espaciosArr = count(Ruta::where('espacio_arrival_id', $this->id)->get());
+        $espaciosDep = count(Ruta::where('espacio_departure_id', $this->id)->where('user_id', auth()->id())->get());
+        $espaciosArr = count(Ruta::where('espacio_arrival_id', $this->id)->where('user_id', auth()->id())->get());
         return $espaciosDep + $espaciosArr;
     }
 
