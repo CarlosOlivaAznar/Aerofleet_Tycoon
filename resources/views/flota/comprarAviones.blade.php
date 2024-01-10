@@ -75,7 +75,7 @@
               <td>{{ $avionsh->compañia }}</td>
               <td>{{ $avionsh->fechaDeFabricacion }}</td>
               <td>{{ $avionsh->condicion }}%</td>
-              <td>{{ $avionsh->avion->precio * ($avionsh->condicion / 100) }}</td>
+              <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
               <td><a class="comprar" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
             </tr>
             @endforeach

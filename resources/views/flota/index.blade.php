@@ -57,7 +57,7 @@
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->condicion }}%</td>
                 <td>{{ $avion->estado }}</td>
-                <td>{{ $avion->avion->precio * ($avion->condicion / 100) }}</td>
+                <td>{{ number_format($avion->avion->precio * ($avion->condicion / 100), 0, ',', '.') }}</td>
                 <td><a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
               </tr> 
               @endforeach

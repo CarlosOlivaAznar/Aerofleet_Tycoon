@@ -32,7 +32,7 @@ class EspaciosController extends Controller
         $aeropuerto = Aeropuerto::where('icao', $request->aeropuerto)->first();
         $user = User::find(auth()->id());
 
-        if($user->saldo - $aeropuerto->costeOperacional * 1000 >= 0){
+        if($user->saldo - $aeropuerto->costeOperacional * 250 >= 0){
             if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->first()){
                 $espacio->numeroDeEspacios += $request->espacios;
                 $espacio->update();
@@ -45,7 +45,7 @@ class EspaciosController extends Controller
             }
 
             // Actualizamos el saldo del usuario
-            $user->saldo = $user->saldo - $aeropuerto->costeOperacional * 1000;
+            $user->saldo = $user->saldo - $aeropuerto->costeOperacional * 250;
             $user->update();
 
             // Mostramos mensaje de exito
@@ -67,14 +67,14 @@ class EspaciosController extends Controller
                 $espacio->numeroDeEspacios--;
                 $espacio->update();
 
-                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 1000;
+                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 250;
                 $user->update();
 
                 session()->flash('exito', 'Se ha vendido un espacio de: ' . $espacio->aeropuerto->nombre);
             } elseif($espacio->numeroDeEspacios === 1) {
                 $espacio->delete();
 
-                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 1000;
+                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 250;
                 $user->update();
 
                 session()->flash('exito', 'Se han vendido todos los espacios de: ' . $espacio->aeropuerto->nombre);
