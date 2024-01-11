@@ -30,7 +30,8 @@ class RutasController extends Controller
     {
         $espacios = Espacio::where('user_id', auth()->id())->get();
         $flota = Flota::where('user_id', auth()->id())->where('id', $id)->get();
-        return view('rutas.crearRutaAvion', ['espacios' => $espacios, 'flota' => $flota]);
+        $rutas = Ruta::where('user_id', auth()->id())->where('flota_id', $id)->get();
+        return view('rutas.crearRutaAvion', ['espacios' => $espacios, 'flota' => $flota, 'rutas' => $rutas]);
     }
 
     public function nuevaRuta(Request $request)

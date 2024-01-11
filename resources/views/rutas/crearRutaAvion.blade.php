@@ -84,6 +84,12 @@
       </script>
       </div>
 
+      <!-- Informacion aviones -->
+      @foreach ($rutas as $ruta)
+          <input type="hidden" class="dato-oculto" value="{{ $ruta->horaInicio }}">
+          <input type="hidden" class="dato-oculto" value="{{ $ruta->tiempoEstimado }}">
+      @endforeach
+
       <div class="informacion">
         <div class="info">
           <h4>Distancia: </h4>
@@ -105,38 +111,7 @@
 
       <div class="resumenAvion">
         <h4>Ruta actual del avion:</h4>
-        <div class="barraResumen">
-          <div class="rutaAvion" style="width: 15%; margin-left: 0%;">LEMD - LEBL</div>
-          <div class="rutaAvion" style="width: 15%; margin-left: 18%;">LEBL - LEMD</div>
-          <div class="rutaAvion" style="width: 20%; margin-left: 42%;">LEMD - EGSS</div>
-          <div class="rutaAvion" style="width: 20%; margin-left: 65%;">EGSS - LEMD</div>
-        </div>
-        <div class="barraHorarios">
-          <div class="horario">06:00z</div>
-          <div class="horario">07:00z</div>
-          <div class="horario">08:00z</div>
-          <div class="horario">09:00z</div>
-          <div class="horario">10:00z</div>
-          <div class="horario">11:00z</div>
-          <div class="horario">12:00z</div>
-          <div class="horario">13:00z</div>
-          <div class="horario">14:00z</div>
-          <div class="horario">15:00z</div>
-          <div class="horario">16:00z</div>
-          <div class="horario">17:00z</div>
-          <div class="horario">18:00z</div>
-          <div class="horario">19:00z</div>
-          <div class="horario">20:00z</div>
-          <div class="horario">21:00z</div>
-          <div class="horario">22:00z</div>
-          <div class="horario">23:00z</div>
-          <div class="horario">24:00z</div>
-          <div class="horario">00:00z</div>
-          <div class="horario">01:00z</div>
-          <div class="horario">02:00z</div>
-          <div class="horario">03:00z</div>
-          <div class="horario">04:00z</div>
-        </div>
+
         <div class="input">
           <input id="crearRuta" type="submit" value="Crear nueva ruta">
         </div>
