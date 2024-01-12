@@ -10,12 +10,17 @@ use Illuminate\Support\Carbon;
 use App\Models\Espacio;
 use App\Models\Flota;
 use App\Models\Ruta;
+use App\Models\User;
 
 class RutasController extends Controller
 {
     public function index()
     {
         $rutas = Ruta::where('user_id', auth()->id())->get();
+
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
+
         return view('rutas.index', ['rutas' => $rutas]);
     }
 

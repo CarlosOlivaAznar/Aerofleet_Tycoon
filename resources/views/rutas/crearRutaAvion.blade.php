@@ -64,7 +64,7 @@
           </div>
           <div class="input">
             <h3>Avion</h3>
-            <select name="avion" id="avion" disabled>
+            <select name="avion" id="avion">
               @foreach ($flota as $avion)
               <option value="{{ $avion->id }}">{{ $avion->avion->modelo }}, {{ $avion->matricula }}</option>
               @endforeach
@@ -111,6 +111,35 @@
 
       <div class="resumenAvion">
         <h4>Ruta actual del avion:</h4>
+
+        <div class="tablas">
+          <div class="cabecera">
+            <i class="bx bx-outline"></i>
+            <h3>Rutas del Avion</h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Hora de Salida</th>
+                <th>Hora de Llegada</th>
+                <th>Distancia</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($rutas as $ruta)
+              <tr>
+                <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
+                <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
+                <td>{{ $ruta->horaInicio }}</td>
+                <td>{{ $ruta->horaFin }}</td>
+                <td>{{ $ruta->distancia }}</td>
+              </tr>  
+              @endforeach
+            </tbody>
+          </table>
+        </div>
 
         <div class="input">
           <input id="crearRuta" type="submit" value="Crear nueva ruta">
