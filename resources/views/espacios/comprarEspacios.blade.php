@@ -70,6 +70,9 @@
 
           // Mostrar precio en el parrafo
           mostrarPrecio.innerHTML = costeOperacion;
+
+          // Reseteamos el precio total
+          mostrarPrecioTotal();
         }
 
         function mostrarPrecioTotal()
