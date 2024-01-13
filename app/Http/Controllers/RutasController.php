@@ -74,6 +74,7 @@ class RutasController extends Controller
                             'distancia' => number_format($distancia, 2),
                             'tiempoEstimado' => $horaRuta->format('H:i:s'),
                         ]);
+                        session()->flash('exito', 'Ruta creada correctamente');
                     } else {
                         session()->flash('error', 'La hora de llegada excede el limite maximo de llegada (04:00:00z)');
                     }
