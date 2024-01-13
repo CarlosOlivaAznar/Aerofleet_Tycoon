@@ -28,6 +28,7 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
+      @if (count($rutas) > 0)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
@@ -63,7 +64,13 @@
             @endforeach
           </tbody>
         </table>
-      </div>
+      </div>     
+      @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>No hay rutas creadas</h4>
+          </div>
+      @endif
     </main>
   </div>
 </body>
