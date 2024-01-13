@@ -28,6 +28,7 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
+      @if(count($espacios) > 0)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-space-bar"></i>
@@ -62,6 +63,12 @@
           </tbody>
         </table>
       </div>
+      @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>No tienes ningun espacio en tu propiedad</h4>
+          </div>
+      @endif
 
 
       

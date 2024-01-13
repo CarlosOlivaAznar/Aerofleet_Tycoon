@@ -30,6 +30,7 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
+      @if(count($flota) > 0)
       <div class="tablas">
         <div class="cabecera">
             <i class="bx bxs-plane-alt"></i>
@@ -67,6 +68,13 @@
             </tbody>
         </table>
       </div>
+      @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>No tienes ningun avion en tu propiedad</h4>
+          </div>
+      @endif
+
     </main>
   </div>
 </body>

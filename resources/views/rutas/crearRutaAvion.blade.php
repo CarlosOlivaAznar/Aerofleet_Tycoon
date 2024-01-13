@@ -112,6 +112,7 @@
       <div class="resumenAvion">
         <h4>Ruta actual del avion:</h4>
 
+        @if(count($rutas) > 0)
         <div class="tablas">
           <div class="cabecera">
             <i class="bx bx-outline"></i>
@@ -140,6 +141,12 @@
             </tbody>
           </table>
         </div>
+        @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>No hay rutas creadas para este avion</h4>
+          </div>
+        @endif
 
         <div class="input">
           <input id="crearRuta" type="submit" value="Crear nueva ruta">
