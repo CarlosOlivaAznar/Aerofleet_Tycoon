@@ -21,7 +21,7 @@
           <ul class="breadcrumb">
             <li><a href="{{ route('rutas.index') }}">Ruta</a></li>
             <li>/</li>
-            <li><span>Crear Ruta</span></li>
+            <li><span>Crear Ruta Avion</span></li>
           </ul>
         </div>
       </div>
