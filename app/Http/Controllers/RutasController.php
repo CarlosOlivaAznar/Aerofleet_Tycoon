@@ -65,7 +65,7 @@ class RutasController extends Controller
                     // Comprobamos que la hora de llegada es inferior al dia siguiente a las 4 de la mañana (hora limite para crear ruta)
                     if($horaLlegada->lt(Carbon::today()->addHours(4)->addDay())){
                         // Comprueba que el origen es el mismo que el destino anterior o no hay nin ruta creada aun
-                        if(count($rutas) === 0 || $this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao)){
+                        if(count($rutas) === 0 || ($this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao) && $this->horariosSuperpuestos($rutas, $horaInicial, $horaLlegada))){
                             Ruta::create([
                                 'flota_id' => $avion->id,
                                 'user_id' => auth()->id(),
@@ -158,6 +158,32 @@ class RutasController extends Controller
             }
         } else {
             session()->flash('error', 'La ruta se debe situar delante la ruta anterior');
+            return false;
+        }
+    }
+
+    public function horariosSuperpuestos($rutas, Carbon $horaInicial, Carbon $horaLlegada)
+    {
+        // Array que guarda las horas de llegada de todas las rutas del avion
+        $horarios = array();
+        foreach ($rutas as $ruta) {
+            array_push($horarios, Carbon::createFromFormat('H:i:s', $ruta->horaInicio));
+            array_push($horarios, Carbon::createFromFormat('H:i:s', $ruta->horaFin));
+        }
+
+        $comprobacionHorario = false;
+
+        // Comprobar cada horario
+        foreach ($horarios as $horario) {
+            if ($horario->between($horaInicial, $horaLlegada)) {
+                $comprobacionHorario = true;
+            }
+        }
+
+        if(!$comprobacionHorario){
+            return true;
+        } else {
+            session()->flash('error', 'El horario de la nueva ruta se superpone a otro ya creado');
             return false;
         }
     }
