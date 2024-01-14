@@ -16,7 +16,7 @@ class RutasController extends Controller
 {
     public function index()
     {
-        $rutas = Ruta::where('user_id', auth()->id())->get();
+        $rutas = Ruta::where('user_id', auth()->id())->orderBy('horaInicio')->get();
 
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
@@ -35,7 +35,7 @@ class RutasController extends Controller
     {
         $espacios = Espacio::where('user_id', auth()->id())->get();
         $flota = Flota::where('user_id', auth()->id())->where('id', $id)->get();
-        $rutas = Ruta::where('user_id', auth()->id())->where('flota_id', $id)->get();
+        $rutas = Ruta::where('user_id', auth()->id())->where('flota_id', $id)->orderBy('horaInicio')->get();
         return view('rutas.crearRutaAvion', ['espacios' => $espacios, 'flota' => $flota, 'rutas' => $rutas]);
     }
 
@@ -45,6 +45,7 @@ class RutasController extends Controller
             $espacioDep = Espacio::where('id', $request->destino1)->first();
             $espacioArr = Espacio::where('id', $request->destino2)->first();
             $avion = Flota::where('id', $request->avion)->first();
+            $rutas = Ruta::where('flota_id', $request->avion)->orderBy('horaInicio')->get();
 
             //Comprobamos que los espacios y el avion pertenecen al usario
             if($espacioDep->user->id === auth()->id() && $espacioArr->user->id === auth()->id() && $avion->user->id === auth()->id()){
@@ -63,18 +64,20 @@ class RutasController extends Controller
 
                     // Comprobamos que la hora de llegada es inferior al dia siguiente a las 4 de la mañana (hora limite para crear ruta)
                     if($horaLlegada->lt(Carbon::today()->addHours(4)->addDay())){
-                        
-                        Ruta::create([
-                            'flota_id' => $avion->id,
-                            'user_id' => auth()->id(),
-                            'espacio_departure_id' => $espacioDep->id,
-                            'espacio_arrival_id' => $espacioArr->id,
-                            'horaInicio' => $horaInicial->format('H:i:s'),
-                            'horaFin' => $horaLlegada->format('H:i:s'),
-                            'distancia' => number_format($distancia, 2),
-                            'tiempoEstimado' => $horaRuta->format('H:i:s'),
-                        ]);
-                        session()->flash('exito', 'Ruta creada correctamente');
+                        // Comprueba que el origen es el mismo que el destino anterior o no hay nin ruta creada aun
+                        if(count($rutas) === 0 || $this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao)){
+                            Ruta::create([
+                                'flota_id' => $avion->id,
+                                'user_id' => auth()->id(),
+                                'espacio_departure_id' => $espacioDep->id,
+                                'espacio_arrival_id' => $espacioArr->id,
+                                'horaInicio' => $horaInicial->format('H:i:s'),
+                                'horaFin' => $horaLlegada->format('H:i:s'),
+                                'distancia' => number_format($distancia, 2),
+                                'tiempoEstimado' => $horaRuta->format('H:i:s'),
+                            ]);
+                            session()->flash('exito', 'Ruta creada correctamente');
+                        }
                     } else {
                         session()->flash('error', 'La hora de llegada excede el limite maximo de llegada (04:00:00z)');
                     }
@@ -115,6 +118,48 @@ class RutasController extends Controller
         $distancia = $R * $c;
 
         return $distancia;
+    }
+
+    public function comprobarOrigen($rutas, Carbon $horaInicial, $origen)
+    {
+        // Array que guarda las horas de llegada de todas las rutas del avion
+        $horarios = array();
+        foreach ($rutas as $ruta) {
+            array_push($horarios, Carbon::createFromFormat('H:i:s', $ruta->horaFin));
+        }
+
+        // Ajustamos el formato del la hora que creara la ruta
+        $horaInicial->format('H:i:s');
+
+        // Filtramos las horas que estan detras de la hora de creacion de la ruta; Esto filtra para que seleccionemos solo el aeropuerto donde estara el avion segun el horario de la nueva ruta
+        $horariosFiltrados = array_filter($horarios, function ($hora) use ($horaInicial) {
+            return $hora < $horaInicial;
+        });
+
+        // Selecciona la hora maxima de todas; Para que seleccionemos el horario que este justo antes de la hora de salida de la nueva ruta
+        $horaLlegada = count($horariosFiltrados) > 0 ? max($horariosFiltrados) : null;
+        $icaoArrival = "";
+
+        // Si $horaLlegada es nulo significa que no hay ninguna ruta antes de la nueva ruta, si el avion no tiene ninguna ruta no llega a esta funcion lo que tiene que siempre existir una ruta por detras de la nueva
+        if($horaLlegada != null){
+            foreach ($rutas as $ruta) {
+                $comparacion = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
+                if($horaLlegada->eq($comparacion)){
+                    $icaoArrival = $ruta->espacio_arrival->aeropuerto->icao;
+                }
+            }
+            
+            // Comprueba que el origen de la nueva ruta es el mismo que el destino de la ruta anterior
+            if($icaoArrival === $origen){
+                return true;
+            } else {
+                session()->flash('error', 'El origen tiene que ser el mismo que el destino de la ruta anterior');
+                return false;
+            }
+        } else {
+            session()->flash('error', 'La ruta se debe situar delante la ruta anterior');
+            return false;
+        }
     }
 
     public function borrarRuta($id)
