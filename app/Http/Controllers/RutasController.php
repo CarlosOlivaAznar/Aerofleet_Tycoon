@@ -49,40 +49,44 @@ class RutasController extends Controller
 
             //Comprobamos que los espacios y el avion pertenecen al usario
             if($espacioDep->user->id === auth()->id() && $espacioArr->user->id === auth()->id() && $avion->user->id === auth()->id()){
+                if($espacioDep->espaciosDisponibles() > 0 && $espacioArr->espaciosDisponibles() > 0){
 
-                $distancia = $this->calcularDistancia($espacioDep->aeropuerto->latitud, $espacioDep->aeropuerto->longitud, $espacioArr->aeropuerto->latitud, $espacioArr->aeropuerto->longitud);
+                    $distancia = $this->calcularDistancia($espacioDep->aeropuerto->latitud, $espacioDep->aeropuerto->longitud, $espacioArr->aeropuerto->latitud, $espacioArr->aeropuerto->longitud);
 
-                if($avion->avion->rango >= $distancia){
+                    if($avion->avion->rango >= $distancia){
 
-                    $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
+                        $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
 
-                    $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
-                    $horaLlegada = Carbon::createFromFormat('H:i:s', $request->horaDep);
-                    $horaLlegada->addMinutes($tiempoRuta);
-                    $horaRuta = Carbon::createFromFormat('H:i:s', '00:00:00');
-                    $horaRuta->addMinutes($tiempoRuta);
+                        $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
+                        $horaLlegada = Carbon::createFromFormat('H:i:s', $request->horaDep);
+                        $horaLlegada->addMinutes($tiempoRuta);
+                        $horaRuta = Carbon::createFromFormat('H:i:s', '00:00:00');
+                        $horaRuta->addMinutes($tiempoRuta);
 
-                    // Comprobamos que la hora de llegada es inferior al dia siguiente a las 4 de la mañana (hora limite para crear ruta)
-                    if($horaLlegada->lt(Carbon::today()->addHours(4)->addDay())){
-                        // Comprueba que el origen es el mismo que el destino anterior o no hay nin ruta creada aun
-                        if(count($rutas) === 0 || ($this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao) && $this->horariosSuperpuestos($rutas, $horaInicial, $horaLlegada))){
-                            Ruta::create([
-                                'flota_id' => $avion->id,
-                                'user_id' => auth()->id(),
-                                'espacio_departure_id' => $espacioDep->id,
-                                'espacio_arrival_id' => $espacioArr->id,
-                                'horaInicio' => $horaInicial->format('H:i:s'),
-                                'horaFin' => $horaLlegada->format('H:i:s'),
-                                'distancia' => number_format($distancia, 2),
-                                'tiempoEstimado' => $horaRuta->format('H:i:s'),
-                            ]);
-                            session()->flash('exito', 'Ruta creada correctamente');
+                        // Comprobamos que la hora de llegada es inferior al dia siguiente a las 4 de la mañana (hora limite para crear ruta)
+                        if($horaLlegada->lt(Carbon::today()->addHours(4)->addDay())){
+                            // Comprueba que el origen es el mismo que el destino anterior o no hay nin ruta creada aun
+                            if(count($rutas) === 0 || ($this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao) && $this->horariosSuperpuestos($rutas, $horaInicial, $horaLlegada))){
+                                Ruta::create([
+                                    'flota_id' => $avion->id,
+                                    'user_id' => auth()->id(),
+                                    'espacio_departure_id' => $espacioDep->id,
+                                    'espacio_arrival_id' => $espacioArr->id,
+                                    'horaInicio' => $horaInicial->format('H:i:s'),
+                                    'horaFin' => $horaLlegada->format('H:i:s'),
+                                    'distancia' => number_format($distancia, 2),
+                                    'tiempoEstimado' => $horaRuta->format('H:i:s'),
+                                ]);
+                                session()->flash('exito', 'Ruta creada correctamente');
+                            }
+                        } else {
+                            session()->flash('error', 'La hora de llegada excede el limite maximo de llegada (04:00:00z)');
                         }
                     } else {
-                        session()->flash('error', 'La hora de llegada excede el limite maximo de llegada (04:00:00z)');
+                        session()->flash('error', 'El avion tiene un rango inferior al de la ruta');
                     }
                 } else {
-                    session()->flash('error', 'El avion tiene un rango inferior al de la ruta');
+                    session()->flash('error', 'No hay espacios disponibles');
                 }
             } else {
                 session()->flash('error', 'error al validar los datos del usuario');
