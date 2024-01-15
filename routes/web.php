@@ -7,7 +7,7 @@ use App\Http\Controllers\MapaController;
 use App\Http\Controllers\EspaciosController;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
-use App\Http\Controllers\AvionController;
+use App\Events\UserLoggedIn;
 
 /*
 |--------------------------------------------------------------------------
