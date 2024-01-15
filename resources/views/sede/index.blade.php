@@ -74,7 +74,7 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
-      
+      @if(count($sede->hangar) > 0)
       <?php $contador = 0 ?>
       @foreach ($sede->hangar as $hangar)
       <?php $contador++ ?>
@@ -105,6 +105,12 @@
         </table>
       </div>
       @endforeach
+      @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>No tienes ningun hangar en tu propiedad</h4>
+          </div>
+      @endif
       
 
     </main>
