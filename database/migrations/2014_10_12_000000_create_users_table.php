@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('saldo')->default(200000000);
-            $table->string('ultimaConexion')->default('');
+            $table->string('ultimaConexion')->default('2024-01-01 13:00:00');
             $table->rememberToken();
             $table->timestamps();
         });

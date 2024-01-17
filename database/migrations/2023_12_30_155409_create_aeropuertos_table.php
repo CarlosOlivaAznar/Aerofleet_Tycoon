@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('costeOperacional');
             $table->double('latitud', 10, 6);
             $table->double('longitud', 10, 6);
+            $table->float('demanda');
+            $table->unsignedInteger('pasajerosEstimados');
             $table->timestamps();
         });
     }

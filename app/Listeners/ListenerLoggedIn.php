@@ -47,8 +47,6 @@ class ListenerLoggedIn
         // Se calcula los dias de ultima conexion y ahora segun sus horas para ver que rutas son afectadas
         // Si es 0 o superior significa que por lo menos hay 2 dias diferentes en el calculo
         // Pero si es -1 significa que la desconexion y conexion ha ocurrido el mismo dia
-        $arrayPrueba1 = array();
-        $arrayPrueba2 = array();
         $arrayPrueba3 = array();
         if($diferencia >= 0){
             foreach($rutas as $ruta){
@@ -56,12 +54,12 @@ class ListenerLoggedIn
                 // Rutas del dia de desconexion
                 if($hora->gt($horaDesconexion)){
                     // Rutas que su hora esta por delante de la hora de desconexion
-                    array_push($arrayPrueba1, $ruta->id);
+                    $this->calcularBeneficio($ruta);
                 }
 
                 // Rutas del calculo de hoy
                 if($hora->lt(now())){
-                    array_push($arrayPrueba2, $ruta->id);
+                    $this->calcularBeneficio($ruta);
                 }
             }
         } elseif($diferencia == -1){
@@ -74,10 +72,27 @@ class ListenerLoggedIn
             }
         }
 
-        dd($arrayPrueba1, $arrayPrueba2, $arrayPrueba3);
+        dd($arrayPrueba3);
         dd($diferencia, $rutas);
 
         $event->user->ultimaConexion = now();
         $event->user->update();
+    }
+
+    public function calcularBeneficio($ruta)
+    {
+        // Calcula el beneficio de una ruta segun la demanda, los pasajeros estimados de la ruta y la demanda de la ruta
+        $mediaDemanda = ($ruta->espacio_arrival->aeropuerto->demanda + $ruta->espacio_departure->aeropuerto->demanda) / 2;
+        $pasajerosEstimados = $ruta->espacio_arrival->aeropuerto->pasajerosEstimados + $ruta->espacio_departure->aeropuerto->pasajerosEstimados;
+
+        // Se calcula los pasajeros que van en el avion en una ruta concreta
+        $pasajeros = $mediaDemanda * $pasajerosEstimados;
+        if($pasajeros > $ruta->flota->avion->capacidad){
+            $pasajeros = $ruta->flota->avion->capacidad;
+        }
+
+        $beneficio = $pasajeros * 50;
+
+        dd($beneficio);
     }
 }
