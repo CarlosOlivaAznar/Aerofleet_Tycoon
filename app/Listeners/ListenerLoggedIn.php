@@ -102,7 +102,8 @@ class ListenerLoggedIn
 
         $beneficio = $pasajeros * 50; // (50 precio del billete)
 
-
+        // Pruebas para comprobar que todo funciona bien
+        error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio");
 
         $user = User::where('id', auth()->id())->first();
         $user->saldo += $beneficio;
