@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('beneficiosHistoricos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->bigInteger('beneficios');
             $table->bigInteger('saldo');
             $table->string('fecha');
             $table->timestamps();

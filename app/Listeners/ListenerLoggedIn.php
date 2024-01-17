@@ -74,6 +74,13 @@ class ListenerLoggedIn
             }
         }
 
+        // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas
+        BeneficiosHistorico::create([
+            'user_id' => auth()->id(),
+            'saldo' => $event->user->saldo,
+            'fecha' => now(),
+        ]);
+
         dd($arrayPrueba3);
         dd($diferencia, $rutas);
 
@@ -95,7 +102,7 @@ class ListenerLoggedIn
 
         $beneficio = $pasajeros * 50; // (50 precio del billete)
 
-        // Sumamos al saldo del usuario los beneficios o perdidas y guardamos el registro en una tabla de historicos
+
 
         $user = User::where('id', auth()->id())->first();
         $user->saldo += $beneficio;
