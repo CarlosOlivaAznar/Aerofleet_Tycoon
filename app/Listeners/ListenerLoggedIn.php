@@ -6,6 +6,8 @@ use App\Events\UserLoggedIn;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Models\Ruta;
+use App\Models\User;
+use App\Models\BeneficiosHistorico;
 use Carbon\Carbon;
 
 class ListenerLoggedIn
@@ -91,8 +93,12 @@ class ListenerLoggedIn
             $pasajeros = $ruta->flota->avion->capacidad;
         }
 
-        $beneficio = $pasajeros * 50;
+        $beneficio = $pasajeros * 50; // (50 precio del billete)
 
-        dd($beneficio);
+        // Sumamos al saldo del usuario los beneficios o perdidas y guardamos el registro en una tabla de historicos
+
+        $user = User::where('id', auth()->id())->first();
+        $user->saldo += $beneficio;
+        $user->update();
     }
 }

@@ -64,9 +64,9 @@ class User extends Authenticatable
         return $this->hasMany(Ruta::class);
     }
 
-    public function rutasHitorico()
+    public function beneficiosHistorico()
     {
-        return $this->hasMany(RutasHistorico::class);
+        return $this->hasMany(BeneficiosHistorico::class);
     }
 
 

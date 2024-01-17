@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rutasHistoricos', function (Blueprint $table) {
+        Schema::create('beneficiosHistoricos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('ruta_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('beneficios');
+            $table->bigInteger('beneficios');
+            $table->bigInteger('saldo');
             $table->string('fecha');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rutasHistoricos');
+        Schema::dropIfExists('beneficiosHistoricos');
     }
 };

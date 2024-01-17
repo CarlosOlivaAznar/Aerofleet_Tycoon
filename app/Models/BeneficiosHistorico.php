@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RutasHistorico extends Model
+class BeneficiosHistorico extends Model
 {
-    protected $table = 'rutasHistoricos';
+    use HasFactory;
+
+    protected $table = 'beneficiosHistoricos';
     protected $fillable = [
-        'ruta_id',
         'user_id',
         'beneficios',
+        'saldo',
         'fecha',
     ];
-
-    public function ruta()
-    {
-        return $this->belongsTo(Ruta::class);
-    }
 
     public function user()
     {
