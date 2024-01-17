@@ -64,6 +64,11 @@ class User extends Authenticatable
         return $this->hasMany(Ruta::class);
     }
 
+    public function rutasHitorico()
+    {
+        return $this->hasMany(RutasHistorico::class);
+    }
+
 
     // Funcion estatica que hace una llamada a la base de datos para retornar el saldo en formato string del usuario que esta logeado
     // Se utiliza para mostrar en la parte superior derecha el saldo del usuario

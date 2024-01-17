@@ -40,4 +40,9 @@ class Ruta extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function rutasHistorico()
+    {
+        return $this->hasMany(RutasHistorico::class);
+    }
 }
