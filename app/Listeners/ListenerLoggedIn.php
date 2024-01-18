@@ -100,10 +100,20 @@ class ListenerLoggedIn
             $pasajeros = $ruta->flota->avion->capacidad;
         }
 
-        $beneficio = $pasajeros * 50; // (50 precio del billete)
+        // Ingresos de la ruta
+        $ingresos = $pasajeros * 50; // (50 precio del billete)
 
+        // Calculamos los gastos
+        // Gastos por costes operacionales de los aeropuertos de destino y llegada
+        $gastos = $ruta->espacio_departure->aeropuerto->costeOperacional + $ruta->espacio_arrival->aeropuerto->costeOperacional;
+
+        // Gastos por el uso del avion
+        $gastos += $ruta->flota->avion->costePorKm * $ruta->distancia;
+
+        // Calculamos el beneficio de la ruta
+        $beneficio = $ingresos - $gastos;
         // Pruebas para comprobar que todo funciona bien
-        error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio");
+        error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio, ($ingresos ingresos, $gastos gastos)");
 
         $user = User::where('id', auth()->id())->first();
         $user->saldo += $beneficio;
