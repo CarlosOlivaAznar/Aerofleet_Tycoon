@@ -111,7 +111,7 @@ class ListenerLoggedIn
         $gastos += $ruta->flota->avion->costePorKm * $ruta->distancia;
 
         // Calculamos el beneficio de la ruta
-        $beneficio = $ingresos - $gastos;
+        $beneficio = intval($ingresos - $gastos);
         // Pruebas para comprobar que todo funciona bien
         error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio, ($ingresos ingresos, $gastos gastos)");
 

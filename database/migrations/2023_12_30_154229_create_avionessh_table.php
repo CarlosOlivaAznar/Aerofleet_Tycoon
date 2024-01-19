@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('avion_id');
             $table->date('fechaDeFabricacion');
             $table->string('img');
-            $table->string('compañia');
+            $table->string('companyia');
             $table->unsignedinteger('condicion');
             $table->timestamps();
         });

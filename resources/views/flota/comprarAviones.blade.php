@@ -72,7 +72,7 @@
                 <img class="img-avion" src="{{ asset($avionsh->img) }}">
               </td>
               <td>{{ $avionsh->avion->modelo }}</td>
-              <td>{{ $avionsh->compañia }}</td>
+              <td>{{ $avionsh->companyia }}</td>
               <td>{{ $avionsh->fechaDeFabricacion }}</td>
               <td>{{ $avionsh->condicion }}%</td>
               <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
