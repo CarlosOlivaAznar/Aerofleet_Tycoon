@@ -667,6 +667,46 @@ a{
 }
 
 
+/* Billetes avion y range */
+.contenido main .resumenAvion input[type=range]{
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 20px 0;
+    opacity: 0.8;
+    -webkit-transition: 0.3s;
+    transition: opacity 0.3s;
+}
+
+.contenido main .resumenAvion input[type=range]:hover{
+    opacity: 1;
+}
+
+.contenido main .resumenAvion input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: var(--grey);
+    border: none;
+    border-radius: 5px;
+}
+
+.contenido main .resumenAvion input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    margin-top: -11px;
+}
+
+.contenido main .resumenAvion input[type=range]:focus {
+    outline: none;
+}
+
+.contenido main .resumenAvion input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--grey);
+}
+
+
 
 
 

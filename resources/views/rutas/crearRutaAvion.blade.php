@@ -120,6 +120,12 @@
       </div>   
 
       <div class="resumenAvion">
+        <h4>Precio billete:</h4>
+        <input type="range" name="precioBillete" id="precioBillete" value="50" min="5" max="600" oninput="slide(this)">
+        <p>Precio: <span id="precio"></span></p>
+      </div>
+
+      <div class="resumenAvion">
         <h4>Ruta actual del avion:</h4>
 
         @if(count($rutas) > 0)
@@ -163,6 +169,17 @@
         </div>
       </div>
     </form>
+    <script>
+      var slider = document.getElementById('precioBillete');
+      var precio = document.getElementById('precio');
+      // Precio por defecto al llegar a la vista
+      precio.innerHTML = slider.value;
+
+      function slide(event){
+        precio.innerHTML = event.value;
+      }
+
+    </script>
     </main>
   </div>
 </body>
