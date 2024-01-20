@@ -93,7 +93,7 @@ class FlotaController extends Controller
                 'avion_id' => $avionNuevo[0],
                 'fechaDeFabricacion' => date("Y-m-d", mt_rand(strtotime("2000-01-01"), strtotime("2015-12-31"))),
                 'img' => $avionNuevo[1],
-                'compañia' => $avionNuevo[2],
+                'companyia' => $avionNuevo[2],
                 'condicion' => rand(30, 80),
             ]);
 

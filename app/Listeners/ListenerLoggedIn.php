@@ -36,12 +36,18 @@ class ListenerLoggedIn
 
         // calculamos los dias que hay entre medio de las 2 fechas
         $diferencia = $ultimaConexion->diffInDays($fechaActual) - 1;
+        // Pruebas
+        error_log("Dias que ha estado el usuario sin conectarse: $diferencia");
 
         $rutas = Ruta::where('user_id', auth()->id())->get();
         // Si la diferencia es mayor que 0 hay mas de 2 dias de diferencia entre la ultima conexion y ahora
         // Calculamos todas las rutas de ese dia completo
         if($diferencia > 0){
-            
+            for ($i=0; $i < $diferencia; $i++) { 
+                foreach ($rutas as $ruta) {
+                    $this->calcularBeneficio($ruta);
+                }
+            }
         }
 
         // Queremos calcular la diferencia de horas por lo que el dia se pone hoy para hacer la comparacion de horas correctamente
@@ -80,9 +86,6 @@ class ListenerLoggedIn
             'saldo' => $event->user->saldo,
             'fecha' => now(),
         ]);
-
-        dd($arrayPrueba3);
-        dd($diferencia, $rutas);
 
         $event->user->ultimaConexion = now();
         $event->user->update();
