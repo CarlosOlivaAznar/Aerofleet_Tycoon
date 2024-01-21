@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('horaFin');
             $table->unsignedFloat('distancia');
             $table->string('tiempoEstimado');
+            $table->unsignedInteger('precioBillete');
             $table->timestamps();
         });
     }

@@ -56,7 +56,7 @@ class RutasController extends Controller
                     if($avion->avion->rango >= $distancia){
 
                         $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
-
+                        
                         $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
                         $horaLlegada = Carbon::createFromFormat('H:i:s', $request->horaDep);
                         $horaLlegada->addMinutes($tiempoRuta);
@@ -74,8 +74,9 @@ class RutasController extends Controller
                                     'espacio_arrival_id' => $espacioArr->id,
                                     'horaInicio' => $horaInicial->format('H:i:s'),
                                     'horaFin' => $horaLlegada->format('H:i:s'),
-                                    'distancia' => number_format($distancia, 2),
+                                    'distancia' => round($distancia, 2),
                                     'tiempoEstimado' => $horaRuta->format('H:i:s'),
+                                    'precioBillete' => $request->precioBillete,
                                 ]);
                                 session()->flash('exito', 'Ruta creada correctamente');
                             }

@@ -94,17 +94,30 @@ class ListenerLoggedIn
     public function calcularBeneficio($ruta)
     {
         // Calcula el beneficio de una ruta segun la demanda, los pasajeros estimados de la ruta y la demanda de la ruta
+        // Primero calculamos la demanda de los dos aeropuertos destino y llegada
         $mediaDemanda = ($ruta->espacio_arrival->aeropuerto->demanda + $ruta->espacio_departure->aeropuerto->demanda) / 2;
         $pasajerosEstimados = $ruta->espacio_arrival->aeropuerto->pasajerosEstimados + $ruta->espacio_departure->aeropuerto->pasajerosEstimados;
 
+        // Se genera un plus de demanda segun la distancia
+        // Cada 500 km recorridos en la ruta se añade un 0.1 de demanda
+        $mediaDemanda += floor(($ruta->distancia / 500)) * 0.1;
+
+        // Se calcula la demanda segun el precio del billete
+        // Se calcula como precio base 50 que ni aumenta ni disminuye la demanda
+        // cada 4 euros de subida en el precio del billete se reducira 0.01 la demanda 
+        // y cada 4 euros de bajada la demanda aumenta 0.01
+        $mediaDemanda += ((50 - $ruta->precioBillete) / 4) * 0.01;
+
+
         // Se calcula los pasajeros que van en el avion en una ruta concreta
         $pasajeros = $mediaDemanda * $pasajerosEstimados;
+        // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
             $pasajeros = $ruta->flota->avion->capacidad;
         }
 
         // Ingresos de la ruta
-        $ingresos = $pasajeros * 50; // (50 precio del billete)
+        $ingresos = $pasajeros * $ruta->precioBillete;
 
         // Calculamos los gastos
         // Gastos por costes operacionales de los aeropuertos de destino y llegada

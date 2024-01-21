@@ -72,8 +72,8 @@ class FlotaController extends Controller
         $avionsh = Avionsh::where('id', $id)->first();
         $user = User::find(auth()->id());;
         $avionNuevo = Avionsh::avionAleatiorio();
-
-        if ($user->saldo - $avionsh->avion->precio >= 0) {
+        
+        if ($user->saldo - ($avionsh->avion->precio * ($avionsh->condicion / 100)) >= 0) {
             Flota::create([
                 'user_id' => auth()->id(),
                 'avion_id' => $avionsh->avion_id,

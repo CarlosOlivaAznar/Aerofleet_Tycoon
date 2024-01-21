@@ -14,7 +14,7 @@ class Avionsh extends Model
         'avion_id',
         'fechaDeFabricacion',
         'img',
-        'compañia',
+        'companyia',
         'condicion',
     ];
 

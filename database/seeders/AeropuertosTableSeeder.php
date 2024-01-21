@@ -71,5 +71,19 @@ class AeropuertosTableSeeder extends Seeder
             'pasajerosEstimados' => 100,
         ]);
 
+        /* -------------- */
+        /* Aeropuertos UK */
+        /* -------------- */
+        Aeropuerto::create([
+            'icao' => 'EGPH',
+            'nombre' => 'Edinburgh Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1350,
+            'latitud' => 55.949532,
+            'longitud' => -3.361085,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 150,
+        ]);
+
     }
 }
