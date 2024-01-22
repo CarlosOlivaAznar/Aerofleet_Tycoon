@@ -45,6 +45,7 @@
               <th>Tiempo</th>
               <th>Hora de salida</th>
               <th>Hora de llegada</th>
+              <th>Precio Billete</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -59,7 +60,11 @@
               <td>{{ $ruta->tiempoEstimado }}</td>
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
-              <td><a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a></td>
+              <td>{{ $ruta->precioBillete }}€</td>
+              <td>
+                <a class="modificar" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-wrench"></i></a>
+                <a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a>
+              </td>
             </tr>
             @endforeach
           </tbody>

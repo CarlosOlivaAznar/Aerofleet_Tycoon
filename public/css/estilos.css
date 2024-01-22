@@ -546,6 +546,16 @@ a{
     border-radius: 10px;
 }
 
+.contenido main .tablas table td a.modificar{
+    color: var(--light-warning);
+}
+
+.contenido main .tablas table td a.modificar .bx{
+    background-color: var(--warning);
+    padding: 5px;
+    border-radius: 10px;
+}
+
 
 /* ----------- */
 /* Pagina Ruta */

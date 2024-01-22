@@ -44,7 +44,7 @@
             </div>
             <div class="input">
               <h3>Espacios a comprar</h3>
-              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()">
+              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()">
             </div>
             <div class="input">
               <h3>Precio Total:</h3>
@@ -62,6 +62,9 @@
         </form>
       </div>
       <script>
+        // Al iniciar la pagina muestra el precio ya
+        mostrarPrecio();
+
         function mostrarPrecio()
         {
           var icao = document.getElementById("aeropuerto").value;
@@ -79,15 +82,16 @@
         {
           // Mostrar precio segun los espacios
           var numEspacios = parseInt(document.getElementById("espacios").value);
-          
+          var precioTotal = document.getElementById("precioTotal");
+          console.log(numEspacios);
           if(!isNaN(numEspacios)){
           // CosteOperacion para hacer el calculo
           var icao = document.getElementById("aeropuerto").value;
           var costeOperacion = parseInt(document.getElementById(icao).value);
 
-          var precioTotal = document.getElementById("precioTotal");
-
           precioTotal.innerHTML = costeOperacion * numEspacios
+          } else {
+            precioTotal.innerHTML = 0;
           }
         }
       </script>
