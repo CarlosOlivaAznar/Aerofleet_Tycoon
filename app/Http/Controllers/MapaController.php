@@ -18,10 +18,15 @@ class MapaController extends Controller
             $horaInicio = Carbon::createFromFormat('H:i:s', $rutaUser->horaInicio);
             $horaFin = Carbon::createFromFormat("H:i:s", $rutaUser->horaFin);
             if(now()->between($horaInicio, $horaFin)){
-                array_push($avionesVolando, $this->calcularPosicion($rutaUser, $horaInicio));
+                // Guardamos las posiciones y angulos en un array para luego poder iterarlo mejor
+                $arrayPos = $this->calcularPosicion($rutaUser, $horaInicio);
+                array_push($arrayPos, $this->calcularAngulo($rutaUser));
+
+                // Guardamos el array final que se utilizara en el mapa
+                array_push($avionesVolando, $arrayPos);
             }
         }
-        
+
         return view('mapa.index', ['avionesVolando' => $avionesVolando]);
     }
 
@@ -51,6 +56,31 @@ class MapaController extends Controller
         $posLong = $longSalida - $difLong;
         $maticula = $ruta->flota->matricula;
         
-        return [$posLat, $posLong, "$maticula"];
+        return [$posLat, $posLong, $ruta->espacio_arrival->aeropuerto->nombre];
+    }
+
+    public function calcularAngulo($ruta)
+    {
+        $latSalida = $ruta->espacio_departure->aeropuerto->latitud;
+        $longSalida = $ruta->espacio_departure->aeropuerto->longitud;
+
+        $latLlegada = $ruta->espacio_arrival->aeropuerto->latitud;
+        $longLlegada = $ruta->espacio_arrival->aeropuerto->longitud;
+
+        // Diferencia entre las longitudes y latitudes
+        $deltaLat = $latLlegada - $latSalida;
+        $deltaLon = $longLlegada - $longSalida;
+
+        // Calcular el angulo en radianes
+        $anguloRad = atan2($deltaLon, $deltaLat);
+
+        // Transformar el angulo de radianes a grados
+        $anguloGrad = rad2deg($anguloRad);
+
+        if($anguloGrad < 0){
+            $anguloGrad += 360;
+        }
+
+        return $anguloGrad;
     }
 }

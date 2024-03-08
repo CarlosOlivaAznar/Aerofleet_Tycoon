@@ -25,6 +25,7 @@
       <input type="hidden" class="avionesUsuario" value="{{ $avion[0] }}">
       <input type="hidden" class="avionesUsuario" value="{{ $avion[1] }}">
       <input type="hidden" class="avionesUsuario" value="{{ $avion[2] }}">
+      <input type="hidden" class="avionesUsuario" value="{{ $avion[3] }}">
       @endforeach
 
       <div class="mapa">
@@ -45,26 +46,30 @@
           // Icono personalizado
           var planeIcon = L.icon({
               iconUrl: 'icons/plane-solid-24.png',
+              shadowUrl: 'icons/plane-shadow.png',
 
-              iconSize:     [25, 25], // size of the icon
-              shadowSize:   [0, 0], // size of the shadow
-              iconAnchor:   [12.5, 12.5], // point of the icon which will correspond to marker's location
-              shadowAnchor: [0, 0],  // the same for the shadow
-              popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+              iconSize:     [25, 25],
+              shadowSize:   [15, 15],
+              iconAnchor:   [12.5, 12.5],
+              shadowAnchor: [5, 2],
+              popupAnchor:  [0, -10],
           });
 
           var map = L.map('map').setView([41.6647603, -1.0506562], 4);
 
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          attribution: 'Aerofleet Tycoon'
           }).addTo(map);
 
           for(var i = 0; i < avionesUsuario.length; i++){
-            L.marker([avionesUsuario[(i*3)], avionesUsuario[(i*3)+1]], {icon: planeIcon}).addTo(map).bindPopup(avionesUsuario[(i*3)+2]);
+            L.marker([avionesUsuario[(i*4)], avionesUsuario[(i*4)+1]], {
+              rotationAngle: avionesUsuario[(i*4)+3],
+              rotationOrigin: 'center',
+              icon: planeIcon
+            }).addTo(map).bindPopup(avionesUsuario[(i*4)+2]);
           }
 
-          //L.marker([51.5, -0.09], {icon: planeIcon}).addTo(map).bindPopup("prueba");
 
             
         </script>
