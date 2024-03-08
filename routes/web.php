@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlotaController;
 use App\Http\Controllers\MapaController;
 use App\Http\Controllers\EspaciosController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
 
@@ -26,6 +27,9 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('home.index');
 })->name('home.index');
+
+// Primer login usuario
+Route::get('home/company', [HomeController::class, 'company'])->name('home.company');
 
 Route::get('flota', [FlotaController::class, 'index'])->name('flota.index');
 Route::get('flota/comprarAviones', [FlotaController::class, 'comprarAviones'])->name('flota.comprarAviones');

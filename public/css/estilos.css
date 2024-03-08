@@ -385,10 +385,74 @@ a{
     color: var(--dark);
 }
 
+.mainContent{
+    padding: 50px 50px 33px 25px;
+}
+
+.mainContent form .formulario{
+    margin: 15px auto;
+    width: 65%;
+    padding: 30px 20px;
+    border-radius: 25px;
+    background-color: var(--light);
+}
+
+.mainContent form .formulario h1{
+    text-align: center;
+    color: var(--dark);
+}
+
+.mainContent form .formulario .campos{
+    width: 100%;
+    margin-top: 25px;
+    padding: 10px 20px;
+}
+
+.mainContent form .formulario .campos label{
+    display: block;
+    font-size: 19px;
+    color: var(--dark);
+}
+
+.mainContent form .formulario .campos input{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.mainContent form .formulario .campos input:focus{
+    border: 3px solid var(--dark);
+}
+
+.mainContent form .formulario .campos select{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.mainContent form .formulario .campos select:focus{
+    border: 3px solid var(--dark);
+    border-radius: 10px 10px 0 0;
+}
+
 /* Mensajes de alerta */
 .alerta {
     padding: 20px;
-    background-color: #f44336;
+    background-color: var(--danger);
     color: var(--light);
     opacity: 1;
     transition: opacity 0.6s;

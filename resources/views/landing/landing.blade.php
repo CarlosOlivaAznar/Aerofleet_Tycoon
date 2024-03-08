@@ -19,7 +19,7 @@
             <div><a href="{{ route('register') }}">Resgistrarse</a></div>
         </div>
     </nav>
-    <main>
+    <main class="mainContent">
         
     </main>
 </body>
