@@ -54,9 +54,9 @@ class MapaController extends Controller
         // Calculamos la posicion final del avion
         $posLat = $latSalida - $difLat;
         $posLong = $longSalida - $difLong;
-        $maticula = $ruta->flota->matricula;
+        $matricula = $ruta->flota->matricula;
         
-        return [$posLat, $posLong, $ruta->espacio_arrival->aeropuerto->nombre];
+        return [$posLat, $posLong, $matricula];
     }
 
     public function calcularAngulo($ruta)
