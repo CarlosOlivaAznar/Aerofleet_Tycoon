@@ -319,8 +319,7 @@ a{
 }
 
 .contenido main .infodatos{
-    flex-grow: 1;
-    flex-basis: 500px;
+    width: 50%;
     background-color: var(--light);
     border-radius: 25px;
     padding: 25px;
@@ -557,8 +556,7 @@ a{
 }
 
 .contenido main .mapaizq{
-    flex-grow: 1;
-    flex-basis: 300px;
+    width: 50%;
     height: 300px;
     border-radius: 25px;
 }
@@ -851,6 +849,15 @@ a{
 
 .contenido main .infodividido p:last-child{
     margin-top: 30px;
+}
+
+.contenido main .infodatos .sinBordes{
+    border: none;
+    margin: 0 auto;
+}
+
+.contenido main .infodatos .sinBordes tr td{
+    padding: 5px 10px;
 }
 
 .contenido main .resumen.sede ul a:nth-child(1) li .bx{
