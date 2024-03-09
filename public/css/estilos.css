@@ -166,13 +166,13 @@ a{
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 200;
 }
 
 .contenido nav .bx.bx-menu{
     cursor: pointer;
     color: var(--dark);
-    z-index: 101;
+    z-index: 201;
 }
 
 .contenido nav::before{
@@ -325,6 +325,106 @@ a{
     padding: 25px;
 }
 
+/* Modales */
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    z-index: 300;
+}
+
+.modal .contenido-modal{
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    background-color: var(--light);
+    border-radius: 25px;
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 200;
+    -webkit-animation-name: animacionCaer;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animacionCaer;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animacionCaer {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animacionCaer {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal .contenido-modal .cerrar-modal{
+    color: var(--dark-grey);
+    font-size: 25px;
+    float: right;
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+.modal .contenido-modal .cerrar-modal:hover, .cerrar-modal:focus{
+    color: var(--dark);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.modal .contenido-modal .cabecera-modal{
+    padding: 20px 25px;
+    color: var(--dark);
+    font-size: 20px;
+}
+
+.modal .contenido-modal .cuerpo-modal{
+    padding: 5px 25px;
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal{
+    padding: 10px 25px;
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal .botones{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-align: center;
+}
+
+.modal .contenido-modal .footer-modal .botones a{
+    width: 100%;
+    border: 3px solid var(--grey);
+    transition: 0.4s;
+    border-radius: 25px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.modal .contenido-modal .footer-modal .botones a:hover{
+    border: 3px solid var(--dark);
+    transition: 0.4s;
+}
+
+.modal .contenido-modal .footer-modal .botones a.cancelar{
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal .botones a.aceptar{
+    color: var(--light);
+    background-color: var(--dark);
+}
+
 
 /* ------------ */
 /* Pagina Login */
@@ -455,7 +555,7 @@ a{
     background-color: var(--light);
     overflow: auto;
     max-height: 200px;
-    z-index: 1;
+    z-index: 50;
     border-radius: 0 0 10px 10px;
     border: 3px solid var(--dark);
     border-top: 0;
@@ -546,6 +646,7 @@ a{
     width: 100%;
     height: 70vh;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapa #map{
@@ -553,12 +654,14 @@ a{
     height: 100%;
     overflow: hidden;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapaizq{
     width: 50%;
     height: 300px;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapaizq #map{
