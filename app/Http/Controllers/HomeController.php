@@ -23,7 +23,11 @@ class HomeController extends Controller
 
     public function company()
     {
-        return view('home.primerLogin');
+        if(Sede::where('user_id', auth()->id())->first()){
+            return redirect()->route('home.index');
+        } else {
+            return view('home.primerLogin');
+        }
     }
 
     public function submit(Request $request)

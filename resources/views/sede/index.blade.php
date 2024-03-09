@@ -51,19 +51,20 @@
             </tr>
             <tr>
               <td>Coste operacional:</td>
-              <td>{{ number_format($sede->aeropuerto->costeOperacional, 0, ',', '.') }}</td>
+              <td>{{ number_format($sede->aeropuerto->costeOperacional, 0, ',', '.') }} Por vuelo</td>
+
             </tr>
             <tr>
               <td>Coste de alquiler:</td>
-              <td>{{ number_format(($sede->aeropuerto->costeOperacional * 50) * count($sede->hangar), 0, ',', '.') }} / mes</td>
+              <td>{{ number_format($sede->aeropuerto->costeAlquiler() * count($sede->hangar), 0, ',', '.') }} / mes</td>
             </tr>
             <tr>
               <td>Coste Ingenieros de Mantenimiento:</td>
-              <td>{{ number_format($sede->ingenieros * 30000, 0, ',', '.') }}€ / mes</td>
+              <td>{{ number_format($sede->costeIngenieros(), 0, ',', '.') }}€ / mes</td>
             </tr>
             <tr>
               <td>Costes totales:</td>
-              <td>280.000€ / mes(inop)</td>
+              <td>{{ number_format($sede->costesTotales(), 0, ',', '.') }}€ / mes</td>
             </tr>
           </table>
         </div>

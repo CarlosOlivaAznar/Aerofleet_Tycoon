@@ -11,6 +11,11 @@ class Aeropuerto extends Model
 
     protected $table = 'aeropuertos';
 
+    public function costeAlquiler()
+    {
+        return $this->costeOperacional * 150;
+    }
+
     public function espacio()
     {
         return $this->hasMany(Espacio::class);
