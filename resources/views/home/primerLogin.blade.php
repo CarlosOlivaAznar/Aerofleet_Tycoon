@@ -7,7 +7,8 @@
 <body>
   <main  class="mainContent">
     
-    <form action="">
+    <form action="{{ route('home.submit') }}" method="POST">
+        @csrf
         <div class="formulario">
             <h1>Introduce los datos de tu nueva compañia aérea</h1>
 
@@ -20,7 +21,7 @@
                 <label for="sede">Localizacion de la sede</label>
 
                 <input type="text" class="select" name="sede" id="sede" onfocus="mostrarDd()" onblur="ocultarDd()" onkeyup="filtrar()" placeholder="Busca la localizacion...">
-                <input type="hidden" id="sedeHid" value="">
+                <input type="hidden" id="sedeHid" name="sedeHid" value="">
                 
                 <div class="drop-down" id="dropDown">
                   <p id="0" onclick="seleccionar(this)">Barcelona El Prat</p>
@@ -28,6 +29,10 @@
                   <p id="2" onclick="seleccionar(this)">Aeropuerto de Zaragoza</p>
                   <p id="3" onclick="seleccionar(this)">Aeropuerto de Bilbao</p>
                 </div>
+            </div>
+
+            <div class="campos">
+              <input type="submit" value="Comenzar">
             </div>
         </div>
     </form>

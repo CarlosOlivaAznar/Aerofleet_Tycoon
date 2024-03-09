@@ -475,6 +475,18 @@ a{
     display: block;
 }
 
+
+/* Boton Submit */
+.mainContent form .formulario .campos input[type="submit"]{
+    background-color: var(--dark-grey);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.mainContent form .formulario .campos input[type="submit"]:hover{
+    background-color: var(--dark);
+}
+
 /* Mensajes de alerta */
 .alerta {
     padding: 20px;
