@@ -263,6 +263,7 @@ a{
     padding: 25px;
     border-radius: 25px;
     background-color: var(--light);
+    cursor: pointer;
 }
 
 .contenido main .resumen ul li .bx{
