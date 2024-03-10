@@ -62,8 +62,8 @@
               <td>{{ $ruta->horaFin }}</td>
               <td>{{ $ruta->precioBillete }}€</td>
               <td>
-                <a class="modificar" data-modal-target="modalAvion{{ $ruta->id }}"><i class="bx bx-wrench"></i></a>
                 <a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a>
+                <a class="modificar" data-modal-target="modalAvion{{ $ruta->id }}"><i class="bx bx-wrench"></i></a>
               </td>
             </tr>
             @endforeach
