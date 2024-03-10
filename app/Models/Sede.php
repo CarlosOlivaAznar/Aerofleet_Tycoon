@@ -21,6 +21,16 @@ class Sede extends Model
         return $this->ingenieros * 30000;
     }
 
+    public function costeHangar()
+    {
+        return $this->aeropuerto->costeOperacional * 580;
+    }
+
+    public function costeAmpliarHangar()
+    {
+        return $this->aeropuerto->costeOperacional * 85;
+    }
+
     public function costesTotales()
     {
         return $this->costeIngenieros() + ($this->aeropuerto->costeAlquiler() * count($this->hangar));

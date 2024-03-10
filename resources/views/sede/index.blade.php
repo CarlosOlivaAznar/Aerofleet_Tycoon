@@ -72,18 +72,18 @@
       
       <div class="resumen sede">
         <ul>
-          <li id="comprarHangar">
+          <li data-modal-target="modalComprarHangar">
             <i class="bx bx-building"></i>
             <h3>Comprar Hangar</h3>
           </li>
-          <a href="{{ route('sede.contratarIngenieros') }}"><li>
+          <li data-modal-target="modalContratarIngenieros">
             <i class="bx bx-user-plus"></i>
             <h3>Contratar Ingenieros</h3>
           </li></a>
-          <a href="#"><li>
+          <li>
             <i class="bx bx-trending-up"></i>
             <h3>Mejoras</h3>
-          </li></a>
+          </li>
         </ul>
       </div>
 
@@ -130,6 +130,7 @@
       
 
       <!-- Modales -->
+      <!-- Modal Comprar Hangar -->
       <div class="modal" id="modalComprarHangar">
         <div class="contenido-modal">
           <div class="cabecera-modal">
@@ -138,44 +139,38 @@
           </div>
           <div class="cuerpo-modal">
             <p>¿Esta seguro que quiere comprar un nuevo hangar?</p><br>
-            <p>Precio del nuevo hangar = <span>3€</span></p>
+            <p>Precio del nuevo hangar = <span class="rojo">{{ $sede->costeHangar() }}€</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <a href="" class="cancelar">Denegar</a>
+              <span class="cancelar">Denegar</span>
+              <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Contratar ingenieros -->
+      <div class="modal" id="modalContratarIngenieros">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Contratar Ingenieros</h2>
+          </div>
+          <div class="cuerpo-modal">
+            <p>¿Esta seguro que quiere contratar a un nuevo ingeniero?</p><br>
+            <p>El salario de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
               <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
             </div>
           </div>
         </div>
       </div>
       
-      <script>
-        // Get the modal
-        var modalComprarHangar = document.getElementById("modalComprarHangar");
-
-        // Get the button that opens the modal
-        var botonComprarHangar = document.getElementById("comprarHangar");
-
-        // Get the <span> element that closes the modal
-        var cerrarComprarHangar = document.getElementsByClassName("cerrar-modal")[0];
-
-        // When the user clicks the button, open the modal 
-        botonComprarHangar.onclick = function() {
-          modalComprarHangar.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        cerrarComprarHangar.onclick = function() {
-          modalComprarHangar.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modalComprarHangar) {
-            modalComprarHangar.style.display = "none";
-          }
-        }
-      </script>
+      <script src="{{ asset('js/modals.js') }}"></script>
 
     </main>
   </div>

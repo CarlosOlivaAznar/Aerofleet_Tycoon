@@ -402,7 +402,8 @@ a{
     text-align: center;
 }
 
-.modal .contenido-modal .footer-modal .botones a{
+.modal .contenido-modal .footer-modal .botones a,
+.modal .contenido-modal .footer-modal .botones span{
     width: 100%;
     border: 3px solid var(--grey);
     transition: 0.4s;
@@ -411,12 +412,12 @@ a{
     cursor: pointer;
 }
 
-.modal .contenido-modal .footer-modal .botones a:hover{
+.modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover{
     border: 3px solid var(--dark);
     transition: 0.4s;
 }
 
-.modal .contenido-modal .footer-modal .botones a.cancelar{
+.modal .contenido-modal .footer-modal .botones a.cancelar, .modal .contenido-modal .footer-modal .botones span.cancelar{
     color: var(--dark);
 }
 
@@ -425,6 +426,15 @@ a{
     background-color: var(--dark);
 }
 
+span.rojo{
+    font-weight: 700;
+    color: var(--danger);
+}
+
+span.verde{
+    font-weight: 700;
+    color: var(--success);
+}
 
 /* ------------ */
 /* Pagina Login */
@@ -963,22 +973,22 @@ a{
     padding: 5px 10px;
 }
 
-.contenido main .resumen.sede ul a:nth-child(1) li .bx{
+.contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
     color: var(--success);
 }
 
-.contenido main .resumen.sede ul a:nth-child(2) li .bx{
+.contenido main .resumen.sede ul li:nth-child(2) .bx{
     background-color: var(--light-warning);
     color: var(--warning);
 }
 
-.contenido main .resumen.sede ul a:nth-child(3) li .bx{
+.contenido main .resumen.sede ul li:nth-child(3) .bx{
     background-color: var(--light-primary);
     color: var(--primary);
 }
 
-.contenido main .resumen.sede ul a:nth-child(4) li .bx{
+.contenido main .resumen.sede ul li:nth-child(4) .bx{
     background-color: var(--light-success);
     color: var(--success);
 }
