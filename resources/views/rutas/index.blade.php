@@ -62,7 +62,7 @@
               <td>{{ $ruta->horaFin }}</td>
               <td>{{ $ruta->precioBillete }}€</td>
               <td>
-                <a class="modificar" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-wrench"></i></a>
+                <a class="modificar" data-modal-target="modalAvion{{ $ruta->id }}"><i class="bx bx-wrench"></i></a>
                 <a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a>
               </td>
             </tr>
@@ -76,6 +76,47 @@
             <h4>No hay rutas creadas</h4>
           </div>
       @endif
+
+      
+      <!-- Modales por cada avion -->
+      @foreach ($rutas as $ruta)
+      <div class="modal" id="modalAvion{{ $ruta->id }}">
+        <div class="contenido-modal">
+          <form action="{{ route('rutas.modificar', ['id' => $ruta->id]) }}" method="POST">
+            <div class="cabecera-modal">
+              <span class="cerrar-modal">&times;</span>
+              <h2>Modificar Ruta</h2>
+            </div>
+            <div class="cuerpo-modal">
+              
+              @csrf
+              <label for="precioBillete">Modificar precio billete:</label>
+              <input type="range" name="precioBillete" id="precioBillete" class="precioBilletes" value="{{ $ruta->precioBillete }}" min="5" max="600" oninput="slide(this)">
+              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">Precio: </p>
+              <span id="precio" class="precio"> {{ $ruta->precioBillete }} </span>
+              
+            </div>
+            <div class="footer-modal">
+              <div class="botones">
+                <span class="cancelar">Cancelar Cambios</span>
+                <input type="submit" class="aceptar" value="Confirmar Cambios">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> 
+      @endforeach
+
+      <script src="{{ asset('js/modals.js') }}"></script>
+      <script>
+
+        function slide(event){
+          var precio = event.nextElementSibling.nextElementSibling;
+          precio.innerHTML = event.value
+        }
+  
+      </script>
+
     </main>
   </div>
 </body>

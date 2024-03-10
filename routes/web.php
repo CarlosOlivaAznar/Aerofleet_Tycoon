@@ -49,6 +49,7 @@ Route::get('rutas/crearRuta', [RutasController::class, 'crearRuta'])->name('ruta
 Route::get('rutas/crearRuta/{id}', [RutasController::class, 'crearRutaAvion'])->name('rutas.crearRutaAvion');
 Route::post('rutas/nuevaRuta', [RutasController::class, 'nuevaRuta'])->name('rutas.nuevaRuta');
 Route::get('rutas/borrarRuta/{id}', [RutasController::class, 'borrarRuta'])->name('rutas.borrarRuta');
+Route::post('rutas/modificar/{id}', [RutasController::class, 'modificarRuta'])->name('rutas.modificar');
 
 Route::get('sede', [SedeController::class, 'index'])->name('sede.index');
 Route::get('sede/comprarHangar', [SedeController::class, 'comprarHangar'])->name('sede.comprarHangar');

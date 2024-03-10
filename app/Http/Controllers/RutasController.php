@@ -206,4 +206,19 @@ class RutasController extends Controller
 
         return redirect()->route('rutas.index');
     }
+
+    public function modificarRuta($id, Request $request)
+    {
+        $ruta = Ruta::find($id);
+
+        if($ruta->user_id === auth()->id()){
+            $ruta->precioBillete = $request->precioBillete;
+            $ruta->save();
+            session()->flash('exito', 'Ruta modificada correctamente');
+        } else {
+            session()->flash('error', 'error al modificar la ruta');
+        }
+
+        return redirect()->route('rutas.index');
+    }
 }

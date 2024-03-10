@@ -21,7 +21,7 @@ boton.addEventListener("click", function() {
       var modalId = this.getAttribute("data-modal-target");
       abrirModal(modalId);
     });
-  });
+});
 
 // Obtenemos los botones de las x para cerrar el modal
 var elementosCerrarModal = document.querySelectorAll(".cerrar-modal");
