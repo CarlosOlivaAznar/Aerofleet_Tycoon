@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('matricula');
             $table->date('fechaDeFabricacion');
             $table->unsignedinteger('condicion');
-            $table->string('estado')->nullable();
+            $table->unsignedInteger('estado')->default(0);
             $table->timestamps();
         });
     }

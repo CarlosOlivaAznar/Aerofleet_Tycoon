@@ -7,7 +7,7 @@
 <body>
   <main  class="mainContent">
     
-    <form action="{{ route('home.submit') }}" method="POST">
+    <form action="{{ route('home.submit') }}" method="POST" autocomplete="off">
         @csrf
         <div class="formulario">
             <h1>Introduce los datos de tu nueva compañia aérea</h1>
@@ -24,10 +24,9 @@
                 <input type="hidden" id="sedeHid" name="sedeHid" value="">
                 
                 <div class="drop-down" id="dropDown">
-                  <p id="0" onclick="seleccionar(this)">Barcelona El Prat</p>
-                  <p id="1" onclick="seleccionar(this)">Madrid Barajas</p>
-                  <p id="2" onclick="seleccionar(this)">Aeropuerto de Zaragoza</p>
-                  <p id="3" onclick="seleccionar(this)">Aeropuerto de Bilbao</p>
+                  @foreach ($aeropuertos as $aeropuerto)
+                      <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this)">{{ $aeropuerto->nombre }}</p>
+                  @endforeach
                 </div>
             </div>
 

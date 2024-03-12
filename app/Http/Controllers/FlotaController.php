@@ -80,7 +80,7 @@ class FlotaController extends Controller
                 'matricula' => 'EC-TEST',
                 'fechaDeFabricacion' => $avionsh->fechaDeFabricacion,
                 'condicion' => $avionsh->condicion,
-                'estado' => 'On ground',
+                'estado' => 0,
             ]);
 
             // Actualizamos el saldo del usuario
