@@ -28,11 +28,12 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
-      @if (count($rutas) > 0)
+      @if (count($grupoRutas) > 0)
+      @foreach ($grupoRutas as $rutas)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>Rutas Activas</h3>
+          <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
         </div>
         <table>
           <thead>
@@ -69,7 +70,8 @@
             @endforeach
           </tbody>
         </table>
-      </div>     
+      </div>
+      @endforeach  
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
@@ -79,6 +81,7 @@
 
       
       <!-- Modales por cada avion -->
+      @foreach ($grupoRutas as $rutas)
       @foreach ($rutas as $ruta)
       <div class="modal" id="modalAvion{{ $ruta->id }}">
         <div class="contenido-modal">
@@ -105,6 +108,7 @@
           </form>
         </div>
       </div> 
+      @endforeach  
       @endforeach
 
       <script src="{{ asset('js/modals.js') }}"></script>

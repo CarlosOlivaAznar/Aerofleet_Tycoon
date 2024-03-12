@@ -16,12 +16,12 @@ class RutasController extends Controller
 {
     public function index()
     {
-        $rutas = Ruta::where('user_id', auth()->id())->orderBy('horaInicio')->get();
-
+        $grupoRutas = Ruta::where('user_id', auth()->id())->orderBy('horaInicio')->get()->groupBy('flota_id');
+        
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('rutas.index', ['rutas' => $rutas]);
+        return view('rutas.index', ['grupoRutas' => $grupoRutas]);
     }
 
     public function crearRuta()
