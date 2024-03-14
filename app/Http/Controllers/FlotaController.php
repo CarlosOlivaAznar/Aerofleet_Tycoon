@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Flota;
 use App\Models\Avion;
 use App\Models\Avionsh;
+use App\Models\Sede;
 use App\Models\User;
 
 class FlotaController extends Controller
@@ -125,5 +126,37 @@ class FlotaController extends Controller
         }
 
         return redirect()->route('flota.index');
+    }
+
+    public function mantenimiento($id)
+    {
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $flotaC = count(Flota::where('user_id', auth()->id())->where('estado', 2)->get());
+        $espacios = 0;
+
+        if($sede->hangar){
+            // Se cuentan los espacios estan ocupados por aviones en mantenimiento
+            foreach ($sede->hangar as $hangar) {
+                $espacios += $hangar->espacios;
+            }
+        }
+
+        // Si hay mas espacios que aviones en mantenimiento se envia el nuevo avion a mantenimiento
+        if($espacios > $flotaC){
+            // Obtenemos el avion que hay que mandar a mantenimiento
+            $avion = Flota::find($id);
+            if($avion->user_id === auth()->id()){
+                $avion->estado = 2;
+                $avion->update();
+                
+                return redirect()->route('sede.index');
+            } else {
+                session()->flash('error', 'El avion no es de tu propiedad');
+            }
+        } else {
+            session()->flash('error', 'No hay espacios disponibles en los hangares');
+        }
+
+        return redirect()->route('flota.index'); 
     }
 }
