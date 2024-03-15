@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Flota;
 use App\Models\Hangar;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,12 @@ class SedeController extends Controller
     public function index()
     {
         $sede = Sede::where('user_id', auth()->id())->first();
+        $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
 
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('sede.index', ['sede' => $sede]);
+        return view('sede.index', ['sede' => $sede, 'flotaMantenimiento' => $flotaMantenimiento]);
     }
 
     public function comprarHangar()

@@ -91,9 +91,12 @@
       @include('partials.alertas')
 
       @if(count($sede->hangar) > 0)
-      <?php $contador = 0 ?>
+      <?php
+      $contador = 0; 
+      $contadorAvion = 0;
+      ?>
       @foreach ($sede->hangar as $hangar)
-      <?php $contador++ ?>
+      <?php $contador++; ?>
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-building"></i>
@@ -105,18 +108,23 @@
           <thead>
             <tr>
               <th>Avion</th>
-              <th>Estado</th>
-              <th>Finalizacion Mantenimiento</th>
+              <th>Condicion</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <td>
-              <img src="../../images/new/airbus/a320neo.png" alt="">
-            </td>
-            <td>90%</td>
-            <td>10/03/2024</td>
-            <td><i class="bx bx-plus"></i></td>
+            @for ($i = 0; $i < $hangar->espacios; $i++)
+            <tr>
+              @isset ($flotaMantenimiento[$contadorAvion])
+              <td>
+                <img src="{{ asset("" . $flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="">
+              </td>
+              <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
+              <td><i class="bx bx-plus"></i></td>
+              <?php $contadorAvion++; ?>
+              @endisset
+            </tr>
+            @endfor
           </tbody>
         </table>
       </div>
