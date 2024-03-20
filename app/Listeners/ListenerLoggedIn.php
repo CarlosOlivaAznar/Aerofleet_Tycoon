@@ -8,6 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use App\Models\Ruta;
 use App\Models\User;
 use App\Models\BeneficiosHistorico;
+use App\Models\Flota;
 use Carbon\Carbon;
 
 class ListenerLoggedIn
@@ -47,6 +48,8 @@ class ListenerLoggedIn
                 foreach ($rutas as $ruta) {
                     $this->calcularBeneficio($ruta);
                 }
+                // Actualizamos por dia el mantenimiento de los aviones
+                $this->mantenimiento();
             }
         }
 
@@ -55,7 +58,6 @@ class ListenerLoggedIn
         // Se calcula los dias de ultima conexion y ahora segun sus horas para ver que rutas son afectadas
         // Si es 0 o superior significa que por lo menos hay 2 dias diferentes en el calculo
         // Pero si es -1 significa que la desconexion y conexion ha ocurrido el mismo dia
-        $arrayPrueba3 = array();
         if($diferencia >= 0){
             foreach($rutas as $ruta){
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
@@ -64,6 +66,9 @@ class ListenerLoggedIn
                     // Rutas que su hora esta por delante de la hora de desconexion
                     $this->calcularBeneficio($ruta);
                 }
+
+                // Solo por el ultimo dia de conexion calculamos el mantenimiento
+                $this->mantenimiento();
 
                 // Rutas del calculo de hoy
                 if($hora->lt(now())){
@@ -75,7 +80,7 @@ class ListenerLoggedIn
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Calculo de las horas que estan entre la desconexion y conexion del usuario
                 if($hora->between($horaDesconexion, now())){
-                    array_push($arrayPrueba3, $ruta->id);
+                    $this->calcularBeneficio($ruta);
                 }
             }
         }
@@ -134,5 +139,16 @@ class ListenerLoggedIn
         $user = User::where('id', auth()->id())->first();
         $user->saldo += $beneficio;
         $user->update();
+    }
+
+    public function mantenimiento()
+    {
+        $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
+
+        foreach ($flotaMantenimiento as $avion) {
+            $avion->condicion += 2;
+            $avion->update();
+        }
+        error_log("Realizando manteniemiento a los aviones");
     }
 }
