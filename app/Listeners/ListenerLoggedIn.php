@@ -46,7 +46,9 @@ class ListenerLoggedIn
         if($diferencia > 0){
             for ($i=0; $i < $diferencia; $i++) { 
                 foreach ($rutas as $ruta) {
-                    $this->calcularBeneficio($ruta);
+                    if($ruta->flota->estado == 1){
+                        $this->calcularBeneficio($ruta);
+                    }
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
                 $this->mantenimiento();
@@ -62,7 +64,7 @@ class ListenerLoggedIn
             foreach($rutas as $ruta){
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Rutas del dia de desconexion
-                if($hora->gt($horaDesconexion)){
+                if($hora->gt($horaDesconexion) && $ruta->flota->estado == 1){
                     // Rutas que su hora esta por delante de la hora de desconexion
                     $this->calcularBeneficio($ruta);
                 }
@@ -71,7 +73,7 @@ class ListenerLoggedIn
                 $this->mantenimiento();
 
                 // Rutas del calculo de hoy
-                if($hora->lt(now())){
+                if($hora->lt(now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta);
                 }
             }
@@ -79,7 +81,7 @@ class ListenerLoggedIn
             foreach ($rutas as $ruta) {
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Calculo de las horas que estan entre la desconexion y conexion del usuario
-                if($hora->between($horaDesconexion, now())){
+                if($hora->between($horaDesconexion, now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta);
                 }
             }

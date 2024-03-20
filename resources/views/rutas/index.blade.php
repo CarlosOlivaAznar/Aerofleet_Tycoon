@@ -34,6 +34,9 @@
         <div class="cabecera">
           <i class="bx bx-outline"></i>
           <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
+          @if ($rutas[0]->flota->estado == 0 || $rutas[0]->flota->estado == 2)
+              <span class="rojo">RUTA INACTIVA</span>
+          @endif
         </div>
         <table>
           <thead>
