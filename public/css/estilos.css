@@ -1071,4 +1071,9 @@ span.verde{
         left: 80px;
     }
 
+    /* Tablas responsivas */
+    .contenido main .tablas{
+        overflow-y: auto;
+    }
+
 }

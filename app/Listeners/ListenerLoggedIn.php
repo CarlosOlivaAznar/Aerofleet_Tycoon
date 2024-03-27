@@ -148,7 +148,7 @@ class ListenerLoggedIn
         $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
 
         foreach ($flotaMantenimiento as $avion) {
-            $avion->condicion += 2;
+            $avion->condicion += 1;
             $avion->update();
         }
         error_log("Realizando manteniemiento a los aviones");
