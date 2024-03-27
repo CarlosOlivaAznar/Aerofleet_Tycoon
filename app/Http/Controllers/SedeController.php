@@ -75,4 +75,14 @@ class SedeController extends Controller
 
         return redirect()->route('sede.index');
     }
+
+    public function quitarMantenimiento($id)
+    {
+        $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
+        
+        $avion->estado = 0;
+        $avion->update();
+
+        return redirect()->route('sede.index');
+    }
 }

@@ -120,7 +120,7 @@
                 <img src="{{ asset("" . $flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="">
               </td>
               <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
-              <td><i class="bx bx-plus"></i></td>
+              <td><a class="comprar" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}"><i class="bx bx-minus"></i></a></td>
               <?php $contadorAvion++; ?>
               @endisset
             </tr>
@@ -177,6 +177,27 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal Quitar Mantenimiento Aviones -->
+      @foreach ($flotaMantenimiento as $flota)
+      <div class="modal" id="modalQuitarMantenimiento{{ $flota->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Contratar Ingenieros</h2>
+          </div>
+          <div class="cuerpo-modal">
+            <p>¿Esta seguro que quiere quirar el avion del mantenimiento?</p><br>
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
+              <a href="{{ route('sede.quitarMantenimiento', ['id' => $flota->id]) }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
       
       <script src="{{ asset('js/modals.js') }}"></script>
 
