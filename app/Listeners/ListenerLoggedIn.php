@@ -69,14 +69,15 @@ class ListenerLoggedIn
                     $this->calcularBeneficio($ruta);
                 }
 
-                // Solo por el ultimo dia de conexion calculamos el mantenimiento
-                $this->mantenimiento();
-
                 // Rutas del calculo de hoy
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta);
                 }
             }
+
+            // Solo por el ultimo dia de conexion calculamos el mantenimiento
+            $this->mantenimiento();
+
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
@@ -121,6 +122,9 @@ class ListenerLoggedIn
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
             $pasajeros = $ruta->flota->avion->capacidad;
+        } else if($pasajeros < 0){
+            // Cuando los pasajeros sean menos de 0, un avion no puede tener pasajeros negativos
+            $pasajeros = 0;
         }
 
         // Ingresos de la ruta
