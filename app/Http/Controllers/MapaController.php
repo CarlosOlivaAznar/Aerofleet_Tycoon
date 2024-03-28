@@ -17,7 +17,7 @@ class MapaController extends Controller
         foreach ($rutasUser as $rutaUser) {
             $horaInicio = Carbon::createFromFormat('H:i:s', $rutaUser->horaInicio);
             $horaFin = Carbon::createFromFormat("H:i:s", $rutaUser->horaFin);
-            if(now()->between($horaInicio, $horaFin)){
+            if(now()->between($horaInicio, $horaFin) && $rutaUser->flota->estado === 1){
                 // Guardamos las posiciones y angulos en un array para luego poder iterarlo mejor
                 $arrayPos = $this->calcularPosicion($rutaUser, $horaInicio);
                 array_push($arrayPos, $this->calcularAngulo($rutaUser));
@@ -25,9 +25,19 @@ class MapaController extends Controller
                 // Guardamos el array final que se utilizara en el mapa
                 array_push($avionesVolando, $arrayPos);
             }
+
+            $rutasArray = array();
+            foreach ($rutasUser as $ruta) {
+                array_push($rutasArray, [
+                    $ruta->espacio_departure->aeropuerto->latitud,
+                    $ruta->espacio_departure->aeropuerto->longitud,
+                    $ruta->espacio_arrival->aeropuerto->latitud,
+                    $ruta->espacio_arrival->aeropuerto->longitud,
+                ]);
+            }
         }
 
-        return view('mapa.index', ['avionesVolando' => $avionesVolando]);
+        return view('mapa.index', ['avionesVolando' => $avionesVolando, 'rutas' => $rutasArray]);
     }
 
     public function calcularPosicion($ruta, Carbon $horaInicio)
