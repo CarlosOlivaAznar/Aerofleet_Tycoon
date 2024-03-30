@@ -70,6 +70,7 @@
         </div>
         <div>
           <p class="titulo">FAQ</p>
+          <p class="texto"><a href="">Donar</a></p>
           <p class="texto"><a href="">Preguntas Frecuentes</a></p>
           <p class="texto"><a href="">Reportar un fallo</a></p>
         </div>
@@ -77,6 +78,7 @@
           <p class="titulo">Informacion Adicional</p>
           <p class="texto"><a href="">Terminos de uso</a></p>
           <p class="texto"><a href="">Politica de Privacidad</a></p>
+          <p class="texto"><a href="">Roadmap</a></p>
         </div>
       </div>
     </footer>
