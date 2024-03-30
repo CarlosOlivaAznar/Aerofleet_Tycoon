@@ -40,6 +40,7 @@
             <thead>
                 <tr>
                     <th>Avion</th>
+                    <th>Matricula</th>
                     <th>Modelo</th>
                     <th>Fecha de Fabricacion</th>
                     <th>Estado</th>
@@ -54,6 +55,7 @@
                 <td>
                   <img class="img-avion" src="{{ asset($avion->avion->img) }}">
                 </td>
+                <td>{{ $avion->matricula }}</td>
                 <td>{{ $avion->avion->modelo }}</td>
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->condicion }}%</td>

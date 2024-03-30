@@ -49,7 +49,7 @@ class FlotaController extends Controller
             Flota::create([
                 'user_id' => auth()->id(),
                 'avion_id' => $id,
-                'matricula' => 'EC-TEST',
+                'matricula' => $matricula,
                 'fechaDeFabricacion' => date('Y-m-d'),
                 'condicion' => 100,
                 'estado' => 'On ground',
@@ -80,7 +80,7 @@ class FlotaController extends Controller
             Flota::create([
                 'user_id' => auth()->id(),
                 'avion_id' => $avionsh->avion_id,
-                'matricula' => 'EC-TEST',
+                'matricula' => $matricula,
                 'fechaDeFabricacion' => $avionsh->fechaDeFabricacion,
                 'condicion' => $avionsh->condicion,
                 'estado' => 0,
@@ -174,7 +174,7 @@ class FlotaController extends Controller
         $sede = Sede::where('user_id', auth()->id())->first();
         // Seleccionamos la matricula con mayor valor alfabeticamente
         $matriculaMax = Flota::where('matricula', 'LIKE', $sede->aeropuerto->pais.'%')->max('matricula');
-        
+
         // si matriculaMax esta vacia quiere decir que es el primer avion que se compra de ese pais, devolvemos una matricula nueva con "AAA"
         if(strlen($matriculaMax) === 0){
             return $sede->aeropuerto->pais . "-AAA";
@@ -199,8 +199,6 @@ class FlotaController extends Controller
             $resultado = chr($cambio + ord('A')) . $resultado;
             $sufijoNum = intval(($sufijoNum - $cambio) / 26);
         }
-
-        dd($resultado);
         
         return $sede->aeropuerto->pais . "-" . $resultado;
     }
