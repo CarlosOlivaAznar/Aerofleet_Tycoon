@@ -25,8 +25,9 @@ class MapaController extends Controller
                 // Guardamos el array final que se utilizara en el mapa
                 array_push($avionesVolando, $arrayPos);
             }
+        }
 
-            $rutasArray = array();
+        $rutasArray = array();
             foreach ($rutasUser as $ruta) {
                 array_push($rutasArray, [
                     $ruta->espacio_departure->aeropuerto->latitud,
@@ -34,7 +35,6 @@ class MapaController extends Controller
                     $ruta->espacio_arrival->aeropuerto->latitud,
                     $ruta->espacio_arrival->aeropuerto->longitud,
                 ]);
-            }
         }
 
         return view('mapa.index', ['avionesVolando' => $avionesVolando, 'rutas' => $rutasArray]);

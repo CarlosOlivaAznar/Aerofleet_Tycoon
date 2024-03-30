@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('aeropuertos', function (Blueprint $table) {
             $table->id();
             $table->string('icao');
+            $table->string('pais');
             $table->string('nombre');
             $table->unsignedBigInteger('espaciosTotales');
             $table->unsignedBigInteger('costeOperacional');

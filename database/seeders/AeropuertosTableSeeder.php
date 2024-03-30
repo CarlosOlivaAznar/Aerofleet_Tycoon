@@ -18,6 +18,7 @@ class AeropuertosTableSeeder extends Seeder
         /* ------------------ */
         Aeropuerto::create([
             'icao' => 'LEZG',
+            'pais' => 'EC',
             'nombre' => 'Aeropuerto de Zaragoza',
             'espaciosTotales' => 30,
             'costeOperacional' => 500,
@@ -29,6 +30,7 @@ class AeropuertosTableSeeder extends Seeder
 
         Aeropuerto::create([
             'icao' => 'LEMD',
+            'pais' => 'EC',
             'nombre' => 'Aeropuerto Adolfo Suárez Madrid-Barajas',
             'espaciosTotales' => 450,
             'costeOperacional' => 2000,
@@ -40,6 +42,7 @@ class AeropuertosTableSeeder extends Seeder
 
         Aeropuerto::create([
             'icao' => 'LEBL',
+            'pais' => 'EC',
             'nombre' => 'Aeropuerto Josep Tarradellas Barcelona-El Prat',
             'espaciosTotales' => 400,
             'costeOperacional' => 1500,
@@ -51,6 +54,7 @@ class AeropuertosTableSeeder extends Seeder
 
         Aeropuerto::create([
             'icao' => 'LEZL',
+            'pais' => 'EC',
             'nombre' => 'Aeropuerto de Sevilla',
             'espaciosTotales' => 100,
             'costeOperacional' => 1000,
@@ -62,6 +66,7 @@ class AeropuertosTableSeeder extends Seeder
 
         Aeropuerto::create([
             'icao' => 'LEBB',
+            'pais' => 'EC',
             'nombre' => 'Aeropuerto de Bilbao',
             'espaciosTotales' => 200,
             'costeOperacional' => 1200,
@@ -76,6 +81,7 @@ class AeropuertosTableSeeder extends Seeder
         /* -------------- */
         Aeropuerto::create([
             'icao' => 'EGPH',
+            'pais' => 'G',
             'nombre' => 'Edinburgh Airport',
             'espaciosTotales' => 250,
             'costeOperacional' => 1350,

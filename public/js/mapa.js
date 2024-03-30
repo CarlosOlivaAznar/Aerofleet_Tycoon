@@ -50,6 +50,4 @@ for(var i = 0; i < rutasAviones.length; i++){
     var polyLine = L.polyline([[rutasAviones[i*4], rutasAviones[(i*4)+1]],[rutasAviones[(i*4)+2], rutasAviones[(i*4)+3]]], {color: 'red', weight: 2}).addTo(map);
 }
 
-var polyLine = L.polyline([[rutasAviones[0], rutasAviones[1]],[rutasAviones[2], rutasAviones[3]]], {color: 'red', weight: 2}).addTo(map);
-
 console.log(rutasAviones);
