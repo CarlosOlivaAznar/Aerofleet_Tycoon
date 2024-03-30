@@ -546,7 +546,7 @@ span.verde{
 }
 
 .mainContent{
-    padding: 50px 25px 50px 25px;
+    padding: 50px 70px 50px 70px;
 }
 
 .imagenTitulo{
@@ -575,7 +575,71 @@ span.verde{
     margin-top: 20px;
 }
 
+.mainContent .resumen ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 50px;
+    margin-bottom: 36px;
+}
 
+.mainContent .resumen ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--light);
+}
+
+.mainContent .resumen ul li .bx{
+    
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--grey);
+    color: var(--dark);
+    font-size: 35px;
+}
+
+.mainContent .resumen ul li h3{
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mainContent .resumen ul li h4{
+    color: var(--dark);
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mainContent .imagenConTexto{
+    text-align: center;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 0;
+    width: 100%;
+    height: 400px;
+    border-radius: 25px;
+}
+
+.mainContent .imagenConTexto h3{
+    font-size: 40px;
+    padding: 15px 0 250px 0;
+    color: var(--dark);
+}
+
+.mainContent .imagenConTexto a{
+    background-color: var(--primary);
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 40px;
+    margin-top: 100px;
+    color: var(--light);
+}
 
 /* Contenido de formularios en Main Content */
 .mainContent form .formulario{
@@ -1111,6 +1175,10 @@ span.verde{
         top: 15vw;
     }
 
+    .mainContent{
+        padding: 50px 30px 50px 30px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1118,5 +1186,20 @@ span.verde{
     .mainContent h1{
         font-size: 16vw;
         top: 15vw;
+    }
+
+    .mainContent{
+        padding: 50px 10px 50px 10px;
+    }
+
+    .mainContent .imagenConTexto{
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: 0;
+    }
+    
+    .mainContent .imagenConTexto h3{
+        font-size: 20px;
+        padding: 15px 0 250px 0;
     }
 }
