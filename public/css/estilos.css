@@ -641,11 +641,73 @@ span.verde{
     color: var(--light);
 }
 
+/* Footer pagina landing */
+footer{
+    width: 95%;
+    margin: 30px auto;
+    padding: 20px 10px;
+    border-radius: 25px;
+    background-color: var(--light);
+    box-sizing: border-box;
+    color: var(--dark);
+}
+
+footer .contenidoFooter{
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+}
+
+footer .contenidoFooter .izquierda{
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+footer .contenidoFooter .derecha{
+    margin-right: 40px;
+}
+
+footer .contenidoFooter .izquierda .imagen-texto{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 27px;
+}
+
+footer .contenidoFooter .izquierda .imagen-texto img{
+    width: 50px;
+}
+
+footer .contenidoFooter div p{
+    text-align: center;
+}
+
+footer .contenidoFooter div p.autor{
+    margin-top: 15px;
+    color: var(--dark-grey);
+}
+
+footer .contenidoFooter div p.titulo{
+    color: var(--dark);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+footer .contenidoFooter div p.texto{
+    margin-bottom: 5px;
+}
+
+footer .contenidoFooter div p.texto a{
+    color: var(--dark-grey);
+    text-decoration: none;
+}
+
 /* Contenido de formularios en Main Content */
 .mainContent form .formulario{
     margin: 15px auto;
     width: 65%;
-    padding: 30px 20px;
+    padding: 50px 30px;
     border-radius: 25px;
     background-color: var(--light);
 }
