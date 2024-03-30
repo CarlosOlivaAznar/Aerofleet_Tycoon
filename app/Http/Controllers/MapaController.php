@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Aeropuerto;
 use Illuminate\Http\Request;
 use App\Models\Ruta;
 use Carbon\Carbon;
@@ -28,16 +29,30 @@ class MapaController extends Controller
         }
 
         $rutasArray = array();
-            foreach ($rutasUser as $ruta) {
-                array_push($rutasArray, [
-                    $ruta->espacio_departure->aeropuerto->latitud,
-                    $ruta->espacio_departure->aeropuerto->longitud,
-                    $ruta->espacio_arrival->aeropuerto->latitud,
-                    $ruta->espacio_arrival->aeropuerto->longitud,
-                ]);
+        foreach ($rutasUser as $ruta) {
+            array_push($rutasArray, [
+                $ruta->espacio_departure->aeropuerto->latitud,
+                $ruta->espacio_departure->aeropuerto->longitud,
+                $ruta->espacio_arrival->aeropuerto->latitud,
+                $ruta->espacio_arrival->aeropuerto->longitud,
+            ]);
         }
 
-        return view('mapa.index', ['avionesVolando' => $avionesVolando, 'rutas' => $rutasArray]);
+        $aeropuertos = Aeropuerto::all();
+        $aeropuertosArray = array();
+        foreach ($aeropuertos as $aeropuerto) {
+            array_push($aeropuertosArray, [
+                $aeropuerto->latitud,
+                $aeropuerto->longitud,
+                $aeropuerto->nombre,
+            ]);
+        }
+
+        return view('mapa.index', [
+            'avionesVolando' => $avionesVolando, 
+            'rutas' => $rutasArray, 
+            'aeropuertos' => $aeropuertosArray
+        ]);
     }
 
     public function calcularPosicion($ruta, Carbon $horaInicio)
