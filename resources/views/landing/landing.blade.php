@@ -19,8 +19,30 @@
             <div><a href="{{ route('register') }}">Resgistrarse</a></div>
         </div>
     </nav>
+    <img class="imagenTitulo" src="{{ asset('images/horarios.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
-        
+        <h1>AEROFLEET TYCOON</h1>
+        <h2>Simulador de Gestion a Tiempo real</h2>
+        <div class="resumen">
+            <ul>
+              <li>
+                <i class="bx bx-building"></i>
+                <h3>Comprar Hangar</h3>
+              </li>
+              <li>
+                <i class="bx bx-user-plus"></i>
+                <h3>Contratar Ingenieros</h3>
+              </li></a>
+              <li>
+                <i class="bx bx-trending-up"></i>
+                <h3>Mejoras</h3>
+              </li>
+              <li>
+                <i class="bx bx-trending-up"></i>
+                <h3>Mejoras</h3>
+              </li>
+            </ul>
+          </div>
     </main>
 </body>
 </html>
