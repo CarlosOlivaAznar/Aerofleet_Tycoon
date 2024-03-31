@@ -9,7 +9,7 @@
       </div>
       <div>
         <p class="titulo">Sobre Mi</p>
-        <p class="texto"><a href="{{ route('landing.sobreMi') }}">¿Quien soy?</a></p>
+        <p class="texto"><a href="{{ route('landing.sobreMi') }}">Sobre mi</a></p>
         <p class="texto"><a href="">Blog</a></p>
         <p class="texto"><a href="">Contactame</a></p>
       </div>

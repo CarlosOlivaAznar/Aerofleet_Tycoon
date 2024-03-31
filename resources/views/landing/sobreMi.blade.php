@@ -59,7 +59,7 @@
                     Por esto y porque tengo que entregar un proyecto a final de curso me puse a hacer mi idea realidad.
                 </p>
                 <p>
-                    El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de donaciones.
+                    El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de donar.
                 </p>
             </div>
         </div>
