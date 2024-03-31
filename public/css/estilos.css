@@ -234,7 +234,8 @@ a{
     color: var(--dark-grey);
 }
 
-.contenido main .cabecera a.boton{
+/* Clase boton */
+a.boton{
     display: flex;
     align-items: center;
     gap: 5px;
@@ -244,7 +245,9 @@ a{
     border-radius: 40px;
     margin-left: auto;
     color: var(--light);
+    white-space: nowrap;
 }
+
 
 
 /* Muestras de resumenes */
@@ -1035,6 +1038,34 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--light);
     color: var(--dark);
 }
+
+.contenido main .tablas .cabecera .botones-tablas{
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+    margin-left: auto;
+    align-items: center;
+}
+
+.contenido main .tablas .cabecera .botones-tablas a{
+    padding: 5px 20px 5px 15px;
+}
+
+/*
+.contenido main .tablas .cabecera .boton-tabla{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 5px 15px 5px 10px;
+    margin-left: auto;
+    background-color: var(--primary);
+    color: var(--light);
+    border-radius: 40px;
+    font-weight: 500;
+    gap: 5px;
+}*/
 
 .contenido main .rutas .divRepartido{
     width: 100%;

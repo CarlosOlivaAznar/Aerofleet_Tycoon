@@ -19,10 +19,6 @@
         <div class="titulo">
           <h1>Rutas</h1>
         </div>
-        <a href="{{ route('rutas.crearRuta') }}" class="boton">
-          <i class="bx bx-plus-circle"></i>
-          <span>Crear Ruta</span>
-        </a>
       </div>
 
       <!-- Alertas -->
@@ -37,6 +33,18 @@
           @if ($rutas[0]->flota->estado == 0 || $rutas[0]->flota->estado == 2)
               <span class="rojo">RUTA INACTIVA</span>
           @endif
+          <div class="botones-tablas">
+            @if ($rutas[0]->flota->estado == 0)
+            <a href="{{ route('flota.activarRuta', ['id' => $rutas[0]->flota->id]) }}" class="boton">
+              <i class="bx bx-check-square" ></i>
+              <span>Activar ruta</span>
+            </a>
+            @endif
+            <a href="{{ route('rutas.crearRutaAvion', ['id' => $rutas[0]->flota->id]) }}" class="boton">
+              <i class="bx bx-add-to-queue"></i>
+              <span>Crear ruta</span>
+            </a>
+          </div>
         </div>
         <table>
           <thead>

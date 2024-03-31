@@ -97,7 +97,7 @@ class FlotaController extends Controller
                 'fechaDeFabricacion' => date("Y-m-d", mt_rand(strtotime("2000-01-01"), strtotime("2015-12-31"))),
                 'img' => $avionNuevo[1],
                 'companyia' => $avionNuevo[2],
-                'condicion' => rand(30, 80),
+                'condicion' => rand(60, 90),
             ]);
 
             // Mostramos mensaje
@@ -201,5 +201,21 @@ class FlotaController extends Controller
         }
         
         return $sede->aeropuerto->pais . "-" . $resultado;
+    }
+
+    public function activarRuta($id)
+    {
+        $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
+        if($avion->estado == 0){
+            $avion->estado = 1;
+            $avion->update();
+            session()->flash('exito', 'La ruta ha sido activada correctamente');
+        } else if($avion->estado == 1){
+            session()->flash('warning', 'La ruta ya esta activa');
+        } else if($avion->estado == 2){
+            session()->flash('error', 'El avion esta en mantenimiento');
+        }
+
+        return redirect()->route('rutas.index');
     }
 }

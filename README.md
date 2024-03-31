@@ -17,14 +17,12 @@ Para dibujar alertas se incluira en el archivo blade.php el siguiente include.
 
 ```
 @include('partials.alertas')
-
 ```
 
 Para que funcione tenemos que hacer una variable de sesion flash para que muestre los datos, hay 3 tipos 'error', 'warning' y 'exito'
 
 ```
 session()->flash('error', 'Error al vender el avion');
-
 ```
 
 ### Mensaje
@@ -36,7 +34,17 @@ Se utiliza para dar un mensaje de alerta segun el mensaje por ejemplo un mensaje
     <i class="bx bx-error"></i>
     <h4>No tienes ningun avion en tu propiedad</h4>
 </div>
+```
 
+### Boton de caracter general
+
+Boton alineado a la izquierda, se utiliza con la clase .boton en un <a>
+
+```
+<a href="{{ route('rutas.crearRuta') }}" class="boton">
+    <i class="bx bx-plus-circle"></i>
+    <span>Crear Ruta</span>
+</a>
 ```
 
 ### Modales
