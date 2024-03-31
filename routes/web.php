@@ -23,7 +23,9 @@ use App\Http\Controllers\SedeController;
 Route::get('/', function () {
     return view('landing.landing');
 })->name('landing.landing');
-
+Route::get('/sobreMi', function () {
+    return view('landing.sobreMi');
+})->name('landing.sobreMi');
 
 Route::get('home', [HomeController::class, 'index'])->name('home.index');
 Route::get('home/company', [HomeController::class, 'company'])->name('home.company');

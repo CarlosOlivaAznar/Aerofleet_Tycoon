@@ -19,10 +19,10 @@
             <div><a href="{{ route('register') }}">Resgistrarse</a></div>
         </div>
     </nav>
-    <img class="imagenTitulo" src="{{ asset('images/horarios.jpg') }}" alt="horariosAvion">
+    <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
-        <h1>AEROFLEET TYCOON</h1>
-        <h2>Simulador de Gestion a Tiempo real</h2>
+        <h1 class="tituloPagina">AEROFLEET TYCOON</h1>
+        <h2 class="subtituloPagina">Simulador de Gestion a Tiempo real</h2>
         <div class="resumen">
             <ul>
               <li>
@@ -51,36 +51,24 @@
             <h3>COMIENZA AQUI TU COMPAÑIA AEREA</h3>
             <a href="{{ route('register') }}">Registrarse</a>
           </div>
+
+          <div class="changelog">
+            <h3>Changelog</h3>
+            <hr>
+
+            <h4>V-0.2.0</h4>
+            <ul>
+              <li>Los vuelos de larga distancia ahora tienen un plus por distancia</li>
+              <li>El mapa muestra los datos de los aviones, rutas y aeropuertos</li>
+              <li>Ahora se puede modificar el precio de los billetes</li>
+              <li>Las rutas se muestran en grupo y dividido por aviones</li>
+              <li>Los aviones se pueden mandar a mantenimiento</li>
+              <li>Las tablas se pueden ver ahora en dispositivos moviles</li>
+              <li>Las matriculas de los aviones se generan automaticamente</li>
+            </ul>
+          </div>
     </main>
 
-    <footer>
-      <div class="contenidoFooter">
-        <div class="izquierda">
-          <div class="imagen-texto">
-            <img src="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" alt="">
-            <h4>Aerofleet Tycoon</h4>
-          </div>
-          <p class="autor">Desarrollado por Carlos Oliva Aznar</p>
-        </div>
-        <div>
-          <p class="titulo">Sobre Mi</p>
-          <p class="texto"><a href="">¿Quien soy?</a></p>
-          <p class="texto"><a href="">Blog</a></p>
-          <p class="texto"><a href="">Contactame</a></p>
-        </div>
-        <div>
-          <p class="titulo">FAQ</p>
-          <p class="texto"><a href="">Donar</a></p>
-          <p class="texto"><a href="">Preguntas Frecuentes</a></p>
-          <p class="texto"><a href="">Reportar un fallo</a></p>
-        </div>
-        <div class="derecha">
-          <p class="titulo">Informacion Adicional</p>
-          <p class="texto"><a href="">Terminos de uso</a></p>
-          <p class="texto"><a href="">Politica de Privacidad</a></p>
-          <p class="texto"><a href="">Roadmap</a></p>
-        </div>
-      </div>
-    </footer>
+    @include('partials.footer')
 </body>
 </html>
