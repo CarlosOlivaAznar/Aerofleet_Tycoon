@@ -277,10 +277,22 @@ a.boton{
     color: var(--primary);
 }
 
+.contenido main .resumen ul li div h3{
+    font-size: 20px;
+    text-overflow: ellipsis;
+}
+
 .contenido main .resumen ul li h3{
     color: var(--dark);
     font-size: 24px;
     font-weight: 700;
+}
+
+.contenido main .resumen ul li h4{
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
 }
 
 /* Logos propios */
@@ -314,16 +326,7 @@ a.boton{
 
 
 /* Divs repartidos */
-.contenido main .informacion{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 25px;
-    margin-top: 25px;
-    color: var(--dark);
-}
-
-.contenido main .infodatos{
+.contenido main .informacion .infodatos{
     width: 50%;
     background-color: var(--light);
     border-radius: 25px;
@@ -1101,13 +1104,21 @@ footer .contenidoFooter div p.texto a{
     width: 100%;
     border-radius: 25px;
     padding: 30px;
-    background-color: var(--light);
     color: var(--dark);
     display: flex;
     justify-content: space-between;
     text-align: center;
     flex-flow: row;
+    gap: 30px;
     margin-top: 35px;
+}
+
+.contenido main .informacion div.basico{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 .contenido main .informacion .info{

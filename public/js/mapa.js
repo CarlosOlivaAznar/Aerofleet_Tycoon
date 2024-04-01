@@ -1,6 +1,5 @@
 // Recuperamos todos los datos de los aviones
 var domAviones = document.getElementsByClassName("avionesUsuario");
-console.log(avionesUsuario);
 
 var avionesUsuario = Array();
 
