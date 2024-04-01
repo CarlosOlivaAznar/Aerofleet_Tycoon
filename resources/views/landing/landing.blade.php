@@ -9,16 +9,7 @@
   <title>AeroFleet</title>
 </head>
 <body>
-    <nav class="barra-login">
-        <a href="#" class="titulo-pag">
-            <i class="bx bx-paper-plane" ></i>
-            <div class="titulo-nombre">Aero<span>Fleet</span></div>
-        </a>
-        <div class="login">
-            <div><a href="{{ route('login') }}">Acceder</a></div>
-            <div><a href="{{ route('register') }}">Resgistrarse</a></div>
-        </div>
-    </nav>
+    @include('partials.navbarLanding')
     <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
         <h1 class="tituloPagina">AEROFLEET TYCOON</h1>

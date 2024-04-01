@@ -46,6 +46,9 @@ a{
     font-size: 1.8rem;
 }
 
+.icono{
+    width: 40px;
+}
 
 /* ------------ */
 /* Menu Lateral */
@@ -72,10 +75,8 @@ a{
     color: var(--dark);
 }
 
-.menu-lateral .titulo-pag .bx{
-    font-size: 2.1rem;
-    color: var(--primary);
-    padding-left: 20px;
+.menu-lateral .titulo-pag img{
+    margin-left: 20px;
 }
 
 .menu-lateral .titulo-pag .titulo-nombre span{
@@ -513,17 +514,15 @@ span.verde{
     height: 60px;
     font-size: 27px;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--primary);
 }
 
-.barra-login .titulo-pag .bx{
-    font-size: 2.1rem;
-    color: var(--primary);
-    padding-left: 20px;
+.barra-login .titulo-pag img{
+    margin-left: 20px;
 }
 
 .barra-login .titulo-pag .titulo-nombre span{
-    color: var(--primary);
+    color: var(--dark);
 }
 
 .barra-login .login{
@@ -1050,22 +1049,6 @@ footer .contenidoFooter div p.texto a{
 .contenido main .tablas .cabecera .botones-tablas a{
     padding: 5px 20px 5px 15px;
 }
-
-/*
-.contenido main .tablas .cabecera .boton-tabla{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 5px 15px 5px 10px;
-    margin-left: auto;
-    background-color: var(--primary);
-    color: var(--light);
-    border-radius: 40px;
-    font-weight: 500;
-    gap: 5px;
-}*/
 
 .contenido main .rutas .divRepartido{
     width: 100%;
