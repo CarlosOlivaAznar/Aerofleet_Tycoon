@@ -14,17 +14,26 @@ class MapaController extends Controller
     {
         $rutasUser = Ruta::where('user_id', auth()->id())->get();
         $avionesVolando = array();
-        // Comprobamos que avion esta ahora mismo en vuelo
+
         foreach ($rutasUser as $rutaUser) {
             $horaInicio = Carbon::createFromFormat('H:i:s', $rutaUser->horaInicio);
             $horaFin = Carbon::createFromFormat("H:i:s", $rutaUser->horaFin);
-            if(now()->between($horaInicio, $horaFin) && $rutaUser->flota->estado === 1){
-                // Guardamos las posiciones y angulos en un array para luego poder iterarlo mejor
-                $arrayPos = $this->calcularPosicion($rutaUser, $horaInicio);
-                array_push($arrayPos, $this->calcularAngulo($rutaUser));
 
-                // Guardamos el array final que se utilizara en el mapa
-                array_push($avionesVolando, $arrayPos);
+            // Si las horas de inicio o fin estan comprendidas entre las 00:00z y 04:00z
+            // Quiere decir que ese horario ya es del dia siguiente ya que excede el limite de hora
+            // Entonces se le suma un dia al horario
+            // Esto sucede ya que los horarios de las rutas solo guardamos las horas y no los dias como es obvio
+            if($horaInicio->between(Carbon::today()->addHours(0), Carbon::today()->addHours(4))){
+                $horaInicio->addDay(1);
+            }
+
+            if($horaFin->between(Carbon::today()->addHours(0), Carbon::today()->addHours(4))){
+                $horaFin->addDay(1);
+            }
+
+            // Calculamos los aviones que estan volando en estos mismos instantes
+            if(now()->between($horaInicio, $horaFin) && $rutaUser->flota->estado === 1){
+                array_push($avionesVolando, $this->calcularPosicion($rutaUser, $horaInicio));
             }
         }
 
@@ -79,9 +88,8 @@ class MapaController extends Controller
         // Calculamos la posicion final del avion
         $posLat = $latSalida - $difLat;
         $posLong = $longSalida - $difLong;
-        $matricula = $ruta->flota->matricula;
         
-        return [$posLat, $posLong, $matricula];
+        return [$posLat, $posLong, $ruta->flota->matricula, $this->calcularAngulo($ruta)];
     }
 
     public function calcularAngulo($ruta)
