@@ -198,6 +198,8 @@ class RutasController extends Controller
         $ruta = Ruta::where('id', $id)->first();
 
         if($ruta->user_id === auth()->id()){
+            $ruta->flota->estado = 0;
+            $ruta->flota->update();
             $ruta->delete();
             session()->flash('exito', 'Ruta eliminada correctamente');
         } else {

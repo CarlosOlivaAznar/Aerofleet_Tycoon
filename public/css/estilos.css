@@ -72,7 +72,7 @@ a{
     height: 60px;
     font-size: 27px;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--primary);
 }
 
 .menu-lateral .titulo-pag img{
@@ -80,7 +80,7 @@ a{
 }
 
 .menu-lateral .titulo-pag .titulo-nombre span{
-    color: var(--primary);
+    color: var(--dark);
 }
 
 .menu-lateral .lista-menu{

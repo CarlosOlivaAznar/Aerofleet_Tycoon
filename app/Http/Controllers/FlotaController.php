@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Flota;
 use App\Models\Avion;
 use App\Models\Avionsh;
+use App\Models\Ruta;
 use App\Models\Sede;
 use App\Models\User;
 
@@ -206,7 +207,7 @@ class FlotaController extends Controller
     public function activarRuta($id)
     {
         $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
-        if($avion->estado == 0){
+        if($avion->estado == 0 && $this->comprobarActivar($avion)){
             $avion->estado = 1;
             $avion->update();
             session()->flash('exito', 'La ruta ha sido activada correctamente');
@@ -217,5 +218,25 @@ class FlotaController extends Controller
         }
 
         return redirect()->route('rutas.index');
+    }
+
+    public function comprobarActivar(Flota $avion)
+    {
+        $rutas = Ruta::where('flota_id', $avion->id)->orderBy('horaInicio')->get();
+
+        $destino = null;
+        foreach ($rutas as $ruta) {
+            // La primera vez que entra en el bucle la variable esta en null, al ser la primera ruta no necesita comprobacion
+            if($destino != null){
+                // Comprueba que el aerpuerto de origen es el mismo que el de destino de la ruta anterior
+                if($ruta->espacio_departure->aeropuerto->icao != $destino){
+                    session()->flash('error', 'La ruta no esta formada correctamente, los origenes y destinos no coinciden');
+                    return false;
+                }
+            }
+            $destino = $ruta->espacio_arrival->aeropuerto->icao;
+        }
+        
+        return true;
     }
 }

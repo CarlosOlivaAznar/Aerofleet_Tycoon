@@ -13,9 +13,9 @@
     </ul>
     <ul class="lista-menu">
       <li>
-        <a href="" class="logout">
-          <i class="bx bx-log-out"></i>
-          Cerrar Sesion
+        <a href="{{ route('profile.edit') }}">
+          <i class="bx bx-user"></i>
+          Cuenta
         </a>
       </li>
     </ul>
