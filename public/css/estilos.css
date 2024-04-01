@@ -494,6 +494,85 @@ span.verde{
 }
 
 
+/* Muestra de notificaciones de los aviones */
+.contenido main .informacion div.basico .notificaciones{
+    width: 100%;
+    height: 250px;
+    background-color: var(--grey);
+    overflow-y: scroll;
+    border-radius: 25px;
+}
+
+.contenido main .informacion div.basico .notificaciones ul{
+    list-style: none;
+    color: var(--dark);
+    text-align: left;
+    padding: 15px 5px;
+}
+
+.contenido main .informacion div.basico .notificaciones ul li{
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: var(--light);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.exito{
+    border-left: 10px solid var(--success);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.warning{
+    border-left: 10px solid var(--warning);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.error{
+    border-left: 10px solid var(--danger);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li p{
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+}
+
+
+.contenido main .infoBasico{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-top: 35px;
+
+}
+
+.contenido main .infoBasico ul{
+    width: 100%;
+    list-style: none;
+    color: var(--dark);
+    text-align: left;
+    margin-top: 15px;
+}
+
+.contenido main .infoBasico ul li{
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: var(--grey);
+}
+
+.contenido main .infoBasico ul li:nth-child(odd){
+    background-color: var(--dark-grey);
+}
+
+.contenido main .infoBasico ul li:first-child{
+    border-radius: 25px 25px 0 0;
+}
+
+.contenido main .infoBasico ul li:last-child{
+    border-radius: 0 0 25px 25px;
+}
+
+
 /* ------------ */
 /* Pagina Login */
 /* ------------ */
@@ -1119,6 +1198,11 @@ footer .contenidoFooter div p.texto a{
     padding: 30px;
     background-color: var(--light);
     color: var(--dark);
+}
+
+.contenido main .informacion div.basico h3{
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .contenido main .informacion .info{

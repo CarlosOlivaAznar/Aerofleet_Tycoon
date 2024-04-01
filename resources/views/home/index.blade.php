@@ -58,10 +58,50 @@
 
       <div class="informacion">
         <div class="basico">
+          <h3>Saldo</h3>
           <canvas id="beneficiosChart"></canvas>
         </div>
         <div class="basico">
-          info2
+          <h3>Mensajes</h3>
+          <div class="notificaciones">
+            <ul>
+              <li class="exito">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="exito">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="error">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="warning">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="warning">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="exito">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+              <li class="error">
+                <p>Texto de ejemplo Texto de ejemplo</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="infoBasico">
+        <h3>Informacion de los vuelos</h3>
+        <div>
+          <ul>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+            <li>Texto de ejemplo Texto de ejemplo </li>
+          </ul>
         </div>
       </div>
 
