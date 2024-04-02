@@ -19,6 +19,7 @@ class Ruta extends Model
         'horaFin',
         'distancia',
         'tiempoEstimado',
+        'precioBillete',
     ];
 
     public function flota()

@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Events\UserLoggedIn;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,6 +30,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // Crea el evento de usuario logeado
+        event(new UserLoggedIn(auth()->user()));
         return redirect()->route('home.index');
     }
 

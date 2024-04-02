@@ -7,6 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use App\Events\UserLoggedIn;
 
 class RedirectIfAuthenticated
 {
@@ -21,6 +22,8 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                // Crea el evento de usuario logeado
+                event(new UserLoggedIn(auth()->user()));
                 return redirect(RouteServiceProvider::HOME);
             }
         }

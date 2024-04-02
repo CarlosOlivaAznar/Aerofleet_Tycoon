@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('rutas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('flota_id');
+            $table->unsignedBigInteger('flota_id');
+            $table->foreign('flota_id')->references('id')->on('flota')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('espacio_departure_id');
             $table->unsignedBigInteger('espacio_arrival_id');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->string('horaFin');
             $table->unsignedFloat('distancia');
             $table->string('tiempoEstimado');
+            $table->unsignedInteger('precioBillete');
             $table->timestamps();
         });
     }

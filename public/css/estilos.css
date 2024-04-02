@@ -3,7 +3,7 @@
 /* Colores principales */
 :root {
     --light: #f6f6f9;
-    --primary: #1976D2;
+    --primary: #2d8de8;
     --light-primary: #CFE8FF;
     --grey: #eee;
     --dark-grey: #AAAAAA;
@@ -46,6 +46,9 @@ a{
     font-size: 1.8rem;
 }
 
+.icono{
+    width: 40px;
+}
 
 /* ------------ */
 /* Menu Lateral */
@@ -69,17 +72,15 @@ a{
     height: 60px;
     font-size: 27px;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--primary);
 }
 
-.menu-lateral .titulo-pag .bx{
-    font-size: 2.1rem;
-    color: var(--primary);
-    padding-left: 20px;
+.menu-lateral .titulo-pag img{
+    margin-left: 20px;
 }
 
 .menu-lateral .titulo-pag .titulo-nombre span{
-    color: var(--primary);
+    color: var(--dark);
 }
 
 .menu-lateral .lista-menu{
@@ -166,13 +167,13 @@ a{
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 200;
 }
 
 .contenido nav .bx.bx-menu{
     cursor: pointer;
     color: var(--dark);
-    z-index: 101;
+    z-index: 201;
 }
 
 .contenido nav::before{
@@ -234,7 +235,8 @@ a{
     color: var(--dark-grey);
 }
 
-.contenido main .cabecera a.boton{
+/* Clase boton */
+a.boton{
     display: flex;
     align-items: center;
     gap: 5px;
@@ -244,7 +246,9 @@ a{
     border-radius: 40px;
     margin-left: auto;
     color: var(--light);
+    white-space: nowrap;
 }
+
 
 
 /* Muestras de resumenes */
@@ -263,6 +267,7 @@ a{
     padding: 25px;
     border-radius: 25px;
     background-color: var(--light);
+    cursor: pointer;
 }
 
 .contenido main .resumen ul li .bx{
@@ -272,10 +277,22 @@ a{
     color: var(--primary);
 }
 
+.contenido main .resumen ul li div h3{
+    font-size: 20px;
+    text-overflow: ellipsis;
+}
+
 .contenido main .resumen ul li h3{
     color: var(--dark);
     font-size: 24px;
     font-weight: 700;
+}
+
+.contenido main .resumen ul li h4{
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
 }
 
 /* Logos propios */
@@ -309,21 +326,266 @@ a{
 
 
 /* Divs repartidos */
-.contenido main .informacion{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 25px;
-    margin-top: 25px;
-    color: var(--dark);
-}
-
-.contenido main .infodatos{
-    flex-grow: 1;
-    flex-basis: 500px;
+.contenido main .informacion .infodatos{
+    width: 50%;
     background-color: var(--light);
     border-radius: 25px;
     padding: 25px;
+}
+
+/* Modales */
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    z-index: 300;
+}
+
+.modal .contenido-modal{
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    background-color: var(--light);
+    border-radius: 25px;
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 200;
+    -webkit-animation-name: animacionCaer;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animacionCaer;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animacionCaer {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animacionCaer {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal .contenido-modal .cerrar-modal{
+    color: var(--dark-grey);
+    font-size: 25px;
+    float: right;
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+.modal .contenido-modal .cerrar-modal:hover, .cerrar-modal:focus{
+    color: var(--dark);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.modal .contenido-modal .cabecera-modal{
+    padding: 20px 25px;
+    color: var(--dark);
+    font-size: 20px;
+}
+
+.modal .contenido-modal .cuerpo-modal{
+    padding: 5px 25px;
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal{
+    padding: 10px 25px;
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal .botones{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-align: center;
+}
+
+.modal .contenido-modal .footer-modal .botones a,
+.modal .contenido-modal .footer-modal .botones span,
+.modal .contenido-modal .footer-modal .botones input[type="submit"]{
+    width: 100%;
+    border: 3px solid var(--grey);
+    transition: 0.4s;
+    border-radius: 25px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover,
+.modal .contenido-modal .footer-modal .botones input[type="submit"]:hover{
+    border: 3px solid var(--dark);
+    transition: 0.4s;
+}
+
+.modal .contenido-modal .footer-modal .botones a.cancelar, .modal .contenido-modal .footer-modal .botones span.cancelar{
+    color: var(--dark);
+}
+
+.modal .contenido-modal .footer-modal .botones a.aceptar,
+.modal .contenido-modal .footer-modal .botones input[type="submit"].aceptar{
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+span.rojo{
+    font-weight: 700;
+    color: var(--danger);
+}
+
+span.verde{
+    font-weight: 700;
+    color: var(--success);
+}
+
+/* formulario dentro del modal */
+.modal form label{
+    display: block;
+    font-size: 19px;
+    color: var(--dark);
+}
+
+.modal form input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 20px 0;
+    opacity: 0.8;
+    -webkit-transition: 0.3s;
+    transition: opacity 0.3s;
+}
+
+.modal form input[type=range]:hover{
+    opacity: 1;
+}
+
+.modal form input[type=range]::-webkit-slider-runnable-track{
+    height: 8px;
+    background: var(--grey);
+    border: none;
+    border-radius: 5px;
+}
+
+.modal form input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    margin-top: -11px;
+}
+
+.modal form input[type=range]:focus{
+    outline: none;
+}
+
+.modal form input[type=range]:focus::-webkit-slider-runnable-track{
+    background: var(--grey);
+}
+
+
+/* Muestra de notificaciones de los aviones */
+.contenido main .informacion div.basico .notificaciones{
+    width: 100%;
+    height: 250px;
+    background-color: var(--grey);
+    overflow-y: scroll;
+    border-radius: 25px;
+}
+
+.contenido main .informacion div.basico .notificaciones ul{
+    list-style: none;
+    color: var(--dark);
+    text-align: left;
+    padding: 15px 5px;
+}
+
+.contenido main .informacion div.basico .notificaciones ul li{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-color: var(--light);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li .bx{
+    padding-left: 7px;
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.exito{
+    border-left: 10px solid var(--success);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.exito .bx{
+    color: var(--success);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.warning{
+    border-left: 10px solid var(--warning);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.warning .bx{
+    color: var(--warning);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.error{
+    border-left: 10px solid var(--danger);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li.error .bx{
+    color: var(--danger);
+}
+
+.contenido main .informacion div.basico .notificaciones ul li p{
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+
+.contenido main .infoBasico{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-top: 35px;
+
+}
+
+.contenido main .infoBasico ul{
+    width: 100%;
+    list-style: none;
+    color: var(--dark);
+    text-align: left;
+    margin-top: 15px;
+}
+
+.contenido main .infoBasico ul li{
+    padding: 15px;
+    margin-bottom: 8px;
+    background-color: var(--grey);
+}
+
+.contenido main .infoBasico ul li:first-child{
+    border-radius: 25px 25px 0 0;
+}
+
+.contenido main .infoBasico ul li:last-child{
+    border-radius: 0 0 25px 25px;
 }
 
 
@@ -350,17 +612,15 @@ a{
     height: 60px;
     font-size: 27px;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--primary);
 }
 
-.barra-login .titulo-pag .bx{
-    font-size: 2.1rem;
-    color: var(--primary);
-    padding-left: 20px;
+.barra-login .titulo-pag img{
+    margin-left: 20px;
 }
 
 .barra-login .titulo-pag .titulo-nombre span{
-    color: var(--primary);
+    color: var(--dark);
 }
 
 .barra-login .login{
@@ -385,10 +645,314 @@ a{
     color: var(--dark);
 }
 
+.mainContent{
+    padding: 50px 70px 50px 70px;
+}
+
+.imagenTitulo{
+    width: 100%;
+    height: 40vw;
+}
+
+.mainContent h1.tituloPagina{
+    position: absolute;
+    top: 10vw;
+    color: var(--primary);
+    -webkit-text-stroke-width: 0.3vw;
+    -webkit-text-stroke-color: white;
+    font-size: 10vw;
+    font-weight: 900;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.mainContent h1{
+    font-size: 37px;
+    color: var(--dark);
+}
+
+.mainContent h2.subtituloPagina{
+    text-align: center;
+    color: var(--dark);
+    margin-top: 20px;
+}
+
+.mainContent h2{
+    margin-top: 40px;
+    color: var(--dark);
+}
+
+.mainContent .resumen ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 50px;
+    margin-bottom: 36px;
+}
+
+.mainContent .resumen ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--light);
+}
+
+.mainContent .resumen ul li .bx{
+    
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--grey);
+    color: var(--dark);
+    font-size: 35px;
+}
+
+.mainContent .resumen ul li h3{
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mainContent .resumen ul li h4{
+    color: var(--dark);
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mainContent .imagenConTexto{
+    text-align: center;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 0;
+    width: 100%;
+    height: 400px;
+    border-radius: 25px;
+    margin-bottom: 36px;
+}
+
+.mainContent .imagenConTexto h3{
+    font-size: 40px;
+    padding: 15px 0 250px 0;
+    color: var(--dark);
+}
+
+.mainContent .imagenConTexto a{
+    background-color: var(--primary);
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 40px;
+    margin-top: 100px;
+    color: var(--light);
+}
+
+.mainContent .changelog{
+    width: 100%;
+    border-radius: 25px;
+    padding: 20px 10px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.mainContent .changelog h3{
+    font-size: 30px;
+}
+
+.mainContent .changelog hr{
+    width: 100%;
+    height: 8px;
+    border-radius: 25px;
+    margin-top: 10px;
+    background-color: var(--grey);
+    color: var(--grey);
+    border: none;
+}
+
+.mainContent .changelog h4{
+    font-size: 20px;
+    margin-top: 33px;
+}
+
+.mainContent .changelog ul{
+    margin-left: 33px;
+}
+
+.mainContent .changelog ul li{
+    list-style: disc;
+    margin-top: 10px;
+}
+
+/* Footer pagina landing */
+footer{
+    width: 95%;
+    margin: 30px auto;
+    padding: 20px 10px;
+    border-radius: 25px;
+    background-color: var(--light);
+    box-sizing: border-box;
+    color: var(--dark);
+}
+
+footer .contenidoFooter{
+    display: flex;
+    flex-flow: row;
+    gap: 30px;
+}
+
+footer .contenidoFooter .izquierda{
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+footer .contenidoFooter .derecha{
+    margin-right: 40px;
+}
+
+footer .contenidoFooter .izquierda .imagen-texto{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 27px;
+}
+
+footer .contenidoFooter .izquierda .imagen-texto img{
+    width: 50px;
+}
+
+footer .contenidoFooter div p{
+    text-align: center;
+}
+
+footer .contenidoFooter div p.autor{
+    margin-top: 15px;
+    color: var(--dark-grey);
+}
+
+footer .contenidoFooter div p.titulo{
+    color: var(--dark);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+footer .contenidoFooter div p.texto{
+    margin-bottom: 5px;
+}
+
+footer .contenidoFooter div p.texto a{
+    color: var(--dark-grey);
+    text-decoration: none;
+}
+
+/* Contenido de formularios en Main Content */
+.mainContent form .formulario{
+    margin: 15px auto;
+    width: 65%;
+    padding: 50px 30px;
+    border-radius: 25px;
+    background-color: var(--light);
+}
+
+.mainContent form .formulario h1{
+    text-align: center;
+    color: var(--dark);
+}
+
+.mainContent form .formulario .campos{
+    width: 100%;
+    margin-top: 25px;
+    padding: 10px 20px;
+}
+
+.mainContent form .formulario .campos label{
+    display: block;
+    font-size: 19px;
+    color: var(--dark);
+}
+
+.mainContent form .formulario .campos input{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.mainContent form .formulario .campos input:focus{
+    border: 3px solid var(--dark);
+}
+
+.mainContent form .formulario .campos select{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.mainContent form .formulario .campos .select:focus{
+    border: 3px solid var(--dark);
+    border-radius: 10px 10px 0 0;
+}
+
+/* Select con buscador */
+.mainContent form .formulario .campos .drop-down{
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    overflow: auto;
+    max-height: 200px;
+    z-index: 50;
+    border-radius: 0 0 10px 10px;
+    border: 3px solid var(--dark);
+    border-top: 0;
+}
+
+.mainContent form .formulario .campos .drop-down p{
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 19px;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.mainContent form .formulario .campos .drop-down.show{
+    display: block;
+}
+
+
+/* Boton Submit */
+.mainContent form .formulario .campos input[type="submit"]{
+    background-color: var(--dark-grey);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.mainContent form .formulario .campos input[type="submit"]:hover{
+    background-color: var(--dark);
+}
+
 /* Mensajes de alerta */
 .alerta {
     padding: 20px;
-    background-color: #f44336;
+    background-color: var(--danger);
     color: var(--light);
     opacity: 1;
     transition: opacity 0.6s;
@@ -441,10 +1005,11 @@ a{
 /* ----------- */
 
 .contenido main .mapa{
-    position: fixed;
-    width: 85%;
-    height: 70%;
+    display: flex;
+    width: 100%;
+    height: 70vh;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapa #map{
@@ -452,13 +1017,14 @@ a{
     height: 100%;
     overflow: hidden;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapaizq{
-    flex-grow: 1;
-    flex-basis: 300px;
+    width: 50%;
     height: 300px;
     border-radius: 25px;
+    z-index: 200;
 }
 
 .contenido main .mapaizq #map{
@@ -467,6 +1033,8 @@ a{
     overflow: hidden;
     border-radius: 25px;
 }
+
+
 
 
 /* ------------ */
@@ -546,6 +1114,16 @@ a{
     border-radius: 10px;
 }
 
+.contenido main .tablas table td a.modificar{
+    color: var(--light-warning);
+}
+
+.contenido main .tablas table td a.modificar .bx{
+    background-color: var(--warning);
+    padding: 5px;
+    border-radius: 10px;
+}
+
 
 /* ----------- */
 /* Pagina Ruta */
@@ -556,6 +1134,18 @@ a{
     padding: 30px;
     background-color: var(--light);
     color: var(--dark);
+}
+
+.contenido main .tablas .cabecera .botones-tablas{
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+    margin-left: auto;
+    align-items: center;
+}
+
+.contenido main .tablas .cabecera .botones-tablas a{
+    padding: 5px 20px 5px 15px;
 }
 
 .contenido main .rutas .divRepartido{
@@ -609,13 +1199,26 @@ a{
     width: 100%;
     border-radius: 25px;
     padding: 30px;
-    background-color: var(--light);
     color: var(--dark);
     display: flex;
     justify-content: space-between;
     text-align: center;
     flex-flow: row;
+    gap: 30px;
     margin-top: 35px;
+}
+
+.contenido main .informacion div.basico{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.contenido main .informacion div.basico h3{
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .contenido main .informacion .info{
@@ -666,6 +1269,71 @@ a{
     cursor: pointer;
 }
 
+/* Sobre mi */
+.mainContent .informacion-imagen{
+    display: flex;
+    flex-flow: row;
+    gap: 25px;
+}
+
+.mainContent .informacion-imagen div.imagen{
+    width: 80%;
+}
+
+.mainContent .informacion-imagen div.texto{
+    width: 100%;
+}
+
+.mainContent .informacion-imagen div.imagen img{
+    width: 100%;
+    border-radius: 25px;
+}
+
+.mainContent .informacion-imagen div p{
+    margin-top: 15px;
+    text-align: justify;
+}
+
+/* Billetes avion y range */
+.contenido main .resumenAvion input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 20px 0;
+    opacity: 0.8;
+    -webkit-transition: 0.3s;
+    transition: opacity 0.3s;
+}
+
+.contenido main .resumenAvion input[type=range]:hover{
+    opacity: 1;
+}
+
+.contenido main .resumenAvion input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: var(--grey);
+    border: none;
+    border-radius: 5px;
+}
+
+.contenido main .resumenAvion input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 12px;
+    border-radius: 10px;
+    background: var(--primary);
+    margin-top: -11px;
+}
+
+.contenido main .resumenAvion input[type=range]:focus{
+    outline: none;
+}
+
+.contenido main .resumenAvion input[type=range]:focus::-webkit-slider-runnable-track{
+    background: var(--grey);
+}
+
 
 
 
@@ -698,22 +1366,31 @@ a{
     margin-top: 30px;
 }
 
-.contenido main .resumen.sede ul a:nth-child(1) li .bx{
+.contenido main .infodatos .sinBordes{
+    border: none;
+    margin: 0 auto;
+}
+
+.contenido main .infodatos .sinBordes tr td{
+    padding: 5px 10px;
+}
+
+.contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
     color: var(--success);
 }
 
-.contenido main .resumen.sede ul a:nth-child(2) li .bx{
+.contenido main .resumen.sede ul li:nth-child(2) .bx{
     background-color: var(--light-warning);
     color: var(--warning);
 }
 
-.contenido main .resumen.sede ul a:nth-child(3) li .bx{
+.contenido main .resumen.sede ul li:nth-child(3) .bx{
     background-color: var(--light-primary);
     color: var(--primary);
 }
 
-.contenido main .resumen.sede ul a:nth-child(4) li .bx{
+.contenido main .resumen.sede ul li:nth-child(4) .bx{
     background-color: var(--light-success);
     color: var(--success);
 }
@@ -745,4 +1422,42 @@ a{
         left: 80px;
     }
 
+    /* Tablas responsivas */
+    .contenido main .tablas{
+        overflow-y: auto;
+    }
+
+    /* Titulo de la pagina adaptado a moviles */
+    .mainContent h1{
+        font-size: 10vw;
+        top: 15vw;
+    }
+
+    .mainContent{
+        padding: 50px 30px 50px 30px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    /* Titulo de la pagina adaptado a moviles */
+    .mainContent h1{
+        font-size: 16vw;
+        top: 15vw;
+    }
+
+    .mainContent{
+        padding: 50px 10px 50px 10px;
+    }
+
+    .mainContent .imagenConTexto{
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: 0;
+    }
+    
+    .mainContent .imagenConTexto h3{
+        font-size: 20px;
+        padding: 15px 0 250px 0;
+    }
 }

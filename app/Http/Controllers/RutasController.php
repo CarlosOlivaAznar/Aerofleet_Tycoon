@@ -16,12 +16,12 @@ class RutasController extends Controller
 {
     public function index()
     {
-        $rutas = Ruta::where('user_id', auth()->id())->orderBy('horaInicio')->get();
-
+        $grupoRutas = Ruta::where('user_id', auth()->id())->orderBy('horaInicio')->get()->groupBy('flota_id');
+        
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('rutas.index', ['rutas' => $rutas]);
+        return view('rutas.index', ['grupoRutas' => $grupoRutas]);
     }
 
     public function crearRuta()
@@ -56,7 +56,7 @@ class RutasController extends Controller
                     if($avion->avion->rango >= $distancia){
 
                         $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
-
+                        
                         $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
                         $horaLlegada = Carbon::createFromFormat('H:i:s', $request->horaDep);
                         $horaLlegada->addMinutes($tiempoRuta);
@@ -74,8 +74,9 @@ class RutasController extends Controller
                                     'espacio_arrival_id' => $espacioArr->id,
                                     'horaInicio' => $horaInicial->format('H:i:s'),
                                     'horaFin' => $horaLlegada->format('H:i:s'),
-                                    'distancia' => number_format($distancia, 2),
+                                    'distancia' => round($distancia, 2),
                                     'tiempoEstimado' => $horaRuta->format('H:i:s'),
+                                    'precioBillete' => $request->precioBillete,
                                 ]);
                                 session()->flash('exito', 'Ruta creada correctamente');
                             }
@@ -197,10 +198,27 @@ class RutasController extends Controller
         $ruta = Ruta::where('id', $id)->first();
 
         if($ruta->user_id === auth()->id()){
+            $ruta->flota->estado = 0;
+            $ruta->flota->update();
             $ruta->delete();
             session()->flash('exito', 'Ruta eliminada correctamente');
         } else {
             session()->flash('error', 'error al eliminar la ruta');
+        }
+
+        return redirect()->route('rutas.index');
+    }
+
+    public function modificarRuta($id, Request $request)
+    {
+        $ruta = Ruta::find($id);
+
+        if($ruta->user_id === auth()->id()){
+            $ruta->precioBillete = $request->precioBillete;
+            $ruta->save();
+            session()->flash('exito', 'Ruta modificada correctamente');
+        } else {
+            session()->flash('error', 'error al modificar la ruta');
         }
 
         return redirect()->route('rutas.index');

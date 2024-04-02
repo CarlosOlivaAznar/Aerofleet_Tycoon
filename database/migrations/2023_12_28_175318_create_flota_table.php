@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedinteger('avion_id');
             $table->string('matricula');
             $table->date('fechaDeFabricacion');
-            $table->unsignedinteger('condicion');
-            $table->string('estado')->nullable();
+            $table->unsignedFloat('condicion');
+            $table->unsignedInteger('estado')->default(0);
             $table->timestamps();
         });
     }

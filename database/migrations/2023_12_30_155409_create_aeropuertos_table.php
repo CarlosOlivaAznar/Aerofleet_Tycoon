@@ -14,11 +14,14 @@ return new class extends Migration
         Schema::create('aeropuertos', function (Blueprint $table) {
             $table->id();
             $table->string('icao');
+            $table->string('pais');
             $table->string('nombre');
             $table->unsignedBigInteger('espaciosTotales');
             $table->unsignedBigInteger('costeOperacional');
             $table->double('latitud', 10, 6);
             $table->double('longitud', 10, 6);
+            $table->float('demanda');
+            $table->unsignedInteger('pasajerosEstimados');
             $table->timestamps();
         });
     }

@@ -56,6 +56,18 @@
               <option value="13:30:00">13:30z</option>
               <option value="14:00:00">14:00z</option>
               <option value="14:30:00">14:30z</option>
+              <option value="15:00:00">15:00z</option>
+              <option value="15:30:00">15:30z</option>
+              <option value="16:00:00">16:00z</option>
+              <option value="16:30:00">16:30z</option>
+              <option value="17:00:00">17:00z</option>
+              <option value="17:30:00">17:30z</option>
+              <option value="18:00:00">18:00z</option>
+              <option value="18:30:00">18:30z</option>
+              <option value="19:00:00">19:00z</option>
+              <option value="19:30:00">19:30z</option>
+              <option value="20:00:00">20:00z</option>
+              <option value="20:30:00">20:30z</option>
             </select>
           </div>
           <div class="input">
@@ -120,6 +132,12 @@
       </div>   
 
       <div class="resumenAvion">
+        <h4>Precio billete:</h4>
+        <input type="range" name="precioBillete" id="precioBillete" value="50" min="5" max="600" oninput="slide(this)">
+        <p>Precio: <span id="precio"></span></p>
+      </div>
+
+      <div class="resumenAvion">
         <h4>Ruta actual del avion:</h4>
 
         @if(count($rutas) > 0)
@@ -163,6 +181,17 @@
         </div>
       </div>
     </form>
+    <script>
+      var slider = document.getElementById('precioBillete');
+      var precio = document.getElementById('precio');
+      // Precio por defecto al llegar a la vista
+      precio.innerHTML = slider.value;
+
+      function slide(event){
+        precio.innerHTML = event.value;
+      }
+
+    </script>
     </main>
   </div>
 </body>

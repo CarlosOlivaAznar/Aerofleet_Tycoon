@@ -14,7 +14,7 @@ class Avionsh extends Model
         'avion_id',
         'fechaDeFabricacion',
         'img',
-        'compañia',
+        'companyia',
         'condicion',
     ];
 
@@ -28,7 +28,6 @@ class Avionsh extends Model
         /* 
         Array con todos los modelos de avion de segunda mano
         Al comprar un avion de segunda mano, se elegira uno aleatorio de esta lista para introducir a la base de datos
-        Asi se mantiene una consistencia en la tabla 'avionessh' y no son aleatorios todo el rato
         */
         $modelosSh = [
             [16, 'images/737_aea.png', 'Air Europa'],
@@ -53,6 +52,6 @@ class Avionsh extends Model
             [15, 'images/a380_malaysia.png', 'Malaysia Airlines'],
         ];
 
-        return $modelosSh[rand(0, 20)];
+        return $modelosSh[rand(0, 19)];
     }
 }

@@ -39,9 +39,9 @@
             <tr>
               <th>Aeropuerto</th>
               <th>Nombre</th>
-              <th>Espacios Comprados</th>
-              <th>Espacios Ocupados</th>
-              <th>Espacios Disponibles</th>
+              <th>Comprados</th>
+              <th>Ocupados</th>
+              <th>Disponibles</th>
               <th>Coste por Operacion</th>
               <th>Precio por espacio</th>
               <th>Acciones</th>

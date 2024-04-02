@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Flota;
 use App\Models\Hangar;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,12 @@ class SedeController extends Controller
     public function index()
     {
         $sede = Sede::where('user_id', auth()->id())->first();
+        $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
 
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('sede.index', ['sede' => $sede]);
+        return view('sede.index', ['sede' => $sede, 'flotaMantenimiento' => $flotaMantenimiento]);
     }
 
     public function comprarHangar()
@@ -70,6 +72,16 @@ class SedeController extends Controller
         } else {
             session()->flash('error', 'Saldo insuficiente');
         }
+
+        return redirect()->route('sede.index');
+    }
+
+    public function quitarMantenimiento($id)
+    {
+        $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
+        
+        $avion->estado = 0;
+        $avion->update();
 
         return redirect()->route('sede.index');
     }

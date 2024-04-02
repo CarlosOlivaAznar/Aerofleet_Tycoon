@@ -21,16 +21,29 @@
         </div>
       </div>
 
+      @foreach ($avionesVolando as $avion)
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[0] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[1] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[2] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[3] }}">
+      @endforeach
+
+      @foreach ($rutas as $ruta)
+        <input type="hidden" class="rutasUsuario" value="{{ $ruta[0] }}">
+        <input type="hidden" class="rutasUsuario" value="{{ $ruta[1] }}">
+        <input type="hidden" class="rutasUsuario" value="{{ $ruta[2] }}">
+        <input type="hidden" class="rutasUsuario" value="{{ $ruta[3] }}">
+      @endforeach
+
+      @foreach ($aeropuertos as $aeropuerto)
+        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[0] }}">
+        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[1] }}">
+        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[2] }}">
+      @endforeach
+
       <div class="mapa">
         <div id="map"></div>
-        <script>
-            var map = L.map('map').setView([41.6647603, -1.0506562], 4);
-  
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
-        </script>
+        <script src="{{ asset('js/mapa.js') }}"></script>
       </div>
     </main>
   </div>

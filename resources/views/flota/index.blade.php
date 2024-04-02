@@ -40,6 +40,7 @@
             <thead>
                 <tr>
                     <th>Avion</th>
+                    <th>Matricula</th>
                     <th>Modelo</th>
                     <th>Fecha de Fabricacion</th>
                     <th>Estado</th>
@@ -54,13 +55,15 @@
                 <td>
                   <img class="img-avion" src="{{ asset($avion->avion->img) }}">
                 </td>
+                <td>{{ $avion->matricula }}</td>
                 <td>{{ $avion->avion->modelo }}</td>
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->condicion }}%</td>
-                <td>{{ $avion->estado }}</td>
+                <td>{{ $avion->estatusS() }}</td>
                 <td>{{ number_format($avion->avion->precio * ($avion->condicion / 100), 0, ',', '.') }}</td>
                 <td>
                   <a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a>
+                  <a class="modificar" data-modal-target="modalMantenimiento{{ $avion->id }}"><i class="bx bx-wrench"></i></a>
                   <a class="comprar" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}"><i class="bx bx-add-to-queue"></i></a>
                 </td>
               </tr> 
@@ -75,6 +78,31 @@
           </div>
       @endif
 
+      <!-- Modales -->
+      @foreach ($flota as $avion)
+      <div class="modal" id="modalMantenimiento{{ $avion->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Mantenimiento Avion</h2>
+          </div>
+          <div class="cuerpo-modal">
+
+            <p>¿Esta seguro que quiere enviar el avion a mantenimiento?</p><br>
+            <p>El avion se estacionara en los hangares de su sede y se realizaran los mantenimientos</p>
+            
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
+              <a href="{{ route('flota.mantenimiento', ["id" => $avion->id]) }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      @endforeach
+
+      <script src="{{ asset('js/modals.js') }}"></script>
     </main>
   </div>
 </body>

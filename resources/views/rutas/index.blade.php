@@ -19,20 +19,32 @@
         <div class="titulo">
           <h1>Rutas</h1>
         </div>
-        <a href="{{ route('rutas.crearRuta') }}" class="boton">
-          <i class="bx bx-plus-circle"></i>
-          <span>Crear Ruta</span>
-        </a>
       </div>
 
       <!-- Alertas -->
       @include('partials.alertas')
 
-      @if (count($rutas) > 0)
+      @if (count($grupoRutas) > 0)
+      @foreach ($grupoRutas as $rutas)
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>Rutas Activas</h3>
+          <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
+          @if ($rutas[0]->flota->estado == 0 || $rutas[0]->flota->estado == 2)
+              <span class="rojo">RUTA INACTIVA</span>
+          @endif
+          <div class="botones-tablas">
+            @if ($rutas[0]->flota->estado == 0)
+            <a href="{{ route('flota.activarRuta', ['id' => $rutas[0]->flota->id]) }}" class="boton">
+              <i class="bx bx-check-square" ></i>
+              <span>Activar ruta</span>
+            </a>
+            @endif
+            <a href="{{ route('rutas.crearRutaAvion', ['id' => $rutas[0]->flota->id]) }}" class="boton">
+              <i class="bx bx-add-to-queue"></i>
+              <span>Crear ruta</span>
+            </a>
+          </div>
         </div>
         <table>
           <thead>
@@ -45,6 +57,7 @@
               <th>Tiempo</th>
               <th>Hora de salida</th>
               <th>Hora de llegada</th>
+              <th>Precio Billete</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -59,18 +72,66 @@
               <td>{{ $ruta->tiempoEstimado }}</td>
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
-              <td><a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a></td>
+              <td>{{ $ruta->precioBillete }}€</td>
+              <td>
+                <a class="vender" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}"><i class="bx bx-trash"></i></a>
+                <a class="modificar" data-modal-target="modalAvion{{ $ruta->id }}"><i class="bx bx-wrench"></i></a>
+              </td>
             </tr>
             @endforeach
           </tbody>
         </table>
-      </div>     
+      </div>
+      @endforeach  
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
             <h4>No hay rutas creadas</h4>
           </div>
       @endif
+
+      
+      <!-- Modales por cada avion -->
+      @foreach ($grupoRutas as $rutas)
+      @foreach ($rutas as $ruta)
+      <div class="modal" id="modalAvion{{ $ruta->id }}">
+        <div class="contenido-modal">
+          <form action="{{ route('rutas.modificar', ['id' => $ruta->id]) }}" method="POST">
+            <div class="cabecera-modal">
+              <span class="cerrar-modal">&times;</span>
+              <h2>Modificar Ruta</h2>
+            </div>
+            <div class="cuerpo-modal">
+              
+              @csrf
+              <label for="precioBillete">Modificar precio billete:</label>
+              <input type="range" name="precioBillete" id="precioBillete" class="precioBilletes" value="{{ $ruta->precioBillete }}" min="5" max="600" oninput="slide(this)">
+              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">Precio: </p>
+              <span id="precio" class="precio"> {{ $ruta->precioBillete }} </span>
+              
+            </div>
+            <div class="footer-modal">
+              <div class="botones">
+                <span class="cancelar">Cancelar Cambios</span>
+                <input type="submit" class="aceptar" value="Confirmar Cambios">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> 
+      @endforeach  
+      @endforeach
+
+      <script src="{{ asset('js/modals.js') }}"></script>
+      <script>
+
+        function slide(event){
+          var precio = event.nextElementSibling.nextElementSibling;
+          precio.innerHTML = event.value
+        }
+  
+      </script>
+
     </main>
   </div>
 </body>

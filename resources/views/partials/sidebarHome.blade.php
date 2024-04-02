@@ -1,6 +1,6 @@
 <div class="menu-lateral">
     <a href="#" class="titulo-pag">
-      <i class="bx bx-paper-plane" ></i>
+      <img class="icono" src="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" alt="AFT">
       <div class="titulo-nombre">Aero<span>Fleet</span></div>
     </a>
     <ul class="lista-menu">
@@ -13,9 +13,9 @@
     </ul>
     <ul class="lista-menu">
       <li>
-        <a href="" class="logout">
-          <i class="bx bx-log-out"></i>
-          Cerrar Sesion
+        <a href="{{ route('profile.edit') }}">
+          <i class="bx bx-user"></i>
+          Cuenta
         </a>
       </li>
     </ul>

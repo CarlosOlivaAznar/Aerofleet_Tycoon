@@ -19,6 +19,24 @@ class Flota extends Model
         'estado',
     ];
 
+    public function estatusS()
+    {
+        switch ($this->estado) {
+            case 0:
+                return "En tierra";
+                break;
+            case 1:
+                return "En ruta";
+                break;
+            case 2:
+                return "En mantenimiento";
+                break;
+            default:
+                return "En el triangulo de las Bermudas";
+                break;
+        }
+    }
+
     public function avion()
     {
         return $this->belongsTo(Avion::class);
