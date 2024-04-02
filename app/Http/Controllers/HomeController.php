@@ -8,6 +8,7 @@ use App\Models\BeneficiosHistorico;
 use App\Models\Sede;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -31,7 +32,15 @@ class HomeController extends Controller
                 array_push($fechasArr, $beneficio->fecha);
             }
 
-            return view('home.index', ['user' => $user, 'beneficios' => $beneficiosArr, 'fechas' => $fechasArr]);
+            // Variables de sesion
+            $infoAviones = Session::get('infoAviones', []);
+
+            // Creamos la variable de sesion nueva para mostrar los mensajes importantes para el usuario
+            $mensajeVuelos = Session::get('mensajeVuelos', []);
+
+            //dd($infoAviones, $mensajeVuelos);
+
+            return view('home.index', ['user' => $user, 'beneficios' => $beneficiosArr, 'fechas' => $fechasArr, 'infoAviones' => $infoAviones, 'mensajeVuelos' => $mensajeVuelos]);
         } else {
             return redirect()->route('home.company');
         }

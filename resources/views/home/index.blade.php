@@ -64,29 +64,28 @@
         <div class="basico">
           <h3>Mensajes</h3>
           <div class="notificaciones">
+            @if (count($mensajeVuelos) > 0)
             <ul>
-              <li class="exito">
-                <p>Texto de ejemplo Texto de ejemplo</p>
+              @foreach ($mensajeVuelos as $mensaje)
+                @if ($mensaje[1] === 1)
+                  <li class="exito">
+                    <i class="bx bx-check-circle"></i>
+                @elseif($mensaje[1] === 2)
+                  <li class="warning">
+                    <i class="bx bx-error"></i>
+                @elseif($mensaje[1] === 3)
+                  <li class="error">
+                    <i class="bx bx-error"></i>
+                @else
+                  <li>
+                @endif
+                <p>{{ $mensaje[0] }}</p>
               </li>
-              <li class="exito">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
-              <li class="error">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
-              <li class="warning">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
-              <li class="warning">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
-              <li class="exito">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
-              <li class="error">
-                <p>Texto de ejemplo Texto de ejemplo</p>
-              </li>
+              @endforeach
             </ul>
+            @else
+                No hay mensajes disponibles
+            @endif
           </div>
         </div>
       </div>
@@ -94,14 +93,15 @@
       <div class="infoBasico">
         <h3>Informacion de los vuelos</h3>
         <div>
+          @if (count($infoAviones) > 0)
           <ul>
-            <li>Texto de ejemplo Texto de ejemplo </li>
-            <li>Texto de ejemplo Texto de ejemplo </li>
-            <li>Texto de ejemplo Texto de ejemplo </li>
-            <li>Texto de ejemplo Texto de ejemplo </li>
-            <li>Texto de ejemplo Texto de ejemplo </li>
-            <li>Texto de ejemplo Texto de ejemplo </li>
+            @foreach ($infoAviones as $info)
+            <li>{{ $info }}</li>
+            @endforeach
           </ul>
+          @else
+            No hay informacion
+          @endif
         </div>
       </div>
 

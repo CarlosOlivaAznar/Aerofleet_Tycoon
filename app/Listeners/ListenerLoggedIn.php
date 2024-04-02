@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
 {
@@ -28,6 +29,12 @@ class ListenerLoggedIn
     {
         $ultimaConexion = Carbon::createFromTimeString($event->user->ultimaConexion);
         $fechaActual = now();
+
+        // Creamos la variable de sesion nueva para mostrar los datos de los vuelos
+        Session::put('infoAviones', []);
+
+        // Creamos la variable de sesion nueva para mostrar los mensajes importantes para el usuario
+        Session::put('mensajeVuelos', []);
         
         // Solo hay que calcular la diferencia de dias, en algunos casos las horas producen inconsistencias
         // y una hora de diferencia puede añadir un dia mas o menos.
@@ -145,6 +152,39 @@ class ListenerLoggedIn
         $user = User::where('id', auth()->id())->first();
         $user->saldo += $beneficio;
         $user->update();
+
+        // Guardamos informacion de los vuelos para que el usuario tenga feedback
+        $infoAviones = Session::get('infoAviones', []);
+        array_push($infoAviones, "El avion". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
+        Session::put('infoAviones', $infoAviones);
+
+        // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
+        if($beneficio < 0){
+            array_push($mensajeVuelos, 
+            ["El avion". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes",
+            3]);
+        }
+
+        if($pasajeros === $ruta->flota->avion->capacidad){
+            array_push($mensajeVuelos, 
+            ["El avion". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con el avion lleno, considere aumentar el precio de los billetes",
+            1]);
+        }
+
+        if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
+            array_push($mensajeVuelos, 
+            ["El avion". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pasajeros, considere bajar los precios de los billetes",
+            2]);
+        }
+
+        if($pasajeros <= 0){
+            array_push($mensajeVuelos, 
+            ["El avion". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta vacio, no tiene ningun pasajero, considere cambiar la ruta o bajar los precios de los billetes",
+            3]);
+        }
+
+        Session::put('mensajeVuelos', $mensajeVuelos);
     }
 
     public function mantenimiento()
