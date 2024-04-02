@@ -9,3 +9,6 @@
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 <title>AeroFleet</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ asset('images/logos/logo_AFT_100px_icon.png') }}">
