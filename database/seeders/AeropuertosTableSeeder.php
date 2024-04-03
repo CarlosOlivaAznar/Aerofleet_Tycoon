@@ -557,8 +557,8 @@ class AeropuertosTableSeeder extends Seeder
             'espaciosTotales' => 25,
             'costeOperacional' => 250,
             'latitud' => 0.50,
-            'longitud' => 53.579127,
-            'demanda' => -0.348110,
+            'longitud' => 53.579762,
+            'demanda' => -0.347168,
             'pasajerosEstimados' => 50,
         ]);
 
