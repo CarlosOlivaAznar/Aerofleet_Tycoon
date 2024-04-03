@@ -125,7 +125,7 @@ class ListenerLoggedIn
 
 
         // Se calcula los pasajeros que van en el avion en una ruta concreta
-        $pasajeros = $mediaDemanda * $pasajerosEstimados;
+        $pasajeros = intval($mediaDemanda * $pasajerosEstimados);
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
             $pasajeros = $ruta->flota->avion->capacidad;
@@ -174,7 +174,7 @@ class ListenerLoggedIn
 
         if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pasajeros, considere bajar los precios de los billetes",
+            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes",
             2]);
         }
 
