@@ -13,6 +13,9 @@ class AeropuertosTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Borra los existentes para que no se dupliquen al ejecutar el seeder
+        Aeropuerto::truncate();
+
         /* ------------------ */
         /* Aeropuertos España */
         /* ------------------ */
