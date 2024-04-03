@@ -38,7 +38,7 @@ Se utiliza para dar un mensaje de alerta segun el mensaje por ejemplo un mensaje
 
 ### Boton de caracter general
 
-Boton alineado a la izquierda, se utiliza con la clase .boton en un <a>
+Boton alineado a la derecha, se utiliza con la clase .boton en un <a>
 
 ```
 <a href="{{ route('rutas.crearRuta') }}" class="boton">
