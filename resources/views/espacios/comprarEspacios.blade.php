@@ -50,10 +50,13 @@
               <h3>Precio Total:</h3>
               <p id="precioTotal"></p>
             </div>
-            <div class="input submit">
-              <input type="submit" value="Comprar Espacios" id="comprarEspacios">
-            </div>
           </div>
+
+          <div class="input submit">
+            <input type="submit" value="Comprar Espacios" id="comprarEspacios">
+          </div>
+
+          
           <!-- Precios de los espacios -->
           @foreach ($aeropuertos as $aeropuerto)
           <input type="hidden" id="{{ $aeropuerto->icao }}" value="{{ $aeropuerto->costeOperacional }}">

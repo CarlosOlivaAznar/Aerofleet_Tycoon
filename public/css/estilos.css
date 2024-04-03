@@ -1161,20 +1161,48 @@ footer .contenidoFooter div p.texto a{
 }
 
 .contenido main .rutas .divRepartido .input select{
-    padding: 5px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 17px;
+    outline: none;
+    
 }
 
-.contenido main .rutas .divRepartido .input.submit{
+.contenido main .rutas .divRepartido .input select:focus{
+    border: 3px solid var(--dark);
+}
+
+.contenido main .rutas .divRepartido .input input{
+    width: 80px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 17px;
+    outline: none;
+}
+
+.contenido main .rutas .divRepartido .input input:focus{
+    border: 3px solid var(--dark);
+}
+
+.contenido main .rutas .input.submit{
     display: flex;
     align-items: center;
 }
 
-.contenido main .rutas .divRepartido .input #comprarEspacios{
+.contenido main .rutas .input #comprarEspacios{
     display: block;
     align-items: center;
     margin : 0 auto;
     padding: 10px 15px;
     border-radius: 40px;
+    font-size: 15px;
     border: none;
     background-color: var(--primary);
     color: var(--light);
