@@ -895,11 +895,342 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+
+        /* -------------------- */
+        /* Aeropuertos Alemania */
+        /* -------------------- */
+
+        Aeropuerto::create([
+            'icao' => 'EDDB',
+            'pais' => 'D',
+            'nombre' => 'Berlin Brandenburg Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 52.362690,
+            'longitud' => 13.500590,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDW',
+            'pais' => 'D',
+            'nombre' => 'Bremen Airport',
+            'espaciosTotales' => 90,
+            'costeOperacional' => 850,
+            'latitud' => 53.048001,
+            'longitud' => 8.787356,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 85,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDK',
+            'pais' => 'D',
+            'nombre' => 'Cologne Bonn Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 50.868811,
+            'longitud' => 7.140407,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 150,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDLW',
+            'pais' => 'D',
+            'nombre' => 'Dortmund Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 51.517080,
+            'longitud' => 7.613403,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDC',
+            'pais' => 'D',
+            'nombre' => 'Dresden Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 600,
+            'latitud' => 51.132256,
+            'longitud' => 13.767650,
+            'demanda' => 0.72,
+            'pasajerosEstimados' => 80,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDL',
+            'pais' => 'D',
+            'nombre' => 'Dusseldorf International Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1700,
+            'latitud' => 51.286522,
+            'longitud' => 6.766367,
+            'demanda' => 200,
+            'pasajerosEstimados' => 0.85,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDE',
+            'pais' => 'D',
+            'nombre' => 'Erfurt Weimar Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.978508,
+            'longitud' => 10.960220,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDF',
+            'pais' => 'D',
+            'nombre' => 'Frankfurt Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 50.036697,
+            'longitud' => 8.561932,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDFH',
+            'pais' => 'D',
+            'nombre' => 'Frankfurt Hahn Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 340,
+            'latitud' => 49.945176,
+            'longitud' => 7.263201,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDNY',
+            'pais' => 'D',
+            'nombre' => 'Friedrichshafen Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.670514,
+            'longitud' => 9.512710,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDH',
+            'pais' => 'D',
+            'nombre' => 'Hamburg Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1300,
+            'latitud' => 53.633040,
+            'longitud' => 9.993590,
+            'demanda' => 0.87,
+            'pasajerosEstimados' => 300,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDV',
+            'pais' => 'D',
+            'nombre' => 'Hannover Langenhagen Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 2300,
+            'latitud' => 52.460813,
+            'longitud' => 9.691958,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 250,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDSB',
+            'pais' => 'D',
+            'nombre' => 'Karlsruhe/Baden-Baden Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.778065,
+            'longitud' => 8.082202,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDAC',
+            'pais' => 'D',
+            'nombre' => 'Altenburg Nobitz Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.980343,
+            'longitud' => 12.507917,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDP',
+            'pais' => 'D',
+            'nombre' => 'Leipzig Halle Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 750,
+            'latitud' => 51.419174,
+            'longitud' => 12.230684,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDHL',
+            'pais' => 'D',
+            'nombre' => 'Lubeck Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 53.804855,
+            'longitud' => 10.706313,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDFM',
+            'pais' => 'D',
+            'nombre' => 'Mannheim City Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.473680,
+            'longitud' => 8.514396,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDJA',
+            'pais' => 'D',
+            'nombre' => 'Memmingen Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 350,
+            'latitud' => 47.988270,
+            'longitud' => 10.237795,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDM',
+            'pais' => 'D',
+            'nombre' => 'Munich Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 48.353555,
+            'longitud' => 11.786450,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDN',
+            'pais' => 'D',
+            'nombre' => 'Nuremberg Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 49.496593,
+            'longitud' => 11.078123,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDLP',
+            'pais' => 'D',
+            'nombre' => 'Paderborn Lippstadt Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 51.61198,
+            'longitud' => 8.616230,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ETNL',
+            'pais' => 'D',
+            'nombre' => 'Rostock Laage Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 53.917973,
+            'longitud' => 12.280778,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDR',
+            'pais' => 'D',
+            'nombre' => 'Saarbrucken Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.214649,
+            'longitud' => 7.111971,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDS',
+            'pais' => 'D',
+            'nombre' => 'Stuttgart Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1500,
+            'latitud' => 48.689204,
+            'longitud' => 9.218277,
+            'demanda' => 0.89,
+            'pasajerosEstimados' => 175,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDXW',
+            'pais' => 'D',
+            'nombre' => 'Sylt Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 54.913113,
+            'longitud' => 8.340472,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDLV',
+            'pais' => 'D',
+            'nombre' => 'Weeze Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 850,
+            'latitud' => 51.602420,
+            'longitud' => 6.141204,
+            'demanda' => 0.77,
+            'pasajerosEstimados' => 90,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EDDG',
+            'pais' => 'D',
+            'nombre' => 'Munster Osnabruck International Airport',
+            'espaciosTotales' => 55,
+            'costeOperacional' => 750,
+            'latitud' => 52.133738,
+            'longitud' => 7.688881,
+            'demanda' => 0.71,
+            'pasajerosEstimados' => 75,
+        ]);
+
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'G',
+            'pais' => 'D',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,

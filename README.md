@@ -52,9 +52,9 @@ Boton alineado a la derecha, se utiliza con la clase .boton en un <a>
 
 ## Aeropuetos
 
-| Aeropuertos   | Espacios      | Demanda | Pasajeros | Coste O   |
-| :------------ | :----------:  | :------:| :--------:| --------: |
-| Grandes       |   450 - 400   | 0.97    | 300       | 2000      |
-| Medianos      |   200 - 250   | 0.85    | 100       | 1200      |
-| Pequeños      |   50 - 100    | 0.70    | 75        | 500       |
-| Muy pequeños  |   25 - 50     | 0.50    | 50        | 250       |
+| Aeropuertos   | Espacios      | Coste O  | Demanda | Pasajeros | 
+| :------------ | :----------:  | :------: | :------:| --------: |
+| Grandes       |   400 - 450   | 2000     | 0.97    | 300       |
+| Medianos      |   200 - 250   | 1200     | 0.85    | 100       |
+| Pequeños      |   50 - 100    | 500      | 0.70    | 75        |
+| Muy pequeños  |   25 - 50     | 250      | 0.50    | 50        |
