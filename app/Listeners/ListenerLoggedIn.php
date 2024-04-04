@@ -9,6 +9,7 @@ use App\Models\Ruta;
 use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
+use App\Models\Sede;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
@@ -153,6 +154,10 @@ class ListenerLoggedIn
         $user->saldo += $beneficio;
         $user->update();
 
+        // Reducimos el estado del avion porque ha completado un vuelo
+        $ruta->flota->estado -= 0.1;
+        $ruta->flota->update();
+
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
         array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
@@ -190,11 +195,30 @@ class ListenerLoggedIn
     public function mantenimiento()
     {
         $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
 
         foreach ($flotaMantenimiento as $avion) {
-            $avion->condicion += 1;
-            $avion->update();
+            if($avion->condicion < 100){
+                // Realizamos el mantenimiento al avion
+                // Para los mantenimientos se calcula dividiendo los ingenieros por los aviones en mantenimiento
+                $avion->condicion += $sede->ingenieros / count($flotaMantenimiento);
+                $avion->update();
+            } else {
+                // creamos el mensaje de que el avion ha completado el mantenimiento
+                array_push($mensajeVuelos, 
+                ["El avion $avion->matricula ha completado el mantenimiento, considere retiralo del hangar",
+                2]);
+            }
         }
+
+        if($sede->ingenieros / count($flotaMantenimiento) < 0.33){
+            array_push($mensajeVuelos, 
+            ["El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros",
+            3]);
+        }
+
+        Session::put('mensajeVuelos', $mensajeVuelos);
         error_log("Realizando manteniemiento a los aviones");
     }
 }
