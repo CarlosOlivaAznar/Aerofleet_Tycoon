@@ -1226,11 +1226,314 @@ class AeropuertosTableSeeder extends Seeder
 
 
 
+        /* ------------------- */
+        /* Aeropuertos Francia */
+        /* ------------------- */
+        Aeropuerto::create([
+            'icao' => 'LFBA',
+            'pais' => 'F',
+            'nombre' => 'Agen La Garenne Airport',
+            'espaciosTotales' => 20,
+            'costeOperacional' => 200,
+            'latitud' => 44.173986,
+            'longitud' => 0.593099,
+            'demanda' => 0.40,
+            'pasajerosEstimados' => 45,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFKJ',
+            'pais' => 'F',
+            'nombre' => 'Ajaccio Napoleon Bonaparte Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 41.922838,
+            'longitud' => 8.798466,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFJR',
+            'pais' => 'F',
+            'nombre' => 'Angers Loire Airport',
+            'espaciosTotales' => 20,
+            'costeOperacional' => 200,
+            'latitud' => 47.561217,
+            'longitud' => -0.312361,
+            'demanda' => 0.40,
+            'pasajerosEstimados' => 45,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFLW',
+            'pais' => 'F',
+            'nombre' => 'Aurillac Tronquieres Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.891922,
+            'longitud' => 2.421332,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFSB',
+            'pais' => 'F',
+            'nombre' => 'Basel Mulhouse-Freiburg EuroAirport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 47.596357,
+            'longitud' => 7.524924,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFKB',
+            'pais' => 'F',
+            'nombre' => 'Bastia Poretta Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 550,
+            'latitud' => 42.550962,
+            'longitud' => 9.482980,
+            'demanda' => 0.72,
+            'pasajerosEstimados' => 75,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBE',
+            'pais' => 'F',
+            'nombre' => 'Bergerac Dordogne Perigord Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 44.823526,
+            'longitud' => 0.520371,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFMU',
+            'pais' => 'F',
+            'nombre' => 'Beziers Cap d\'Agde Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 43.322570,
+            'longitud' => 3.353320,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBZ',
+            'pais' => 'F',
+            'nombre' => 'Biarritz Pays Basque Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 600,
+            'latitud' => 43.468390,
+            'longitud' => -1.524213,
+            'demanda' => 0.72,
+            'pasajerosEstimados' => 80,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRB',
+            'pais' => 'F',
+            'nombre' => 'Brest Bretagne Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 48.447009,
+            'longitud' => -4.418610,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBD',
+            'pais' => 'F',
+            'nombre' => 'Bordeaux Merignac Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 44.829049,
+            'longitud' => -0.712527,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 150,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRK',
+            'pais' => 'F',
+            'nombre' => 'Caen Carpiquet Airport',
+            'espaciosTotales' => 20,
+            'costeOperacional' => 200,
+            'latitud' => 49.180096,
+            'longitud' => -0.459633,
+            'demanda' => 0.45,
+            'pasajerosEstimados' => 45,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFKC',
+            'pais' => 'F',
+            'nombre' => 'Calvi Sainte-Catherine Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.527829,
+            'longitud' => 8.792277,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFMK',
+            'pais' => 'F',
+            'nombre' => 'Carcassonne Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.215226,
+            'longitud' => 2.308372,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFCK',
+            'pais' => 'F',
+            'nombre' => 'Castres Mazamet Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.554690,
+            'longitud' => 2.290048,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFLB',
+            'pais' => 'F',
+            'nombre' => 'Chambery Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 45.638129,
+            'longitud' => 5.881332,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFLC',
+            'pais' => 'F',
+            'nombre' => 'Clermont-Ferrand Auvergne Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.786628,
+            'longitud' => 3.169144,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRG',
+            'pais' => 'F',
+            'nombre' => 'Deauville Saint Gatien Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.364010,
+            'longitud' => 0.155528,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRD',
+            'pais' => 'F',
+            'nombre' => 'Dinard Pleurtuit Saint-Malo Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.587684,
+            'longitud' => -2.079946,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFGJ',
+            'pais' => 'F',
+            'nombre' => 'Dole Jura Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.041243,
+            'longitud' => 5.427123,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFST',
+            'pais' => 'F',
+            'nombre' => 'Strasbourg Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 48.540128,
+            'longitud' => 7.627532,
+            'demanda' => 0.79,
+            'pasajerosEstimados' => 85,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFKF',
+            'pais' => 'F',
+            'nombre' => 'Figari Sud-Corse Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.501325,
+            'longitud' => 9.097625,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFLS',
+            'pais' => 'F',
+            'nombre' => 'Grenoble Isere Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.362135,
+            'longitud' => 5.331008,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'LFBH',
+            'pais' => 'F',
+            'nombre' => 'La Rochelle Ile de Re Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.178414,
+            'longitud' => -1.196661,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFQQ',
+            'pais' => 'F',
+            'nombre' => 'Lille Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 650,
+            'latitud' => 50.566271,
+            'longitud' => 3.098848,
+            'demanda' => 0.72,
+            'pasajerosEstimados' => 80,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'D',
+            'pais' => 'F',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
