@@ -94,6 +94,7 @@
       <?php
       $contador = 0; 
       $contadorAvion = 0;
+      $espaciosRestantes = count($flotaMantenimiento);
       ?>
       @foreach ($sede->hangar as $hangar)
       <?php $contador++; ?>
@@ -101,7 +102,8 @@
         <div class="cabecera">
           <i class="bx bx-building"></i>
           <h3>Hangar {{ $contador }}</h3>
-          <span>Espacios disponibles hangar: {{ $hangar->espacios}}</span>
+          <span>Espacios disponibles hangar: {{ $hangar->espacios - $espaciosRestantes}}</span>
+          <?php $espaciosRestantes -= $hangar->espacios?>
           <a class="botonTexto" href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}">Ampliar Hangar</a>
         </div>
         <table>
@@ -117,7 +119,7 @@
             <tr>
               @isset ($flotaMantenimiento[$contadorAvion])
               <td>
-                <img src="{{ asset("" . $flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="">
+                <img src="{{ asset($flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="avionMantenimiento">
               </td>
               <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
               <td><a class="comprar" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}"><i class="bx bx-minus"></i></a></td>
