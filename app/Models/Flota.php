@@ -37,6 +37,24 @@ class Flota extends Model
         }
     }
 
+    public function estatusC()
+    {
+        switch ($this->estado) {
+            case 0:
+                return "error";
+                break;
+            case 1:
+                return "exito";
+                break;
+            case 2:
+                return "warning";
+                break;
+            default:
+                return "error";
+                break;
+        }
+    }
+
     public function avion()
     {
         return $this->belongsTo(Avion::class);

@@ -43,8 +43,8 @@
                     <th>Matricula</th>
                     <th>Modelo</th>
                     <th>Fecha de Fabricacion</th>
-                    <th>Estado</th>
-                    <th>Status</th>
+                    <th>Condicion</th>
+                    <th class="center">Estado</th>
                     <th>Precio de Venta</th>
                     <th>Aciones</th>
                 </tr>
@@ -59,7 +59,9 @@
                 <td>{{ $avion->avion->modelo }}</td>
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->condicion }}%</td>
-                <td>{{ $avion->estatusS() }}</td>
+                <td class="estado">
+                  <span class="{{ $avion->estatusC() }}">{{ $avion->estatusS() }}</span>
+                </td>
                 <td>{{ number_format($avion->avion->precio * ($avion->condicion / 100), 0, ',', '.') }}</td>
                 <td>
                   <a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a>
