@@ -151,8 +151,6 @@ class FlotaController extends Controller
             if($avion->user_id === auth()->id()){
                 $avion->estado = 2;
                 $avion->update();
-                
-                return redirect()->route('sede.index');
             } else {
                 session()->flash('error', 'El avion no es de tu propiedad');
             }

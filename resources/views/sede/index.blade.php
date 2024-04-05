@@ -30,7 +30,7 @@
             let latitud = parseFloat(document.getElementById("lat").value)
             let longitud = parseFloat(document.getElementById("long").value)
 
-            var map = L.map('map', {zoomControl: false}).setView([latitud, longitud], 12);
+            var map = L.map('map', {zoomControl: false}).setView([latitud, longitud], 13);
   
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -186,7 +186,7 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Contratar Ingenieros</h2>
+            <h2>Retirar Del Mantenimiento</h2>
           </div>
           <div class="cuerpo-modal">
             <p>¿Esta seguro que quiere quirar el avion del mantenimiento?</p><br>
