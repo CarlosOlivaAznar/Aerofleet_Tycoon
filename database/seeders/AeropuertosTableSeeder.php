@@ -1529,6 +1529,295 @@ class AeropuertosTableSeeder extends Seeder
             'pasajerosEstimados' => 80,
         ]);
 
+        Aeropuerto::create([
+            'icao' => 'LFBL',
+            'pais' => 'F',
+            'nombre' => 'Limoges Bellegarde Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.861269,
+            'longitud' => 1.179184,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRH',
+            'pais' => 'F',
+            'nombre' => 'Lorient South Brittany Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.760566,
+            'longitud' => -3.439984,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFLL',
+            'pais' => 'F',
+            'nombre' => 'Lyon Saint Exupery Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 45.723972,
+            'longitud' => 5.087814,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'LFML',
+            'pais' => 'F',
+            'nombre' => 'Marseille Provence Airport',
+            'espaciosTotales' => 220,
+            'costeOperacional' => 1350,
+            'latitud' => 43.437821,
+            'longitud' => 5.213418,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 120,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFJL',
+            'pais' => 'F',
+            'nombre' => 'Metz-Nancy-Lorraine Airport',
+            'espaciosTotales' => 33,
+            'costeOperacional' => 330,
+            'latitud' => 48.981266,
+            'longitud' => 6.248530,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 55,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFMT',
+            'pais' => 'F',
+            'nombre' => 'Montpellier Mediterranee Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 43.579455,
+            'longitud' => 3.966572,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRS',
+            'pais' => 'F',
+            'nombre' => 'Nantes Atlantique Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 47.156368,
+            'longitud' => -1.606304,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFTW',
+            'pais' => 'F',
+            'nombre' => 'Nimes Ales Camargue Cevennes Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.758566,
+            'longitud' => 4.416205,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFMN',
+            'pais' => 'F',
+            'nombre' => 'Nice Cote d\'Azur Airport',
+            'espaciosTotales' => 220,
+            'costeOperacional' => 1400,
+            'latitud' => 43.662169,
+            'longitud' => 7.216203,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 130,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFOB',
+            'pais' => 'F',
+            'nombre' => 'Paris Beauvais-Tille Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 49.456696,
+            'longitud' => 2.115877,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFPG',
+            'pais' => 'F',
+            'nombre' => 'Paris Charles de Gaulle Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 49.009918,
+            'longitud' => 2.551668,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 310,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFPO',
+            'pais' => 'F',
+            'nombre' => 'Paris Orly Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 48.729864,
+            'longitud' => 2.367969,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 150,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFOK',
+            'pais' => 'F',
+            'nombre' => 'Paris Vatry Chalons Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.776247,
+            'longitud' => 4.191486,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBP',
+            'pais' => 'F',
+            'nombre' => 'Pau Pyrenees Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 43.380260,
+            'longitud' => -0.415411,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFMP',
+            'pais' => 'F',
+            'nombre' => 'Perpignan Rivesaltes Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 400,
+            'latitud' => 42.743346,
+            'longitud' => 2.869256,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 70,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBI',
+            'pais' => 'F',
+            'nombre' => 'Poitiers - Biard Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.588427,
+            'longitud' => 0.307676,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRQ',
+            'pais' => 'F',
+            'nombre' => 'Quimper Cornouaille Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.973768,
+            'longitud' => -4.170985,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFRN',
+            'pais' => 'F',
+            'nombre' => 'Rennes Saint-Jacques Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 48.071377,
+            'longitud' => -1.727918,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFCR',
+            'pais' => 'F',
+            'nombre' => 'Rodez Marcillac Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.408197,
+            'longitud' => 2.484118,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFTZ',
+            'pais' => 'F',
+            'nombre' => 'Saint-Tropez La Mole Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.205455,
+            'longitud' => 6.482094,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBT',
+            'pais' => 'F',
+            'nombre' => 'Tarbes-Lourdes-Pyrenees Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.181774,
+            'longitud' => -0.004514,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFTH',
+            'pais' => 'F',
+            'nombre' => 'Toulon-Hyeres Airport',
+            'espaciosTotales' => 45,
+            'costeOperacional' => 450,
+            'latitud' => 43.097374,
+            'longitud' => 6.147649,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 64,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFBO',
+            'pais' => 'F',
+            'nombre' => 'Toulouse Blagnac Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1500,
+            'latitud' => 43.628694,
+            'longitud' => 1.363907,
+            'demanda' => 0.89,
+            'pasajerosEstimados' => 125,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LFOT',
+            'pais' => 'F',
+            'nombre' => 'Tours Val de Loire Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.430996,
+            'longitud' => 0.724941,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([

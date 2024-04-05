@@ -1088,6 +1088,7 @@ footer .contenidoFooter div p.texto a{
     height: 60px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: default;
 }
 
 .contenido main .tablas table td .bx{
