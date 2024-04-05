@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('aeropuerto_id');
-            $table->unsignedBigInteger('ingenieros')->default(1);
+            $table->unsignedInteger('ingenieros')->default(1);
             $table->timestamps();
         });
     }
