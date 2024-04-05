@@ -64,6 +64,19 @@
 
         </form>
       </div>
+
+      <div class="mapa-ruta">
+        <div id="map"></div>
+        <script>
+          var map = L.map('map').setView([41.667787, -1.0376974], 4);
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+      </script>
+      </div>
+      
       <script>
         // Al iniciar la pagina muestra el precio ya
         mostrarPrecio();
