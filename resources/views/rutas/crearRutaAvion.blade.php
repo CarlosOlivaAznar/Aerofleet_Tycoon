@@ -68,6 +68,13 @@
               <option value="19:30:00">19:30z</option>
               <option value="20:00:00">20:00z</option>
               <option value="20:30:00">20:30z</option>
+              <option value="21:00:00">21:00z</option>
+              <option value="21:30:00">21:30z</option>
+              <option value="22:00:00">22:00z</option>
+              <option value="22:30:00">22:30z</option>
+              <option value="23:00:00">23:00z</option>
+              <option value="23:30:00">23:30z</option>
+              <option value="24:00:00">24:00z</option>
             </select>
           </div>
           <div class="input">
@@ -112,7 +119,7 @@
           <input type="hidden" class="dato-oculto" value="{{ $ruta->tiempoEstimado }}">
       @endforeach
 
-      <div class="informacion">
+      <div class="informacion bgColor">
         <div class="info">
           <h4>Distancia: </h4>
           <p>350mn</p>

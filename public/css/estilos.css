@@ -1264,6 +1264,10 @@ footer .contenidoFooter div p.texto a{
     margin-top: 35px;
 }
 
+.contenido main .informacion.bgColor{
+    background-color: var(--light);
+}
+
 .contenido main .informacion div.basico{
     width: 100%;
     border-radius: 25px;
