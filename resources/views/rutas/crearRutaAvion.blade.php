@@ -33,9 +33,16 @@
           <div class="input">
             <h3>Destino 1</h3>
             <select name="destino1" id="destino1">
+              <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @if ($espacio->espaciosDisponibles() > 0)
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <?php $espaciosVacios++; ?>
+                @endif
               @endforeach
+              @if ($espaciosVacios === 0)
+                <option value="">No hay espacios disponibles</option>  
+              @endif
             </select>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
@@ -84,8 +91,13 @@
             <h3>Destino 2</h3>
             <select name="destino2" id="destino2">
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @if ($espacio->espaciosDisponibles() > 0)
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @endif
               @endforeach
+              @if ($espaciosVacios === 0)
+                <option value="">No hay espacios disponibles</option>  
+              @endif
             </select>
           </div>
           <div class="input">
