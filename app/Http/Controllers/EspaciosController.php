@@ -24,7 +24,17 @@ class EspaciosController extends Controller
     public function aeropuertos()
     {
         $aeropuertos = Aeropuerto::all();
-        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos]);
+        $aeropuertosMapa = array();
+
+        foreach ($aeropuertos as $aeropuerto) {
+            array_push($aeropuertosMapa, [
+                $aeropuerto->latitud,
+                $aeropuerto->longitud,
+                $aeropuerto->icao . ", " .$aeropuerto->nombre,
+            ]);
+        }
+
+        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos, 'aeropuertosMapa' => $aeropuertosMapa]);
     }
 
     public function comprar(Request $request)
