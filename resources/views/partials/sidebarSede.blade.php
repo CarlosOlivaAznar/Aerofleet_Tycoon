@@ -1,5 +1,5 @@
 <div class="menu-lateral">
-    <a href="#" class="titulo-pag">
+    <a href="{{ route('home.index') }}" class="titulo-pag">
       <img class="icono" src="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" alt="AFT">
       <div class="titulo-nombre">Aero<span>Fleet</span></div>
     </a>
