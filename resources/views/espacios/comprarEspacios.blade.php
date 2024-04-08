@@ -84,7 +84,7 @@
         function mostrarPrecio()
         {
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value);
+          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
           var mostrarPrecio = document.getElementById("costeOperacion");
 
           // Mostrar precio en el parrafo
@@ -99,13 +99,13 @@
           // Mostrar precio segun los espacios
           var numEspacios = parseInt(document.getElementById("espacios").value);
           var precioTotal = document.getElementById("precioTotal");
-          console.log(numEspacios);
+          
           if(!isNaN(numEspacios)){
           // CosteOperacion para hacer el calculo
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value);
+          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
 
-          precioTotal.innerHTML = costeOperacion * numEspacios
+          precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
             precioTotal.innerHTML = 0;
           }

@@ -16,6 +16,11 @@ class Aeropuerto extends Model
         return $this->costeOperacional * 150;
     }
 
+    public function precioEspacio()
+    {
+        return $this->costeOperacional * 723;
+    }
+
     public function espacio()
     {
         return $this->hasMany(Espacio::class);
