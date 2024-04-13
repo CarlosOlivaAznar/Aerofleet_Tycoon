@@ -16,7 +16,7 @@
 
     <!-- Contenido Principal -->
     <main>
-      <div class="cabecera">
+      <div class="cabecera pagina">
         <div class="titulo">
           <h1>Flota</h1>
         </div>
@@ -42,6 +42,7 @@
                     <th>Avion</th>
                     <th>Matricula</th>
                     <th>Modelo</th>
+                    <th>Capacidad</th>
                     <th>Fecha de Fabricacion</th>
                     <th>Condicion</th>
                     <th class="center">Estado</th>
@@ -57,6 +58,7 @@
                 </td>
                 <td>{{ $avion->matricula }}</td>
                 <td>{{ $avion->avion->modelo }}</td>
+                <td>{{ $avion->avion->capacidad }}</td>
                 <td>{{ $avion->fechaDeFabricacion }}</td>
                 <td>{{ $avion->condicion }}%</td>
                 <td class="estado">
