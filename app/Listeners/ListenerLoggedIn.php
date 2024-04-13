@@ -28,6 +28,14 @@ class ListenerLoggedIn
      */
     public function handle(UserLoggedIn $event): void
     {
+        // Si el usuario no se ha logeado ninguna vez no se ejecuta esta funcion
+        if(!Sede::where('user_id', $event->user->id)->first()){
+            // Actualizamos la fecha actual
+            $event->user->ultimaConexion = now();
+            $event->user->update();
+            return;
+        }
+
         $ultimaConexion = Carbon::createFromTimeString($event->user->ultimaConexion);
         $fechaActual = now();
 
@@ -155,7 +163,7 @@ class ListenerLoggedIn
         $user->update();
 
         // Reducimos el estado del avion porque ha completado un vuelo
-        $ruta->flota->estado -= 0.1;
+        $ruta->flota->estado -= 0.05;
         $ruta->flota->update();
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
@@ -212,7 +220,8 @@ class ListenerLoggedIn
             }
         }
 
-        if($sede->ingenieros / count($flotaMantenimiento) < 0.33){
+        // Primera condicion para no dividir por 0
+        if(count($flotaMantenimiento) != 0 && $sede->ingenieros / count($flotaMantenimiento) < 0.33){
             array_push($mensajeVuelos, 
             ["El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros",
             3]);

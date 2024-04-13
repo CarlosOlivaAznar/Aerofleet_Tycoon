@@ -1489,7 +1489,7 @@ footer .contenidoFooter div p.texto a{
     }
 
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1{
+    .mainContent h1.tituloPagina{
         font-size: 10vw;
         top: 15vw;
     }
@@ -1498,11 +1498,37 @@ footer .contenidoFooter div p.texto a{
         padding: 50px 30px 50px 30px;
     }
 
+    .contenido main{
+        padding: 50px 20px 50px 20px;
+    }
+
+    .contenido main .informacion{
+        flex-flow: column;
+        padding: 5px;
+    }
+
+    .contenido main .informacion .infodatos{
+        width: 100%;
+    }
+
+    .contenido main .informacion .mapaizq{
+        width: 100%;
+    }
+
+    /* Primer login */
+    .mainContent form .formulario{
+        width: 95%;
+    }
+
+    .mainContent form .formulario h1{
+        font-size: 33px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1{
+    .mainContent h1.tituloPagina{
         font-size: 16vw;
         top: 15vw;
     }
@@ -1520,5 +1546,28 @@ footer .contenidoFooter div p.texto a{
     .mainContent .imagenConTexto h3{
         font-size: 20px;
         padding: 15px 0 250px 0;
+    }
+
+    .modal .contenido-modal{
+        width: 95%;
+    }
+
+    .mainContent form .formulario{
+        padding: 50px 10px;
+    }
+
+    /* clase boton */
+    .contenido main .cabecera{
+        flex-flow: column;
+        align-items: flex-start;
+    }
+
+    .contenido main .cabecera{
+        justify-items: flex-start;
+    }
+
+    .contenido main .cabecera a.boton{
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
