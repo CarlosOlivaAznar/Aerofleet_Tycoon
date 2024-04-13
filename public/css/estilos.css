@@ -1474,6 +1474,10 @@ footer .contenidoFooter div p.texto a{
         gap: 30px;
     }
 
+    .menu-lateral .lista-menu li{
+        margin-left: 10px;
+    }
+
     .menu-lateral .lista-menu li a{
         gap: 20px;
     }
@@ -1524,6 +1528,30 @@ footer .contenidoFooter div p.texto a{
         font-size: 33px;
     }
 
+    .contenido main .rutas{
+        padding: 15px;
+    }
+
+    .contenido main .rutas form .divRepartido{
+        display: block;
+    }
+
+    .contenido main .rutas .divRepartido .input h3{
+        margin-bottom: 7px;
+    }
+    
+    .contenido main .rutas .divRepartido .input select{
+        margin-bottom: 15px;
+    }
+
+    .contenido main .rutas .divRepartido .input input{
+        margin-bottom: 15px;
+    }
+
+    .contenido main .rutas .divRepartido .input p{
+        margin-bottom: 15px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1556,17 +1584,17 @@ footer .contenidoFooter div p.texto a{
         padding: 50px 10px;
     }
 
-    /* clase boton */
-    .contenido main .cabecera{
+    /* Cabecera de la pagina en movil */
+    .contenido main .cabecera.pagina{
         flex-flow: column;
         align-items: flex-start;
     }
 
-    .contenido main .cabecera{
+    .contenido main .cabecera.pagina{
         justify-items: flex-start;
     }
 
-    .contenido main .cabecera a.boton{
+    .contenido main .cabecera.pagina a.boton{
         margin-left: 0;
         margin-top: 10px;
     }

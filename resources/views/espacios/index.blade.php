@@ -15,7 +15,7 @@
 
     <!-- Contenido Principal -->
     <main>
-      <div class="cabecera">
+      <div class="cabecera pagina">
         <div class="titulo">
           <h1>Espacios</h1>
         </div>
