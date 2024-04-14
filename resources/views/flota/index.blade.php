@@ -66,9 +66,18 @@
                 </td>
                 <td>{{ number_format($avion->avion->precio * ($avion->condicion / 100), 0, ',', '.') }}</td>
                 <td>
-                  <a class="vender" href="{{ route('flota.vender', ['id' => $avion->id]) }}"><i class="bx bx-money-withdraw"></i></a>
-                  <a class="modificar" data-modal-target="modalMantenimiento{{ $avion->id }}"><i class="bx bx-wrench"></i></a>
-                  <a class="comprar" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}"><i class="bx bx-add-to-queue"></i></a>
+                  <a class="vender tooltip" href="{{ route('flota.vender', ['id' => $avion->id]) }}">
+                    <i class="bx bx-money-withdraw"></i>
+                    <span class="tooltiptext">Vender Avion</span>
+                  </a>
+                  <a class="modificar tooltip" data-modal-target="modalMantenimiento{{ $avion->id }}">
+                    <i class="bx bx-wrench"></i>
+                    <span class="tooltiptext">Realizar Mantenimiento</span>
+                  </a>
+                  <a class="comprar tooltip" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}">
+                    <i class="bx bx-add-to-queue"></i>
+                    <span class="tooltiptext">Crear Ruta</span>
+                  </a>
                 </td>
               </tr> 
               @endforeach

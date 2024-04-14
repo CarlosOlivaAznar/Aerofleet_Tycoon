@@ -122,7 +122,10 @@
                 <img src="{{ asset($flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="avionMantenimiento">
               </td>
               <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
-              <td><a class="comprar" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}"><i class="bx bx-minus"></i></a></td>
+              <td><a class="comprar tooltip" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}">
+                <i class="bx bx-minus"></i>
+                <span class="tooltiptext">Finalizar Mantenimiento</span>
+              </a></td>
               <?php $contadorAvion++; ?>
               @endisset
             </tr>

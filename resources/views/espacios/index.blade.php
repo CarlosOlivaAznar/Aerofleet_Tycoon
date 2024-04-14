@@ -57,7 +57,10 @@
               <td>{{ $espacio->espaciosDisponibles() }}</td>
               <td>{{ number_format($espacio->aeropuerto->costeOperacional, 0, ',', '.') }}</td>
               <td>{{ number_format($espacio->aeropuerto->precioEspacio(), 0, ',', '.') }}</td>
-              <td><a class="vender" href="{{ route('espacios.vender', ['id' => $espacio->id]) }}"><i class="bx bx-money-withdraw"></i></a></td>
+              <td><a class="vender tooltip" href="{{ route('espacios.vender', ['id' => $espacio->id]) }}">
+                <i class="bx bx-money-withdraw"></i>
+                <span class="tooltiptext">Vender Espacio</span>
+              </a></td>
             </tr>
             @endforeach
           </tbody>
