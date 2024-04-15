@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <td>Aviones en mantenimiento:</td>
-              <td>1(inop)</td>
+              <td>{{ count($flotaMantenimiento) }}</td>
             </tr>
             <tr>
               <td>Coste operacional:</td>
@@ -80,7 +80,7 @@
             <i class="bx bx-user-plus"></i>
             <h3>Contratar Ingenieros</h3>
           </li></a>
-          <li>
+          <li data-modal-target="modalSedeMejoras">
             <i class="bx bx-trending-up"></i>
             <h3>Mejoras</h3>
           </li>
@@ -178,6 +178,25 @@
             <div class="botones">
               <span class="cancelar">Denegar</span>
               <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Sede Mejoras -->
+      <div class="modal" id="modalSedeMejoras">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Mejoras de la Sede</h2>
+          </div>
+          <div class="cuerpo-modal">
+            <p>Actualmente las mejoras de la sede no estan disponibles</p>
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
+              <a href="#" class="aceptar">Confirmar</a>
             </div>
           </div>
         </div>
