@@ -55,6 +55,11 @@ class Flota extends Model
         }
     }
 
+    public function precioVenta()
+    {
+        return $this->avion->precio * ($this->condicion / 100);
+    }
+
     public function avion()
     {
         return $this->belongsTo(Avion::class);
