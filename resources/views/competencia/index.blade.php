@@ -28,20 +28,20 @@
           <div class="divRepartido centrado">
             <div class="input">
               <h3>Origen</h3>
-              <select name="aeropuerto" id="aeropuerto">
+              <select name="origen" id="origen">
                 
               </select>
             </div>
             <div class="input">
               <h3>Destino</h3>
-              <select name="aeropuerto" id="aeropuerto">
+              <select name="destino" id="destino">
                 
               </select>
             </div>
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="comprarEspacios">
+            <input type="submit" value="Buscar" id="demandaRutas">
           </div>
         </form>
       </div>
@@ -53,14 +53,14 @@
           <div class="divRepartido">
             <div class="input">
               <h3>Nombre de la compañia aerea</h3>
-              <select name="aeropuerto" id="aeropuerto">
+              <select name="nombreCompanyia" id="nombreCompanyia">
                 
               </select>
             </div>
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="comprarEspacios">
+            <input type="submit" value="Buscar" id="rutasCompetencia">
           </div>
         </form>
       </div>

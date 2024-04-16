@@ -732,6 +732,7 @@ MARK: Tooltips
 
 .mainContent h2{
     margin-top: 40px;
+    margin-bottom: 25px;
     color: var(--dark);
 }
 
@@ -1390,14 +1391,17 @@ footer .contenidoFooter div p.texto a{
 }
 
 /* Sobre mi */
+/*
+MARK: Sobre mi
+*/
 .mainContent .informacion-imagen{
     display: flex;
     flex-flow: row;
-    gap: 25px;
+    gap: 40px;
 }
 
 .mainContent .informacion-imagen div.imagen{
-    width: 80%;
+    width: 20%;
 }
 
 .mainContent .informacion-imagen div.texto{

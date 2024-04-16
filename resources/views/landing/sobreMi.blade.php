@@ -30,14 +30,14 @@
                 </p>
             </div>
             <div class="imagen">
-                <img src="{{ asset('images/concordeCentrado.png') }}" alt="">
+                <img src="{{ asset('images/sobreMi2.jpg') }}" alt="">
             </div>
         </div>
 
         <h2>¿Cual es mi objetivo?</h2>
         <div class="informacion-imagen">
             <div class="imagen">
-                <img src="{{ asset('images/concordeCentrado.png') }}" alt="">
+                <img src="{{ asset('images/sobreMi1.jpg') }}" alt="">
             </div>
             <div class="texto">
                 <p>
