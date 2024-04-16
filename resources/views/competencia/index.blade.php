@@ -5,7 +5,7 @@
 </head>
 <body>
   <!-- Menu Lateral -->
-  @include('partials.sidebarEspacios')
+  @include('partials.sidebarCompetencia')
   <!-- Fin Menu Lateral -->
 
   <div class="contenido">

@@ -6,7 +6,10 @@
 <script src="{{ asset('leaflet/leaflet.js') }}"></script>
 <script src="{{ asset('leaflet/leaflet.rotatedMarker.js') }}"></script>
 
+<!-- Boxicons -->
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<!-- Css -->
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 <title>AeroFleet</title>
 
