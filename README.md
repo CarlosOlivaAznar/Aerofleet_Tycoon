@@ -49,7 +49,7 @@ Boton alineado a la derecha, se utiliza con la clase .boton en un <a>
 
 ### Breadcrumbs
 
-Los breadcrumbs van debajo del titulo, dentro del div cabecera
+Los breadcrumbs van debajo del titulo, dentro del div del titulo
 
 ```
 <ul class="breadcrumb">

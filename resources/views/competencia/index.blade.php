@@ -22,27 +22,33 @@
       </div>
 
       <div class="rutas">
-        <form action="{{ route('espacios.comprar') }}" method="POST" autocomplete="off">
+        <form action="{{ route('competencia.demandaRuta') }}" method="POST" autocomplete="off">
           <h2>Demanda de las rutas</h2>
           @csrf
           <div class="divRepartido centrado">
             <div class="input">
               <h3>Origen</h3>
 
-              <input type="text" class="select" name="sede" id="sede" onfocus="mostrarDd('dropDown')" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Busca la localizacion...">
-              <input type="hidden" id="sedeHid" name="sedeHid" value="">
+              <input type="text" class="select" name="sede" id="busquedaOrigen" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el origen...">
+              <input type="hidden" id="origenHid" name="origenHid" value="">
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'sede', 'sedeHid')">{{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaOrigen', 'origenHid')">{{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
             <div class="input">
               <h3>Destino</h3>
-              <select name="destino" id="destino">
-                
-              </select>
+              
+              <input type="text" class="select" name="sede" id="busquedaDestino" onfocus="mostrarDd('dropDown2', this)" onblur="ocultarDd('dropDown2')" onkeyup="filtrar(this, 'dropDown2')" placeholder="Selecciona el destino...">
+              <input type="hidden" id="destinoHid" name="destinoHid" value="">
+              
+              <div class="drop-down" id="dropDown2">
+                @foreach ($aeropuertos as $aeropuerto)
+                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaDestino', 'destinoHid')">{{ $aeropuerto->nombre }}</p>
+                @endforeach
+              </div>
             </div>
           </div>
 
@@ -59,9 +65,15 @@
           <div class="divRepartido">
             <div class="input">
               <h3>Nombre de la compañia aerea</h3>
-              <select name="nombreCompanyia" id="nombreCompanyia">
-                
-              </select>
+              
+              <input type="text" class="select" name="busquedaCompanyia" id="busquedaCompanyia" onfocus="mostrarDd('dropDown3', this)" onblur="ocultarDd('dropDown3')" onkeyup="filtrar(this, 'dropDown3')" placeholder="Busca el nombre de la compañia...">
+              <input type="hidden" id="companyiaHid" name="companyiaHid" value="">
+              
+              <div class="drop-down" id="dropDown3">
+                @foreach ($companyias as $companyia)
+                    <p id="{{ $companyia->id }}" onclick="seleccionar(this, 'busquedaCompanyia', 'companyiaHid')">{{ $companyia->nombreCompanyia }}</p>
+                @endforeach
+              </div>
             </div>
           </div>
 

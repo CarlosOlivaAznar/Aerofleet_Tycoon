@@ -1,8 +1,8 @@
-function mostrarDd(nombreDd){
+function mostrarDd(nombreDd, sede){
     // Se muestra el dropDown
     document.getElementById(nombreDd).classList.add("show");
     // Se ajusta el tamaño de los campos del buscador respecto al ancho del input
-    document.getElementById(nombreDd).style.width = String(document.getElementById("sede").offsetWidth) + "px"
+    document.getElementById(nombreDd).style.width = String(document.getElementById(sede.id).offsetWidth) + "px"
   }
 
   function ocultarDd(nombreDd){

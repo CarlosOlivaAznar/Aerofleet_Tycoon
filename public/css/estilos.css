@@ -970,7 +970,7 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--light);
     overflow: auto;
     max-height: 200px;
-    z-index: 50;
+    z-index: 100;
     border-radius: 0 0 10px 10px;
     border: 3px solid var(--dark);
     border-top: 0;
@@ -1305,6 +1305,7 @@ footer .contenidoFooter div p.texto a{
     width: 100%;
     height: 300px;
     border-radius: 25px;
+    z-index: 55;
 }
 
 .contenido main .mapa-ruta #map{
@@ -1312,6 +1313,7 @@ footer .contenidoFooter div p.texto a{
     height: 100%;
     overflow: hidden;
     border-radius: 25px;
+    z-index: 55;
 }
 
 .contenido main .informacion{

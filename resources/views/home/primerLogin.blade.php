@@ -20,7 +20,7 @@
             <div class="campos">
                 <label for="sede">Localizacion de la sede</label>
 
-                <input type="text" class="select" name="sede" id="sede" onfocus="mostrarDd('dropDown')" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Busca la localizacion...">
+                <input type="text" class="select" name="sede" id="sede" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Busca la localizacion...">
                 <input type="hidden" id="sedeHid" name="sedeHid" value="">
                 
                 <div class="drop-down" id="dropDown">

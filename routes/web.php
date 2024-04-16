@@ -70,6 +70,7 @@ Route::get('sede/quitarMantenimiento/{id}', [SedeController::class, 'quitarMante
 
 // Rutas Competencia
 Route::get('competencia', [CompetenciaController::class, 'index'])->name('competencia.index');
+Route::post('competencia/demandaRuta', [CompetenciaController::class, 'demandaRuta'])->name('competencia.demandaRuta');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
