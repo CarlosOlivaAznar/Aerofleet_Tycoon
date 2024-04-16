@@ -22,15 +22,21 @@
       </div>
 
       <div class="rutas">
-        <form action="{{ route('espacios.comprar') }}" method="POST">
+        <form action="{{ route('espacios.comprar') }}" method="POST" autocomplete="off">
           <h2>Demanda de las rutas</h2>
           @csrf
           <div class="divRepartido centrado">
             <div class="input">
               <h3>Origen</h3>
-              <select name="origen" id="origen">
-                
-              </select>
+
+              <input type="text" class="select" name="sede" id="sede" onfocus="mostrarDd('dropDown')" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Busca la localizacion...">
+              <input type="hidden" id="sedeHid" name="sedeHid" value="">
+              
+              <div class="drop-down" id="dropDown">
+                @foreach ($aeropuertos as $aeropuerto)
+                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'sede', 'sedeHid')">{{ $aeropuerto->nombre }}</p>
+                @endforeach
+              </div>
             </div>
             <div class="input">
               <h3>Destino</h3>
@@ -47,7 +53,7 @@
       </div>
 
       <div class="rutas">
-        <form action="{{ route('espacios.comprar') }}" method="POST">
+        <form action="{{ route('espacios.comprar') }}" method="POST" autocomplete="off">
           <h2>Rutas de la competencia</h2>
           @csrf
           <div class="divRepartido">
@@ -88,7 +94,7 @@
 
       </script>
       </div>
-      
+      <script src="{{ asset('js/dropdown.js') }}"></script>
     </main>
   </div>
 </body>

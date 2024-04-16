@@ -944,10 +944,11 @@ footer .contenidoFooter div p.texto a{
     border: 3px solid var(--dark);
 }
 
-.mainContent form .formulario .campos select{
+.select{
     display: block;
     margin-top: 10px;
     width: 100%;
+    min-width: 350px;
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
@@ -957,13 +958,13 @@ footer .contenidoFooter div p.texto a{
     outline: none;
 }
 
-.mainContent form .formulario .campos .select:focus{
+.select:focus{
     border: 3px solid var(--dark);
     border-radius: 10px 10px 0 0;
 }
 
 /* Select con buscador */
-.mainContent form .formulario .campos .drop-down{
+.drop-down{
     display: none;
     position: absolute;
     background-color: var(--light);
@@ -973,9 +974,10 @@ footer .contenidoFooter div p.texto a{
     border-radius: 0 0 10px 10px;
     border: 3px solid var(--dark);
     border-top: 0;
+    text-align: left;
 }
 
-.mainContent form .formulario .campos .drop-down p{
+.drop-down p{
     display: block;
     width: 100%;
     padding: 10px 5px;
@@ -984,7 +986,7 @@ footer .contenidoFooter div p.texto a{
     cursor: pointer;
 }
 
-.mainContent form .formulario .campos .drop-down.show{
+.drop-down.show{
     display: block;
 }
 
