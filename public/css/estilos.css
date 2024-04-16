@@ -1286,7 +1286,7 @@ footer .contenidoFooter div p.texto a{
     align-items: center;
 }
 
-.contenido main .rutas .input #comprarEspacios{
+.contenido main .rutas .input #botonSubmit{
     display: block;
     align-items: center;
     margin : 0 auto;

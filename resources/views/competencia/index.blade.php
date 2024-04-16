@@ -41,7 +41,7 @@
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="demandaRutas">
+            <input type="submit" value="Buscar" id="botonSubmit">
           </div>
         </form>
       </div>
@@ -60,7 +60,7 @@
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="rutasCompetencia">
+            <input type="submit" value="Buscar" id="botonSubmit">
           </div>
         </form>
       </div>

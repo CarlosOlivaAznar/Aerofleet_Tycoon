@@ -53,7 +53,7 @@
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Comprar Espacios" id="comprarEspacios">
+            <input type="submit" value="Comprar Espacios" id="botonSubmit">
           </div>
 
           
