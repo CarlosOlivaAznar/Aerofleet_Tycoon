@@ -1210,6 +1210,11 @@ footer .contenidoFooter div p.texto a{
     color: var(--dark);
 }
 
+.contenido main .rutas h2{
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
 .contenido main .tablas .cabecera .botones-tablas{
     display: flex;
     flex-flow: row;
@@ -1228,6 +1233,10 @@ footer .contenidoFooter div p.texto a{
     justify-content: space-between;
     text-align: center;
     margin-bottom: 35px;
+}
+
+.contenido main .rutas .divRepartido.centrado{
+    justify-content: space-evenly;
 }
 
 .contenido main .rutas .divRepartido .input h3{

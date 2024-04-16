@@ -47,6 +47,18 @@ Boton alineado a la derecha, se utiliza con la clase .boton en un <a>
 </a>
 ```
 
+### Breadcrumbs
+
+Los breadcrumbs van debajo del titulo, dentro del div cabecera
+
+```
+<ul class="breadcrumb">
+    <li><a href="{{ route('espacios.index') }}">Espacios</a></li>
+    <li>/</li>
+    <li><span>Comprar Espacios</span></li>
+</ul>
+```
+
 ### Modales
 
 
