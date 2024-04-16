@@ -43,7 +43,7 @@ class EspaciosController extends Controller
         $user = User::find(auth()->id());
 
         if($user->saldo - $aeropuerto->precioEspacio() * $request->espacios >= 0){
-            if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->first()){
+            if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->where('user_id', auth()->id())->first()){
                 $espacio->numeroDeEspacios += $request->espacios;
                 $espacio->update();
             } else {
