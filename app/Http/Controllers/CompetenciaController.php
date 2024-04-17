@@ -39,8 +39,10 @@ class CompetenciaController extends Controller
         
     }
 
-    public function rutasCompetencia()
+    public function rutasCompetencia(Request $request)
     {
-
+        $grupoRutas = Ruta::where('user_id', $request->companyiaHid)->get()->groupBy('flota_id');
+        $nombreC = $request->busquedaCompanyia;
+        return view('competencia.rutasCompetencia', ['grupoRutas' => $grupoRutas, 'nombreC' => $nombreC]);
     }
 }

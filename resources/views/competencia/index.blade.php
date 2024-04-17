@@ -59,10 +59,10 @@
       </div>
 
       <div class="rutas">
-        <form action="{{ route('espacios.comprar') }}" method="POST" autocomplete="off">
+        <form action="{{ route('competencia.rutas') }}" method="POST" autocomplete="off">
           <h2>Rutas de la competencia</h2>
           @csrf
-          <div class="divRepartido">
+          <div class="divRepartido centrado">
             <div class="input">
               <h3>Nombre de la compañia aerea</h3>
               
