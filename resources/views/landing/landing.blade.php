@@ -42,6 +42,18 @@
             <h3>Changelog</h3>
             <hr>
 
+            <h4>V-0.3.0</h4>
+            <ul>
+              <li>Añadido la pagina de competencia</li>
+              <li>Añadido tooltips en los botones que no tienen texto</li>
+              <li>Añadido la capacidad del avion en Flota</li>
+              <li>Paginas adaptadas a movil</li>
+              <li>Añadido el estado de las rutas En tierra/En ruta/En mantenimiento</li>
+              <li>Al crear la ruta te muestra las opciones de los espacios que tienes disponibles</li>
+              <li>Añadido a la pagina home mensajes de alerta y mensajes de informacion de las rutas</li>
+              <li>Añadido un mapa en comprar espacios con la informacion de los aeropuertos disponibles</li>
+            </ul>
+
             <h4>V-0.2.0</h4>
             <ul>
               <li>Los vuelos de larga distancia ahora tienen un plus por distancia</li>
