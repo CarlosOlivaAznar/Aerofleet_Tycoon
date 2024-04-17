@@ -21,8 +21,8 @@
       </div>
       <div class="derecha">
         <p class="titulo">Informacion Adicional</p>
-        <p class="texto"><a href="">Terminos de uso</a></p>
-        <p class="texto"><a href="">Politica de Privacidad</a></p>
+        <p class="texto"><a href="{{ route('landing.terminosCondiciones') }}">Terminos y condiciones de uso</a></p>
+        <p class="texto"><a href="{{ route('landing.politicaPrivacidad') }}">Politica de Privacidad</a></p>
         <p class="texto"><a href="">Roadmap</a></p>
       </div>
     </div>

@@ -21,12 +21,19 @@ use App\Http\Controllers\SedeController;
 |
 */
 
+// Rutas del landing y rutas generales
 Route::get('/', function () {
     return view('landing.landing');
 })->name('landing.landing');
 Route::get('/sobreMi', function () {
     return view('landing.sobreMi');
 })->name('landing.sobreMi');
+Route::get('/terminosCondiciones', function () {
+    return view('landing.terminosCondiciones');
+})->name('landing.terminosCondiciones');
+Route::get('/politicaPrivacidad', function () {
+    return view('landing.politicaPrivacidad');
+})->name('landing.politicaPrivacidad');
 
 // Rutas home
 Route::get('home', [HomeController::class, 'index'])->name('home.index');
