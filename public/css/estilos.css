@@ -1529,6 +1529,7 @@ MARK: Sobre mi
     margin-left: auto;
     padding: 10px;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 /* Media */
