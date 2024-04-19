@@ -163,7 +163,7 @@ class ListenerLoggedIn
         $user->update();
 
         // Reducimos el estado del avion porque ha completado un vuelo
-        $ruta->flota->estado -= 0.05;
+        $ruta->flota->condicion -= 0.05;
         $ruta->flota->update();
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
