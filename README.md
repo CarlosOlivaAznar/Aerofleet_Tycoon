@@ -64,9 +64,16 @@ Los breadcrumbs van debajo del titulo, dentro del div del titulo
 
 ## Aeropuetos
 
-| Aeropuertos   | Espacios      | Coste O  | Demanda | Pasajeros | 
-| :------------ | :----------:  | :------: | :------:| --------: |
-| Grandes       |   400 - 450   | 2000     | 0.97    | 300       |
-| Medianos      |   200 - 250   | 1200     | 0.85    | 100       |
-| Pequeños      |   50 - 100    | 500      | 0.70    | 75        |
-| Muy pequeños  |   25 - 50     | 250      | 0.50    | 50        |
+| Aeropuertos   | Espacios      | Coste O  | Demanda | Pasajeros | Categoria  |
+| :------------ | :----------:  | :------: | :------:| :--------:| ---------: |
+| Grandes       |   400 - 450   | 2000     | 0.97    | 300       | 1          |
+| Medianos      |   200 - 250   | 1200     | 0.85    | 100       | 2          |
+| Pequeños      |   50 - 100    | 500      | 0.70    | 75        | 3          |
+| Muy pequeños  |   25 - 50     | 250      | 0.50    | 50        | 4          |
+
+***
+Categoria 1 -> a380, b747
+Categoria 2 -> a350, b777
+Categoria 3 -> a320, b737
+Categoria 4 -> embraers y borbardiers
+

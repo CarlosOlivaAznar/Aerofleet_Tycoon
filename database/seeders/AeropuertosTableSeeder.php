@@ -29,6 +29,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.041822,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -41,6 +43,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.565694,
             'demanda' => 0.97,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -53,6 +57,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.083427,
             'demanda' => 0.95,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -65,6 +71,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -5.896948,
             'demanda' => 0.75,
             'pasajerosEstimados' => 100,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -77,6 +85,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.910221,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -89,6 +99,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.777,
             'demanda' => 0.5,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -101,6 +113,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.956094,
             'demanda' => 0.5,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -113,6 +127,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.733,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -125,6 +141,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -16.573,
             'demanda' => 0.85,
             'pasajerosEstimados' => 1200,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -137,6 +155,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -6.817,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -149,6 +169,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 1.409,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -161,6 +183,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -6.034055,
             'demanda' => 0.70,
             'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -173,6 +197,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -5.501694,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -185,6 +211,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' =>  -4.495739,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -197,6 +225,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 1.372702,
             'demanda' => 0.80,
             'pasajerosEstimados' => 1200,
+            'categoria' => 2,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -209,6 +239,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.479332,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -221,6 +253,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.316876,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -233,6 +267,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.845454,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -245,6 +281,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -15.387878,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -257,6 +295,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -8.630107,
             'demanda' => 0.55,
             'pasajerosEstimados' => 55,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -269,6 +309,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.791582,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -281,6 +323,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -6.061259,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -293,6 +337,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.877959,
             'demanda' => 0.50,
             'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -305,6 +351,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.560171,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -317,6 +365,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -17.211643,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -329,6 +379,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.821970,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -341,6 +393,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -13.865727,
             'demanda' => 0.82,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -353,6 +407,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -16.346494,
             'demanda' => 0.90,
             'pasajerosEstimados' => 150,
+            'categoria' => 1,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -365,6 +421,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -17.755014,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -377,6 +435,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.731260,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -389,6 +449,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.642445,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         /* -------------- */
@@ -404,6 +466,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.361085,
             'demanda' => 0.88,
             'pasajerosEstimados' => 200,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -416,6 +480,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -5.871240,
             'demanda' => 0.75,
             'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -428,6 +494,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.740724,
             'demanda' => 0.75,
             'pasajerosEstimados' => 85,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -440,6 +508,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.839075,
             'demanda' => 0.55,
             'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -452,6 +522,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.716128,
             'demanda' => 0.85,
             'pasajerosEstimados' => 125,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -464,6 +536,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.344323,
             'demanda' => 0.70,
             'pasajerosEstimados' => 500,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -476,6 +550,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -7.158315,
             'demanda' => 0.60,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -488,6 +564,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.005454,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -500,6 +578,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.020384,
             'demanda' => 0.55,
             'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -512,6 +592,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.323593,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -524,6 +606,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.413278,
             'demanda' => 0.60,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -536,6 +620,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.432540,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -548,6 +634,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.594116,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -560,6 +648,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 53.579762,
             'demanda' => -0.347168,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -572,6 +662,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.053053,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -584,6 +676,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.900229,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -596,6 +690,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.661685,
             'demanda' => 0.75,
             'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -608,6 +704,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.849416,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -620,6 +718,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.054435,
             'demanda' => 0.85,
             'pasajerosEstimados' => 1200,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -632,6 +732,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.178471,
             'demanda' => 0.95,
             'pasajerosEstimados' => 270,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -644,6 +746,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.457651,
             'demanda' => 0.97,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -656,6 +760,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.369553,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -668,6 +774,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.697675,
             'demanda' => 0.50,
             'pasajerosEstimados' => 250,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -680,6 +788,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.243921,
             'demanda' => 0.80,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -692,6 +802,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.273305,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -704,6 +816,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 1.283087,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -716,6 +830,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -5.398845,
             'demanda' => 0.40,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -728,6 +844,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.358112,
             'demanda' => 0.70,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -740,6 +858,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -6.326474,
             'demanda' => 0.60,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -752,6 +872,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.290146,
             'demanda' => 0.65,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -764,6 +886,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.092044,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -776,6 +900,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.199144,
             'demanda' => 0.75,
             'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -788,6 +914,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -6.218708,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -800,6 +928,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.694172,
             'demanda' => 0.80,
             'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -812,6 +942,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.427492,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
 
@@ -829,6 +961,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -5.348205,
             'demanda' => 0.75,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
 
@@ -846,6 +980,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.598232,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 4,
+            'isla' => true,
         ]);
 
         Aeropuerto::create([
@@ -858,6 +994,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.215208,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
         ]);
 
 
@@ -875,6 +1013,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.624370,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => true,
         ]);
 
 
@@ -892,6 +1032,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.195538,
             'demanda' => 0.70,
             'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => true,
         ]);
 
 
@@ -910,6 +1052,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 13.500590,
             'demanda' => 0.97,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -922,6 +1066,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.787356,
             'demanda' => 0.80,
             'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -934,6 +1080,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.140407,
             'demanda' => 0.85,
             'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -946,6 +1094,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.613403,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -958,6 +1108,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 13.767650,
             'demanda' => 0.72,
             'pasajerosEstimados' => 80,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -970,6 +1122,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 6.766367,
             'demanda' => 200,
             'pasajerosEstimados' => 0.85,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -982,6 +1136,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 10.960220,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -994,6 +1150,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.561932,
             'demanda' => 0.97,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1006,6 +1164,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.263201,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1018,6 +1178,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.512710,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1030,6 +1192,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.993590,
             'demanda' => 0.87,
             'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1042,6 +1206,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.691958,
             'demanda' => 0.90,
             'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1054,6 +1220,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.082202,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1066,6 +1234,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 12.507917,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1078,6 +1248,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 12.230684,
             'demanda' => 0.75,
             'pasajerosEstimados' => 85,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1090,6 +1262,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 10.706313,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1102,6 +1276,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.514396,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1114,6 +1290,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 10.237795,
             'demanda' => 0.55,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1126,6 +1304,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 11.786450,
             'demanda' => 0.97,
             'pasajerosEstimados' => 300,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1138,6 +1318,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 11.078123,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1150,6 +1332,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.616230,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1162,6 +1346,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 12.280778,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1174,6 +1360,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.111971,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1186,6 +1374,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.218277,
             'demanda' => 0.89,
             'pasajerosEstimados' => 175,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1198,6 +1388,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.340472,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1210,6 +1402,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 6.141204,
             'demanda' => 0.77,
             'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1222,6 +1416,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.688881,
             'demanda' => 0.71,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
 
@@ -1239,6 +1435,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.593099,
             'demanda' => 0.40,
             'pasajerosEstimados' => 45,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1251,6 +1449,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.798466,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1263,6 +1463,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.312361,
             'demanda' => 0.40,
             'pasajerosEstimados' => 45,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1275,6 +1477,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.421332,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1287,6 +1491,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.524924,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1299,6 +1505,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.482980,
             'demanda' => 0.72,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1311,6 +1519,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.520371,
             'demanda' => 0.55,
             'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1323,6 +1533,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 3.353320,
             'demanda' => 0.55,
             'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1335,6 +1547,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.524213,
             'demanda' => 0.72,
             'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1347,6 +1561,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.418610,
             'demanda' => 0.80,
             'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1359,6 +1575,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.712527,
             'demanda' => 0.85,
             'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1371,6 +1589,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.459633,
             'demanda' => 0.45,
             'pasajerosEstimados' => 45,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1383,6 +1603,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 8.792277,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1395,6 +1617,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.308372,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1407,6 +1631,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.290048,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1419,6 +1645,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 5.881332,
             'demanda' => 0.60,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1431,6 +1659,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 3.169144,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1443,6 +1673,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.155528,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1455,6 +1687,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -2.079946,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1467,6 +1701,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 5.427123,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1479,6 +1715,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.627532,
             'demanda' => 0.79,
             'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1491,6 +1729,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 9.097625,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1503,6 +1743,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 5.331008,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
         
         Aeropuerto::create([
@@ -1515,6 +1757,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.196661,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1527,6 +1771,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 3.098848,
             'demanda' => 0.72,
             'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1539,6 +1785,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 1.179184,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1551,6 +1799,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -3.439984,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1563,6 +1813,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 5.087814,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
         ]);
         
         Aeropuerto::create([
@@ -1575,6 +1827,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 5.213418,
             'demanda' => 0.88,
             'pasajerosEstimados' => 120,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1587,6 +1841,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 6.248530,
             'demanda' => 0.60,
             'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1599,6 +1855,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 3.966572,
             'demanda' => 0.80,
             'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1611,6 +1869,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.606304,
             'demanda' => 0.85,
             'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1623,6 +1883,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 4.416205,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1635,6 +1897,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 7.216203,
             'demanda' => 0.88,
             'pasajerosEstimados' => 130,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1647,6 +1911,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.115877,
             'demanda' => 0.75,
             'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1659,6 +1925,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.551668,
             'demanda' => 0.99,
             'pasajerosEstimados' => 310,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1671,6 +1939,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.367969,
             'demanda' => 0.88,
             'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1683,6 +1953,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 4.191486,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1695,6 +1967,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.415411,
             'demanda' => 0.60,
             'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1707,6 +1981,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.869256,
             'demanda' => 0.65,
             'pasajerosEstimados' => 70,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1719,6 +1995,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.307676,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1731,6 +2009,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -4.170985,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1743,6 +2023,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -1.727918,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1755,6 +2037,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 2.484118,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1767,6 +2051,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 6.482094,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1779,6 +2065,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => -0.004514,
             'demanda' => 0.70,
             'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1791,6 +2079,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 6.147649,
             'demanda' => 0.65,
             'pasajerosEstimados' => 64,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1803,6 +2093,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 1.363907,
             'demanda' => 0.89,
             'pasajerosEstimados' => 125,
+            'categoria' => 1,
+            'isla' => false,
         ]);
 
         Aeropuerto::create([
@@ -1815,6 +2107,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => 0.724941,
             'demanda' => 0.50,
             'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
         ]);
 
 
@@ -1830,6 +2124,8 @@ class AeropuertosTableSeeder extends Seeder
             'longitud' => ,
             'demanda' => ,
             'pasajerosEstimados' => ,
+            'categoria' => ,
+            'isla' => false,
         ]);
         */
 
