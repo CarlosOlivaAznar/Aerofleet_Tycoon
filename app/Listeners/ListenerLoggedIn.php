@@ -104,6 +104,8 @@ class ListenerLoggedIn
             }
         }
 
+        $this->controlBeneficios();;
+
         // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas
         BeneficiosHistorico::create([
             'user_id' => auth()->id(),
@@ -229,5 +231,22 @@ class ListenerLoggedIn
 
         Session::put('mensajeVuelos', $mensajeVuelos);
         error_log("Realizando manteniemiento a los aviones");
+    }
+
+    /**
+     * Esta funcion se utiliza para hacer control de los beneficios por usuario, cada uno puede tener maximo 10 registros para
+     * visualizar sus beneficios, si no se podria saturar las grafias y la tabla de registros. Si tiene mas de 10 registros
+     * se eliminan la mitad de ellos
+     */
+    public function controlBeneficios()
+    {
+        $beneficiosHistoricos = BeneficiosHistorico::where('user_id', auth()->id())->get();
+        if(count($beneficiosHistoricos) > 10){
+            for ($i=0; $i < count($beneficiosHistoricos); $i++) { 
+                if($i % 2 === 1){
+                    $beneficiosHistoricos[$i]->delete();
+                }
+            }
+        }
     }
 }

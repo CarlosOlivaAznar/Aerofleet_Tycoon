@@ -163,6 +163,9 @@ MARK: Menu lateral
 /* ------------- */
 /* Menu Superior */
 /* ------------- */
+/*
+MARK: Menu superior:
+*/
 
 .contenido nav{
     height: 50px;
@@ -201,6 +204,12 @@ MARK: Menu lateral
 
 .contenido nav h3 span{
     margin-right: 15px;
+}
+
+.version{
+    margin-left: 30px;
+    color: var(--dark);
+    font-weight: 600;
 }
 
 /* ------------------- */
