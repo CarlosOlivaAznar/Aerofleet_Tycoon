@@ -19,6 +19,9 @@ class AeropuertosTableSeeder extends Seeder
         /* ------------------ */
         /* Aeropuertos España */
         /* ------------------ */
+        /*
+        MARK: España
+        */
         Aeropuerto::create([
             'icao' => 'LEZG',
             'pais' => 'EC',
@@ -456,6 +459,9 @@ class AeropuertosTableSeeder extends Seeder
         /* -------------- */
         /* Aeropuertos UK */
         /* -------------- */
+        /*
+        MARK: Reino Unido
+        */
         Aeropuerto::create([
             'icao' => 'EGPH',
             'pais' => 'G',
@@ -1425,6 +1431,9 @@ class AeropuertosTableSeeder extends Seeder
         /* ------------------- */
         /* Aeropuertos Francia */
         /* ------------------- */
+        /* 
+        MARK: Francia
+        */
         Aeropuerto::create([
             'icao' => 'LFBA',
             'pais' => 'F',
@@ -2112,11 +2121,480 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------ */
+        /* Aeropuertos Italia */
+        /* ------------------ */
+        /* 
+        MARK: Italia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LIBP',
+            'pais' => 'I',
+            'nombre' => 'Pescara Abruzzo International Airport',
+            'espaciosTotales' => 75,
+            'costeOperacional' => 750,
+            'latitud' => 42.430121,
+            'longitud' => 14.183449,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIEA',
+            'pais' => 'I',
+            'nombre' => 'Alghero Fertilia Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 40.632262,
+            'longitud' => 8.292244,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPY',
+            'pais' => 'I',
+            'nombre' => 'Ancona Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 350,
+            'latitud' => 43.615196,
+            'longitud' => 13.362474,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIBD',
+            'pais' => 'I',
+            'nombre' => 'Bari Karol Wojtyla Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 41.137479,
+            'longitud' => 16.761285,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIME',
+            'pais' => 'I',
+            'nombre' => 'Milan Bergamo Orio al Serio International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 45.667841,
+            'longitud' => 9.707228,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPB',
+            'pais' => 'I',
+            'nombre' => 'Bolzano Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.462451,
+            'longitud' => 11.327063,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIBR',
+            'pais' => 'I',
+            'nombre' => 'Brindisi Airport',
+            'espaciosTotales' => 70,
+            'costeOperacional' => 850,
+            'latitud' => 40.659448,
+            'longitud' => 17.947191,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIEE',
+            'pais' => 'I',
+            'nombre' => 'Cagliari Elmas Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 39.251549,
+            'longitud' => 9.055915,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICC',
+            'pais' => 'I',
+            'nombre' => 'Catania Fontanarossa Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 37.467644,
+            'longitud' => 15.066438,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICB',
+            'pais' => 'I',
+            'nombre' => 'Comiso Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 250,
+            'latitud' => 36.997018,
+            'longitud' => 14.609081,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIRQ',
+            'pais' => 'I',
+            'nombre' => 'Florence Peretola Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 43.810728,
+            'longitud' => 11.206317,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIMJ',
+            'pais' => 'I',
+            'nombre' => 'Genoa Cristoforo Colombo Airport',
+            'espaciosTotales' => 55,
+            'costeOperacional' => 500,
+            'latitud' => 44.413151,
+            'longitud' => 8.843892,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICD',
+            'pais' => 'I',
+            'nombre' => 'Lampedusa Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 35.498993,
+            'longitud' => 12.619474,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIML',
+            'pais' => 'I',
+            'nombre' => 'Milan Linate Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 45.450573,
+            'longitud' => 9.277855,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIMC',
+            'pais' => 'I',
+            'nombre' => 'Milan Malpensa Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 45.627407,
+            'longitud' => 8.729105,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIEO',
+            'pais' => 'I',
+            'nombre' => 'Olbia Costa Smeralda Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 40.900320,
+            'longitud' => 9.518555,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICJ',
+            'pais' => 'I',
+            'nombre' => 'Palermo Falcone-Borsellino Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 38.181846,
+            'longitud' => 13.105383,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICG',
+            'pais' => 'I',
+            'nombre' => 'Pantelleria Airport',
+            'espaciosTotales' => 45,
+            'costeOperacional' => 400,
+            'latitud' => 36.816467,
+            'longitud' => 11.968992,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIMP',
+            'pais' => 'I',
+            'nombre' => 'Parma Airport',
+            'espaciosTotales' => 45,
+            'costeOperacional' => 400,
+            'latitud' => 44.826965,
+            'longitud' => 10.297116,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'LICR',
+            'pais' => 'I',
+            'nombre' => 'Reggio Calabria Airport',
+            'espaciosTotales' => 33,
+            'costeOperacional' => 350,
+            'latitud' => 38.072568,
+            'longitud' => 15.650614,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIRA',
+            'pais' => 'I',
+            'nombre' => 'Rome Ciampino Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1750,
+            'latitud' => 41.799142,
+            'longitud' => 12.594950,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 250,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIRF',
+            'pais' => 'I',
+            'nombre' => 'Rome Leonardo da Vinci Fiumicino Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 41.805588,
+            'longitud' => 12.255421,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICT',
+            'pais' => 'I',
+            'nombre' => 'Trapani Birgi Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 37.910832,
+            'longitud' => 12.488929,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPH',
+            'pais' => 'I',
+            'nombre' => 'Venice Treviso Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 45.648469,
+            'longitud' => 12.194058,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPQ',
+            'pais' => 'I',
+            'nombre' => 'Trieste Friuli Venezia Giulia Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 0.65,
+            'latitud' => 45.827124,
+            'longitud' => 13.470238,
+            'demanda' => 450,
+            'pasajerosEstimados' => 70,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIMF',
+            'pais' => 'I',
+            'nombre' => 'Turin Caselle Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 45.199829,
+            'longitud' => 7.649575,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPZ',
+            'pais' => 'I',
+            'nombre' => 'Venice Marco Polo Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 45.505021,
+            'longitud' => 12.349506,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPX',
+            'pais' => 'I',
+            'nombre' => 'Verona Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 45.397650,
+            'longitud' => 10.889574,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPE',
+            'pais' => 'I',
+            'nombre' => 'Bologna Guglielmo Marconi Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 44.534860,
+            'longitud' => 11.287633,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 230,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIPR',
+            'pais' => 'I',
+            'nombre' => 'Rimini Federico Fellini Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.019386,
+            'longitud' => 12.613390,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LICA',
+            'pais' => 'I',
+            'nombre' => 'Lamezia Terme Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 38.906236,
+            'longitud' => 16.245666,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIRN',
+            'pais' => 'I',
+            'nombre' => 'Naples Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 40.885679,
+            'longitud' => 14.290169,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 0.85,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LIRP',
+            'pais' => 'I',
+            'nombre' => 'Pisa Galileo Galilei Airport',
+            'espaciosTotales' => 170,
+            'costeOperacional' => 1100,
+            'latitud' => 43.686161,
+            'longitud' => 10.394942,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'F',
+            'pais' => 'I',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,

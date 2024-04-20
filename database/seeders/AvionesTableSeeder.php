@@ -262,6 +262,22 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 14.2825,
             'tiempoPorKm' => 0.108,
         ]);
+
+
+
+
+        /* Plantilla
+        Avion::create([
+            'modelo' => '',
+            'fabricante' => 'Boeing',
+            'precio' => ,
+            'rango' => ,
+            'img' => 'images/new/boeing/787.png',
+            'capacidad' => ,
+            'costePorKm' => ,
+            'tiempoPorKm' => ,
+        ]);
+        */
         
 
     }

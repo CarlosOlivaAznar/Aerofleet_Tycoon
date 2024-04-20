@@ -75,5 +75,6 @@ Los breadcrumbs van debajo del titulo, dentro del div del titulo
 Categoria 1 -> a380, b747
 Categoria 2 -> a350, b777
 Categoria 3 -> a320, b737
-Categoria 4 -> embraers y borbardiers
+Categoria 4 -> embraers y borbardiers y a319
 
+0.005 restar demanda en rutas similares?
