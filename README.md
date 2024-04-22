@@ -59,6 +59,14 @@ Los breadcrumbs van debajo del titulo, dentro del div del titulo
 </ul>
 ```
 
+### Tooltips
+
+Se pone dentro de un div y añadiendo la clase "tooltip", luego se añade dentro del div el siguiente elemento
+
+```
+<span class="tooltiptext">Comprar Avion</span>
+```
+
 ### Modales
 
 
