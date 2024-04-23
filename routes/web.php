@@ -34,6 +34,9 @@ Route::get('/terminosCondiciones', function () {
 Route::get('/politicaPrivacidad', function () {
     return view('landing.politicaPrivacidad');
 })->name('landing.politicaPrivacidad');
+Route::get('/donar', function () {
+    return view('landing.donar');
+})->name('landing.donar');
 
 // Rutas home
 Route::get('home', [HomeController::class, 'index'])->name('home.index');

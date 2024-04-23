@@ -16,7 +16,7 @@
       </div>
       <div>
         <p class="titulo">FAQ</p>
-        <p class="texto"><a href="">Donar</a></p>
+        <p class="texto"><a href="{{ route('landing.donar') }}">Donar</a></p>
         <p class="texto"><a href="">Preguntas Frecuentes</a></p>
         <p class="texto"><a href="">Reportar un fallo</a></p>
       </div>
