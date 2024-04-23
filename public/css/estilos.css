@@ -172,6 +172,7 @@ MARK: Menu superior:
     background-color: var(--light);
     padding: 0 24px 0 0;
     display: flex;
+    gap: 15px;
     align-items: center;
     position: sticky;
     top: 0;
@@ -210,6 +211,19 @@ MARK: Menu superior:
     margin-left: 30px;
     color: var(--dark);
     font-weight: 600;
+}
+
+.contenido nav a{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--dark);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contenido nav a i{
+    color: var(--dark);
 }
 
 /* ------------------- */
@@ -568,6 +582,23 @@ MARK: Tooltips
 }
 
 .modal form input[type=password]:focus{
+    border: 3px solid var(--dark);
+}
+
+.modal form textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+    margin-top: 5px;
+}
+
+.modal form textarea:focus{
     border: 3px solid var(--dark);
 }
 
