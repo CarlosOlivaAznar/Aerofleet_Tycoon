@@ -7,7 +7,10 @@
     @include('partials.navbarLanding')
     <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
-        <h1 class="tituloPagina">AEROFLEET TYCOON</h1>
+        <div class="nombre-logo">
+          <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="">
+          <h1>AeroFleet Tycoon</h1>
+        </div>
         <h2 class="subtituloPagina">Simulador de Gestion a Tiempo real</h2>
         <div class="resumen">
             <ul>

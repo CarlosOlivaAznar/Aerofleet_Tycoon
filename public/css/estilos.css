@@ -852,23 +852,33 @@ MARK: Landing
 .barra-login .login{
     margin-left: auto;
     display: flex;
-    gap: 25px;
+    gap: 15px;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
 
 .barra-login .login div{
-    color: var(--dark);
     cursor: pointer;
 }
 
-.barra-login .login div:first-child{
-    color: var(--primary);
+.barra-login .login div a{
+    padding: 10px;
+    color: var(--dark);
+    border-radius: 25px;
+    background-color: var(--grey);
+    transition: 0.4s;
 }
 
-.barra-login .login div:first-child:hover{
-    color: var(--dark);
+.barra-login .login div a.login-registrarse{
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.barra-login .login div a:hover{
+    background-color: var(--dark);
+    color: var(--light);
+    transition: 0.4s;
 }
 
 .mainContent{
@@ -878,21 +888,44 @@ MARK: Landing
 .imagenTitulo{
     width: 100%;
     height: 40vw;
+    filter: brightness(50%);
 }
 
-.mainContent h1.tituloPagina{
+/* Titulo principal landing */
+
+.mainContent .nombre-logo{
     position: absolute;
-    top: 10vw;
-    color: var(--primary);
-    -webkit-text-stroke-width: 0.3vw;
-    -webkit-text-stroke-color: white;
-    font-size: 10vw;
-    font-weight: 900;
+    top: 6vw;
+    width: 70%;
+    padding: 25px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    text-align: center;
+
+    /*
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 30px;
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+.mainContent .nombre-logo img{
+    width: 25vw;
+}
+
+.mainContent .nombre-logo h1{
+    color: var(--primary);
+    -webkit-text-stroke-width: 0.2vw;
+    -webkit-text-stroke-color: white;
+    font-size: 10vw;
+    font-weight: 900;    
+    text-align: left;
+    line-height: 0.85;
 }
 
 .mainContent h1{
@@ -1736,9 +1769,8 @@ MARK: Sobre mi
     }
 
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1.tituloPagina{
-        font-size: 10vw;
-        top: 15vw;
+    .mainContent .nombre-logo{
+        top: 10vw;
     }
 
     .mainContent{
@@ -1799,9 +1831,8 @@ MARK: Sobre mi
 
 @media screen and (max-width: 500px) {
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1.tituloPagina{
-        font-size: 16vw;
-        top: 15vw;
+    .mainContent .nombre-logo{
+        top: 12vw;
     }
 
     .mainContent{
