@@ -9,7 +9,7 @@
       
         <div>
           <img src="{{ asset('images/logos/logo_AFT_.png') }}" alt="logoAFT">
-          <form method="POST" action="{{ route('login') }}">
+          <form method="POST" action="{{ route('login') }}" class="formularioBasico">
             @csrf
             
             <!-- Email -->

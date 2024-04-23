@@ -555,6 +555,22 @@ MARK: Tooltips
     background: var(--grey);
 }
 
+.modal form input[type=password]{
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.modal form input[type=password]:focus{
+    border: 3px solid var(--dark);
+}
+
 
 /* Muestra de notificaciones de los aviones */
 .contenido main .informacion div.basico .notificaciones{
@@ -680,29 +696,33 @@ MARK: Login
     margin: 0 auto;
 }
 
-.pag-login div form{
+form.formularioBasico{
     width: 450px;
     background-color: var(--light);
     border-radius: 25px;
 }
 
-.pag-login div form h1{
+form.formularioBasico.cuenta .campos{
+    padding-left: 0;
+}
+
+form.formularioBasico h1{
     text-align: center;
     color: var(--dark);
 }
 
-.pag-login div form .campos{
+form.formularioBasico .campos{
     width: 100%;
     margin-top: 5px;
     padding: 10px 20px;
 }
 
-.pag-login div form .camposLinea{
+form.formularioBasico .camposLinea{
     margin-top: 5px;
     padding: 10px 20px;
 }
 
-.pag-login div form .camposBotones{
+form.formularioBasico .camposBotones{
     margin-top: 5px;
     padding: 10px 20px;
     display: flex;
@@ -712,13 +732,13 @@ MARK: Login
     gap: 15px;
 }
 
-.pag-login div form .campos label{
+form.formularioBasico .campos label{
     display: block;
     font-size: 19px;
     color: var(--dark);
 }
 
-.pag-login div form .campos input{
+form.formularioBasico .campos input{
     display: block;
     margin-top: 10px;
     width: 100%;
@@ -731,32 +751,48 @@ MARK: Login
     outline: none;
 }
 
-.pag-login div form .campos input:focus{
+form.formularioBasico .campos input:focus{
     border: 3px solid var(--dark);
 }
 
-.pag-login div form .campos .inputError{
+form.formularioBasico .campos .inputError{
     margin-top: 5px;
     color: var(--danger);
 }
 
-.pag-login div form .camposLinea .checkbox{
+.botonSubmit{
+    padding: 10px 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    border: none;
+    background-color: var(--danger);
+    color: var(--light);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.botonSubmit:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
+
+form.formularioBasico .camposLinea .checkbox{
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.pag-login div form .camposLinea .checkbox a{
+form.formularioBasico .camposLinea .checkbox a{
     color: var(--dark);
     text-decoration: underline;
 }
 
-.pag-login div form .camposBotones .linkForm{
+.pag-login div form.formularioBasico .camposBotones .linkForm{
     color: var(--dark);
     text-decoration: underline;
 }
 
-.pag-login div form .camposBotones input[type="submit"]{
+form.formularioBasico div input[type="submit"]{
     padding: 10px 15px;
     border-radius: 40px;
     font-size: 15px;
@@ -767,9 +803,13 @@ MARK: Login
     transition: 0.4s;
 }
 
-.pag-login div form .camposBotones input[type="submit"]:hover{
+form.formularioBasico div input[type="submit"]:hover{
     background-color: var(--dark);
     transition: 0.4s;
+}
+
+form.formularioBasico.cuenta div input[type="submit"]{
+    width: auto;
 }
 
 /* -------------- */
