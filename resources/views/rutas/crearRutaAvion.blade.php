@@ -32,7 +32,7 @@
         <div class="divRepartido">
           <div class="input">
             <h3>Destino 1</h3>
-            <select name="destino1" id="destino1">
+            <select name="destino1" id="destino1" onchange="mostrarRadio()">
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
@@ -89,7 +89,7 @@
           </div>
           <div class="input">
             <h3>Destino 2</h3>
-            <select name="destino2" id="destino2">
+            <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
                   <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
@@ -130,6 +130,17 @@
           <input type="hidden" class="dato-oculto" value="{{ $ruta->horaInicio }}">
           <input type="hidden" class="dato-oculto" value="{{ $ruta->tiempoEstimado }}">
       @endforeach
+
+      <!-- Informacion aeropuertos -->
+      @foreach ($espacios as $espacio)
+        @if ($espacio->espaciosDisponibles() > 0)
+          <input type="hidden" class="{{ $espacio->id }}" value="{{ $espacio->aeropuerto->latitud }}">
+          <input type="hidden" class="{{ $espacio->id }}" value="{{ $espacio->aeropuerto->longitud }}">
+        @endif
+      @endforeach
+
+      <!-- Informacion avion -->
+      <input type="hidden" id="rangoAvion" value="{{ $avion->avion->rango }}">
 
       <div class="informacion bgColor">
         <div class="info">
@@ -208,6 +219,51 @@
 
       function slide(event){
         precio.innerHTML = event.value;
+      }
+
+    </script>
+    <script>
+      // Funcionalidad mapa
+      var rango = document.getElementById('rangoAvion').value;
+      var polyLine = null;
+      var circle = null
+      mostrarRadio();
+
+      function mostrarRadio(){
+        var idEspacio = document.getElementById('destino1').value;
+        var coordenadas = document.getElementsByClassName(idEspacio);
+
+        if(circle != null){
+          map.removeLayer(circle);
+        }
+
+        circle = L.circle([coordenadas[0].value, coordenadas[1].value], {
+            color: '#2d8de8',
+            fillColor: '#CFE8FF',
+            fillOpacity: 0.2,
+            radius: rango * 1000
+        }).addTo(map);
+
+        mostrarRuta()
+      }
+
+      function mostrarRuta(){
+        var idEspacioOrigen = document.getElementById('destino1').value;
+        var idEspacioDestino = document.getElementById('destino2').value;
+
+        var coordenadasOrgigen = document.getElementsByClassName(idEspacioOrigen);
+        var coordenadasDestino = document.getElementsByClassName(idEspacioDestino);
+
+        if(polyLine != null){
+          map.removeLayer(polyLine);
+        }
+
+        polyLine = L.polyline([
+          [coordenadasOrgigen[0].value, coordenadasOrgigen[1].value],
+          [coordenadasDestino[0].value, coordenadasDestino[1].value]], {
+            color: 'red', 
+            weight: 2
+        }).addTo(map);
       }
 
     </script>
