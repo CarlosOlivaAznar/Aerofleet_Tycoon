@@ -102,8 +102,13 @@
         <div class="cabecera">
           <i class="bx bx-building"></i>
           <h3>Hangar {{ $contador }}</h3>
-          <span>Espacios disponibles hangar: {{ $hangar->espacios - $espaciosRestantes}}</span>
-          <?php $espaciosRestantes -= $hangar->espacios?>
+          <span>Espacios disponibles hangar:
+            @if ($hangar->espacios - $espaciosRestantes < 0)
+              {{ 0 }}
+            @else
+              {{ $hangar->espacios - $espaciosRestantes }}
+            @endif
+          </span>
           <a class="botonTexto" data-modal-target="modalAmpliarHanagar{{ $hangar->id }}">Ampliar Hangar</a>
         </div>
         <table>
@@ -127,6 +132,7 @@
                 <span class="tooltiptext">Finalizar Mantenimiento</span>
               </a></td>
               <?php $contadorAvion++; ?>
+              <?php $espaciosRestantes-- ?>
               @endisset
             </tr>
             @endfor
