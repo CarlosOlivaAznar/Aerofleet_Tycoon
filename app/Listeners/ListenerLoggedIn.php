@@ -68,6 +68,9 @@ class ListenerLoggedIn
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
                 $this->mantenimiento();
+
+                // Restamos los gastos mensuales
+                $this->gastosMensuales();
             }
         }
 
@@ -93,6 +96,9 @@ class ListenerLoggedIn
 
             // Solo por el ultimo dia de conexion calculamos el mantenimiento
             $this->mantenimiento();
+
+            // Restamos los gastos mensuales
+            $this->gastosMensuales();
 
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
@@ -231,6 +237,19 @@ class ListenerLoggedIn
 
         Session::put('mensajeVuelos', $mensajeVuelos);
         error_log("Realizando manteniemiento a los aviones");
+    }
+
+    /**
+     * Funcion que cobra los gastos mensuales del usuario, en vez de cobrar mes por mes, lo cobra dia a dia
+     * haciendo la division por 30
+     */
+    public function gastosMensuales()
+    {
+        $sede = Sede::where('user_id')->first();
+        $user = User::find(auth()->id());
+        $user->saldo -= $sede->costesTotales() / 30;
+        $user->update();
+        error_log("Se ha cobrado los gastos diarios " . $sede->costesTotales() / 30);
     }
 
     /**

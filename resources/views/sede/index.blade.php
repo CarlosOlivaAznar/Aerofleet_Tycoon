@@ -178,7 +178,7 @@
           </div>
           <div class="cuerpo-modal">
             <p>¿Esta seguro que quiere contratar a un nuevo ingeniero?</p><br>
-            <p>El salario de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
+            <p>El gasto mensual de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
