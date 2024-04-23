@@ -6,6 +6,7 @@
           <h4>Aerofleet Tycoon</h4>
         </div>
         <p class="autor">Desarrollado por Carlos Oliva Aznar</p>
+        <p class="autor">Copyright © 2024 Aerofleet Tycoon</p>
       </div>
       <div>
         <p class="titulo">Sobre Mi</p>
