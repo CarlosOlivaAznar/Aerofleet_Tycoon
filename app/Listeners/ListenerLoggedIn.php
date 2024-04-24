@@ -186,8 +186,17 @@ class ListenerLoggedIn
         $user->saldo += $beneficio;
         $user->update();
 
+        // Obtenemos la variable de sesion de mensaje vuelos
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
+
         // Reducimos el estado del avion porque ha completado un vuelo
         $ruta->flota->condicion -= 0.05;
+        if($ruta->flota->condicion < 5){
+            $ruta->flota->estado = 0;
+            array_push($mensajeVuelos, 
+            ["El avion ". $ruta->flota->matricula ." tiene un estado deplorable, por seguridad se ha detenido todas las operaciones del avion y se encuentra en tierra",
+            3]);
+        }
         $ruta->flota->update();
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
@@ -196,7 +205,6 @@ class ListenerLoggedIn
         Session::put('infoAviones', $infoAviones);
 
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
-        $mensajeVuelos = Session::get('mensajeVuelos', []);
         if($beneficio < 0){
             array_push($mensajeVuelos, 
             ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes",
