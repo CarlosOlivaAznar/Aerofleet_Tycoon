@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('flota', function (Blueprint $table) {
             $table->id();
-            $table->unsignedinteger('user_id');
-            $table->unsignedinteger('avion_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('avion_id');
             $table->string('matricula');
             $table->date('fechaDeFabricacion');
             $table->unsignedFloat('condicion');

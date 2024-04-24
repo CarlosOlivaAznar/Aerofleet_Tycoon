@@ -5,6 +5,6 @@
     </a>
     <div class="login">
         <div><a href="{{ route('login') }}">Acceder</a></div>
-        <div><a href="{{ route('register') }}">Resgistrarse</a></div>
+        <div><a class="login-registrarse" href="{{ route('register') }}">Resgistrarse</a></div>
     </div>
 </nav>

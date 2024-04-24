@@ -32,10 +32,17 @@
         <div class="divRepartido">
           <div class="input">
             <h3>Destino 1</h3>
-            <select name="destino1" id="destino1">
+            <select name="destino1" id="destino1" onchange="mostrarRadio()">
+              <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @if ($espacio->espaciosDisponibles() > 0)
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <?php $espaciosVacios++; ?>
+                @endif
               @endforeach
+              @if ($espaciosVacios === 0)
+                <option value="">No hay espacios disponibles</option>  
+              @endif
             </select>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
@@ -68,6 +75,13 @@
               <option value="19:30:00">19:30z</option>
               <option value="20:00:00">20:00z</option>
               <option value="20:30:00">20:30z</option>
+              <option value="21:00:00">21:00z</option>
+              <option value="21:30:00">21:30z</option>
+              <option value="22:00:00">22:00z</option>
+              <option value="22:30:00">22:30z</option>
+              <option value="23:00:00">23:00z</option>
+              <option value="23:30:00">23:30z</option>
+              <option value="24:00:00">24:00z</option>
             </select>
           </div>
           <div class="input">
@@ -75,10 +89,15 @@
           </div>
           <div class="input">
             <h3>Destino 2</h3>
-            <select name="destino2" id="destino2">
+            <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
-              <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @if ($espacio->espaciosDisponibles() > 0)
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                @endif
               @endforeach
+              @if ($espaciosVacios === 0)
+                <option value="">No hay espacios disponibles</option>  
+              @endif
             </select>
           </div>
           <div class="input">
@@ -112,7 +131,18 @@
           <input type="hidden" class="dato-oculto" value="{{ $ruta->tiempoEstimado }}">
       @endforeach
 
-      <div class="informacion">
+      <!-- Informacion aeropuertos -->
+      @foreach ($espacios as $espacio)
+        @if ($espacio->espaciosDisponibles() > 0)
+          <input type="hidden" class="{{ $espacio->id }}" value="{{ $espacio->aeropuerto->latitud }}">
+          <input type="hidden" class="{{ $espacio->id }}" value="{{ $espacio->aeropuerto->longitud }}">
+        @endif
+      @endforeach
+
+      <!-- Informacion avion -->
+      <input type="hidden" id="rangoAvion" value="{{ $avion->avion->rango }}">
+
+      <div class="informacion bgColor">
         <div class="info">
           <h4>Distancia: </h4>
           <p>350mn</p>
@@ -189,6 +219,51 @@
 
       function slide(event){
         precio.innerHTML = event.value;
+      }
+
+    </script>
+    <script>
+      // Funcionalidad mapa
+      var rango = document.getElementById('rangoAvion').value;
+      var polyLine = null;
+      var circle = null
+      mostrarRadio();
+
+      function mostrarRadio(){
+        var idEspacio = document.getElementById('destino1').value;
+        var coordenadas = document.getElementsByClassName(idEspacio);
+
+        if(circle != null){
+          map.removeLayer(circle);
+        }
+
+        circle = L.circle([coordenadas[0].value, coordenadas[1].value], {
+            color: '#2d8de8',
+            fillColor: '#CFE8FF',
+            fillOpacity: 0.2,
+            radius: rango * 1000
+        }).addTo(map);
+
+        mostrarRuta()
+      }
+
+      function mostrarRuta(){
+        var idEspacioOrigen = document.getElementById('destino1').value;
+        var idEspacioDestino = document.getElementById('destino2').value;
+
+        var coordenadasOrgigen = document.getElementsByClassName(idEspacioOrigen);
+        var coordenadasDestino = document.getElementsByClassName(idEspacioDestino);
+
+        if(polyLine != null){
+          map.removeLayer(polyLine);
+        }
+
+        polyLine = L.polyline([
+          [coordenadasOrgigen[0].value, coordenadasOrgigen[1].value],
+          [coordenadasDestino[0].value, coordenadasDestino[1].value]], {
+            color: 'red', 
+            weight: 2
+        }).addTo(map);
       }
 
     </script>

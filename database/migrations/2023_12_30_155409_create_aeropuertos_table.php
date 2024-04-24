@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string('icao');
             $table->string('pais');
             $table->string('nombre');
-            $table->unsignedBigInteger('espaciosTotales');
-            $table->unsignedBigInteger('costeOperacional');
+            $table->unsignedInteger('espaciosTotales');
+            $table->unsignedInteger('costeOperacional');
             $table->double('latitud', 10, 6);
             $table->double('longitud', 10, 6);
             $table->float('demanda');
             $table->unsignedInteger('pasajerosEstimados');
+            $table->unsignedInteger('categoria')->default(1);
+            $table->string('isla')->default(false);
             $table->timestamps();
         });
     }

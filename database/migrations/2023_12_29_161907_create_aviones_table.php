@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('modelo');
             $table->string('fabricante');
             $table->double('precio');
-            $table->unsignedBigInteger('capacidad');
+            $table->unsignedInteger('capacidad');
             $table->unsignedInteger('rango');
             $table->string('img');
             $table->unsignedFloat('costePorKm');

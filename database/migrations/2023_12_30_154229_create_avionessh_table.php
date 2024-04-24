@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('avionessh', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('avion_id');
+            $table->unsignedBigInteger('avion_id');
             $table->date('fechaDeFabricacion');
             $table->string('img');
             $table->string('companyia');

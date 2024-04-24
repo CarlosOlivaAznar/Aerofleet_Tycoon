@@ -69,6 +69,11 @@ class User extends Authenticatable
         return $this->hasMany(BeneficiosHistorico::class);
     }
 
+    public function bugreport()
+    {
+        return $this->hasMany(Bugreport::class);
+    }
+
 
     // Funcion estatica que hace una llamada a la base de datos para retornar el saldo en formato string del usuario que esta logeado
     // Se utiliza para mostrar en la parte superior derecha el saldo del usuario

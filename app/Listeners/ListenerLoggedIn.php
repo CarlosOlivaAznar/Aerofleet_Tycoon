@@ -9,6 +9,7 @@ use App\Models\Ruta;
 use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
+use App\Models\Sede;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
@@ -27,6 +28,14 @@ class ListenerLoggedIn
      */
     public function handle(UserLoggedIn $event): void
     {
+        // Si el usuario no se ha logeado ninguna vez no se ejecuta esta funcion
+        if(!Sede::where('user_id', $event->user->id)->first()){
+            // Actualizamos la fecha actual
+            $event->user->ultimaConexion = now();
+            $event->user->update();
+            return;
+        }
+
         $ultimaConexion = Carbon::createFromTimeString($event->user->ultimaConexion);
         $fechaActual = now();
 
@@ -59,6 +68,9 @@ class ListenerLoggedIn
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
                 $this->mantenimiento();
+
+                // Restamos los gastos mensuales
+                $this->gastosMensuales();
             }
         }
 
@@ -85,6 +97,9 @@ class ListenerLoggedIn
             // Solo por el ultimo dia de conexion calculamos el mantenimiento
             $this->mantenimiento();
 
+            // Restamos los gastos mensuales
+            $this->gastosMensuales();
+
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
@@ -94,6 +109,8 @@ class ListenerLoggedIn
                 }
             }
         }
+
+        $this->controlBeneficios();;
 
         // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas
         BeneficiosHistorico::create([
@@ -125,7 +142,7 @@ class ListenerLoggedIn
 
 
         // Se calcula los pasajeros que van en el avion en una ruta concreta
-        $pasajeros = $mediaDemanda * $pasajerosEstimados;
+        $pasajeros = intval($mediaDemanda * $pasajerosEstimados);
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
             $pasajeros = $ruta->flota->avion->capacidad;
@@ -153,6 +170,10 @@ class ListenerLoggedIn
         $user->saldo += $beneficio;
         $user->update();
 
+        // Reducimos el estado del avion porque ha completado un vuelo
+        $ruta->flota->condicion -= 0.05;
+        $ruta->flota->update();
+
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
         array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
@@ -174,7 +195,7 @@ class ListenerLoggedIn
 
         if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pasajeros, considere bajar los precios de los billetes",
+            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes",
             2]);
         }
 
@@ -190,11 +211,61 @@ class ListenerLoggedIn
     public function mantenimiento()
     {
         $flotaMantenimiento = Flota::where('user_id', auth()->id())->where('estado', 2)->get();
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
 
         foreach ($flotaMantenimiento as $avion) {
-            $avion->condicion += 1;
-            $avion->update();
+            if($avion->condicion < 100){
+                // Realizamos el mantenimiento al avion
+                // Para los mantenimientos se calcula dividiendo los ingenieros por los aviones en mantenimiento
+                $avion->condicion += $sede->ingenieros / count($flotaMantenimiento);
+                $avion->update();
+            } else {
+                // creamos el mensaje de que el avion ha completado el mantenimiento
+                array_push($mensajeVuelos, 
+                ["El avion $avion->matricula ha completado el mantenimiento, considere retiralo del hangar",
+                2]);
+            }
         }
+
+        // Primera condicion para no dividir por 0
+        if(count($flotaMantenimiento) != 0 && $sede->ingenieros / count($flotaMantenimiento) < 0.33){
+            array_push($mensajeVuelos, 
+            ["El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros",
+            3]);
+        }
+
+        Session::put('mensajeVuelos', $mensajeVuelos);
         error_log("Realizando manteniemiento a los aviones");
+    }
+
+    /**
+     * Funcion que cobra los gastos mensuales del usuario, en vez de cobrar mes por mes, lo cobra dia a dia
+     * haciendo la division por 30
+     */
+    public function gastosMensuales()
+    {
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $user = User::find(auth()->id());
+        $user->saldo -= $sede->costesTotales() / 30;
+        $user->update();
+        error_log("Se ha cobrado los gastos diarios " . $sede->costesTotales() / 30);
+    }
+
+    /**
+     * Esta funcion se utiliza para hacer control de los beneficios por usuario, cada uno puede tener maximo 10 registros para
+     * visualizar sus beneficios, si no se podria saturar las grafias y la tabla de registros. Si tiene mas de 10 registros
+     * se eliminan la mitad de ellos
+     */
+    public function controlBeneficios()
+    {
+        $beneficiosHistoricos = BeneficiosHistorico::where('user_id', auth()->id())->get();
+        if(count($beneficiosHistoricos) > 10){
+            for ($i=0; $i < count($beneficiosHistoricos); $i++) { 
+                if($i % 2 === 1){
+                    $beneficiosHistoricos[$i]->delete();
+                }
+            }
+        }
     }
 }

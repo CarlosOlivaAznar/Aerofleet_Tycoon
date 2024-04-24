@@ -38,7 +38,7 @@ Se utiliza para dar un mensaje de alerta segun el mensaje por ejemplo un mensaje
 
 ### Boton de caracter general
 
-Boton alineado a la izquierda, se utiliza con la clase .boton en un <a>
+Boton alineado a la derecha, se utiliza con la clase .boton en un <a>
 
 ```
 <a href="{{ route('rutas.crearRuta') }}" class="boton">
@@ -47,14 +47,42 @@ Boton alineado a la izquierda, se utiliza con la clase .boton en un <a>
 </a>
 ```
 
+### Breadcrumbs
+
+Los breadcrumbs van debajo del titulo, dentro del div del titulo
+
+```
+<ul class="breadcrumb">
+    <li><a href="{{ route('espacios.index') }}">Espacios</a></li>
+    <li>/</li>
+    <li><span>Comprar Espacios</span></li>
+</ul>
+```
+
+### Tooltips
+
+Se pone dentro de un div y añadiendo la clase "tooltip", luego se añade dentro del div el siguiente elemento
+
+```
+<span class="tooltiptext">Comprar Avion</span>
+```
+
 ### Modales
 
 
 ## Aeropuetos
 
-| Aeropuertos   | Espacios      | Demanda | Pasajeros | Coste O   |
-| :------------ | :----------:  | :------:| :--------:| --------: |
-| Grandes       |   450 - 400   | 0.97    | 300       | 2000      |
-| Medianos      |   200 - 250   | 0.85    | 100       | 1200      |
-| Pequeños      |   50 - 100    | 0.70    | 75        | 500       |
-| Muy pequeños  |   25 - 50     | 0.50    | 50        | 250       |
+| Aeropuertos   | Espacios      | Coste O  | Demanda | Pasajeros | Categoria  |
+| :------------ | :----------:  | :------: | :------:| :--------:| ---------: |
+| Grandes       |   400 - 450   | 2000     | 0.97    | 300       | 1          |
+| Medianos      |   200 - 250   | 1200     | 0.85    | 100       | 2          |
+| Pequeños      |   50 - 100    | 500      | 0.70    | 75        | 3          |
+| Muy pequeños  |   25 - 50     | 250      | 0.50    | 50        | 4          |
+
+***
+Categoria 1 -> a380, b747
+Categoria 2 -> a350, b777
+Categoria 3 -> a320, b737
+Categoria 4 -> embraers y borbardiers y a319
+
+0.005 restar demanda en rutas similares?

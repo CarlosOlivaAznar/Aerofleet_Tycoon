@@ -17,7 +17,10 @@
           <td>{{ $avion->modelo }}</td>
           <td>{{ number_format($avion->precio, 0, ',', '.') }}</td>
           <td>{{ $avion->rango }}km</td>
-          <td><a class="comprar" href="{{ route('flota.comprar', ['id' => $avion->id]) }}"><i class="bx bx-shopping-bag"></i></a></td>
+          <td><a class="comprar tooltip" href="{{ route('flota.comprar', ['id' => $avion->id]) }}">
+            <i class="bx bx-shopping-bag"></i>
+            <span class="tooltiptext">Comprar Avion</span>
+          </a></td>
       </tr>
       @endforeach
     </tbody>

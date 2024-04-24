@@ -30,7 +30,7 @@
             let latitud = parseFloat(document.getElementById("lat").value)
             let longitud = parseFloat(document.getElementById("long").value)
 
-            var map = L.map('map', {zoomControl: false}).setView([latitud, longitud], 12);
+            var map = L.map('map', {zoomControl: false}).setView([latitud, longitud], 13);
   
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <td>Aviones en mantenimiento:</td>
-              <td>1(inop)</td>
+              <td>{{ count($flotaMantenimiento) }}</td>
             </tr>
             <tr>
               <td>Coste operacional:</td>
@@ -80,7 +80,7 @@
             <i class="bx bx-user-plus"></i>
             <h3>Contratar Ingenieros</h3>
           </li></a>
-          <li>
+          <li data-modal-target="modalSedeMejoras">
             <i class="bx bx-trending-up"></i>
             <h3>Mejoras</h3>
           </li>
@@ -94,6 +94,7 @@
       <?php
       $contador = 0; 
       $contadorAvion = 0;
+      $espaciosRestantes = count($flotaMantenimiento);
       ?>
       @foreach ($sede->hangar as $hangar)
       <?php $contador++; ?>
@@ -101,8 +102,14 @@
         <div class="cabecera">
           <i class="bx bx-building"></i>
           <h3>Hangar {{ $contador }}</h3>
-          <span>Espacios disponibles hangar: {{ $hangar->espacios}}</span>
-          <a class="botonTexto" href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}">Ampliar Hangar</a>
+          <span>Espacios disponibles hangar:
+            @if ($hangar->espacios - $espaciosRestantes < 0)
+              {{ 0 }}
+            @else
+              {{ $hangar->espacios - $espaciosRestantes }}
+            @endif
+          </span>
+          <a class="botonTexto" data-modal-target="modalAmpliarHanagar{{ $hangar->id }}">Ampliar Hangar</a>
         </div>
         <table>
           <thead>
@@ -117,11 +124,15 @@
             <tr>
               @isset ($flotaMantenimiento[$contadorAvion])
               <td>
-                <img src="{{ asset("" . $flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="">
+                <img src="{{ asset($flotaMantenimiento[$contadorAvion]->avion->img) }}" alt="avionMantenimiento">
               </td>
               <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
-              <td><a class="comprar" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}"><i class="bx bx-minus"></i></a></td>
+              <td><a class="comprar tooltip" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}">
+                <i class="bx bx-minus"></i>
+                <span class="tooltiptext">Finalizar Mantenimiento</span>
+              </a></td>
               <?php $contadorAvion++; ?>
+              <?php $espaciosRestantes-- ?>
               @endisset
             </tr>
             @endfor
@@ -167,12 +178,31 @@
           </div>
           <div class="cuerpo-modal">
             <p>¿Esta seguro que quiere contratar a un nuevo ingeniero?</p><br>
-            <p>El salario de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
+            <p>El gasto mensual de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
               <span class="cancelar">Denegar</span>
               <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Sede Mejoras -->
+      <div class="modal" id="modalSedeMejoras">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Mejoras de la Sede</h2>
+          </div>
+          <div class="cuerpo-modal">
+            <p>Actualmente las mejoras de la sede no estan disponibles</p>
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
+              <a href="#" class="aceptar">Confirmar</a>
             </div>
           </div>
         </div>
@@ -184,7 +214,7 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Contratar Ingenieros</h2>
+            <h2>Retirar Del Mantenimiento</h2>
           </div>
           <div class="cuerpo-modal">
             <p>¿Esta seguro que quiere quirar el avion del mantenimiento?</p><br>
@@ -193,6 +223,28 @@
             <div class="botones">
               <span class="cancelar">Denegar</span>
               <a href="{{ route('sede.quitarMantenimiento', ['id' => $flota->id]) }}" class="aceptar">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
+
+      <!-- Modal Ampliar hangar -->
+      @foreach ($sede->hangar as $hangar)
+      <div class="modal" id="modalAmpliarHanagar{{ $hangar->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Ampliar Hangar</h2>
+          </div>
+          <div class="cuerpo-modal">
+            <p>¿Esta seguro que quiere ampliar el hangar?</p><br>
+            <p>El precio de ampliar el hangar es de = <span class="rojo">{{ $sede->costeAmpliarHangar()}}€</span></p>
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">Denegar</span>
+              <a href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}" class="aceptar">Confirmar</a>
             </div>
           </div>
         </div>

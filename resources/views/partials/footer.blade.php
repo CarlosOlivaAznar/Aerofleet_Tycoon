@@ -6,6 +6,7 @@
           <h4>Aerofleet Tycoon</h4>
         </div>
         <p class="autor">Desarrollado por Carlos Oliva Aznar</p>
+        <p class="autor">Copyright © 2024 Aerofleet Tycoon</p>
       </div>
       <div>
         <p class="titulo">Sobre Mi</p>
@@ -15,14 +16,14 @@
       </div>
       <div>
         <p class="titulo">FAQ</p>
-        <p class="texto"><a href="">Donar</a></p>
+        <p class="texto"><a href="{{ route('landing.donar') }}">Donar</a></p>
         <p class="texto"><a href="">Preguntas Frecuentes</a></p>
         <p class="texto"><a href="">Reportar un fallo</a></p>
       </div>
       <div class="derecha">
         <p class="titulo">Informacion Adicional</p>
-        <p class="texto"><a href="">Terminos de uso</a></p>
-        <p class="texto"><a href="">Politica de Privacidad</a></p>
+        <p class="texto"><a href="{{ route('landing.terminosCondiciones') }}">Terminos y condiciones de uso</a></p>
+        <p class="texto"><a href="{{ route('landing.politicaPrivacidad') }}">Politica de Privacidad</a></p>
         <p class="texto"><a href="">Roadmap</a></p>
       </div>
     </div>

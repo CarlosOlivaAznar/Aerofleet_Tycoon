@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->bigInteger('saldo')->default(200000000);
             $table->string('ultimaConexion')->default(now());
-            $table->string('nombreCompanyia')->nullable();
+            $table->string('nombreCompanyia')->nullable()->unique();
             $table->rememberToken();
             $table->timestamps();
         });

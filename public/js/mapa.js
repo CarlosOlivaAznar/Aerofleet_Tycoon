@@ -23,8 +23,8 @@ var airportIcon = L.icon({
   iconUrl: 'icons/torre-de-control-solid.png',
   shadowUrl: 'icons/plane-shadow.png',
 
-  iconSize:     [25, 25],
-  shadowSize:   [15, 15],
+  iconSize:     [20, 20],
+  shadowSize:   [10, 10],
   iconAnchor:   [12.5, 12.5],
   shadowAnchor: [5, 2],
   popupAnchor:  [0, -10],

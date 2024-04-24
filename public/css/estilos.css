@@ -17,6 +17,9 @@
 }
 
 /* Propiedades generales */
+/*
+MARK: Propiedades Generales
+*/
 
 *{
     margin: 0;
@@ -50,10 +53,16 @@ a{
     width: 40px;
 }
 
+a{
+    color: var(--primary);
+}
+
 /* ------------ */
 /* Menu Lateral */
 /* ------------ */
-
+/*
+MARK: Menu lateral
+*/
 .menu-lateral{
     position: fixed;
     top: 0;
@@ -130,6 +139,10 @@ a{
     justify-content: center;
 }
 
+.menu-lateral .lista-menu li a .color-gris{
+    filter: brightness(0) saturate(100%) invert(21%) sepia(9%) saturate(1245%) hue-rotate(193deg) brightness(94%) contrast(92%);
+}
+
 .menu-lateral .lista-menu a.logout{
     color: var(--danger);
 }
@@ -157,12 +170,16 @@ a{
 /* ------------- */
 /* Menu Superior */
 /* ------------- */
+/*
+MARK: Menu superior:
+*/
 
 .contenido nav{
     height: 50px;
     background-color: var(--light);
     padding: 0 24px 0 0;
     display: flex;
+    gap: 15px;
     align-items: center;
     position: sticky;
     top: 0;
@@ -195,6 +212,25 @@ a{
 
 .contenido nav h3 span{
     margin-right: 15px;
+}
+
+.version{
+    margin-left: 30px;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.contenido nav a{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--dark);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contenido nav a i{
+    color: var(--dark);
 }
 
 /* ------------------- */
@@ -236,6 +272,9 @@ a{
 }
 
 /* Clase boton */
+/*
+MARK: Boton
+*/
 a.boton{
     display: flex;
     align-items: center;
@@ -334,6 +373,9 @@ a.boton{
 }
 
 /* Modales */
+/*
+MARK: Modal
+*/
 .modal{
     display: none;
     position: fixed;
@@ -447,6 +489,47 @@ span.verde{
     color: var(--success);
 }
 
+/* Tooltips */
+/*
+MARK: Tooltips
+*/
+.tooltip{
+    position: relative;
+}
+
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--dark);
+    color: var(--light);
+    text-align: center;
+    border-radius: 15px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 145%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tooltip .tooltiptext::after{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+}
+
 /* formulario dentro del modal */
 .modal form label{
     display: block;
@@ -491,6 +574,39 @@ span.verde{
 
 .modal form input[type=range]:focus::-webkit-slider-runnable-track{
     background: var(--grey);
+}
+
+.modal form input[type=password]{
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.modal form input[type=password]:focus{
+    border: 3px solid var(--dark);
+}
+
+.modal form textarea{
+    width: 100%;
+    height: 100px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+    margin-top: 5px;
+}
+
+.modal form textarea:focus{
+    border: 3px solid var(--dark);
 }
 
 
@@ -588,10 +704,158 @@ span.verde{
     border-radius: 0 0 25px 25px;
 }
 
-
 /* ------------ */
 /* Pagina Login */
 /* ------------ */
+/*
+MARK: Login
+*/
+.pag-login{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: -10px;
+    color: var(--dark);
+}
+
+.pag-login div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pag-login div img{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+form.formularioBasico{
+    width: 450px;
+    background-color: var(--light);
+    border-radius: 25px;
+}
+
+form.formularioBasico.cuenta .campos{
+    padding-left: 0;
+}
+
+form.formularioBasico h1{
+    text-align: center;
+    color: var(--dark);
+}
+
+form.formularioBasico .campos{
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 20px;
+}
+
+form.formularioBasico .camposLinea{
+    margin-top: 5px;
+    padding: 10px 20px;
+}
+
+form.formularioBasico .camposBotones{
+    margin-top: 5px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+form.formularioBasico .campos label{
+    display: block;
+    font-size: 19px;
+    color: var(--dark);
+}
+
+form.formularioBasico .campos input{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+form.formularioBasico .campos input:focus{
+    border: 3px solid var(--dark);
+}
+
+form.formularioBasico .campos .inputError{
+    margin-top: 5px;
+    color: var(--danger);
+}
+
+.botonSubmit{
+    padding: 10px 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    border: none;
+    background-color: var(--danger);
+    color: var(--light);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.botonSubmit:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
+
+form.formularioBasico .camposLinea .checkbox{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+form.formularioBasico .camposLinea .checkbox a{
+    color: var(--dark);
+    text-decoration: underline;
+}
+
+.pag-login div form.formularioBasico .camposBotones .linkForm{
+    color: var(--dark);
+    text-decoration: underline;
+}
+
+form.formularioBasico div input[type="submit"]{
+    padding: 10px 15px;
+    border-radius: 40px;
+    font-size: 15px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+form.formularioBasico div input[type="submit"]:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
+
+form.formularioBasico.cuenta div input[type="submit"]{
+    width: auto;
+}
+
+/* -------------- */
+/* Pagina Landing */
+/* -------------- */
+/*
+MARK: Landing
+*/
 .barra-login{
     height: 50px;
     background-color: var(--light);
@@ -626,23 +890,33 @@ span.verde{
 .barra-login .login{
     margin-left: auto;
     display: flex;
-    gap: 25px;
+    gap: 15px;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
 
 .barra-login .login div{
-    color: var(--dark);
     cursor: pointer;
 }
 
-.barra-login .login div:first-child{
-    color: var(--primary);
+.barra-login .login div a{
+    padding: 10px;
+    color: var(--dark);
+    border-radius: 25px;
+    background-color: var(--grey);
+    transition: 0.4s;
 }
 
-.barra-login .login div:first-child:hover{
-    color: var(--dark);
+.barra-login .login div a.login-registrarse{
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.barra-login .login div a:hover{
+    background-color: var(--dark);
+    color: var(--light);
+    transition: 0.4s;
 }
 
 .mainContent{
@@ -652,21 +926,44 @@ span.verde{
 .imagenTitulo{
     width: 100%;
     height: 40vw;
+    filter: brightness(50%);
 }
 
-.mainContent h1.tituloPagina{
+/* Titulo principal landing */
+
+.mainContent .nombre-logo{
     position: absolute;
-    top: 10vw;
-    color: var(--primary);
-    -webkit-text-stroke-width: 0.3vw;
-    -webkit-text-stroke-color: white;
-    font-size: 10vw;
-    font-weight: 900;
+    top: 6vw;
+    width: 70%;
+    padding: 25px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    text-align: center;
+
+    /*
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 30px;
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+.mainContent .nombre-logo img{
+    width: 25vw;
+}
+
+.mainContent .nombre-logo h1{
+    color: var(--primary);
+    -webkit-text-stroke-width: 0.2vw;
+    -webkit-text-stroke-color: white;
+    font-size: 10vw;
+    font-weight: 900;    
+    text-align: left;
+    line-height: 0.85;
 }
 
 .mainContent h1{
@@ -682,6 +979,7 @@ span.verde{
 
 .mainContent h2{
     margin-top: 40px;
+    margin-bottom: 25px;
     color: var(--dark);
 }
 
@@ -728,8 +1026,7 @@ span.verde{
 .mainContent .imagenConTexto{
     text-align: center;
     background-size: cover;
-    background-position-x: center;
-    background-position-y: 0;
+    background-position: center;
     width: 100%;
     height: 400px;
     border-radius: 25px;
@@ -893,10 +1190,11 @@ footer .contenidoFooter div p.texto a{
     border: 3px solid var(--dark);
 }
 
-.mainContent form .formulario .campos select{
+.select{
     display: block;
     margin-top: 10px;
     width: 100%;
+    min-width: 350px;
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
@@ -906,25 +1204,26 @@ footer .contenidoFooter div p.texto a{
     outline: none;
 }
 
-.mainContent form .formulario .campos .select:focus{
+.select:focus{
     border: 3px solid var(--dark);
     border-radius: 10px 10px 0 0;
 }
 
 /* Select con buscador */
-.mainContent form .formulario .campos .drop-down{
+.drop-down{
     display: none;
     position: absolute;
     background-color: var(--light);
     overflow: auto;
     max-height: 200px;
-    z-index: 50;
+    z-index: 100;
     border-radius: 0 0 10px 10px;
     border: 3px solid var(--dark);
     border-top: 0;
+    text-align: left;
 }
 
-.mainContent form .formulario .campos .drop-down p{
+.drop-down p{
     display: block;
     width: 100%;
     padding: 10px 5px;
@@ -933,7 +1232,7 @@ footer .contenidoFooter div p.texto a{
     cursor: pointer;
 }
 
-.mainContent form .formulario .campos .drop-down.show{
+.drop-down.show{
     display: block;
 }
 
@@ -1088,10 +1387,40 @@ footer .contenidoFooter div p.texto a{
     height: 60px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: default;
 }
 
 .contenido main .tablas table td .bx{
     cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+/* Colores segun el estado del avion */
+.contenido main .tablas table td.estado{
+    text-align: center;
+}
+.contenido main .tablas table td.estado span{
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.contenido main .tablas table td.estado span.exito{
+    background-color: var(--success);
+    color: var(--light);
+}
+
+.contenido main .tablas table td.estado span.warning{
+    background-color: var(--warning);
+    color: var(--light);
+}
+
+.contenido main .tablas table td.estado span.error{
+    background-color: var(--danger);
+    color: var(--light);
 }
 
 .contenido main .tablas table td a.comprar{
@@ -1134,6 +1463,12 @@ footer .contenidoFooter div p.texto a{
     padding: 30px;
     background-color: var(--light);
     color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.contenido main .rutas h2{
+    color: var(--dark);
+    margin-bottom: 15px;
 }
 
 .contenido main .tablas .cabecera .botones-tablas{
@@ -1156,25 +1491,56 @@ footer .contenidoFooter div p.texto a{
     margin-bottom: 35px;
 }
 
+.contenido main .rutas .divRepartido.centrado{
+    justify-content: space-evenly;
+}
+
 .contenido main .rutas .divRepartido .input h3{
     margin-bottom: 20px;
 }
 
 .contenido main .rutas .divRepartido .input select{
-    padding: 5px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 17px;
+    outline: none;
 }
 
-.contenido main .rutas .divRepartido .input.submit{
+.contenido main .rutas .divRepartido .input select:focus{
+    border: 3px solid var(--dark);
+}
+
+.contenido main .rutas .divRepartido .input input{
+    width: 80px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: #FFF;
+    transition: 0.4s;
+    font-size: 17px;
+    outline: none;
+}
+
+.contenido main .rutas .divRepartido .input input:focus{
+    border: 3px solid var(--dark);
+}
+
+.contenido main .rutas .input.submit{
     display: flex;
     align-items: center;
 }
 
-.contenido main .rutas .divRepartido .input #comprarEspacios{
+.contenido main .rutas .input #botonSubmit{
     display: block;
     align-items: center;
     margin : 0 auto;
     padding: 10px 15px;
     border-radius: 40px;
+    font-size: 15px;
     border: none;
     background-color: var(--primary);
     color: var(--light);
@@ -1184,8 +1550,8 @@ footer .contenidoFooter div p.texto a{
 .contenido main .mapa-ruta{
     width: 100%;
     height: 300px;
-    margin-top: 30px;
     border-radius: 25px;
+    z-index: 55;
 }
 
 .contenido main .mapa-ruta #map{
@@ -1193,12 +1559,13 @@ footer .contenidoFooter div p.texto a{
     height: 100%;
     overflow: hidden;
     border-radius: 25px;
+    z-index: 55;
 }
 
 .contenido main .informacion{
     width: 100%;
     border-radius: 25px;
-    padding: 30px;
+    padding: 30px 0;
     color: var(--dark);
     display: flex;
     justify-content: space-between;
@@ -1206,6 +1573,10 @@ footer .contenidoFooter div p.texto a{
     flex-flow: row;
     gap: 30px;
     margin-top: 35px;
+}
+
+.contenido main .informacion.bgColor{
+    background-color: var(--light);
 }
 
 .contenido main .informacion div.basico{
@@ -1270,14 +1641,17 @@ footer .contenidoFooter div p.texto a{
 }
 
 /* Sobre mi */
+/*
+MARK: Sobre mi
+*/
 .mainContent .informacion-imagen{
     display: flex;
     flex-flow: row;
-    gap: 25px;
+    gap: 40px;
 }
 
 .mainContent .informacion-imagen div.imagen{
-    width: 80%;
+    width: 20%;
 }
 
 .mainContent .informacion-imagen div.texto{
@@ -1401,6 +1775,7 @@ footer .contenidoFooter div p.texto a{
     margin-left: auto;
     padding: 10px;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 /* Media */
@@ -1411,6 +1786,10 @@ footer .contenidoFooter div p.texto a{
 
     .menu-lateral .titulo-pag{
         gap: 30px;
+    }
+
+    .menu-lateral .lista-menu li{
+        margin-left: 10px;
     }
 
     .menu-lateral .lista-menu li a{
@@ -1428,22 +1807,70 @@ footer .contenidoFooter div p.texto a{
     }
 
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1{
-        font-size: 10vw;
-        top: 15vw;
+    .mainContent .nombre-logo{
+        top: 10vw;
     }
 
     .mainContent{
         padding: 50px 30px 50px 30px;
     }
 
+    .contenido main{
+        padding: 50px 20px 50px 20px;
+    }
+
+    .contenido main .informacion{
+        flex-flow: column;
+        padding: 5px;
+    }
+
+    .contenido main .informacion .infodatos{
+        width: 100%;
+    }
+
+    .contenido main .informacion .mapaizq{
+        width: 100%;
+    }
+
+    /* Primer login */
+    .mainContent form .formulario{
+        width: 95%;
+    }
+
+    .mainContent form .formulario h1{
+        font-size: 33px;
+    }
+
+    .contenido main .rutas{
+        padding: 15px;
+    }
+
+    .contenido main .rutas form .divRepartido{
+        display: block;
+    }
+
+    .contenido main .rutas .divRepartido .input h3{
+        margin-bottom: 7px;
+    }
+    
+    .contenido main .rutas .divRepartido .input select{
+        margin-bottom: 15px;
+    }
+
+    .contenido main .rutas .divRepartido .input input{
+        margin-bottom: 15px;
+    }
+
+    .contenido main .rutas .divRepartido .input p{
+        margin-bottom: 15px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
     /* Titulo de la pagina adaptado a moviles */
-    .mainContent h1{
-        font-size: 16vw;
-        top: 15vw;
+    .mainContent .nombre-logo{
+        top: 12vw;
     }
 
     .mainContent{
@@ -1459,5 +1886,28 @@ footer .contenidoFooter div p.texto a{
     .mainContent .imagenConTexto h3{
         font-size: 20px;
         padding: 15px 0 250px 0;
+    }
+
+    .modal .contenido-modal{
+        width: 95%;
+    }
+
+    .mainContent form .formulario{
+        padding: 50px 10px;
+    }
+
+    /* Cabecera de la pagina en movil */
+    .contenido main .cabecera.pagina{
+        flex-flow: column;
+        align-items: flex-start;
+    }
+
+    .contenido main .cabecera.pagina{
+        justify-items: flex-start;
+    }
+
+    .contenido main .cabecera.pagina a.boton{
+        margin-left: 0;
+        margin-top: 10px;
     }
 }

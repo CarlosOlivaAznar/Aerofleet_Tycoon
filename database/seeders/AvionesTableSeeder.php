@@ -13,6 +13,9 @@ class AvionesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Borra los existentes para que no se dupliquen al ejecutar el seeder
+        Avion::truncate();
+
         /* -------------- */
         /* AVIONES AIRBUS */
         /* -------------- */
@@ -20,7 +23,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a320WL',
             'fabricante' => 'Airbus',
             'precio' => 101000000,
-            'rango' => 10000,
+            'rango' => 3500,
             'img' => 'images/new/airbus/a320WL.png',
             'capacidad' => 180,
             'costePorKm' => 7.289,
@@ -31,7 +34,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a321',
             'fabricante' => 'Airbus',
             'precio' => 118000000,
-            'rango' => 12000,
+            'rango' => 4500,
             'img' => 'images/new/airbus/a321.png',
             'capacidad' => 220,
             'costePorKm' => 9.1605,
@@ -42,7 +45,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a319',
             'fabricante' => 'Airbus',
             'precio' => 92300000,
-            'rango' => 8000,
+            'rango' => 2500,
             'img' => 'images/new/airbus/a319.png',
             'capacidad' => 150,
             'costePorKm' => 6.107,
@@ -53,7 +56,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a320neo',
             'fabricante' => 'Airbus',
             'precio' => 110600000,
-            'rango' => 12500,
+            'rango' => 4500,
             'img' => 'images/new/airbus/a320neo.png',
             'capacidad' => 190,
             'costePorKm' => 6.501,
@@ -64,7 +67,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a321neo',
             'fabricante' => 'Airbus',
             'precio' => 129500000,
-            'rango' => 14000,
+            'rango' => 6000,
             'img' => 'images/new/airbus/a321neo.png',
             'capacidad' => 230,
             'costePorKm' => 7.289,
@@ -75,7 +78,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a220',
             'fabricante' => 'Airbus',
             'precio' => 85700000,
-            'rango' => 6297,
+            'rango' => 4000,
             'img' => 'images/new/airbus/a220.png',
             'capacidad' => 135,
             'costePorKm' => 5.122,
@@ -86,7 +89,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a320',
             'fabricante' => 'Airbus',
             'precio' => 99000000,
-            'rango' => 6500,
+            'rango' => 3250,
             'img' => 'images/new/airbus/a320.png',
             'capacidad' => 180,
             'costePorKm' => 7.88,
@@ -97,7 +100,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a318',
             'fabricante' => 'Airbus',
             'precio' => 77000000,
-            'rango' => 5704,
+            'rango' => 2250,
             'img' => 'images/new/airbus/a318.png',
             'capacidad' => 132,
             'costePorKm' => 5.2599,
@@ -108,7 +111,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a319neo',
             'fabricante' => 'Airbus',
             'precio' => 101000000,
-            'rango' => 6945,
+            'rango' => 3500,
             'img' => 'images/new/airbus/a319neo.png',
             'capacidad' => 160,
             'costePorKm' => 5.91,
@@ -119,7 +122,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a330-200',
             'fabricante' => 'Airbus',
             'precio' => 245000000,
-            'rango' => 13426,
+            'rango' => 9500,
             'img' => 'images/new/airbus/a330-200.png',
             'capacidad' => 290,
             'costePorKm' => 14.5386,
@@ -130,7 +133,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a330-300',
             'fabricante' => 'Airbus',
             'precio' => 270000000,
-            'rango' => 11759,
+            'rango' => 9000,
             'img' => 'images/new/airbus/a330-300.png',
             'capacidad' => 440,
             'costePorKm' => 17.73,
@@ -141,7 +144,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a340-300',
             'fabricante' => 'Airbus',
             'precio' => 280000000,
-            'rango' => 13334,
+            'rango' => 10500,
             'img' => 'images/new/airbus/a340-300.png',
             'capacidad' => 320,
             'costePorKm' => 20.3394,
@@ -152,7 +155,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => 'a340-600',
             'fabricante' => 'Airbus',
             'precio' => 309000000,
-            'rango' => 13982,
+            'rango' => 10000,
             'img' => 'images/new/airbus/a340-600.png',
             'capacidad' => 440,
             'costePorKm' => 26.201,
@@ -190,7 +193,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => '737-800',
             'fabricante' => 'Boeing',
             'precio' => 90000000,
-            'rango' => 5765,
+            'rango' => 3450,
             'img' => 'images/new/boeing/737-800.png',
             'capacidad' => 162,
             'costePorKm' => 7.6436,
@@ -201,7 +204,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => '737-900',
             'fabricante' => 'Boeing',
             'precio' => 107000000,
-            'rango' => 5992,
+            'rango' => 4500,
             'img' => 'images/new/boeing/737-900.png',
             'capacidad' => 189,
             'costePorKm' => 8.7665,
@@ -223,7 +226,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => '747-800',
             'fabricante' => 'Boeing',
             'precio' => 418000000,
-            'rango' => 14350,
+            'rango' => 12350,
             'img' => 'images/new/boeing/747-800.png',
             'capacidad' => 800,
             'costePorKm' => 34.9478,
@@ -234,7 +237,7 @@ class AvionesTableSeeder extends Seeder
             'modelo' => '777-200',
             'fabricante' => 'Boeing',
             'precio' => 277000000,
-            'rango' => 15850,
+            'rango' => 11850,
             'img' => 'images/new/boeing/777-200.png',
             'capacidad' => 440,
             'costePorKm' => 18.7347,
@@ -256,12 +259,43 @@ class AvionesTableSeeder extends Seeder
             'modelo' => '787',
             'fabricante' => 'Boeing',
             'precio' => 350000000,
-            'rango' => 7530,
+            'rango' => 9530,
             'img' => 'images/new/boeing/787.png',
             'capacidad' => 400,
             'costePorKm' => 14.2825,
             'tiempoPorKm' => 0.108,
         ]);
+
+
+        /* --------------- */
+        /* AVIONES Embraer */
+        /* --------------- */
+
+        Avion::create([
+            'modelo' => 'e170',
+            'fabricante' => 'Embraer',
+            'precio' => 15000000,
+            'rango' => 2500,
+            'img' => 'images/new/embraer/e170.png',
+            'capacidad' => 72,
+            'costePorKm' => 6.085,
+            'tiempoPorKm' => 0.147,
+        ]);
+
+
+
+        /* Plantilla
+        Avion::create([
+            'modelo' => '',
+            'fabricante' => 'Embraer',
+            'precio' => ,
+            'rango' => ,
+            'img' => 'images/new/embraer/',
+            'capacidad' => ,
+            'costePorKm' => ,
+            'tiempoPorKm' => ,
+        ]);
+        */
         
 
     }

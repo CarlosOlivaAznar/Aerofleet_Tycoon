@@ -50,17 +50,66 @@
               <h3>Precio Total:</h3>
               <p id="precioTotal"></p>
             </div>
-            <div class="input submit">
-              <input type="submit" value="Comprar Espacios" id="comprarEspacios">
-            </div>
           </div>
+
+          <div class="input submit">
+            <input type="submit" value="Comprar Espacios" id="botonSubmit">
+          </div>
+
+          
           <!-- Precios de los espacios -->
           @foreach ($aeropuertos as $aeropuerto)
           <input type="hidden" id="{{ $aeropuerto->icao }}" value="{{ $aeropuerto->costeOperacional }}">
           @endforeach
 
+          <!-- Aeropuertos -->
+          @foreach ($aeropuertosMapa as $aeropuerto)
+            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[0] }}">
+            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[1] }}">
+            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[2] }}">
+          @endforeach
+
         </form>
       </div>
+
+      <div class="mapa-ruta">
+        <div id="map"></div>
+        <script>
+          var map = L.map('map').setView([41.667787, -1.0376974], 4);
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+
+          var airportIcon = L.icon({
+            iconUrl: '../icons/torre-de-control-solid.png',
+            shadowUrl: '../icons/plane-shadow.png',
+
+            iconSize:     [20, 20],
+            shadowSize:   [10, 10],
+            iconAnchor:   [12.5, 12.5],
+            shadowAnchor: [5, 2],
+            popupAnchor:  [0, -10],
+          });
+
+
+          var domAeropuertos = document.getElementsByClassName("aeropuertos");
+
+          var aeropuertos = Array();
+
+          for(var i = 0; i < domAeropuertos.length; i++){
+            aeropuertos.push(domAeropuertos[i].value);
+          }
+
+          for(var i = 0; i < aeropuertos.length/3; i++){
+            L.marker([aeropuertos[(i*3)], aeropuertos[(i*3)+1]], {
+              icon: airportIcon
+            }).addTo(map).bindPopup(aeropuertos[(i*3)+2]);
+          }
+      </script>
+      </div>
+      
       <script>
         // Al iniciar la pagina muestra el precio ya
         mostrarPrecio();
@@ -68,7 +117,7 @@
         function mostrarPrecio()
         {
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value);
+          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
           var mostrarPrecio = document.getElementById("costeOperacion");
 
           // Mostrar precio en el parrafo
@@ -83,13 +132,13 @@
           // Mostrar precio segun los espacios
           var numEspacios = parseInt(document.getElementById("espacios").value);
           var precioTotal = document.getElementById("precioTotal");
-          console.log(numEspacios);
+          
           if(!isNaN(numEspacios)){
           // CosteOperacion para hacer el calculo
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value);
+          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
 
-          precioTotal.innerHTML = costeOperacion * numEspacios
+          precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
             precioTotal.innerHTML = 0;
           }

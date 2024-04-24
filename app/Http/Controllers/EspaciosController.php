@@ -24,7 +24,17 @@ class EspaciosController extends Controller
     public function aeropuertos()
     {
         $aeropuertos = Aeropuerto::all();
-        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos]);
+        $aeropuertosMapa = array();
+
+        foreach ($aeropuertos as $aeropuerto) {
+            array_push($aeropuertosMapa, [
+                $aeropuerto->latitud,
+                $aeropuerto->longitud,
+                $aeropuerto->icao . ", " .$aeropuerto->nombre,
+            ]);
+        }
+
+        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos, 'aeropuertosMapa' => $aeropuertosMapa]);
     }
 
     public function comprar(Request $request)
@@ -32,8 +42,8 @@ class EspaciosController extends Controller
         $aeropuerto = Aeropuerto::where('icao', $request->aeropuerto)->first();
         $user = User::find(auth()->id());
 
-        if($user->saldo - $aeropuerto->costeOperacional * 250 >= 0){
-            if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->first()){
+        if($user->saldo - $aeropuerto->precioEspacio() * $request->espacios >= 0){
+            if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->where('user_id', auth()->id())->first()){
                 $espacio->numeroDeEspacios += $request->espacios;
                 $espacio->update();
             } else {
@@ -45,7 +55,7 @@ class EspaciosController extends Controller
             }
 
             // Actualizamos el saldo del usuario
-            $user->saldo = $user->saldo - $aeropuerto->costeOperacional * 250;
+            $user->saldo = $user->saldo - $aeropuerto->precioEspacio() * $request->espacios;
             $user->update();
 
             // Mostramos mensaje de exito
@@ -61,20 +71,25 @@ class EspaciosController extends Controller
     {
         $espacio = Espacio::where('id', $id)->first();
         $user = User::find(auth()->id());
+
+        if($espacio->espaciosDisponibles() <= 0){
+            session()->flash('error', 'No se puede vender el espacio ya que no tiene espacios disponibles');
+            return redirect()->route('espacios.index'); 
+        }
         
         if($espacio->user_id === auth()->id()){
             if($espacio->numeroDeEspacios > 1){
                 $espacio->numeroDeEspacios--;
                 $espacio->update();
 
-                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 250;
+                $user->saldo = $user->saldo + $espacio->aeropuerto->precioEspacio();
                 $user->update();
 
                 session()->flash('exito', 'Se ha vendido un espacio de: ' . $espacio->aeropuerto->nombre);
             } elseif($espacio->numeroDeEspacios === 1) {
                 $espacio->delete();
 
-                $user->saldo = $user->saldo + $espacio->aeropuerto->costeOperacional * 250;
+                $user->saldo = $user->saldo + $espacio->aeropuerto->precioEspacio();
                 $user->update();
 
                 session()->flash('exito', 'Se han vendido todos los espacios de: ' . $espacio->aeropuerto->nombre);

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/estilos.css">
-  <title>AeroFleet</title>
+  @include('partials.head')
 </head>
 <body>
     @include('partials.navbarLanding')
     <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
-        <h1 class="tituloPagina">AEROFLEET TYCOON</h1>
+        <div class="nombre-logo">
+          <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="">
+          <h1>AeroFleet Tycoon</h1>
+        </div>
         <h2 class="subtituloPagina">Simulador de Gestion a Tiempo real</h2>
         <div class="resumen">
             <ul>
@@ -46,6 +44,18 @@
           <div class="changelog">
             <h3>Changelog</h3>
             <hr>
+
+            <h4>V-0.3.0</h4>
+            <ul>
+              <li>Añadido la pagina de competencia</li>
+              <li>Añadido tooltips en los botones que no tienen texto</li>
+              <li>Añadido la capacidad del avion en Flota</li>
+              <li>Paginas adaptadas a movil</li>
+              <li>Añadido el estado de las rutas En tierra/En ruta/En mantenimiento</li>
+              <li>Al crear la ruta te muestra las opciones de los espacios que tienes disponibles</li>
+              <li>Añadido a la pagina home mensajes de alerta y mensajes de informacion de las rutas</li>
+              <li>Añadido un mapa en comprar espacios con la informacion de los aeropuertos disponibles</li>
+            </ul>
 
             <h4>V-0.2.0</h4>
             <ul>
