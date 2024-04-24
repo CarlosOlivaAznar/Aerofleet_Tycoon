@@ -13,6 +13,9 @@ class AvionesTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // Borra los existentes para que no se dupliquen al ejecutar el seeder
+        Avion::truncate();
+
         /* -------------- */
         /* AVIONES AIRBUS */
         /* -------------- */
@@ -264,15 +267,30 @@ class AvionesTableSeeder extends Seeder
         ]);
 
 
+        /* --------------- */
+        /* AVIONES Embraer */
+        /* --------------- */
+
+        Avion::create([
+            'modelo' => 'e170',
+            'fabricante' => 'Embraer',
+            'precio' => 15000000,
+            'rango' => 2500,
+            'img' => 'images/new/embraer/e170.png',
+            'capacidad' => 72,
+            'costePorKm' => 6.085,
+            'tiempoPorKm' => 0.147,
+        ]);
+
 
 
         /* Plantilla
         Avion::create([
             'modelo' => '',
-            'fabricante' => 'Boeing',
+            'fabricante' => 'Embraer',
             'precio' => ,
             'rango' => ,
-            'img' => 'images/new/boeing/787.png',
+            'img' => 'images/new/embraer/',
             'capacidad' => ,
             'costePorKm' => ,
             'tiempoPorKm' => ,
