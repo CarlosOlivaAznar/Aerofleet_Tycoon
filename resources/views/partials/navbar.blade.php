@@ -5,13 +5,14 @@
 
     <div class="modal" id="bugReport">
         <div class="contenido-modal">
-          <form action="" method="POST">
+          <form action="{{ route('bugreport') }}" method="POST">
             <div class="cabecera-modal">
               <span class="cerrar-modal">&times;</span>
               <h2>Informar de un error</h2>
             </div>
             <div class="cuerpo-modal">
               <p>Si quieres informar de un error, rellena el siguiente area de texto describiendo con el maximo detalle posible, si necesita ayuda adicional no dude en entrar en nuestra comunidad de discord para recibir ayuda</p><br>
+              @method('POST')
               @csrf
               <label for="texto">Describe el error:</label>
               <textarea name="informe" id="informe"></textarea>

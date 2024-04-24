@@ -9,6 +9,8 @@ use App\Http\Controllers\EspaciosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
+use App\Models\Bugreport;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,16 @@ Route::get('/politicaPrivacidad', function () {
 Route::get('/donar', function () {
     return view('landing.donar');
 })->name('landing.donar');
+
+// Bugreport
+Route::post('/bugreport', function (Request $request) {
+    Bugreport::create([
+        'user_id' => auth()->id(),
+        'bug' => $request->informe,
+    ]);
+
+    return back();
+})->name('bugreport');
 
 // Rutas home
 Route::get('home', [HomeController::class, 'index'])->name('home.index');

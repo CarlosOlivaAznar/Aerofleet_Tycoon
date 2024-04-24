@@ -245,7 +245,7 @@ class ListenerLoggedIn
      */
     public function gastosMensuales()
     {
-        $sede = Sede::where('user_id')->first();
+        $sede = Sede::where('user_id', auth()->id())->first();
         $user = User::find(auth()->id());
         $user->saldo -= $sede->costesTotales() / 30;
         $user->update();
