@@ -141,8 +141,24 @@ class ListenerLoggedIn
         $mediaDemanda += ((50 - $ruta->precioBillete) / 4) * 0.01;
 
 
+        /**
+         * Se cuenta cuantas rutas similares exiten contanodo las del usuario registrado
+         * y por cada ruta similar se resta 0.005 de la demanda de la ruta
+         */
+        error_log("demanda antes del calculo de la competencia: $mediaDemanda");
+        $grupoRutas = Ruta::join('espacios as e', 'rutas.espacio_departure_id', '=', 'e.id')
+            ->join('espacios as es', 'rutas.espacio_arrival_id', '=', 'es.id')
+            ->where('e.aeropuerto_id', $ruta->espacio_departure->aeropuerto->id)
+            ->where('es.aeropuerto_id', $ruta->espacio_arrival->aeropuerto->id)
+            ->select('rutas.*')
+            ->get();
+        $mediaDemanda -= count($grupoRutas) * 0.005;
+        error_log("demanda despues del calculo de la competencia: $mediaDemanda");
+
+
         // Se calcula los pasajeros que van en el avion en una ruta concreta
         $pasajeros = intval($mediaDemanda * $pasajerosEstimados);
+        
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
             $pasajeros = $ruta->flota->avion->capacidad;
