@@ -2469,7 +2469,7 @@ class AeropuertosTableSeeder extends Seeder
             'pais' => 'I',
             'nombre' => 'Trieste Friuli Venezia Giulia Airport',
             'espaciosTotales' => 40,
-            'costeOperacional' => 0.65,
+            'costeOperacional' => 650,
             'latitud' => 45.827124,
             'longitud' => 13.470238,
             'demanda' => 0.45,
