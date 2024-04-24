@@ -69,6 +69,48 @@ Se pone dentro de un div y añadiendo la clase "tooltip", luego se añade dentro
 
 ### Modales
 
+Se tiene que incluir diferentes archivos para hacer funcionar los modales, dentro del modal se puede introducir datos, titulos, formularios y campos diferentes.
+
+Hay que añadir el siguiente atributo a un elemento <a>
+
+´´´
+data-modal-target="bugReport"
+´´´
+
+luego hay que añadir el modal y que coincidan los ids del target y del modal
+´´´
+<div class="modal" id="bugReport">
+    <div class="contenido-modal">
+        <form action="{{ route('bugreport') }}" method="POST">
+        <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Informar de un error</h2>
+        </div>
+        <div class="cuerpo-modal">
+            <p>Si quieres informar de un error, rellena el siguiente area de texto describiendo con el maximo detalle posible, si necesita ayuda adicional no dude en entrar en nuestra comunidad de discord para recibir ayuda</p><br>
+            @method('POST')
+            @csrf
+            <label for="texto">Describe el error:</label>
+            <textarea name="informe" id="informe"></textarea>
+            
+        </div>
+        <div class="footer-modal">
+            <div class="botones">
+            <span class="cancelar">Cancelar</span>
+            <input type="submit" class="aceptar" value="Enviar">
+            </div>
+        </div>
+        </form>
+        
+</div>
+´´´
+
+y por ultimo hay que importar el archivo de javascript de los modales para capturar las acciones que haga el usuario
+
+```
+<script src="{{ asset('js/modals.js') }}"></script>
+```
+
 
 ## Aeropuetos
 
@@ -84,5 +126,3 @@ Categoria 1 -> a380, b747
 Categoria 2 -> a350, b777
 Categoria 3 -> a320, b737
 Categoria 4 -> embraers y borbardiers y a319
-
-0.005 restar demanda en rutas similares?

@@ -38,7 +38,7 @@ class Espacio extends Model
         foreach ($espacios as $espacio) {
             $espaciosOcupados += $espacio->numeroDeEspacios;
         }
-
+        
         return $espaciosOcupados;
     }
 

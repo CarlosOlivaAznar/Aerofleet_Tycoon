@@ -41,6 +41,14 @@ class EspaciosController extends Controller
     {
         $aeropuerto = Aeropuerto::where('icao', $request->aeropuerto)->first();
         $user = User::find(auth()->id());
+        
+        if(isset($aeropuerto->espacio[0]) && $aeropuerto->espacio[0]->espaciosOcupadosTotales() + $request->espacios > $aeropuerto->espaciosTotales){
+            session()->flash('error', 'El aeropuerto no tiene espacios libres disponibles');
+            return redirect()->route('espacios.index');
+        } elseif($aeropuerto->espaciosTotales < $request->espacios){
+            session()->flash('error', 'La compra de espacios excede el limite maximos de espacios del aeropuerto');
+            return redirect()->route('espacios.index');
+        }
 
         if($user->saldo - $aeropuerto->precioEspacio() * $request->espacios >= 0){
             if($espacio = Espacio::where('aeropuerto_id', $aeropuerto->id)->where('user_id', auth()->id())->first()){

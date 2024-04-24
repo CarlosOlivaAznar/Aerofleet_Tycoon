@@ -37,11 +37,11 @@
             <i class="bx clogo"><img src="{{ asset('icons/boeing.svg') }}" alt=""></i>
             <h3>Boeing</h3>
           </li></a>
-          <a href="#"><li>
+          <a href="{{ route('flota.comprarEmbraer') }}"><li>
             <i class="bx clogo"><img src="{{ asset('icons/embraer.png') }}" alt=""></i>
             <h3>Embraer</h3>
           </li></a>
-          <a href="#"><li>
+          <a href="{{ route('flota.comprarBombardier') }}"><li>
             <i class="bx clogo"><img src="{{ asset('icons/bombardier.svg') }}" alt=""></i>
             <h3>Bombardier</h3>
           </li></a>

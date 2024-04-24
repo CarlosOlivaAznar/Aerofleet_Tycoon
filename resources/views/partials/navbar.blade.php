@@ -1,5 +1,5 @@
 <nav>
-    <span class="version">V-0.3.0</span>
+    <span class="version">V-0.3.0 (ALPHA)</span>
     <a data-modal-target="bugReport"><i class="bx bx-bug-alt"></i><span>Informar de un error</span></a>
     <h3><span>Saldo:</span>{{ session('saldo') }} €</h3>
 

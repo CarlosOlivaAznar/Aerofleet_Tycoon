@@ -274,7 +274,7 @@ class AvionesTableSeeder extends Seeder
         Avion::create([
             'modelo' => 'e170',
             'fabricante' => 'Embraer',
-            'precio' => 15000000,
+            'precio' => 25000000,
             'rango' => 2500,
             'img' => 'images/new/embraer/e170.png',
             'capacidad' => 72,
@@ -282,15 +282,96 @@ class AvionesTableSeeder extends Seeder
             'tiempoPorKm' => 0.147,
         ]);
 
+        Avion::create([
+            'modelo' => 'e175',
+            'fabricante' => 'Embraer',
+            'precio' => 30000000,
+            'rango' => 2750,
+            'img' => 'images/new/embraer/e175.png',
+            'capacidad' => 88,
+            'costePorKm' => 6.1,
+            'tiempoPorKm' => 0.147,
+        ]);
+
+        Avion::create([
+            'modelo' => 'e190',
+            'fabricante' => 'Embraer',
+            'precio' => 40000000,
+            'rango' => 4000,
+            'img' => 'images/new/embraer/e190.png',
+            'capacidad' => 114,
+            'costePorKm' => 6.107,
+            'tiempoPorKm' => 0.147,
+        ]);
+
+        Avion::create([
+            'modelo' => 'e195',
+            'fabricante' => 'Embraer',
+            'precio' => 45000000,
+            'rango' => 3500,
+            'img' => 'images/new/embraer/e195.png',
+            'capacidad' => 124,
+            'costePorKm' => 6.110,
+            'tiempoPorKm' => 0.147,
+        ]);
+
+
+        /* ----------------- */
+        /* AVIONES Bomardier */
+        /* ----------------- */
+        Avion::create([
+            'modelo' => 'CRJ200',
+            'fabricante' => 'Bombardier',
+            'precio' => 20000000,
+            'rango' => 3045,
+            'img' => 'images/new/bombardier/crj200.png',
+            'capacidad' => 50,
+            'costePorKm' => 5.75,
+            'tiempoPorKm' => 0.15,
+        ]);
+
+        Avion::create([
+            'modelo' => 'CRJ700',
+            'fabricante' => 'Bombardier',
+            'precio' => 30000000,
+            'rango' => 3591,
+            'img' => 'images/new/bombardier/crj700.png',
+            'capacidad' => 75,
+            'costePorKm' => 5.80,
+            'tiempoPorKm' => 0.15,
+        ]);
+
+        Avion::create([
+            'modelo' => 'CRJ900',
+            'fabricante' => 'Bombardier',
+            'precio' => 40000000,
+            'rango' => 2956,
+            'img' => 'images/new/bombardier/crj900.png',
+            'capacidad' => 86,
+            'costePorKm' => 5.90,
+            'tiempoPorKm' => 0.15,
+        ]);
+
+        Avion::create([
+            'modelo' => 'CRJ1000',
+            'fabricante' => 'Bombardier',
+            'precio' => 50000000,
+            'rango' => 2761,
+            'img' => 'images/new/bombardier/crj1000.png',
+            'capacidad' => 104,
+            'costePorKm' => 5.95,
+            'tiempoPorKm' => 0.15,
+        ]);
+
 
 
         /* Plantilla
         Avion::create([
             'modelo' => '',
-            'fabricante' => 'Embraer',
+            'fabricante' => 'Bombardier',
             'precio' => ,
             'rango' => ,
-            'img' => 'images/new/embraer/',
+            'img' => 'images/new/bombardier/',
             'capacidad' => ,
             'costePorKm' => ,
             'tiempoPorKm' => ,

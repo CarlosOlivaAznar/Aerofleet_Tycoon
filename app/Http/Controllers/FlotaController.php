@@ -40,6 +40,18 @@ class FlotaController extends Controller
         return view('flota.caBoeing', ['aviones' => $aviones]);
     }
 
+    public function comprarEmbraer()
+    {
+        $aviones = Avion::where('fabricante', 'Embraer')->get();
+        return view('flota.caEmbraer', ['aviones' => $aviones]);
+    }
+
+    public function comprarBombardier()
+    {
+        $aviones = Avion::where('fabricante', 'Bombardier')->get();
+        return view('flota.caBombardier', ['aviones' => $aviones]);
+    }
+
     public function comprar($id)
     {
         $avion = Avion::where('id', $id)->first();
@@ -51,9 +63,9 @@ class FlotaController extends Controller
                 'user_id' => auth()->id(),
                 'avion_id' => $id,
                 'matricula' => $matricula,
-                'fechaDeFabricacion' => date('Y-m-d'),
+                'fechaDeFabricacion' => now(),
                 'condicion' => 100,
-                'estado' => 'On ground',
+                'estado' => 0,
             ]);
 
             // Actualizamos el saldo del usuario
