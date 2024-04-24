@@ -1126,8 +1126,8 @@ class AeropuertosTableSeeder extends Seeder
             'costeOperacional' => 1700,
             'latitud' => 51.286522,
             'longitud' => 6.766367,
-            'demanda' => 200,
-            'pasajerosEstimados' => 0.85,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 200,
             'categoria' => 2,
             'isla' => false,
         ]);
