@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('img');
             $table->unsignedFloat('costePorKm');
             $table->unsignedFloat('tiempoPorKm');
+            $table->unsignedInteger('categoria');
             $table->timestamps();
         });
     }

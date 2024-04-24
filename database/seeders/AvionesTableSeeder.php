@@ -28,6 +28,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 180,
             'costePorKm' => 7.289,
             'tiempoPorKm' => 0.12,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -39,6 +40,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 220,
             'costePorKm' => 9.1605,
             'tiempoPorKm' => 0.12,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -50,6 +52,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 150,
             'costePorKm' => 6.107,
             'tiempoPorKm' => 0.12,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -61,6 +64,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 190,
             'costePorKm' => 6.501,
             'tiempoPorKm' => 0.12,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -72,6 +76,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 230,
             'costePorKm' => 7.289,
             'tiempoPorKm' => 0.12,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -83,6 +88,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 135,
             'costePorKm' => 5.122,
             'tiempoPorKm' => 0.129,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -94,6 +100,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 180,
             'costePorKm' => 7.88,
             'tiempoPorKm' => 0.12,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -105,6 +112,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 132,
             'costePorKm' => 5.2599,
             'tiempoPorKm' => 0.134,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -116,6 +124,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 160,
             'costePorKm' => 5.91,
             'tiempoPorKm' => 0.12,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -127,6 +136,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 290,
             'costePorKm' => 14.5386,
             'tiempoPorKm' => 0.115,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -138,6 +148,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 440,
             'costePorKm' => 17.73,
             'tiempoPorKm' => 0.115,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -149,6 +160,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 320,
             'costePorKm' => 20.3394,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
         Avion::create([
@@ -160,6 +172,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 440,
             'costePorKm' => 26.201,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
         Avion::create([
@@ -171,6 +184,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 440,
             'costePorKm' => 14.774,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
         Avion::create([
@@ -182,6 +196,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 800,
             'costePorKm' => 38.4544,
             'tiempoPorKm' => 0.108,
+            'categoria' => 1,
         ]);
 
 
@@ -198,6 +213,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 162,
             'costePorKm' => 7.6436,
             'tiempoPorKm' => 0.119,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -209,6 +225,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 189,
             'costePorKm' => 8.7665,
             'tiempoPorKm' => 0.119,
+            'categoria' => 3,
         ]);
 
         Avion::create([
@@ -220,6 +237,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 660,
             'costePorKm' => 36.8784,
             'tiempoPorKm' => 0.105,
+            'categoria' => 1,
         ]);
 
         Avion::create([
@@ -231,6 +249,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 800,
             'costePorKm' => 34.9478,
             'tiempoPorKm' => 0.105,
+            'categoria' => 1,
         ]);
 
         Avion::create([
@@ -242,6 +261,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 440,
             'costePorKm' => 18.7347,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
         Avion::create([
@@ -253,6 +273,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 660,
             'costePorKm' => 23.4036,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
         Avion::create([
@@ -264,6 +285,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 400,
             'costePorKm' => 14.2825,
             'tiempoPorKm' => 0.108,
+            'categoria' => 2,
         ]);
 
 
@@ -280,6 +302,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 72,
             'costePorKm' => 6.085,
             'tiempoPorKm' => 0.147,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -291,6 +314,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 88,
             'costePorKm' => 6.1,
             'tiempoPorKm' => 0.147,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -302,6 +326,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 114,
             'costePorKm' => 6.107,
             'tiempoPorKm' => 0.147,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -313,6 +338,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 124,
             'costePorKm' => 6.110,
             'tiempoPorKm' => 0.147,
+            'categoria' => 4,
         ]);
 
 
@@ -328,6 +354,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 50,
             'costePorKm' => 5.75,
             'tiempoPorKm' => 0.15,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -339,6 +366,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 75,
             'costePorKm' => 5.80,
             'tiempoPorKm' => 0.15,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -350,6 +378,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 86,
             'costePorKm' => 5.90,
             'tiempoPorKm' => 0.15,
+            'categoria' => 4,
         ]);
 
         Avion::create([
@@ -361,6 +390,7 @@ class AvionesTableSeeder extends Seeder
             'capacidad' => 104,
             'costePorKm' => 5.95,
             'tiempoPorKm' => 0.15,
+            'categoria' => 4,
         ]);
 
 

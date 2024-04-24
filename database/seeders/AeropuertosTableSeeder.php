@@ -644,6 +644,7 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+        /*
         Aeropuerto::create([
             'icao' => 'EGNJ',
             'pais' => 'G',
@@ -656,7 +657,7 @@ class AeropuertosTableSeeder extends Seeder
             'pasajerosEstimados' => 50,
             'categoria' => 3,
             'isla' => false,
-        ]);
+        ]);*/
 
         Aeropuerto::create([
             'icao' => 'EGPE',
