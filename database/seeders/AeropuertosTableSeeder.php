@@ -1047,6 +1047,9 @@ class AeropuertosTableSeeder extends Seeder
         /* -------------------- */
         /* Aeropuertos Alemania */
         /* -------------------- */
+        /*
+        MARK: Alemania
+        */
 
         Aeropuerto::create([
             'icao' => 'EDDB',
@@ -2578,7 +2581,7 @@ class AeropuertosTableSeeder extends Seeder
 
         Aeropuerto::create([
             'icao' => 'LIRP',
-            'pais' => 'I',
+            'pais' => 'PH',
             'nombre' => 'Pisa Galileo Galilei Airport',
             'espaciosTotales' => 170,
             'costeOperacional' => 1100,
@@ -2590,11 +2593,89 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+        /* ------------------------ */
+        /* Aeropuertos Paises Bajos */
+        /* ------------------------ */
+        /*
+        MARK: Paises Bajos
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EHAM',
+            'pais' => 'PH',
+            'nombre' => 'Amsterdam Schiphol Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2300,
+            'latitud' => 52.310058,
+            'longitud' => 4.749665,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 330,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EHEH',
+            'pais' => 'PH',
+            'nombre' => 'Eindhoven Airport',
+            'espaciosTotales' => 170,
+            'costeOperacional' => 1000,
+            'latitud' => 51.450408,
+            'longitud' => 5.375081,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EHGG',
+            'pais' => 'PH',
+            'nombre' => 'Groningen Airport Eelde',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 330,
+            'latitud' => 53.120174,
+            'longitud' => 6.578394,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EHBK',
+            'pais' => 'PH',
+            'nombre' => 'Maastricht Aachen Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 50.911535,
+            'longitud' => 5.769991,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EHRD',
+            'pais' => 'PH',
+            'nombre' => 'Rotterdam The Hague Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 51.957205,
+            'longitud' => 4.443721,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'I',
+            'pais' => 'PH',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
