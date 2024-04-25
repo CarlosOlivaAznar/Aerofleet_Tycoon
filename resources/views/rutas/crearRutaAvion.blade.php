@@ -140,26 +140,7 @@
       @endforeach
 
       <!-- Informacion avion -->
-      <input type="hidden" id="rangoAvion" value="{{ $avion->avion->rango }}">
-
-      <div class="informacion bgColor">
-        <div class="info">
-          <h4>Distancia: </h4>
-          <p>350mn</p>
-        </div>
-        <div class="info">
-          <h4>Tiempo estimado de la ruta:</h4>
-          <p>1:35 horas</p>
-        </div>
-        <div class="info">
-          <h4>Hora de llegada aproximada:</h4>
-          <p>7:30z</p>
-        </div>
-        <div class="info">
-          <h4>Plus por falta de retorno</h4>
-          <p>350.000€</p>
-        </div>
-      </div>   
+      <input type="hidden" id="rangoAvion" value="{{ $avion->avion->rango }}"> 
 
       <div class="resumenAvion">
         <h4>Precio billete:</h4>

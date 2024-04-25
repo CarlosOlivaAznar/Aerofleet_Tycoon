@@ -132,13 +132,12 @@
           fechas.push(fechasDom[i].value);
         }
 
-        console.log(beneficios, fechas);
-
         new Chart(ctx, {
           type: 'line',
           data: {
             labels: fechas,
             datasets: [{
+              label: 'Saldo',
               data: beneficios,
               borderWidth: 2
             }]

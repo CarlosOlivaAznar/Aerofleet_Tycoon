@@ -35,12 +35,6 @@
         <input type="hidden" class="rutasUsuario" value="{{ $ruta[3] }}">
       @endforeach
 
-      @foreach ($aeropuertos as $aeropuerto)
-        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[0] }}">
-        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[1] }}">
-        <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[2] }}">
-      @endforeach
-
       <div class="mapa">
         <div id="map"></div>
         <script src="{{ asset('js/mapa.js') }}"></script>

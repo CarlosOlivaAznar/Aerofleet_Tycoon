@@ -1308,7 +1308,7 @@ footer .contenidoFooter div p.texto a{
     width: 100%;
     height: 70vh;
     border-radius: 25px;
-    z-index: 200;
+    z-index: 100;
 }
 
 .contenido main .mapa #map{
@@ -1316,14 +1316,14 @@ footer .contenidoFooter div p.texto a{
     height: 100%;
     overflow: hidden;
     border-radius: 25px;
-    z-index: 200;
+    z-index: 100;
 }
 
 .contenido main .mapaizq{
     width: 50%;
     height: 300px;
     border-radius: 25px;
-    z-index: 200;
+    z-index: 100;
 }
 
 .contenido main .mapaizq #map{
@@ -1909,5 +1909,10 @@ MARK: Sobre mi
     .contenido main .cabecera.pagina a.boton{
         margin-left: 0;
         margin-top: 10px;
+    }
+
+    .barra-login .titulo-pag .titulo-nombre{
+        display: none;
+        visibility: hidden;
     }
 }
