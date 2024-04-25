@@ -1910,4 +1910,9 @@ MARK: Sobre mi
         margin-left: 0;
         margin-top: 10px;
     }
+
+    .barra-login .titulo-pag .titulo-nombre{
+        display: none;
+        visibility: hidden;
+    }
 }
