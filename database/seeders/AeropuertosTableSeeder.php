@@ -644,6 +644,7 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+        /*
         Aeropuerto::create([
             'icao' => 'EGNJ',
             'pais' => 'G',
@@ -656,7 +657,7 @@ class AeropuertosTableSeeder extends Seeder
             'pasajerosEstimados' => 50,
             'categoria' => 3,
             'isla' => false,
-        ]);
+        ]);*/
 
         Aeropuerto::create([
             'icao' => 'EGPE',
@@ -1129,8 +1130,8 @@ class AeropuertosTableSeeder extends Seeder
             'costeOperacional' => 1700,
             'latitud' => 51.286522,
             'longitud' => 6.766367,
-            'demanda' => 200,
-            'pasajerosEstimados' => 0.85,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 200,
             'categoria' => 2,
             'isla' => false,
         ]);
@@ -2472,10 +2473,10 @@ class AeropuertosTableSeeder extends Seeder
             'pais' => 'I',
             'nombre' => 'Trieste Friuli Venezia Giulia Airport',
             'espaciosTotales' => 40,
-            'costeOperacional' => 0.65,
+            'costeOperacional' => 650,
             'latitud' => 45.827124,
             'longitud' => 13.470238,
-            'demanda' => 450,
+            'demanda' => 0.45,
             'pasajerosEstimados' => 70,
             'categoria' => 3,
             'isla' => false,
@@ -2574,7 +2575,7 @@ class AeropuertosTableSeeder extends Seeder
             'latitud' => 40.885679,
             'longitud' => 14.290169,
             'demanda' => 0.85,
-            'pasajerosEstimados' => 0.85,
+            'pasajerosEstimados' => 100,
             'categoria' => 2,
             'isla' => false,
         ]);
