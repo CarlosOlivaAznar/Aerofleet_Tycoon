@@ -59,6 +59,10 @@
               <td>{{ number_format($sede->aeropuerto->costeAlquiler() * count($sede->hangar), 0, ',', '.') }} / mes</td>
             </tr>
             <tr>
+              <td>Numero ingenieros</td>
+              <td>{{ $sede->ingenieros }}</td>
+            </tr>
+            <tr>
               <td>Coste Ingenieros de Mantenimiento:</td>
               <td>{{ number_format($sede->costeIngenieros(), 0, ',', '.') }}€ / mes</td>
             </tr>
