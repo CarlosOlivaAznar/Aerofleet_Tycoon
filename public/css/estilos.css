@@ -761,7 +761,6 @@ form.formularioBasico .camposLinea{
 }
 
 form.formularioBasico .camposBotones{
-    margin-top: 5px;
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -1865,6 +1864,47 @@ MARK: Sobre mi
         margin-bottom: 15px;
     }
 
+    /* sobre mi */
+    .mainContent .informacion-imagen{
+        display: block;
+    }
+
+    .mainContent .informacion-imagen div.imagen{
+        width: 20%;
+    }
+    
+    .mainContent .informacion-imagen div.imagen{
+        width: 70%;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer pagina landing */
+    footer .contenidoFooter{
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer .contenidoFooter .izquierda{
+        margin-bottom: 20px;
+    }
+
+    footer .contenidoFooter .izquierda p{
+        text-align: left;
+    }
+
+    footer .contenidoFooter div{
+        margin-top: 25px;
+    }
+
+    footer .contenidoFooter .derecha{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1912,6 +1952,18 @@ MARK: Sobre mi
     }
 
     .barra-login .titulo-pag .titulo-nombre{
+        display: none;
+        visibility: hidden;
+    }
+
+    /* Formulario a tamaño pantalla */
+    form.formularioBasico{
+        width: 95%;
+        background-color: var(--light);
+        border-radius: 25px;
+    }
+
+    .pag-login div img{
         display: none;
         visibility: hidden;
     }
