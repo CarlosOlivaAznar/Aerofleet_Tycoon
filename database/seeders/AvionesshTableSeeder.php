@@ -24,7 +24,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 7,
             'fechaDeFabricacion' => '2010-09-15',
-            'img' => 'images/a320_volotea.png',
+            'img' => 'images/sh/a320_volotea.png',
             'companyia' => 'Volotea',
             'condicion' => 40,
         ]);
@@ -32,7 +32,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 2,
             'fechaDeFabricacion' => '2005-01-8',
-            'img' => 'images/a321_vueling.png',
+            'img' => 'images/sh/a321_vueling.png',
             'companyia' => 'Vueling',
             'condicion' => 55,
         ]);
@@ -40,7 +40,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 1,
             'fechaDeFabricacion' => '2009-07-21',
-            'img' => 'images/a320wl_aeroflot.png',
+            'img' => 'images/sh/a320wl_aeroflot.png',
             'companyia' => 'Aeroflot',
             'condicion' => 33,
         ]);
@@ -48,7 +48,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 11,
             'fechaDeFabricacion' => '2011-12-02',
-            'img' => 'images/a330_aca.png',
+            'img' => 'images/sh/a330_aca.png',
             'companyia' => 'Air Canada',
             'condicion' => 60,
         ]);
@@ -56,7 +56,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 1,
             'fechaDeFabricacion' => '2008-09-12',
-            'img' => 'images/a320wl_avianca.png',
+            'img' => 'images/sh/a320wl_avianca.png',
             'companyia' => 'Avianca',
             'condicion' => 63,
         ]);
@@ -64,7 +64,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 16,
             'fechaDeFabricacion' => '2002-02-23',
-            'img' => 'images/737_ryanair.png',
+            'img' => 'images/sh/737_ryanair.png',
             'companyia' => 'Ryanair',
             'condicion' => 78,
         ]);
@@ -72,7 +72,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 1,
             'fechaDeFabricacion' => '2003-07-04',
-            'img' => 'images/a320wl_easyjet.png',
+            'img' => 'images/sh/a320wl_easyjet.png',
             'companyia' => 'easyJet',
             'condicion' => 67,
         ]);
@@ -80,7 +80,7 @@ class AvionesshTableSeeder extends Seeder
         Avionsh::create([
             'avion_id' => 21,
             'fechaDeFabricacion' => '2004-04-24',
-            'img' => 'images/777_ana.png',
+            'img' => 'images/sh/777_ana.png',
             'companyia' => 'All Nippon Airways',
             'condicion' => 41,
         ]);
