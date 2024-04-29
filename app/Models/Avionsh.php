@@ -80,10 +80,16 @@ class Avionsh extends Model
             [30, 'images/sh/crj1000_airnostrum.png', 'Iberia Regional Air Nostrum'],
             [30, 'images/sh/crj1000_binter.png', 'Binter'],
             [30, 'images/sh/crj1000_hop.png', 'Air France HOP'],
+            [16, 'images/sh/b737_aeromexico.png', 'Aeromexico'],	
+            [16, 'images/sh/b737_ana.png', 'All Nippon Airways'],	
+            [16, 'images/sh/b737_airberlin.png', 'Air Berlin'],
+            [17, 'images/sh/b739_continental.png', 'Continental Air Lines'],
+            [17, 'images/sh/b739_korean.png', 'Korean Air'],
+            [17, 'images/sh/b739_lion.png', 'Lion Air'],
         ];
 
         // Plantilla avion nuevo
-        // [30, 'images/sh/', ''],		          
+        // [17, 'images/sh/', ''],	
         
         return $modelosSh[rand(0, count($modelosSh)-1)];
     }
