@@ -129,7 +129,7 @@ class FlotaController extends Controller
         // Comprobamos que el uid del usuario logeado coincide con el uid del avion de la flota
         if($avion->user_id === auth()->id()) {
             $user = User::find(auth()->id());;
-            $user->saldo = $user->saldo + ($avion->avion->precio * ($avion->condicion / 100));
+            $user->saldo = $user->saldo + $avion->precioVenta();
 
             $user->update();
             $avion->delete();

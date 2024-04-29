@@ -52,6 +52,6 @@ class Avionsh extends Model
             [15, 'images/a380_malaysia.png', 'Malaysia Airlines'],
         ];
 
-        return $modelosSh[rand(0, 19)];
+        return $modelosSh[rand(0, count($modelosSh)-1)];
     }
 }
