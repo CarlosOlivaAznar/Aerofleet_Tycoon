@@ -34,6 +34,25 @@
       </div>
 
       <div class="infoBasico">
+        <h3>Cambiar idioma</h3>
+        <h3>{{ __('account.test') }}</h3>
+
+        <form action="{{ route('language.change') }}" method="POST" class="formularioBasico cuenta">
+          @csrf
+
+          <div class="campos">
+            <select name="language" id="language">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+            </select>
+          </div>
+          <div class="campos">
+            <input type="submit" value="Cambiar idioma">
+          </div>
+        </form>
+      </div>
+
+      <div class="infoBasico">
         <h3>{{ __('Profile Information') }}</h3>
 
         <form id="send-verification" method="post" action="{{ route('verification.send') }}">

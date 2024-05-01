@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('preferred_language')->default('en');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('saldo')->default(200000000);
