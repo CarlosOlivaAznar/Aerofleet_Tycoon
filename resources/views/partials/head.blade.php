@@ -15,3 +15,17 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ asset('images/logos/logo_AFT_100px_icon.png') }}">
+
+<!-- Metadatos -->
+<meta name="description" content="Take to the skies with Aerofleet, a real-time airline management simulator. Manage your fleet, perform maintenance, optimize routes, and handle airport slots, rentals, and salaries. Develop your airline empire today!">
+
+<meta property="og:title" content="AeroFleet"/>
+<meta property="og:description" content="Take to the skies with Aerofleet, a real-time airline management simulator. Manage your fleet, perform maintenance, optimize routes, and handle airport slots, rentals, and salaries. Develop your airline empire today!" />
+<meta property="og:image" content="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" />
+<meta property="og:url" content="{{ route('landing.landing') }}" />
+<meta property="og:site_name" content="AeroFleet" />
+
+<meta name="twitter:title" content="AeroFleet" />
+<meta name="twitter:description" content="Take to the skies with Aerofleet, a real-time airline management simulator. Manage your fleet, perform maintenance, optimize routes, and handle airport slots, rentals, and salaries. Develop your airline empire today!" />
+<meta name="twitter:image" content="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" />
+<meta name="twitter:card" content="summary_large_image" />

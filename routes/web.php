@@ -7,6 +7,7 @@ use App\Http\Controllers\FlotaController;
 use App\Http\Controllers\MapaController;
 use App\Http\Controllers\EspaciosController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
 use App\Models\Bugreport;
@@ -107,6 +108,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+// Rutas de control del idioma
+Route::post('/lang', [LanguageController::class, 'change'])->name('language.change');
+
 
 // Rutas de verificacion de email
 Route::get('/email/verify', function () {

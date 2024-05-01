@@ -122,8 +122,26 @@
           maxZoom: 19,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           }).addTo(map);
+
+          var airportIcon = L.icon({
+            iconUrl: '../../icons/torre-de-control-solid.png',
+            shadowUrl: '../../icons/plane-shadow.png',
+
+            iconSize:     [20, 20],
+            shadowSize:   [10, 10],
+            iconAnchor:   [12.5, 12.5],
+            shadowAnchor: [5, 2],
+            popupAnchor:  [0, -10],
+          });
       </script>
       </div>
+
+      <!-- Informacion aeropuertos con espacios -->
+      @foreach ($espacios as $espacio)
+        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->latitud }}">
+        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->longitud }}">
+        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->nombre }}">
+      @endforeach
 
       <!-- Informacion aviones -->
       @foreach ($rutas as $ruta)
@@ -204,6 +222,21 @@
 
     </script>
     <script>
+      // Mostrar los aeropuertos con espacios en el mapa
+      var domAeropuertos = document.getElementsByClassName("aeropuertos");
+
+      var aeropuertos = Array();
+
+      for(var i = 0; i < domAeropuertos.length; i++){
+        aeropuertos.push(domAeropuertos[i].value);
+      }
+
+      for(var i = 0; i < aeropuertos.length/3; i++){
+        L.marker([aeropuertos[(i*3)], aeropuertos[(i*3)+1]], {
+          icon: airportIcon
+        }).addTo(map).bindPopup(aeropuertos[(i*3)+2]);
+      }
+
       // Funcionalidad mapa
       var rango = document.getElementById('rangoAvion').value;
       var polyLine = null;

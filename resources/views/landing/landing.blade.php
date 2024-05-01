@@ -8,7 +8,7 @@
     <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
         <div class="nombre-logo">
-          <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="">
+          <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="logo">
           <h1>AeroFleet Tycoon</h1>
         </div>
         <h2 class="subtituloPagina">Simulador de Gestion a Tiempo real</h2>

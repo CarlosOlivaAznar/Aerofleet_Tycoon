@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Events\UserLoggedIn;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,6 +33,10 @@ class AuthenticatedSessionController extends Controller
 
         // Crea el evento de usuario logeado
         event(new UserLoggedIn(auth()->user()));
+
+        // Pone el idioma del usuario
+        Session::put('locale', auth()->user()->preferred_language);
+
         return redirect()->route('home.index');
     }
 
