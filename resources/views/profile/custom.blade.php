@@ -39,10 +39,11 @@
         <form action="{{ route('language.change') }}" method="POST" class="formularioBasico cuenta">
           @csrf
 
+          @php $language = session()->get('locale') @endphp
           <div class="campos">
-            <select name="language" id="language">
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
+            <select name="language" id="language" class="select">
+              <option value="en" @if ($language === 'en') selected @endif>English</option>
+              <option value="es" @if ($language === 'es') selected @endif>Spanish</option>
             </select>
           </div>
           <div class="campos">
@@ -64,7 +65,7 @@
 
           <div class="campos">
             <label for="name">{{ __('account.name') }}</label>
-            <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
+            <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}" required autocomplete="name">
             <x-input-error class="inputError" :messages="$errors->get('email')" />
           </div>
 
