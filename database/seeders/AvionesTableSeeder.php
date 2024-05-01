@@ -176,7 +176,7 @@ class AvionesTableSeeder extends Seeder
         ]);
 
         Avion::create([
-            'modelo' => 'a350',
+            'modelo' => 'a350-900',
             'fabricante' => 'Airbus',
             'precio' => 340000000,
             'rango' => 15185,
@@ -394,17 +394,61 @@ class AvionesTableSeeder extends Seeder
         ]);
 
 
+        /* ------------- */
+        /* Boeing 737MAX */
+        /* ------------- */
+        Avion::create([
+            'modelo' => '737-8MAX',
+            'fabricante' => 'Boeing',
+            'precio' => 121600000,
+            'rango' => 4750,
+            'img' => 'images/new/boeing/b738MAX.png',
+            'capacidad' => '210',
+            'costePorKm' => 6.806,
+            'tiempoPorKm' => 0.119,
+            'categoria' => 3,
+        ]);
+
+        Avion::create([
+            'modelo' => '737-9MAX',
+            'fabricante' => 'Boeing',
+            'precio' => 128900000,
+            'rango' => 5780,
+            'img' => 'images/new/boeing/b739MAX.png',
+            'capacidad' => 220,
+            'costePorKm' => 7.164,
+            'tiempoPorKm' => 0.119,
+            'categoria' => 3,
+        ]);
+
+        /* ---------------- */
+        /* Airbus a350-1000 */
+        /* ---------------- */
+        Avion::create([
+            'modelo' => 'a350-1000',
+            'fabricante' => 'Airbus',
+            'precio' => 355700000,
+            'rango' => 14500,
+            'img' => 'images/new/airbus/a350-1000.png',
+            'capacidad' => 480,
+            'costePorKm' => 14.774,
+            'tiempoPorKm' => 0.108,
+            'categoria' => 2,
+        ]);
+
+
 
         /* Plantilla
         Avion::create([
             'modelo' => '',
-            'fabricante' => 'Bombardier',
+            'fabricante' => 'Airbus',
             'precio' => ,
             'rango' => ,
             'img' => 'images/new/bombardier/',
             'capacidad' => ,
             'costePorKm' => ,
             'tiempoPorKm' => ,
+            'categoria' => ,
         ]);
         */
         
