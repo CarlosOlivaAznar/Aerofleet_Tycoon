@@ -17,25 +17,24 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Cuenta</h1>
+          <h1>{{ __('account.title') }}</h1>
         </div>
       </div>
 
       <div class="infoBasico">
-        <h3>Cerrar Sesion</h3>
+        <h3>{{ __('account.logout') }}</h3>
 
         <form action="{{ route('logout') }}" method="POST" class="formularioBasico cuenta">
           @csrf
 
           <div class="campos">
-            <input type="submit" value="Cerrar Sesion">
+            <input type="submit" value="{{ __('account.logout') }}">
           </div>
         </form>
       </div>
 
       <div class="infoBasico">
-        <h3>Cambiar idioma</h3>
-        <h3>{{ __('account.test') }}</h3>
+        <h3>{{ __('account.changeLan') }}</h3>
 
         <form action="{{ route('language.change') }}" method="POST" class="formularioBasico cuenta">
           @csrf
@@ -47,13 +46,13 @@
             </select>
           </div>
           <div class="campos">
-            <input type="submit" value="Cambiar idioma">
+            <input type="submit" value="{{ __('account.changeLan') }}">
           </div>
         </form>
       </div>
 
       <div class="infoBasico">
-        <h3>{{ __('Profile Information') }}</h3>
+        <h3>{{ __('account.porfileInformation') }}</h3>
 
         <form id="send-verification" method="post" action="{{ route('verification.send') }}">
           @csrf
@@ -64,13 +63,13 @@
           @method('patch')
 
           <div class="campos">
-            <label for="name">{{ __('Name') }}</label>
+            <label for="name">{{ __('account.name') }}</label>
             <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
             <x-input-error class="inputError" :messages="$errors->get('email')" />
           </div>
 
           <div class="campos">
-            <label for="email">{{ __('Email') }}</label>
+            <label for="email">{{ __('account.email') }}</label>
             <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}" required autocomplete="username">
             <x-input-error class="inputError" :messages="$errors->get('email')" />
           </div>
@@ -78,22 +77,22 @@
           @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
           <div>
             <p>
-              {{ __('Your email address is unverified.') }}
+              {{ __('account.unverifiedEmail') }}
               <button form="send-verification">
-                {{ __('Click here to re-send the verification email.') }}
+                {{ __('account.resendEmail') }}
               </button>
             </p>
 
             @if (session('status') === 'verification-link-sent')
               <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
-                  {{ __('A new verification link has been sent to your email address.') }}
+                  {{ __('account.newVerification') }}
               </p>
             @endif
           </div>
           @endif
 
           <div class="campos">
-            <input type="submit" value="{{ __('Save') }}">
+            <input type="submit" value="{{ __('account.save') }}">
 
             @if (session('status') === 'profile-updated')
                 <p
@@ -102,7 +101,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+                >{{ __('account.saved') }}</p>
             @endif
           </div>
 
@@ -110,32 +109,32 @@
       </div>
 
       <div class="infoBasico">
-        <h3>{{ __('Update Password') }}</h3>
+        <h3>{{ __('account.updatePwd') }}</h3>
 
         <form method="post" action="{{ route('password.update') }}" class="formularioBasico cuenta">
           @csrf
           @method('put')
 
           <div class="campos">
-            <label for="update_password_current_password">{{ __('Current Password') }}</label>
+            <label for="update_password_current_password">{{ __('account.currentPwd') }}</label>
             <input id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('current_password')" />
           </div>
 
           <div class="campos">
-            <label for="update_password_password">{{ __('New Password') }}</label>
+            <label for="update_password_password">{{ __('account.newPwd') }}</label>
             <input id="update_password_password" name="password" type="password" autocomplete="new-password">
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password')" />
           </div>
 
           <div class="campos">
-            <label for="update_password_password_confirmation">{{ __('Confirm Password') }}</label>
+            <label for="update_password_password_confirmation">{{ __('account.confirmPwd') }}</label>
             <input id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password_confirmation')" />
           </div>
 
           <div class="campos">
-            <input type="submit" value="{{ __('Save') }}">
+            <input type="submit" value="{{ __('account.save') }}">
 
             @if (session('status') === 'password-updated')
                 <p
@@ -144,7 +143,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+                >{{ __('account.saved') }}</p>
             @endif
           </div>
 
@@ -152,14 +151,14 @@
       </div>
 
       <div class="infoBasico">
-        <h3>{{ __('Delete Account') }}</h3>
+        <h3>{{ __('account.deleteAcc') }}</h3>
 
         <p>
-          {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+          {{ __('account.deleteAdvise') }}
         </p>
 
         <div class="campos" style="margin-top: 30px">
-          <a data-modal-target="borrarCuenta" class="botonSubmit">{{ __('Delete Account') }}</a>
+          <a data-modal-target="borrarCuenta" class="botonSubmit">{{ __('account.deleteAcc') }}</a>
         </div>
 
         <div class="modal" id="borrarCuenta">
@@ -167,25 +166,25 @@
             <form method="post" action="{{ route('profile.destroy') }}">
               <div class="cabecera-modal">
                 <span class="cerrar-modal">&times;</span>
-                <h2>{{ __('Are you sure you want to delete your account?') }}</h2>
+                <h2>{{ __('account.deleteConfirmation') }}</h2>
               </div>
               <div class="cuerpo-modal">
                 @csrf
                 @method('delete')
                 <p>
-                  {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                  {{ __('account.deleteAdvise') }}
                 </p><br>
 
-                <label for="password">{{ __('Password') }}</label><br>
-                <input id="password" name="password" type="password" placeholder="{{ __('Password') }}">
+                <label for="password">{{ __('account.password') }}</label><br>
+                <input id="password" name="password" type="password" placeholder="{{ __('account.password') }}">
                 <x-input-error :messages="$errors->userDeletion->get('password')" class="inputError" />
                 
                 
               </div>
               <div class="footer-modal">
                 <div class="botones">
-                  <span class="cancelar">Cancelar</span>
-                  <input type="submit" class="aceptar" value="{{ __('Delete Account') }}">
+                  <span class="cancelar">{{ __('account.cancel') }}</span>
+                  <input type="submit" class="aceptar" value="{{ __('account.deleteAcc') }}">
                 </div>
               </div>
             </form>
