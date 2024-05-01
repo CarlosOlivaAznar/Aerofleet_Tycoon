@@ -751,12 +751,10 @@ form.formularioBasico h1{
 
 form.formularioBasico .campos{
     width: 100%;
-    margin-top: 5px;
     padding: 10px 20px;
 }
 
 form.formularioBasico .camposLinea{
-    margin-top: 5px;
     padding: 10px 20px;
 }
 
@@ -777,7 +775,7 @@ form.formularioBasico .campos label{
 
 form.formularioBasico .campos input{
     display: block;
-    margin-top: 10px;
+    margin-top: 3px;
     width: 100%;
     padding: 10px 5px;
     border-radius: 10px;
