@@ -1971,4 +1971,24 @@ MARK: Sobre mi
         min-width: 100%;
         width: 100%;
     }
+
+    /* informacion version no se ve en movil */
+    .version{
+        display: none;
+        visibility: hidden;
+    }
+
+    .contenido nav a{
+        margin-left: 5px;
+    }
+
+    .contenido nav a span{
+        display: none;
+        visibility: hidden;
+    }
+
+    .contenido nav h3{
+        margin-right: 0;
+    }
+    
 }

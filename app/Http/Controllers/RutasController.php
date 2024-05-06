@@ -17,8 +17,6 @@ class RutasController extends Controller
     public function index()
     {
         $grupoRutas = Ruta::where('user_id', auth()->id())->orderBy('flota_id')->get()->groupBy('flota_id');
-
-        dd($grupoRutas);
         
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);

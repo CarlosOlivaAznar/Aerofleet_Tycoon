@@ -1,3 +1,5 @@
+<img src="public/images/logos/logo_AFT_icon.png" alt="Aerfleet Tycoon" width="300"/>
+
 # Aerofleet Tycoon
 
 Proyecto desarrollado por Carlos Oliva Aznar
@@ -73,12 +75,13 @@ Se tiene que incluir diferentes archivos para hacer funcionar los modales, dentr
 
 Hay que añadir el siguiente atributo a un elemento <a>
 
-´´´
+```
 data-modal-target="bugReport"
-´´´
+```
 
 luego hay que añadir el modal y que coincidan los ids del target y del modal
-´´´
+
+```
 <div class="modal" id="bugReport">
     <div class="contenido-modal">
         <form action="{{ route('bugreport') }}" method="POST">
@@ -103,7 +106,7 @@ luego hay que añadir el modal y que coincidan los ids del target y del modal
         </form>
         
 </div>
-´´´
+```
 
 y por ultimo hay que importar el archivo de javascript de los modales para capturar las acciones que haga el usuario
 
