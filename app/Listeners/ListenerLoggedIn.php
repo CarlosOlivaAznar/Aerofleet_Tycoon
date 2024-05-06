@@ -135,10 +135,13 @@ class ListenerLoggedIn
         $mediaDemanda += floor(($ruta->distancia / 500)) * 0.1;
 
         // Se calcula la demanda segun el precio del billete
-        // Se calcula como precio base 50 que ni aumenta ni disminuye la demanda
-        // cada 4 euros de subida en el precio del billete se reducira 0.01 la demanda 
-        // y cada 4 euros de bajada la demanda aumenta 0.01
-        $mediaDemanda += ((50 - $ruta->precioBillete) / 4) * 0.01;
+        // Se calcula como precio base 75 que ni aumenta ni disminuye la demanda
+        // cada 6 euros de subida en el precio del billete se reducira 0.01 la demanda 
+        // y cada 6 euros de bajada la demanda aumenta 0.01
+        $mediaDemanda += ((75 - $ruta->precioBillete) / 6) * 0.01;
+
+        dd($mediaDemanda);
+
 
 
         /**
