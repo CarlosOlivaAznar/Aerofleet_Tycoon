@@ -1,6 +1,7 @@
-<img src="public/images/logos/logo_AFT_icon.png" alt="Aerfleet Tycoon" width="300"/>
-
-# Aerofleet Tycoon
+<div styles="display: flex; gap: 15px; flex-direction: row; align-items: center; margin-bottom: 30px">
+    <img src="public/images/logos/logo_AFT_icon.png" alt="Aerfleet Tycoon" width="250"/>
+    <h1>Aerofleet Tycoon</h1>
+</div>
 
 Proyecto desarrollado por Carlos Oliva Aznar
 
