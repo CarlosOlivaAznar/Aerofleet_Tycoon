@@ -1965,4 +1965,10 @@ MARK: Sobre mi
         display: none;
         visibility: hidden;
     }
+
+    /* Selects con busqueda adaptados a pantalla */
+    .select{
+        min-width: 100%;
+        width: 100%;
+    }
 }
