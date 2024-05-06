@@ -1,7 +1,4 @@
-<div styles="display: flex; gap: 15px; flex-direction: row; align-items: center; margin-bottom: 30px">
-    <img src="public/images/logos/logo_AFT_icon.png" alt="Aerfleet Tycoon" width="250"/>
-    <h1>Aerofleet Tycoon</h1>
-</div>
+# Aerofleet Tycoon
 
 Proyecto desarrollado por Carlos Oliva Aznar
 
@@ -9,6 +6,36 @@ Proyecto desarrollado por Carlos Oliva Aznar
 
 Aerofleet Tycoon es un videojuego de simulacion a tiempo real de una compañia aerea, en la que se puede gestionar una flota de aviones utilizando los hangares de la sede y realizando mantenimiento de las aeronaves y gestionando las rutas de la compañía aérea empleado los aviones de tu propiedad. También la gestión de los espacios de los aeropuertos y los diferentes
 pagos del alquiler de la sede y el salario de los ingenieros de mantenimiento de las aeronaves
+
+## Despliegue de la aplicacion
+
+La aplicacion esta alojada en un servidor de [DigitalOcean](https://www.digitalocean.com/), para el correcto despliegue hay que añadir las siguientes variables de entorno en el servidor
+
+```
+APP_KEY=base64:QjO74FKmHIODNEMPmayc3oZDuvPTRQMNxetNM6ZdpZk=
+DB_CONNECTION=pgsql
+DB_HOST=app-bc765225-bc32-41ae-8f2e-d68447c10c71-do-user-16167512-0.c.db.ondigitalocean.com
+DB_PORT=25060
+DB_DATABASE=aerofleettycoon
+DB_USERNAME=aerofleettycoon
+DB_PASSWORD=(oculta por motivos de seguridad)
+APP_NAME=aerofleettycoon
+APP_ENV=production
+APP_DEBUG=false
+DATABASE_URL=${aerofleettycoon.DATABASE_URL}
+APP_URL=https://aerofleettycoon-7wttf.ondigitalocean.app/
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=aerofleettycoon@gmail.com
+MAIL_PASSWORD=(oculta por motivos de seguridad)
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=aerofleettycoon@gmail.com
+MAIL_FROM_NAME=AeroFleetTycoon
+```
+
+El dominio de la aplicacion es [aerofleet.app](aerofleet.app) comprado en [hostinger](https://www.hostinger.es/hosting-web)
+
 
 ## Desarrollo de la aplicacion
 
