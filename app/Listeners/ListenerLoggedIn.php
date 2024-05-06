@@ -140,8 +140,6 @@ class ListenerLoggedIn
         // y cada 6 euros de bajada la demanda aumenta 0.01
         $mediaDemanda += ((75 - $ruta->precioBillete) / 6) * 0.01;
 
-        dd($mediaDemanda);
-
 
 
         /**
