@@ -8,7 +8,7 @@ return [
     'routes' => 'Routes',
     'slots' => 'Slots',
     'hq' => 'Head Quarters',
-    'competition' => 'Competition',
+    'competition' => 'Competence',
     'account' => 'Account'
 ];
 

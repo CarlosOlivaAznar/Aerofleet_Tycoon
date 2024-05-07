@@ -17,19 +17,19 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Competencia</h1>
+          <h1>{{ __('competence.competence') }}</h1>
         </div>
       </div>
 
       <div class="rutas">
         <form action="{{ route('competencia.demandaRuta') }}" method="POST" autocomplete="off">
-          <h2>Demanda de las rutas</h2>
+          <h2>{{ __('competence.demand') }}</h2>
           @csrf
           <div class="divRepartido centrado">
             <div class="input">
-              <h3>Origen</h3>
+              <h3>{{ __('competence.departure') }}</h3>
 
-              <input type="text" class="select" name="sede" id="busquedaOrigen" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el origen...">
+              <input type="text" class="select" name="sede" id="busquedaOrigen" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="{{ __('competence.selectDep') }}">
               <input type="hidden" id="origenHid" name="origenHid" value="">
               
               <div class="drop-down" id="dropDown">
@@ -39,9 +39,9 @@
               </div>
             </div>
             <div class="input">
-              <h3>Destino</h3>
+              <h3>{{ __('competence.arrival') }}</h3>
               
-              <input type="text" class="select" name="sede" id="busquedaDestino" onfocus="mostrarDd('dropDown2', this)" onblur="ocultarDd('dropDown2')" onkeyup="filtrar(this, 'dropDown2')" placeholder="Selecciona el destino...">
+              <input type="text" class="select" name="sede" id="busquedaDestino" onfocus="mostrarDd('dropDown2', this)" onblur="ocultarDd('dropDown2')" onkeyup="filtrar(this, 'dropDown2')" placeholder="{{ __('competence.selectArr') }}">
               <input type="hidden" id="destinoHid" name="destinoHid" value="">
               
               <div class="drop-down" id="dropDown2">
@@ -53,20 +53,20 @@
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="botonSubmit">
+            <input type="submit" value="{{ __('competence.search') }}" id="botonSubmit">
           </div>
         </form>
       </div>
 
       <div class="rutas">
         <form action="{{ route('competencia.rutas') }}" method="POST" autocomplete="off">
-          <h2>Rutas de la competencia</h2>
+          <h2>{{ __('competence.routes') }}</h2>
           @csrf
           <div class="divRepartido centrado">
             <div class="input">
-              <h3>Nombre de la compañia aerea</h3>
+              <h3>{{ __('competence.airlineName') }}</h3>
               
-              <input type="text" class="select" name="busquedaCompanyia" id="busquedaCompanyia" onfocus="mostrarDd('dropDown3', this)" onblur="ocultarDd('dropDown3')" onkeyup="filtrar(this, 'dropDown3')" placeholder="Busca el nombre de la compañia...">
+              <input type="text" class="select" name="busquedaCompanyia" id="busquedaCompanyia" onfocus="mostrarDd('dropDown3', this)" onblur="ocultarDd('dropDown3')" onkeyup="filtrar(this, 'dropDown3')" placeholder="{{ __('competence.searchName') }}">
               <input type="hidden" id="companyiaHid" name="companyiaHid" value="">
               
               <div class="drop-down" id="dropDown3">
@@ -78,7 +78,7 @@
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Buscar" id="botonSubmit">
+            <input type="submit" value="{{ __('competence.search') }}" id="botonSubmit">
           </div>
         </form>
       </div>
