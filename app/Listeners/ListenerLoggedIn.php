@@ -200,6 +200,15 @@ class ListenerLoggedIn
         }
         $ruta->flota->update();
 
+
+        // Se añade la informacion de los aviones para dar feedback al usuario
+        $ruta->flota->rutasCompletadas++;
+        $horas = explode(":", $ruta->tiempoEstimado);
+        $ruta->flota->horasCompletadas += $horas[0] + $horas[1] / 60;
+        $ruta->flota->distanciaCompletada += $ruta->distancia;
+
+        $ruta->flota->update();
+
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
         array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
