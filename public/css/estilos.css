@@ -1251,9 +1251,10 @@ footer .contenidoFooter div p.texto a{
 
 /* Boton Submit */
 .mainContent form .formulario .campos input[type="submit"]{
-    background-color: var(--dark-grey);
+    background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    border-radius: 25px;
 }
 
 .mainContent form .formulario .campos input[type="submit"]:hover{
