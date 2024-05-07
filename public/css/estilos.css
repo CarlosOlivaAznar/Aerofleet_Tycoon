@@ -1990,5 +1990,9 @@ MARK: Sobre mi
     .contenido nav h3{
         margin-right: 0;
     }
+
+    .contenido nav h3 span{
+        margin-right: 5px;
+    }
     
 }
