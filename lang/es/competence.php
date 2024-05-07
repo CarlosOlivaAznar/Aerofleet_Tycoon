@@ -26,7 +26,7 @@ return [
 
     // Airline Routes
     'routesOf' => 'Rutas de',
-    'planeRoutes' => 'Airplane routes',
+    'planeRoutes' => 'Rutas del avion',
 ];
 
 // Plantilla
