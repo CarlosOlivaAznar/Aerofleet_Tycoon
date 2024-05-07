@@ -720,6 +720,7 @@ MARK: Login
     flex-direction: column;
     gap: -10px;
     color: var(--dark);
+    background-size: cover;
 }
 
 .pag-login div{
@@ -845,6 +846,20 @@ form.formularioBasico div input[type="submit"]:hover{
 
 form.formularioBasico.cuenta div input[type="submit"]{
     width: auto;
+}
+
+form.formularioBasico .forms-alineados{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+}
+
+form.formularioBasico .campos .forms-alineados .linkForm{
+    background-color: transparent;
+    color: var(--dark);
+    text-decoration: underline;
+    outline: none;
 }
 
 /* -------------- */

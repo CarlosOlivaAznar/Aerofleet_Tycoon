@@ -19,6 +19,10 @@ return new class extends Migration
             $table->date('fechaDeFabricacion');
             $table->unsignedFloat('condicion');
             $table->unsignedInteger('estado')->default(0);
+            $table->unsignedInteger('rutasCompletadas')->default(0);
+            $table->unsignedFloat('horasCompletadas')->default(0);
+            $table->unsignedFloat('distanciaCompletada')->default(0);
+            $table->string('ultimoMantenimiento')->default(now());
             $table->timestamps();
         });
     }
