@@ -21,5 +21,14 @@ class UsersTableSeeder extends Seeder
             'tipoUsuario' => 1,
             'email_verified_at' => now(),
         ]);
+
+        User::create([
+            'name' => 'Usuario2',
+            'email' => 'user2@gmail.com',
+            'password' => '$2y$12$i4VMh.nD38hxKtwtXIkk..uTLAsee5XLbGueK4z8b03f6ngySYhbG',
+            'ultimaConexion' => now(),
+            'tipoUsuario' => 0,
+            'email_verified_at' => now(),
+        ]);
     }
 }
