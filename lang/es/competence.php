@@ -23,6 +23,7 @@ return [
     'timeDep' => 'Hora de salida',
     'timeArr' => 'Hora de llegada',
     'errorRoutes' => 'No existen rutas creadas con los parametros elegidos',
+    'errorUser' => 'El usuario seleccionado no tiene ninguna ruta creada',
 
     // Airline Routes
     'routesOf' => 'Rutas de',

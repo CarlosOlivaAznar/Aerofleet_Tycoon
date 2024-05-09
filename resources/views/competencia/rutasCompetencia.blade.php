@@ -66,7 +66,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>El usuario seleccionado no tiene ninguna ruta creada</h4>
+            <h4>{{ __('competence.errorUser') }}</h4>
           </div>
       @endif
 
