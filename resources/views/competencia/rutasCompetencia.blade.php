@@ -49,7 +49,7 @@
           <tbody>
             @foreach ($rutas as $ruta)
             <tr>
-              <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt=""></i></td>
+              <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt="fotoAvion"></i></td>
               <td>{{ $ruta->flota->matricula }}</td>
               <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
               <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>

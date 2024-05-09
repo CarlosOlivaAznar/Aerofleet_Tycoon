@@ -171,7 +171,7 @@ MARK: Menu lateral
 /* Menu Superior */
 /* ------------- */
 /*
-MARK: Menu superior:
+MARK: Menu superior
 */
 
 .contenido nav{
@@ -271,6 +271,36 @@ MARK: Menu superior:
     color: var(--dark-grey);
 }
 
+body main .errores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: var(--dark);
+    margin: 0 auto;
+
+    /* Centramos el error al medio */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+body main .errores img{
+    width: 70%;
+    max-width: 650px;
+}
+
+body main .errores a{
+    margin-left: 0;
+}
+
 /* Clase boton */
 /*
 MARK: Boton
@@ -286,6 +316,12 @@ a.boton{
     margin-left: auto;
     color: var(--light);
     white-space: nowrap;
+    transition: 0.4s;
+}
+
+a.boton:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
 }
 
 
