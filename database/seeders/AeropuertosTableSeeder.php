@@ -643,7 +643,7 @@ class AeropuertosTableSeeder extends Seeder
         /* Aeropuertos UK */
         /* -------------- */
         /*
-        MARK: Reino Unido
+        MARK: UK
         */
         Aeropuerto::create([
             'icao' => 'EGPH',
@@ -1227,6 +1227,96 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+
+        /* ------------------- */
+        /* Aeropuertos Irlanda */
+        /* ------------------- */
+        /*
+        MARK: Irlanda
+        */
+        Aeropuerto::create([
+            'icao' => 'EICK',
+            'pais' => 'EI',
+            'nombre' => 'Cork Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 750,
+            'latitud' => 51.843265,
+            'longitud' => -8.491084,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIDL',
+            'pais' => 'EI',
+            'nombre' => 'Donegal Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.044294,
+            'longitud' => -8.340989,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIDW',
+            'pais' => 'EI',
+            'nombre' => 'Dublin Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 53.427893,
+            'longitud' => -6.254153,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIKN',
+            'pais' => 'EI',
+            'nombre' => 'Knock Ireland West Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 53.910344,
+            'longitud' => -8.817840,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIKY',
+            'pais' => 'EI',
+            'nombre' => 'Kerry Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 52.181371,
+            'longitud' => -9.528852,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EINN',
+            'pais' => 'EI',
+            'nombre' => 'Shannon Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 52.701109,
+            'longitud' => -8.914774,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
 
         /* -------------------- */
         /* Aeropuertos Alemania */
@@ -3280,7 +3370,7 @@ class AeropuertosTableSeeder extends Seeder
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'SP',
+            'pais' => 'EI',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
