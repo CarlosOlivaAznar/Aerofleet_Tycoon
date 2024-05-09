@@ -149,6 +149,11 @@
       <!-- Informacion avion -->
       <input type="hidden" id="rangoAvion" value="{{ $flota[0]->avion->rango }}"> 
 
+      
+        @foreach ($flota as $avion)
+        <input type="hidden" id="avion" name="avion" value="{{ $avion->id }}"> 
+        @endforeach
+
       <div class="resumenAvion">
         <h4>Precio billete:</h4>
         <input type="range" name="precioBillete" id="precioBillete" value="50" min="5" max="600" oninput="slide(this)">
