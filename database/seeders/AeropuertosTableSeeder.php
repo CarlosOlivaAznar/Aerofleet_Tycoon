@@ -456,6 +456,189 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+        Aeropuerto::create([
+            'icao' => 'Lanzarote Airport',
+            'pais' => 'EC',
+            'nombre' => 'GCRR',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 28.946323,
+            'longitud' => -13.605856,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LECO',
+            'pais' => 'EC',
+            'nombre' => 'A Coruna Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.301552,
+            'longitud' => -8.378496,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEAM',
+            'pais' => 'EC',
+            'nombre' => 'Almeria Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 450,
+            'latitud' => 36.844059,
+            'longitud' => -2.372628,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 70,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEBG',
+            'pais' => 'EC',
+            'nombre' => 'Burgos Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.357375,
+            'longitud' => -3.614885,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LECH',
+            'pais' => 'EC',
+            'nombre' => 'Castellon Costa Azahar Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 40.214232,
+            'longitud' => 0.075458,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'GCHI',
+            'pais' => 'EC',
+            'nombre' => 'El Hierro Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 27.814811,
+            'longitud' => -17.887015,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEGE',
+            'pais' => 'EC',
+            'nombre' => 'Girona Costa Brava Airport',
+            'espaciosTotales' => 70,
+            'costeOperacional' => 750,
+            'latitud' => 41.905033,
+            'longitud' => 2.763138,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LELN',
+            'pais' => 'EC',
+            'nombre' => 'Leon Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.592833,
+            'longitud' => -5.650300,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEDA',
+            'pais' => 'EC',
+            'nombre' => 'Lleida Alguaire Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.727873,
+            'longitud' => 0.537245,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEMH',
+            'pais' => 'EC',
+            'nombre' => 'Mahon Menorca Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 39.863613,
+            'longitud' => 4.221213,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LERS',
+            'pais' => 'EC',
+            'nombre' => 'Reus Airport',
+            'espaciosTotales' => 65,
+            'costeOperacional' => 700,
+            'latitud' => 41.148163,
+            'longitud' => 1.166753,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEST',
+            'pais' => 'EC',
+            'nombre' => 'Santiago de Compostela Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 42.895924,
+            'longitud' => -8.415771,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEVD',
+            'pais' => 'EC',
+            'nombre' => 'Valladolid Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.708169,
+            'longitud' => -4.846980,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        
         /* -------------- */
         /* Aeropuertos UK */
         /* -------------- */

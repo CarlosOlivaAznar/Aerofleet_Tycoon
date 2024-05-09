@@ -145,6 +145,8 @@ y por ultimo hay que importar el archivo de javascript de los modales para captu
 
 ## Aeropuetos
 
+Cada aeropuerto se gestiona segun su tamaño en la vida real, su trafico, la terminal y su capacidad para gestionar diferentes aviones. Aqui se muestra una tabla con las posibles variables segun el tamaño del aeropuerto, esta tabla no se sige al 100% cada aeropuerto puede variar o tener datos mezclados. Por ejemplo, madeira es un aeropuerto muy pequeño pero con una alta demanda.
+
 | Aeropuertos   | Espacios      | Coste O  | Demanda | Pasajeros | Categoria  |
 | :------------ | :----------:  | :------: | :------:| :--------:| ---------: |
 | Grandes       |   400 - 450   | 2000     | 0.97    | 300       | 1          |
@@ -153,6 +155,8 @@ y por ultimo hay que importar el archivo de javascript de los modales para captu
 | Muy pequeños  |   25 - 50     | 250      | 0.50    | 50        | 4          |
 
 ***
+aviones que pueden volar al aeropuerto segun su categoria (ejemplo)
+
 Categoria 1 -> a380, b747
 Categoria 2 -> a350, b777
 Categoria 3 -> a320, b737
