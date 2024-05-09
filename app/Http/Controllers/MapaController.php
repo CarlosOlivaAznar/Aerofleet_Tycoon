@@ -33,7 +33,7 @@ class MapaController extends Controller
 
             // Calculamos los aviones que estan volando en estos mismos instantes
             if(now()->between($horaInicio, $horaFin) && $rutaUser->flota->estado === 1){
-                array_push($avionesVolando, $this->calcularPosicion($rutaUser, $horaInicio));
+                array_push($avionesVolando, $rutaUser->calcularPosicion($horaInicio));
             }
         }
 
@@ -62,58 +62,5 @@ class MapaController extends Controller
             'rutas' => $rutasArray, 
             'aeropuertos' => $aeropuertosArray
         ]);
-    }
-
-    public function calcularPosicion($ruta, Carbon $horaInicio)
-    {
-        $latSalida = $ruta->espacio_departure->aeropuerto->latitud;
-        $longSalida = $ruta->espacio_departure->aeropuerto->longitud;
-
-        $latLlegada = $ruta->espacio_arrival->aeropuerto->latitud;
-        $longLlegada = $ruta->espacio_arrival->aeropuerto->longitud;
-        
-        // Diferencia de latitudes y longitudes
-        $difLat = $latSalida - $latLlegada;
-        $difLong = $longSalida - $longLlegada;
-
-        $distanciaRecorrida = intval($horaInicio->diffInMinutes(now()));
-        $tiempoEstimado = explode(":", $ruta->tiempoEstimado); 
-
-        $porcentajeRecorrido = $distanciaRecorrida / ((intval($tiempoEstimado[0]) * 60) + intval($tiempoEstimado[1]));
-
-        // Una vez con el porcentaje de ruta recorrido calculamos la posicion segun la diferencia de posiciones y el porcentaje
-        $difLat *= $porcentajeRecorrido;
-        $difLong *= $porcentajeRecorrido;
-
-        // Calculamos la posicion final del avion
-        $posLat = $latSalida - $difLat;
-        $posLong = $longSalida - $difLong;
-        
-        return [$posLat, $posLong, $ruta->flota->matricula, $this->calcularAngulo($ruta)];
-    }
-
-    public function calcularAngulo($ruta)
-    {
-        $latSalida = $ruta->espacio_departure->aeropuerto->latitud;
-        $longSalida = $ruta->espacio_departure->aeropuerto->longitud;
-
-        $latLlegada = $ruta->espacio_arrival->aeropuerto->latitud;
-        $longLlegada = $ruta->espacio_arrival->aeropuerto->longitud;
-
-        // Diferencia entre las longitudes y latitudes
-        $deltaLat = $latLlegada - $latSalida;
-        $deltaLon = $longLlegada - $longSalida;
-
-        // Calcular el angulo en radianes
-        $anguloRad = atan2($deltaLon, $deltaLat);
-
-        // Transformar el angulo de radianes a grados
-        $anguloGrad = rad2deg($anguloRad);
-
-        if($anguloGrad < 0){
-            $anguloGrad += 360;
-        }
-
-        return $anguloGrad;
     }
 }

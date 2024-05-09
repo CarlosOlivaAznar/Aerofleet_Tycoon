@@ -85,28 +85,18 @@
 
       <div class="mapa-ruta">
         <div id="map"></div>
-        <script>
-          var map = L.map('map').setView([41.667787, -1.0376974], 4);
-
-          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          }).addTo(map);
-
-          var airportIcon = L.icon({
-            iconUrl: '../icons/torre-de-control-solid.png',
-            shadowUrl: '../icons/plane-shadow.png',
-
-            iconSize:     [20, 20],
-            shadowSize:   [10, 10],
-            iconAnchor:   [12.5, 12.5],
-            shadowAnchor: [5, 2],
-            popupAnchor:  [0, -10],
-          });
-
-      </script>
       </div>
+
+      <!-- Informacion de los aviones -->
+      @foreach ($avionesVolando as $avion)
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[0] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[1] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[2] }}">
+        <input type="hidden" class="avionesUsuario" value="{{ $avion[3] }}">
+      @endforeach
+
       <script src="{{ asset('js/dropdown.js') }}"></script>
+      <script src="{{ asset('js/mapa.js') }}"></script>
     </main>
   </div>
 </body>

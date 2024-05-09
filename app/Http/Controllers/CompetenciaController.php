@@ -7,6 +7,8 @@ use App\Models\Aeropuerto;
 use App\Models\Espacio;
 use App\Models\Ruta;
 use App\Models\User;
+use Carbon\Carbon;
+use DeepCopy\f013\C;
 use Illuminate\Http\Request;
 
 class CompetenciaController extends Controller
@@ -15,7 +17,33 @@ class CompetenciaController extends Controller
     {
         $aeropuertos = Aeropuerto::all();
         $companyias = User::where('nombreCompanyia', '!=', 'null')->get();
-        return view('competencia.index', ['aeropuertos' => $aeropuertos, 'companyias' => $companyias]);
+
+        $rutas = Ruta::all();
+        $avionesVolando = array();
+
+        foreach ($rutas as $ruta) {
+            $horaInicio = Carbon::createFromFormat('H:i:s', $ruta->horaInicio);
+            $horaFin = Carbon::createFromFormat("H:i:s", $ruta->horaFin);
+
+            // Si las horas de inicio o fin estan comprendidas entre las 00:00z y 04:00z
+            // Quiere decir que ese horario ya es del dia siguiente ya que excede el limite de hora
+            // Entonces se le suma un dia al horario
+            // Esto sucede ya que los horarios de las rutas solo guardamos las horas y no los dias como es obvio
+            if($horaInicio->between(Carbon::today()->addHours(0), Carbon::today()->addHours(4))){
+                $horaInicio->addDay(1);
+            }
+
+            if($horaFin->between(Carbon::today()->addHours(0), Carbon::today()->addHours(4))){
+                $horaFin->addDay(1);
+            }
+
+            // Calculamos los aviones que estan volando en estos mismos instantes
+            if(now()->between($horaInicio, $horaFin) && $ruta->flota->estado === 1){
+                array_push($avionesVolando, $ruta->calcularPosicion($horaInicio));
+            }
+        }
+
+        return view('competencia.index', ['aeropuertos' => $aeropuertos, 'companyias' => $companyias, 'avionesVolando' => $avionesVolando]);
     }
 
     public function demandaRuta(Request $request)
@@ -45,4 +73,6 @@ class CompetenciaController extends Controller
         $nombreC = $request->busquedaCompanyia;
         return view('competencia.rutasCompetencia', ['grupoRutas' => $grupoRutas, 'nombreC' => $nombreC]);
     }
+
+    
 }
