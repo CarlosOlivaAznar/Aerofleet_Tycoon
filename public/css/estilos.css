@@ -54,6 +54,11 @@ a{
     text-decoration: none;
 }
 
+.bold{
+    font-weight: 800;
+    color: var(--dark);
+}
+
 /* ------------ */
 /* Menu Lateral */
 /* ------------ */
@@ -1701,15 +1706,33 @@ MARK: Sobre mi
     gap: 40px;
 }
 
+.mainContent .informacion-imagen div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainContent .informacion-imagen.extendido{
+    gap: 30px;
+}
+
+.mainContent .informacion-imagen.extendido div.texto{
+    width: 60%;
+}
+
 .mainContent .informacion-imagen div.imagen{
     width: 20%;
+}
+
+.mainContent .informacion-imagen div.imagen-50{
+    width: 100%;
 }
 
 .mainContent .informacion-imagen div.texto{
     width: 100%;
 }
 
-.mainContent .informacion-imagen div.imagen img{
+.mainContent .informacion-imagen div img{
     width: 100%;
     border-radius: 25px;
 }

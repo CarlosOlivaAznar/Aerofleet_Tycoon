@@ -31,7 +31,7 @@
       <div class="rutas">
         <div class="divRepartido">
           <div class="input">
-            <h3>Destino 1</h3>
+            <h3>Origen</h3>
             <select name="destino1" id="destino1" onchange="mostrarRadio()">
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
@@ -88,7 +88,7 @@
             <h3>---</h3>
           </div>
           <div class="input">
-            <h3>Destino 2</h3>
+            <h3>Destino</h3>
             <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
@@ -98,17 +98,6 @@
               @if ($espaciosVacios === 0)
                 <option value="">No hay espacios disponibles</option>  
               @endif
-            </select>
-          </div>
-          <div class="input">
-            <h3>---</h3>
-          </div>
-          <div class="input">
-            <h3>Avion</h3>
-            <select name="avion" id="avion">
-              @foreach ($flota as $avion)
-              <option value="{{ $avion->id }}">{{ $avion->avion->modelo }}, {{ $avion->matricula }}</option>
-              @endforeach
             </select>
           </div>
         </div>
@@ -158,7 +147,7 @@
       @endforeach
 
       <!-- Informacion avion -->
-      <input type="hidden" id="rangoAvion" value="{{ $avion->avion->rango }}"> 
+      <input type="hidden" id="rangoAvion" value="{{ $flota[0]->avion->rango }}"> 
 
       <div class="resumenAvion">
         <h4>Precio billete:</h4>

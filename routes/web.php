@@ -42,6 +42,9 @@ Route::get('/politicaPrivacidad', function () {
 Route::get('/donar', function () {
     return view('landing.donar');
 })->name('landing.donar');
+Route::get('/tutorial', function () {
+    return view('landing.tutorial');
+})->name('landing.tutorial');
 
 // Bugreport
 Route::post('/bugreport', function (Request $request) {

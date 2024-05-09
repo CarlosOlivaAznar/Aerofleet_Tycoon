@@ -25,14 +25,14 @@
                 </p>
             </div>
             <div class="imagen">
-                <img src="{{ asset('images/sobreMi2.jpg') }}" alt="">
+                <img src="{{ asset('images/sobreMi2.jpg') }}" alt="sobre mi foto 1">
             </div>
         </div>
 
         <h2>¿Cual es mi objetivo?</h2>
         <div class="informacion-imagen">
             <div class="imagen">
-                <img src="{{ asset('images/sobreMi1.jpg') }}" alt="">
+                <img src="{{ asset('images/sobreMi1.jpg') }}" alt="sobre mi foto 2">
             </div>
             <div class="texto">
                 <p>
@@ -45,7 +45,7 @@
                     Por esto y porque tengo que entregar un proyecto a final de curso me puse a hacer mi idea realidad.
                 </p>
                 <p>
-                    El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de donar.
+                    El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de <a href="{{ route('landing.donar') }}">donar</a>.
                 </p>
             </div>
         </div>

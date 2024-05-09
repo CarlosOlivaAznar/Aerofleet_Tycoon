@@ -15,13 +15,13 @@
         <p class="texto"><a href="">Contactame</a></p>
       </div>
       <div>
-        <p class="titulo">FAQ</p>
+        <p class="titulo">Información</p>
         <p class="texto"><a href="{{ route('landing.donar') }}">Donar</a></p>
         <p class="texto"><a href="https://discord.gg/sUueRvrttY" target="_blank">Discord</a></p>
-        <p class="texto"><a href="">Preguntas Frecuentes</a></p>
+        <p class="texto"><a href="{{ route('landing.tutorial') }}">Tutorial</a></p>
       </div>
       <div class="derecha">
-        <p class="titulo">Informacion Adicional</p>
+        <p class="titulo">Información Adicional</p>
         <p class="texto"><a href="{{ route('landing.terminosCondiciones') }}">Terminos y condiciones de uso</a></p>
         <p class="texto"><a href="{{ route('landing.politicaPrivacidad') }}">Politica de Privacidad</a></p>
         <p class="texto"><a href="">Roadmap</a></p>
