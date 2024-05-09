@@ -3365,12 +3365,105 @@ class AeropuertosTableSeeder extends Seeder
             'categoria' => 3,
             'isla' => false,
         ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Austria */
+        /* ------------------- */
+        /* 
+        MARK: Austria
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LOWW',
+            'pais' => 'OE',
+            'nombre' => 'Vienna International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 48.113383,
+            'longitud' => 16.575134,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LOWS',
+            'pais' => 'OE',
+            'nombre' => 'Salzburg Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 47.792491,
+            'longitud' => 13.003137,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LOWI',
+            'pais' => 'OE',
+            'nombre' => 'Innsbruck Kranebitten Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 2000,
+            'latitud' => 47.259627,
+            'longitud' => 11.347004,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LOWG',
+            'pais' => 'OE',
+            'nombre' => 'Graz Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 46.995709,
+            'longitud' => 15.440216,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LOWK',
+            'pais' => 'OE',
+            'nombre' => 'Klagenfurt Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.642551,
+            'longitud' => 14.337834,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LOWL',
+            'pais' => 'OE',
+            'nombre' => 'Linz Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.235498,
+            'longitud' => 14.188075,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'EI',
+            'pais' => 'OE',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
