@@ -17,8 +17,8 @@
       <div>
         <p class="titulo">FAQ</p>
         <p class="texto"><a href="{{ route('landing.donar') }}">Donar</a></p>
+        <p class="texto"><a href="https://discord.gg/sUueRvrttY" target="_blank">Discord</a></p>
         <p class="texto"><a href="">Preguntas Frecuentes</a></p>
-        <p class="texto"><a href="">Reportar un fallo</a></p>
       </div>
       <div class="derecha">
         <p class="titulo">Informacion Adicional</p>
