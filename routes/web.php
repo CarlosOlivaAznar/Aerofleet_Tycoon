@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompetenciaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,9 @@ Route::get('/politicaPrivacidad', function () {
 Route::get('/donar', function () {
     return view('landing.donar');
 })->name('landing.donar');
+Route::get('/tutorial', function () {
+    return view('landing.tutorial');
+})->name('landing.tutorial');
 
 // Bugreport
 Route::post('/bugreport', function (Request $request) {
@@ -109,6 +113,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+// Rutas admin
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'admin'])->name('admin.index');
 
 // Rutas de control del idioma
 Route::post('/lang', [LanguageController::class, 'change'])->name('language.change');

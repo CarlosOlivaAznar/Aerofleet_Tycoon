@@ -7,7 +7,7 @@
     --light-primary: #CFE8FF;
     --grey: #eee;
     --dark-grey: #AAAAAA;
-    --dark: #363949;
+    --dark: #353a3e;
     --danger: #D32F2F;
 	--light-danger: #FECDD3;
     --warning: #FBC02D;
@@ -41,10 +41,6 @@ li{
     list-style: none;
 }
 
-a{
-    text-decoration: none;
-}
-
 .bx{
     font-size: 1.8rem;
 }
@@ -55,6 +51,12 @@ a{
 
 a{
     color: var(--primary);
+    text-decoration: none;
+}
+
+.bold{
+    font-weight: 800;
+    color: var(--dark);
 }
 
 /* ------------ */
@@ -171,7 +173,7 @@ MARK: Menu lateral
 /* Menu Superior */
 /* ------------- */
 /*
-MARK: Menu superior:
+MARK: Menu superior
 */
 
 .contenido nav{
@@ -229,6 +231,11 @@ MARK: Menu superior:
     cursor: pointer;
 }
 
+.contenido nav a.hipervinculo{
+    color: var(--primary);
+    display: inline-block;
+}
+
 .contenido nav a i{
     color: var(--dark);
 }
@@ -271,6 +278,36 @@ MARK: Menu superior:
     color: var(--dark-grey);
 }
 
+body main .errores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: var(--dark);
+    margin: 0 auto;
+
+    /* Centramos el error al medio */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+body main .errores img{
+    width: 70%;
+    max-width: 650px;
+}
+
+body main .errores a{
+    margin-left: 0;
+}
+
 /* Clase boton */
 /*
 MARK: Boton
@@ -286,6 +323,12 @@ a.boton{
     margin-left: auto;
     color: var(--light);
     white-space: nowrap;
+    transition: 0.4s;
+}
+
+a.boton:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
 }
 
 
@@ -613,7 +656,7 @@ MARK: Tooltips
 /* Muestra de notificaciones de los aviones */
 .contenido main .informacion div.basico .notificaciones{
     width: 100%;
-    height: 250px;
+    height: 90%;
     background-color: var(--grey);
     overflow-y: scroll;
     border-radius: 25px;
@@ -720,6 +763,7 @@ MARK: Login
     flex-direction: column;
     gap: -10px;
     color: var(--dark);
+    background-size: cover;
 }
 
 .pag-login div{
@@ -845,6 +889,20 @@ form.formularioBasico div input[type="submit"]:hover{
 
 form.formularioBasico.cuenta div input[type="submit"]{
     width: auto;
+}
+
+form.formularioBasico .forms-alineados{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+}
+
+form.formularioBasico .campos .forms-alineados .linkForm{
+    background-color: transparent;
+    color: var(--dark);
+    text-decoration: underline;
+    outline: none;
 }
 
 /* -------------- */
@@ -1236,9 +1294,10 @@ footer .contenidoFooter div p.texto a{
 
 /* Boton Submit */
 .mainContent form .formulario .campos input[type="submit"]{
-    background-color: var(--dark-grey);
+    background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    border-radius: 25px;
 }
 
 .mainContent form .formulario .campos input[type="submit"]:hover{
@@ -1647,15 +1706,33 @@ MARK: Sobre mi
     gap: 40px;
 }
 
+.mainContent .informacion-imagen div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainContent .informacion-imagen.extendido{
+    gap: 30px;
+}
+
+.mainContent .informacion-imagen.extendido div.texto{
+    width: 60%;
+}
+
 .mainContent .informacion-imagen div.imagen{
     width: 20%;
+}
+
+.mainContent .informacion-imagen div.imagen-50{
+    width: 100%;
 }
 
 .mainContent .informacion-imagen div.texto{
     width: 100%;
 }
 
-.mainContent .informacion-imagen div.imagen img{
+.mainContent .informacion-imagen div img{
     width: 100%;
     border-radius: 25px;
 }
@@ -1965,4 +2042,34 @@ MARK: Sobre mi
         display: none;
         visibility: hidden;
     }
+
+    /* Selects con busqueda adaptados a pantalla */
+    .select{
+        min-width: 100%;
+        width: 100%;
+    }
+
+    /* informacion version no se ve en movil */
+    .version{
+        display: none;
+        visibility: hidden;
+    }
+
+    .contenido nav a{
+        margin-left: 5px;
+    }
+
+    .contenido nav a span{
+        display: none;
+        visibility: hidden;
+    }
+
+    .contenido nav h3{
+        margin-right: 0;
+    }
+
+    .contenido nav h3 span{
+        margin-right: 5px;
+    }
+    
 }

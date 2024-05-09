@@ -30,25 +30,25 @@ class FlotaController extends Controller
 
     public function comprarAirbus()
     {
-        $aviones = Avion::where('fabricante', 'Airbus')->get();
+        $aviones = Avion::where('fabricante', 'Airbus')->orderBy('precio')->get();
         return view('flota.caAirbus', ['aviones' => $aviones]);
     }
 
     public function comprarBoeing()
     {
-        $aviones = Avion::where('fabricante', 'Boeing')->get();
+        $aviones = Avion::where('fabricante', 'Boeing')->orderBy('precio')->get();
         return view('flota.caBoeing', ['aviones' => $aviones]);
     }
 
     public function comprarEmbraer()
     {
-        $aviones = Avion::where('fabricante', 'Embraer')->get();
+        $aviones = Avion::where('fabricante', 'Embraer')->orderBy('precio')->get();
         return view('flota.caEmbraer', ['aviones' => $aviones]);
     }
 
     public function comprarBombardier()
     {
-        $aviones = Avion::where('fabricante', 'Bombardier')->get();
+        $aviones = Avion::where('fabricante', 'Bombardier')->orderBy('precio')->get();
         return view('flota.caBombardier', ['aviones' => $aviones]);
     }
 

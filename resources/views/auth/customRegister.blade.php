@@ -5,7 +5,7 @@
 </head>
 <body>
   <main>
-    <div class="pag-login">
+    <div class="pag-login" style="background-image: url({{ asset('images/bg-auth.jpg') }})">
       
         <div>
           <img src="{{ asset('images/logos/logo_AFT_.png') }}" alt="logoAFT">

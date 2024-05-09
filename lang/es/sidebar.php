@@ -9,7 +9,8 @@ return [
     'slots' => 'Espacios',
     'hq' => 'Sede',
     'competition' => 'Competencia',
-    'account' => 'Cuenta'
+    'account' => 'Cuenta',
+    'admin' => 'Administrador',
 ];
 
 // Plantulla

@@ -456,11 +456,194 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+        Aeropuerto::create([
+            'icao' => 'Lanzarote Airport',
+            'pais' => 'EC',
+            'nombre' => 'GCRR',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 28.946323,
+            'longitud' => -13.605856,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LECO',
+            'pais' => 'EC',
+            'nombre' => 'A Coruna Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.301552,
+            'longitud' => -8.378496,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEAM',
+            'pais' => 'EC',
+            'nombre' => 'Almeria Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 450,
+            'latitud' => 36.844059,
+            'longitud' => -2.372628,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 70,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEBG',
+            'pais' => 'EC',
+            'nombre' => 'Burgos Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.357375,
+            'longitud' => -3.614885,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LECH',
+            'pais' => 'EC',
+            'nombre' => 'Castellon Costa Azahar Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 40.214232,
+            'longitud' => 0.075458,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'GCHI',
+            'pais' => 'EC',
+            'nombre' => 'El Hierro Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 27.814811,
+            'longitud' => -17.887015,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEGE',
+            'pais' => 'EC',
+            'nombre' => 'Girona Costa Brava Airport',
+            'espaciosTotales' => 70,
+            'costeOperacional' => 750,
+            'latitud' => 41.905033,
+            'longitud' => 2.763138,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LELN',
+            'pais' => 'EC',
+            'nombre' => 'Leon Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.592833,
+            'longitud' => -5.650300,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEDA',
+            'pais' => 'EC',
+            'nombre' => 'Lleida Alguaire Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.727873,
+            'longitud' => 0.537245,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEMH',
+            'pais' => 'EC',
+            'nombre' => 'Mahon Menorca Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 39.863613,
+            'longitud' => 4.221213,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LERS',
+            'pais' => 'EC',
+            'nombre' => 'Reus Airport',
+            'espaciosTotales' => 65,
+            'costeOperacional' => 700,
+            'latitud' => 41.148163,
+            'longitud' => 1.166753,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEST',
+            'pais' => 'EC',
+            'nombre' => 'Santiago de Compostela Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 42.895924,
+            'longitud' => -8.415771,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LEVD',
+            'pais' => 'EC',
+            'nombre' => 'Valladolid Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.708169,
+            'longitud' => -4.846980,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
         /* -------------- */
         /* Aeropuertos UK */
         /* -------------- */
         /*
-        MARK: Reino Unido
+        MARK: UK
         */
         Aeropuerto::create([
             'icao' => 'EGPH',
@@ -1044,6 +1227,96 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+
+        /* ------------------- */
+        /* Aeropuertos Irlanda */
+        /* ------------------- */
+        /*
+        MARK: Irlanda
+        */
+        Aeropuerto::create([
+            'icao' => 'EICK',
+            'pais' => 'EI',
+            'nombre' => 'Cork Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 750,
+            'latitud' => 51.843265,
+            'longitud' => -8.491084,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIDL',
+            'pais' => 'EI',
+            'nombre' => 'Donegal Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.044294,
+            'longitud' => -8.340989,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIDW',
+            'pais' => 'EI',
+            'nombre' => 'Dublin Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 53.427893,
+            'longitud' => -6.254153,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIKN',
+            'pais' => 'EI',
+            'nombre' => 'Knock Ireland West Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 53.910344,
+            'longitud' => -8.817840,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EIKY',
+            'pais' => 'EI',
+            'nombre' => 'Kerry Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 52.181371,
+            'longitud' => -9.528852,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EINN',
+            'pais' => 'EI',
+            'nombre' => 'Shannon Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 52.701109,
+            'longitud' => -8.914774,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
 
         /* -------------------- */
         /* Aeropuertos Alemania */
@@ -2672,11 +2945,432 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* -------------------- */
+        /* Aeropuertos Portugal */
+        /* -------------------- */
+        /*
+        MARK: Portugal
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LPCR',
+            'pais' => 'CS',
+            'nombre' => 'Corvo Airport',
+            'espaciosTotales' => 10,
+            'costeOperacional' => 250,
+            'latitud' => 39.671516,
+            'longitud' => -31.116895,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPFR',
+            'pais' => 'CS',
+            'nombre' => 'Faro Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 37.016122,
+            'longitud' => -7.970781,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPFL',
+            'pais' => 'CS',
+            'nombre' => 'Flores Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.455489,
+            'longitud' => -31.131487,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPGR',
+            'pais' => 'CS',
+            'nombre' => 'Graciosa Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.092232,
+            'longitud' => -28.029288,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPHR',
+            'pais' => 'CS',
+            'nombre' => 'Horta Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 38.520378,
+            'longitud' => -28.715602,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPPI',
+            'pais' => 'CS',
+            'nombre' => 'Pico Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 38.553718,
+            'longitud' => -28.441748,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPLA',
+            'pais' => 'CS',
+            'nombre' => 'Terceira Lajes Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 38.763559,
+            'longitud' => -27.092744,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPMA',
+            'pais' => 'CS',
+            'nombre' => 'Funchal Cristiano Ronaldo Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 2000,
+            'latitud' => 32.695598,
+            'longitud' => -16.776367,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPPD',
+            'pais' => 'CS',
+            'nombre' => 'Ponta Delgada Joao Paulo II',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 1000,
+            'latitud' => 37.742036,
+            'longitud' => -25.697635,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPPS',
+            'pais' => 'CS',
+            'nombre' => 'Porto Santo Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 33.070627,
+            'longitud' => -16.349742,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPAZ',
+            'pais' => 'CS',
+            'nombre' => 'Santa Maria Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 36.973742,
+            'longitud' => -25.171111,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPSJ',
+            'pais' => 'CS',
+            'nombre' => 'Sao Jorge Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 38.665377,
+            'longitud' => -28.175129,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPPR',
+            'pais' => 'CS',
+            'nombre' => 'Porto Francisco de Sa Carneiro Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 41.244149,
+            'longitud' => -8.680249,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LPPT',
+            'pais' => 'CS',
+            'nombre' => 'Lisbon Humberto Delgado Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 38.779416,
+            'longitud' => -9.134339,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Polonia */
+        /* ------------------- */
+        /*
+        MARK: Polonia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EPWR',
+            'pais' => 'SP',
+            'nombre' => 'Wroclaw Copernicus Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 51.103257,
+            'longitud' => 16.884300,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPBY',
+            'pais' => 'SP',
+            'nombre' => 'Bydgoszcz Ignacy Jan Paderewski Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 53.096928,
+            'longitud' => 17.978635,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPKK',
+            'pais' => 'SP',
+            'nombre' => 'Krakow John Paul II International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 50.077307,
+            'longitud' => 19.792571,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPGD',
+            'pais' => 'SP',
+            'nombre' => 'Gdansk Lech Walesa Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 54.376965,
+            'longitud' => 18.472613,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPKT',
+            'pais' => 'SP',
+            'nombre' => 'Katowice International Airport',
+            'espaciosTotales' => 180,
+            'costeOperacional' => 1100,
+            'latitud' => 50.474273,
+            'longitud' => 19.081131,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPLL',
+            'pais' => 'SP',
+            'nombre' => 'Lodz Wladyslaw Reymont Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 51.719795,
+            'longitud' => 19.388455,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPLB',
+            'pais' => 'SP',
+            'nombre' => 'Lublin Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 51.238920,
+            'longitud' => 22.713960,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPSY',
+            'pais' => 'SP',
+            'nombre' => 'Olsztyn Mazury Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 53.486549,
+            'longitud' => 20.940369,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPPO',
+            'pais' => 'SP',
+            'nombre' => 'Poznan Lawica Airport',
+            'espaciosTotales' => 120,
+            'costeOperacional' => 700,
+            'latitud' => 52.418721,
+            'longitud' => 16.829316,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPRA',
+            'pais' => 'SP',
+            'nombre' => 'Warsaw Radom Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 51.390083,
+            'longitud' => 21.211025,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'EPWA',
+            'pais' => 'SP',
+            'nombre' => 'Warsaw Chopin Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 52.166429,
+            'longitud' => 20.968786,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPMO',
+            'pais' => 'SP',
+            'nombre' => 'Warsaw Modlin Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 600,
+            'latitud' => 52.449353,
+            'longitud' => 20.652163,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPZG',
+            'pais' => 'SP',
+            'nombre' => 'Zielona Gora Babimost Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 52.140174,
+            'longitud' => 15.799922,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPRZ',
+            'pais' => 'SP',
+            'nombre' => 'Rzeszow Jasionka Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.111542,
+            'longitud' => 22.025167,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EPSC',
+            'pais' => 'SP',
+            'nombre' => 'Szczecin Goleniow Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 53.585923,
+            'longitud' => 14.902376,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+        
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'PH',
+            'pais' => 'EI',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,

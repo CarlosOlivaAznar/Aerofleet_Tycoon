@@ -135,10 +135,11 @@ class ListenerLoggedIn
         $mediaDemanda += floor(($ruta->distancia / 500)) * 0.1;
 
         // Se calcula la demanda segun el precio del billete
-        // Se calcula como precio base 50 que ni aumenta ni disminuye la demanda
-        // cada 4 euros de subida en el precio del billete se reducira 0.01 la demanda 
-        // y cada 4 euros de bajada la demanda aumenta 0.01
-        $mediaDemanda += ((50 - $ruta->precioBillete) / 4) * 0.01;
+        // Se calcula como precio base 75 que ni aumenta ni disminuye la demanda
+        // cada 6 euros de subida en el precio del billete se reducira 0.01 la demanda 
+        // y cada 6 euros de bajada la demanda aumenta 0.01
+        $mediaDemanda += ((75 - $ruta->precioBillete) / 6) * 0.01;
+
 
 
         /**
@@ -197,6 +198,15 @@ class ListenerLoggedIn
             ["El avion ". $ruta->flota->matricula ." tiene un estado deplorable, por seguridad se ha detenido todas las operaciones del avion y se encuentra en tierra",
             3]);
         }
+        $ruta->flota->update();
+
+
+        // Se añade la informacion de los aviones para dar feedback al usuario
+        $ruta->flota->rutasCompletadas++;
+        $horas = explode(":", $ruta->tiempoEstimado);
+        $ruta->flota->horasCompletadas += $horas[0] + $horas[1] / 60;
+        $ruta->flota->distanciaCompletada += $ruta->distancia;
+
         $ruta->flota->update();
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback

@@ -4,7 +4,7 @@
 <head>
   @include('partials.head')
 </head>
-<body>
+<body style="background-image: url({{ asset('images/bg-auth.jpg') }})">
   <main  class="mainContent">
     
     <form action="{{ route('home.submit') }}" method="POST" autocomplete="off">

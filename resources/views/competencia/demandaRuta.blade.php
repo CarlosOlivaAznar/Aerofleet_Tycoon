@@ -17,11 +17,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Demanda Ruta </h1>
+          <h1>{{ __('competence.routeDemand') }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('competencia.index') }}">Competencia</a></li>
+            <li><a href="{{ route('competencia.index') }}">{{ __('competence.competence') }}</a></li>
             <li>/</li>
-            <li><span>Demanda Ruta</span></li>
+            <li><span>{{ __('competence.routeDemand') }}</span></li>
           </ul>
         </div>
       </div>
@@ -31,19 +31,19 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>Rutas del la compañia {{ $rutas[0]->user->nombreCompanyia }}</h3>
+          <h3>{{ __('competence.airlineRoute') }} {{ $rutas[0]->user->nombreCompanyia }}</h3>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Avion</th>
-              <th>Matricula</th>
-              <th>Origen</th>
-              <th>Destino</th>
-              <th>Distancia</th>
-              <th>Tiempo</th>
-              <th>Hora de salida</th>
-              <th>Hora de llegada</th>
+              <th>{{ __('competence.plane') }}</th>
+              <th>{{ __('competence.licence') }}</th>
+              <th>{{ __('competence.departure') }}</th>
+              <th>{{ __('competence.arrival') }}</th>
+              <th>{{ __('competence.distance') }}</th>
+              <th>{{ __('competence.time') }}</th>
+              <th>{{ __('competence.timeDep') }}</th>
+              <th>{{ __('competence.timeArr') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -66,7 +66,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No existen rutas creadas con los parametros elegidos</h4>
+            <h4>{{ __('competence.errorRoutes') }}</h4>
           </div>
       @endif
 

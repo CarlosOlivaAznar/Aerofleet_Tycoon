@@ -5,6 +5,7 @@
         <th>Modelo</th>
         <th>Precio</th>
         <th>Rango</th>
+        <th>Capacidad</th>
         <th>Comprar</th>
       </tr>
     </thead>
@@ -17,6 +18,7 @@
           <td>{{ $avion->modelo }}</td>
           <td>{{ number_format($avion->precio, 0, ',', '.') }}</td>
           <td>{{ $avion->rango }}km</td>
+          <td>{{ $avion->capacidad }}</td>
           <td><a class="comprar tooltip" href="{{ route('flota.comprar', ['id' => $avion->id]) }}">
             <i class="bx bx-shopping-bag"></i>
             <span class="tooltiptext">Comprar Avion</span>

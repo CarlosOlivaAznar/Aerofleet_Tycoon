@@ -8,8 +8,9 @@ return [
     'routes' => 'Routes',
     'slots' => 'Slots',
     'hq' => 'Head Quarters',
-    'competition' => 'Competition',
-    'account' => 'Account'
+    'competition' => 'Competence',
+    'account' => 'Account',
+    'admin' => 'Admin',
 ];
 
 // Plantulla

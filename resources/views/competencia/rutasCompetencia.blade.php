@@ -17,11 +17,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Rutas {{ $nombreC }}</h1>
+          <h1>{{ __('competence.routesOf') }} {{ $nombreC }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('competencia.index') }}">Competencia</a></li>
+            <li><a href="{{ route('competencia.index') }}">{{ __('competence.competence') }}</a></li>
             <li>/</li>
-            <li><span>Rutas {{ $nombreC }}</span></li>
+            <li><span>{{ __('competence.routesOf') }} {{ $nombreC }}</span></li>
           </ul>
         </div>
       </div>
@@ -31,25 +31,25 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
+          <h3>{{ __('competence.planeRoutes') }} {{ $rutas[0]->flota->matricula }}</h3>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Avion</th>
-              <th>Matricula</th>
-              <th>Origen</th>
-              <th>Destino</th>
-              <th>Distancia</th>
-              <th>Tiempo</th>
-              <th>Hora de salida</th>
-              <th>Hora de llegada</th>
+              <th>{{ __('competence.plane') }}</th>
+              <th>{{ __('competence.licence') }}</th>
+              <th>{{ __('competence.departure') }}</th>
+              <th>{{ __('competence.arrival') }}</th>
+              <th>{{ __('competence.distance') }}</th>
+              <th>{{ __('competence.time') }}</th>
+              <th>{{ __('competence.timeDep') }}</th>
+              <th>{{ __('competence.timeArr') }}</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($rutas as $ruta)
             <tr>
-              <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt=""></i></td>
+              <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt="fotoAvion"></i></td>
               <td>{{ $ruta->flota->matricula }}</td>
               <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
               <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
@@ -66,7 +66,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>El usuario seleccionado no tiene ninguna ruta creada</h4>
+            <h4>{{ __('competence.errorUser') }}</h4>
           </div>
       @endif
 

@@ -16,16 +16,16 @@
             <h3>¡Muchas Gracias!</h3>
 
             <p style="margin-top: 15px">
-                De verdad, gracias, este proyecto esta financiado completamente con donaciones, a si que toda ayuda cuenta para continuar desarrollando esta aplicacion. Cada pequeño gesto cuenta y ayuda a asegurar que pueda seguir ofreciéndoos nuevo contenido y constantes actualizaciones.
+                De verdad, gracias de todo corazón. Este proyecto es completamente financiado por donaciones, lo que significa que cada contribución cuenta enormemente para seguir desarrollando y mejorando esta aplicación. Cada pequeño gesto de apoyo se valora profundamente y contribuye significativamente a asegurar que podamos continuar ofreciéndote nuevo contenido y actualizaciones constantes.
             </p><br>
             <p>
-                Si les gusta la aplicacion y quieren apoyar mi trabajo, les invito a considerar hacer una donación. Cualquier cantidad, por pequeña que sea, será recibida con gratitud y será invertida en mejorar la pagina.
+                Si la aplicación te ha resultado útil y deseas respaldar mi trabajo, te invito cordialmente a considerar realizar una donación. Cualquier cantidad, por modesta que sea, será recibida con sincero agradecimiento y se utilizará para potenciar y mejorar aún más la experiencia en nuestra plataforma.
             </p><br>
             <p>
-                Si quieres conocerme mas accede a la pagina <a href="{{ route('landing.sobreMi') }}">sobre mi</a> para conocerme mas y saber quien esta detras de este proyecto. Para mantenerte atento de todas las actualizaciones accede a nuestro <a href="#">servidor de discord</a>
+                Además, si deseas conocerme mejor y descubrir quién está detrás de este proyecto, te animo a que visites la sección <a href="{{ route('landing.sobreMi') }}">Sobre mí</a> en nuestra página web. Y para mantenerte al tanto de todas las novedades y actualizaciones, te invito a unirte a nuestro <a href="https://discord.gg/sUueRvrttY" target="_blank">servidor de Discord</a>, donde podrás interactuar con otros usuarios, compartir tus sugerencias y opiniones y podras tener un rol exclusivo si has donado, pudiendo enterarte de las novedades antes que nadie y poder tener acceso exclusivo a futuras actualizaciones.
             </p><br>
             <p>
-                Gracias de nuevo por su continuo apoyo y por ser parte de esta comunidad.
+                Una vez más, quiero expresar mi más profundo agradecimiento por tu continuo apoyo y por ser parte activa de esta maravillosa comunidad. ¡Gracias por creer en este proyecto y por contribuir a su crecimiento y éxito!
             </p><br>
         </div>
     </main>
