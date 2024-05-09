@@ -47,6 +47,10 @@
 
             <h4>V-0.3.0</h4>
             <ul>
+              <li>Ahora los espacios de los aeropuertos son limitados y solo se pueden comprar un numero maximo entre todos los jugadores</li>
+              <li>Añadidos las marcas de Embraer y Bombardier</li>
+              <li>Añadido nuevos modelos de aviones de Airbus y Boeing</li>
+              <li>Paginas de login adaptadas a dispositivos moviles</li>
               <li>Añadido la pagina de competencia</li>
               <li>Añadido tooltips en los botones que no tienen texto</li>
               <li>Añadido la capacidad del avion en Flota</li>
