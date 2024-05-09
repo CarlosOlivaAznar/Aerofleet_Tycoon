@@ -15,6 +15,5 @@ class DatabaseSeeder extends Seeder
         $this->call(AvionesTableSeeder::class);
         $this->call(AeropuertosTableSeeder::class);
         $this->call(AvionesshTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
     }
 }

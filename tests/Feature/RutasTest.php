@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class RutasTest extends TestCase
@@ -22,10 +23,12 @@ class RutasTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = User::factory()->create();
-
         // Ejecutar los seeders
         Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+
+        $this->user = User::factory()->create([
+            'password' => Hash::make('password'),
+        ]);
     }
 
     /**
