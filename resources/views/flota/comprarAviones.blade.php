@@ -61,6 +61,7 @@
               <th>Compañia</th>
               <th>Fecha de Fabricacion</th>
               <th>Estado</th>
+              <th>Capacidad</th>
               <th>Precio</th>
               <th>Comprar</th>
             </tr>
@@ -75,6 +76,7 @@
               <td>{{ $avionsh->companyia }}</td>
               <td>{{ $avionsh->fechaDeFabricacion }}</td>
               <td>{{ $avionsh->condicion }}%</td>
+              <td>{{ $avionsh->avion->capacidad }}</td>
               <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
               <td><a class="comprar tooltip" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}">
                 <i class="bx bx-shopping-bag"></i>
