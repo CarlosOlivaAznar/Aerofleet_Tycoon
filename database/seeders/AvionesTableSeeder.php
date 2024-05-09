@@ -29,6 +29,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 7.289,
             'tiempoPorKm' => 0.12,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -41,6 +42,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 9.1605,
             'tiempoPorKm' => 0.12,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -53,6 +55,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.107,
             'tiempoPorKm' => 0.12,
             'categoria' => 4,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -65,6 +68,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.501,
             'tiempoPorKm' => 0.12,
             'categoria' => 3,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -77,6 +81,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 7.289,
             'tiempoPorKm' => 0.12,
             'categoria' => 3,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -89,6 +94,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.122,
             'tiempoPorKm' => 0.129,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -101,6 +107,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 7.88,
             'tiempoPorKm' => 0.12,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -113,6 +120,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.2599,
             'tiempoPorKm' => 0.134,
             'categoria' => 4,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -125,6 +133,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.91,
             'tiempoPorKm' => 0.12,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -137,6 +146,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 14.5386,
             'tiempoPorKm' => 0.115,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -149,6 +159,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 17.73,
             'tiempoPorKm' => 0.115,
             'categoria' => 3,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -161,6 +172,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 20.3394,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -173,6 +185,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 26.201,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -185,6 +198,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 14.774,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -197,6 +211,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 38.4544,
             'tiempoPorKm' => 0.108,
             'categoria' => 1,
+            'primeraMano' => 0,
         ]);
 
 
@@ -214,6 +229,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 7.6436,
             'tiempoPorKm' => 0.119,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -226,6 +242,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 8.7665,
             'tiempoPorKm' => 0.119,
             'categoria' => 3,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -238,6 +255,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 36.8784,
             'tiempoPorKm' => 0.105,
             'categoria' => 1,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -250,6 +268,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 34.9478,
             'tiempoPorKm' => 0.105,
             'categoria' => 1,
+            'primeraMano' => 0,
         ]);
 
         Avion::create([
@@ -262,6 +281,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 18.7347,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -274,6 +294,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 23.4036,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -286,6 +307,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 14.2825,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
 
@@ -303,6 +325,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.085,
             'tiempoPorKm' => 0.147,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -315,6 +338,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.1,
             'tiempoPorKm' => 0.147,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -327,6 +351,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.107,
             'tiempoPorKm' => 0.147,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -339,6 +364,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.110,
             'tiempoPorKm' => 0.147,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
 
@@ -355,6 +381,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.75,
             'tiempoPorKm' => 0.15,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -367,6 +394,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.80,
             'tiempoPorKm' => 0.15,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -379,6 +407,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.90,
             'tiempoPorKm' => 0.15,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -391,6 +420,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 5.95,
             'tiempoPorKm' => 0.15,
             'categoria' => 4,
+            'primeraMano' => 1,
         ]);
 
 
@@ -407,6 +437,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 6.806,
             'tiempoPorKm' => 0.119,
             'categoria' => 3,
+            'primeraMano' => 1,
         ]);
 
         Avion::create([
@@ -419,6 +450,7 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 7.164,
             'tiempoPorKm' => 0.119,
             'categoria' => 3,
+            'primeraMano' => 1,
         ]);
 
         /* ---------------- */
@@ -434,14 +466,84 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 14.774,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
+            'primeraMano' => 1,
         ]);
 
+        
+        /* ---------------- */
+        /* Boeing 757 y 767 */
+        /* ---------------- */
+
+        Avion::create([
+            'modelo' => '757-200',
+            'fabricante' => 'Boeing',
+            'precio' => 140000000,
+            'rango' => 6250,
+            'img' => 'images/new/boeing/757-200.png',
+            'capacidad' => 239,
+            'costePorKm' => 9.734,
+            'tiempoPorKm' => 0.114,
+            'categoria' => 3,
+            'primeraMano' => 0,
+        ]);
+
+        Avion::create([
+            'modelo' => '757-300',
+            'fabricante' => 'Boeing',
+            'precio' => 150000000,
+            'rango' => 6421,
+            'img' => 'images/new/boeing/757-300.png',
+            'capacidad' => 290,
+            'costePorKm' => 10.649,
+            'tiempoPorKm' => 0.114,
+            'categoria' => 3,
+            'primeraMano' => 0,
+        ]);
+
+        Avion::create([
+            'modelo' => '767-200',
+            'fabricante' => 'Boeing',
+            'precio' => 217000000,
+            'rango' => 9400,
+            'img' => 'images/new/boeing/767-200.png',
+            'capacidad' => 260,
+            'costePorKm' => 12.683,
+            'tiempoPorKm' => 0.114,
+            'categoria' => 2,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => '767-300',
+            'fabricante' => 'Boeing',
+            'precio' => 235000000,
+            'rango' => 9650,
+            'img' => 'images/new/boeing/767-300.png',
+            'capacidad' => 290,
+            'costePorKm' => 12.857,
+            'tiempoPorKm' => 0.114,
+            'categoria' => 2,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => '767-400',
+            'fabricante' => 'Boeing',
+            'precio' => 256000000,
+            'rango' => 9940,
+            'img' => 'images/new/boeing/767-400.png',
+            'capacidad' => 310,
+            'costePorKm' => 13.173,
+            'tiempoPorKm' => 0.114,
+            'categoria' => 2,
+            'primeraMano' => 1,
+        ]);
 
 
         /* Plantilla
         Avion::create([
             'modelo' => '',
-            'fabricante' => 'Airbus',
+            'fabricante' => 'Boeing',
             'precio' => ,
             'rango' => ,
             'img' => 'images/new/bombardier/',

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedFloat('costePorKm');
             $table->unsignedFloat('tiempoPorKm');
             $table->unsignedInteger('categoria');
+            $table->tinyInteger('primeraMano');
             $table->timestamps();
         });
     }
