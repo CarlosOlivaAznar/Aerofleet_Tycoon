@@ -1,5 +1,5 @@
 <nav>
-    <span class="version">V-0.3.0 (ALPHA)</span>  
+    <span class="version">V-0.3.0</span>  
     @if (Auth::user()->tipoUsuario === 1)
     <a href="{{ route('admin.index') }}" style="margin-left: 10px"><i class="bx bx-terminal"></i><span>{{ __('navbar.admin') }}</span></a>
     @endif
@@ -14,7 +14,7 @@
               <h2>{{ __('navbar.bugreport') }}</h2>
             </div>
             <div class="cuerpo-modal">
-              <p>{{ __('navbar.text') }}</p><br>
+              <p>{{ __('navbar.text1') }} <a href="https://discord.gg/sUueRvrttY" class="hipervinculo">Discord</a> {{ __('navbar.text2') }}</p><br>
               @method('POST')
               @csrf
               <label for="texto">{{ __('navbar.description') }}</label>
