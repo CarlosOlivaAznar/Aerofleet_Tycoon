@@ -17,4 +17,35 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    // Confirmacion de correo
+    'gratitude' => 'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.',
+    'issues' => 'We are experimenting issues with the email confirmation sistem. The email should arrive wihin 5 - 20 minutes from now. Thaks for your patience.',
+    'resend' => 'A new verification link has been sent to the email address you provided during registration.',
+    'resendVerification' => 'Resend Verification Email',
+    'logout' => 'Log Out',
+
+    // Login y register
+    'email' => 'Email',
+    'password' => 'Password',
+    'confirmPsw' => 'Confirm Password',
+    'rememberMe' => 'Remember me',
+    'pswForgot' => 'Forgot your password?',
+    'login' => 'Log in',
+    'name' => 'Name',
+
+    'tyc1' => 'I accept the ',
+    'tyc2' => 'Terms and Conditions',
+
+    'alreadyReg' => 'Already registered?',
+    'register' => 'Register',
+    '' => '',
+    '' => '',
+
+    '' => '',
+    '' => '',
+    '' => '',
+
 ];
+
+// Plantilla
+// '' => '',

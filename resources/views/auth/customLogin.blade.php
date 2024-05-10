@@ -14,14 +14,14 @@
             
             <!-- Email -->
             <div class="campos">
-              <label for="email">{{ __('Email') }}</label>
+              <label for="email">{{ __('auth.email') }}</label>
               <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
               <x-input-error class="inputError" :messages="$errors->get('email')" />
             </div>
 
             <!-- Password -->
             <div class="campos">
-              <label for="password">{{ __('Password') }}</label>
+              <label for="password">{{ __('auth.password') }}</label>
               <input id="password" type="password" name="password" required autocomplete="current-password">
               <x-input-error class="inputError" :messages="$errors->get('password')" />
             </div>
@@ -30,18 +30,18 @@
             <div class="camposLinea">
               <label for="remember_me" class="checkbox">
                 <input id="remember_me" type="checkbox">
-                <span>{{ __('Remember me') }}</span>
+                <span>{{ __('auth.rememberMe') }}</span>
               </label>
             </div>
 
             <div class="camposBotones">
               @if (Route::has('password.request'))
                 <a class="linkForm" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('auth.pswForgot') }}
                 </a>
               @endif
 
-              <input type="submit" value="{{ __('Log in') }}">
+              <input type="submit" value="{{ __('auth.login') }}">
 
             </div>
           </form>
