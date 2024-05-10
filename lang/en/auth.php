@@ -38,13 +38,6 @@ return [
 
     'alreadyReg' => 'Already registered?',
     'register' => 'Register',
-    '' => '',
-    '' => '',
-
-    '' => '',
-    '' => '',
-    '' => '',
-
 ];
 
 // Plantilla
