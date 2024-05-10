@@ -1972,6 +1972,14 @@ MARK: Sobre mi
         margin-right: auto;
     }
 
+    .mainContent .informacion-imagen.extendido{
+        display: block;
+    }
+
+    .mainContent .informacion-imagen.extendido div.texto{
+        width: 100%;
+    }
+
     /* Footer pagina landing */
     footer .contenidoFooter{
         display: block;
