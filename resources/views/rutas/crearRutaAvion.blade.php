@@ -44,6 +44,9 @@
                 <option value="">No hay espacios disponibles</option>  
               @endif
             </select>
+          </div>
+          <div class="input">
+            <h3>Hora de salida</h3>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
               <option value="06:30:00">06:30z</option>
@@ -83,9 +86,6 @@
               <option value="23:30:00">23:30z</option>
               <option value="24:00:00">24:00z</option>
             </select>
-          </div>
-          <div class="input">
-            <h3>---</h3>
           </div>
           <div class="input">
             <h3>Destino</h3>
