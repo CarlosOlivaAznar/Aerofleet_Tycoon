@@ -13,7 +13,6 @@ use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
 use App\Models\Bugreport;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,23 +118,5 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 've
 
 // Rutas de control del idioma
 Route::post('/lang', [LanguageController::class, 'change'])->name('language.change');
-
-
-// Rutas de verificacion de email
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
-
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
- 
-    return redirect('/');
-})->middleware(['auth', 'signed'])->name('verification.verify');
-
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
- 
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 require __DIR__.'/auth.php';
