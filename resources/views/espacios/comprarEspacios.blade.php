@@ -44,7 +44,7 @@
             </div>
             <div class="input">
               <h3>Espacios a comprar</h3>
-              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()">
+              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()" required>
             </div>
             <div class="input">
               <h3>Precio Total:</h3>

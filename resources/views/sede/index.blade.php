@@ -84,6 +84,10 @@
             <i class="bx bx-user-plus"></i>
             <h3>Contratar Ingenieros</h3>
           </li></a>
+          <li data-modal-target="modalCambiarNombre">
+            <i class="bx bx-user-plus"></i>
+            <h3>Cambiar Nombre</h3>
+          </li></a>
           <li data-modal-target="modalSedeMejoras">
             <i class="bx bx-trending-up"></i>
             <h3>Mejoras</h3>
@@ -187,9 +191,35 @@
           <div class="footer-modal">
             <div class="botones">
               <span class="cancelar">Denegar</span>
-              <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
+              <a href="{{ route('sede.contratarIngenieros') }}" class="aceptar">Confirmar</a>
             </div>
           </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Modal Cambiar nombre -->
+      <div class="modal" id="modalCambiarNombre">
+        <div class="contenido-modal">
+          <form action="{{ route('sede.modificarNombre') }}" method="POST">
+            <div class="cabecera-modal">
+              <span class="cerrar-modal">&times;</span>
+              <h2>Cambiar Nombre de la Compañia Aerea</h2>
+            </div>
+            <div class="cuerpo-modal">
+              @csrf
+              <label for="precioBillete">Modificar nombre:</label>
+              <input type="text" name="nombreNuevo" id="nombreNuevo">
+              
+            </div>
+            <div class="footer-modal">
+              <div class="botones">
+                <span class="cancelar">Cancelar</span>
+                <input type="submit" class="aceptar" value="Confirmar">
+              </div>
+            </div>
+          </form>
         </div>
       </div>
 

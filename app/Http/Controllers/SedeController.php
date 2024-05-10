@@ -85,4 +85,13 @@ class SedeController extends Controller
 
         return redirect()->route('sede.index');
     }
+
+    public function modificarNombre(Request $request)
+    {
+        $user = User::find(auth()->id());
+        $user->nombreCompanyia = $request->nombreNuevo;
+        $user->save();
+
+        return redirect()->route('sede.index');
+    }
 }

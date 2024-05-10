@@ -96,6 +96,7 @@ Route::get('sede/comprarHangar', [SedeController::class, 'comprarHangar'])->midd
 Route::get('sede/contratarIngenieros', [SedeController::class, 'contratarIngenieros'])->middleware(['auth', 'verified'])->name('sede.contratarIngenieros');
 Route::get('sede/ampliarHangar/{id}', [SedeController::class, 'ampliarHangar'])->middleware(['auth', 'verified'])->name('sede.ampliarHangar');
 Route::get('sede/quitarMantenimiento/{id}', [SedeController::class, 'quitarMantenimiento'])->middleware(['auth', 'verified'])->name('sede.quitarMantenimiento');
+Route::post('sede/modificarNombre', [SedeController::class, 'modificarNombre'])->middleware(['auth', 'verified'])->name('sede.modificarNombre');
 
 // Rutas Competencia
 Route::get('competencia', [CompetenciaController::class, 'index'])->middleware(['auth', 'verified'])->name('competencia.index');
