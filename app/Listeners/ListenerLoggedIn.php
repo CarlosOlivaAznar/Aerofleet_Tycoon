@@ -217,7 +217,7 @@ class ListenerLoggedIn
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
         if($beneficio < 0){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes",
+            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes o cambiar la ruta del avion",
             3]);
         }
 
@@ -229,7 +229,7 @@ class ListenerLoggedIn
 
         if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes",
+            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes o cambiar la ruta",
             2]);
         }
 

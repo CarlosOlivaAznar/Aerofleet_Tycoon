@@ -27,16 +27,20 @@
       </div>
 
       <div class="rutas">
-        <form action="{{ route('espacios.comprar') }}" method="POST">
+        <form action="{{ route('espacios.comprar') }}" method="POST" autocomplete="off">
           @csrf
           <div class="divRepartido">
             <div class="input">
               <h3>Selecciona un Aeropuerto</h3>
-              <select name="aeropuerto" id="aeropuerto" onclick="mostrarPrecio()">
+
+              <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el aeropuerto..." required>
+              <input type="hidden" id="aeropuerto" name="aeropuerto" value="">
+              
+              <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                <option value="{{ $aeropuerto->icao }}">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</option>
+                    <p id="{{ $aeropuerto->icao }}" onclick="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio()">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
                 @endforeach
-              </select>
+              </div>
             </div>
             <div class="input">
               <h3>Precio</h3>
@@ -44,7 +48,7 @@
             </div>
             <div class="input">
               <h3>Espacios a comprar</h3>
-              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()">
+              <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()" required>
             </div>
             <div class="input">
               <h3>Precio Total:</h3>
@@ -59,7 +63,7 @@
           
           <!-- Precios de los espacios -->
           @foreach ($aeropuertos as $aeropuerto)
-          <input type="hidden" id="{{ $aeropuerto->icao }}" value="{{ $aeropuerto->costeOperacional }}">
+          <input type="hidden" id="{{ $aeropuerto->icao }}Precio" value="{{ $aeropuerto->costeOperacional }}">
           @endforeach
 
           <!-- Aeropuertos -->
@@ -111,13 +115,11 @@
       </div>
       
       <script>
-        // Al iniciar la pagina muestra el precio ya
-        mostrarPrecio();
-
         function mostrarPrecio()
         {
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
+          console.log(document.getElementById(icao + "Precio"));
+          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
           var mostrarPrecio = document.getElementById("costeOperacion");
 
           // Mostrar precio en el parrafo
@@ -136,7 +138,7 @@
           if(!isNaN(numEspacios)){
           // CosteOperacion para hacer el calculo
           var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao).value) * 723;
+          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
 
           precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
@@ -144,6 +146,7 @@
           }
         }
       </script>
+      <script src="{{ asset('js/dropdown.js') }}"></script>
     </main>
   </div>
 </body>

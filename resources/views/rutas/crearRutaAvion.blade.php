@@ -36,7 +36,7 @@
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
                   <?php $espaciosVacios++; ?>
                 @endif
               @endforeach
@@ -44,6 +44,9 @@
                 <option value="">No hay espacios disponibles</option>  
               @endif
             </select>
+          </div>
+          <div class="input">
+            <h3>Hora de salida</h3>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
               <option value="06:30:00">06:30z</option>
@@ -85,14 +88,11 @@
             </select>
           </div>
           <div class="input">
-            <h3>---</h3>
-          </div>
-          <div class="input">
             <h3>Destino</h3>
             <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
                 @endif
               @endforeach
               @if ($espaciosVacios === 0)
@@ -129,7 +129,7 @@
       @foreach ($espacios as $espacio)
         <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->latitud }}">
         <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->longitud }}">
-        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->nombre }}">
+        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->icao }}, {{  $espacio->aeropuerto->nombre }}">
       @endforeach
 
       <!-- Informacion aviones -->

@@ -30,8 +30,10 @@
         <div class="cabecera">
           <i class="bx bx-outline"></i>
           <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
-          @if ($rutas[0]->flota->estado == 0 || $rutas[0]->flota->estado == 2)
-              <span class="rojo">RUTA INACTIVA</span>
+          @if ($rutas[0]->flota->estado == 0)
+            <span class="rojo">RUTA INACTIVA</span>
+          @elseif($rutas[0]->flota->estado == 2)
+            <span class="rojo">AVION EN MANTENIMIENTO</span>
           @endif
           <div class="botones-tablas">
             @if ($rutas[0]->flota->estado == 0)
@@ -91,6 +93,10 @@
           <div class="mensaje">
             <i class="bx bx-error"></i>
             <h4>No hay rutas creadas</h4>
+          </div>
+          <div class="mensaje info">
+            <i class="bx bx-info-circle"></i>
+            <h4>necesitas ayuda? visita nuestra pagina de <a href="{{ route('landing.tutorial') }}">tutorial</a></h4>
           </div>
       @endif
 

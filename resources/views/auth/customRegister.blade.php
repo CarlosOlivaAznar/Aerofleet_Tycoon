@@ -14,28 +14,28 @@
             
             <!-- Name -->
             <div class="campos">
-              <label for="name">{{ __('Name') }}</label>
+              <label for="name">{{ __('auth.name') }}</label>
               <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name">
               <x-input-error class="inputError" :messages="$errors->get('name')" />
             </div>
 
             <!-- Email -->
             <div class="campos">
-                <label for="email">{{ __('Email') }}</label>
+                <label for="email">{{ __('auth.email') }}</label>
                 <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
                 <x-input-error class="inputError" :messages="$errors->get('email')" />
               </div>
 
             <!-- Password -->
             <div class="campos">
-              <label for="password">{{ __('Password') }}</label>
+              <label for="password">{{ __('auth.password') }}</label>
               <input id="password" type="password" name="password" required autocomplete="new-password">
               <x-input-error class="inputError" :messages="$errors->get('password')" />
             </div>
 
             <!-- Confirm Password -->
             <div class="campos">
-                <label for="password_confirmation">{{ __('Confirm Password') }}</label>
+                <label for="password_confirmation">{{ __('auth.confirmPsw') }}</label>
 
                 <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password">
                 <x-input-error class="inputError" :messages="$errors->get('password_confirmation')" />
@@ -45,16 +45,16 @@
             <div class="camposLinea">
                 <label for="remember_me" class="checkbox">
                   <input id="remember_me" type="checkbox" required>
-                  <span>Acepto los <a href="{{ route('landing.terminosCondiciones') }}">Terminos y condiciones</a></span>
+                  <span>{{ __('auth.tyc1') }}<a href="{{ route('landing.terminosCondiciones') }}">{{ __('auth.tyc2') }}</a></span>
                 </label>
             </div>
 
             <div class="camposBotones">
                 <a class="linkForm" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('auth.alreadyReg') }}
                 </a>
 
-                <input type="submit" value="{{ __('Register') }}">
+                <input type="submit" value="{{ __('auth.register') }}">
             </div>
           </form>
         </div>

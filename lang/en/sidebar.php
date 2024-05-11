@@ -7,7 +7,7 @@ return [
     'fleet' => 'Fleet',
     'routes' => 'Routes',
     'slots' => 'Slots',
-    'hq' => 'Head Quarters',
+    'hq' => 'Headquarters',
     'competition' => 'Competence',
     'account' => 'Account',
     'admin' => 'Admin',
