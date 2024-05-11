@@ -92,6 +92,10 @@
             <i class="bx bx-error"></i>
             <h4>No hay rutas creadas</h4>
           </div>
+          <div class="mensaje info">
+            <i class="bx bx-info-circle"></i>
+            <h4>necesitas ayuda? visita nuestra pagina de <a href="{{ route('landing.tutorial') }}">tutorial</a></h4>
+          </div>
       @endif
 
       

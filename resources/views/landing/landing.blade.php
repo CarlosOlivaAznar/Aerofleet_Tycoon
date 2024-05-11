@@ -45,6 +45,15 @@
             <h3>Changelog</h3>
             <hr>
 
+            <h4>V-0.3.1</h4>
+            <ul>
+              <li>Pagina del tutorial adaptada a moviles</li>
+              <li>En comprar espacios ahora tiene un buscador</li>
+              <li>Arreglado un error donde podrias comprar 0 espacios</li>
+              <li>Ahora puedes cambiar tu nombre de la compañia desde la pagina sede</li>
+              <li>Ahora se muestra el codigo ICAO en crear ruta</li>
+            </ul>
+
             <h4>V-0.3.0</h4>
             <ul>
               <li>Ahora los espacios de los aeropuertos son limitados y solo se pueden comprar un numero maximo entre todos los jugadores</li>

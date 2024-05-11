@@ -1364,6 +1364,15 @@ footer .contenidoFooter div p.texto a{
     align-items: center;
   }
 
+  .contenido main .mensaje.info{
+    background-color: var(--primary);
+  }
+
+  .contenido main .mensaje.info a{
+    color: var(--light);
+    text-decoration: underline;
+  }
+
   .contenido main .mensaje h4{
     color: var(--light);
   }

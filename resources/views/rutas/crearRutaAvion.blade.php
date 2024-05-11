@@ -36,7 +36,7 @@
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
                   <?php $espaciosVacios++; ?>
                 @endif
               @endforeach
@@ -92,7 +92,7 @@
             <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
                 @endif
               @endforeach
               @if ($espaciosVacios === 0)
@@ -129,7 +129,7 @@
       @foreach ($espacios as $espacio)
         <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->latitud }}">
         <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->longitud }}">
-        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->nombre }}">
+        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->icao }}, {{  $espacio->aeropuerto->nombre }}">
       @endforeach
 
       <!-- Informacion aviones -->
