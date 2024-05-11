@@ -8,6 +8,11 @@
     <main class="mainContent">
         <h1>Tutorial</h1>
 
+        <h2>Video en youtube</h2>
+        <p>
+            Para un analisis en detalle de los conceptos basicos de la aplicacion mira nuestro tutorial oficial en youtube sobre los conceptos de crear rutas y la gestion de la flota y espacios. Para guiarte lee la descripcion del video donde encontraras los capitulos del tutorial. <a href="https://www.youtube.com/watch?v=z0BdAgWylNQ" target="_blank">Clica aqui para ver el tutorial</a>
+        </p>
+
         <h2>Gestión de la flota</h2>
         <div class="informacion-imagen extendido">
             <div class="texto">
