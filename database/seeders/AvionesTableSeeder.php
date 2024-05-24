@@ -264,7 +264,7 @@ class AvionesTableSeeder extends Seeder
             'precio' => 418000000,
             'rango' => 12350,
             'img' => 'images/new/boeing/747-800.png',
-            'capacidad' => 800,
+            'capacidad' => 700,
             'costePorKm' => 34.9478,
             'tiempoPorKm' => 0.105,
             'categoria' => 1,

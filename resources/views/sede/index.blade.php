@@ -17,7 +17,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Sede</h1>
+          <h1>{{ __('hq.headquarters') }}</h1>
         </div>
       </div>
 
@@ -42,33 +42,33 @@
           <h3>{{ $sede->aeropuerto->nombre }}</h3>
           <table class="sinBordes">
             <tr>
-              <td>Hangares disponibles:</td>
+              <td>{{ __('hq.hangarsAva') }}</td>
               <td>{{ count($sede->hangar) }}</td>
             </tr>
             <tr>
-              <td>Aviones en mantenimiento:</td>
+              <td>{{ __('hq.airplaneRep') }}</td>
               <td>{{ count($flotaMantenimiento) }}</td>
             </tr>
             <tr>
-              <td>Coste operacional:</td>
-              <td>{{ number_format($sede->aeropuerto->costeOperacional, 0, ',', '.') }} Por vuelo</td>
+              <td>{{ __('hq.operationalC') }}</td>
+              <td>{{ number_format($sede->aeropuerto->costeOperacional, 0, ',', '.') }} {{ __('hq.perFlight') }}</td>
 
             </tr>
             <tr>
-              <td>Coste de alquiler:</td>
-              <td>{{ number_format($sede->aeropuerto->costeAlquiler() * count($sede->hangar), 0, ',', '.') }} / mes</td>
+              <td>{{ __('hq.rentalCost') }}</td>
+              <td>{{ number_format($sede->aeropuerto->costeAlquiler() * count($sede->hangar), 0, ',', '.') }} {{ __('hq.costMonth') }}</td>
             </tr>
             <tr>
-              <td>Numero ingenieros</td>
+              <td>{{ __('hq.nEngineers') }}</td>
               <td>{{ $sede->ingenieros }}</td>
             </tr>
             <tr>
-              <td>Coste Ingenieros de Mantenimiento:</td>
-              <td>{{ number_format($sede->costeIngenieros(), 0, ',', '.') }}€ / mes</td>
+              <td>{{ __('hq.costEngineers') }}</td>
+              <td>{{ number_format($sede->costeIngenieros(), 0, ',', '.') }}{{ __('hq.costMonth') }}</td>
             </tr>
             <tr>
-              <td>Costes totales:</td>
-              <td>{{ number_format($sede->costesTotales(), 0, ',', '.') }}€ / mes</td>
+              <td>{{ __('hq.costMonthly') }}</td>
+              <td>{{ number_format($sede->costesTotales(), 0, ',', '.') }}{{ __('hq.costMonth') }}</td>
             </tr>
           </table>
         </div>
@@ -78,19 +78,19 @@
         <ul>
           <li data-modal-target="modalComprarHangar">
             <i class="bx bx-building"></i>
-            <h3>Comprar Hangar</h3>
+            <h3>{{ __('hq.hangarBuy') }}</h3>
           </li>
           <li data-modal-target="modalContratarIngenieros">
             <i class="bx bx-user-plus"></i>
-            <h3>Contratar Ingenieros</h3>
+            <h3>{{ __('hq.hireEng') }}</h3>
           </li></a>
           <li data-modal-target="modalCambiarNombre">
             <i class="bx bx-user-plus"></i>
-            <h3>Cambiar Nombre</h3>
+            <h3>{{ __('hq.changeName') }}</h3>
           </li></a>
           <li data-modal-target="modalSedeMejoras">
             <i class="bx bx-trending-up"></i>
-            <h3>Mejoras</h3>
+            <h3>{{ __('hq.upgrades') }}</h3>
           </li>
         </ul>
       </div>
@@ -109,22 +109,22 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-building"></i>
-          <h3>Hangar {{ $contador }}</h3>
-          <span>Espacios disponibles hangar:
+          <h3>{{ __('hq.hangar') }} {{ $contador }}</h3>
+          <span>{{ __('hq.avaSpaces') }}
             @if ($hangar->espacios - $espaciosRestantes < 0)
               {{ 0 }}
             @else
               {{ $hangar->espacios - $espaciosRestantes }}
             @endif
           </span>
-          <a class="botonTexto" data-modal-target="modalAmpliarHanagar{{ $hangar->id }}">Ampliar Hangar</a>
+          <a class="botonTexto" data-modal-target="modalAmpliarHanagar{{ $hangar->id }}">{{ __('hq.expandHangar') }}</a>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Avion</th>
-              <th>Condicion</th>
-              <th>Acciones</th>
+              <th>{{ __('hq.aircraft') }}</th>
+              <th>{{ __('hq.condition') }}</th>
+              <th>{{ __('hq.acctions') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -137,7 +137,7 @@
               <td>{{ $flotaMantenimiento[$contadorAvion]->condicion }}%</td>
               <td><a class="comprar tooltip" data-modal-target="modalQuitarMantenimiento{{ $flotaMantenimiento[$contadorAvion]->id }}">
                 <i class="bx bx-minus"></i>
-                <span class="tooltiptext">Finalizar Mantenimiento</span>
+                <span class="tooltiptext">{{ __('hq.endMaintenance') }}</span>
               </a></td>
               <?php $contadorAvion++; ?>
               <?php $espaciosRestantes-- ?>
@@ -151,7 +151,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No tienes ningun hangar en tu propiedad</h4>
+            <h4>{{ __('hq.noHangars') }}</h4>
           </div>
       @endif
       
@@ -162,16 +162,16 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Comprar Hangar</h2>
+            <h2>{{ __('hq.hangarBuy') }}</h2>
           </div>
           <div class="cuerpo-modal">
-            <p>¿Esta seguro que quiere comprar un nuevo hangar?</p><br>
-            <p>Precio del nuevo hangar = <span class="rojo">{{ $sede->costeHangar() }}€</span></p>
+            <p>{{ __('hq.confirmHanBuy') }}</p><br>
+            <p>{{ __('hq.hangPrice') }} = <span class="rojo">{{ $sede->costeHangar() }}€</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('sede.comprarHangar') }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('hq.deny') }}</span>
+              <a href="{{ route('sede.comprarHangar') }}" class="aceptar">{{ __('hq.confirm') }}</a>
             </div>
           </div>
         </div>
@@ -182,16 +182,16 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Contratar Ingenieros</h2>
+            <h2>{{ __('hq.hireEng') }}</h2>
           </div>
           <div class="cuerpo-modal">
-            <p>¿Esta seguro que quiere contratar a un nuevo ingeniero?</p><br>
-            <p>El gasto mensual de los ingenieros pasara a ser = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}€ / mes</span></p>
+            <p>{{ __('hq.confirmEngineer') }}</p><br>
+            <p>{{ __('hq.engPrice') }} = <span class="rojo">{{ $sede->costeIngenieros() + ($sede->costeIngenieros() / $sede->ingenieros) }}{{ __('hq.costMonth') }}</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('sede.contratarIngenieros') }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('hq.deny') }}</span>
+              <a href="{{ route('sede.contratarIngenieros') }}" class="aceptar">{{ __('hq.confirm') }}</a>
             </div>
           </div>
         </div>
@@ -205,18 +205,18 @@
           <form action="{{ route('sede.modificarNombre') }}" method="POST">
             <div class="cabecera-modal">
               <span class="cerrar-modal">&times;</span>
-              <h2>Cambiar Nombre de la Compañia Aerea</h2>
+              <h2>{{ __('hq.newName') }}</h2>
             </div>
             <div class="cuerpo-modal">
               @csrf
-              <label for="precioBillete">Modificar nombre:</label>
+              <label for="precioBillete">{{ __('hq.nameModify') }}</label>
               <input type="text" name="nombreNuevo" id="nombreNuevo">
               
             </div>
             <div class="footer-modal">
               <div class="botones">
-                <span class="cancelar">Cancelar</span>
-                <input type="submit" class="aceptar" value="Confirmar">
+                <span class="cancelar">{{ __('hq.deny') }}</span>
+                <input type="submit" class="aceptar" value="{{ __('hq.confirm') }}">
               </div>
             </div>
           </form>
@@ -228,15 +228,15 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Mejoras de la Sede</h2>
+            <h2>{{ __('hq.hqUpgrades') }}</h2>
           </div>
           <div class="cuerpo-modal">
-            <p>Actualmente las mejoras de la sede no estan disponibles</p>
+            <p>{{ __('hq.upgradesNA') }}</p>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="#" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('hq.deny') }}</span>
+              <a href="#" class="aceptar">{{ __('hq.confirm') }}</a>
             </div>
           </div>
         </div>
@@ -248,15 +248,15 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Retirar Del Mantenimiento</h2>
+            <h2>{{ __('hq.quitMaintenance') }}</h2>
           </div>
           <div class="cuerpo-modal">
-            <p>¿Esta seguro que quiere quirar el avion del mantenimiento?</p><br>
+            <p>{{ __('hq.confirmQuitM') }}</p><br>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('sede.quitarMantenimiento', ['id' => $flota->id]) }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('hq.deny') }}</span>
+              <a href="{{ route('sede.quitarMantenimiento', ['id' => $flota->id]) }}" class="aceptar">{{ __('hq.confirm') }}</a>
             </div>
           </div>
         </div>
@@ -269,16 +269,16 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Ampliar Hangar</h2>
+            <h2>{{ __('hq.expandHangar') }}</h2>
           </div>
           <div class="cuerpo-modal">
-            <p>¿Esta seguro que quiere ampliar el hangar?</p><br>
-            <p>El precio de ampliar el hangar es de = <span class="rojo">{{ $sede->costeAmpliarHangar()}}€</span></p>
+            <p>{{ __('hq.confirmExpand') }}</p><br>
+            <p>{{ __('hq.expandPrice') }} = <span class="rojo">{{ $sede->costeAmpliarHangar()}}€</span></p>
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('hq.deny') }}</span>
+              <a href="{{ route('sede.ampliarHangar', ['id' => $hangar->id]) }}" class="aceptar">{{ __('hq.confirm') }}</a>
             </div>
           </div>
         </div>

@@ -3458,12 +3458,217 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+
+        /* ------------------- */
+        /* Aeropuertos Noruega */
+        /* ------------------- */
+        /* 
+        MARK: Noruega
+        */
+
+        Aeropuerto::create([
+            'icao' => 'ENAL',
+            'pais' => 'LN',
+            'nombre' => 'Alesund Vigra Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 62.560680,
+            'longitud' => 6.114540,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENAT',
+            'pais' => 'LN',
+            'nombre' => 'Alta Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 69.978422,
+            'longitud' => 23.355720,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENBR',
+            'pais' => 'LN',
+            'nombre' => 'Bergen Flesland Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 60.291352,
+            'longitud' => 5.220384,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENBO',
+            'pais' => 'LN',
+            'nombre' => 'Bodo Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 67.269852,
+            'longitud' => 14.364962,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENEV',
+            'pais' => 'LN',
+            'nombre' => 'Evenes Harstad Narvik Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 68.490227,
+            'longitud' => 16.680218,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENHD',
+            'pais' => 'LN',
+            'nombre' => 'Haugesund Karmoy Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 59.342946,
+            'longitud' => 5.215327,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENKR',
+            'pais' => 'LN',
+            'nombre' => 'Kirkenes Hoybuktmoen Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 69.725290,
+            'longitud' => 29.889721,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENCN',
+            'pais' => 'LN',
+            'nombre' => 'Kristiansand Kjevik Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 58.204301,
+            'longitud' => 8.083605,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENML',
+            'pais' => 'LN',
+            'nombre' => 'Molde Aro Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 62.745146,
+            'longitud' => 7.262068,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENGM',
+            'pais' => 'LN',
+            'nombre' => 'Oslo Gardermoen Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 60.195363,
+            'longitud' => 11.100126,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENTC',
+            'pais' => 'LN',
+            'nombre' => 'Tromso Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 69.681949,
+            'longitud' => 18.915796,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENVA',
+            'pais' => 'LN',
+            'nombre' => 'Trondheim Vaernes Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 63.457758,
+            'longitud' => 10.920762,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENTO',
+            'pais' => 'LN',
+            'nombre' => 'Oslo Torp Sandefjord Airport',
+            'espaciosTotales' => 180,
+            'costeOperacional' => 1000,
+            'latitud' => 59.186151,
+            'longitud' => 10.258633,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ENZV',
+            'pais' => 'LN',
+            'nombre' => 'Stavanger Sola Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 58.879198,
+            'longitud' => 5.634747,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'OE',
+            'pais' => 'LN',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
