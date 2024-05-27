@@ -18,11 +18,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Comprar Aviones</h1>
+          <h1>{{ __('fleet.buyAircraft') }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('flota.index') }}">Flota</a></li>
+            <li><a href="{{ route('flota.index') }}">{{ __('fleet.fleet') }}</a></li>
             <li>/</li>
-            <li><span>Comprar Aviones</span></li>
+            <li><span>{{ __('fleet.buyAircraft') }}</span></li>
           </ul>
         </div>
       </div>
@@ -51,19 +51,19 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bxs-plane-take-off"></i>
-          <h3>Aviones de Segunda Mano</h3>
+          <h3>{{ __('fleet.shAircraft') }}</h3>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Avion</th>
-              <th>Modelo</th>
-              <th>Compañia</th>
-              <th>Fecha de Fabricacion</th>
-              <th>Estado</th>
-              <th>Capacidad</th>
-              <th>Precio</th>
-              <th>Comprar</th>
+              <th>{{ __('fleet.aircraft') }}</th>
+              <th>{{ __('fleet.model') }}</th>
+              <th>{{ __('fleet.airline') }}</th>
+              <th>{{ __('fleet.buildDate') }}</th>
+              <th>{{ __('fleet.state') }}</th>
+              <th>{{ __('fleet.capacity') }}</th>
+              <th>{{ __('fleet.price') }}</th>
+              <th>{{ __('fleet.buy') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +80,7 @@
               <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
               <td><a class="comprar tooltip" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}">
                 <i class="bx bx-shopping-bag"></i>
-                <span class="tooltiptext">Comprar Avion</span>
+                <span class="tooltiptext">{{ __('fleet.buyAircraft') }}</span>
               </a></td>
             </tr>
             @endforeach

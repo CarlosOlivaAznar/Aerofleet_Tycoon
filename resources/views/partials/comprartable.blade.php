@@ -1,12 +1,12 @@
 <table>
     <thead>
       <tr>
-        <th>Avion</th>
-        <th>Modelo</th>
-        <th>Precio</th>
-        <th>Rango</th>
-        <th>Capacidad</th>
-        <th>Comprar</th>
+        <th>{{ __('fleet.aircraft') }}</th>
+        <th>{{ __('fleet.model') }}</th>
+        <th>{{ __('fleet.price') }}</th>
+        <th>{{ __('fleet.range') }}</th>
+        <th>{{ __('fleet.capacity') }}</th>
+        <th>{{ __('fleet.buy') }}</th>
       </tr>
     </thead>
     <tbody>

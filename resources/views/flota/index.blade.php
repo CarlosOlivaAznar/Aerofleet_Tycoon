@@ -18,11 +18,11 @@
     <main>
       <div class="cabecera pagina">
         <div class="titulo">
-          <h1>Flota</h1>
+          <h1>{{ __('fleet.fleet') }}</h1>
         </div>
         <a href="{{ route('flota.comprarAviones') }}" class="boton">
             <i class="bx bx-shopping-bag"></i>
-            <span>Comprar Aviones</span>
+            <span>{{ __('fleet.buyAircraft') }}</span>
         </a>
       </div>
 
@@ -34,20 +34,20 @@
       <div class="tablas">
         <div class="cabecera">
             <i class="bx bxs-plane-alt"></i>
-            <h3>Aviones en Propiedad</h3>
+            <h3>{{ __('fleet.aircraftInProperty') }}</h3>
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>Avion</th>
-                    <th>Matricula</th>
-                    <th>Modelo</th>
-                    <th>Capacidad</th>
-                    <th>Fecha de Fabricacion</th>
-                    <th>Condicion</th>
-                    <th class="center">Estado</th>
-                    <th>Precio de Venta</th>
-                    <th>Aciones</th>
+                    <th>{{ __('fleet.aircraft') }}</th>
+                    <th>{{ __('fleet.registration') }}</th>
+                    <th>{{ __('fleet.model') }}</th>
+                    <th>{{ __('fleet.capacity') }}</th>
+                    <th>{{ __('fleet.buildDate') }}</th>
+                    <th>{{ __('fleet.condition') }}</th>
+                    <th class="center">{{ __('fleet.state') }}</th>
+                    <th>{{ __('fleet.sellPrice') }}</th>
+                    <th>{{ __('fleet.actions') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,15 +68,15 @@
                 <td>
                   <a class="vender tooltip" data-modal-target="modalVender{{ $avion->id }}">
                     <i class="bx bx-money-withdraw"></i>
-                    <span class="tooltiptext">Vender Avion</span>
+                    <span class="tooltiptext">{{ __('fleet.sellAircraft') }}</span>
                   </a>
                   <a class="modificar tooltip" data-modal-target="modalMantenimiento{{ $avion->id }}">
                     <i class="bx bx-wrench"></i>
-                    <span class="tooltiptext">Realizar Mantenimiento</span>
+                    <span class="tooltiptext">{{ __('fleet.makeMaintenance') }}</span>
                   </a>
                   <a class="comprar tooltip" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}">
                     <i class="bx bx-add-to-queue"></i>
-                    <span class="tooltiptext">Crear Ruta</span>
+                    <span class="tooltiptext">{{ __('fleet.createRoute') }}</span>
                   </a>
                 </td>
               </tr> 
@@ -87,7 +87,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No tienes ningun avion en tu propiedad</h4>
+            <h4>{{ __('fleet.noAircraft') }}</h4>
           </div>
       @endif
 
@@ -98,18 +98,18 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Mantenimiento Avion</h2>
+            <h2>{{ __('fleet.aircraftMaintenance') }}</h2>
           </div>
           <div class="cuerpo-modal">
 
-            <p>¿Esta seguro que quiere enviar el avion a mantenimiento?</p><br>
-            <p>El avion se estacionara en los hangares de su sede y se realizaran los mantenimientos</p>
+            <p>{{ __('fleet.maintenanceConfirm') }}</p><br>
+            <p>{{ __('fleet.infoMaintenance') }}</p>
             
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('flota.mantenimiento', ["id" => $avion->id]) }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('fleet.deny') }}</span>
+              <a href="{{ route('flota.mantenimiento', ["id" => $avion->id]) }}" class="aceptar">{{ __('fleet.confirm') }}</a>
             </div>
           </div>
         </div>
@@ -120,19 +120,19 @@
         <div class="contenido-modal">
           <div class="cabecera-modal">
             <span class="cerrar-modal">&times;</span>
-            <h2>Vender Avion</h2>
+            <h2>{{ __('fleet.sellAircraft') }}</h2>
           </div>
           <div class="cuerpo-modal">
 
-            <p>¿Esta seguro que quiere vender este avion?</p><br>
-            <p>El avion se vendera por 
+            <p>{{ __('fleet.sellConfirmation') }}</p><br>
+            <p>{{ __('fleet.sellInfo') }} 
             <span class="verde">{{number_format($avion->precioVenta(), 0, ',', '.')}}€</span></p>
             
           </div>
           <div class="footer-modal">
             <div class="botones">
-              <span class="cancelar">Denegar</span>
-              <a href="{{ route('flota.vender', ["id" => $avion->id]) }}" class="aceptar">Confirmar</a>
+              <span class="cancelar">{{ __('fleet.deny') }}</span>
+              <a href="{{ route('flota.vender', ["id" => $avion->id]) }}" class="aceptar">{{ __('fleet.confirm') }}</a>
             </div>
           </div>
         </div>

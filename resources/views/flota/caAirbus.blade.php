@@ -20,9 +20,9 @@
         <div class="titulo">
           <h1>Airbus</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('flota.index') }}">Flota</a></li>
+            <li><a href="{{ route('flota.index') }}">{{ __('fleet.fleet') }}</a></li>
             <li>/</li>
-            <li><a href="{{ route('flota.comprarAviones') }}">Comprar Aviones</a></li>
+            <li><a href="{{ route('flota.comprarAviones') }}">{{ __('fleet.buyAircraft') }}</a></li>
             <li>/</li>
             <li><span>Airbus</span></li>
           </ul>
@@ -31,7 +31,7 @@
 
       <div class="tablas">
         <div class="cabecera">
-          <h3>Aviones Airbus</h3>
+          <h3>{{ __('fleet.airbus') }}</h3>
         </div>
         @include('partials.comprartable')
       </div>
