@@ -17,11 +17,11 @@
     <main>
       <div class="cabecera pagina">
         <div class="titulo">
-          <h1>Espacios</h1>
+          <h1>{{ __('slots.slots') }}</h1>
         </div>
         <a href="{{ route('espacios.aeropuertos') }}" class="boton">
           <i class="bx bx-plus-circle"></i>
-          <span>Comprar Espacios</span>
+          <span>{{ __('slots.buySlots') }}</span>
         </a>
       </div>
 
@@ -32,19 +32,19 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-space-bar"></i>
-          <h3>Espacios disponibles</h3>
+          <h3>{{ __('slots.slotsAva') }}</h3>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Aeropuerto</th>
-              <th>Nombre</th>
-              <th>Comprados</th>
-              <th>Ocupados</th>
-              <th>Disponibles</th>
-              <th>Coste por Operacion</th>
-              <th>Precio por espacio</th>
-              <th>Acciones</th>
+              <th>{{ __('slots.airport') }}</th>
+              <th>{{ __('slots.name') }}</th>
+              <th>{{ __('slots.inProperty') }}</th>
+              <th>{{ __('slots.ocupied') }}</th>
+              <th>{{ __('slots.available') }}</th>
+              <th>{{ __('slots.costPerOperation') }}</th>
+              <th>{{ __('slots.pricePerSlot') }}</th>
+              <th>{{ __('slots.acctions') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +59,7 @@
               <td>{{ number_format($espacio->aeropuerto->precioEspacio(), 0, ',', '.') }}</td>
               <td><a class="vender tooltip" href="{{ route('espacios.vender', ['id' => $espacio->id]) }}">
                 <i class="bx bx-money-withdraw"></i>
-                <span class="tooltiptext">Vender Espacio</span>
+                <span class="tooltiptext">{{ __('slots.sellSlot') }}</span>
               </a></td>
             </tr>
             @endforeach
@@ -69,7 +69,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No tienes ningun espacio en tu propiedad</h4>
+            <h4>{{ __('slots.noSlots') }}</h4>
           </div>
       @endif
 

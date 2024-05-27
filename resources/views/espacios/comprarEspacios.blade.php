@@ -17,11 +17,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Comprar Espacios</h1>
+          <h1>{{ __('slots.buySlots') }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('espacios.index') }}">Espacios</a></li>
+            <li><a href="{{ route('espacios.index') }}">{{ __('slots.slots') }}</a></li>
             <li>/</li>
-            <li><span>Comprar Espacios</span></li>
+            <li><span>{{ __('slots.buySlots') }}</span></li>
           </ul>
         </div>
       </div>
@@ -31,7 +31,7 @@
           @csrf
           <div class="divRepartido">
             <div class="input">
-              <h3>Selecciona un Aeropuerto</h3>
+              <h3>{{ __('slots.selectAirport') }}</h3>
 
               <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el aeropuerto..." required>
               <input type="hidden" id="aeropuerto" name="aeropuerto" value="">
@@ -43,21 +43,21 @@
               </div>
             </div>
             <div class="input">
-              <h3>Precio</h3>
+              <h3>{{ __('slots.price') }}</h3>
               <p id="costeOperacion"></p>
             </div>
             <div class="input">
-              <h3>Espacios a comprar</h3>
+              <h3>{{ __('slots.slotsNumber') }}</h3>
               <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()" required>
             </div>
             <div class="input">
-              <h3>Precio Total:</h3>
+              <h3>{{ __('slots.totalPrice') }}</h3>
               <p id="precioTotal"></p>
             </div>
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Comprar Espacios" id="botonSubmit">
+            <input type="submit" value="{{ __('slots.buySlots') }}" id="botonSubmit">
           </div>
 
           
