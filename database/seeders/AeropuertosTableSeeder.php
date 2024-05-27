@@ -3663,12 +3663,341 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* ------------------ */
+        /* Aeropuertos Suecia */
+        /* ------------------ */
+        /* 
+        MARK: Suecia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'ESTA',
+            'pais' => 'SE',
+            'nombre' => 'Angelholm Helsingborg Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.290508,
+            'longitud' => 12.858700,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNZ',
+            'pais' => 'SE',
+            'nombre' => 'Ostersund Are Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 63.194365,
+            'longitud' => 14.505308,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNX',
+            'pais' => 'SE',
+            'nombre' => 'Arvidsjaur Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 65.591869,
+            'longitud' => 19.273454,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESSA',
+            'pais' => 'SE',
+            'nombre' => 'Stockholm Arlanda Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 59.649891,
+            'longitud' => 17.937406,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESSB',
+            'pais' => 'SE',
+            'nombre' => 'Stockholm Bromma Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 59.356294,
+            'longitud' => 17.945143,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESKN',
+            'pais' => 'SE',
+            'nombre' => 'Stockholm Skavsta Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.788597,
+            'longitud' => 16.912248,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESOW',
+            'pais' => 'SE',
+            'nombre' => 'Stockholm Vasteras Hasslo Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 59.590890,
+            'longitud' => 16.632177,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESGG',
+            'pais' => 'SE',
+            'nombre' => 'Gothenburg Landvetter Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 57.663075,
+            'longitud' => 12.284181,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESMT',
+            'pais' => 'SE',
+            'nombre' => 'Halmstad Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.691367,
+            'longitud' => 12.820174,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESGJ',
+            'pais' => 'SE',
+            'nombre' => 'Jonkoping Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 57.757649,
+            'longitud' => 14.069045,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESMQ',
+            'pais' => 'SE',
+            'nombre' => 'Kalmar Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.687229,
+            'longitud' => 16.285862,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNQ',
+            'pais' => 'SE',
+            'nombre' => 'Kiruna Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 67.822563,
+            'longitud' => 20.334850,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESSL',
+            'pais' => 'SE',
+            'nombre' => 'Linkoping City Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.406371,
+            'longitud' => 15.679732,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESPA',
+            'pais' => 'SE',
+            'nombre' => 'Lulea Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 65.544119,
+            'longitud' => 22.124581,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESMS',
+            'pais' => 'SE',
+            'nombre' => 'Malmo Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 55.536228,
+            'longitud' => 13.374625,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESSP',
+            'pais' => 'SE',
+            'nombre' => 'Norrkoping Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.585214,
+            'longitud' => 16.250695,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESOE',
+            'pais' => 'SE',
+            'nombre' => 'Orebro Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 59.226292,
+            'longitud' => 15.041567,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESDF',
+            'pais' => 'SE',
+            'nombre' => 'Ronneby Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.266012,
+            'longitud' => 15.267769,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNS',
+            'pais' => 'SE',
+            'nombre' => 'Skelleftea Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 64.623713,
+            'longitud' => 21.079962,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNN',
+            'pais' => 'SE',
+            'nombre' => 'Sundsvall Timra Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 62.527456,
+            'longitud' => 17.441572,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESNU',
+            'pais' => 'SE',
+            'nombre' => 'Umea Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 63.792246,
+            'longitud' => 20.285342,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESMX',
+            'pais' => 'SE',
+            'nombre' => 'Vaxjo Smaland Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.926819,
+            'longitud' => 14.728945,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ESSV',
+            'pais' => 'SE',
+            'nombre' => 'Visby Airport',
+            'espaciosTotales' => 65,
+            'costeOperacional' => 650,
+            'latitud' => 57.662579,
+            'longitud' => 18.344236,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
         
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'LN',
+            'pais' => 'SE',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
