@@ -29,8 +29,8 @@
         @if(count($bugreports) > 0)
         <div class="tablas">
         <div class="cabecera">
-            <i class="bx bx-user"></i>
-            <h3>{{ __('admin.users') }}</h3>
+            <i class="bx bx-bug-alt"></i>
+            <h3>{{ __('admin.bugreport') }}</h3>
         </div>
         <table>
             <thead>
