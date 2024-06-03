@@ -18,6 +18,20 @@ return [
     'userType0' => 'User',
     'userType1' => 'Admin',
 
+    // Tooltips
+    'modify' => 'Modify User',
+    'delete' => 'Delete User',
+
+    // Modals
+    'deny' => 'Deny',
+    'confirm' => 'Confirm',
+
+    'deleteConfirmation' => 'Are you sure you want to delete the user:',
+    'delteInfo' => 'Deleting the user can cause crashes in the application, make sure it is safe to delete the user.',
+
+    'nameModify' => 'Modify Name',
+    'nameModifyAirline' => 'Modify Airline Name',
+
     // Bugreports
     'noBR' => 'There are no bugreports available',
     'user' => 'user',

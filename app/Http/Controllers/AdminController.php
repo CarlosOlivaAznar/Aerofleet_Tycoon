@@ -20,4 +20,22 @@ class AdminController extends Controller
         $bugreports = Bugreport::all();
         return view('admin.bugreports', ['bugreports' => $bugreports]);
     }
+
+    public function modificar(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = $request->nombreNuevo;
+        $user->nombreCompanyia = $request->nombreNuevoCompanyia;
+        $user->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function borrar($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('admin.index');
+    }
 }

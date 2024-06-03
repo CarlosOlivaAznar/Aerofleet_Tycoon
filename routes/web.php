@@ -117,6 +117,8 @@ Route::middleware('auth')->group(function () {
 // Rutas admin
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified', 'admin'])->name('admin.index');
 Route::get('/admin/bugreports', [AdminController::class, 'bugreports'])->middleware(['auth', 'verified', 'admin'])->name('admin.bugreports');
+Route::post('/admin/modificar', [AdminController::class, 'modificar'])->middleware(['auth', 'verified', 'admin'])->name('admin.modificar');
+Route::get('/admin/borrar/{id}', [AdminController::class, 'borrar'])->middleware(['auth', 'verified', 'admin'])->name('admin.borrar');
 
 // Rutas de control del idioma
 Route::post('/lang', [LanguageController::class, 'change'])->name('language.change');

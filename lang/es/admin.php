@@ -18,6 +18,20 @@ return [
     'userType0' => 'Usuario',
     'userType1' => 'Administrador',
 
+    // Tooltips
+    'modify' => 'Modificar Usuario',
+    'delete' => 'Borrar Usuario',
+
+    // Modals
+    'deny' => 'Denegar',
+    'confirm' => 'Confirmar',
+
+    'deleteConfirmation' => '¿Esta seguro que quiere eliminar el usuario',
+    'delteInfo' => 'Al borrar el usuario puede producir fallos en la aplicacion, asegurese que es seguro borrar el usuario.',
+
+    'nameModify' => 'Modificar Nombre',
+    'nameModifyAirline' => 'Modificar Nombre Compañia Aerea',
+
     // Bugreports
     'noBR' => 'No hay ningun reporte disponible',
     'user' => 'Usuario',

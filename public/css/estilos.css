@@ -578,6 +578,7 @@ MARK: Tooltips
     display: block;
     font-size: 19px;
     color: var(--dark);
+    margin-top: 13px;
 }
 
 .modal form input[type=range]{
