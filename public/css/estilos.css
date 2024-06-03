@@ -849,6 +849,11 @@ form.formularioBasico .campos input{
 
 form.formularioBasico .campos input:focus{
     border: 3px solid var(--dark);
+    transition: 0.4s;
+}
+
+form.formularioBasico .campos input[type="submit"]:focus{
+    border: 0;
 }
 
 form.formularioBasico .campos .inputError{
