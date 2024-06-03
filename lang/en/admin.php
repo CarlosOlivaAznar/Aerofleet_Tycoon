@@ -5,6 +5,7 @@ return [
     'title' => 'Admin',
     'users' => 'Users',
     'name' => 'Name',
+    'bugreport' => 'Bugreports',
 
     'email' => 'Email',
     'userType' => 'Type',
@@ -16,6 +17,11 @@ return [
 
     'userType0' => 'User',
     'userType1' => 'Admin',
+
+    // Bugreports
+    'noBR' => 'There are no bugreports available',
+    'user' => 'user',
+    'report' => 'report',
 ];
 
 // Plantilla
