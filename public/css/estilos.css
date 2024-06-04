@@ -2020,6 +2020,10 @@ MARK: Sobre mi
         margin-right: auto;
     }
 
+    .contenido nav h3 span{
+        margin-right: 5px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -2109,7 +2113,8 @@ MARK: Sobre mi
     }
 
     .contenido nav h3 span{
-        margin-right: 5px;
+        display: none;
+        visibility: hidden;
     }
     
 }
