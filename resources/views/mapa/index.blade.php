@@ -17,7 +17,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Mapa</h1>
+          <h1>{{ __('map.map') }}</h1>
         </div>
       </div>
 
