@@ -3992,12 +3992,272 @@ class AeropuertosTableSeeder extends Seeder
             'categoria' => 3,
             'isla' => true,
         ]);
+
+
+        /* --------------------- */
+        /* Aeropuertos Finlandia */
+        /* --------------------- */
+        /* 
+        MARK: Finlandia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EFHK',
+            'pais' => 'OH',
+            'nombre' => 'Helsinki Vantaa Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 60.325091,
+            'longitud' => 24.963799,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFIV',
+            'pais' => 'OH',
+            'nombre' => 'Ivalo Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 68.608200,
+            'longitud' => 27.411437,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFJO',
+            'pais' => 'OH',
+            'nombre' => 'Joensuu Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 62.659343,
+            'longitud' => 29.623231,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFJY',
+            'pais' => 'OH',
+            'nombre' => 'Jyvaskyla Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 370,
+            'latitud' => 62.399757,
+            'longitud' => 25.677767,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKI',
+            'pais' => 'OH',
+            'nombre' => 'Kajaani Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 64.285654,
+            'longitud' => 27.694526,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKE',
+            'pais' => 'OH',
+            'nombre' => 'Kemi Tornio Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 65.780051,
+            'longitud' => 24.579921,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKT',
+            'pais' => 'OH',
+            'nombre' => 'Kittila Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 67.696441,
+            'longitud' => 24.852280,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKK',
+            'pais' => 'OH',
+            'nombre' => 'Kokkola-Pietarsaari Airport',
+            'espaciosTotales' => 28,
+            'costeOperacional' => 280,
+            'latitud' => 63.720019,
+            'longitud' => 23.140006,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKU',
+            'pais' => 'OH',
+            'nombre' => 'Kuopio Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 63.007021,
+            'longitud' => 27.797941,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFKS',
+            'pais' => 'OH',
+            'nombre' => 'Kuusamo Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 65.990820,
+            'longitud' => 29.233825,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFLP',
+            'pais' => 'OH',
+            'nombre' => 'Lappeenranta Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 61.043823,
+            'longitud' => 28.146331,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFOU',
+            'pais' => 'OH',
+            'nombre' => 'Oulu Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 750,
+            'latitud' => 64.930031,
+            'longitud' => 25.359722,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFPO',
+            'pais' => 'OH',
+            'nombre' => 'Pori Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 61.463604,
+            'longitud' => 21.797677,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFRO',
+            'pais' => 'OH',
+            'nombre' => 'Rovaniemi Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 66.564378,
+            'longitud' => 25.832973,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
         
+        Aeropuerto::create([
+            'icao' => 'EFSA',
+            'pais' => 'OH',
+            'nombre' => 'Savonlinna Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 61.943404,
+            'longitud' => 28.942420,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFTP',
+            'pais' => 'OH',
+            'nombre' => 'Tampere Pirkkala Airport',
+            'espaciosTotales' => 75,
+            'costeOperacional' => 700,
+            'latitud' => 61.416299,
+            'longitud' => 23.609157,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFTU',
+            'pais' => 'OH',
+            'nombre' => 'Turku Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 60.513637,
+            'longitud' => 22.265894,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EFVA',
+            'pais' => 'OH',
+            'nombre' => 'Vaasa Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 63.047677,
+            'longitud' => 21.762465,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'SE',
+            'pais' => 'OH',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
