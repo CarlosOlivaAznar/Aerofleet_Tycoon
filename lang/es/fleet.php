@@ -17,6 +17,7 @@ return [
     'sellAircraft' => 'Vender Avion',
     'makeMaintenance' => 'Realizar Mantenimiento',
     'createRoute' => 'Crear Ruta',
+    'information' => 'Informacion Adicional',
 
     // Warnings
     'noAircraft' => 'No tienes ningun avion en tu propiedad',
@@ -31,6 +32,14 @@ return [
     'sellAircraft' => 'Vender Avion',
     'sellConfirmation' => '¿Esta seguro que quiere vender este avion?',
     'sellInfo' => 'El avion se vendera por',
+    'airplaneInformation' => 'Informacion del Avión',
+    'completedRoutes' => 'Rutas Completadas',
+    'flightHours' => 'Horas de Vuelo',
+    'distance' => 'Distancia Recorrida',
+    'lastMaintenance' => 'Ultimo Mantenimiento',
+    'flights' => 'Vuelos',
+    'hours' => 'Horas',
+    'kilometers' => 'Kilometros',
 
     // Buy Aircraft
     'shAircraft' => 'Aviones de Segunda Mano',
@@ -50,3 +59,4 @@ return [
 
 // Plantilla
 // '' => '',
+// {{ __('fleet.') }}

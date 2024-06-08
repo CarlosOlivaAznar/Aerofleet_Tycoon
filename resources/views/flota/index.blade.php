@@ -78,6 +78,10 @@
                     <i class="bx bx-add-to-queue"></i>
                     <span class="tooltiptext">{{ __('fleet.createRoute') }}</span>
                   </a>
+                  <a class="info tooltip" data-modal-target="info{{ $avion->id }}">
+                    <i class="bx bx-detail"></i>
+                    <span class="tooltiptext">{{ __('fleet.airplaneInformation') }}</span>
+                  </a>
                 </td>
               </tr> 
               @endforeach
@@ -134,6 +138,53 @@
               <span class="cancelar">{{ __('fleet.deny') }}</span>
               <a href="{{ route('flota.vender', ["id" => $avion->id]) }}" class="aceptar">{{ __('fleet.confirm') }}</a>
             </div>
+          </div>
+        </div>
+      </div> 
+
+      <!-- Informacion -->
+      <div class="modal" id="info{{ $avion->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>{{ __('fleet.information') }}</h2>
+          </div>
+          <div class="cuerpo-modal">
+
+            <img src="{{ asset($avion->avion->img) }}" alt="avion">
+
+            <table>
+              <tr>
+                <th>{{ __('fleet.model') }}</th>
+                <td>{{ $avion->avion->modelo }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.range') }}</th>
+                <td>{{ $avion->avion->rango }} {{ __('fleet.kilometers') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.state') }}</th>
+                <td>{{ $avion->condicion }}%</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.completedRoutes') }}</th>
+                <td>{{ $avion->rutasCompletadas }} {{ __('fleet.flights') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.flightHours') }}</th>
+                <td>{{ $avion->horasCompletadas }} {{ __('fleet.hours') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.distance') }}</th>
+                <td>{{ $avion->distanciaCompletada }} {{ __('fleet.kilometers') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.lastMaintenance') }}</th>
+                <td>{{ $avion->ultimoMantenimiento }}</td>
+              </tr>
+            </table>
+            
+            <br>
           </div>
         </div>
       </div> 

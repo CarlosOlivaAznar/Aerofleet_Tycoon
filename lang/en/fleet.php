@@ -17,6 +17,7 @@ return [
     'sellAircraft' => 'Sell Aircraft',
     'makeMaintenance' => 'Perform Maintenance',
     'createRoute' => 'Create Route',
+    'airplaneInformation' => 'Additional Info',
 
     // Warnings
     'noAircraft' => 'You do not own any aircraft',
@@ -31,6 +32,14 @@ return [
     'sellAircraft' => 'Sell Aircraft',
     'sellConfirmation' => 'Are you sure you want to sell this aircraft?',
     'sellInfo' => 'The aircraft will be sold for',
+    'information' => 'Aircraft Information',
+    'completedRoutes' => 'Completed Routes',
+    'flightHours' => 'Flight Hours',
+    'distance' => 'Distance Traveled',
+    'lastMaintenance' => 'Last Maintenance',
+    'flights' => 'Flights',
+    'hours' => 'Hours',
+    'kilometers' => 'Kilometers',
 
     // Buy Aircraft
     'shAircraft' => 'Second-hand Aircraft',
@@ -50,3 +59,4 @@ return [
 
 // Plantilla
 // '' => '',
+// {{ __('fleet.') }}
