@@ -81,6 +81,10 @@
               <td><a class="comprar tooltip" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}">
                 <i class="bx bx-shopping-bag"></i>
                 <span class="tooltiptext">{{ __('fleet.buyAircraft') }}</span>
+              </a>
+              <a class="info tooltip" data-modal-target="info{{ $avionsh->id }}">
+                <i class="bx bx-detail"></i>
+                <span class="tooltiptext">{{ __('fleet.airplaneInformation') }}</span>
               </a></td>
             </tr>
             @endforeach
@@ -88,6 +92,64 @@
         </table>
       </div>
 
+      @foreach ($avionessh as $avionsh)
+      <!-- Informacion -->
+      <div class="modal" id="info{{ $avionsh->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>{{ __('fleet.information') }}</h2>
+          </div>
+          <div class="cuerpo-modal">
+
+            <img src="{{ asset($avionsh->img) }}" alt="avion">
+
+            <table>
+              <tr>
+                <th>{{ __('fleet.model') }}</th>
+                <td>{{ $avionsh->avion->modelo }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.airline') }}</th>
+                <td>{{ $avionsh->companyia }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.sellPrice') }}</th>
+                <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.range') }}</th>
+                <td>{{ $avionsh->avion->rango }} {{ __('fleet.kilometers') }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.costPerKm') }}</th>
+                <td>{{ $avionsh->avion->costePorKm }}€/km</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.timePerKm') }}</th>
+                <td>{{ $avionsh->avion->tiempoPorKm }}Mins/km</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.category') }}</th>
+                <td>{{ $avionsh->avion->categoria() }}</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.state') }}</th>
+                <td>{{ $avionsh->condicion }}%</td>
+              </tr>
+              <tr>
+                <th>{{ __('fleet.buildDate') }}</th>
+                <td>{{ $avionsh->fechaDeFabricacion }}</td>
+              </tr>
+            </table>
+            
+            <br>
+          </div>
+        </div>
+      </div>
+      @endforeach
+
+      <script src="{{ asset('js/modals.js') }}"></script>
     </main>
   </div>
 </body>

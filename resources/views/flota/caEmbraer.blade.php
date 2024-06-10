@@ -34,7 +34,6 @@
           <h3>{{ __('fleet.embraer') }}</h3>
         </div>
         @include('partials.comprartable')
-      </div>
     </main>
   </div>
 </body>

@@ -47,8 +47,12 @@ return [
     'price' => 'Price',
     'buy' => 'Buy',
     'buyAircraft' => 'Buy Aircraft',
+    'costPerKm' => 'Cost per kilometer',
+    'timePerKm' => 'Time per kilometer',
+    'category' => 'Category',
 
     // Manufacturer
+    'manufacturer' => 'Manufacturer',
     'range' => 'Range',
     'airbus' => 'Airbus Aircraft',
     'boeing' => 'Boeing Aircraft',

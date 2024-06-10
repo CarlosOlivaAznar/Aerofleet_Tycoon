@@ -485,7 +485,7 @@ MARK: Modal
 
 .modal .contenido-modal .cuerpo-modal img{
     width: 100%;
-    height: 100px;
+    height: 30vh;
     object-fit: cover;
     margin-bottom: 25px;
 }
@@ -493,6 +493,10 @@ MARK: Modal
 .modal .contenido-modal .cuerpo-modal table{
     width: 75%;
     margin: 0 auto;
+}
+
+.modal .contenido-modal .cuerpo-modal table tr{
+    border-bottom: 3px solid var(--dark-grey);
 }
 
 .modal .contenido-modal .cuerpo-modal table th{

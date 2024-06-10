@@ -47,8 +47,12 @@ return [
     'price' => 'Precio',
     'buy' => 'Comprar',
     'buyAircraft' => 'Comprar Avion',
+    'costPerKm' => 'Coste por kilometro',
+    'timePerKm' => 'Tiempo por kilometro',
+    'category' => 'Categoria',
 
     // Manufacturer
+    'manufacturer' => 'Fabricante',
     'range' => 'Rango',
     'airbus' => 'Aviones Airbus',
     'boeing' => 'Aviones Boeing',
