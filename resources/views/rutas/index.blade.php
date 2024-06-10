@@ -17,7 +17,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Rutas</h1>
+          <h1>{{ __('routes.routes') }}</h1>
         </div>
       </div>
 
@@ -29,37 +29,37 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>Rutas del avion {{ $rutas[0]->flota->matricula }}</h3>
+          <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }}</h3>
           @if ($rutas[0]->flota->estado == 0)
-            <span class="rojo">RUTA INACTIVA</span>
+            <span class="rojo">{{ __('routes.inactive') }}</span>
           @elseif($rutas[0]->flota->estado == 2)
-            <span class="rojo">AVION EN MANTENIMIENTO</span>
+            <span class="rojo">{{ __('routes.maintenance') }}</span>
           @endif
           <div class="botones-tablas">
             @if ($rutas[0]->flota->estado == 0)
             <a href="{{ route('flota.activarRuta', ['id' => $rutas[0]->flota->id]) }}" class="boton">
               <i class="bx bx-check-square" ></i>
-              <span>Activar ruta</span>
+              <span>{{ __('routes.activateRoute') }}</span>
             </a>
             @endif
             <a href="{{ route('rutas.crearRutaAvion', ['id' => $rutas[0]->flota->id]) }}" class="boton">
               <i class="bx bx-add-to-queue"></i>
-              <span>Crear ruta</span>
+              <span>{{ __('routes.createRoute') }}</span>
             </a>
           </div>
         </div>
         <table>
           <thead>
             <tr>
-              <th>Avion</th>
-              <th>Origen</th>
-              <th>Destino</th>
-              <th>Distancia</th>
-              <th>Tiempo</th>
-              <th>Hora de salida</th>
-              <th>Hora de llegada</th>
-              <th>Precio Billete</th>
-              <th>Acciones</th>
+              <th>{{ __('routes.airplane') }}</th>
+              <th>{{ __('routes.departure') }}</th>
+              <th>{{ __('routes.arrival') }}</th>
+              <th>{{ __('routes.distance') }}</th>
+              <th>{{ __('routes.time') }}</th>
+              <th>{{ __('routes.timeOfDep') }}</th>
+              <th>{{ __('routes.timeOfArr') }}</th>
+              <th>{{ __('routes.ticketPrice') }}</th>
+              <th>{{ __('routes.actions') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -68,7 +68,7 @@
               <td><i class="bx"><img src="{{ asset($ruta->flota->avion->img) }}" alt=""></i></td>
               <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
               <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
-              <td>{{ $ruta->distancia }}km</td>
+              <td>{{ $ruta->distancia }} km</td>
               <td>{{ $ruta->tiempoEstimado }}</td>
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
@@ -76,11 +76,11 @@
               <td>
                 <a class="vender tooltip" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}">
                   <i class="bx bx-trash"></i>
-                  <span class="tooltiptext">Eliminar Ruta</span>
+                  <span class="tooltiptext">{{ __('routes.deleteRoute') }}</span>
                 </a>
                 <a class="modificar tooltip" data-modal-target="modalAvion{{ $ruta->id }}">
                   <i class="bx bx-wrench"></i>
-                  <span class="tooltiptext">Modificar Ruta</span>
+                  <span class="tooltiptext">{{ __('routes.modifyRoute') }}</span>
                 </a>
               </td>
             </tr>
@@ -92,11 +92,11 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No hay rutas creadas</h4>
+            <h4>{{ __('routes.noRoutes') }}</h4>
           </div>
           <div class="mensaje info">
             <i class="bx bx-info-circle"></i>
-            <h4>necesitas ayuda? visita nuestra pagina de <a href="{{ route('landing.tutorial') }}">tutorial</a></h4>
+            <h4>{{ __('routes.needHelp') }} <a href="{{ route('landing.tutorial') }}">{{ __('routes.needHelpT') }}</a></h4>
           </div>
       @endif
 
@@ -109,21 +109,21 @@
           <form action="{{ route('rutas.modificar', ['id' => $ruta->id]) }}" method="POST">
             <div class="cabecera-modal">
               <span class="cerrar-modal">&times;</span>
-              <h2>Modificar Ruta</h2>
+              <h2>{{ __('routes.modifyRoute') }}</h2>
             </div>
             <div class="cuerpo-modal">
               
               @csrf
-              <label for="precioBillete">Modificar precio billete:</label>
+              <label for="precioBillete">{{ __('routes.modifyTicketPrice') }}</label>
               <input type="range" name="precioBillete" id="precioBillete" class="precioBilletes" value="{{ $ruta->precioBillete }}" min="5" max="600" oninput="slide(this)">
-              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">Precio: </p>
+              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">{{ __('routes.price') }}</p>
               <span id="precio" class="precio"> {{ $ruta->precioBillete }} </span>
               
             </div>
             <div class="footer-modal">
               <div class="botones">
-                <span class="cancelar">Cancelar Cambios</span>
-                <input type="submit" class="aceptar" value="Confirmar Cambios">
+                <span class="cancelar">{{ __('routes.deny') }}</span>
+                <input type="submit" class="aceptar" value="{{ __('routes.confirm') }}">
               </div>
             </div>
           </form>
