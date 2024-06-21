@@ -61,7 +61,7 @@
           <h3>{{ __('home.balance') }}</h3>
           <canvas id="beneficiosChart"></canvas>
         </div>
-        <div class="basico">
+        <div class="basico notificaciones">
           <h3>{{ __('home.messages') }}</h3>
           <div class="notificaciones">
             @if (count($mensajeVuelos) > 0)
