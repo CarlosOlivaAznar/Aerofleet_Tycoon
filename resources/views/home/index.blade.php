@@ -57,7 +57,7 @@
 
 
       <div class="informacion">
-        <div class="basico">
+        <div class="basico chart">
           <h3>{{ __('home.balance') }}</h3>
           <canvas id="beneficiosChart"></canvas>
         </div>
@@ -143,10 +143,12 @@
             }]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
-              y: {
-                beginAtZero: true
-              }
+                y: {
+                    beginAtZero: true
+                }
             }
           }
         });

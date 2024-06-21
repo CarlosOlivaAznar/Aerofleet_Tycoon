@@ -696,6 +696,17 @@ MARK: Tooltips
     border: 3px solid var(--dark);
 }
 
+/* Tabla de Chart.js */
+.contenido main .informacion div.basico.chart{
+    position: relative;
+    width: 100%;
+    height: 55vh;
+}
+
+.contenido main .informacion div.basico.chart canvas{
+    width: 100%;
+    height: 100%;
+}
 
 /* Muestra de notificaciones de los aviones */
 .contenido main .informacion div.basico .notificaciones{
