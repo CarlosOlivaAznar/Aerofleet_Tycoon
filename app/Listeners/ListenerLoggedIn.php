@@ -211,7 +211,7 @@ class ListenerLoggedIn
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
-        array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
+        array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: ". number_format($gastos, 2, ',', '.') .")");
         Session::put('infoAviones', $infoAviones);
 
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
