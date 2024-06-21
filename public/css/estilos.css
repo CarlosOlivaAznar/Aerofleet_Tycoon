@@ -1531,21 +1531,23 @@ footer .contenidoFooter div p.texto a{
     padding: 10px;
     border-radius: 20px;
     font-size: 14px;
+    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.exito{
     background-color: var(--success);
-    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.warning{
     background-color: var(--warning);
-    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.error{
     background-color: var(--danger);
-    color: var(--light);
+}
+
+.contenido main .tablas table td.estado span.primary{
+    background-color: var(--primary);
 }
 
 .contenido main .tablas table td a.comprar{

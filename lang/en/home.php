@@ -15,7 +15,7 @@ return [
 
     // First Login
     'newAirline' => 'Enter the details of your new airline',
-    'ailineName' => 'Airline name:',
+    'airlineName' => 'Airline name:',
     'hqLocalization' => 'Headquarters location:',
     'searchLocalization' => 'Search for location...',
     'begin' => 'Begin',

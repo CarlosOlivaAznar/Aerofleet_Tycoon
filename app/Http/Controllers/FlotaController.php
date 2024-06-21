@@ -218,9 +218,10 @@ class FlotaController extends Controller
     {
         $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
         if($avion->estado == 0 && $this->comprobarActivar($avion)){
-            $avion->estado = 1;
+            $avion->estado = 3;
+            $avion->activacion = now()->addDay();
             $avion->update();
-            session()->flash('exito', 'La ruta ha sido activada correctamente');
+            session()->flash('exito', 'La ruta ha sido activada correctamente, el avion comenzara a volar mañana');
         } else if($avion->estado == 1){
             session()->flash('warning', 'La ruta ya esta activa');
         } else if($avion->estado == 2){

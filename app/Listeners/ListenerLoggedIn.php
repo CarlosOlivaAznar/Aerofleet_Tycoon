@@ -71,6 +71,9 @@ class ListenerLoggedIn
 
                 // Restamos los gastos mensuales
                 $this->gastosMensuales();
+
+                // Comprobamos que los aviones que se tienen que activar
+                $this->activarAviones();
             }
         }
 
@@ -92,6 +95,9 @@ class ListenerLoggedIn
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta);
                 }
+
+                // Comprobamos que los aviones que se tienen que activar
+                $this->activarAviones();
             }
 
             // Solo por el ultimo dia de conexion calculamos el mantenimiento
@@ -299,6 +305,22 @@ class ListenerLoggedIn
                 if($i % 2 === 1){
                     $beneficiosHistoricos[$i]->delete();
                 }
+            }
+        }
+    }
+
+    /**
+     * Funcion que comprueba los aviones que se tienen que activar para pasarlos al estado 1 de en ruta
+     */
+    public function activarAviones()
+    {
+        $avionesActivar = Flota::where('user_id', auth()->id())->where('estado', 3)->get();
+
+        foreach ($avionesActivar as $avionActivar) {
+            if(date($avionActivar->activacion) <= now()){
+                $avionActivar->estado = 1;
+                $avionActivar->update();
+                error_log("Activando avion $avionActivar->id");
             }
         }
     }
