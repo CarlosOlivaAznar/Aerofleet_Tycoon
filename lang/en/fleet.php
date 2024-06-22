@@ -40,6 +40,9 @@ return [
     'flights' => 'Flights',
     'hours' => 'Hours',
     'kilometers' => 'Kilometers',
+    'purcheaseConf' => 'Purchease Confirmation',
+    'purcheaseText' => 'Are you sure you want to purchease the plane',
+    'purcheasePrice' => 'Price of the new airplane',
 
     // Buy Aircraft
     'shAircraft' => 'Second-hand Aircraft',

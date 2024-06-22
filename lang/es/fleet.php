@@ -40,6 +40,9 @@ return [
     'flights' => 'Vuelos',
     'hours' => 'Horas',
     'kilometers' => 'Kilometros',
+    'purcheaseConf' => 'Confirmacion de Compra',
+    'purcheaseText' => 'Estas seguro que quieres comprar el avion',
+    'purcheasePrice' => 'Precio del nuevo avion',
 
     // Buy Aircraft
     'shAircraft' => 'Aviones de Segunda Mano',

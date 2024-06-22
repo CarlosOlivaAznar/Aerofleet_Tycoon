@@ -78,7 +78,7 @@
               <td>{{ $avionsh->condicion }}%</td>
               <td>{{ $avionsh->avion->capacidad }}</td>
               <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
-              <td><a class="comprar tooltip" href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}">
+              <td><a class="comprar tooltip" data-modal-target="modalConfirmacion{{ $avionsh->id }}">
                 <i class="bx bx-shopping-bag"></i>
                 <span class="tooltiptext">{{ __('fleet.buyAircraft') }}</span>
               </a>
@@ -92,6 +92,7 @@
         </table>
       </div>
 
+      <!-- Modales -->
       @foreach ($avionessh as $avionsh)
       <!-- Informacion -->
       <div class="modal" id="info{{ $avionsh->id }}">
@@ -144,6 +145,30 @@
             </table>
             
             <br>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmacion de compra -->
+      <div class="modal" id="modalConfirmacion{{ $avionsh->id }}">
+        <div class="contenido-modal">
+          <div class="cabecera-modal">
+            <span class="cerrar-modal">&times;</span>
+            <h2>{{ __('fleet.purcheaseConf') }}</h2>
+          </div>
+          <div class="cuerpo-modal">
+
+            <img src="{{ asset($avionsh->img) }}" alt="avion">
+
+            <p>{{ __('fleet.purcheaseText') }} {{ $avionsh->avion->modelo }} {{ $avionsh->companyia }}?</p><br>
+            <p>{{ __('fleet.purcheasePrice') }} = <span class="rojo">{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}€</span></p>
+            
+          </div>
+          <div class="footer-modal">
+            <div class="botones">
+              <span class="cancelar">{{ __('fleet.deny') }}</span>
+              <a href="{{ route('flota.comprarSegundaMano', ['id' => $avionsh->id]) }}" class="aceptar">{{ __('fleet.confirm') }}</a>
+            </div>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@
           <td>{{ number_format($avion->precio, 0, ',', '.') }}</td>
           <td>{{ $avion->rango }}km</td>
           <td>{{ $avion->capacidad }}</td>
-          <td><a class="comprar tooltip" href="{{ route('flota.comprar', ['id' => $avion->id]) }}">
+          <td><a class="comprar tooltip" data-modal-target="modalConfirmacion{{ $avion->id }}">
             <i class="bx bx-shopping-bag"></i>
             <span class="tooltiptext">Comprar Avion</span>
           </a>
@@ -77,6 +77,30 @@
         </table>
         
         <br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmacion de compra -->
+  <div class="modal" id="modalConfirmacion{{ $avion->id }}">
+    <div class="contenido-modal">
+      <div class="cabecera-modal">
+        <span class="cerrar-modal">&times;</span>
+        <h2>{{ __('fleet.purcheaseConf') }}</h2>
+      </div>
+      <div class="cuerpo-modal">
+
+        <img src="{{ asset($avion->img) }}" alt="avion">
+
+        <p>{{ __('fleet.purcheaseText') }} {{ $avion->modelo }}?</p><br>
+        <p>{{ __('fleet.purcheasePrice') }} = <span class="rojo">{{ number_format($avion->precio, 0, ',', '.') }}€</span></p>
+        
+      </div>
+      <div class="footer-modal">
+        <div class="botones">
+          <span class="cancelar">{{ __('fleet.deny') }}</span>
+          <a href="{{ route('flota.comprar', ['id' => $avion->id]) }}" class="aceptar">{{ __('fleet.confirm') }}</a>
+        </div>
       </div>
     </div>
   </div>

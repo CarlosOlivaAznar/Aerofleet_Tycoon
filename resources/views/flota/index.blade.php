@@ -117,7 +117,7 @@
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
       <!-- Vender -->
       <div class="modal" id="modalVender{{ $avion->id }}">
