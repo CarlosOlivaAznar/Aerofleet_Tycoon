@@ -34,7 +34,7 @@
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaOrigen', 'origenHid')">{{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->id }}" onmousedown="seleccionar(this, 'busquedaOrigen', 'origenHid')">{{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -46,7 +46,7 @@
               
               <div class="drop-down" id="dropDown2">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaDestino', 'destinoHid')">{{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->id }}" onmousedown="seleccionar(this, 'busquedaDestino', 'destinoHid')">{{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -71,7 +71,7 @@
               
               <div class="drop-down" id="dropDown3">
                 @foreach ($companyias as $companyia)
-                    <p id="{{ $companyia->id }}" onclick="seleccionar(this, 'busquedaCompanyia', 'companyiaHid')">{{ $companyia->nombreCompanyia }}</p>
+                    <p id="{{ $companyia->id }}" onmousedown="seleccionar(this, 'busquedaCompanyia', 'companyiaHid')">{{ $companyia->nombreCompanyia }}</p>
                 @endforeach
               </div>
             </div>

@@ -38,7 +38,7 @@
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->icao }}" onclick="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio()">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio()">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
