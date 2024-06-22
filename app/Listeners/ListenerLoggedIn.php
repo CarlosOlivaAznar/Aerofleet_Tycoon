@@ -260,6 +260,13 @@ class ListenerLoggedIn
                 // Para los mantenimientos se calcula dividiendo los ingenieros por los aviones en mantenimiento
                 $avion->condicion += $sede->ingenieros / count($flotaMantenimiento);
                 $avion->update();
+
+                // Si el avion supera el año de antiguedad se añadira un plus de dinero por mantenerlo
+                if(date($avion->fechaDeFabricacion) > now()->subYear()){
+                    $user = User::find(auth()->id());
+                    $user->saldo -= 750 * now()->subYear()->diffInYears(date($avion->fechaDeFabricacion));
+                    $user->update();
+                }
             } else {
                 // creamos el mensaje de que el avion ha completado el mantenimiento
                 array_push($mensajeVuelos, 
