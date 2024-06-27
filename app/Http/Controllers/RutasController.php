@@ -51,6 +51,12 @@ class RutasController extends Controller
             $avion = Flota::where('id', $request->avion)->first();
             $rutas = Ruta::where('flota_id', $request->avion)->orderBy('horaInicio')->get();
 
+            // Comprobamos que la categoria del avion es la correcta
+            if($espacioDep->aeropuerto->categoria > $avion->avion->categoria || $espacioArr->aeropuerto->categoria > $avion->avion->categoria){
+                session()->flash('error', 'El avion no puede operar en los aeropuertos seleccionados (el avion supera el tamaño maximo permitido en alguno de los aeropuertos seleccionados)');
+                return redirect()->route('rutas.index');
+            }
+
             //Comprobamos que los espacios y el avion pertenecen al usario
             if($espacioDep->user->id === auth()->id() && $espacioArr->user->id === auth()->id() && $avion->user->id === auth()->id()){
                 if($espacioDep->espaciosDisponibles() > 0 && $espacioArr->espaciosDisponibles() > 0){

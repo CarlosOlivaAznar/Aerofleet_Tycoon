@@ -163,6 +163,10 @@
                 <td>{{ $avion->avion->rango }} {{ __('fleet.kilometers') }}</td>
               </tr>
               <tr>
+                <th>{{ __('fleet.category') }}</th>
+                <td>{{ $avion->avion->categoria() }}</td>
+              </tr>
+              <tr>
                 <th>{{ __('fleet.state') }}</th>
                 <td>{{ $avion->condicion }}%</td>
               </tr>
