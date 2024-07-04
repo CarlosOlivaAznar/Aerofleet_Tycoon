@@ -1632,6 +1632,15 @@ footer .contenidoFooter div p.texto a{
     justify-content: space-evenly;
 }
 
+/* Estilo para repartir un div pero sin dejar margen (por si no hay formulario dentro del divRepartido) */
+.contenido main .rutas .divRepartido.centrado.m-0{
+    margin-bottom: 0;
+}
+
+.contenido main .rutas .divRepartido.centrado.m-0 div h3{
+    margin-bottom: 7px;
+}
+
 .contenido main .rutas .divRepartido .input h3{
     margin-bottom: 20px;
 }

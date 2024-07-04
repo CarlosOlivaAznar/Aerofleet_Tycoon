@@ -33,12 +33,12 @@
             <div class="input">
               <h3>{{ __('slots.selectAirport') }}</h3>
 
-              <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el aeropuerto..." required>
+              <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="{{ __('slots.selectAirportHint') }}" required>
               <input type="hidden" id="aeropuerto" name="aeropuerto" value="">
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio()">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio(); infoAeropuerto(this)">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -74,6 +74,23 @@
           @endforeach
 
         </form>
+      </div>
+
+      <div class="rutas">
+        <div class="divRepartido centrado m-0">
+          <div>
+            <h3>{{ __('slots.category') }}</h3>
+            <p id="categoria"></p>
+          </div>
+          <div>
+            <h3>{{ __('slots.demand') }}</h3>
+            <p id="demanda">{{ __('slots.selectAirportHint') }}</p>
+          </div>
+          <div>
+            <h3>{{ __('slots.costPerOperation') }}</h3>
+            <p id="costeOperacionInfo"></p>
+          </div>
+        </div>
       </div>
 
       <div class="mapa-ruta">
@@ -118,7 +135,6 @@
         function mostrarPrecio()
         {
           var icao = document.getElementById("aeropuerto").value;
-          console.log(document.getElementById(icao + "Precio"));
           var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
           var mostrarPrecio = document.getElementById("costeOperacion");
 
@@ -143,6 +159,54 @@
           precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
             precioTotal.innerHTML = 0;
+          }
+        }
+
+        function infoAeropuerto(elemento)
+        {
+          let aeropuertos = @json($aeropuertos);
+
+          // Buscamos los aeropuertos en el array
+          let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === elemento.id);
+
+          if(aeropuerto){
+            let categoria = document.getElementById("categoria");
+            let demanda = document.getElementById("demanda");
+            let costeOperacionInfo = document.getElementById("costeOperacionInfo");
+
+            // Ponemos la informacion en el div
+            // Categoria
+            let categoriaString = "";
+            switch(aeropuerto.categoria){
+              case 1:
+              categoriaString = "Muy Grande";
+                break;
+              case 2:
+              categoriaString = "Grande";
+                break;
+              case 3:
+              categoriaString = "Mediano";
+                break;
+              case 4:
+              categoriaString = "Pequeño";
+                break;
+            }
+          categoria.innerHTML = categoriaString;
+          
+          // Demanda
+          let demandaString = "Muy Baja";
+          if(aeropuerto.demanda > 0.90){
+            demandaString = "Alta";
+          } else if(aeropuerto.demanda > 0.80){
+            demandaString = "Media";
+          } else if(aeropuerto.demanda > 0.65){
+            demandaString = "Baja";
+          }
+
+          demanda.innerHTML = demandaString;
+
+          // Coste Operacional
+          costeOperacionInfo.innerHTML = aeropuerto.costeOperacional;
           }
         }
       </script>

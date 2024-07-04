@@ -236,7 +236,8 @@
       var circle = null
       mostrarRadio();
 
-      function mostrarRadio(){
+      function mostrarRadio()
+      {
         var idEspacio = document.getElementById('destino1').value;
         var coordenadas = document.getElementsByClassName(idEspacio);
 
@@ -254,7 +255,8 @@
         mostrarRuta()
       }
 
-      function mostrarRuta(){
+      function mostrarRuta()
+      {
         var idEspacioOrigen = document.getElementById('destino1').value;
         var idEspacioDestino = document.getElementById('destino2').value;
 

@@ -20,9 +20,12 @@ return [
     // Buy Slots
     'buySlots' => 'Comprar Espacios',
     'selectAirport' => 'Selecciona un Aeropuerto',
+    'selectAirportHint' => 'Selecciona el aeropuerto...',
     'price' => 'Precio',
     'slotsNumber' => 'Espacios a comprar',
     'totalPrice' => 'Precio Total:',
+    'category' => 'Categoría',
+    'demand' => 'Demanda',
 ];
 
 // Plantilla

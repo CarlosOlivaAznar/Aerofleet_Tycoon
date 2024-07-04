@@ -20,9 +20,12 @@ return [
     // Buy Slots
     'buySlots' => 'Buy Slots',
     'selectAirport' => 'Select an Airport',
+    'selectAirportHint' => 'Select the airport...',
     'price' => 'Price',
     'slotsNumber' => 'Slots to purchase',
     'totalPrice' => 'Total Price:',
+    'category' => 'Category',
+    'demand' => 'Demand',
 ];
 
 // Plantilla
