@@ -28,13 +28,6 @@ class RutasController extends Controller
         return view('rutas.index', ['grupoRutas' => $grupoRutas]);
     }
 
-    public function crearRuta()
-    {
-        $espacios = Espacio::where('user_id', auth()->id())->get();
-        $flota = Flota::where('user_id', auth()->id())->get();
-        return view('rutas.crearRuta', ['espacios' => $espacios, 'flota' => $flota]);
-    }
-
     public function crearRutaAvion($id)
     {
         $espacios = Espacio::where('user_id', auth()->id())->get();

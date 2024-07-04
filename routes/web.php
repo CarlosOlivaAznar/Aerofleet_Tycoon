@@ -84,7 +84,6 @@ Route::get('mapa', [MapaController::class, 'index'])->middleware(['auth', 'verif
 
 // Rutas Rutas
 Route::get('rutas', [RutasController::class, 'index'])->middleware(['auth', 'verified'])->name('rutas.index');
-Route::get('rutas/crearRuta', [RutasController::class, 'crearRuta'])->middleware(['auth', 'verified'])->name('rutas.crearRuta');
 Route::get('rutas/crearRuta/{id}', [RutasController::class, 'crearRutaAvion'])->middleware(['auth', 'verified'])->name('rutas.crearRutaAvion');
 Route::post('rutas/nuevaRuta', [RutasController::class, 'nuevaRuta'])->middleware(['auth', 'verified'])->name('rutas.nuevaRuta');
 Route::get('rutas/borrarRuta/{id}', [RutasController::class, 'borrarRuta'])->middleware(['auth', 'verified'])->name('rutas.borrarRuta');

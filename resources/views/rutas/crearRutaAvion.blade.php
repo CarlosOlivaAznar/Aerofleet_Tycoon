@@ -84,7 +84,6 @@
               <option value="22:30:00">22:30z</option>
               <option value="23:00:00">23:00z</option>
               <option value="23:30:00">23:30z</option>
-              <option value="24:00:00">24:00z</option>
             </select>
           </div>
           <div class="input">
