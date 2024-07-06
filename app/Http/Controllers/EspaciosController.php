@@ -34,7 +34,7 @@ class EspaciosController extends Controller
             ]);
         }
 
-        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos, 'aeropuertosMapa' => $aeropuertosMapa]);
+        return view('espacios.comprarEspacios', ['aeropuertos' => $aeropuertos]);
     }
 
     public function comprar(Request $request)
