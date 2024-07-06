@@ -38,7 +38,7 @@
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio(); infoAeropuerto(this)">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio(this); infoAeropuerto(this)">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -59,20 +59,6 @@
           <div class="input submit">
             <input type="submit" value="{{ __('slots.buySlots') }}" id="botonSubmit">
           </div>
-
-          
-          <!-- Precios de los espacios -->
-          @foreach ($aeropuertos as $aeropuerto)
-          <input type="hidden" id="{{ $aeropuerto->icao }}Precio" value="{{ $aeropuerto->costeOperacional }}">
-          @endforeach
-
-          <!-- Aeropuertos -->
-          @foreach ($aeropuertosMapa as $aeropuerto)
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[0] }}">
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[1] }}">
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[2] }}">
-          @endforeach
-
         </form>
       </div>
 
@@ -115,31 +101,29 @@
           });
 
 
-          var domAeropuertos = document.getElementsByClassName("aeropuertos");
+          let aeropuertos = @json($aeropuertos);
 
-          var aeropuertos = Array();
-
-          for(var i = 0; i < domAeropuertos.length; i++){
-            aeropuertos.push(domAeropuertos[i].value);
-          }
-
-          for(var i = 0; i < aeropuertos.length/3; i++){
-            L.marker([aeropuertos[(i*3)], aeropuertos[(i*3)+1]], {
+          aeropuertos.forEach(aeropuerto => {
+            L.marker([aeropuerto.latitud, aeropuerto.longitud], {
               icon: airportIcon
-            }).addTo(map).bindPopup(aeropuertos[(i*3)+2]);
-          }
+            }).addTo(map).bindPopup(aeropuerto.nombre);
+          });
+
       </script>
       </div>
       
       <script>
-        function mostrarPrecio()
+        function mostrarPrecio(elemento)
         {
-          var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
-          var mostrarPrecio = document.getElementById("costeOperacion");
+          let aeropuertos = @json($aeropuertos);
+
+          // Buscamos los aeropuertos en el array
+          let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === elemento.id);
 
           // Mostrar precio en el parrafo
-          mostrarPrecio.innerHTML = costeOperacion;
+          let mostrarPrecio = document.getElementById("costeOperacion");
+
+          mostrarPrecio.innerHTML = aeropuerto.costeOperacional * 723;
 
           // Reseteamos el precio total
           mostrarPrecioTotal();
@@ -152,11 +136,17 @@
           var precioTotal = document.getElementById("precioTotal");
           
           if(!isNaN(numEspacios)){
-          // CosteOperacion para hacer el calculo
-          var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
+            let aeropuertos = @json($aeropuertos);
 
-          precioTotal.innerHTML = costeOperacion * numEspacios;
+            // Obtenemos el codigo icao
+            var icao = document.getElementById("aeropuerto").value;
+
+            // Buscamos los aeropuertos en el array
+            let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === icao);
+
+            let costeOperacion = aeropuerto.costeOperacional * 723;
+
+            precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
             precioTotal.innerHTML = 0;
           }
