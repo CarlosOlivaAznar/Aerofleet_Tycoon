@@ -3,6 +3,7 @@
 return [
 
     'competence' => 'Competence',
+    'rankings' => 'Rankings',
     'demand' => 'Route demand',
     'departure' => 'Departure',
     'arrival' => 'Arrival',
@@ -28,6 +29,13 @@ return [
     // Airline Routes
     'routesOf' => 'Routes of',
     'planeRoutes' => 'Airplane routes',
+
+    // Rankings
+    'noUsers' => 'There are no users avaiable',
+    'totalAssets' => 'Total Assets',
+    'airplanes' => 'Airplanes',
+    'slots' => 'Slots',
+    'hangars' => 'Hangars',
 ];
 
 // Plantilla

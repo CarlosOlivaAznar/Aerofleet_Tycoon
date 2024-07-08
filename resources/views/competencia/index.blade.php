@@ -19,6 +19,10 @@
         <div class="titulo">
           <h1>{{ __('competence.competence') }}</h1>
         </div>
+        <a href="{{ route('competencia.rankings') }}" class="boton">
+          <i class="bx bx-bar-chart"></i>
+          <span>{{ __('competence.rankings') }}</span>
+        </a>
       </div>
 
       <div class="rutas">

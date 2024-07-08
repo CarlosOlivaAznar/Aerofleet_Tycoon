@@ -110,6 +110,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // Rutas Competencia
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('competencia', [CompetenciaController::class, 'index'])->name('competencia.index');
+    Route::get('competencia/rankings', [CompetenciaController::class, 'rankings'])->name('competencia.rankings');
     Route::post('competencia/demandaRuta', [CompetenciaController::class, 'demandaRuta'])->name('competencia.demandaRuta');
     Route::post('competencia/rutas', [CompetenciaController::class, 'rutasCompetencia'])->name('competencia.rutas');
 });
