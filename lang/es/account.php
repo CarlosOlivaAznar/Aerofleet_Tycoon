@@ -22,6 +22,8 @@ return [
     'deleteConfirmation' => '¿Estas seguro que quieres borrar la cuenta?',
     'password' => 'Contraseña',
     'cancel' => 'Cancelar',
+    'darkMode' => 'Modo Oscuro',
+    'enableDarkMode' => 'Habilitar modo oscuro',
 ];
 
 // Plantulla

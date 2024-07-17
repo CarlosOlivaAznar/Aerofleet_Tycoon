@@ -33,6 +33,7 @@
         </form>
       </div>
 
+      <!-- Cambiar idioma -->
       <div class="infoBasico">
         <h3>{{ __('account.changeLan') }}</h3>
 
@@ -50,6 +51,20 @@
             <input type="submit" value="{{ __('account.changeLan') }}">
           </div>
         </form>
+      </div>
+
+      <!-- Modo Oscuro -->
+      <div class="infoBasico">
+        <h3>{{ __('account.darkMode') }}</h3>
+
+        <div class="mt flex">
+          <label class="switch">
+            <input id="ckModoOscuro" type="checkbox" onclick="modoOscuro(this)">
+            <span class="slider round"></span>
+          </label>
+
+          <p>{{ __('account.enableDarkMode') }}</p>
+        </div>
       </div>
 
       <div class="infoBasico">
@@ -196,6 +211,25 @@
       </div>
 
       <script src="{{ asset('js/modals.js') }}"></script>
+      <script src="{{ asset('js/darkMode.js') }}"></script>
+      <script>
+        let checkbox = document.getElementById("ckModoOscuro");
+        
+        if(localStorage.modoOscuro === "true"){
+          checkbox.checked = true;
+        }
+
+        function modoOscuro(elemento)
+        {
+          if(elemento.checked){
+            localStorage.setItem("modoOscuro", "true");
+            cambiarModoOscuro();
+          } else {
+            localStorage.setItem("modoOscuro", "false");
+            cambiarModoOscuro();
+          }
+        }
+      </script>
     </main>
   </div>
 </body>
