@@ -39,10 +39,9 @@ body{
 
 /* Colores modo oscuro */
 body.dark{
-    --light: #181a1e;
-    --grey: #25252c;
-    --dark: #fbfbfb;
-    --dark-grey: #AAAAAA;
+    --light: #191b1e;
+    --grey: #26262c;
+    --dark: #f6f6f9;
 }
 
 li{
@@ -151,7 +150,7 @@ MARK: Menu lateral
     background-color: var(--light);
     height: 100%;
     width: 250px;
-    transition: all 0.4 ease;
+    transition: all 0.4s;
     overflow: hidden;
 }
 
@@ -189,6 +188,7 @@ MARK: Menu lateral
 .menu-lateral .lista-menu li.active{
     background-color: var(--grey);
     font-weight: 600;
+    transition: 0.4s;
 }
 
 .menu-lateral .lista-menu li:hover{
@@ -222,6 +222,10 @@ MARK: Menu lateral
 
 .menu-lateral .lista-menu li a .color-gris{
     filter: brightness(0) saturate(100%) invert(21%) sepia(9%) saturate(1245%) hue-rotate(193deg) brightness(94%) contrast(92%);
+}
+
+body.dark .menu-lateral .lista-menu li a .color-gris{
+    filter: brightness(0) saturate(100%) invert(98%) sepia(17%) saturate(324%) hue-rotate(180deg) brightness(95%) contrast(107%);
 }
 
 .menu-lateral .lista-menu a.logout{
@@ -325,6 +329,7 @@ MARK: Menu superior
 
 .contenido main{
     padding: 50px 50px 33px 25px;
+    transition: 0.4s;
 }
 
 .contenido main .cabecera{
@@ -856,6 +861,7 @@ MARK: Tooltips
     background-color: var(--light);
     color: var(--dark);
     margin-top: 35px;
+    transition: 0.4s;
 
 }
 
@@ -916,6 +922,7 @@ form.formularioBasico{
     width: 450px;
     background-color: var(--light);
     border-radius: 25px;
+    transition: 0.4s;
 }
 
 form.formularioBasico.cuenta .campos{
