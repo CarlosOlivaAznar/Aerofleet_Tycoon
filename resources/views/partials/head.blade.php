@@ -29,3 +29,6 @@
 <meta name="twitter:description" content="Take to the skies with Aerofleet, a real-time airline management simulator. Manage your fleet, perform maintenance, optimize routes, and handle airport slots, rentals, and salaries. Develop your airline empire today!" />
 <meta name="twitter:image" content="{{ asset('images/logos/logo_AFT_100px_icon.png') }}" />
 <meta name="twitter:card" content="summary_large_image" />
+
+<!-- Modo Oscuro -->
+<script src="{{ asset('js/darkMode.js') }}"></script>

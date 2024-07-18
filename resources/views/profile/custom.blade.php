@@ -211,7 +211,6 @@
       </div>
 
       <script src="{{ asset('js/modals.js') }}"></script>
-      <script src="{{ asset('js/darkMode.js') }}"></script>
       <script>
         let checkbox = document.getElementById("ckModoOscuro");
         

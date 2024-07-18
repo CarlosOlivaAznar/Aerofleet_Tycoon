@@ -153,7 +153,6 @@
           }
         });
       </script>
-      
     </main>
   </div>
 </body>

@@ -2,7 +2,9 @@ if(!localStorage.modoOscuro){
     localStorage.setItem("modoOscuro", "false");
 }
 
-cambiarModoOscuro();
+window.onload = function() {
+    cambiarModoOscuro();
+}
 
 function cambiarModoOscuro()
 {
