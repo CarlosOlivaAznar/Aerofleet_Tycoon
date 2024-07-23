@@ -4,9 +4,9 @@
     @include('partials.head')
 </head>
 @if ($_COOKIE['modoOscuro'] === 'true')
-<body class="dark">
+<body class="dark" @yield('estilosBody')>
 @else
-<body>
+<body @yield('estilosBody')>
 @endif
     @section('content')      
     @show

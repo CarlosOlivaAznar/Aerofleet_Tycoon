@@ -1,10 +1,6 @@
-@auth()
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarFlota')
   <!-- Fin Menu Lateral -->
@@ -36,6 +32,4 @@
         @include('partials.comprartable')
     </main>
   </div>
-</body>
-</html>
-@endauth()
+@endsection()

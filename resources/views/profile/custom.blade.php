@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.cuenta')
   <!-- Fin Menu Lateral -->
@@ -269,5 +266,4 @@
       </script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

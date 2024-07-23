@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarCompetencia')
   <!-- Fin Menu Lateral -->
@@ -103,5 +100,4 @@
       <script src="{{ asset('js/mapa.js') }}"></script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

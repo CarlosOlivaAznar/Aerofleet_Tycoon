@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <main>
     <div class="pag-login" style="background-image: url({{ asset('images/bg-auth.jpg') }})">
       
@@ -60,5 +57,4 @@
         </div>
     </div>
   </main>
-</body>
-</html>
+@endsection()

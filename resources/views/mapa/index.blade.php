@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarMapa')
   <!-- Fin Menu Lateral -->
@@ -41,5 +38,4 @@
       </div>
     </main>
   </div>
-</body>
-</html>
+@endsection()
