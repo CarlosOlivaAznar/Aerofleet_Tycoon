@@ -17,7 +17,7 @@ return [
     'changelog' => 'Changelog',
 
     // Footer
-    'devolpedBy' => 'Desarrollado por Carlos Oliva Aznar',
+    'developedBy' => 'Desarrollado por Carlos Oliva Aznar',
     'aboutMe' => 'Sobre Mi',
     'blog' => 'Blog',
     'contactMe' => 'Contactame',
