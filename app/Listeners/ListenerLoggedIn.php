@@ -40,10 +40,14 @@ class ListenerLoggedIn
         $fechaActual = now();
 
         // Creamos la variable de sesion nueva para mostrar los datos de los vuelos
-        Session::put('infoAviones', []);
+        if(!Session::get('infoAviones', [])){
+            Session::put('infoAviones', []);
+        }
 
         // Creamos la variable de sesion nueva para mostrar los mensajes importantes para el usuario
-        Session::put('mensajeVuelos', []);
+        if(!Session::get('mensajeVuelos', [])){
+            Session::put('mensajeVuelos', []);
+        }
         
         // Solo hay que calcular la diferencia de dias, en algunos casos las horas producen inconsistencias
         // y una hora de diferencia puede añadir un dia mas o menos.

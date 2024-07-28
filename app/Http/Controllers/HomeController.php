@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserLoggedIn;
 use App\Http\Controllers\Controller;
 use App\Models\Aeropuerto;
 use App\Models\BeneficiosHistorico;
@@ -20,6 +21,9 @@ class HomeController extends Controller
         // Si existe la sede del usuario significa que no es la primera vez entra, en cambio si no existe significa que no
         // a terminado de configurar su cuenta
         if(Sede::where('user_id', auth()->id())->first()){
+            // Al entrar al home ejecutamos la simulacion de las rutas
+            event(new UserLoggedIn(auth()->user()));
+
             $user = User::find(auth()->id());
             $beneficiosArr = array();
             $fechasArr = array();
