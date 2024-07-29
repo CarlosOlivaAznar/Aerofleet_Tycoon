@@ -1330,6 +1330,8 @@ footer .contenidoFooter div p{
 footer .contenidoFooter div p.autor{
     margin-top: 15px;
     color: var(--dark-grey);
+    text-align: left;
+    margin-left: 56px;
 }
 
 footer .contenidoFooter div p.titulo{
