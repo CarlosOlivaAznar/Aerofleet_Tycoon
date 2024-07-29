@@ -45,6 +45,17 @@ return [
     'objtT3' => 'For this reason, and because I have to submit a final project, I decided to make my idea a reality.',
     'objtT4' => 'The game is entirely self-funded, and I will not include ads or microtransactions in the application. If you want to support, it is completely voluntary and can be done in the "donate" section ',
     'objtDonate' => 'donate',
+
+    // Donate
+    'accessDonate' => 'Click to access the PayPal donations page',
+    'thanks' => 'Thank you very much!',
+    'donateT1' => 'Really, thank you from the bottom of my heart. This project is entirely funded by donations, which means that every contribution greatly helps to continue developing and improving this application. Every little gesture of support is deeply appreciated and significantly contributes to ensuring that we can continue offering you new content and constant updates.',
+    'donateT2' => 'If you have found the application useful and wish to support my work, I cordially invite you to consider making a donation. Any amount, however modest, will be received with sincere gratitude and will be used to further enhance the experience on our platform.',
+    'donateT3' => 'Additionally, if you want to get to know me better and discover who is behind this project, I encourage you to visit the',
+    'donateT4' => 'section on our website. And to stay updated on all the news and updates, I invite you to join our',
+    'discordServer' => 'Discord Server',
+    'donateT5' => ', where you can interact with other users, share your suggestions and opinions, and have an exclusive role if you have donated, allowing you to learn about updates before anyone else and have exclusive access to future updates.',
+    'donateT6' => 'Once again, I want to express my deepest gratitude for your continued support and for being an active part of this wonderful community. Thank you for believing in this project and for contributing to its growth and success!',
 ];
 
 // Plantilla

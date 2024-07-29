@@ -20,7 +20,7 @@ return [
 
     // Footer
     'developedBy' => 'Desarrollado por Carlos Oliva Aznar',
-    'aboutMe' => 'Sobre Mi',
+    'aboutMe' => 'Sobre Mí',
     'blog' => 'Blog',
     'contactMe' => 'Contactame',
     'info' => 'Información',
@@ -45,6 +45,17 @@ return [
     'objtT3' => 'Por esto y porque tengo que entregar un proyecto a final de curso me puse a hacer mi idea realidad.',
     'objtT4' => 'El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de ',
     'objtDonate' => 'donar',
+
+    // Donar
+    'accessDonate' => 'Haz click para acceder a la pagina de donativos de PayPal',
+    'thanks' => '¡Muchas Gracias!',
+    'donateT1' => 'De verdad, gracias de todo corazón. Este proyecto es completamente financiado por donaciones, lo que significa que cada contribución cuenta enormemente para seguir desarrollando y mejorando esta aplicación. Cada pequeño gesto de apoyo se valora profundamente y contribuye significativamente a asegurar que podamos continuar ofreciéndote nuevo contenido y actualizaciones constantes.',
+    'donateT2' => 'Si la aplicación te ha resultado útil y deseas respaldar mi trabajo, te invito cordialmente a considerar realizar una donación. Cualquier cantidad, por modesta que sea, será recibida con sincero agradecimiento y se utilizará para potenciar y mejorar aún más la experiencia en nuestra plataforma.',
+    'donateT3' => 'Además, si deseas conocerme mejor y descubrir quién está detrás de este proyecto, te animo a que visites la sección',
+    'donateT4' => 'en nuestra página web. Y para mantenerte al tanto de todas las novedades y actualizaciones, te invito a unirte a nuestro',
+    'discordServer' => 'servidor de Discord',
+    'donateT5' => ', donde podrás interactuar con otros usuarios, compartir tus sugerencias y opiniones y podras tener un rol exclusivo si has donado, pudiendo enterarte de las novedades antes que nadie y poder tener acceso exclusivo a futuras actualizaciones.',
+    'donateT6' => 'Una vez más, quiero expresar mi más profundo agradecimiento por tu continuo apoyo y por ser parte activa de esta maravillosa comunidad. ¡Gracias por creer en este proyecto y por contribuir a su crecimiento y éxito!',
 ];
 
 // Plantilla
