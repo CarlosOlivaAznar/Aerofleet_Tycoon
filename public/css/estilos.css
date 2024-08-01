@@ -1062,11 +1062,10 @@ MARK: Landing
     padding: 0 24px 0 0;
     display: flex;
     align-items: center;
-    position: sticky;
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1;
 }
 
 .barra-login .titulo-pag{
@@ -1094,30 +1093,72 @@ MARK: Landing
     height: 100%;
     justify-content: center;
     align-items: center;
+    overflow: vis;
 }
 
 .barra-login .login div{
     cursor: pointer;
 }
 
-.barra-login .login .lang{
+/* Selector de idiomas */
+.lang{
+    overflow: hidden;
+}
+
+.lang .langbtn{
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: var(--dark);
     background-color: var(--grey);
+    padding: 10px;
     border-radius: 25px;
-    padding: 2px 10px;
+    margin: 0;
+    transition: 0.4s;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: all .3s ease;
+    gap: 7px;
 }
 
-.barra-login .login .lang img{
-    width: 35px;
-    border-radius: 10px;
+.lang .langbtn img, .lang .lang-content img{
+    width: 30px;
 }
 
-.barra-login .login .lang .bx{
-    font-size: 15px;
+.lang .langbtn .bx{
+    font-size: 13px;
+}
+
+.lang-content{
+    display: none;
+    visibility: none;
+    position: absolute;
+    background-color: var(--grey);
+    border-radius: 0 0 25px 25px;
+    width: 96.65px;
+    z-index: 1;
+}
+
+.lang-content a{
     color: var(--dark);
+    color: var(--light);
+    padding: 10px;
+    display: block;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.lang:hover .lang-content{
+    display: block;
+    visibility: visible;
+}
+
+.lang:hover .langbtn{
+    border-radius: 25px 25px 0 0;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .barra-login .login div a{
@@ -1141,6 +1182,7 @@ MARK: Landing
 
 .mainContent{
     padding: 50px 70px 50px 70px;
+    z-index: 300;
 }
 
 .imagenTitulo{

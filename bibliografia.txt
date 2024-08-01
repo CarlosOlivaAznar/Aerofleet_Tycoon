@@ -9,3 +9,5 @@ https://laravel.com/docs/10.x/errors
 https://www.youtube.com/watch?v=G3UeClZPR4k&list=LL&index=1
 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch
+
+https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp
