@@ -23,4 +23,13 @@ class LanguageController extends Controller
 
         return redirect()->back();
     }
+
+    public function changeLink($lang)
+    {
+        if(array_key_exists($lang, Config::get('app.languages'))){
+            Session::put('locale', $lang);
+        }
+
+        return redirect()->back();
+    }
 }

@@ -136,5 +136,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
 // Rutas de control del idioma
 Route::post('/lang', [LanguageController::class, 'change'])->name('language.change');
+Route::get('/lang/{lang}', [LanguageController::class, 'changeLink'])->name('language.changeLink');
 
 require __DIR__.'/auth.php';

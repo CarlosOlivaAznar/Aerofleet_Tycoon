@@ -5,17 +5,29 @@
     </a>
     <div class="login">
         <div class="lang">
+            @php $language = session()->get('locale') @endphp
             <button class="langbtn">
-                <img src="{{ asset('icons/flags/es.png') }}" alt="flag-lang">
-                ES
+                @switch($language)
+                    @case("es")
+                        <img src="{{ asset('icons/flags/es.png') }}" alt="flag-lang">
+                        ES
+                        @break
+                    @case("en")
+                        <img src="{{ asset('icons/flags/en.png') }}" alt="flag-lang">
+                        EN
+                        @break
+                    @default
+                        <img src="{{ asset('icons/flags/en.png') }}" alt="flag-lang">
+                        EN
+                @endswitch
                 <i class="bx bxs-down-arrow"></i>
             </button>
             <div class="lang-content">
-              <a href="#">
+              <a href="{{ route('language.changeLink', ["lang" => "en"]) }}">
                 <img src="{{ asset('icons/flags/en.png') }}" alt="flag-lang">
                 EN
               </a>
-              <a href="#">
+              <a href="{{ route('language.changeLink', ["lang" => "es"]) }}">
                 <img src="{{ asset('icons/flags/es.png') }}" alt="flag-lang">
                 ES
               </a>
