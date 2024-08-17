@@ -13,6 +13,7 @@ use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
 use App\Models\Bugreport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
@@ -30,7 +31,7 @@ use Illuminate\Support\Facades\Session;
 // Rutas del landing y rutas generales
 Route::get('/', function () {
     $respuesta = Http::get("https://api.country.is/");
-    if(Session::get('manualChange') != true){
+    if(Cookie::get('manualChange') != true){
         if ($respuesta->successful()) {
             $codigoPais = strtolower($respuesta->json()["country"]);
             Session::put('locale', $codigoPais);

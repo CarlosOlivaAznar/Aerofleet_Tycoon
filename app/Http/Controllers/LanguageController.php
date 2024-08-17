@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
@@ -43,6 +44,6 @@ class LanguageController extends Controller
      */
     public function manualChange()
     {
-        Session::put('manualChange', true);
+        Cookie::queue('manualChange', true, 200000);
     }
 }
