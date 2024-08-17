@@ -21,6 +21,8 @@ class LanguageController extends Controller
             $usuario->save();
         }
 
+        $this->manualChange();
+
         return redirect()->back();
     }
 
@@ -30,6 +32,17 @@ class LanguageController extends Controller
             Session::put('locale', $lang);
         }
 
+        $this->manualChange();
+
         return redirect()->back();
+    }
+
+    /**
+     * Si usuario ha cambiado manualmente el idioma creamos una variable de sesion
+     * para que en el caso de que entre en el landing no cambie el idioma automaticamente
+     */
+    public function manualChange()
+    {
+        Session::put('manualChange', true);
     }
 }

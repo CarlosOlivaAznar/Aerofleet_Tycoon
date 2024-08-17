@@ -13,6 +13,8 @@ use App\Http\Controllers\RutasController;
 use App\Http\Controllers\SedeController;
 use App\Models\Bugreport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,16 @@ use Illuminate\Http\Request;
 
 // Rutas del landing y rutas generales
 Route::get('/', function () {
+    $respuesta = Http::get("https://api.country.is/");
+    if(Session::get('manualChange') != true){
+        if ($respuesta->successful()) {
+            $codigoPais = strtolower($respuesta->json()["country"]);
+            Session::put('locale', $codigoPais);
+        } else {
+            Session::put('locale', "en");
+        }
+    }
+
     return view('landing.landing');
 })->name('landing.landing');
 Route::get('/sobreMi', function () {
