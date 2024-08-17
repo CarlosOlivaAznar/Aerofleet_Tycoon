@@ -25,7 +25,7 @@ return [
     'logout' => 'Cerrar sesión',
 
     // Login y register
-    'email' => 'Correo Electrñonico',
+    'email' => 'Correo Electronico',
     'password' => 'Contraseña',
     'confirmPsw' => 'Confirmar contraseña',
     'rememberMe' => 'Recuerdame',

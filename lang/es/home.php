@@ -19,6 +19,23 @@ return [
     'hqLocalization' => 'Localizacion de la sede:',
     'searchLocalization' => 'Busca la localizacion...',
     'begin' => 'Comenzar',
+
+    // Controller Messages
+    'thePlane' => 'El avion',
+    'depCond' => 'tiene un estado deplorable, por seguridad se ha detenido todas las operaciones del avion y se encuentra en tierra',
+    'wRoute' => 'con la ruta',
+    'startTime' => 'con la hora de inicio a las',
+    'completedFlight' => 'ha completado el vuelo con',
+    'passengers' => 'pasajeros y tiene un beneficio de',
+    'income' => '(ingresos:',
+    'expenses' => 'gastos:',
+    'losses' => 'esta generando perdidas, considere reducir el precio de los billetes o cambiar la ruta del avion',
+    'fullPlane' => 'esta completando la ruta con el avion lleno, considere aumentar el precio de los billetes',
+    'fewPassengers' => 'esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes o cambiar la ruta',
+    'emptyPlane' => 'esta completando la ruta vacio, no tiene ningun pasajero, considere cambiar la ruta o bajar los precios de los billetes',
+    'maintenanceComp' => 'ha completado el mantenimiento, considere retiralo del hangar',
+    'hireEng' => 'El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros',
+
 ];
 
 // Plantilla

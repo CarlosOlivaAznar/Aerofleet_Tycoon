@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
 {
-    /**
-     * Create the event listener.
-     */
     public function __construct()
     {
         //
@@ -205,7 +202,7 @@ class ListenerLoggedIn
         if($ruta->flota->condicion < 5){
             $ruta->flota->estado = 0;
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." tiene un estado deplorable, por seguridad se ha detenido todas las operaciones del avion y se encuentra en tierra",
+            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
             3]);
         }
         $ruta->flota->update();
@@ -221,31 +218,31 @@ class ListenerLoggedIn
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
-        array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: ". number_format($gastos, 2, ',', '.') .")");
+        array_push($infoAviones, trans('home.thePlane') ." ". $ruta->flota->matricula ." ". trans('home.wRoute') ." ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " . trans('home.startTime') . " $ruta->horaInicio " .trans('home.completedFlight'). " $pasajeros " .trans('home.passengers'). " $beneficio " .trans('home.income'). " $ingresos, " .trans('home.expenses'). " ". number_format($gastos, 2, ',', '.') .")");
         Session::put('infoAviones', $infoAviones);
 
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
         if($beneficio < 0){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes o cambiar la ruta del avion",
+            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.wRoute') ." ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " . trans('home.startTime'). " $ruta->horaInicio " . trans('home.losses'),
             3]);
         }
 
         if($pasajeros === $ruta->flota->avion->capacidad){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con el avion lleno, considere aumentar el precio de los billetes",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.fullPlane'),
             1]);
         }
 
         if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes o cambiar la ruta",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.fewPassengers'),
             2]);
         }
 
         if($pasajeros <= 0){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta vacio, no tiene ningun pasajero, considere cambiar la ruta o bajar los precios de los billetes",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.emptyPlane'),
             3]);
         }
 
@@ -274,7 +271,7 @@ class ListenerLoggedIn
             } else {
                 // creamos el mensaje de que el avion ha completado el mantenimiento
                 array_push($mensajeVuelos, 
-                ["El avion $avion->matricula ha completado el mantenimiento, considere retiralo del hangar",
+                [trans('home.thePlane') ." $avion->matricula " . trans('home.maintenance.Comp'),
                 2]);
             }
         }
@@ -282,7 +279,7 @@ class ListenerLoggedIn
         // Primera condicion para no dividir por 0
         if(count($flotaMantenimiento) != 0 && $sede->ingenieros / count($flotaMantenimiento) < 0.33){
             array_push($mensajeVuelos, 
-            ["El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros",
+            [trans('home.hireEng'),
             3]);
         }
 
