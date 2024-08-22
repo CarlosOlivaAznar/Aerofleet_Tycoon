@@ -40,6 +40,24 @@ return [
     'noSlots' => 'No hay espacios disponibles',
     'actualRoute' => 'Ruta actual del avion',
 
+    // Controller Messages
+    'maxSize' => 'El avion no puede operar en los aeropuertos seleccionados (el avion supera el tamaño maximo permitido en alguno de los aeropuertos seleccionados)',
+    'routeSuccess' => 'Ruta creada correctamente',
+    'maxTime' => 'La hora de llegada excede el limite maximo de llegada (04:00:00z)',
+    'maxRange' => 'El avion tiene un rango inferior al de la ruta',
+    'noSlotsAva' => 'No hay espacios disponibles',
+    'userErr' => 'error al validar los datos del usuario',
+    'arrDestEq' => 'El origen no puede ser el mismo que el destino',
+    'arrEqArrPRoute' => 'El origen tiene que ser el mismo que el destino de la ruta anterior',
+    'timeErr' => 'La ruta se debe situar delante la ruta anterior',
+    'DestNEq' => 'La ruta creada no coincide con el destino de la siguiente ruta',
+    'mixingRoutesErr' => 'El horario de la nueva ruta se superpone a otro ya creado',
+    'deleteSuccess' => 'Ruta eliminada correctamente',
+    'deleteErr' => 'error al eliminar la ruta',
+    'modSuccess' => 'Ruta modificada correctamente',
+    'modErr' => 'error al modificar la ruta',
+
+
 ];
 
 // Plantilla
