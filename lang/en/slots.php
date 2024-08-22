@@ -26,6 +26,18 @@ return [
     'totalPrice' => 'Total Price:',
     'category' => 'Category',
     'demand' => 'Demand',
+
+    // Controller Messages
+    'noSlotsAva' => 'The airport has no available slots',
+    'maxSlotsAva' => 'The purchase of slots exceeds the maximum slot limit of the airport',
+    'slotBuySuccess' => 'The slot has been purchased successfully',
+    'neCash' => 'You do not have enough balance',
+    'sellErrNeSlots' => 'The slot cannot be sold as there are no available slots',
+    'sellSuccess' => 'A slot has been sold from:',
+    'allSellSuccess' => 'All slots have been sold from:',
+    'errSell' => 'Error selling the slot from',
+    'errUser' => 'Error authenticating the user who owns the slot',
+
 ];
 
 // Plantilla

@@ -26,6 +26,17 @@ return [
     'totalPrice' => 'Precio Total:',
     'category' => 'Categoría',
     'demand' => 'Demanda',
+
+    // Controller Messages
+    'noSlotsAva' => 'El aeropuerto no tiene espacios libres disponibles',
+    'maxSlotsAva' => 'La compra de espacios excede el limite maximos de espacios del aeropuerto',
+    'slotBuySuccess' => 'El espacio ha sido comprado correctamente',
+    'neCash' => 'No tiene sufiente saldo',
+    'sellErrNeSlots' => 'No se puede vender el espacio ya que no tiene espacios disponibles',
+    'sellSuccess' => 'Se ha vendido un espacio de:',
+    'allSellSuccess' => 'Se han vendido todos los espacios de:',
+    'errSell' => 'Error al vender el espacio de',
+    'errUser' => 'Error al autentificar el usuario propietario del espacio',
 ];
 
 // Plantilla

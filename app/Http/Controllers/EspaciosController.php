@@ -43,10 +43,10 @@ class EspaciosController extends Controller
         $user = User::find(auth()->id());
         
         if(isset($aeropuerto->espacio[0]) && $aeropuerto->espacio[0]->espaciosOcupadosTotales() + $request->espacios > $aeropuerto->espaciosTotales){
-            session()->flash('error', 'El aeropuerto no tiene espacios libres disponibles');
+            session()->flash('error', trans('slots.noSlotsAva'));
             return redirect()->route('espacios.index');
         } elseif($aeropuerto->espaciosTotales < $request->espacios){
-            session()->flash('error', 'La compra de espacios excede el limite maximos de espacios del aeropuerto');
+            session()->flash('error', trans('slots.maxSlotsAva'));
             return redirect()->route('espacios.index');
         }
 
@@ -67,9 +67,9 @@ class EspaciosController extends Controller
             $user->update();
 
             // Mostramos mensaje de exito
-            session()->flash('exito', 'El espacio ha sido comprado correctamente');
+            session()->flash('exito', trans('slots.slotBuySuccess'));
         } else {
-            session()->flash('error', 'No tiene sufiente saldo');
+            session()->flash('error', trans('slots.neCash'));
         }
 
         return redirect()->route('espacios.index');
@@ -81,7 +81,7 @@ class EspaciosController extends Controller
         $user = User::find(auth()->id());
 
         if($espacio->espaciosDisponibles() <= 0){
-            session()->flash('error', 'No se puede vender el espacio ya que no tiene espacios disponibles');
+            session()->flash('error', trans('slots.sellErrNeSlots'));
             return redirect()->route('espacios.index'); 
         }
         
@@ -93,19 +93,19 @@ class EspaciosController extends Controller
                 $user->saldo = $user->saldo + $espacio->aeropuerto->precioEspacio();
                 $user->update();
 
-                session()->flash('exito', 'Se ha vendido un espacio de: ' . $espacio->aeropuerto->nombre);
+                session()->flash('exito', trans('slots.sellSuccess') . ' ' . $espacio->aeropuerto->nombre);
             } elseif($espacio->numeroDeEspacios === 1) {
                 $espacio->delete();
 
                 $user->saldo = $user->saldo + $espacio->aeropuerto->precioEspacio();
                 $user->update();
 
-                session()->flash('exito', 'Se han vendido todos los espacios de: ' . $espacio->aeropuerto->nombre);
+                session()->flash('exito', trans('slots.allSellSuccess') . ' ' . $espacio->aeropuerto->nombre);
             } else {
-                session()->flash('error', 'Error al vender el espacio de ' . $espacio->aeropuerto->nombre);
+                session()->flash('error', trans('slots.errSell') . ' ' . $espacio->aeropuerto->nombre);
             }
         } else {
-            session()->flash('error', 'Error al autentificar el usuario propietario del espacio');
+            session()->flash('error', trans('slots.errUser'));
         }
 
         return redirect()->route('espacios.index');
