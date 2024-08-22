@@ -61,6 +61,18 @@ return [
     'boeing' => 'Boeing Aircraft',
     'embraer' => 'Embraer Aircraft',
     'bombardier' => 'Bombardier Aircraft',
+
+    // Controller Messages
+    'buySucces' => 'The plane has been purchased successfully',
+    'neCash' => 'You do not have enough balance',
+    'sellSucces' => 'The plane has been sold successfully',
+    'nyProperty' => 'The plane is not your property',
+    'neSpaces' => 'There are no available spaces in the hangars',
+    'routeSucces' => 'The route has been activated successfully, the plane will start flying tomorrow',
+    'alreadyActivated' => 'The route is already active',
+    'planeMaintenance' => 'The plane is in maintenance',
+    'errCreateRoute' => 'The route is not formed correctly, the origins and destinations do not match',
+
     
 ];
 

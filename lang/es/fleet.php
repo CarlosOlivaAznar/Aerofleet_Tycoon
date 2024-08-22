@@ -62,6 +62,17 @@ return [
     'embraer' => 'Aviones Embraer',
     'bombardier' => 'Aviones Bombardier',
     
+    // Controller Messages
+    'buySucces' => 'El avion se ha comprado correctamente',
+    'neCash' => 'No tiene suficiente saldo',
+    'sellSucces' => 'El avion se ha vendido correctamente',
+    'nyProperty' => 'El avion no es de tu propiedad',
+    'neSpaces' => 'No hay espacios disponibles en los hangares',
+    'routeSucces' => 'La ruta ha sido activada correctamente, el avion comenzara a volar mañana',
+    'alreadyActivated' => 'La ruta ya esta activa',
+    'planeMaintenance' => 'El avion esta en mantenimiento',
+    'errCreateRoute' => 'La ruta no esta formada correctamente, los origenes y destinos no coinciden',
+    
 ];
 
 // Plantilla
