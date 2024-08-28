@@ -1347,6 +1347,31 @@ MARK: Landing
     margin-top: 10px;
 }
 
+/* Collapse para un div */
+.collapse .collapse-content{
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.6s ease, mask-image 0.6s ease;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
+}
+
+.collapse .collapse-content.expand{
+    max-height: 10000px;
+    mask-image: none;
+}
+
+.collapse .button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.collapse .button p{
+    font-weight: 500;
+}
+
 /* Footer pagina landing */
 footer{
     width: 95%;

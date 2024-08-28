@@ -17,6 +17,8 @@ return [
     'start' => 'START YOUR AIRLINE HERE',
     'register' => 'Register',
     'changelog' => 'Changelog',
+    'showMore' => 'Show more',
+    'showLess' => 'Show less',
 
     // Footer
     'developedBy' => 'Developed by Carlos Oliva Aznar',

@@ -17,6 +17,8 @@ return [
     'start' => 'COMIENZA AQUI TU COMPAÑIA AEREA',
     'register' => 'Registrarse',
     'changelog' => 'Changelog',
+    'showMore' => 'Mostrar más',
+    'showLess' => 'Mostrar menos',
 
     // Footer
     'developedBy' => 'Desarrollado por Carlos Oliva Aznar',
