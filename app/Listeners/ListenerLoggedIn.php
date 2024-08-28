@@ -169,7 +169,13 @@ class ListenerLoggedIn
         
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
+            // Variable para manejar mensaje de avion lleno, si el avion va un 108% se guarda en una variable para mas tarde
+            // guardar un mensaje de aviso al jugador
+            if($pasajeros > $ruta->flota->avion->capacidad * 1.08) $avionLleno = true;
+
+            // Ajustamos los pasajeros para que no superen la capacidad del avion
             $pasajeros = $ruta->flota->avion->capacidad;
+            
         } else if($pasajeros < 0){
             // Cuando los pasajeros sean menos de 0, un avion no puede tener pasajeros negativos
             $pasajeros = 0;
@@ -228,7 +234,7 @@ class ListenerLoggedIn
             3]);
         }
 
-        if($pasajeros === $ruta->flota->avion->capacidad){
+        if($avionLleno){
             array_push($mensajeVuelos, 
             [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.fullPlane'),
             1]);
