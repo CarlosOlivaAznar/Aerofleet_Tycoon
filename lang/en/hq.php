@@ -49,6 +49,14 @@ return [
     'confirmQuitM' => 'Are you sure you want to remove the aircraft from maintenance?',
     'confirmExpand' => 'Are you sure you want to expand the hangar?',
     'expandPrice' => 'The price of expanding the hangar is',
+
+    // Controller Messages
+    'hangarBuySuccess' => 'Hangar purchased successfully',
+    'neCash' => 'Insufficient balance',
+    'hireEngSuccess' => 'Engineer hired successfully',
+    'maxSpaces' => 'Maximum space limit reached',
+    'hangarEnlarge' => 'Hangar enlarged successfully',
+
 ];
 
 // Plantilla

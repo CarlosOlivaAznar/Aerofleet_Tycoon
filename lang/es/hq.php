@@ -49,6 +49,14 @@ return [
     'confirmQuitM' => '¿Esta seguro que quiere quirar el avion del mantenimiento?',
     'confirmExpand' => '¿Esta seguro que quiere ampliar el hangar?',
     'expandPrice' => 'El precio de ampliar el hangar es de',
+
+    // Controller Messages
+    'hangarBuySuccess' => 'Hangar comprado correctamente',
+    'neCash' => 'Saldo insuficiente',
+    'hireEngSuccess' => 'Ingeniero contratado correctamente',
+    'maxSpaces' => 'Limite maximo de espacios alcanzado',
+    'hangarEnlarge' => 'Hangar ampliado correctamente',
+
 ];
 
 // Plantilla

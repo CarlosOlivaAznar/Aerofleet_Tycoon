@@ -37,9 +37,9 @@ class SedeController extends Controller
             $user->saldo -= $sede->aeropuerto->costeOperacional * 525;
             $user->update();
 
-            session()->flash('exito', 'Hangar comprado correctamente');
+            session()->flash('exito', trans('hq.hangarBuySuccess'));
         } else {
-            session()->flash('error', 'Saldo insuficiente');
+            session()->flash('error', trans('hq.neCash'));
         }
 
         return redirect()->route('sede.index');
@@ -51,7 +51,7 @@ class SedeController extends Controller
         $sede->ingenieros++;
         $sede->update();
 
-        session()->flash('exito', 'Ingeniero contratado correctamente');
+        session()->flash('exito', trans('hq.hireEngSuccess'));
         return redirect()->route('sede.index');
     }
 
@@ -60,7 +60,7 @@ class SedeController extends Controller
         $hangar = Hangar::where('id', $id)->first();
         $user = User::find(auth()->id());
         if($hangar->espacios === 6){
-            session()->flash('error', 'Limite maximo de espacios alcanzado');
+            session()->flash('error', trans('hq.maxSpaces'));
         } elseif($user->saldo - 250000 >= 0) {
             $hangar->espacios++;
             $hangar->update();
@@ -68,9 +68,9 @@ class SedeController extends Controller
             $user->saldo -= 250000;
             $user->update();
 
-            session()->flash('exito', 'Hangar ampliado correctamente');
+            session()->flash('exito', trans('hq.hangarEnlarge'));
         } else {
-            session()->flash('error', 'Saldo insuficiente');
+            session()->flash('error', trans('hq.neCash'));
         }
 
         return redirect()->route('sede.index');
