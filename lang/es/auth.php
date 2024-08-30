@@ -19,7 +19,7 @@ return [
 
     // Confirmacion de correo
     'gratitude' => '¡Gracias por registrarte! Antes de comenzar, ¿podrías verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar por correo electrónico? Si no has recivido el correo electrónico, le podemos enviar otro.',
-    'issues' => 'Estamos experimentando problemas con el sistema de confirmación por correo electrónico. El correo electrónico debería llegar dentro de 5 a 20 minutos desde ahora. Gracias por tu paciencia.',
+    'issues' => 'Si no aparece en la bandeja de entrada recomendamos revisar la bandeja de spam ya que es probable que se encuentre ahi',
     'resend' => 'Se ha enviado un nuevo correo de verificacion.',
     'resendVerification' => 'Reenviar correo de verificacion',
     'logout' => 'Cerrar sesión',
