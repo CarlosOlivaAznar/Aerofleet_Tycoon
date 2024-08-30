@@ -4253,11 +4253,274 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* ----------------- */
+        /* Aeropuertos Suiza */
+        /* ----------------- */
+        /* 
+        MARK: Suiza
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LSZB',
+            'pais' => 'HB',
+            'nombre' => 'Bern Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 350,
+            'latitud' => 46.912069,
+            'longitud' => 7.500723,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LSGG',
+            'pais' => 'HB',
+            'nombre' => 'Geneva International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 46.240168,
+            'longitud' => 6.115618,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LSZA',
+            'pais' => 'HB',
+            'nombre' => 'Lugano Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 46.002947,
+            'longitud' => 8.909377,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LSZR',
+            'pais' => 'HB',
+            'nombre' => 'St. Gallen Altenrhein Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 47.485866,
+            'longitud' => 9.561263,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LSGS',
+            'pais' => 'HB',
+            'nombre' => 'Sion Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.219278,
+            'longitud' => 7.326859,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LSZH',
+            'pais' => 'HB',
+            'nombre' => 'Zurich Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 47.459142,
+            'longitud' => 8.549341,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+
+        /* --------------------- */
+        /* Aeropuertos Dinamarca */
+        /* --------------------- */
+        /* 
+        MARK: Dinamarca
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EKYT',
+            'pais' => 'OY',
+            'nombre' => 'Aalborg Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 57.096983,
+            'longitud' => 9.854991,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKAH',
+            'pais' => 'OY',
+            'nombre' => 'Aarhus Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 450,
+            'latitud' => 56.303992,
+            'longitud' => 10.622394,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 70,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKBI',
+            'pais' => 'OY',
+            'nombre' => 'Billund Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 55.741416,
+            'longitud' => 9.156455,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKRN',
+            'pais' => 'OY',
+            'nombre' => 'Bornholm Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 55.067587,
+            'longitud' => 14.747142,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKCH',
+            'pais' => 'OY',
+            'nombre' => 'Copenhagen Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 55.620254,
+            'longitud' => 12.649800,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKRK',
+            'pais' => 'OY',
+            'nombre' => 'Roskilde Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.585575,
+            'longitud' => 12.131463,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKEB',
+            'pais' => 'OY',
+            'nombre' => 'Esbjerg Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.524917,
+            'longitud' => 8.553648,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKKA',
+            'pais' => 'OY',
+            'nombre' => 'Karup Midtjyllands Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.300834,
+            'longitud' => 9.112246,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKOD',
+            'pais' => 'OY',
+            'nombre' => 'Odense Hans Christian Andersen Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.474948,
+            'longitud' => 10.328225,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EKSB',
+            'pais' => 'OY',
+            'nombre' => 'Sonderborg Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 54.963988,
+            'longitud' => 9.788605,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        /* --------------------- */
+        /* Aeropuerto Luxemburgo */
+        /* --------------------- */
+        /* 
+        MARK: Luxemburgo
+        */
+
+        Aeropuerto::create([
+            'icao' => 'ELLX',
+            'pais' => 'LX',
+            'nombre' => 'Luxembourg Findel Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 49.626515,
+            'longitud' => 6.211462,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'OH',
+            'pais' => 'LX',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
