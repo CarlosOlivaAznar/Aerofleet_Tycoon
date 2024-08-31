@@ -99,7 +99,9 @@ class User extends Authenticatable implements MustVerifyEmail
             $patrimonio += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
         }
 
-        $patrimonio += count($this->sede->hangar) * $this->sede->costeHangar();
+        if($this->sede){
+            $patrimonio += count($this->sede->hangar) * $this->sede->costeHangar();
+        }
 
         return $patrimonio;
     }

@@ -47,7 +47,7 @@
                 <td>{{ $usuario->nombreCompanyia }}</td>
                 <td>{{ count($usuario->flota) }}</td>
                 <td>{{ $usuario->getNumEspacios() }}</td>
-                <td>{{ count($usuario->sede->hangar) }}</td>
+                <td>{{ $usuario->sede ? count($usuario->sede->hangar) : 0 }}</td>
                 <td><span class="bold">{{ number_format($usuario->patrimonio(), 0, ',', '.') }} €</span></td>
               </tr> 
               @endforeach

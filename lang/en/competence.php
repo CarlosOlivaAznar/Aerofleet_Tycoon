@@ -9,7 +9,7 @@ return [
     'arrival' => 'Arrival',
     'selectDep' => 'Select the departure...',
     'selectArr' => 'Select the arrival...',
-    'search' => 'Serach',
+    'search' => 'Search',
     'routes' => 'Competence routes',
     'airlineName' => 'Airline name',
     'searchName' => 'Search the airline name...',
