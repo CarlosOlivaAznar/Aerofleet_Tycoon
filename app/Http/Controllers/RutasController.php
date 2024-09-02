@@ -28,13 +28,6 @@ class RutasController extends Controller
         return view('rutas.index', ['grupoRutas' => $grupoRutas]);
     }
 
-    public function crearRuta()
-    {
-        $espacios = Espacio::where('user_id', auth()->id())->get();
-        $flota = Flota::where('user_id', auth()->id())->get();
-        return view('rutas.crearRuta', ['espacios' => $espacios, 'flota' => $flota]);
-    }
-
     public function crearRutaAvion($id)
     {
         $espacios = Espacio::where('user_id', auth()->id())->get();
@@ -50,6 +43,12 @@ class RutasController extends Controller
             $espacioArr = Espacio::where('id', $request->destino2)->first();
             $avion = Flota::where('id', $request->avion)->first();
             $rutas = Ruta::where('flota_id', $request->avion)->orderBy('horaInicio')->get();
+
+            // Comprobamos que la categoria del avion es la correcta
+            if($espacioDep->aeropuerto->categoria > $avion->avion->categoria || $espacioArr->aeropuerto->categoria > $avion->avion->categoria){
+                session()->flash('error', trans('routes.maxSize'));
+                return redirect()->route('rutas.index');
+            }
 
             //Comprobamos que los espacios y el avion pertenecen al usario
             if($espacioDep->user->id === auth()->id() && $espacioArr->user->id === auth()->id() && $avion->user->id === auth()->id()){
@@ -82,22 +81,22 @@ class RutasController extends Controller
                                     'tiempoEstimado' => $horaRuta->format('H:i:s'),
                                     'precioBillete' => $request->precioBillete,
                                 ]);
-                                session()->flash('exito', 'Ruta creada correctamente');
+                                session()->flash('exito', trans('routes.maxSize'));
                             }
                         } else {
-                            session()->flash('error', 'La hora de llegada excede el limite maximo de llegada (04:00:00z)');
+                            session()->flash('error', trans('routes.maxTime'));
                         }
                     } else {
-                        session()->flash('error', 'El avion tiene un rango inferior al de la ruta');
+                        session()->flash('error', trans('routes.maxRange'));
                     }
                 } else {
-                    session()->flash('error', 'No hay espacios disponibles');
+                    session()->flash('error', trans('routes.noSlotsAva'));
                 }
             } else {
-                session()->flash('error', 'error al validar los datos del usuario');
+                session()->flash('error', trans('routes.userErr'));
             }
         } else {
-            session()->flash('error', 'El origen no puede ser el mismo que el destino');
+            session()->flash('error', trans('routes.arrDestEq'));
         }
 
         return redirect()->route('rutas.index');
@@ -162,11 +161,11 @@ class RutasController extends Controller
             if($icaoArrival === $origen){
                 return true;
             } else {
-                session()->flash('error', 'El origen tiene que ser el mismo que el destino de la ruta anterior');
+                session()->flash('error', trans('routes.arrEqArrPRoute'));
                 return false;
             }
         } else {
-            session()->flash('error', 'La ruta se debe situar delante la ruta anterior');
+            session()->flash('error', trans('routes.timeErr'));
             return false;
         }
     }
@@ -204,7 +203,7 @@ class RutasController extends Controller
             if($icaoDest === $destino){
                 return true;
             } else {
-                session()->flash('error', 'La ruta creada no coincide con el destino de la siguiente ruta');
+                session()->flash('error', trans('routes.destNEq'));
                 return false;
             }
         } else {
@@ -233,7 +232,7 @@ class RutasController extends Controller
         if(!$comprobacionHorario){
             return true;
         } else {
-            session()->flash('error', 'El horario de la nueva ruta se superpone a otro ya creado');
+            session()->flash('error', trans('routes.mixingRoutesErr'));
             return false;
         }
     }
@@ -246,9 +245,9 @@ class RutasController extends Controller
             $ruta->flota->estado = 0;
             $ruta->flota->update();
             $ruta->delete();
-            session()->flash('exito', 'Ruta eliminada correctamente');
+            session()->flash('exito', trans('routes.deleteSuccess'));
         } else {
-            session()->flash('error', 'error al eliminar la ruta');
+            session()->flash('error', trans('routes.deleteErr'));
         }
 
         return redirect()->route('rutas.index');
@@ -261,9 +260,9 @@ class RutasController extends Controller
         if($ruta->user_id === auth()->id()){
             $ruta->precioBillete = $request->precioBillete;
             $ruta->save();
-            session()->flash('exito', 'Ruta modificada correctamente');
+            session()->flash('exito', trans('routes.modSuccess'));
         } else {
-            session()->flash('error', 'error al modificar la ruta');
+            session()->flash('error', trans('routes.modErr'));
         }
 
         return redirect()->route('rutas.index');

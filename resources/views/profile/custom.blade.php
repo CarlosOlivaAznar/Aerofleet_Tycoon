@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.cuenta')
   <!-- Fin Menu Lateral -->
@@ -33,6 +30,7 @@
         </form>
       </div>
 
+      <!-- Cambiar idioma -->
       <div class="infoBasico">
         <h3>{{ __('account.changeLan') }}</h3>
 
@@ -50,6 +48,20 @@
             <input type="submit" value="{{ __('account.changeLan') }}">
           </div>
         </form>
+      </div>
+
+      <!-- Modo Oscuro -->
+      <div class="infoBasico">
+        <h3>{{ __('account.darkMode') }}</h3>
+
+        <div class="mt flex">
+          <label class="switch">
+            <input id="ckModoOscuro" type="checkbox" onclick="modoOscuro(this)">
+            <span class="slider round"></span>
+          </label>
+
+          <p>{{ __('account.enableDarkMode') }}</p>
+        </div>
       </div>
 
       <div class="infoBasico">
@@ -196,7 +208,62 @@
       </div>
 
       <script src="{{ asset('js/modals.js') }}"></script>
+      <script>
+        let checkbox = document.getElementById("ckModoOscuro");
+        
+        if(getCookie("modoOscuro") === "true"){
+          checkbox.checked = true;
+          cambiarModoOscuro();
+        }
+
+        function modoOscuro(elemento)
+        {
+          if (elemento.checked) {
+            setCookie("modoOscuro", "true", 365 * 100);
+            cambiarModoOscuro();
+          } else {
+            setCookie("modoOscuro", "false", 365 * 100);
+            cambiarModoOscuro();
+          }
+        }
+
+        function cambiarModoOscuro()
+        {
+          if(getCookie("modoOscuro") === "true"){
+              document.body.setAttribute("class", "dark");
+          } else {
+              document.body.removeAttribute("class");
+          }
+        }
+
+        function setCookie(name,value,days)
+        {
+          var expires = "";
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days*24*60*60*1000));
+              expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        function getCookie(name)
+        {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for(var i=0;i < ca.length;i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1,c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+          }
+          return null;
+        }
+
+        function eraseCookie(name)
+        {   
+          document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+      </script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

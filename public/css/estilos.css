@@ -37,6 +37,13 @@ body{
     overflow-x: hidden;
 }
 
+/* Colores modo oscuro */
+body.dark{
+    --light: #191b1e;
+    --grey: #26262c;
+    --dark: #f6f6f9;
+}
+
 li{
     list-style: none;
 }
@@ -59,6 +66,77 @@ a{
     color: var(--dark);
 }
 
+/* switch */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input{ 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-grey);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--light);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider{
+    background-color: var(--primary);
+}
+
+input:focus + .slider{
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before{
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round{
+    border-radius: 25px;
+}
+
+.slider.round:before{
+    border-radius: 50%;
+}
+
+/* margen superior */
+.mt{
+    margin-top: 12px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 /* ------------ */
 /* Menu Lateral */
 /* ------------ */
@@ -72,7 +150,6 @@ MARK: Menu lateral
     background-color: var(--light);
     height: 100%;
     width: 250px;
-    transition: all 0.4 ease;
     overflow: hidden;
 }
 
@@ -143,6 +220,10 @@ MARK: Menu lateral
 
 .menu-lateral .lista-menu li a .color-gris{
     filter: brightness(0) saturate(100%) invert(21%) sepia(9%) saturate(1245%) hue-rotate(193deg) brightness(94%) contrast(92%);
+}
+
+body.dark .menu-lateral .lista-menu li a .color-gris{
+    filter: brightness(0) saturate(100%) invert(98%) sepia(17%) saturate(324%) hue-rotate(180deg) brightness(95%) contrast(107%);
 }
 
 .menu-lateral .lista-menu a.logout{
@@ -268,6 +349,7 @@ MARK: Menu superior
     flex-direction: row;
     align-items: center;
     bottom: 45px;
+    color: var(--dark);
 }
 
 .contenido main .breadcrumb a{
@@ -483,6 +565,32 @@ MARK: Modal
     color: var(--dark);
 }
 
+.modal .contenido-modal .cuerpo-modal img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.modal .contenido-modal .cuerpo-modal table{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.modal .contenido-modal .cuerpo-modal table tr{
+    border-bottom: 3px solid var(--dark-grey);
+}
+
+.modal .contenido-modal .cuerpo-modal table th{
+    text-align: left;
+    border-bottom: 3px solid var(--dark-grey);
+}
+
+.modal .contenido-modal .cuerpo-modal table td{
+    text-align: right;
+    border-bottom: 3px solid var(--dark-grey);
+}
+
 .modal .contenido-modal .footer-modal{
     padding: 10px 25px;
     color: var(--dark);
@@ -578,6 +686,7 @@ MARK: Tooltips
     display: block;
     font-size: 19px;
     color: var(--dark);
+    margin-top: 13px;
 }
 
 .modal form input[type=range]{
@@ -625,7 +734,7 @@ MARK: Tooltips
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--light);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
@@ -642,7 +751,7 @@ MARK: Tooltips
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--light);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
@@ -658,7 +767,7 @@ MARK: Tooltips
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--light);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
@@ -669,11 +778,22 @@ MARK: Tooltips
     border: 3px solid var(--dark);
 }
 
+/* Tabla de Chart.js */
+.contenido main .informacion div.basico.chart{
+    position: relative;
+    width: 100%;
+    height: 55vh;
+}
+
+.contenido main .informacion div.basico.chart canvas{
+    width: 100%;
+    height: 100%;
+}
 
 /* Muestra de notificaciones de los aviones */
 .contenido main .informacion div.basico .notificaciones{
     width: 100%;
-    height: 90%;
+    height: 40vh;
     background-color: var(--grey);
     overflow-y: scroll;
     border-radius: 25px;
@@ -739,6 +859,7 @@ MARK: Tooltips
     background-color: var(--light);
     color: var(--dark);
     margin-top: 35px;
+    transition: 0.4s;
 
 }
 
@@ -795,31 +916,32 @@ MARK: Login
     margin: 0 auto;
 }
 
-form.formularioBasico{
+.formularioBasico{
     width: 450px;
     background-color: var(--light);
     border-radius: 25px;
+    transition: 0.4s;
 }
 
-form.formularioBasico.cuenta .campos{
+.formularioBasico.cuenta .campos{
     padding-left: 0;
 }
 
-form.formularioBasico h1{
+.formularioBasico h1{
     text-align: center;
     color: var(--dark);
 }
 
-form.formularioBasico .campos{
+.formularioBasico .campos{
     width: 100%;
     padding: 10px 20px;
 }
 
-form.formularioBasico .camposLinea{
+.formularioBasico .camposLinea{
     padding: 10px 20px;
 }
 
-form.formularioBasico .camposBotones{
+.formularioBasico .camposBotones{
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -828,30 +950,36 @@ form.formularioBasico .camposBotones{
     gap: 15px;
 }
 
-form.formularioBasico .campos label{
+.formularioBasico .campos label{
     display: block;
     font-size: 19px;
     color: var(--dark);
 }
 
-form.formularioBasico .campos input{
+.formularioBasico .campos input{
     display: block;
     margin-top: 3px;
     width: 100%;
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--grey);
+    color: var(--dark);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
 }
 
-form.formularioBasico .campos input:focus{
+.formularioBasico .campos input:focus{
     border: 3px solid var(--dark);
+    transition: 0.4s;
 }
 
-form.formularioBasico .campos .inputError{
+.formularioBasico .campos input[type="submit"]:focus{
+    border: 0;
+}
+
+.formularioBasico .campos .inputError{
     margin-top: 5px;
     color: var(--danger);
 }
@@ -872,23 +1000,23 @@ form.formularioBasico .campos .inputError{
     transition: 0.4s;
 }
 
-form.formularioBasico .camposLinea .checkbox{
+.formularioBasico .camposLinea .checkbox{
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-form.formularioBasico .camposLinea .checkbox a{
+.formularioBasico .camposLinea .checkbox a{
     color: var(--dark);
     text-decoration: underline;
 }
 
-.pag-login div form.formularioBasico .camposBotones .linkForm{
+.pag-login div .formularioBasico .camposBotones .linkForm{
     color: var(--dark);
     text-decoration: underline;
 }
 
-form.formularioBasico div input[type="submit"]{
+.formularioBasico div input[type="submit"]{
     padding: 10px 15px;
     border-radius: 40px;
     font-size: 15px;
@@ -899,23 +1027,23 @@ form.formularioBasico div input[type="submit"]{
     transition: 0.4s;
 }
 
-form.formularioBasico div input[type="submit"]:hover{
+.formularioBasico div input[type="submit"]:hover{
     background-color: var(--dark);
     transition: 0.4s;
 }
 
-form.formularioBasico.cuenta div input[type="submit"]{
+.formularioBasico.cuenta div input[type="submit"]{
     width: auto;
 }
 
-form.formularioBasico .forms-alineados{
+.formularioBasico .forms-alineados{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     gap: 15px;
 }
 
-form.formularioBasico .campos .forms-alineados .linkForm{
+.formularioBasico .campos .forms-alineados .linkForm{
     background-color: transparent;
     color: var(--dark);
     text-decoration: underline;
@@ -934,11 +1062,10 @@ MARK: Landing
     padding: 0 24px 0 0;
     display: flex;
     align-items: center;
-    position: sticky;
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1;
 }
 
 .barra-login .titulo-pag{
@@ -966,10 +1093,72 @@ MARK: Landing
     height: 100%;
     justify-content: center;
     align-items: center;
+    overflow: vis;
 }
 
 .barra-login .login div{
     cursor: pointer;
+}
+
+/* Selector de idiomas */
+.lang{
+    overflow: hidden;
+}
+
+.lang .langbtn{
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: var(--dark);
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 25px;
+    margin: 0;
+    transition: 0.4s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.lang .langbtn img, .lang .lang-content img{
+    width: 30px;
+}
+
+.lang .langbtn .bx{
+    font-size: 13px;
+}
+
+.lang-content{
+    display: none;
+    visibility: none;
+    position: absolute;
+    background-color: var(--grey);
+    border-radius: 0 0 25px 25px;
+    width: 96.65px;
+    z-index: 1;
+}
+
+.lang-content a{
+    color: var(--dark);
+    color: var(--light);
+    padding: 10px;
+    display: block;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.lang:hover .lang-content{
+    display: block;
+    visibility: visible;
+}
+
+.lang:hover .langbtn{
+    border-radius: 25px 25px 0 0;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .barra-login .login div a{
@@ -993,6 +1182,7 @@ MARK: Landing
 
 .mainContent{
     padding: 50px 70px 50px 70px;
+    z-index: 300;
 }
 
 .imagenTitulo{
@@ -1157,6 +1347,31 @@ MARK: Landing
     margin-top: 10px;
 }
 
+/* Collapse para un div */
+.collapse .collapse-content{
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.6s ease, mask-image 0.6s ease;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
+}
+
+.collapse .collapse-content.expand{
+    max-height: 10000px;
+    mask-image: none;
+}
+
+.collapse .button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.collapse .button p{
+    font-weight: 500;
+}
+
 /* Footer pagina landing */
 footer{
     width: 95%;
@@ -1202,6 +1417,8 @@ footer .contenidoFooter div p{
 footer .contenidoFooter div p.autor{
     margin-top: 15px;
     color: var(--dark-grey);
+    text-align: left;
+    margin-left: 56px;
 }
 
 footer .contenidoFooter div p.titulo{
@@ -1252,7 +1469,8 @@ footer .contenidoFooter div p.texto a{
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--grey);
+    color: var(--dark);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
@@ -1270,7 +1488,8 @@ footer .contenidoFooter div p.texto a{
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--grey);
+    color: var(--dark);
     transition: 0.4s;
     font-size: 19px;
     outline: none;
@@ -1488,21 +1707,23 @@ footer .contenidoFooter div p.texto a{
     padding: 10px;
     border-radius: 20px;
     font-size: 14px;
+    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.exito{
     background-color: var(--success);
-    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.warning{
     background-color: var(--warning);
-    color: var(--light);
 }
 
 .contenido main .tablas table td.estado span.error{
     background-color: var(--danger);
-    color: var(--light);
+}
+
+.contenido main .tablas table td.estado span.primary{
+    background-color: var(--primary);
 }
 
 .contenido main .tablas table td a.comprar{
@@ -1531,6 +1752,16 @@ footer .contenidoFooter div p.texto a{
 
 .contenido main .tablas table td a.modificar .bx{
     background-color: var(--warning);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.contenido main .tablas table td a.info{
+    color: var(--light-primary);
+}
+
+.contenido main .tablas table td a.info .bx{
+    background-color: var(--primary);
     padding: 5px;
     border-radius: 10px;
 }
@@ -1577,6 +1808,15 @@ footer .contenidoFooter div p.texto a{
     justify-content: space-evenly;
 }
 
+/* Estilo para repartir un div pero sin dejar margen (por si no hay formulario dentro del divRepartido) */
+.contenido main .rutas .divRepartido.centrado.m-0{
+    margin-bottom: 0;
+}
+
+.contenido main .rutas .divRepartido.centrado.m-0 div h3{
+    margin-bottom: 7px;
+}
+
 .contenido main .rutas .divRepartido .input h3{
     margin-bottom: 20px;
 }
@@ -1586,7 +1826,8 @@ footer .contenidoFooter div p.texto a{
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--light);
+    color: var(--dark);
     transition: 0.4s;
     font-size: 17px;
     outline: none;
@@ -1601,7 +1842,8 @@ footer .contenidoFooter div p.texto a{
     padding: 10px 5px;
     border-radius: 10px;
     border: 3px solid var(--grey);
-    background-color: #FFF;
+    background-color: var(--light);
+    color: var(--dark);
     transition: 0.4s;
     font-size: 17px;
     outline: none;
@@ -1631,7 +1873,7 @@ footer .contenidoFooter div p.texto a{
 
 .contenido main .mapa-ruta{
     width: 100%;
-    height: 300px;
+    height: 60vh;
     border-radius: 25px;
     z-index: 55;
 }
@@ -2014,6 +2256,10 @@ MARK: Sobre mi
         margin-right: auto;
     }
 
+    .contenido nav h3 span{
+        margin-right: 5px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -2103,7 +2349,8 @@ MARK: Sobre mi
     }
 
     .contenido nav h3 span{
-        margin-right: 5px;
+        display: none;
+        visibility: hidden;
     }
     
 }

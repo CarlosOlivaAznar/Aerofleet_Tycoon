@@ -74,5 +74,16 @@ class CompetenciaController extends Controller
         return view('competencia.rutasCompetencia', ['grupoRutas' => $grupoRutas, 'nombreC' => $nombreC]);
     }
 
+    public function rankings()
+    {
+        $usuariosa = User::all();
+
+        $usuarios = $usuariosa->sortByDesc(function ($usuario) {
+            return $usuario->patrimonio();
+        });
+
+        return view('competencia.rankings', ['usuarios' => $usuarios]);
+    }
+
     
 }

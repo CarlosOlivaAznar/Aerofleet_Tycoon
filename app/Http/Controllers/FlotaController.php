@@ -73,10 +73,9 @@ class FlotaController extends Controller
             $user->update();
 
             // Mostramos mensaje
-            session()->flash('exito', 'El avion se ha comprado correctamente');
-        } else {
+            session()->flash('exito', trans('fleet.buySucces'));
             // Mensaje error
-            session()->flash('error', 'No tiene suficiente saldo');
+            session()->flash('error', trans('fleet.neCash'));
         }
         
         return redirect()->route('flota.index');
@@ -114,9 +113,9 @@ class FlotaController extends Controller
             ]);
 
             // Mostramos mensaje
-            session()->flash('exito', 'El avion se ha comprado correctamente');
+            session()->flash('exito', trans('fleet.buySucces'));
         } else {
-            session()->flash('error', 'No tiene suficiente saldo');
+            session()->flash('error', trans('fleet.neCash'));
         }
 
         return redirect()->route('flota.index');
@@ -135,9 +134,9 @@ class FlotaController extends Controller
             $avion->delete();
 
             // Mostramos mensaje
-            session()->flash('exito', 'El avion se ha vendido correctamente');
+            session()->flash('exito', trans('fleet.sellSucces'));
         } else {
-            session()->flash('error', 'Error al vender el avion');
+            session()->flash('error', trans('fleet.nyProperty'));
         }
 
         return redirect()->route('flota.index');
@@ -164,22 +163,26 @@ class FlotaController extends Controller
                 $avion->estado = 2;
                 $avion->update();
             } else {
-                session()->flash('error', 'El avion no es de tu propiedad');
+                session()->flash('error', trans('fleet.nyProperty'));
             }
         } else {
-            session()->flash('error', 'No hay espacios disponibles en los hangares');
+            session()->flash('error', trans('fleet.neSpaces'));
         }
 
         return redirect()->route('flota.index'); 
     }
 
-    /*
-        Las matriculas de los aviones varian de pais a pais. Cada uno tiene un prefijo propio,
-        en España es EC- en Reino Unido es G- en Alemania en D-. El sufijo de las matriculas tambien varia
-        algunos contienen 3 letras como en españa y en la mayoria de paises como por ejemplo "EC-MLD", pero en
-        otros paises puede variar el sufijo y ser de 4 letras o contener numeros. Para mayor simpleza el prefijo
-        sera el del pais y el sufijo se mantendra de 3 letras sin numeros
-    */
+    /**
+     * Las matriculas de los aviones varian de pais a pais
+     * Cada uno tiene un prefijo propio, en España es EC- en
+     * Reino Unido es G- en Alemania es D-.
+     * El sufijo de las matriculas tambien varia algunos contienen 
+     * 3 letras como en españa y en la mayoria de paises como 
+     * por ejemplo "EC-MLD", pero en 
+     * otros paises puede variar el sufijo y ser de 4 letras 
+     * o contener numeros. Para mayor simpleza el prefijo 
+     * sera el del pais y el sufijo se mantendra de 3 letras sin numeros
+     */
     public function generarMatricula()
     {
         $sede = Sede::where('user_id', auth()->id())->first();
@@ -218,13 +221,14 @@ class FlotaController extends Controller
     {
         $avion = Flota::where('user_id', auth()->id())->where('id', $id)->first();
         if($avion->estado == 0 && $this->comprobarActivar($avion)){
-            $avion->estado = 1;
+            $avion->estado = 3;
+            $avion->activacion = now()->addDay();
             $avion->update();
-            session()->flash('exito', 'La ruta ha sido activada correctamente');
+            session()->flash('exito', trans('fleet.routeSucces'));
         } else if($avion->estado == 1){
-            session()->flash('warning', 'La ruta ya esta activa');
+            session()->flash('warning', trans('fleet.alreadyActivated'));
         } else if($avion->estado == 2){
-            session()->flash('error', 'El avion esta en mantenimiento');
+            session()->flash('error', trans('fleet.planeMaintenance'));
         }
 
         return redirect()->route('rutas.index');
@@ -240,7 +244,7 @@ class FlotaController extends Controller
             if($destino != null){
                 // Comprueba que el aerpuerto de origen es el mismo que el de destino de la ruta anterior
                 if($ruta->espacio_departure->aeropuerto->icao != $destino){
-                    session()->flash('error', 'La ruta no esta formada correctamente, los origenes y destinos no coinciden');
+                    session()->flash('error', trans('fleet.errCreateRoute'));
                     return false;
                 }
             }

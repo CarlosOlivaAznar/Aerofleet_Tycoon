@@ -1,10 +1,6 @@
-@auth()
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarHome')
   <!-- Fin Menu Lateral -->
@@ -18,7 +14,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Home</h1>
+          <h1>{{ __('home.home') }}</h1>
         </div>
       </div>
 
@@ -28,28 +24,28 @@
             <i class="bx bx-money"></i>
             <div>
               <h3>{{ session('saldo') }}</h3>
-              <h4>Efectivo disponible</h4>
+              <h4>{{ __('home.balanceAva') }}</h4>
             </div>
           </li>
           <li>
             <i class="bx bx-compass"></i>
             <div>
               <h3>{{ count($user->ruta) }}</h3>
-              <h4>Rutas Activas</h4>
+              <h4>{{ __('home.routes') }}</h4>
             </div>
           </li>
           <li>
             <i class="bx bxs-plane-alt"></i>
             <div>
               <h3>{{ count($user->flota) }}</h3>
-              <h4>Aviones comprados</h4>
+              <h4>{{ __('home.airplanes') }}</h4>
             </div>
           </li>
           <li>
             <i class="bx bx-building-house"></i>
             <div>
               <h3>{{ count($user->espacio) }}</h3>
-              <h4>Diferentes aeropuertos</h4>
+              <h4>{{ __('home.airports') }}</h4>
             </div>
           </li>
         </ul>
@@ -57,12 +53,12 @@
 
 
       <div class="informacion">
-        <div class="basico">
-          <h3>Saldo</h3>
+        <div class="basico chart">
+          <h3>{{ __('home.balance') }}</h3>
           <canvas id="beneficiosChart"></canvas>
         </div>
-        <div class="basico">
-          <h3>Mensajes</h3>
+        <div class="basico notificaciones">
+          <h3>{{ __('home.messages') }}</h3>
           <div class="notificaciones">
             @if (count($mensajeVuelos) > 0)
             <ul>
@@ -84,14 +80,14 @@
               @endforeach
             </ul>
             @else
-                No hay mensajes disponibles
+              {{ __('home.noMessages') }}
             @endif
           </div>
         </div>
       </div>
 
       <div class="infoBasico">
-        <h3>Informacion de los vuelos</h3>
+        <h3>{{ __('home.routeInfo') }}</h3>
         <div>
           @if (count($infoAviones) > 0)
           <ul>
@@ -100,7 +96,7 @@
             @endforeach
           </ul>
           @else
-            No hay informacion
+            {{ __('home.noInfo') }}
           @endif
         </div>
       </div>
@@ -143,17 +139,16 @@
             }]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
-              y: {
-                beginAtZero: true
-              }
+                y: {
+                    beginAtZero: true
+                }
             }
           }
         });
       </script>
-      
     </main>
   </div>
-</body>
-</html>
-@endauth()
+@endsection

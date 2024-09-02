@@ -19,7 +19,7 @@ return [
 
     // Confirmacion de correo
     'gratitude' => 'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.',
-    'issues' => 'We are experimenting issues with the email confirmation sistem. The email should arrive wihin 5 - 20 minutes from now. Thaks for your patience.',
+    'issues' => 'If it does not appear in your inbox, we recommend checking your spam folder as it is likely to be there.',
     'resend' => 'A new verification link has been sent to the email address you provided during registration.',
     'resendVerification' => 'Resend Verification Email',
     'logout' => 'Log Out',
@@ -38,6 +38,11 @@ return [
 
     'alreadyReg' => 'Already registered?',
     'register' => 'Register',
+
+    // Forgot password
+    'sendResetLink' => 'Email Password Reset Link',
+    'infoResetPW' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
+    
 ];
 
 // Plantilla

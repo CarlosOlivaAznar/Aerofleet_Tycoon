@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarRutas')
   <!-- Fin Menu Lateral -->
@@ -17,11 +14,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Crear Ruta Avion</h1>
+          <h1>{{ __('routes.createRoute') }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('rutas.index') }}">Ruta</a></li>
+            <li><a href="{{ route('rutas.index') }}">{{ __('routes.routes') }}</a></li>
             <li>/</li>
-            <li><span>Crear Ruta Avion</span></li>
+            <li><span>{{ __('routes.createRoute') }}</span></li>
           </ul>
         </div>
       </div>
@@ -31,7 +28,7 @@
       <div class="rutas">
         <div class="divRepartido">
           <div class="input">
-            <h3>Origen</h3>
+            <h3>{{ __('routes.departure') }}</h3>
             <select name="destino1" id="destino1" onchange="mostrarRadio()">
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
@@ -41,12 +38,12 @@
                 @endif
               @endforeach
               @if ($espaciosVacios === 0)
-                <option value="">No hay espacios disponibles</option>  
+                <option value="">{{ __('routes.noSlots') }}</option>  
               @endif
             </select>
           </div>
           <div class="input">
-            <h3>Hora de salida</h3>
+            <h3>{{ __('routes.timeOfDep') }}</h3>
             <select name="horaDep" id="horaDep">
               <option value="06:00:00">06:00z</option>
               <option value="06:30:00">06:30z</option>
@@ -84,11 +81,10 @@
               <option value="22:30:00">22:30z</option>
               <option value="23:00:00">23:00z</option>
               <option value="23:30:00">23:30z</option>
-              <option value="24:00:00">24:00z</option>
             </select>
           </div>
           <div class="input">
-            <h3>Destino</h3>
+            <h3>{{ __('routes.arrival') }}</h3>
             <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
@@ -96,7 +92,7 @@
                 @endif
               @endforeach
               @if ($espaciosVacios === 0)
-                <option value="">No hay espacios disponibles</option>  
+                <option value="">{{ __('routes.noSlots') }}</option>  
               @endif
             </select>
           </div>
@@ -155,28 +151,28 @@
         @endforeach
 
       <div class="resumenAvion">
-        <h4>Precio billete:</h4>
+        <h4>{{ __('routes.ticketPrice') }}</h4>
         <input type="range" name="precioBillete" id="precioBillete" value="50" min="5" max="600" oninput="slide(this)">
-        <p>Precio: <span id="precio"></span></p>
+        <p>{{ __('routes.price') }} <span id="precio"></span></p>
       </div>
 
       <div class="resumenAvion">
-        <h4>Ruta actual del avion:</h4>
+        <h4>{{ __('routes.actualRoute') }}</h4>
 
         @if(count($rutas) > 0)
         <div class="tablas">
           <div class="cabecera">
             <i class="bx bx-outline"></i>
-            <h3>Rutas del Avion</h3>
+            <h3>{{ __('routes.airplaneRoutes') }}</h3>
           </div>
           <table>
             <thead>
               <tr>
-                <th>Origen</th>
-                <th>Destino</th>
-                <th>Hora de Salida</th>
-                <th>Hora de Llegada</th>
-                <th>Distancia</th>
+                <th>{{ __('routes.departure') }}</th>
+                <th>{{ __('routes.arrival') }}</th>
+                <th>{{ __('routes.timeOfDep') }}</th>
+                <th>{{ __('routes.timeOfArr') }}</th>
+                <th>{{ __('routes.distance') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -186,7 +182,7 @@
                 <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
                 <td>{{ $ruta->horaInicio }}</td>
                 <td>{{ $ruta->horaFin }}</td>
-                <td>{{ $ruta->distancia }}</td>
+                <td>{{ $ruta->distancia }} km</td>
               </tr>  
               @endforeach
             </tbody>
@@ -195,7 +191,7 @@
         @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>No hay rutas creadas para este avion</h4>
+            <h4>{{ __('routes.noRoutesAirplane') }}</h4>
           </div>
         @endif
 
@@ -237,7 +233,8 @@
       var circle = null
       mostrarRadio();
 
-      function mostrarRadio(){
+      function mostrarRadio()
+      {
         var idEspacio = document.getElementById('destino1').value;
         var coordenadas = document.getElementsByClassName(idEspacio);
 
@@ -255,7 +252,8 @@
         mostrarRuta()
       }
 
-      function mostrarRuta(){
+      function mostrarRuta()
+      {
         var idEspacioOrigen = document.getElementById('destino1').value;
         var idEspacioDestino = document.getElementById('destino2').value;
 
@@ -277,5 +275,4 @@
     </script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

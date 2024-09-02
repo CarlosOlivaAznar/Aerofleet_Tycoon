@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarCompetencia')
   <!-- Fin Menu Lateral -->
@@ -19,6 +16,10 @@
         <div class="titulo">
           <h1>{{ __('competence.competence') }}</h1>
         </div>
+        <a href="{{ route('competencia.rankings') }}" class="boton">
+          <i class="bx bx-bar-chart"></i>
+          <span>{{ __('competence.rankings') }}</span>
+        </a>
       </div>
 
       <div class="rutas">
@@ -34,7 +35,7 @@
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaOrigen', 'origenHid')">{{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->id }}" onmousedown="seleccionar(this, 'busquedaOrigen', 'origenHid')">{{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -46,7 +47,7 @@
               
               <div class="drop-down" id="dropDown2">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->id }}" onclick="seleccionar(this, 'busquedaDestino', 'destinoHid')">{{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->id }}" onmousedown="seleccionar(this, 'busquedaDestino', 'destinoHid')">{{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
@@ -71,7 +72,7 @@
               
               <div class="drop-down" id="dropDown3">
                 @foreach ($companyias as $companyia)
-                    <p id="{{ $companyia->id }}" onclick="seleccionar(this, 'busquedaCompanyia', 'companyiaHid')">{{ $companyia->nombreCompanyia }}</p>
+                    <p id="{{ $companyia->id }}" onmousedown="seleccionar(this, 'busquedaCompanyia', 'companyiaHid')">{{ $companyia->nombreCompanyia }}</p>
                 @endforeach
               </div>
             </div>
@@ -99,5 +100,4 @@
       <script src="{{ asset('js/mapa.js') }}"></script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

@@ -3,12 +3,13 @@
 return [
 
     'competence' => 'Competence',
+    'rankings' => 'Rankings',
     'demand' => 'Route demand',
     'departure' => 'Departure',
     'arrival' => 'Arrival',
     'selectDep' => 'Select the departure...',
     'selectArr' => 'Select the arrival...',
-    'search' => 'Serach',
+    'search' => 'Search',
     'routes' => 'Competence routes',
     'airlineName' => 'Airline name',
     'searchName' => 'Search the airline name...',
@@ -28,6 +29,13 @@ return [
     // Airline Routes
     'routesOf' => 'Routes of',
     'planeRoutes' => 'Airplane routes',
+
+    // Rankings
+    'noUsers' => 'There are no users avaiable',
+    'totalAssets' => 'Total Assets',
+    'airplanes' => 'Airplanes',
+    'slots' => 'Slots',
+    'hangars' => 'Hangars',
 ];
 
 // Plantilla

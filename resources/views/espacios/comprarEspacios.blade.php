@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarEspacios')
   <!-- Fin Menu Lateral -->
@@ -17,11 +14,11 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Comprar Espacios</h1>
+          <h1>{{ __('slots.buySlots') }}</h1>
           <ul class="breadcrumb">
-            <li><a href="{{ route('espacios.index') }}">Espacios</a></li>
+            <li><a href="{{ route('espacios.index') }}">{{ __('slots.slots') }}</a></li>
             <li>/</li>
-            <li><span>Comprar Espacios</span></li>
+            <li><span>{{ __('slots.buySlots') }}</span></li>
           </ul>
         </div>
       </div>
@@ -31,49 +28,52 @@
           @csrf
           <div class="divRepartido">
             <div class="input">
-              <h3>Selecciona un Aeropuerto</h3>
+              <h3>{{ __('slots.selectAirport') }}</h3>
 
-              <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="Selecciona el aeropuerto..." required>
+              <input type="text" class="select" name="aeropuertoInput" id="aeropuertoInput" onfocus="mostrarDd('dropDown', this)" onblur="ocultarDd('dropDown')" onkeyup="filtrar(this, 'dropDown')" placeholder="{{ __('slots.selectAirportHint') }}" required>
               <input type="hidden" id="aeropuerto" name="aeropuerto" value="">
               
               <div class="drop-down" id="dropDown">
                 @foreach ($aeropuertos as $aeropuerto)
-                    <p id="{{ $aeropuerto->icao }}" onclick="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio()">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
+                    <p id="{{ $aeropuerto->icao }}" onmousedown="seleccionar(this, 'aeropuertoInput', 'aeropuerto');  mostrarPrecio(this); infoAeropuerto(this)">{{ $aeropuerto->icao }}, {{ $aeropuerto->nombre }}</p>
                 @endforeach
               </div>
             </div>
             <div class="input">
-              <h3>Precio</h3>
+              <h3>{{ __('slots.price') }}</h3>
               <p id="costeOperacion"></p>
             </div>
             <div class="input">
-              <h3>Espacios a comprar</h3>
+              <h3>{{ __('slots.slotsNumber') }}</h3>
               <input type="number" name="espacios" min="1" id="espacios" onkeyup="mostrarPrecioTotal()" onchange="mostrarPrecioTotal()" required>
             </div>
             <div class="input">
-              <h3>Precio Total:</h3>
+              <h3>{{ __('slots.totalPrice') }}</h3>
               <p id="precioTotal"></p>
             </div>
           </div>
 
           <div class="input submit">
-            <input type="submit" value="Comprar Espacios" id="botonSubmit">
+            <input type="submit" value="{{ __('slots.buySlots') }}" id="botonSubmit">
           </div>
-
-          
-          <!-- Precios de los espacios -->
-          @foreach ($aeropuertos as $aeropuerto)
-          <input type="hidden" id="{{ $aeropuerto->icao }}Precio" value="{{ $aeropuerto->costeOperacional }}">
-          @endforeach
-
-          <!-- Aeropuertos -->
-          @foreach ($aeropuertosMapa as $aeropuerto)
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[0] }}">
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[1] }}">
-            <input type="hidden" class="aeropuertos" value="{{ $aeropuerto[2] }}">
-          @endforeach
-
         </form>
+      </div>
+
+      <div class="rutas">
+        <div class="divRepartido centrado m-0">
+          <div>
+            <h3>{{ __('slots.category') }}</h3>
+            <p id="categoria"></p>
+          </div>
+          <div>
+            <h3>{{ __('slots.demand') }}</h3>
+            <p id="demanda">{{ __('slots.selectAirportHint') }}</p>
+          </div>
+          <div>
+            <h3>{{ __('slots.costPerOperation') }}</h3>
+            <p id="costeOperacionInfo"></p>
+          </div>
+        </div>
       </div>
 
       <div class="mapa-ruta">
@@ -98,32 +98,29 @@
           });
 
 
-          var domAeropuertos = document.getElementsByClassName("aeropuertos");
+          let aeropuertos = @json($aeropuertos);
 
-          var aeropuertos = Array();
-
-          for(var i = 0; i < domAeropuertos.length; i++){
-            aeropuertos.push(domAeropuertos[i].value);
-          }
-
-          for(var i = 0; i < aeropuertos.length/3; i++){
-            L.marker([aeropuertos[(i*3)], aeropuertos[(i*3)+1]], {
+          aeropuertos.forEach(aeropuerto => {
+            L.marker([aeropuerto.latitud, aeropuerto.longitud], {
               icon: airportIcon
-            }).addTo(map).bindPopup(aeropuertos[(i*3)+2]);
-          }
+            }).addTo(map).bindPopup(aeropuerto.nombre);
+          });
+
       </script>
       </div>
       
       <script>
-        function mostrarPrecio()
+        function mostrarPrecio(elemento)
         {
-          var icao = document.getElementById("aeropuerto").value;
-          console.log(document.getElementById(icao + "Precio"));
-          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
-          var mostrarPrecio = document.getElementById("costeOperacion");
+          let aeropuertos = @json($aeropuertos);
+
+          // Buscamos los aeropuertos en el array
+          let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === elemento.id);
 
           // Mostrar precio en el parrafo
-          mostrarPrecio.innerHTML = costeOperacion;
+          let mostrarPrecio = document.getElementById("costeOperacion");
+
+          mostrarPrecio.innerHTML = aeropuerto.costeOperacional * 723;
 
           // Reseteamos el precio total
           mostrarPrecioTotal();
@@ -136,18 +133,71 @@
           var precioTotal = document.getElementById("precioTotal");
           
           if(!isNaN(numEspacios)){
-          // CosteOperacion para hacer el calculo
-          var icao = document.getElementById("aeropuerto").value;
-          var costeOperacion = parseInt(document.getElementById(icao + "Precio").value) * 723;
+            let aeropuertos = @json($aeropuertos);
 
-          precioTotal.innerHTML = costeOperacion * numEspacios;
+            // Obtenemos el codigo icao
+            var icao = document.getElementById("aeropuerto").value;
+
+            // Buscamos los aeropuertos en el array
+            let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === icao);
+
+            let costeOperacion = aeropuerto.costeOperacional * 723;
+
+            precioTotal.innerHTML = costeOperacion * numEspacios;
           } else {
             precioTotal.innerHTML = 0;
+          }
+        }
+
+        function infoAeropuerto(elemento)
+        {
+          let aeropuertos = @json($aeropuertos);
+
+          // Buscamos los aeropuertos en el array
+          let aeropuerto = aeropuertos.find(aeropuerto => aeropuerto.icao === elemento.id);
+
+          if(aeropuerto){
+            let categoria = document.getElementById("categoria");
+            let demanda = document.getElementById("demanda");
+            let costeOperacionInfo = document.getElementById("costeOperacionInfo");
+
+            // Ponemos la informacion en el div
+            // Categoria
+            let categoriaString = "";
+            switch(aeropuerto.categoria){
+              case 1:
+              categoriaString = "Muy Grande";
+                break;
+              case 2:
+              categoriaString = "Grande";
+                break;
+              case 3:
+              categoriaString = "Mediano";
+                break;
+              case 4:
+              categoriaString = "Pequeño";
+                break;
+            }
+          categoria.innerHTML = categoriaString;
+          
+          // Demanda
+          let demandaString = "Muy Baja";
+          if(aeropuerto.demanda > 0.90){
+            demandaString = "Alta";
+          } else if(aeropuerto.demanda > 0.80){
+            demandaString = "Media";
+          } else if(aeropuerto.demanda > 0.65){
+            demandaString = "Baja";
+          }
+
+          demanda.innerHTML = demandaString;
+
+          // Coste Operacional
+          costeOperacionInfo.innerHTML = aeropuerto.costeOperacional;
           }
         }
       </script>
       <script src="{{ asset('js/dropdown.js') }}"></script>
     </main>
   </div>
-</body>
-</html>
+@endsection()

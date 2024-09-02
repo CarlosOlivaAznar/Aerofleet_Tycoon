@@ -3,6 +3,7 @@
 return [
 
     'competence' => 'Competencia',
+    'rankings' => 'Clasificación',
     'demand' => 'Demanda de las rutas',
     'departure' => 'Origen',
     'arrival' => 'Destino',
@@ -28,6 +29,13 @@ return [
     // Airline Routes
     'routesOf' => 'Rutas de',
     'planeRoutes' => 'Rutas del avion',
+
+    // Rankings
+    'noUsers' => 'No hay usuarios disponibles',
+    'totalAssets' => 'Patrimonio',
+    'airplanes' => 'Aviones',
+    'slots' => 'Espacios',
+    'hangars' => 'Hangares',
 ];
 
 // Plantilla

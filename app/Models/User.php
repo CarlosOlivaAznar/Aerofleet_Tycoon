@@ -58,7 +58,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function sede()
     {
-        return $this->belongsTo(Sede::class);
+        return $this->hasOne(Sede::class);
     }
 
     public function ruta()
@@ -74,6 +74,36 @@ class User extends Authenticatable implements MustVerifyEmail
     public function bugreport()
     {
         return $this->hasMany(Bugreport::class);
+    }
+
+    public function getNumEspacios()
+    {
+        $numEspacios = 0;
+        
+        foreach ($this->espacio as $espacio) {
+            $numEspacios += $espacio->numeroDeEspacios;
+        }
+        
+        return $numEspacios;
+    }
+
+    public function patrimonio()
+    {
+        $patrimonio = $this->saldo;
+        
+        foreach ($this->flota as $flota) {
+            $patrimonio += $flota->precioVenta();
+        }
+
+        foreach ($this->espacio as $espacio) {
+            $patrimonio += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
+        }
+
+        if($this->sede){
+            $patrimonio += count($this->sede->hangar) * $this->sede->costeHangar();
+        }
+
+        return $patrimonio;
     }
 
 

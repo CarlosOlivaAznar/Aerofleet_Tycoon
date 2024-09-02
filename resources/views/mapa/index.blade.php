@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('partials.head')
-</head>
-<body>
+@extends('master')
+
+@section('content')
   <!-- Menu Lateral -->
   @include('partials.sidebarMapa')
   <!-- Fin Menu Lateral -->
@@ -17,7 +14,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>Mapa</h1>
+          <h1>{{ __('map.map') }}</h1>
         </div>
       </div>
 
@@ -41,5 +38,4 @@
       </div>
     </main>
   </div>
-</body>
-</html>
+@endsection()

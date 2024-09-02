@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedFloat('horasCompletadas')->default(0);
             $table->unsignedFloat('distanciaCompletada')->default(0);
             $table->string('ultimoMantenimiento')->default(now());
+            $table->date('activacion')->nullable();
             $table->timestamps();
         });
     }

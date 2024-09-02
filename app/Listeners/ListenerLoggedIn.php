@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
 {
-    /**
-     * Create the event listener.
-     */
     public function __construct()
     {
         //
@@ -40,10 +37,14 @@ class ListenerLoggedIn
         $fechaActual = now();
 
         // Creamos la variable de sesion nueva para mostrar los datos de los vuelos
-        Session::put('infoAviones', []);
+        if(!Session::get('infoAviones', [])){
+            Session::put('infoAviones', []);
+        }
 
         // Creamos la variable de sesion nueva para mostrar los mensajes importantes para el usuario
-        Session::put('mensajeVuelos', []);
+        if(!Session::get('mensajeVuelos', [])){
+            Session::put('mensajeVuelos', []);
+        }
         
         // Solo hay que calcular la diferencia de dias, en algunos casos las horas producen inconsistencias
         // y una hora de diferencia puede añadir un dia mas o menos.
@@ -71,6 +72,9 @@ class ListenerLoggedIn
 
                 // Restamos los gastos mensuales
                 $this->gastosMensuales();
+
+                // Comprobamos que los aviones que se tienen que activar
+                $this->activarAviones();
             }
         }
 
@@ -92,6 +96,9 @@ class ListenerLoggedIn
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta);
                 }
+
+                // Comprobamos que los aviones que se tienen que activar
+                $this->activarAviones();
             }
 
             // Solo por el ultimo dia de conexion calculamos el mantenimiento
@@ -162,7 +169,13 @@ class ListenerLoggedIn
         
         // Comprobacion para que los pasajeros no superen la capacidad del avion
         if($pasajeros > $ruta->flota->avion->capacidad){
+            // Variable para manejar mensaje de avion lleno, si el avion va un 108% se guarda en una variable para mas tarde
+            // guardar un mensaje de aviso al jugador
+            if($pasajeros > $ruta->flota->avion->capacidad * 1.08) $avionLleno = true;
+
+            // Ajustamos los pasajeros para que no superen la capacidad del avion
             $pasajeros = $ruta->flota->avion->capacidad;
+            
         } else if($pasajeros < 0){
             // Cuando los pasajeros sean menos de 0, un avion no puede tener pasajeros negativos
             $pasajeros = 0;
@@ -195,7 +208,7 @@ class ListenerLoggedIn
         if($ruta->flota->condicion < 5){
             $ruta->flota->estado = 0;
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." tiene un estado deplorable, por seguridad se ha detenido todas las operaciones del avion y se encuentra en tierra",
+            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
             3]);
         }
         $ruta->flota->update();
@@ -211,31 +224,31 @@ class ListenerLoggedIn
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
         $infoAviones = Session::get('infoAviones', []);
-        array_push($infoAviones, "El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio ha completado el vuelo con $pasajeros pasajeros y tiene un beneficio de $beneficio (ingresos: $ingresos, gastos: $gastos)");
+        array_push($infoAviones, trans('home.thePlane') ." ". $ruta->flota->matricula ." ". trans('home.wRoute') ." ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " . trans('home.startTime') . " $ruta->horaInicio " .trans('home.completedFlight'). " $pasajeros " .trans('home.passengers'). " $beneficio " .trans('home.income'). " $ingresos, " .trans('home.expenses'). " ". number_format($gastos, 2, ',', '.') .")");
         Session::put('infoAviones', $infoAviones);
 
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
         if($beneficio < 0){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta generando perdidas, considere reducir el precio de los billetes o cambiar la ruta del avion",
+            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.wRoute') ." ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " . trans('home.startTime'). " $ruta->horaInicio " . trans('home.losses'),
             3]);
         }
 
-        if($pasajeros === $ruta->flota->avion->capacidad){
+        if($avionLleno){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con el avion lleno, considere aumentar el precio de los billetes",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.fullPlane'),
             1]);
         }
 
         if($ruta->flota->avion->capacidad*0.25 > $pasajeros){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta con muy pocos pasajeros, considere bajar los precios de los billetes o cambiar la ruta",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.fewPassengers'),
             2]);
         }
 
         if($pasajeros <= 0){
             array_push($mensajeVuelos, 
-            ["El avion ". $ruta->flota->matricula ." con la ruta ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " con la hora de inicio a las $ruta->horaInicio esta completando la ruta vacio, no tiene ningun pasajero, considere cambiar la ruta o bajar los precios de los billetes",
+            [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.emptyPlane'),
             3]);
         }
 
@@ -254,10 +267,17 @@ class ListenerLoggedIn
                 // Para los mantenimientos se calcula dividiendo los ingenieros por los aviones en mantenimiento
                 $avion->condicion += $sede->ingenieros / count($flotaMantenimiento);
                 $avion->update();
+
+                // Si el avion supera el año de antiguedad se añadira un plus de dinero por mantenerlo
+                if(date($avion->fechaDeFabricacion) > now()->subYear()){
+                    $user = User::find(auth()->id());
+                    $user->saldo -= 750 * now()->subYear()->diffInYears(date($avion->fechaDeFabricacion));
+                    $user->update();
+                }
             } else {
                 // creamos el mensaje de que el avion ha completado el mantenimiento
                 array_push($mensajeVuelos, 
-                ["El avion $avion->matricula ha completado el mantenimiento, considere retiralo del hangar",
+                [trans('home.thePlane') ." $avion->matricula " . trans('home.maintenance.Comp'),
                 2]);
             }
         }
@@ -265,7 +285,7 @@ class ListenerLoggedIn
         // Primera condicion para no dividir por 0
         if(count($flotaMantenimiento) != 0 && $sede->ingenieros / count($flotaMantenimiento) < 0.33){
             array_push($mensajeVuelos, 
-            ["El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros",
+            [trans('home.hireEng'),
             3]);
         }
 
@@ -299,6 +319,22 @@ class ListenerLoggedIn
                 if($i % 2 === 1){
                     $beneficiosHistoricos[$i]->delete();
                 }
+            }
+        }
+    }
+
+    /**
+     * Funcion que comprueba los aviones que se tienen que activar para pasarlos al estado 1 de en ruta
+     */
+    public function activarAviones()
+    {
+        $avionesActivar = Flota::where('user_id', auth()->id())->where('estado', 3)->get();
+
+        foreach ($avionesActivar as $avionActivar) {
+            if(date($avionActivar->activacion) <= now()){
+                $avionActivar->estado = 1;
+                $avionActivar->update();
+                error_log("Activando avion $avionActivar->id");
             }
         }
     }

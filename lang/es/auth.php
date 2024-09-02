@@ -19,13 +19,13 @@ return [
 
     // Confirmacion de correo
     'gratitude' => '¡Gracias por registrarte! Antes de comenzar, ¿podrías verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar por correo electrónico? Si no has recivido el correo electrónico, le podemos enviar otro.',
-    'issues' => 'Estamos experimentando problemas con el sistema de confirmación por correo electrónico. El correo electrónico debería llegar dentro de 5 a 20 minutos desde ahora. Gracias por tu paciencia.',
+    'issues' => 'Si no aparece en la bandeja de entrada recomendamos revisar la bandeja de spam ya que es probable que se encuentre ahi',
     'resend' => 'Se ha enviado un nuevo correo de verificacion.',
     'resendVerification' => 'Reenviar correo de verificacion',
     'logout' => 'Cerrar sesión',
 
     // Login y register
-    'email' => 'Correo Electrñonico',
+    'email' => 'Correo Electronico',
     'password' => 'Contraseña',
     'confirmPsw' => 'Confirmar contraseña',
     'rememberMe' => 'Recuerdame',
@@ -38,6 +38,10 @@ return [
 
     'alreadyReg' => 'ya registrado?',
     'register' => 'Registrarse',
+
+    // Forgot password
+    'sendResetLink' => 'Cambiar contraseña',
+    'infoResetPW' => '¿Has olvidado tu contraseña? No hay problema. Solo introduce tu correo y te enviaremos un correo con un link para resetear la contraseña que te habilitara para introducir una nueva.',
 
 ];
 

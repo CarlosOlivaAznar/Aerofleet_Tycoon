@@ -9,9 +9,7 @@
       
         <div>
           <img src="{{ asset('images/logos/logo_AFT_.png') }}" alt="logoAFT">
-          <form action="#" class="formularioBasico">
-            @csrf
-
+          <div class="formularioBasico">
             <div class="campos">
                 <label for="info">
                     {{ __('auth.gratitude') }}
@@ -46,10 +44,7 @@
                     </form>
                 </div>
             </div>
-
-            
-            
-          </form>
+          </div>
         </div>
     </div>
   </main>

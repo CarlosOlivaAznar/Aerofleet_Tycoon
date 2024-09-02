@@ -28,4 +28,25 @@ class Avion extends Model
     {
         return $this->hasMany(Avionsh::class);
     }
+
+    public function categoria()
+    {
+        switch ($this->categoria) {
+            case 1:
+                return "Muy grande";
+                break;
+            case 2:
+                return "Grande";
+                break;
+            case 3:
+                return "Mediano";
+                break;
+            case 4:
+                return "Pequeño";
+                break;
+            default:
+                return "n/a";
+                break;
+        }
+    }
 }

@@ -17,6 +17,7 @@ class Flota extends Model
         'fechaDeFabricacion',
         'condicion',
         'estado',
+        'activacion',
     ];
 
     public function estatusS()
@@ -30,6 +31,9 @@ class Flota extends Model
                 break;
             case 2:
                 return "En mantenimiento";
+                break;
+            case 3:
+                return "Activando";
                 break;
             default:
                 return "En el triangulo de las Bermudas";
@@ -48,6 +52,9 @@ class Flota extends Model
                 break;
             case 2:
                 return "warning";
+                break;
+            case 3:
+                return "primary";
                 break;
             default:
                 return "error";

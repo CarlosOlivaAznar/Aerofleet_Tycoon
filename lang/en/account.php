@@ -22,6 +22,8 @@ return [
     'deleteConfirmation' => 'Are you sure you want to delete your account?',
     'password' => 'Password',
     'cancel' => 'Cancel',
+    'darkMode' => 'Dark Mode',
+    'enableDarkMode' => 'Enable dark mode',
 ];
 
 // Plantulla
