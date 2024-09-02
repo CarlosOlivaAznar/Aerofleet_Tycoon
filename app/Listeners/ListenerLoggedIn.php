@@ -168,6 +168,7 @@ class ListenerLoggedIn
         $pasajeros = intval($mediaDemanda * $pasajerosEstimados);
         
         // Comprobacion para que los pasajeros no superen la capacidad del avion
+        $avionLleno = false;
         if($pasajeros > $ruta->flota->avion->capacidad){
             // Variable para manejar mensaje de avion lleno, si el avion va un 108% se guarda en una variable para mas tarde
             // guardar un mensaje de aviso al jugador
