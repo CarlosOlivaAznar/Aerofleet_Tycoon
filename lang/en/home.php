@@ -36,6 +36,10 @@ return [
     'maintenanceComp' => 'has completed the maintenance, consider removing it from the hangar',
     'hireEng' => 'The maintenance ratio is less than 0.33 per plane, consider hiring more engineers',
 
+    // Eventos Aleatorios
+    'retrasoVuelo' => 'has experienced a delay, and 25% of the generated income will be refunded for the inconvenience',
+
+
 ];
 
 // Plantilla

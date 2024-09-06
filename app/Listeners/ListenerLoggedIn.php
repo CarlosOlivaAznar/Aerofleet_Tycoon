@@ -150,7 +150,7 @@ class ListenerLoggedIn
 
 
         /**
-         * Se cuenta cuantas rutas similares exiten contanodo las del usuario registrado
+         * Se cuenta cuantas rutas similares exiten contando las del usuario registrado
          * y por cada ruta similar se resta 0.005 de la demanda de la ruta
          */
         error_log("demanda antes del calculo de la competencia: $mediaDemanda");
@@ -191,6 +191,11 @@ class ListenerLoggedIn
 
         // Gastos por el uso del avion
         $gastos += $ruta->flota->avion->costePorKm * $ruta->distancia;
+
+        // ---- Eventos Aleatorios ---
+        // Antes de calcular el beneficio de la ruta se mira si ha podido suceder algun imprevisto en la ruta
+        $this->eventosAleatorios($ingresos, $gastos, $ruta);
+
 
         // Calculamos el beneficio de la ruta
         $beneficio = intval($ingresos - $gastos);
@@ -338,5 +343,78 @@ class ListenerLoggedIn
                 error_log("Activando avion $avionActivar->id");
             }
         }
+    }
+
+    /**
+     * Control de eventos aleatorios
+     */
+    public function eventosAleatorios(&$ingresos, &$gastos, &$ruta)
+    {
+        // Todos los eventos posibles con su probabilidad
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
+        $eventos = [
+            "retrasoVuelo" => 2,
+            "falloMecanico" => 0.5,
+            "huelgaAeropuerto" => 0.3,
+            "aumentoDemanda" => 0.5,
+            "perdidaEquipaje" => 1,
+            "impactoAve" => 0.1,
+            "pasajeroProblematico" => 0.2,
+            "personaEnferma" => 0.4,
+            "impactosMenores" => 2.5,
+        ];
+
+        $eventosOcurridos = array();
+        
+
+        foreach ($eventos as $nombre => $probabilidad) {
+            $numeroAleatorio = mt_rand(0, 10000) / 100;
+
+            // Si el numero aleatorio esta dentro de la probabilidad de ocurrir, el evento lo guardamos en eventosOcurridos
+            if ($probabilidad >= $numeroAleatorio ) {
+                array_push($eventosOcurridos, $nombre);
+            }
+        }
+
+        // se ejecutan los eventos
+        foreach ($eventosOcurridos as $evento) {
+            switch ($evento) {
+                case 'retrasoVuelo':
+                    $ingresos *= 0.75;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.retrasoVuelo'),
+                    3]);
+                    break;
+                case 'falloMecanico':
+                    
+                    break;
+                case 'huelgaAeropuerto':
+                    
+                    break;
+                case 'aumentoDemanda':
+                    
+                    break;
+                case 'perdidaEquipaje':
+                    
+                    break;
+                case 'impactoAve':
+                    
+                    break;
+                case 'pasajeroProblematico':
+                    
+                    break;
+                case 'personaEnferma':
+                    
+                    break;
+                case 'impactosMenores':
+                    
+                    break;
+                    
+            }
+        }
+
+        // Guardamos los mensajes
+        Session::put('mensajeVuelos', $mensajeVuelos);
     }
 }

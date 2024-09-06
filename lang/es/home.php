@@ -36,6 +36,9 @@ return [
     'maintenanceComp' => 'ha completado el mantenimiento, considere retiralo del hangar',
     'hireEng' => 'El ratio de mantenimiento es menor de 0.33 por avion, considere contratar a más ingenieros',
 
+    // Eventos Aleatorios
+    'retrasoVuelo' => 'ha sufrido un retraso y se abonara el 25% de los ingresos generados por las molestias',
+
 ];
 
 // Plantilla
