@@ -38,6 +38,15 @@ return [
 
     // Eventos Aleatorios
     'retrasoVuelo' => 'ha sufrido un retraso y se abonara el 25% de los ingresos generados por las molestias',
+    'falloMecanico1' => 'ha sufrido un fallo mecanico en el aeropuerto y ha tenido que ser reparado, los gastos de la reparacion son:',
+    'falloMecanico2' => 'ha sufrido un fallo mecanico en el aeropuerto y no ha podido ser reparado a tiempo, el vuelo ha sido cancelado.',
+    'huelgaAeropuerto' => 'ha sufrido una huelga de controladores aereos en uno de los aeropuertos, por el retraso se ha abonado el 25% del precio de los billetes a los pasajeros',
+    'aumentoDemanda' => 'ha sufrido un aumento de la demanda inesperadamente, los ingresos se han multiplicado un',
+    'perdidaEquipaje' => 'ha sufrido perdidas de equipaje en el aeropuerto, se ha conpensado economicamente a los pasajeros afectados, pasajeros afectados:',
+    'impactoAve' => 'ha sufrido el impacto de una ave en pleno vuelo, se ha pagado de reparacion de',
+    'pasajeroProblematico' => 'ha sufrido un desvio a otro aeropuerto por un pasajero que estaba dando problemas en el avion. Se ha abonado de vuelta el 25% del precio del billete y debido al desvio del avion a otro aeropuerto se ha cobrado la tasa de operacion extra:',
+    'personaEnferma' => 'ha sufrido una emergencia abordo y ha tenido que ser aterrizado de emergencia en otro aeropuerto. Se abona de vuelta el 10% del precio del billete y debido al desvio del avion a otro aeropuerto se ha cobrado la tasa de operacion extra:',
+    'impactosMenores' => 'ha sufrido daños menores durante el vuelo, se ha reducido el estado del avion un'
 
 ];
 

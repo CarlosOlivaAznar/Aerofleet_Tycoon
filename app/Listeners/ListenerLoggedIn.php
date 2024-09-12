@@ -382,33 +382,99 @@ class ListenerLoggedIn
                 case 'retrasoVuelo':
                     $ingresos *= 0.75;
 
+                    // Guardamos el mensaje
                     array_push($mensajeVuelos, 
                     [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.retrasoVuelo'),
                     3]);
                     break;
                 case 'falloMecanico':
-                    
+                    $moneda = mt_rand(0,1);
+
+                    if($moneda === 0){
+                        $gastosReparacion = mt_rand(3500, 6000);
+                        $gastos += $gastosReparacion;
+
+                        array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico1' . ' ' . $gastosReparacion),
+                    3]);
+
+                    } else if($moneda === 1){
+                        $ingresos = 0;
+                        
+                        array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico2'),
+                    3]);
+                    }
                     break;
                 case 'huelgaAeropuerto':
+                    $ingresos *= 0.75;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.huelgaAeropuerto'),
+                    3]);
                     
                     break;
                 case 'aumentoDemanda':
+                    $aumentoDemanda = mt_rand(5, 25) / 100 + 1;
+                    $ingresos *= $aumentoDemanda;
+                    $aumentoDemanda = ($aumentoDemanda - 1) * 100;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.aumentoDemanda' . ' ' . $aumentoDemanda . '%'),
+                    2]);
                     
                     break;
                 case 'perdidaEquipaje':
+                    $perdidaEquipajesPorcentaje = mt_rand(5, 30);
+                    $perdidaEquipajes = 1 - ($perdidaEquipajesPorcentaje / 100);
+                    $ingresos *= $perdidaEquipajes;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.perdidaEquipaje' . ' ' . $perdidaEquipajesPorcentaje . '%'),
+                    3]);
                     
                     break;
                 case 'impactoAve':
+                    $reparacion = mt_rand(2000,12000);
+                    $gastos += $reparacion;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactoAve' . ' ' . $reparacion . '€'),
+                    3]);
                     
                     break;
                 case 'pasajeroProblematico':
+                    $pagoAeropuerto = mt_rand(750, 2500);
+                    $ingresos *= 0.75;
+                    $gastos += $pagoAeropuerto;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.pasajeroProblematico' . ' ' . $pagoAeropuerto . '€'),
+                    3]);
                     
                     break;
                 case 'personaEnferma':
+                    $pagoAeropuerto = mt_rand(750, 2500);
+                    $ingresos *= 0.80;
+                    $gastos += $pagoAeropuerto;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.personaEnferma' . ' ' . $pagoAeropuerto . '€'),
+                    3]);
                     
                     break;
                 case 'impactosMenores':
-                    
+                    $danyos = mt_rand(1,4);
+                    if($ruta->flota->condicion - $danyos < 0.05){
+                        $ruta->flota->condicion -= $danyos;
+                    }
+
+                    $ruta->flota->update();
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactosMenores' . ' ' . $danyos . '%'),
+                    3]);
+
                     break;
                     
             }
