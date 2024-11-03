@@ -38,6 +38,113 @@ class RutasController extends Controller
 
     public function nuevaRuta(Request $request)
     {
+        // Comprobar que los destinos son diferentes
+        if ($request->destino1 === $request->destino2) {
+            return $this->redirectWithError('routes.arrDestEq');
+        }
+
+        $espacioDep = Espacio::find($request->destino1);
+        $espacioArr = Espacio::find($request->destino2);
+        $avion = Flota::find($request->avion);
+
+        // Comprobamos la categoria de los aviones sea la correcta
+        if ($this->exceedsCategory($espacioDep, $espacioArr, $avion)) {
+            return $this->redirectWithError('routes.maxSize');
+        }
+
+        // Comprobamos que los recursos sean propiedad del usuario
+        if (!$this->userOwnsResources($espacioDep, $espacioArr, $avion)) {
+            return $this->redirectWithError('routes.userErr');
+        }
+
+        // Comprobar que hay espacios disponibles adquiridos por el usuario
+        if ($espacioDep->espaciosDisponibles() <= 0 || $espacioArr->espaciosDisponibles() <= 0) {
+            return $this->redirectWithError('routes.noSlotsAva');
+        }
+
+        $distancia = $this->calcularDistancia(
+            $espacioDep->aeropuerto->latitud,
+            $espacioDep->aeropuerto->longitud,
+            $espacioArr->aeropuerto->latitud,
+            $espacioArr->aeropuerto->longitud
+        );
+
+        // Comprobar que el rango del avion esta dentro de la distancia de la nueva ruta
+        if ($avion->avion->rango < $distancia) {
+            return $this->redirectWithError('routes.maxRange');
+        }
+
+        $tiempoRuta = $distancia * $avion->avion->tiempoPorKm;
+        $horaInicial = Carbon::createFromFormat('H:i:s', $request->horaDep);
+        $horaLlegada = (clone $horaInicial)->addMinutes($tiempoRuta);
+        
+        // Comprobar que no se supera los limites de horario de la ruta
+        if (!$this->isArrivalWithinLimit($horaLlegada)) {
+            return $this->redirectWithError('routes.maxTime');
+        }
+
+        // Comprueba que la nueva ruta es compatible con las rutas anteriores
+        $rutas = Ruta::where('flota_id', $request->avion)->orderBy('horaInicio')->get();
+        if (!$this->isValidRouteSchedule($rutas, $horaInicial, $horaLlegada, $espacioDep, $espacioArr)) {
+            return $this->redirectWithError('routes.scheduleConflict');
+        }
+
+        // Crear la nueva ruta
+        Ruta::create([
+            'flota_id' => $avion->id,
+            'user_id' => auth()->id(),
+            'espacio_departure_id' => $espacioDep->id,
+            'espacio_arrival_id' => $espacioArr->id,
+            'horaInicio' => $horaInicial->format('H:i:s'),
+            'horaFin' => $horaLlegada->format('H:i:s'),
+            'distancia' => round($distancia, 2),
+            'tiempoEstimado' => gmdate('H:i:s', $tiempoRuta * 60),
+            'precioBillete' => $request->precioBillete,
+        ]);
+
+        session()->flash('exito', trans('routes.routeCreated'));
+        return redirect()->route('rutas.index');
+    }
+
+    private function redirectWithError($errorKey)
+    {
+        session()->flash('error', trans($errorKey));
+        return redirect()->route('rutas.index');
+    }
+
+    private function exceedsCategory($espacioDep, $espacioArr, $avion)
+    {
+        return $espacioDep->aeropuerto->categoria > $avion->avion->categoria ||
+            $espacioArr->aeropuerto->categoria > $avion->avion->categoria;
+    }
+
+    private function userOwnsResources($espacioDep, $espacioArr, $avion)
+    {
+        $userId = auth()->id();
+        return $espacioDep->user->id === $userId &&
+            $espacioArr->user->id === $userId &&
+            $avion->user->id === $userId;
+    }
+
+    private function isArrivalWithinLimit($horaLlegada)
+    {
+        return $horaLlegada->lt(Carbon::today()->addHours(4)->addDay());
+    }
+
+    private function isValidRouteSchedule($rutas, $horaInicial, $horaLlegada, $espacioDep, $espacioArr)
+    {
+        return count($rutas) === 0 ||
+            ($this->comprobarOrigen($rutas, $horaInicial, $espacioDep->aeropuerto->icao) &&
+                $this->comprobarDestino($rutas, $horaInicial, $espacioArr->aeropuerto->icao) &&
+                $this->horariosSuperpuestos($rutas, $horaInicial, $horaLlegada));
+    }
+
+
+
+
+    /* ANTIGUA FUNCION SIN OPTIMIZAR
+    public function nuevaRuta(Request $request)
+    {
         if($request->destino1 !== $request->destino2){
             $espacioDep = Espacio::where('id', $request->destino1)->first();
             $espacioArr = Espacio::where('id', $request->destino2)->first();
@@ -100,7 +207,7 @@ class RutasController extends Controller
         }
 
         return redirect()->route('rutas.index');
-    }
+    }*/
 
     public function calcularDistancia($latitudDep, $longitudDep, $latitudArr, $longitudArr)
     {

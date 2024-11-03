@@ -56,6 +56,7 @@ return [
     'deleteErr' => 'error deleting the route',
     'modSuccess' => 'Route modified successfully',
     'modErr' => 'error modifying the route',
+    'routeCreated' => 'The route has been created successfully'
 
 
 ];
