@@ -56,8 +56,8 @@ return [
     'deleteErr' => 'error deleting the route',
     'modSuccess' => 'Route modified successfully',
     'modErr' => 'error modifying the route',
-    'routeCreated' => 'The route has been created successfully'
-
+    'routeCreated' => 'The route has been created successfully',
+    'minSeparation' => 'The plane must wait at least 30 minutes at the airport to receive the necessary services.'
 
 ];
 

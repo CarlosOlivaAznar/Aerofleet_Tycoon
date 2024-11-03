@@ -159,7 +159,7 @@
 
       <div class="resumenAvion">
         <h4>{{ __('routes.ticketPrice') }}</h4>
-        <input type="range" name="precioBillete" id="precioBillete" value="50" min="5" max="600" oninput="slide(this)">
+        <input type="range" name="precioBillete" id="precioBillete" value="{{ old('precioBillete', 50) }}" min="5" max="600" oninput="slide(this)">
         <p>{{ __('routes.price') }} <span id="precio"></span></p>
       </div>
 

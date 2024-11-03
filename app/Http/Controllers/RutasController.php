@@ -86,7 +86,7 @@ class RutasController extends Controller
         // Comprueba que la nueva ruta es compatible con las rutas anteriores
         $rutas = Ruta::where('flota_id', $request->avion)->orderBy('horaInicio')->get();
         if (!$this->isValidRouteSchedule($rutas, $horaInicial, $horaLlegada, $espacioDep, $espacioArr)) {
-            return $this->redirectWithError('routes.scheduleConflict');
+            return $this->redirectWithError('');
         }
 
         // Crear la nueva ruta
@@ -108,7 +108,9 @@ class RutasController extends Controller
 
     private function redirectWithError($errorKey)
     {
-        session()->flash('error', trans($errorKey));
+        if(strlen($errorKey) > 0) {
+            session()->flash('error', trans($errorKey));
+        }
         return redirect()->back()->withInput();
     }
 
@@ -266,7 +268,13 @@ class RutasController extends Controller
             
             // Comprueba que el origen de la nueva ruta es el mismo que el destino de la ruta anterior
             if($icaoArrival === $origen){
+                if($horaLlegada->addMinutes(30)->gt($horaInicial)) {
+                    session()->flash('error', trans('routes.minSeparation'));
+                    return false;
+                }
+                
                 return true;
+
             } else {
                 session()->flash('error', trans('routes.arrEqArrPRoute'));
                 return false;
