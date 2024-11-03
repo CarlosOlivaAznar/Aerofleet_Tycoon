@@ -109,7 +109,7 @@ class RutasController extends Controller
     private function redirectWithError($errorKey)
     {
         session()->flash('error', trans($errorKey));
-        return redirect()->route('rutas.index');
+        return redirect()->back()->withInput();
     }
 
     private function exceedsCategory($espacioDep, $espacioArr, $avion)

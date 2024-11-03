@@ -36,7 +36,9 @@
               <?php $espaciosVacios = 0 ?>
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}" {{ $espacio->id == old('destino1') ? 'selected' : '' }}>
+                    {{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}
+                  </option>
                   <?php $espaciosVacios++; ?>
                 @endif
               @endforeach
@@ -48,42 +50,42 @@
           <div class="input">
             <h3>{{ __('routes.timeOfDep') }}</h3>
             <select name="horaDep" id="horaDep">
-              <option value="06:00:00">06:00z</option>
-              <option value="06:30:00">06:30z</option>
-              <option value="07:00:00">07:00z</option>
-              <option value="07:30:00">07:30z</option>
-              <option value="08:00:00">08:00z</option>
-              <option value="08:30:00">08:30z</option>
-              <option value="09:00:00">09:00z</option>
-              <option value="09:30:00">09:30z</option>
-              <option value="10:00:00">10:00z</option>
-              <option value="10:30:00">10:30z</option>
-              <option value="11:00:00">11:00z</option>
-              <option value="11:30:00">11:30z</option>
-              <option value="12:00:00">12:00z</option>
-              <option value="12:30:00">12:30z</option>
-              <option value="13:00:00">13:00z</option>
-              <option value="13:30:00">13:30z</option>
-              <option value="14:00:00">14:00z</option>
-              <option value="14:30:00">14:30z</option>
-              <option value="15:00:00">15:00z</option>
-              <option value="15:30:00">15:30z</option>
-              <option value="16:00:00">16:00z</option>
-              <option value="16:30:00">16:30z</option>
-              <option value="17:00:00">17:00z</option>
-              <option value="17:30:00">17:30z</option>
-              <option value="18:00:00">18:00z</option>
-              <option value="18:30:00">18:30z</option>
-              <option value="19:00:00">19:00z</option>
-              <option value="19:30:00">19:30z</option>
-              <option value="20:00:00">20:00z</option>
-              <option value="20:30:00">20:30z</option>
-              <option value="21:00:00">21:00z</option>
-              <option value="21:30:00">21:30z</option>
-              <option value="22:00:00">22:00z</option>
-              <option value="22:30:00">22:30z</option>
-              <option value="23:00:00">23:00z</option>
-              <option value="23:30:00">23:30z</option>
+              <option value="06:00:00" {{ "06:00:00" == old('horaDep') ? 'selected' : '' }}>06:00z</option>
+              <option value="06:30:00" {{ "06:30:00" == old('horaDep') ? 'selected' : '' }}>06:30z</option>
+              <option value="07:00:00" {{ "07:00:00" == old('horaDep') ? 'selected' : '' }}>07:00z</option>
+              <option value="07:30:00" {{ "07:30:00" == old('horaDep') ? 'selected' : '' }}>07:30z</option>
+              <option value="08:00:00" {{ "08:00:00" == old('horaDep') ? 'selected' : '' }}>08:00z</option>
+              <option value="08:30:00" {{ "08:30:00" == old('horaDep') ? 'selected' : '' }}>08:30z</option>
+              <option value="09:00:00" {{ "09:00:00" == old('horaDep') ? 'selected' : '' }}>09:00z</option>
+              <option value="09:30:00" {{ "09:30:00" == old('horaDep') ? 'selected' : '' }}>09:30z</option>
+              <option value="10:00:00" {{ "10:00:00" == old('horaDep') ? 'selected' : '' }}>10:00z</option>
+              <option value="10:30:00" {{ "10:30:00" == old('horaDep') ? 'selected' : '' }}>10:30z</option>
+              <option value="11:00:00" {{ "11:00:00" == old('horaDep') ? 'selected' : '' }}>11:00z</option>
+              <option value="11:30:00" {{ "11:30:00" == old('horaDep') ? 'selected' : '' }}>11:30z</option>
+              <option value="12:00:00" {{ "12:00:00" == old('horaDep') ? 'selected' : '' }}>12:00z</option>
+              <option value="12:30:00" {{ "12:30:00" == old('horaDep') ? 'selected' : '' }}>12:30z</option>
+              <option value="13:00:00" {{ "13:00:00" == old('horaDep') ? 'selected' : '' }}>13:00z</option>
+              <option value="13:30:00" {{ "13:30:00" == old('horaDep') ? 'selected' : '' }}>13:30z</option>
+              <option value="14:00:00" {{ "14:00:00" == old('horaDep') ? 'selected' : '' }}>14:00z</option>
+              <option value="14:30:00" {{ "14:30:00" == old('horaDep') ? 'selected' : '' }}>14:30z</option>
+              <option value="15:00:00" {{ "15:00:00" == old('horaDep') ? 'selected' : '' }}>15:00z</option>
+              <option value="15:30:00" {{ "15:30:00" == old('horaDep') ? 'selected' : '' }}>15:30z</option>
+              <option value="16:00:00" {{ "16:00:00" == old('horaDep') ? 'selected' : '' }}>16:00z</option>
+              <option value="16:30:00" {{ "16:30:00" == old('horaDep') ? 'selected' : '' }}>16:30z</option>
+              <option value="17:00:00" {{ "17:00:00" == old('horaDep') ? 'selected' : '' }}>17:00z</option>
+              <option value="17:30:00" {{ "17:30:00" == old('horaDep') ? 'selected' : '' }}>17:30z</option>
+              <option value="18:00:00" {{ "18:00:00" == old('horaDep') ? 'selected' : '' }}>18:00z</option>
+              <option value="18:30:00" {{ "18:30:00" == old('horaDep') ? 'selected' : '' }}>18:30z</option>
+              <option value="19:00:00" {{ "19:00:00" == old('horaDep') ? 'selected' : '' }}>19:00z</option>
+              <option value="19:30:00" {{ "19:30:00" == old('horaDep') ? 'selected' : '' }}>19:30z</option>
+              <option value="20:00:00" {{ "20:00:00" == old('horaDep') ? 'selected' : '' }}>20:00z</option>
+              <option value="20:30:00" {{ "20:30:00" == old('horaDep') ? 'selected' : '' }}>20:30z</option>
+              <option value="21:00:00" {{ "21:00:00" == old('horaDep') ? 'selected' : '' }}>21:00z</option>
+              <option value="21:30:00" {{ "21:30:00" == old('horaDep') ? 'selected' : '' }}>21:30z</option>
+              <option value="22:00:00" {{ "22:00:00" == old('horaDep') ? 'selected' : '' }}>22:00z</option>
+              <option value="22:30:00" {{ "22:30:00" == old('horaDep') ? 'selected' : '' }}>22:30z</option>
+              <option value="23:00:00" {{ "23:00:00" == old('horaDep') ? 'selected' : '' }}>23:00z</option>
+              <option value="23:30:00" {{ "23:30:00" == old('horaDep') ? 'selected' : '' }}>23:30z</option>
             </select>
           </div>
           <div class="input">
@@ -91,7 +93,9 @@
             <select name="destino2" id="destino2" onchange="mostrarRuta()">
               @foreach ($espacios as $espacio)
                 @if ($espacio->espaciosDisponibles() > 0)
-                  <option value="{{ $espacio->id }}">{{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}</option>
+                  <option value="{{ $espacio->id }}" {{ $espacio->id == old('destino2') ? 'selected' : '' }}>
+                    {{ $espacio->aeropuerto->icao }}, {{ $espacio->aeropuerto->nombre }}
+                  </option>
                 @endif
               @endforeach
               @if ($espaciosVacios === 0)
