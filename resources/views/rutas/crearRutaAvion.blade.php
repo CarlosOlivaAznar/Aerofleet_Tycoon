@@ -23,6 +23,9 @@
         </div>
       </div>
 
+      <!-- Alertas -->
+      @include('partials.alertas')
+
       <form action="{{ route('rutas.nuevaRuta') }}" method="POST">
       @csrf
       <div class="rutas">

@@ -395,13 +395,13 @@ class ListenerLoggedIn
                         $gastos += $gastosReparacion;
 
                         array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico1' . ' ' . $gastosReparacion),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico1') . ' ' . $gastosReparacion,
                     3]);
 
                     } else if($moneda === 1){
                         $ingresos = 0;
                         
-                        array_push($mensajeVuelos, 
+                    array_push($mensajeVuelos, 
                     [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico2'),
                     3]);
                     }
@@ -420,7 +420,7 @@ class ListenerLoggedIn
                     $aumentoDemanda = ($aumentoDemanda - 1) * 100;
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.aumentoDemanda' . ' ' . $aumentoDemanda . '%'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.aumentoDemanda') . ' ' . $aumentoDemanda . '%',
                     2]);
                     
                     break;
@@ -430,7 +430,7 @@ class ListenerLoggedIn
                     $ingresos *= $perdidaEquipajes;
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.perdidaEquipaje' . ' ' . $perdidaEquipajesPorcentaje . '%'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.perdidaEquipaje') . ' ' . $perdidaEquipajesPorcentaje . '%',
                     3]);
                     
                     break;
@@ -439,7 +439,7 @@ class ListenerLoggedIn
                     $gastos += $reparacion;
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactoAve' . ' ' . $reparacion . '€'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactoAve') . ' ' . $reparacion . '€',
                     3]);
                     
                     break;
@@ -449,7 +449,7 @@ class ListenerLoggedIn
                     $gastos += $pagoAeropuerto;
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.pasajeroProblematico' . ' ' . $pagoAeropuerto . '€'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.pasajeroProblematico') . ' ' . $pagoAeropuerto . '€',
                     3]);
                     
                     break;
@@ -472,7 +472,7 @@ class ListenerLoggedIn
                     $ruta->flota->update();
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactosMenores' . ' ' . $danyos . '%'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactosMenores') . ' ' . $danyos . '%',
                     3]);
 
                     break;
