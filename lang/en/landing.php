@@ -60,6 +60,32 @@ return [
     'donateT6' => 'Once again, I want to express my deepest gratitude for your continued support and for being an active part of this wonderful community. Thank you for believing in this project and for contributing to its growth and success!',
 
     // Roadmap
+    'roadMap' => 'Road Map',
+
+    'version2' => 'V-0.2.0',
+    'version2txt' => 'Real-time simulation implementation and basic gameplay mechanics for the initial game operations.',
+
+    'version4' => 'V-0.4.0',
+    'version4txt' => 'Economic update: aircraft leasing system, loan options, stock trading among players, and the addition of government subsidies.',
+
+    'version6' => 'V-0.6.0',
+    'version6txt' => 'Introduction of player alliances, including group chats and the creation of airline groups for a collaborative experience.',
+
+    'version10' => 'V-1.0.0',
+    'version10txt' => 'Full and stable version of the game, with all mechanics optimized and ready for official release.',
+
+    'version3' => 'V-0.3.0',
+    'version3txt' => 'Multiplayer mode implementation with supply and demand calculations, random events, and limited resources in the environment.',
+
+    'version5' => 'V-0.5.0',
+    'version5txt' => 'Company status simulation, introduction of customer opinions, handling contracts, and passenger service options.',
+
+    'version7' => 'V-0.7.0',
+    'version7txt' => 'Incorporation of cargo transport, dynamic price simulation, and adjustments in buying and selling according to market demand.',
+
+    'versionx' => 'V-X.X.X',
+    'versionxtxt' => 'Coming soon...',
+
 ];
 
 // Plantilla

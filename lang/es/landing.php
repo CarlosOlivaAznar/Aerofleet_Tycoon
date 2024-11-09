@@ -61,6 +61,30 @@ return [
 
     // Roadmap
     'roadMap' => 'Road Map',
+
+    'version2' => 'V-0.2.0',
+    'version2txt' => 'Implementación de simulación en tiempo real y mecánicas básicas de jugabilidad para las operaciones iniciales del juego.',
+
+    'version4' => 'V-0.4.0',
+    'version4txt' => 'Actualización económica: sistema de leasing de aviones, opciones de préstamos, compra y venta de acciones entre jugadores y adición de subvenciones gubernamentales.',
+
+    'version6' => 'V-0.6.0',
+    'version6txt' => 'Introducción de alianzas entre jugadores, incluyendo chats grupales y la creación de grupos de aerolíneas para una experiencia colaborativa.',
+
+    'version10' => 'V-1.0.0',
+    'version10txt' => 'Versión completa y estable del juego, con todas las mecánicas optimizadas y listas para su lanzamiento oficial.',
+
+    'version3' => 'V-0.3.0',
+    'version3txt' => 'Implementación del modo multijugador con cálculo de oferta y demanda, eventos aleatorios y recursos limitados en el entorno.',
+
+    'version5' => 'V-0.5.0',
+    'version5txt' => 'Simulación del estado de la compañía, introducción de la opinión de los clientes, contratos de handling y servicios de atención al pasajero.',
+
+    'version7' => 'V-0.7.0',
+    'version7txt' => 'Incorporación de transporte de mercancías, simulación de precios dinámicos y ajustes en compra y venta según la demanda del mercado.',
+
+    'versionx' => 'V-X.X.X',
+    'versionxtxt' => 'Proximamente...',
 ];
 
 // Plantilla
