@@ -24,7 +24,7 @@
         <p class="titulo">{{ __('landing.additionalInfo') }}</p>
         <p class="texto"><a href="{{ route('landing.terminosCondiciones') }}">{{ __('landing.termns') }}</a></p>
         <p class="texto"><a href="{{ route('landing.politicaPrivacidad') }}">{{ __('landing.privacy') }}</a></p>
-        <p class="texto"><a href="">{{ __('landing.roadmap') }}</a></p>
+        <p class="texto"><a href="{{ route('landing.roadmap') }}">{{ __('landing.roadmap') }}</a></p>
       </div>
     </div>
 </footer>

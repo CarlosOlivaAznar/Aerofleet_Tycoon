@@ -57,6 +57,9 @@ Route::get('/donar', function () {
 Route::get('/tutorial', function () {
     return view('landing.tutorial');
 })->name('landing.tutorial');
+Route::get('/roadMap', function() {
+    return view('landing.roadmap');
+})->name('landing.roadmap');
 
 // Bugreport
 Route::post('/bugreport', function (Request $request) {

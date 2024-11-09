@@ -58,6 +58,9 @@ return [
     'discordServer' => 'servidor de Discord',
     'donateT5' => ', donde podrás interactuar con otros usuarios, compartir tus sugerencias y opiniones y podras tener un rol exclusivo si has donado, pudiendo enterarte de las novedades antes que nadie y poder tener acceso exclusivo a futuras actualizaciones.',
     'donateT6' => 'Una vez más, quiero expresar mi más profundo agradecimiento por tu continuo apoyo y por ser parte activa de esta maravillosa comunidad. ¡Gracias por creer en este proyecto y por contribuir a su crecimiento y éxito!',
+
+    // Roadmap
+    'roadMap' => 'Road Map',
 ];
 
 // Plantilla

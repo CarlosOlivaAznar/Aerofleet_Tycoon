@@ -2010,6 +2010,91 @@ MARK: Sobre mi
     text-align: justify;
 }
 
+
+/* RoadMap */
+/*
+MARK: Road Map
+*/
+
+.roadmap-layout {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.roadmap-layout .side {
+    width: 300px;
+    margin-top: 70px;
+}
+
+.roadmap-layout .side.right {
+    width: 300px;
+    margin-top: 160px;
+}
+
+.roadmap-layout .side .side-card {
+    position: relative;
+    background-color: var(--light);
+    border-radius: 25px;
+    padding: 25px 17px;
+    margin-bottom: 60px;
+}
+
+.roadmap-layout .side .side-card h2 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.roadmap-layout .side .side-card p {
+    text-align: justify;
+}
+
+.roadmap-layout .side .side-card::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 10px;
+    background-color: var(--light);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.roadmap-layout .side .side-card.left::before{
+    left: 100%;
+}
+
+.roadmap-layout .side .side-card.right::before{
+    right: 100%;
+}
+
+.roadmap-layout .side .side-card::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--danger);
+    background: radial-gradient(circle, var(--light) 40%, var(--grey) 25%);
+    border-radius: 50%;
+    top: 50%;
+    z-index: 1;
+}
+
+.roadmap-layout .side .side-card.left::after {
+    left: 100%;
+    transform: translate(445%, -50%);
+}
+
+.roadmap-layout .side .side-card.right::after {
+    right: 100%;
+    transform: translate(-445%, -50%);
+}
+
+
+
 /* Billetes avion y range */
 .contenido main .resumenAvion input[type=range]{
     -webkit-appearance: none;

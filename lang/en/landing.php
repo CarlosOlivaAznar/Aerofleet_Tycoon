@@ -58,6 +58,8 @@ return [
     'discordServer' => 'Discord Server',
     'donateT5' => ', where you can interact with other users, share your suggestions and opinions, and have an exclusive role if you have donated, allowing you to learn about updates before anyone else and have exclusive access to future updates.',
     'donateT6' => 'Once again, I want to express my deepest gratitude for your continued support and for being an active part of this wonderful community. Thank you for believing in this project and for contributing to its growth and success!',
+
+    // Roadmap
 ];
 
 // Plantilla
