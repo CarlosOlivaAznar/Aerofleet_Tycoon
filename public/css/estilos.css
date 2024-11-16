@@ -1298,7 +1298,7 @@ MARK: Landing
 .mainContent .imagenConTexto h3{
     font-size: 40px;
     padding: 15px 0 250px 0;
-    color: var(--dark);
+    color: var(--light);
 }
 
 .mainContent .imagenConTexto a{
@@ -2060,7 +2060,7 @@ MARK: Road Map
 }
 
 .roadmap-layout .side .side-card p {
-    text-align: justify;
+    text-align: left;
 }
 
 .roadmap-layout .side .side-card::before{
