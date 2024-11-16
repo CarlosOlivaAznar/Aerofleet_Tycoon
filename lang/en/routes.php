@@ -39,6 +39,8 @@ return [
     'createRoute' => 'Create Airplane Route',
     'noSlots' => 'No slots available',
     'actualRoute' => 'Current airplane route',
+    'newRoute' => 'New Route',
+    'createNewRoute' => 'Create New Route',
 
     // Controller Messages
     'maxSize' => 'The plane cannot operate at the selected airports (the plane exceeds the maximum allowed size at one of the selected airports)',

@@ -1784,6 +1784,10 @@ footer .contenidoFooter div p.texto a{
     margin-bottom: 15px;
 }
 
+.contenido main .rutas h4.title-margin{
+    margin-bottom: 30px;
+}
+
 .contenido main .tablas .cabecera .botones-tablas{
     display: flex;
     flex-flow: row;
@@ -1933,7 +1937,9 @@ footer .contenidoFooter div p.texto a{
     margin-top: 35px;
 }
 
-
+.contenido main .resumenAvion.crearRuta{
+    margin-bottom: 30px;
+}
 
 .contenido main .resumenAvion .barraHorarios{
     width: 100%;
@@ -1952,7 +1958,7 @@ footer .contenidoFooter div p.texto a{
 
 }
 
-.contenido main .resumenAvion .input #crearRuta{
+.contenido main .input #crearRuta{
     display: block;
     align-items: center;
     margin : 0 auto;
@@ -1962,6 +1968,11 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+}
+
+.contenido main .input #crearRuta.margin{
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 /* Sobre mi */

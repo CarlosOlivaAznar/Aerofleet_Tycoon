@@ -28,7 +28,48 @@
 
       <form action="{{ route('rutas.nuevaRuta') }}" method="POST">
       @csrf
+      <div class="resumenAvion crearRuta">
+        <h4>{{ __('routes.actualRoute') }}</h4>
+
+        @if(count($rutas) > 0)
+        <div class="tablas">
+          <div class="cabecera">
+            <i class="bx bx-outline"></i>
+            <h3>{{ __('routes.airplaneRoutes') }}</h3>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>{{ __('routes.departure') }}</th>
+                <th>{{ __('routes.arrival') }}</th>
+                <th>{{ __('routes.timeOfDep') }}</th>
+                <th>{{ __('routes.timeOfArr') }}</th>
+                <th>{{ __('routes.distance') }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($rutas as $ruta)
+              <tr>
+                <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
+                <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
+                <td>{{ $ruta->horaInicio }}</td>
+                <td>{{ $ruta->horaFin }}</td>
+                <td>{{ $ruta->distancia }} km</td>
+              </tr>  
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+        @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>{{ __('routes.noRoutesAirplane') }}</h4>
+          </div>
+        @endif
+      </div>
+
       <div class="rutas">
+        <h4 class="title-margin">{{ __('routes.newRoute') }}</h4>
         <div class="divRepartido">
           <div class="input">
             <h3>{{ __('routes.departure') }}</h3>
@@ -163,49 +204,10 @@
         <p>{{ __('routes.price') }} <span id="precio"></span></p>
       </div>
 
-      <div class="resumenAvion">
-        <h4>{{ __('routes.actualRoute') }}</h4>
-
-        @if(count($rutas) > 0)
-        <div class="tablas">
-          <div class="cabecera">
-            <i class="bx bx-outline"></i>
-            <h3>{{ __('routes.airplaneRoutes') }}</h3>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>{{ __('routes.departure') }}</th>
-                <th>{{ __('routes.arrival') }}</th>
-                <th>{{ __('routes.timeOfDep') }}</th>
-                <th>{{ __('routes.timeOfArr') }}</th>
-                <th>{{ __('routes.distance') }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($rutas as $ruta)
-              <tr>
-                <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
-                <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
-                <td>{{ $ruta->horaInicio }}</td>
-                <td>{{ $ruta->horaFin }}</td>
-                <td>{{ $ruta->distancia }} km</td>
-              </tr>  
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-        @else
-          <div class="mensaje">
-            <i class="bx bx-error"></i>
-            <h4>{{ __('routes.noRoutesAirplane') }}</h4>
-          </div>
-        @endif
-
         <div class="input">
-          <input id="crearRuta" type="submit" value="Crear nueva ruta">
+          <input class="margin" id="crearRuta" type="submit" value="{{ __('routes.createNewRoute') }}">
         </div>
-      </div>
+
     </form>
     <script>
       var slider = document.getElementById('precioBillete');

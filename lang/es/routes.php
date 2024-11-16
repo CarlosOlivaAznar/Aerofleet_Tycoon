@@ -39,6 +39,8 @@ return [
     'createRoute' => 'Crear Ruta Avion',
     'noSlots' => 'No hay espacios disponibles',
     'actualRoute' => 'Ruta actual del avion',
+    'newRoute' => 'Nueva Ruta',
+    'createNewRoute' => 'Crear Nueva Ruta',
 
     // Controller Messages
     'maxSize' => 'El avion no puede operar en los aeropuertos seleccionados (el avion supera el tamaño maximo permitido en alguno de los aeropuertos seleccionados)',
