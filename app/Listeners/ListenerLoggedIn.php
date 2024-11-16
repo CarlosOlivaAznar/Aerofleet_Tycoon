@@ -119,12 +119,15 @@ class ListenerLoggedIn
 
         $this->controlBeneficios();;
 
-        // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas
-        BeneficiosHistorico::create([
-            'user_id' => auth()->id(),
-            'saldo' => $event->user->saldo,
-            'fecha' => now(),
-        ]);
+        // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas, solo si son dias diferentes
+        if($diferencia > -1) {
+            BeneficiosHistorico::create([
+                'user_id' => auth()->id(),
+                'saldo' => $event->user->saldo,
+                'fecha' => now(),
+            ]);
+        }
+
 
         $event->user->ultimaConexion = now();
         $event->user->update();
