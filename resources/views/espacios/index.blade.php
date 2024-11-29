@@ -54,11 +54,35 @@
               <td>{{ $espacio->espaciosDisponibles() }}</td>
               <td>{{ number_format($espacio->aeropuerto->costeOperacional, 0, ',', '.') }}</td>
               <td>{{ number_format($espacio->aeropuerto->precioEspacio(), 0, ',', '.') }}</td>
-              <td><a class="vender tooltip" href="{{ route('espacios.vender', ['id' => $espacio->id]) }}">
+              <td><a class="vender tooltip" data-modal-target="modalVender{{ $espacio->id }}">
                 <i class="bx bx-money-withdraw"></i>
                 <span class="tooltiptext">{{ __('slots.sellSlot') }}</span>
               </a></td>
             </tr>
+
+            <!-- Modal vender -->
+            <div class="modal" id="modalVender{{ $espacio->id }}">
+              <div class="contenido-modal">
+                <div class="cabecera-modal">
+                  <span class="cerrar-modal">&times;</span>
+                  <h2>{{ __('slots.sellSlot') }}</h2>
+                </div>
+                <div class="cuerpo-modal">
+      
+                  <p>{{ __('slots.sellConfirm') }}</p><br>
+                  <p>{{ __('slots.infoSlot') }}
+                    <span class="verde">{{ number_format($espacio->aeropuerto->precioEspacio(), 0, ',', '.') }}€</span>
+                  </p>
+                  
+                </div>
+                <div class="footer-modal">
+                  <div class="botones">
+                    <span class="cancelar">{{ __('slots.deny') }}</span>
+                    <a href="{{ route('espacios.vender', ['id' => $espacio->id]) }}" class="aceptar">{{ __('slots.confirm') }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
             @endforeach
           </tbody>
         </table>
@@ -69,9 +93,9 @@
             <h4>{{ __('slots.noSlots') }}</h4>
           </div>
       @endif
-
-
       
+      
+      <script src="{{ asset('js/modals.js') }}"></script>
     </main>
   </div>
 @endsection()

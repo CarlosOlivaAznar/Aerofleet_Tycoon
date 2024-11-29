@@ -37,6 +37,13 @@ return [
     'allSellSuccess' => 'Se han vendido todos los espacios de:',
     'errSell' => 'Error al vender el espacio de',
     'errUser' => 'Error al autentificar el usuario propietario del espacio',
+
+    //Modal
+    'sellSlot' => 'Vender Espacio',
+    'sellConfirm' => '¿Esta seguro que quiere vender el espacio?',
+    'infoSlot' => 'El espacio se vendera por ',
+    'confirm' => 'Confirmar',
+    'deny' => 'Denegar',
 ];
 
 // Plantilla
