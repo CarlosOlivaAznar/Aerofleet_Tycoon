@@ -2010,6 +2010,9 @@ MARK: Sobre mi
 
 .mainContent .informacion-imagen div.texto{
     width: 100%;
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 25px;
 }
 
 .mainContent .informacion-imagen div img{
