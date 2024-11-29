@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cookie;
 
 class VerifyEmailController extends Controller
 {
@@ -15,6 +16,9 @@ class VerifyEmailController extends Controller
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {
+        if(Cookie::get('modoOscuro') === null) {
+            $_COOKIE['modoOscuro'] = "false";
+        }
         if ($request->user()->hasVerifiedEmail()) {
             return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
         }

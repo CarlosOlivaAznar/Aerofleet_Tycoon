@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
@@ -19,6 +20,9 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request): View
     {
+        if(Cookie::get('modoOscuro') === null) {
+            $_COOKIE['modoOscuro'] = "false";
+        }
         return view('auth.reset-password', ['request' => $request]);
     }
 
