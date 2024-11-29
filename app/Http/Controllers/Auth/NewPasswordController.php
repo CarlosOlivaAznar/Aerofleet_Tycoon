@@ -23,7 +23,7 @@ class NewPasswordController extends Controller
         if(Cookie::get('modoOscuro') === null) {
             $_COOKIE['modoOscuro'] = "false";
         }
-        return view('auth.reset-password', ['request' => $request]);
+        return view('auth.custom-reset-password', ['request' => $request]);
     }
 
     /**
