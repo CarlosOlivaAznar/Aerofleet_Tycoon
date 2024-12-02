@@ -4658,11 +4658,74 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Hungria */
+        /* ------------------- */
+        /* 
+        MARK: Hungria
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LHSM',
+            'pais' => 'HA',
+            'nombre' => 'Heviz Balaton Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.687701,
+            'longitud' => 17.159908,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHBP',
+            'pais' => 'HA',
+            'nombre' => 'Budapest Ferenc Liszt',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 47.435973,
+            'longitud' => 19.256359,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHDC',
+            'pais' => 'HA',
+            'nombre' => 'Debrecen International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.490482,
+            'longitud' => 21.612767,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHPR',
+            'pais' => 'HA',
+            'nombre' => 'Gyor Per Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.626135,
+            'longitud' => 17.807480,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'OM',
+            'pais' => 'HA',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
