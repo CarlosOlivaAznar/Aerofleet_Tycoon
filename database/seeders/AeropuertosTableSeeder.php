@@ -4594,13 +4594,75 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ---------------------- */
+        /* Aeropuertos Eslovaquia */
+        /* ---------------------- */
+        /* 
+        MARK: Eslovaquia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LZKZ',
+            'pais' => 'OM',
+            'nombre' => 'Kosice International Airport',
+            'espaciosTotales' => 45,
+            'costeOperacional' => 400,
+            'latitud' => 48.670212,
+            'longitud' => 21.241186,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZIB',
+            'pais' => 'OM',
+            'nombre' => 'Bratislava M. R. Stefanik Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 48.170095,
+            'longitud' => 17.210671,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZTT',
+            'pais' => 'OM',
+            'nombre' => 'Poprad Tatry Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.073547,
+            'longitud' => 20.241752,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZSL',
+            'pais' => 'OM',
+            'nombre' => 'Sliac Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.640369,
+            'longitud' => 19.136077,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
 
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'OK',
+            'pais' => 'OM',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
