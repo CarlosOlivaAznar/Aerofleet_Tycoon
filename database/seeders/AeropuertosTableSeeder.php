@@ -4493,6 +4493,7 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
         /* --------------------- */
         /* Aeropuerto Luxemburgo */
         /* --------------------- */
@@ -4515,12 +4516,91 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Chequia */
+        /* ------------------- */
+        /* 
+        MARK: Chequia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LKTB',
+            'pais' => 'OK',
+            'nombre' => 'Brno Turany Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 49.152707,
+            'longitud' => 16.688956,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKKV',
+            'pais' => 'OK',
+            'nombre' => 'Karlovy Vary Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.203227,
+            'longitud' => 12.912249,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKMT',
+            'pais' => 'OK',
+            'nombre' => 'Ostrava Leos Janacek Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.698654,
+            'longitud' => 18.118543,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKPD',
+            'pais' => 'OK',
+            'nombre' => 'Pardubice Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.014742,
+            'longitud' => 15.738675,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKPR',
+            'pais' => 'OK',
+            'nombre' => 'Prague Vaclav Havel Airport',
+            'espaciosTotales' => 500,
+            'costeOperacional' => 2500,
+            'latitud' => 50.107877,
+            'longitud' => 14.256848,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+
 
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'LX',
+            'pais' => 'OK',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
