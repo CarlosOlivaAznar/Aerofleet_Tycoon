@@ -10,14 +10,18 @@ use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
 use App\Models\Sede;
+use App\Services\decodificadorMETAR;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
 {
-    public function __construct()
+
+    private $metarService = null;
+
+    public function __construct(decodificadorMETAR $decodificadorMETAR)
     {
-        //
+        $this->metarService = $decodificadorMETAR;
     }
 
     /**
@@ -194,6 +198,10 @@ class ListenerLoggedIn
 
         // Gastos por el uso del avion
         $gastos += $ruta->flota->avion->costePorKm * $ruta->distancia;
+
+
+        // ---- control del METAR ----
+        $this->metar();
 
         // ---- Eventos Aleatorios ---
         // Antes de calcular el beneficio de la ruta se mira si ha podido suceder algun imprevisto en la ruta
@@ -485,5 +493,20 @@ class ListenerLoggedIn
 
         // Guardamos los mensajes
         Session::put('mensajeVuelos', $mensajeVuelos);
+    }
+
+    /**
+     * El metar es un sistema estandarizado en la aviacion para hacer reportes meteorologicos y que todo el mundo pueda entenderlo de manera sencilla.
+     * Se trata de unos bloques de texto que muestran informacion, para mas informacion: https://www.oneair.es/metar-reporte-meteorologico-aeropuertos/
+     * En la aplicacion se utilizan las condiciones meteorologicas reales para dar realismo y ese toque de simulador y que puedan afectar a los vuelos del usuario
+     * 
+     * METARS DE EJMPLO PARA HACER TESTS:
+     * METAR LPMR 020900Z VRB01KT CAVOK 13/11 Q1023
+     * METAR LFOT 021000Z AUTO 27007KT 9999 BKN010 OVC015 13/11 Q1019 TEMPO BKN014 SCT020TCU
+     * METAR LEZG 020900Z 07004KT 040V110 0150 R30R/0450N R12R/0300N R30L/0325N R12L/0400N FG VV001 08/08 Q1025 NOSIG
+     */
+    function metar()
+    {
+        $metar = $this->metarService->decode("METAR LPMR 020900Z VRB01KT CAVOK 13/11 Q1023");
     }
 }
