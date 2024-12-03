@@ -12,6 +12,7 @@ use App\Models\Flota;
 use App\Models\Sede;
 use App\Services\decodificadorMETAR;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
@@ -507,6 +508,9 @@ class ListenerLoggedIn
      */
     function metar()
     {
-        $metar = $this->metarService->decode("METAR LPMR 020900Z VRB01KT CAVOK 13/11 Q1023");
+        $metarInfo = Http::get('https://aviationweather.gov/api/data/metar?ids=LEMD&date=20241203_091900Z')->body();
+        $metar = $this->metarService->decode($metarInfo);
+
+        dd($metar);
     }
 }
