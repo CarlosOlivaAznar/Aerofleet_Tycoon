@@ -69,7 +69,7 @@ class ListenerLoggedIn
             for ($i=0; $i < $diferencia; $i++) { 
                 foreach ($rutas as $ruta) {
                     if($ruta->flota->estado == 1){
-                        $this->calcularBeneficio($ruta);
+                        $this->calcularBeneficio($ruta, $i + 1);
                     }
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
@@ -94,12 +94,12 @@ class ListenerLoggedIn
                 // Rutas del dia de desconexion
                 if($hora->gt($horaDesconexion) && $ruta->flota->estado == 1){
                     // Rutas que su hora esta por delante de la hora de desconexion
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, 0);
                 }
 
                 // Rutas del calculo de hoy
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, -1);
                 }
 
                 // Comprobamos que los aviones que se tienen que activar
@@ -117,7 +117,7 @@ class ListenerLoggedIn
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Calculo de las horas que estan entre la desconexion y conexion del usuario
                 if($hora->between($horaDesconexion, now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, -1);
                 }
             }
         }
@@ -138,7 +138,7 @@ class ListenerLoggedIn
         $event->user->update();
     }
 
-    public function calcularBeneficio($ruta)
+    public function calcularBeneficio($ruta, $diaDesconexion)
     {
         // Calcula el beneficio de una ruta segun la demanda, los pasajeros estimados de la ruta y la demanda de la ruta
         // Primero calculamos la demanda de los dos aeropuertos destino y llegada
@@ -202,7 +202,7 @@ class ListenerLoggedIn
 
 
         // ---- control del METAR ----
-        $this->metar();
+        $this->metar($ingresos, $gastos, $ruta, $diaDesconexion);
 
         // ---- Eventos Aleatorios ---
         // Antes de calcular el beneficio de la ruta se mira si ha podido suceder algun imprevisto en la ruta
@@ -506,11 +506,30 @@ class ListenerLoggedIn
      * METAR LFOT 021000Z AUTO 27007KT 9999 BKN010 OVC015 13/11 Q1019 TEMPO BKN014 SCT020TCU
      * METAR LEZG 020900Z 07004KT 040V110 0150 R30R/0450N R12R/0300N R30L/0325N R12L/0400N FG VV001 08/08 Q1025 NOSIG
      */
-    function metar()
+    function metar(&$ingresos, &$gastos, &$ruta, $diaDesconexion) 
     {
-        $metarInfo = Http::get('https://aviationweather.gov/api/data/metar?ids=LEMD&date=20241203_091900Z')->body();
-        $metar = $this->metarService->decode($metarInfo);
+        $ultimaConexion = Carbon::createFromTimeString(auth()->user()->ultimaConexion);
+        $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
 
-        dd($metar);
+        if($diaDesconexion >= 0) {
+            $ultimaConexion->addDays($diaDesconexion);
+            $dateOrigen = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
+            $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
+            $metarOrigen = $this->getMetar($ruta->espacio_departure->aeropuerto->icao, $dateOrigen);
+            $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
+        } else if($diaDesconexion < 0) {
+            $dateOrigen = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
+            $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
+            $metarOrigen = $this->getMetar($ruta->espacio_departure->aeropuerto->icao, $dateOrigen);
+            $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
+        }
+
+        /* dd($metarOrigen, now(), $diaDesconexion, $ultimaConexion); */
+    }
+
+    function getMetar($icao, $date)
+    {
+        $metarInfo = Http::get("https://aviationweather.gov/api/data/metar?ids=$icao&date=$date")->body();
+        return $this->metarService->decode($metarInfo);
     }
 }

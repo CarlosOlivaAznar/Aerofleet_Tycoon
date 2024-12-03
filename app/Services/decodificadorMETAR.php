@@ -15,7 +15,7 @@ class decodificadorMETAR
         'date' => '/(\d{2})(\d{2})(\d{2})Z/',
         'wind' => '/(VRB|\d{3})(\d{2})G?(\d{2})?KT/',
         'visibility' => '/\s(\d{4})\s?SM|\s(\d{4})\s?M?\s/',
-        'weather' => '/(RA|SN|FG|HZ|TS|SH|BR|DR|GR|GS|UP|BL|CAVOK)/',
+        'weather' => '/(RA|SN|FG|HZ|TS|SH|BR|DR|GR|GS|UP|BL|CAVOK|MIFG)/',
         'temperature' => '/(\d{2})\/(\d{2})/',
         'pressure' => '/Q(\d{4})/',
         'clouds' => '/(BKN|OVC|SCT|FEW)(\d{3})(TCU|CB|AC)?/',
