@@ -471,7 +471,7 @@ class ListenerLoggedIn
                     $gastos += $pagoAeropuerto;
 
                     array_push($mensajeVuelos, 
-                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.personaEnferma' . ' ' . $pagoAeropuerto . '€'),
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.personaEnferma') . ' ' . $pagoAeropuerto . '€',
                     3]);
                     
                     break;
@@ -508,6 +508,7 @@ class ListenerLoggedIn
      */
     function metar(&$ingresos, &$gastos, &$ruta, $diaDesconexion) 
     {
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
         $ultimaConexion = Carbon::createFromTimeString(auth()->user()->ultimaConexion);
         $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
 
@@ -524,12 +525,162 @@ class ListenerLoggedIn
             $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
         }
 
-        /* dd($metarOrigen, now(), $diaDesconexion, $ultimaConexion); */
+        // Eventos generados por las condiciones meteorologicas en el aeropuerto de origen
+        if(isset($metarOrigen["wind"]["speed"]) && $metarOrigen["wind"]["speed"] > 45) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $ingresos *= .7;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent2'),
+                    3]);
+                    break;
+                case 3:
+                    $ingresos *= 0;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent3'),
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+        if(isset($metarOrigen["visibility"]) && $metarOrigen["visibility"] < 150) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $ingresos *= .6;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent2'),
+                    3]);
+                    break;
+                case 3:
+                    $ingresos *= 0;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent3'),
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+
+        // Eventos generados por las condiciones meteorologicas en el aeropuerto de destino
+        if(isset($metarDestino["wind"]["speed"]) && $metarDestino["wind"]["speed"] > 33) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $gastosAdicionales = rand(1500, 6000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent2') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                case 3:
+                    $gastosAdicionales = rand(3500, 8000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent3') . " " .$gastosAdicionales,
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+        if(isset($metarDestino["visibility"]) && $metarDestino["visibility"] < 400) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $gastosAdicionales = rand(1500, 6000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent2') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                case 3:
+                    $gastosAdicionales = rand(3500, 8000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent3') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent1'),
+                    3]);
+                    break;
+                    break;
+            }
+        }
+
+        // Guardamos los mensajes
+        Session::put('mensajeVuelos', $mensajeVuelos);
     }
 
     function getMetar($icao, $date)
     {
         $metarInfo = Http::get("https://aviationweather.gov/api/data/metar?ids=$icao&date=$date")->body();
+        error_log("Se ha obtenido el metar $metarInfo");
         return $this->metarService->decode($metarInfo);
     }
 }

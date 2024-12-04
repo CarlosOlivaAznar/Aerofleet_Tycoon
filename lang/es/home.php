@@ -46,7 +46,24 @@ return [
     'impactoAve' => 'ha sufrido el impacto de una ave en pleno vuelo, se ha pagado de reparacion de',
     'pasajeroProblematico' => 'ha sufrido un desvio a otro aeropuerto por un pasajero que estaba dando problemas en el avion. Se ha abonado de vuelta el 25% del precio del billete y debido al desvio del avion a otro aeropuerto se ha cobrado la tasa de operacion extra:',
     'personaEnferma' => 'ha sufrido una emergencia abordo y ha tenido que ser aterrizado de emergencia en otro aeropuerto. Se abona de vuelta el 10% del precio del billete y debido al desvio del avion a otro aeropuerto se ha cobrado la tasa de operacion extra:',
-    'impactosMenores' => 'ha sufrido daños menores durante el vuelo, se ha reducido el estado del avion un'
+    'impactosMenores' => 'ha sufrido daños menores durante el vuelo, se ha reducido el estado del avion un',
+
+    // Eventos METAR
+    'windDepEvent1' => 'ha sufrido un retraso por fuertes vientos en el aeropuerto de origen, se ha devuelto un 10% de los ingresos generados',
+    'windDepEvent2' => 'ha sufrido un retraso por fuertes vientos en el aeropuerto de origen, se ha devuelto un 30% de los ingresos generados',
+    'windDepEvent3' => 'ha sido cancelado por fuertes vientos en el aeropuerto de origen, se ha reembolsado a los pasajeros el dinero de los billetes',
+
+    'visDepEvent1' => 'ha sufrido un retraso por baja visibilidad en el aeropuerto de origen, se ha devuelto un 10% de los ingresos generados en el vuelo',
+    'visDepEvent2' => 'ha sufrido un retraso por baja visibilidad en el aeropuerto de origen, se ha devuelto un 40% de los ingresos generados en el vuelo',
+    'visDepEvent3' => 'ha sido cancelado por baja visibilidad en el aeropuerto de origen, se ha reembolsado a los pasajeros el dinero de los billetes',
+
+    'windArrEvent1' => 'ha tenido que abortar el aterrizaje y ha sufrido un pequeño retraso debido a los fuertes vientos, se ha reembolsado el 10% del precio de los billetes a los pasajeros por las molestias',
+    'windArrEvent2' => 'ha sufrido un accidente menor al aterrizar debido a los fuertes vientos, el coste de la reparacion ha sido de:',
+    'windArrEvent3' => 'se ha desviado a otro aeropuerto debido a los fuertes vientos, se ha facilitado un bus a los pasajeros para llegar al aeropuerto de origen, el gasto del bus ha sido de:',
+
+    'visArrEvent1' => 'ha tenido que abortar el aterrizaje y ha sufrido un pequeño retraso, se ha reembolsado el 10% del precio de los billetes a los pasajeros por las molestias',
+    'visArrEvent2' => 'ha sufrido un accidente menor al aterrizar debido a la baja visibilidad, el coste de la reparacion ha sido de:',
+    'visArrEvent3' => 'se ha desviado a otro aeropuerto debido a la baja visibilidad, se ha facilitado un bus a los pasajeros para llegar al aeropuerto de origen, el gasto del bus ha sido de:',
 
 ];
 
