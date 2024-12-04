@@ -65,6 +65,14 @@ a{
     color: var(--dark);
 }
 
+.mb-36 {
+    margin-bottom: 36px;
+}
+
+.mb-150 {
+    margin-bottom: 150px;
+}
+
 /* switch */
 .switch{
     position: relative;
@@ -1984,6 +1992,7 @@ MARK: Sobre mi
     display: flex;
     flex-flow: row;
     gap: 40px;
+    align-items: center;
 }
 
 .mainContent .informacion-imagen div{
@@ -2011,8 +2020,14 @@ MARK: Sobre mi
 .mainContent .informacion-imagen div.texto{
     width: 100%;
     background-color: var(--light);
-    padding: 20px;
+    padding: 30px 20px;
     border-radius: 25px;
+    height: fit-content;
+}
+
+.mainContent .informacion-imagen div.texto h3{
+    text-align: center;
+    color: var(--dark);
 }
 
 .mainContent .informacion-imagen div img{

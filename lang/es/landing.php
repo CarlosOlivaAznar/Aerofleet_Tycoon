@@ -20,6 +20,31 @@ return [
     'showMore' => 'Mostrar más',
     'showLess' => 'Mostrar menos',
 
+    // Landing / Infotext
+    'infoText1' => '<h3>Gestiona tu flota</h3>
+              <p>
+                Toma el control absoluto de tu flota de aviones: gestiona rutas, establece precios de billetes y mantén tus aeronaves en óptimas condiciones.
+              </p>
+              <p>
+                Elige entre más de 30 modelos de aviones y accede a más de 350 aeropuertos alrededor del mundo para diseñar rutas que se adapten a las necesidades de tu aerolínea.
+              </p>
+              <p>
+                Compra aviones de segunda mano en un mercado dinámico que evoluciona constantemente.
+              </p>
+              <p>
+                Tu aerolínea opera en un mundo influenciado por la oferta y demanda generada por otros jugadores. ¡Adáptate para mantenerte competitivo!
+              </p>',
+    'infoText2' => '<h3>Compite con otros jugadores</h3>
+              <p>
+                Enfréntate a otros jugadores en un mercado dinámico. Ajusta tus rutas según la demanda para maximizar tus beneficios.
+              </p>
+              <p>
+                Implementa estrategias para dominar rutas clave, superar a tus competidores y consolidar tu posición en el mercado.
+              </p>
+              <p>
+                Consulta la página de rankings para ver la posición de tu aerolínea y obtén recompensas exclusivas por alcanzar y mantenerte en el Top 1.
+              </p>',
+
     // Footer
     'developedBy' => 'Desarrollado por Carlos Oliva Aznar',
     'aboutMe' => 'Sobre Mí',

@@ -12,7 +12,7 @@
           <h1>AeroFleet Tycoon</h1>
         </div>
         <h2 class="subtituloPagina">{{ __('landing.realTimeSim') }}</h2>
-        <div class="resumen">
+        <div class="resumen mb-150">
             <ul>
               <li>
                 <i class="bx bx-stats"></i>
@@ -36,6 +36,26 @@
               </li>
             </ul>
           </div>
+
+          <div class="informacion-imagen mb-36">
+            <div class="texto">
+              {!! __('landing.infoText1') !!}
+            </div>
+            <div class="imagen-50">
+              <img src="{{ asset('images/tutorial/flota1.png') }}" alt="Gestión de flota">
+            </div>
+          </div>
+          
+          <div class="informacion-imagen mb-150">
+            <div class="imagen-50">
+              <img src="{{ asset('images/tutorial/flota1.png') }}" alt="Competencia en el mercado">
+            </div>
+            <div class="texto">
+              {!! __('landing.infoText2') !!}
+            </div>
+          </div>
+          
+
           <div class="imagenConTexto" style="background-image: url('{{ asset('images/emiratesFondo.jpg') }}');">
             <h3>{{ __('landing.start') }}</h3>
             <a href="{{ route('register') }}">{{ __('landing.register') }}</a>
