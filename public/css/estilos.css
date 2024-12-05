@@ -1983,6 +1983,12 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .input #crearRuta:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
 }
 
 .contenido main .input #crearRuta.margin{
