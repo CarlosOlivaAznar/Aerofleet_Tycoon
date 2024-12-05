@@ -20,11 +20,11 @@
           <td>{{ $avion->rango }}km</td>
           <td>{{ $avion->capacidad }}</td>
           <td><a class="comprar tooltip" data-modal-target="modalConfirmacion{{ $avion->id }}">
-            <i class="bx bx-shopping-bag"></i>
+            <i class="bx bx-shopping-bag move-ef"></i>
             <span class="tooltiptext">Comprar Avion</span>
           </a>
           <a class="info tooltip" data-modal-target="info{{ $avion->id }}">
-            <i class="bx bx-detail"></i>
+            <i class="bx bx-detail move-ef"></i>
             <span class="tooltiptext">{{ __('fleet.airplaneInformation') }}</span>
           </a></td>
       </tr>
