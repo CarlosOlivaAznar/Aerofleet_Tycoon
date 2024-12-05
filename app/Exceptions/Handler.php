@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Models\ErrorHandler;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -24,7 +25,12 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            /* error_log($e->getMessage() . " " . $e->getFile() . " " . auth()->id()); */
+            ErrorHandler::create([
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'user_id' => auth()->id(),
+            ]);
         });
     }
 }
