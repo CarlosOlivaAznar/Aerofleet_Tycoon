@@ -623,7 +623,7 @@ MARK: Modal
 
 .modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover,
 .modal .contenido-modal .footer-modal .botones input[type="submit"]:hover{
-    border: 3px solid var(--dark);
+    background-color: var(--dark) !important;
     transition: 0.4s;
 }
 
@@ -634,7 +634,7 @@ MARK: Modal
 .modal .contenido-modal .footer-modal .botones a.aceptar,
 .modal .contenido-modal .footer-modal .botones input[type="submit"].aceptar{
     color: var(--light);
-    background-color: var(--dark);
+    background-color: var(--primary);
 }
 
 span.rojo{
@@ -1882,6 +1882,12 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .rutas .input #botonSubmit:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
 }
 
 .contenido main .mapa-ruta{
@@ -2233,6 +2239,12 @@ MARK: Road Map
     padding: 10px;
     border-radius: 25px;
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .botonTexto:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
 }
 
 /* Media */
