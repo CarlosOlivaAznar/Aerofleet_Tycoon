@@ -59,7 +59,8 @@ return [
     'modSuccess' => 'Route modified successfully',
     'modErr' => 'error modifying the route',
     'routeCreated' => 'The route has been created successfully',
-    'minSeparation' => 'The plane must wait at least 30 minutes at the airport to receive the necessary services.'
+    'minSeparation' => 'The plane must wait at least 30 minutes at the airport to receive the necessary services.',
+    'destNEq' => 'The destination must match the arrival of the next route',
 
 ];
 

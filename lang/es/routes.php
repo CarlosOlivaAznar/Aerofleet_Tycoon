@@ -59,7 +59,8 @@ return [
     'modSuccess' => 'Ruta modificada correctamente',
     'modErr' => 'error al modificar la ruta',
     'routeCreated' => 'La ruta ha sido creada correctamente',
-    'minSeparation' => 'El avion debe pasar minimo 30 minutos de espera en el aeropuerto para recibir los servicios necesarios'
+    'minSeparation' => 'El avion debe pasar minimo 30 minutos de espera en el aeropuerto para recibir los servicios necesarios',
+    'destNEq' => 'El destino tiene que ser el mismo que la llegada de la ruta siguiente',
 
 
 ];
