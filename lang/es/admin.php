@@ -6,6 +6,7 @@ return [
     'users' => 'Usuarios',
     'name' => 'Nombre',
     'bugreport' => 'Reportes de bugs',
+    'errors' => 'Errores',
 
     'email' => 'Correo',
     'userType' => 'Rol',
@@ -36,6 +37,12 @@ return [
     'noBR' => 'No hay ningun reporte disponible',
     'user' => 'Usuario',
     'report' => 'Reporte',
+
+    // Errors
+    'noErr' => 'No hay ningun error registrado',
+    'message' => 'Mensaje',
+    'file'=> 'Archivo',
+    'uid' => 'Id Usuario',
 ];
 
 // Plantilla

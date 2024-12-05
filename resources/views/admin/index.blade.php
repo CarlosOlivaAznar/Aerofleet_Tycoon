@@ -16,10 +16,16 @@
         <div class="titulo">
           <h1>{{ __('admin.title') }}</h1>
         </div>
-        <a href="{{ route('admin.bugreports') }}" class="boton">
-          <i class="bx bx-bug-alt"></i>
-          <span>{{ __('admin.bugreport') }}</span>
-        </a>
+        <div class="botones-cabecera">
+          <a href="{{ route('admin.errors') }}" class="boton">
+            <i class="bx bx-bug-alt"></i>
+            <span>{{ __('admin.errors') }}</span>
+          </a>
+          <a href="{{ route('admin.bugreports') }}" class="boton">
+            <i class="bx bx-bug-alt"></i>
+            <span>{{ __('admin.bugreport') }}</span>
+          </a>
+        </div>
       </div>
 
       <div class="tablas">
