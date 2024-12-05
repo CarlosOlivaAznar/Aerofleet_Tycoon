@@ -73,6 +73,15 @@ a{
     margin-bottom: 150px;
 }
 
+/* Efecto on hover */
+.move-ef {
+    transition: 0.3s;
+}
+
+.move-ef:hover {
+transform: translate(0, -4px);
+}
+  
 /* switch */
 .switch{
     position: relative;

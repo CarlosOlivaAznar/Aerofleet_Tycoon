@@ -63,19 +63,19 @@
                 <td>{{ number_format($avion->precioVenta(), 0, ',', '.') }}</td>
                 <td>
                   <a class="vender tooltip" data-modal-target="modalVender{{ $avion->id }}">
-                    <i class="bx bx-money-withdraw"></i>
+                    <i class="bx bx-money-withdraw move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.sellAircraft') }}</span>
                   </a>
-                  <a class="modificar tooltip" data-modal-target="modalMantenimiento{{ $avion->id }}">
-                    <i class="bx bx-wrench"></i>
+                  <a class="modificar tooltip move-ef" data-modal-target="modalMantenimiento{{ $avion->id }}">
+                    <i class="bx bx-wrench move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.makeMaintenance') }}</span>
                   </a>
-                  <a class="comprar tooltip" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}">
-                    <i class="bx bx-add-to-queue"></i>
+                  <a class="comprar tooltip move-ef" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}">
+                    <i class="bx bx-add-to-queue move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.createRoute') }}</span>
                   </a>
-                  <a class="info tooltip" data-modal-target="info{{ $avion->id }}">
-                    <i class="bx bx-detail"></i>
+                  <a class="info tooltip move-ef" data-modal-target="info{{ $avion->id }}">
+                    <i class="bx bx-detail move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.airplaneInformation') }}</span>
                   </a>
                 </td>

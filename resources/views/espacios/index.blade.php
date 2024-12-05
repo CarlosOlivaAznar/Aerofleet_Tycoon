@@ -55,7 +55,7 @@
               <td>{{ number_format($espacio->aeropuerto->costeOperacional, 0, ',', '.') }}</td>
               <td>{{ number_format($espacio->aeropuerto->precioEspacio(), 0, ',', '.') }}</td>
               <td><a class="vender tooltip" data-modal-target="modalVender{{ $espacio->id }}">
-                <i class="bx bx-money-withdraw"></i>
+                <i class="bx bx-money-withdraw move-ef"></i>
                 <span class="tooltiptext">{{ __('slots.sellSlot') }}</span>
               </a></td>
             </tr>
