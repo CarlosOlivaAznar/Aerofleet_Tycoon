@@ -1121,6 +1121,25 @@ MARK: Landing
     overflow: vis;
 }
 
+.barra-login .login .navegacion{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+}
+
+.barra-login .login .navegacion a{
+    color: var(--dark);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.barra-login .login .navegacion a:hover{
+    background-color: transparent;
+    color: var(--primary);
+}
+
 .barra-login .login div{
     cursor: pointer;
 }
@@ -2321,6 +2340,11 @@ MARK: Road Map
 
     .contenido main .informacion .mapaizq{
         width: 100%;
+    }
+
+    .barra-login .login .navegacion{
+        display: none;
+        visibility: hidden;
     }
 
     /* Primer login */

@@ -13,7 +13,7 @@ return [
     'free' => 'Gratuito',
     'freeTxt' => 'Este proyecto esta hecho con el fin de ser 100% gratuito sin anuncios ni microtransacciones o mecanicas pay to win. El proyecto esta financiado completamente a base de donaciones de los usuarios',
     'monopoly' => 'Monopolio',
-    'monopolyTxt' => 'Emplea tecnicas no eticas sobre otros jugadores para ser la compañia aerea mejor valorada (como en el mundo real vamos)',
+    'monopolyTxt' => 'Emplea tecnicas no eticas sobre otros jugadores para ser la compañia aerea mejor valorada',
     'start' => 'COMIENZA AQUI TU COMPAÑIA AEREA',
     'register' => 'Registrarse',
     'changelog' => 'Changelog',

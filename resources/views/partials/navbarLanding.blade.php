@@ -4,6 +4,20 @@
         <div class="titulo-nombre">Aero<span>Fleet</span></div>
     </a>
     <div class="login">
+        <div class="navegacion">
+            <a href="{{ route('landing.landing') }}">
+                Inicio
+            </a>
+            <a href="{{ route('landing.tutorial') }}">
+                Tutorial
+            </a>
+            <a href="{{ route('landing.sobreMi') }}">
+                Sobre mi
+            </a>
+            <a href="{{ route('landing.roadmap') }}">
+                Roadmap
+            </a>
+        </div>
         <div class="lang">
             @php $language = session()->get('locale') @endphp
             <button class="langbtn">

@@ -13,7 +13,7 @@ return [
     'free' => 'Free',
     'freeTxt' => 'This project is designed to be 100% free with no ads, microtransactions, or pay-to-win mechanics. The project is fully funded by user donations',
     'monopoly' => 'Monopoly',
-    'monopolyTxt' => 'Use unethical techniques against other players to become the top-rated airline (just like in the real world)',
+    'monopolyTxt' => 'Use unethical techniques against other players to become the top-rated airline',
     'start' => 'START YOUR AIRLINE HERE',
     'register' => 'Register',
     'changelog' => 'Changelog',
