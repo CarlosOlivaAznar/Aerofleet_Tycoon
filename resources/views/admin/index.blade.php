@@ -18,7 +18,7 @@
         </div>
         <div class="botones-cabecera">
           <a href="{{ route('admin.errors') }}" class="boton">
-            <i class="bx bx-bug-alt"></i>
+            <i class="bx bx-error"></i>
             <span>{{ __('admin.errors') }}</span>
           </a>
           <a href="{{ route('admin.bugreports') }}" class="boton">
