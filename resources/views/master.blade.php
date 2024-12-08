@@ -3,7 +3,7 @@
 <head>
     @include('partials.head')
 </head>
-@if (Cookie::get('modoOscuro') === null)
+@if (!isset($_COOKIE['modoOscuro']))
     @php
         $_COOKIE['modoOscuro'] = "false";
     @endphp
