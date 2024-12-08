@@ -13,6 +13,7 @@ class ErrorHandler extends Model
     protected $fillable = [
         'message',
         'file',
+        'line',
         'user_id',
     ];
 

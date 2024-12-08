@@ -42,6 +42,7 @@ return [
     'noErr' => 'No hay ningun error registrado',
     'message' => 'Mensaje',
     'file'=> 'Archivo',
+    'line' => 'Linea',
     'uid' => 'Id Usuario',
 ];
 

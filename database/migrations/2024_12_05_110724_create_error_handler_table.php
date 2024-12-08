@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('message');
             $table->text('file');
+            $table->text('line');
             $table->unsignedInteger('user_id');
             $table->timestamps();
         });

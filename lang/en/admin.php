@@ -42,6 +42,7 @@ return [
     'noErr' => 'There are no errors recorded',
     'message' => 'Message',
     'file' => 'File',
+    'line' => 'Line',
     'uid' => 'User ID',
 ];
 

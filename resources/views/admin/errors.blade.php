@@ -34,6 +34,7 @@
                 <tr>
                     <th>{{ __('admin.message') }}</th>
                     <th>{{ __('admin.file') }}</th>
+                    <th>{{ __('admin.line') }}</th>
                     <th>{{ __('admin.uid') }}</th>
 
                 </tr>
@@ -43,6 +44,7 @@
                 <tr>
                     <td>{{ $error->message }}</td>
                     <td>{{ $error->file }}</td>
+                    <td> {{ $error->line }} </td>
                     <td>{{ $error->user->name }} ({{ $error->user->nombreCompanyia }})</td>
                 </tr>
                 @endforeach

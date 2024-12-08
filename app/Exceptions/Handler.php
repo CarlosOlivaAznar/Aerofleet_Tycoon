@@ -29,6 +29,7 @@ class Handler extends ExceptionHandler
             ErrorHandler::create([
                 'message' => $e->getMessage(),
                 'file' => $e->getFile(),
+                'line' => $e->getLine(),
                 'user_id' => auth()->id(),
             ]);
         });
