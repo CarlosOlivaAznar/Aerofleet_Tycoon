@@ -102,6 +102,9 @@ class RutasController extends Controller
             'precioBillete' => $request->precioBillete,
         ]);
 
+        $avion->estado = 0;
+        $avion->update();
+
         session()->flash('exito', trans('routes.routeCreated'));
         return redirect()->route('rutas.index');
     }
