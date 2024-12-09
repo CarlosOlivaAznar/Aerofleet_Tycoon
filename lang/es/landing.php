@@ -57,6 +57,9 @@ return [
     'donateSupport' => '¿Quieres apoyar al proyecto?',
     'donateInfoPage' => 'Página Donaciones',
 
+    // Redes Landing
+    'followUs' => 'Siguenos en nuestras redes sociales',
+
     // Footer
     'developedBy' => 'Desarrollado por Carlos Oliva Aznar',
     'aboutMe' => 'Sobre Mí',

@@ -73,6 +73,9 @@ return [
   'privacy' => 'Privacy Policy',
   'roadmap' => 'Roadmap',
 
+  // Redes Landing
+  'followUs' => 'Follow us on our social media',
+
   // About Me
   'who' => 'Who am I?',
   'whoT1' => 'I am Carlos Oliva, a software developer from Spain. I was born in Zaragoza, where I completed my studies. I did bachelor in Social Sciences and later completed two superior technician degrees, one in multiplatform application development and another in web application development. Despite my baccalaureate teachers\' doubts, I managed to complete both higher degrees with very good grades.',

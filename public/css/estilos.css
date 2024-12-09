@@ -1167,6 +1167,7 @@ MARK: Landing
 }
 
 .lang .langbtn img, .lang .lang-content img{
+    border-radius: 10px;
     width: 30px;
 }
 
@@ -1400,20 +1401,20 @@ MARK: Landing
 
 
 /* imagen con texto y boton */
-.info-donar{
+.mainContent .info-donar{
     margin: 150px 0;
 }
 
-.info-donar h2{
+.mainContent .info-donar h2{
     text-align: center;
     margin-bottom: 15px;
 }
 
-.info-donar p{
+.mainContent .info-donar p{
     text-align: center;
 }
 
-.info-donar div{
+.mainContent .info-donar div{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -1422,7 +1423,7 @@ MARK: Landing
     align-items: center;
 }
 
-.info-donar div div.text{
+.mainContent .info-donar div div.text{
     width: 100%;
     padding: 30px 20px;
     background-color: var(--light);
@@ -1431,11 +1432,11 @@ MARK: Landing
     flex-direction: column;
 }
 
-.info-donar div div.text p{
+.mainContent .info-donar div div.text p{
     text-align: left;
 }
 
-.info-donar div div.text a{
+.mainContent .info-donar div div.text a{
     background-color: var(--primary);
     border-radius: 40px;
     padding: 10px 30px;
@@ -1443,13 +1444,56 @@ MARK: Landing
     color: var(--light);
 }
 
-.info-donar div div.imagen{
+.mainContent .info-donar div div.imagen{
     width: 50%;
 }
 
-.info-donar div div.imagen img{
+.mainContent .info-donar div div.imagen img{
     width: 100%;
     border-radius: 25px;
+}
+
+/* Info redes sociales */
+.mainContent .socials{
+    margin: 150px 0;
+}
+
+.mainContent .socials div.social-content{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    margin-top: 66px;
+}
+
+.mainContent .socials div.social-content div.card{
+    padding: 33px 75px;
+    background-color: var(--light);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.mainContent .socials div.social-content div.card div{
+    padding: 25px;
+    background-color: var(--grey);
+    border-radius: 25px;
+}
+
+.mainContent .socials div.social-content div.card div i{
+    font-size: 3rem;
+    color: var(--dark);
+}
+
+.mainContent .socials div.social-content div.card p{
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* Collapse para un div */
