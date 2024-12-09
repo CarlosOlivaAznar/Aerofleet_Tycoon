@@ -1589,7 +1589,7 @@ footer .contenidoFooter div p.texto a{
 .alerta {
     padding: 20px;
     background-color: var(--danger);
-    color: var(--light);
+    color: #f6f6f9;
     opacity: 1;
     transition: opacity 0.6s;
     margin-bottom: 15px;
