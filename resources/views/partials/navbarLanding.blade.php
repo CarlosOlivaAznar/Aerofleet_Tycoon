@@ -6,16 +6,16 @@
     <div class="login">
         <div class="navegacion">
             <a href="{{ route('landing.landing') }}">
-                Inicio
+                {{ __('landing.home') }}
             </a>
             <a href="{{ route('landing.tutorial') }}">
-                Tutorial
+                {{ __('landing.tutorial') }}
             </a>
             <a href="{{ route('landing.sobreMi') }}">
-                Sobre mi
+                {{ __('landing.aboutme') }} 
             </a>
             <a href="{{ route('landing.roadmap') }}">
-                Roadmap
+                {{ __('landing.roadmap') }}
             </a>
         </div>
         <div class="lang">

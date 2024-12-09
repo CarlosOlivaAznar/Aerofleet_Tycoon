@@ -3,6 +3,10 @@
 return [
 
     // Landing
+    'home' => 'Home',
+    'tutorial' => 'Tutorial',
+    'aboutme' => 'About Me',
+    'roadmap' => 'Roadmap',
     'signIn' => 'Sign In',
     'signUp' => 'Sign Up',
     'realTimeSim' => 'Real-Time Management Simulator',
