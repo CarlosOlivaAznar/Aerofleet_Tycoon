@@ -84,7 +84,7 @@ return [
   'whoT4' => 'Keep in mind that I am still learning day by day and I am not perfect. The application may have flaws or may not be tailored to your needs. If there is something that can be improved, I welcome suggestions and advice for improvement.',
 
   'objt' => 'What is my objective?',
-  'objtT1' => 'I have always been a big fan of management games, partly because of my father who let me play Zoo Tycoon 2 and Dino Island when I was 3 years old. I have tried different aviation management games, but I never found one that fully convinced me, as they all had microtransactions or premium currencies that ruined the gaming experience. Some even blocked the game after a few hours, forcing you to pay to continue playing.',
+  'objtT1' => 'I have always been a big fan of management games, partly because of my father who let me play Zoo Tycoon 2 and Dino Island when I was 5 years old. I have tried different aviation management games, but I never found one that fully convinced me, as they all had microtransactions or premium currencies that ruined the gaming experience. Some even blocked the game after a few hours, forcing you to pay to continue playing.',
   'objtT2' => 'Because of these games, I always had the idea of creating a game of the same style without having to spend real money on every action you had to take.',
   'objtT3' => 'For this reason, and because I have to submit a final project, I decided to make my idea a reality.',
   'objtT4' => 'The game is entirely self-funded, and I will not include ads or microtransactions in the application. If you want to support, it is completely voluntary and can be done in the "donate" section ',
