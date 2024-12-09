@@ -54,8 +54,8 @@
         </div>
 
         <div class="socials" id="socials">
-            <h2 class="subtituloPagina">Mis redes sociales</h2>
-            <p class="subtituloPagina">ponte en contacto conmigo o sigueme en mis redes sociales</p>
+            <h2 class="subtituloPagina">{{ __('landing.smTitle') }}</h2>
+            <p class="subtituloPagina">{{ __('landing.smText') }}</p>
 
             <div class="social-content">
                 <a href="https://x.com/Ramboo018" target="_blank">

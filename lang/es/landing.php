@@ -88,6 +88,10 @@ return [
     'objtT4' => 'El juego esta financiado completamente de mi bolsillo y no pondre anuncios ni microtransacciones en la aplicacion, si quieres apoyar es completamente voluntario y se puede hacer en el apartado de ',
     'objtDonate' => 'donar',
 
+  'smTitle' => 'Mis redes sociales',
+  'smText' => 'ponte en contacto conmigo o sigueme en mis redes sociales',
+
+
     // Donar
     'accessDonate' => 'Haz click para acceder a la pagina de donativos de PayPal',
     'thanks' => '¡Muchas Gracias!',

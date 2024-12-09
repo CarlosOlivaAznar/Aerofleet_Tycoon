@@ -90,6 +90,10 @@ return [
   'objtT4' => 'The game is entirely self-funded, and I will not include ads or microtransactions in the application. If you want to support, it is completely voluntary and can be done in the "donate" section ',
   'objtDonate' => 'donate',
 
+  'smTitle' => 'My Social Media',
+  'smText' => 'Get in touch with me or follow me on my social media',
+
+
   // Donate
   'accessDonate' => 'Click to access the PayPal donations page',
   'thanks' => 'Thank you very much!',
