@@ -10,6 +10,7 @@ return [
     'signIn' => 'Acceder',
     'signUp' => 'Registrarse',
     'realTimeSim' => 'Simulador de Gestion a Tiempo real',
+    'realTimeSimSub' => 'Simula, gestiona y compite para construir la aerolínea más exitosa en un entorno dinámico y competitivo.',
     'demand' => 'Demanda',
     'demandTxt' => 'Cada aeropuerto tiene su propia demanda y pasajeros simulados segun el destino y origen de la ruta',
     'multiplayer' => 'Multijugador',
@@ -36,7 +37,7 @@ return [
                 Compra aviones de segunda mano en un mercado dinámico que evoluciona constantemente.
               </p>
               <p>
-                Tu aerolínea opera en un mundo influenciado por la oferta y demanda generada por otros jugadores. ¡Adáptate para mantenerte competitivo!
+                Tu aerolínea opera en un mundo influenciado por la oferta y demanda generada por otros jugadores. Realiza investigaciones para mantenerte competitivo en el mercado
               </p>',
     'infoText2' => '<h3>Compite con otros jugadores</h3>
               <p>
@@ -48,6 +49,13 @@ return [
               <p>
                 Consulta la página de rankings para ver la posición de tu aerolínea y obtén recompensas exclusivas por alcanzar y mantenerte en el Top 1.
               </p>',
+
+    // Donaciones landing
+    'donateInfoTitle' => 'Financiado Completamente por tus donaciones',
+    'donateInfosubtitle' => 'Sin anuncios, sin microtransacciones, completamente gratuito',
+    'donateInfoMainText' => 'Este proyecto está diseñado para ser completamente gratuito, ofreciendo una experiencia justa y sin distracciones. No utilizamos anuncios ni mecánicas de pay-to-win. Gracias a las donaciones de nuestra comunidad, mantenemos los servidores, desarrollamos nuevas actualizaciones y aseguramos la calidad de la aplicacion.',
+    'donateSupport' => '¿Quieres apoyar al proyecto?',
+    'donateInfoPage' => 'Página Donaciones',
 
     // Footer
     'developedBy' => 'Desarrollado por Carlos Oliva Aznar',

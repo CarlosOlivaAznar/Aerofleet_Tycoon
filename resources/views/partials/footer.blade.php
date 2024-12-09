@@ -6,7 +6,7 @@
           <h4>Aerofleet Tycoon</h4>
         </div>
         <p class="autor">{{ __('landing.developedBy') }}</p>
-        <p class="autor">Copyright © 2024 Aerofleet Tycoon</p>
+        <p class="autor">Copyright © 2025 Aerofleet Tycoon</p>
       </div>
       <div>
         <p class="titulo">{{ __('landing.aboutMe') }}</p>

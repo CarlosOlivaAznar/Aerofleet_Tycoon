@@ -1282,6 +1282,12 @@ MARK: Landing
     text-align: center;
     color: var(--dark);
     margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.mainContent p.subtituloPagina{
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .mainContent h2{
@@ -1390,6 +1396,60 @@ MARK: Landing
 .mainContent .changelog ul li{
     list-style: disc;
     margin-top: 10px;
+}
+
+
+/* imagen con texto y boton */
+.info-donar{
+    margin: 150px 0;
+}
+
+.info-donar h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.info-donar p{
+    text-align: center;
+}
+
+.info-donar div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.info-donar div div.text{
+    width: 100%;
+    padding: 30px 20px;
+    background-color: var(--light);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-donar div div.text p{
+    text-align: left;
+}
+
+.info-donar div div.text a{
+    background-color: var(--primary);
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.info-donar div div.imagen{
+    width: 50%;
+}
+
+.info-donar div div.imagen img{
+    width: 100%;
+    border-radius: 25px;
 }
 
 /* Collapse para un div */

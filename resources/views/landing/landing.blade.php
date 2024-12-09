@@ -12,6 +12,7 @@
           <h1>AeroFleet Tycoon</h1>
         </div>
         <h2 class="subtituloPagina">{{ __('landing.realTimeSim') }}</h2>
+        <p class="subtituloPagina">{{ __('landing.realTimeSimSub') }}</p>
         <div class="resumen mb-150">
             <ul>
               <li>
@@ -59,6 +60,23 @@
           <div class="imagenConTexto" style="background-image: url('{{ asset('images/emiratesFondo.jpg') }}');">
             <h3>{{ __('landing.start') }}</h3>
             <a href="{{ route('register') }}">{{ __('landing.register') }}</a>
+          </div>
+
+          <div class="info-donar">
+            <h2 class="subtituloPagina">{{ __('landing.donateInfoTitle') }}</h2>
+            <p class="subtituloPagina">{{ __('landing.donateInfosubtitle') }}</p>
+            
+            <div>
+              <div class="text">
+                <p>{{ __('landing.donateInfoMainText') }}</p>
+                
+                <p>{{ __('landing.donateSupport') }}</p>
+                <a href="{{ route('landing.donar') }}">{{ __('landing.donateInfoPage') }}</a>
+              </div>
+              <div class="imagen">
+                <img src="{{ asset('images/donate-landing.png') }}" alt="comunidad-aerofleet">
+              </div>
+            </div>
           </div>
 
           <div class="changelog collapse">
