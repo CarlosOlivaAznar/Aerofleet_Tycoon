@@ -640,6 +640,7 @@ MARK: Modal
 .modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover,
 .modal .contenido-modal .footer-modal .botones input[type="submit"]:hover{
     background-color: var(--dark) !important;
+    color: var(--light) !important;
     transition: 0.4s;
 }
 
