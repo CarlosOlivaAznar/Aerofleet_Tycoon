@@ -17,6 +17,9 @@
             <a href="{{ route('landing.roadmap') }}">
                 {{ __('landing.roadmap') }}
             </a>
+            <a href="{{ route('landing.donar') }}">
+                {{ __('landing.donate') }}
+            </a>
         </div>
         <div class="lang">
             @php $language = session()->get('locale') @endphp

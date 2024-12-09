@@ -98,7 +98,7 @@ return [
   'accessDonate' => 'Click to access the PayPal donations page',
   'thanks' => 'Thank you very much!',
   'donateT1' => 'Really, thank you from the bottom of my heart. This project is entirely funded by donations, which means that every contribution greatly helps to continue developing and improving this application. Every little gesture of support is deeply appreciated and significantly contributes to ensuring that we can continue offering you new content and constant updates.',
-  'donateT2' => 'If you have found the application useful and wish to support my work, I cordially invite you to consider making a donation. Any amount, however modest, will be received with sincere gratitude and will be used to further enhance the experience on our platform.',
+  'donateT2' => 'If you have found the application useful and wish to support my work, I cordially invite you to consider making a donation. Any amount, however modest, will be received with sincere gratitude and will be used to further enhance the experience on our application.',
   'donateT3' => 'Additionally, if you want to get to know me better and discover who is behind this project, I encourage you to visit the',
   'donateT4' => 'section on our website. And to stay updated on all the news and updates, I invite you to join our',
   'discordServer' => 'Discord Server',

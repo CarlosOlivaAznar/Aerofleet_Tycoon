@@ -96,7 +96,7 @@ return [
     'accessDonate' => 'Haz click para acceder a la pagina de donativos de PayPal',
     'thanks' => '¡Muchas Gracias!',
     'donateT1' => 'De verdad, gracias de todo corazón. Este proyecto es completamente financiado por donaciones, lo que significa que cada contribución cuenta enormemente para seguir desarrollando y mejorando esta aplicación. Cada pequeño gesto de apoyo se valora profundamente y contribuye significativamente a asegurar que podamos continuar ofreciéndote nuevo contenido y actualizaciones constantes.',
-    'donateT2' => 'Si la aplicación te ha resultado útil y deseas respaldar mi trabajo, te invito cordialmente a considerar realizar una donación. Cualquier cantidad, por modesta que sea, será recibida con sincero agradecimiento y se utilizará para potenciar y mejorar aún más la experiencia en nuestra plataforma.',
+    'donateT2' => 'Si la aplicación te ha resultado útil y deseas respaldar mi trabajo, te invito cordialmente a considerar realizar una donación. Cualquier cantidad, por modesta que sea, será recibida con sincero agradecimiento y se utilizará para potenciar y mejorar aún más la experiencia en nuestra aplicacion.',
     'donateT3' => 'Además, si deseas conocerme mejor y descubrir quién está detrás de este proyecto, te animo a que visites la sección',
     'donateT4' => 'en nuestra página web. Y para mantenerte al tanto de todas las novedades y actualizaciones, te invito a unirte a nuestro',
     'discordServer' => 'servidor de Discord',
