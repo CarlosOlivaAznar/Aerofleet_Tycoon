@@ -42,13 +42,13 @@
               {!! __('landing.infoText1') !!}
             </div>
             <div class="imagen-50">
-              <img src="{{ asset('images/tutorial/flota1.png') }}" alt="Gestión de flota">
+              <img src="{{ asset('images/landing-1.png') }}" alt="Gestión de flota">
             </div>
           </div>
           
           <div class="informacion-imagen mb-150">
             <div class="imagen-50">
-              <img src="{{ asset('images/tutorial/flota1.png') }}" alt="Competencia en el mercado">
+              <img src="{{ asset('images/landing-2.png') }}" alt="Competencia en el mercado">
             </div>
             <div class="texto">
               {!! __('landing.infoText2') !!}

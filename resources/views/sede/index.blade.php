@@ -14,7 +14,7 @@
     <main>
       <div class="cabecera">
         <div class="titulo">
-          <h1>{{ __('hq.headquarters') }}</h1>
+          <h1>{{ __('hq.headquarters') }} {{ $sede->user->nombreCompanyia }}</h1>
         </div>
       </div>
 
