@@ -11,8 +11,7 @@
       <div>
         <p class="titulo">{{ __('landing.aboutMe') }}</p>
         <p class="texto"><a href="{{ route('landing.sobreMi') }}">{{ __('landing.aboutMe') }}</a></p>
-        <p class="texto"><a href="">{{ __('landing.blog') }}</a></p>
-        <p class="texto"><a href="">{{ __('landing.contactMe') }}</a></p>
+        <p class="texto"><a href="{{ route('landing.sobreMi') }}#socials">{{ __('landing.contactMe') }}</a></p>
       </div>
       <div>
         <p class="titulo">{{ __('landing.info') }}</p>

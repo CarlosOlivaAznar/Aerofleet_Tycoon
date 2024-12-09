@@ -84,24 +84,30 @@
         <div class="socials">
             <h2 class="subtituloPagina">{{ __('landing.followUs') }}</h2>
             <div class="social-content">
-                <a href="">
+                <a href="" target="_blank">
                     <div class="card">
                         <div><i class='bx bxl-twitter'></i></div>
                         <p>@aerofleet</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="" target="_blank">
                     <div class="card">
                         <div><i class='bx bxl-tiktok'></i></div>
                         <p>aerofleet</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="" target="_blank">
                     <div class="card">
                         <div><i class='bx bxl-reddit'></i></div>
                         <p>r/aerofleet</p>
                     </div>
                 </a>
+                <a href="https://discord.gg/sUueRvrttY" target="_blank">
+                  <div class="card">
+                      <div><i class='bx bxl-discord-alt' ></i></div>
+                      <p>AeroFleet Tycoon</p>
+                  </div>
+              </a>
             </div>
         </div>
 
