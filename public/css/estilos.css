@@ -1465,6 +1465,7 @@ MARK: Landing
     align-items: center;
     gap: 40px;
     margin-top: 66px;
+    flex-wrap: wrap;
 }
 
 .mainContent .socials div.social-content div.card{
@@ -2455,6 +2456,15 @@ MARK: Road Map
     .barra-login .login .navegacion{
         display: none;
         visibility: hidden;
+    }
+
+    /* Informacion donar */
+    .mainContent .info-donar div{
+        flex-direction: column;
+    }
+
+    .mainContent .info-donar div div.imagen{
+        width: 100%;
     }
 
     /* Roadmap */
