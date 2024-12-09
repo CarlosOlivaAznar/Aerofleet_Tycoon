@@ -2106,6 +2106,11 @@ MARK: Road Map
     margin-top: 70px;
 }
 
+.roadmap-layout .side .movil {
+    visibility: hidden;
+    display: none;
+}
+
 .roadmap-layout .side.right {
     width: 300px;
     margin-top: 160px;
@@ -2347,6 +2352,25 @@ MARK: Road Map
         visibility: hidden;
     }
 
+    /* Roadmap */
+    .roadmap-layout div img{
+        margin-right: -100px;
+    }
+
+    .roadmap-layout .side .movil{
+        visibility: visible;
+        display: block;
+    }
+
+    .roadmap-layout .side.right{
+        visibility: hidden;
+        display: none;
+    }
+
+    .roadmap-layout .side .side-card{
+        margin-bottom: 20px;
+    }
+
     /* Primer login */
     .mainContent form .formulario{
         width: 95%;
@@ -2482,6 +2506,15 @@ MARK: Road Map
     .barra-login .titulo-pag .titulo-nombre{
         display: none;
         visibility: hidden;
+    }
+
+    /* Roadmap */
+    .roadmap-layout .side .side-card h2{
+        font-size: 1.2rem;
+    }
+
+    .roadmap-layout .side .side-card p{
+        font-size: .9rem;
     }
 
     /* Formulario a tamaño pantalla */
