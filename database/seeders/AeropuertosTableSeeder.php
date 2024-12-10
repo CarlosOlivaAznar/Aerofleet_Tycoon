@@ -4800,11 +4800,46 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Letonia */
+        /* ------------------- */
+        /* 
+        MARK: Letonia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EVLA',
+            'pais' => 'YL',
+            'nombre' => 'Liepaja Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.517604,
+            'longitud' => 21.097738,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EVRA',
+            'pais' => 'YL',
+            'nombre' => 'Riga International Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 56.923985,
+            'longitud' => 23.971214,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'ES',
+            'pais' => 'YL',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
