@@ -12,6 +12,7 @@ return [
       <li>The layout for creating a route has changed, and now the plane\'s routes are displayed at the top</li>
       <li>Flights are now affected by real weather conditions</li>
       <li>New aircraft added: a340-500, a220-100, a330neo, a321xlr, b77X and e145</li>
+      <li>New second hand aircraft added</li>
       <li>When a new route is created, the plane moves to an inactive state</li>
     </ul>
 

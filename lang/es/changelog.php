@@ -12,6 +12,7 @@ return [
       <li>El layout de crear ruta ha cambiado y ahora se muestra las rutas del avión arriba</li>
       <li>Los vuelos ahora son afectados por condiciones meteorológicas reales.</li>
       <li>Nuevos aviones añadidos: a340-500, a220-100, a330neo, a321xlr, b77X y e145</li>
+      <li>Nuevos aviones de segunda mano añadidos</li>
       <li>Cuando se crea una ruta nueva el avión pasa a un estado inactivo</li>
     </ul>
     
