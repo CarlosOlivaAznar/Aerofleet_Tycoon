@@ -4493,6 +4493,7 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
         /* --------------------- */
         /* Aeropuerto Luxemburgo */
         /* --------------------- */
@@ -4515,12 +4516,394 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Chequia */
+        /* ------------------- */
+        /* 
+        MARK: Chequia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LKTB',
+            'pais' => 'OK',
+            'nombre' => 'Brno Turany Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 49.152707,
+            'longitud' => 16.688956,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKKV',
+            'pais' => 'OK',
+            'nombre' => 'Karlovy Vary Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.203227,
+            'longitud' => 12.912249,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKMT',
+            'pais' => 'OK',
+            'nombre' => 'Ostrava Leos Janacek Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.698654,
+            'longitud' => 18.118543,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKPD',
+            'pais' => 'OK',
+            'nombre' => 'Pardubice Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 50.014742,
+            'longitud' => 15.738675,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LKPR',
+            'pais' => 'OK',
+            'nombre' => 'Prague Vaclav Havel Airport',
+            'espaciosTotales' => 500,
+            'costeOperacional' => 2500,
+            'latitud' => 50.107877,
+            'longitud' => 14.256848,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* ---------------------- */
+        /* Aeropuertos Eslovaquia */
+        /* ---------------------- */
+        /* 
+        MARK: Eslovaquia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LZKZ',
+            'pais' => 'OM',
+            'nombre' => 'Kosice International Airport',
+            'espaciosTotales' => 45,
+            'costeOperacional' => 400,
+            'latitud' => 48.670212,
+            'longitud' => 21.241186,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZIB',
+            'pais' => 'OM',
+            'nombre' => 'Bratislava M. R. Stefanik Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 48.170095,
+            'longitud' => 17.210671,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZTT',
+            'pais' => 'OM',
+            'nombre' => 'Poprad Tatry Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 49.073547,
+            'longitud' => 20.241752,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LZSL',
+            'pais' => 'OM',
+            'nombre' => 'Sliac Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 48.640369,
+            'longitud' => 19.136077,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Hungria */
+        /* ------------------- */
+        /* 
+        MARK: Hungria
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LHSM',
+            'pais' => 'HA',
+            'nombre' => 'Heviz Balaton Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.687701,
+            'longitud' => 17.159908,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHBP',
+            'pais' => 'HA',
+            'nombre' => 'Budapest Ferenc Liszt',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 47.435973,
+            'longitud' => 19.256359,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHDC',
+            'pais' => 'HA',
+            'nombre' => 'Debrecen International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.490482,
+            'longitud' => 21.612767,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LHPR',
+            'pais' => 'HA',
+            'nombre' => 'Gyor Per Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.626135,
+            'longitud' => 17.807480,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Estonia */
+        /* ------------------- */
+        /* 
+        MARK: Estonia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EEKE',
+            'pais' => 'ES',
+            'nombre' => 'Kuressaare Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.231500,
+            'longitud' => 22.508429,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EEKA',
+            'pais' => 'ES',
+            'nombre' => 'Kardla Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.990928,
+            'longitud' => 22.830704,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EEPU',
+            'pais' => 'ES',
+            'nombre' => 'Parnu Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.421239,
+            'longitud' => 24.472549,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EETN',
+            'pais' => 'ES',
+            'nombre' => 'Tallinn Lennart Meri Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 59.414192,
+            'longitud' => 24.836834,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EETU',
+            'pais' => 'ES',
+            'nombre' => 'Tartu Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.307438,
+            'longitud' => 26.687233,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Letonia */
+        /* ------------------- */
+        /* 
+        MARK: Letonia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EVLA',
+            'pais' => 'YL',
+            'nombre' => 'Liepaja Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 56.517604,
+            'longitud' => 21.097738,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EVRA',
+            'pais' => 'YL',
+            'nombre' => 'Riga International Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 56.923985,
+            'longitud' => 23.971214,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------- */
+        /* Aeropuertos Lituania */
+        /* -------------------- */
+        /* 
+        MARK: Lituania
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EYKA',
+            'pais' => 'LY',
+            'nombre' => 'Kaunas Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 54.964616,
+            'longitud' => 24.081470,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYPA',
+            'pais' => 'LY',
+            'nombre' => 'Palanga International Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 55.971539,
+            'longitud' => 21.093012,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYVI',
+            'pais' => 'LY',
+            'nombre' => 'Vilnius International Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1800,
+            'latitud' => 54.635807,
+            'longitud' => 25.285664,
+            'demanda' => 0.93,
+            'pasajerosEstimados' => 235,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYSA',
+            'pais' => 'LY',
+            'nombre' => 'Siauliai International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.894361,
+            'longitud' => 23.393924,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'LX',
+            'pais' => 'LY',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,

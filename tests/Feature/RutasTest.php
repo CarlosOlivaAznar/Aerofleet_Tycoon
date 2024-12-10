@@ -29,6 +29,8 @@ class RutasTest extends TestCase
         $this->user = User::factory()->create([
             'password' => Hash::make('password'),
         ]);
+
+        $_COOKIE['modoOscuro'] = "false";
     }
 
     /**
@@ -77,7 +79,7 @@ class RutasTest extends TestCase
         ]);
 
         $response->assertRedirect(route('rutas.index'));
-        $response->assertSessionHas('exito', 'Ruta creada correctamente');
+        $response->assertSessionHas('exito', trans('routes.routeCreated'));
 
         $this->assertDatabaseHas('rutas', [
             'flota_id' => $avion->id,
@@ -98,7 +100,7 @@ class RutasTest extends TestCase
         $response = $this->actingAs($user)->get(route('rutas.borrarRuta', ['id' => $ruta->id]));
 
         $response->assertRedirect(route('rutas.index'));
-        $response->assertSessionHas('exito', 'Ruta eliminada correctamente');
+        $response->assertSessionHas('exito', trans('routes.deleteSuccess'));
         $this->assertDatabaseMissing('rutas', ['id' => $ruta->id]);
     }
 
@@ -115,7 +117,7 @@ class RutasTest extends TestCase
         $response = $this->actingAs($user1)->get(route('rutas.borrarRuta', ['id' => $ruta->id]));
 
         $response->assertRedirect(route('rutas.index'));
-        $response->assertSessionHas('error', 'error al eliminar la ruta');
+        $response->assertSessionHas('error', trans('routes.deleteErr'));
         $this->assertDatabaseHas('rutas', ['id' => $ruta->id]);
     }
 
@@ -138,7 +140,7 @@ class RutasTest extends TestCase
         ]);    
 
         $response->assertRedirect(route('rutas.index'));
-        $response->assertSessionHas('exito', 'Ruta modificada correctamente');
+        $response->assertSessionHas('exito', trans('routes.modSuccess'));
     }
 
     public function test_modificar_ruta_otro_usuario()
@@ -164,6 +166,6 @@ class RutasTest extends TestCase
         $this->assertNotEquals(10, $ruta->precioBillete);
 
         $response->assertRedirect(route('rutas.index'));
-        $response->assertSessionHas('error', 'error al modificar la ruta');
+        $response->assertSessionHas('error', trans('routes.modErr'));
     }
 }

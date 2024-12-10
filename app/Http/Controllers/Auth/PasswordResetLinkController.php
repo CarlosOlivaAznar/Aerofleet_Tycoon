@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Password;
 use Illuminate\View\View;
 
@@ -15,6 +16,9 @@ class PasswordResetLinkController extends Controller
      */
     public function create(): View
     {
+        if(Cookie::get('modoOscuro') === null) {
+            $_COOKIE['modoOscuro'] = "false";
+        }
         return view('auth.custom-forgot-password');
     }
 

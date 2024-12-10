@@ -6,12 +6,13 @@ return [
     'users' => 'Usuarios',
     'name' => 'Nombre',
     'bugreport' => 'Reportes de bugs',
+    'errors' => 'Errores',
 
     'email' => 'Correo',
     'userType' => 'Rol',
     'peferredLang' => 'Idioma',
     'balance' => 'Saldo',
-    'airlineName' => 'Nombre de la compañia',
+    'airlineName' => 'Nombre de la compañía',
     'lastConnected' => 'Última Conexión',
     'actions' => 'Acciones',
 
@@ -27,15 +28,22 @@ return [
     'confirm' => 'Confirmar',
 
     'deleteConfirmation' => '¿Esta seguro que quiere eliminar el usuario',
-    'delteInfo' => 'Al borrar el usuario puede producir fallos en la aplicacion, asegurese que es seguro borrar el usuario.',
+    'delteInfo' => 'Al borrar el usuario puede producir fallos en la aplicación, asegúrese que es seguro borrar el usuario.',
 
     'nameModify' => 'Modificar Nombre',
-    'nameModifyAirline' => 'Modificar Nombre Compañia Aerea',
+    'nameModifyAirline' => 'Modificar Nombre Compañía Aérea',
 
     // Bugreports
-    'noBR' => 'No hay ningun reporte disponible',
+    'noBR' => 'No hay ningún reporte disponible',
     'user' => 'Usuario',
     'report' => 'Reporte',
+
+    // Errors
+    'noErr' => 'No hay ningún error registrado',
+    'message' => 'Mensaje',
+    'file'=> 'Archivo',
+    'line' => 'Línea',
+    'uid' => 'Id Usuario',
 ];
 
 // Plantilla

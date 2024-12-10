@@ -1,139 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  @include('partials.head')
+    @include('partials.head')
 </head>
+
 <body>
     @include('partials.navbarLanding')
     <img class="imagenTitulo" src="{{ asset('images/horarios2.jpg') }}" alt="horariosAvion">
     <main class="mainContent">
         <div class="nombre-logo">
-          <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="logo">
-          <h1>AeroFleet Tycoon</h1>
+            <img src="{{ asset('images/logos/logo_AFT_icon.png') }}" alt="logo">
+            <h1>AeroFleet Tycoon</h1>
         </div>
         <h2 class="subtituloPagina">{{ __('landing.realTimeSim') }}</h2>
-        <div class="resumen">
+        <p class="subtituloPagina">{{ __('landing.realTimeSimSub') }}</p>
+        <div class="resumen mb-150">
             <ul>
-              <li>
-                <i class="bx bx-stats"></i>
-                <h3>{{ __('landing.demand') }}</h3>
-                <h4>{{ __('landing.demandTxt') }}</h4>
-              </li>
-              <li>
-                <i class="bx bx-group"></i>
-                <h3>{{ __('landing.multiplayer') }}</h3>
-                <h4>{{ __('landing.multiplayerTxt') }}</h4>
-              </li></a>
-              <li>
-                <i class="bx bxs-badge-dollar"></i>
-                <h3>{{ __('landing.free') }}</h3>
-                <h4>{{ __('landing.freeTxt') }}</h4>
-              </li>
-              <li>
-                <i class="bx bx-network-chart"></i>
-                <h3>{{ __('landing.monopoly') }}</h3>
-                <h4>{{ __('landing.monopolyTxt') }}</h4>
-              </li>
+                <li>
+                    <i class="bx bx-stats"></i>
+                    <h3>{{ __('landing.demand') }}</h3>
+                    <h4>{{ __('landing.demandTxt') }}</h4>
+                </li>
+                <li>
+                    <i class="bx bx-group"></i>
+                    <h3>{{ __('landing.multiplayer') }}</h3>
+                    <h4>{{ __('landing.multiplayerTxt') }}</h4>
+                </li></a>
+                <li>
+                    <i class="bx bxs-badge-dollar"></i>
+                    <h3>{{ __('landing.free') }}</h3>
+                    <h4>{{ __('landing.freeTxt') }}</h4>
+                </li>
+                <li>
+                    <i class="bx bx-network-chart"></i>
+                    <h3>{{ __('landing.monopoly') }}</h3>
+                    <h4>{{ __('landing.monopolyTxt') }}</h4>
+                </li>
             </ul>
-          </div>
-          <div class="imagenConTexto" style="background-image: url('{{ asset('images/emiratesFondo.jpg') }}');">
+        </div>
+
+        <div class="informacion-imagen mb-36">
+            <div class="texto">
+                {!! __('landing.infoText1') !!}
+            </div>
+            <div class="imagen-50">
+                <img src="{{ asset('images/landing-1.png') }}" alt="Gestión de flota">
+            </div>
+        </div>
+
+        <div class="informacion-imagen mb-150">
+            <div class="imagen-50">
+                <img src="{{ asset('images/landing-2.png') }}" alt="Competencia en el mercado">
+            </div>
+            <div class="texto">
+                {!! __('landing.infoText2') !!}
+            </div>
+        </div>
+
+
+        <div class="imagenConTexto" style="background-image: url('{{ asset('images/emiratesFondo.jpg') }}');">
             <h3>{{ __('landing.start') }}</h3>
             <a href="{{ route('register') }}">{{ __('landing.register') }}</a>
-          </div>
+        </div>
 
-          <div class="changelog collapse">
+        <div class="info-donar">
+            <h2 class="subtituloPagina">{{ __('landing.donateInfoTitle') }}</h2>
+            <p class="subtituloPagina">{{ __('landing.donateInfosubtitle') }}</p>
+
+            <div>
+                <div class="text">
+                    <p>{{ __('landing.donateInfoMainText') }}</p>
+
+                    <p>{{ __('landing.donateSupport') }}</p>
+                    <a href="{{ route('landing.donar') }}">{{ __('landing.donateInfoPage') }}</a>
+                </div>
+                <div class="imagen">
+                    <img src="{{ asset('images/donate-landing.png') }}" alt="comunidad-aerofleet">
+                </div>
+            </div>
+        </div>
+
+        <div class="socials">
+            <h2 class="subtituloPagina">{{ __('landing.followUs') }}</h2>
+            <div class="social-content">
+                <a href="" target="_blank">
+                    <div class="card">
+                        <div><i class='bx bxl-twitter'></i></div>
+                        <p>@aerofleet</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="card">
+                        <div><i class='bx bxl-tiktok'></i></div>
+                        <p>aerofleet</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="card">
+                        <div><i class='bx bxl-reddit'></i></div>
+                        <p>r/aerofleet</p>
+                    </div>
+                </a>
+                <a href="https://discord.gg/sUueRvrttY" target="_blank">
+                  <div class="card">
+                      <div><i class='bx bxl-discord-alt' ></i></div>
+                      <p>AeroFleet Tycoon</p>
+                  </div>
+              </a>
+            </div>
+        </div>
+
+        <div class="changelog collapse">
             <h3>{{ __('landing.changelog') }}</h3>
             <hr>
 
             <div class="collapse-content" id="collapse-content">
-              <h4>V-0.3.2</h4>
-              <ul>
-                <li>Ahora se muestra información adicional de los aviones en flota y al comprar aviones</li>
-                <li>Bugfix donde el cuadro de los mensajes se mostraba de manera erronea</li>
-                <li>Bugfix donde el gráfico de saldo no se mostraba correctamente en dispositivos móviles</li>
-                <li>Bugfix ahora los gastos de los aviones en información se muestra con 2 decimales máximo</li>
-                <li>Al activar rutas ahora se tiene que esperar minimo un dia para que la ruta pase a estar activa y generar ingresos</li>
-                <li>Al comprar un nuevo avión se mostrará un mensaje de confirmación de compra</li>
-                <li>Los aviones con mayor antigüedad serán más caros de mantener y se cobrara un plus por reparacion</li>
-                <li>Los buscadores ahora funcionan correctamente con los mousepad de los portátiles</li>
-                <li>Los aviones ahora tienen restricciones al aterrizar en los aeropuertos segun la categoria que tenga</li>
-                <li>Ya no se pueden crear rutas que tengan hora de salida a las 24:00z</li>
-                <li>Ahora se muestra información del aeropuerto seleccionado al comprar espacios</li>
-                <li>Ahora en competencia se puede consultar el ranking de usuarios en la aplicación</li>
-                <li>Añadido modo oscuro</li>
-                <li>Añadido selector de idiomas en la página de cuenta como en la barra de navegación</li>
-              </ul>
-
-              <h4>V-0.3.1</h4>
-              <ul>
-                <li>Pagina del tutorial adaptada a moviles</li>
-                <li>En comprar espacios ahora tiene un buscador</li>
-                <li>Arreglado un error donde podrias comprar 0 espacios</li>
-                <li>Ahora puedes cambiar tu nombre de la compañia desde la pagina sede</li>
-                <li>Ahora se muestra el codigo ICAO en crear ruta</li>
-              </ul>
-
-              <h4>V-0.3.0</h4>
-              <ul>
-                <li>Ahora los espacios de los aeropuertos son limitados y solo se pueden comprar un numero maximo entre todos los jugadores</li>
-                <li>Añadidos las marcas de Embraer y Bombardier</li>
-                <li>Añadido nuevos modelos de aviones de Airbus y Boeing</li>
-                <li>Paginas de login adaptadas a dispositivos moviles</li>
-                <li>Añadido la pagina de competencia</li>
-                <li>Añadido tooltips en los botones que no tienen texto</li>
-                <li>Añadido la capacidad del avion en Flota</li>
-                <li>Paginas adaptadas a movil</li>
-                <li>Añadido el estado de las rutas En tierra/En ruta/En mantenimiento</li>
-                <li>Al crear la ruta te muestra las opciones de los espacios que tienes disponibles</li>
-                <li>Añadido a la pagina home mensajes de alerta y mensajes de informacion de las rutas</li>
-                <li>Añadido un mapa en comprar espacios con la informacion de los aeropuertos disponibles</li>
-              </ul>
-
-              <h4>V-0.2.0</h4>
-              <ul>
-                <li>Los vuelos de larga distancia ahora tienen un plus por distancia</li>
-                <li>El mapa muestra los datos de los aviones, rutas y aeropuertos</li>
-                <li>Ahora se puede modificar el precio de los billetes</li>
-                <li>Las rutas se muestran en grupo y dividido por aviones</li>
-                <li>Los aviones se pueden mandar a mantenimiento</li>
-                <li>Las tablas se pueden ver ahora en dispositivos moviles</li>
-                <li>Las matriculas de los aviones se generan automaticamente</li>
-              </ul>
+                {!! __('changelog.changelog') !!}
             </div>
             <div class="button" id="changelogButton">
-              <p>{{ __('landing.showMore') }}</p>
-              <i class="bx bx-chevron-down"></i>
+                <p>{{ __('landing.showMore') }}</p>
+                <i class="bx bx-chevron-down"></i>
             </div>
             <input type="hidden" name="showMore" id="showMore" value="{{ __('landing.showMore') }}">
             <input type="hidden" name="showLess" id="showLess" value="{{ __('landing.showLess') }}">
-          </div>
+        </div>
     </main>
 
     <script>
-      // Mostrar contenido changelog
-      let boton = document.getElementById('changelogButton');
-      let contenido = document.getElementById('collapse-content');
+        // Mostrar contenido changelog
+        let boton = document.getElementById('changelogButton');
+        let contenido = document.getElementById('collapse-content');
 
-      let mostrarMas = document.getElementById('showMore').value;
-      let mostrarMenos = document.getElementById('showLess').value;
-      
-      boton.addEventListener("click", function() {
-        if(contenido.getAttribute('class') === 'collapse-content'){
-          contenido.setAttribute("class", "collapse-content expand");
+        let mostrarMas = document.getElementById('showMore').value;
+        let mostrarMenos = document.getElementById('showLess').value;
 
-          // Cambiar texto y propiedades
-          boton.childNodes[1].innerHTML = mostrarMenos;
-          boton.childNodes[3].setAttribute("class", "bx bx-chevron-up");
-        } else {
-          contenido.setAttribute("class", "collapse-content");
+        boton.addEventListener("click", function() {
+            if (contenido.getAttribute('class') === 'collapse-content') {
+                contenido.setAttribute("class", "collapse-content expand");
 
-          // Cambiar texto y propiedades
-          boton.childNodes[1].innerHTML = mostrarMas;
-          boton.childNodes[3].setAttribute("class", "bx bx-chevron-down");
-        }
-      });
+                // Cambiar texto y propiedades
+                boton.childNodes[1].innerHTML = mostrarMenos;
+                boton.childNodes[3].setAttribute("class", "bx bx-chevron-up");
+            } else {
+                contenido.setAttribute("class", "collapse-content");
+
+                // Cambiar texto y propiedades
+                boton.childNodes[1].innerHTML = mostrarMas;
+                boton.childNodes[3].setAttribute("class", "bx bx-chevron-down");
+            }
+        });
     </script>
 
     @include('partials.footer')
 </body>
+
 </html>

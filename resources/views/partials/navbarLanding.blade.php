@@ -4,6 +4,23 @@
         <div class="titulo-nombre">Aero<span>Fleet</span></div>
     </a>
     <div class="login">
+        <div class="navegacion">
+            <a href="{{ route('landing.landing') }}">
+                {{ __('landing.home') }}
+            </a>
+            <a href="{{ route('landing.tutorial') }}">
+                {{ __('landing.tutorial') }}
+            </a>
+            <a href="{{ route('landing.sobreMi') }}">
+                {{ __('landing.aboutme') }} 
+            </a>
+            <a href="{{ route('landing.roadmap') }}">
+                {{ __('landing.roadmap') }}
+            </a>
+            <a href="{{ route('landing.donar') }}">
+                {{ __('landing.donate') }}
+            </a>
+        </div>
         <div class="lang">
             @php $language = session()->get('locale') @endphp
             <button class="langbtn">

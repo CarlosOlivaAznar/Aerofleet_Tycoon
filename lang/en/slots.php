@@ -38,6 +38,14 @@ return [
     'errSell' => 'Error selling the slot from',
     'errUser' => 'Error authenticating the user who owns the slot',
 
+
+    //Modal
+    'sellSlot' => 'Sell Slot',
+    'sellConfirm' => 'Are you sure you want to sell this slot?',
+    'infoSlot' => 'The slot will be sold for ',
+    'confirm' => 'Confirm',
+    'deny' => 'Deny',
+
 ];
 
 // Plantilla

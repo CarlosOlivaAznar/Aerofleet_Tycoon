@@ -39,6 +39,8 @@ return [
     'createRoute' => 'Create Airplane Route',
     'noSlots' => 'No slots available',
     'actualRoute' => 'Current airplane route',
+    'newRoute' => 'New Route',
+    'createNewRoute' => 'Create New Route',
 
     // Controller Messages
     'maxSize' => 'The plane cannot operate at the selected airports (the plane exceeds the maximum allowed size at one of the selected airports)',
@@ -56,7 +58,9 @@ return [
     'deleteErr' => 'error deleting the route',
     'modSuccess' => 'Route modified successfully',
     'modErr' => 'error modifying the route',
-
+    'routeCreated' => 'The route has been created successfully',
+    'minSeparation' => 'The plane must wait at least 30 minutes at the airport to receive the necessary services.',
+    'destNEq' => 'The destination must match the arrival of the next route',
 
 ];
 

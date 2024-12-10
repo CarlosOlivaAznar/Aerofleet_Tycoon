@@ -120,7 +120,7 @@
           // Mostrar precio en el parrafo
           let mostrarPrecio = document.getElementById("costeOperacion");
 
-          mostrarPrecio.innerHTML = aeropuerto.costeOperacional * 723;
+          mostrarPrecio.innerHTML = formatearPrecio(aeropuerto.costeOperacional * 723);
 
           // Reseteamos el precio total
           mostrarPrecioTotal();
@@ -143,7 +143,7 @@
 
             let costeOperacion = aeropuerto.costeOperacional * 723;
 
-            precioTotal.innerHTML = costeOperacion * numEspacios;
+            precioTotal.innerHTML = formatearPrecio(costeOperacion * numEspacios);
           } else {
             precioTotal.innerHTML = 0;
           }
@@ -195,6 +195,15 @@
           // Coste Operacional
           costeOperacionInfo.innerHTML = aeropuerto.costeOperacional;
           }
+        }
+
+        function formatearPrecio(precio) {
+          return new Intl.NumberFormat('es-ES', {
+            style: 'currency',
+            currency: 'EUR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }).format(precio);
         }
       </script>
       <script src="{{ asset('js/dropdown.js') }}"></script>

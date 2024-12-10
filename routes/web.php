@@ -57,6 +57,9 @@ Route::get('/donar', function () {
 Route::get('/tutorial', function () {
     return view('landing.tutorial');
 })->name('landing.tutorial');
+Route::get('/roadMap', function() {
+    return view('landing.roadmap');
+})->name('landing.roadmap');
 
 // Bugreport
 Route::post('/bugreport', function (Request $request) {
@@ -142,6 +145,7 @@ Route::middleware('auth')->group(function () {
 // Rutas admin
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/errors', [AdminController::class, 'errors'])->name('admin.errors');
     Route::get('/admin/bugreports', [AdminController::class, 'bugreports'])->name('admin.bugreports');
     Route::post('/admin/modificar', [AdminController::class, 'modificar'])->name('admin.modificar');
     Route::get('/admin/borrar/{id}', [AdminController::class, 'borrar'])->name('admin.borrar');

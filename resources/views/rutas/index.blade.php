@@ -72,11 +72,11 @@
               <td>{{ $ruta->precioBillete }}€</td>
               <td>
                 <a class="vender tooltip" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}">
-                  <i class="bx bx-trash"></i>
+                  <i class="bx bx-trash move-ef"></i>
                   <span class="tooltiptext">{{ __('routes.deleteRoute') }}</span>
                 </a>
                 <a class="modificar tooltip" data-modal-target="modalAvion{{ $ruta->id }}">
-                  <i class="bx bx-wrench"></i>
+                  <i class="bx bx-wrench move-ef"></i>
                   <span class="tooltiptext">{{ __('routes.modifyRoute') }}</span>
                 </a>
               </td>

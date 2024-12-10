@@ -12,6 +12,7 @@ class ProfileTest extends TestCase
 
     public function test_profile_page_is_displayed(): void
     {
+        $_COOKIE['modoOscuro'] = "false";
         $user = User::factory()->create();
 
         $response = $this

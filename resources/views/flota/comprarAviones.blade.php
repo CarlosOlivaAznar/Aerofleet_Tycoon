@@ -75,11 +75,11 @@
               <td>{{ $avionsh->avion->capacidad }}</td>
               <td>{{ number_format($avionsh->avion->precio * ($avionsh->condicion / 100), 0, ',', '.') }}</td>
               <td><a class="comprar tooltip" data-modal-target="modalConfirmacion{{ $avionsh->id }}">
-                <i class="bx bx-shopping-bag"></i>
+                <i class="bx bx-shopping-bag move-ef"></i>
                 <span class="tooltiptext">{{ __('fleet.buyAircraft') }}</span>
               </a>
               <a class="info tooltip" data-modal-target="info{{ $avionsh->id }}">
-                <i class="bx bx-detail"></i>
+                <i class="bx bx-detail move-ef"></i>
                 <span class="tooltiptext">{{ __('fleet.airplaneInformation') }}</span>
               </a></td>
             </tr>

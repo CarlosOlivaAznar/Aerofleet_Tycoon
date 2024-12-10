@@ -34,7 +34,6 @@ html{
 
 body{
     background-color: var(--grey);
-    overflow-x: hidden;
 }
 
 /* Colores modo oscuro */
@@ -66,6 +65,23 @@ a{
     color: var(--dark);
 }
 
+.mb-36 {
+    margin-bottom: 36px;
+}
+
+.mb-150 {
+    margin-bottom: 150px;
+}
+
+/* Efecto on hover */
+.move-ef {
+    transition: 0.3s;
+}
+
+.move-ef:hover {
+transform: translate(0, -4px);
+}
+  
 /* switch */
 .switch{
     position: relative;
@@ -394,6 +410,13 @@ body main .errores a{
 /*
 MARK: Boton
 */
+div.botones-cabecera {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
 a.boton{
     display: flex;
     align-items: center;
@@ -616,7 +639,8 @@ MARK: Modal
 
 .modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover,
 .modal .contenido-modal .footer-modal .botones input[type="submit"]:hover{
-    border: 3px solid var(--dark);
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
     transition: 0.4s;
 }
 
@@ -627,7 +651,7 @@ MARK: Modal
 .modal .contenido-modal .footer-modal .botones a.aceptar,
 .modal .contenido-modal .footer-modal .botones input[type="submit"].aceptar{
     color: var(--light);
-    background-color: var(--dark);
+    background-color: var(--primary);
 }
 
 span.rojo{
@@ -1062,10 +1086,12 @@ MARK: Landing
     padding: 0 24px 0 0;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     top: 0;
     left: 0;
     z-index: 1;
+    position: sticky;
+    width: 100%;
 }
 
 .barra-login .titulo-pag{
@@ -1096,6 +1122,25 @@ MARK: Landing
     overflow: vis;
 }
 
+.barra-login .login .navegacion{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+}
+
+.barra-login .login .navegacion a{
+    color: var(--dark);
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.barra-login .login .navegacion a:hover{
+    background-color: transparent;
+    color: var(--primary);
+}
+
 .barra-login .login div{
     cursor: pointer;
 }
@@ -1122,6 +1167,7 @@ MARK: Landing
 }
 
 .lang .langbtn img, .lang .lang-content img{
+    border-radius: 10px;
     width: 30px;
 }
 
@@ -1237,6 +1283,12 @@ MARK: Landing
     text-align: center;
     color: var(--dark);
     margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.mainContent p.subtituloPagina{
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .mainContent h2{
@@ -1298,7 +1350,7 @@ MARK: Landing
 .mainContent .imagenConTexto h3{
     font-size: 40px;
     padding: 15px 0 250px 0;
-    color: var(--dark);
+    color: var(--light);
 }
 
 .mainContent .imagenConTexto a{
@@ -1345,6 +1397,104 @@ MARK: Landing
 .mainContent .changelog ul li{
     list-style: disc;
     margin-top: 10px;
+}
+
+
+/* imagen con texto y boton */
+.mainContent .info-donar{
+    margin: 150px 0;
+}
+
+.mainContent .info-donar h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.mainContent .info-donar p{
+    text-align: center;
+}
+
+.mainContent .info-donar div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.mainContent .info-donar div div.text{
+    width: 100%;
+    padding: 30px 20px;
+    background-color: var(--light);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent .info-donar div div.text p{
+    text-align: left;
+}
+
+.mainContent .info-donar div div.text a{
+    background-color: var(--primary);
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.mainContent .info-donar div div.imagen{
+    width: 50%;
+}
+
+.mainContent .info-donar div div.imagen img{
+    width: 100%;
+    border-radius: 25px;
+}
+
+/* Info redes sociales */
+.mainContent .socials{
+    margin: 150px 0;
+}
+
+.mainContent .socials div.social-content{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    margin-top: 66px;
+    flex-wrap: wrap;
+}
+
+.mainContent .socials div.social-content div.card{
+    padding: 33px 75px;
+    background-color: var(--light);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.mainContent .socials div.social-content div.card div{
+    padding: 25px;
+    background-color: var(--grey);
+    border-radius: 25px;
+}
+
+.mainContent .socials div.social-content div.card div i{
+    font-size: 3rem;
+    color: var(--dark);
+}
+
+.mainContent .socials div.social-content div.card p{
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* Collapse para un div */
@@ -1544,7 +1694,7 @@ footer .contenidoFooter div p.texto a{
 .alerta {
     padding: 20px;
     background-color: var(--danger);
-    color: var(--light);
+    color: #f6f6f9;
     opacity: 1;
     transition: opacity 0.6s;
     margin-bottom: 15px;
@@ -1784,6 +1934,10 @@ footer .contenidoFooter div p.texto a{
     margin-bottom: 15px;
 }
 
+.contenido main .rutas h4.title-margin{
+    margin-bottom: 30px;
+}
+
 .contenido main .tablas .cabecera .botones-tablas{
     display: flex;
     flex-flow: row;
@@ -1869,6 +2023,12 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .rutas .input #botonSubmit:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
 }
 
 .contenido main .mapa-ruta{
@@ -1933,7 +2093,9 @@ footer .contenidoFooter div p.texto a{
     margin-top: 35px;
 }
 
-
+.contenido main .resumenAvion.crearRuta{
+    margin-bottom: 30px;
+}
 
 .contenido main .resumenAvion .barraHorarios{
     width: 100%;
@@ -1952,7 +2114,7 @@ footer .contenidoFooter div p.texto a{
 
 }
 
-.contenido main .resumenAvion .input #crearRuta{
+.contenido main .input #crearRuta{
     display: block;
     align-items: center;
     margin : 0 auto;
@@ -1962,6 +2124,17 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--primary);
     color: var(--light);
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .input #crearRuta:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
+}
+
+.contenido main .input #crearRuta.margin{
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 /* Sobre mi */
@@ -1972,6 +2145,7 @@ MARK: Sobre mi
     display: flex;
     flex-flow: row;
     gap: 40px;
+    align-items: center;
 }
 
 .mainContent .informacion-imagen div{
@@ -1998,6 +2172,15 @@ MARK: Sobre mi
 
 .mainContent .informacion-imagen div.texto{
     width: 100%;
+    background-color: var(--light);
+    padding: 30px 20px;
+    border-radius: 25px;
+    height: fit-content;
+}
+
+.mainContent .informacion-imagen div.texto h3{
+    text-align: center;
+    color: var(--dark);
 }
 
 .mainContent .informacion-imagen div img{
@@ -2009,6 +2192,96 @@ MARK: Sobre mi
     margin-top: 15px;
     text-align: justify;
 }
+
+
+/* RoadMap */
+/*
+MARK: Road Map
+*/
+
+.roadmap-layout {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.roadmap-layout .side {
+    width: 300px;
+    margin-top: 70px;
+}
+
+.roadmap-layout .side .movil {
+    visibility: hidden;
+    display: none;
+}
+
+.roadmap-layout .side.right {
+    width: 300px;
+    margin-top: 160px;
+}
+
+.roadmap-layout .side .side-card {
+    position: relative;
+    background-color: var(--light);
+    border-radius: 25px;
+    padding: 25px 17px;
+    margin-bottom: 60px;
+}
+
+.roadmap-layout .side .side-card h2 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.roadmap-layout .side .side-card p {
+    text-align: left;
+}
+
+.roadmap-layout .side .side-card::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 10px;
+    background-color: var(--light);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.roadmap-layout .side .side-card.left::before{
+    left: 100%;
+}
+
+.roadmap-layout .side .side-card.right::before{
+    right: 100%;
+}
+
+.roadmap-layout .side .side-card::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: var(--danger);
+    background: radial-gradient(circle, var(--light) 40%, var(--grey) 25%);
+    border-radius: 50%;
+    top: 50%;
+    z-index: 1;
+}
+
+.roadmap-layout .side .side-card.left::after {
+    left: 100%;
+    transform: translate(445%, -50%);
+}
+
+.roadmap-layout .side .side-card.right::after {
+    right: 100%;
+    transform: translate(-445%, -50%);
+}
+
+
 
 /* Billetes avion y range */
 .contenido main .resumenAvion input[type=range]{
@@ -2118,6 +2391,12 @@ MARK: Sobre mi
     padding: 10px;
     border-radius: 25px;
     cursor: pointer;
+    transition: background-color .4s;
+}
+
+.contenido main .botonTexto:hover{
+    background-color: var(--dark);
+    transition: background-color .4s;
 }
 
 /* Media */
@@ -2172,6 +2451,39 @@ MARK: Sobre mi
 
     .contenido main .informacion .mapaizq{
         width: 100%;
+    }
+
+    .barra-login .login .navegacion{
+        display: none;
+        visibility: hidden;
+    }
+
+    /* Informacion donar */
+    .mainContent .info-donar div{
+        flex-direction: column;
+    }
+
+    .mainContent .info-donar div div.imagen{
+        width: 100%;
+    }
+
+    /* Roadmap */
+    .roadmap-layout div img{
+        margin-right: -100px;
+    }
+
+    .roadmap-layout .side .movil{
+        visibility: visible;
+        display: block;
+    }
+
+    .roadmap-layout .side.right{
+        visibility: hidden;
+        display: none;
+    }
+
+    .roadmap-layout .side .side-card{
+        margin-bottom: 20px;
     }
 
     /* Primer login */
@@ -2309,6 +2621,15 @@ MARK: Sobre mi
     .barra-login .titulo-pag .titulo-nombre{
         display: none;
         visibility: hidden;
+    }
+
+    /* Roadmap */
+    .roadmap-layout .side .side-card h2{
+        font-size: 1.2rem;
+    }
+
+    .roadmap-layout .side .side-card p{
+        font-size: .9rem;
     }
 
     /* Formulario a tamaño pantalla */

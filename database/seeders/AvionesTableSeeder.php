@@ -85,7 +85,33 @@ class AvionesTableSeeder extends Seeder
         ]);
 
         Avion::create([
-            'modelo' => 'a220',
+            'modelo' => 'a321xlr',
+            'fabricante' => 'Airbus',
+            'precio' => 150000000,
+            'rango' => 8704,
+            'img' => 'images/new/airbus/a321xlr.png',
+            'capacidad' => 230,
+            'costePorKm' => 7.589,
+            'tiempoPorKm' => 0.12,
+            'categoria' => 3,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => 'a220-100',
+            'fabricante' => 'Airbus',
+            'precio' => 75700000,
+            'rango' => 3500,
+            'img' => 'images/new/airbus/a220-100.png',
+            'capacidad' => 115,
+            'costePorKm' => 4.974,
+            'tiempoPorKm' => 0.129,
+            'categoria' => 4,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => 'a220-200',
             'fabricante' => 'Airbus',
             'precio' => 85700000,
             'rango' => 4000,
@@ -159,6 +185,32 @@ class AvionesTableSeeder extends Seeder
             'costePorKm' => 17.73,
             'tiempoPorKm' => 0.115,
             'categoria' => 3,
+            'primeraMano' => 0,
+        ]);
+
+        Avion::create([
+            'modelo' => 'a330-800neo',
+            'fabricante' => 'Airbus',
+            'precio' => 259900000,
+            'rango' => 13000,
+            'img' => 'images/new/airbus/a330-800neo.png',
+            'capacidad' => 300,
+            'costePorKm' => 13.192,
+            'tiempoPorKm' => 0.11,
+            'categoria' => 3,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => 'a330-900neo',
+            'fabricante' => 'Airbus',
+            'precio' => 296400000,
+            'rango' => 11000,
+            'img' => 'images/new/airbus/a330-900neo.png',
+            'capacidad' => 440,
+            'costePorKm' => 13.761,
+            'tiempoPorKm' => 0.11,
+            'categoria' => 3,
             'primeraMano' => 1,
         ]);
 
@@ -170,6 +222,19 @@ class AvionesTableSeeder extends Seeder
             'img' => 'images/new/airbus/a340-300.png',
             'capacidad' => 320,
             'costePorKm' => 20.3394,
+            'tiempoPorKm' => 0.108,
+            'categoria' => 2,
+            'primeraMano' => 0,
+        ]);
+
+        Avion::create([
+            'modelo' => 'a340-500',
+            'fabricante' => 'Airbus',
+            'precio' => 295000000,
+            'rango' => 14500,
+            'img' => 'images/new/airbus/a340-500.png',
+            'capacidad' => 380,
+            'costePorKm' => 25.3394,
             'tiempoPorKm' => 0.108,
             'categoria' => 2,
             'primeraMano' => 0,
@@ -213,6 +278,7 @@ class AvionesTableSeeder extends Seeder
             'categoria' => 1,
             'primeraMano' => 0,
         ]);
+        
 
 
         /* -------------- */
@@ -298,6 +364,33 @@ class AvionesTableSeeder extends Seeder
         ]);
 
         Avion::create([
+            'modelo' => '777-8X',
+            'fabricante' => 'Boeing',
+            'precio' => 385000000,
+            'rango' => 15000,
+            'img' => 'images/new/boeing/777-200.png',
+            'capacidad' => 450,
+            'costePorKm' => 15.7534,
+            'tiempoPorKm' => 0.101,
+            'categoria' => 2,
+            'primeraMano' => 1,
+        ]);
+
+        Avion::create([
+            'modelo' => '777-9X',
+            'fabricante' => 'Boeing',
+            'precio' => 400000000,
+            'rango' => 12500,
+            'img' => 'images/new/boeing/777-300er.png',
+            'capacidad' => 500,
+            'costePorKm' => 16.1454,
+            'tiempoPorKm' => 0.101,
+            'categoria' => 2,
+            'primeraMano' => 1,
+        ]);
+
+
+        Avion::create([
             'modelo' => '787',
             'fabricante' => 'Boeing',
             'precio' => 350000000,
@@ -314,6 +407,19 @@ class AvionesTableSeeder extends Seeder
         /* --------------- */
         /* AVIONES Embraer */
         /* --------------- */
+
+        Avion::create([
+            'modelo' => 'e145',
+            'fabricante' => 'Embraer',
+            'precio' => 16000000,
+            'rango' => 2250,
+            'img' => 'images/new/embraer/e145.png',
+            'capacidad' => 50,
+            'costePorKm' => 5.950,
+            'tiempoPorKm' => 0.155,
+            'categoria' => 4,
+            'primeraMano' => 1,
+        ]);
 
         Avion::create([
             'modelo' => 'e170',

@@ -3,6 +3,12 @@
 <head>
     @include('partials.head')
 </head>
+@if (!isset($_COOKIE['modoOscuro']))
+    @php
+        $_COOKIE['modoOscuro'] = "false";
+    @endphp
+@endif
+
 @if ($_COOKIE['modoOscuro'] === 'true')
 <body class="dark" @yield('estilosBody')>
 @else

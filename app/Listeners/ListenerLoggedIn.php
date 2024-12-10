@@ -10,14 +10,19 @@ use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
 use App\Models\Sede;
+use App\Services\decodificadorMETAR;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
 class ListenerLoggedIn
 {
-    public function __construct()
+
+    private $metarService = null;
+
+    public function __construct(decodificadorMETAR $decodificadorMETAR)
     {
-        //
+        $this->metarService = $decodificadorMETAR;
     }
 
     /**
@@ -64,7 +69,7 @@ class ListenerLoggedIn
             for ($i=0; $i < $diferencia; $i++) { 
                 foreach ($rutas as $ruta) {
                     if($ruta->flota->estado == 1){
-                        $this->calcularBeneficio($ruta);
+                        $this->calcularBeneficio($ruta, $i + 1);
                     }
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
@@ -89,12 +94,12 @@ class ListenerLoggedIn
                 // Rutas del dia de desconexion
                 if($hora->gt($horaDesconexion) && $ruta->flota->estado == 1){
                     // Rutas que su hora esta por delante de la hora de desconexion
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, 0);
                 }
 
                 // Rutas del calculo de hoy
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, -1);
                 }
 
                 // Comprobamos que los aviones que se tienen que activar
@@ -112,25 +117,28 @@ class ListenerLoggedIn
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Calculo de las horas que estan entre la desconexion y conexion del usuario
                 if($hora->between($horaDesconexion, now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta);
+                    $this->calcularBeneficio($ruta, -1);
                 }
             }
         }
 
         $this->controlBeneficios();;
 
-        // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas
-        BeneficiosHistorico::create([
-            'user_id' => auth()->id(),
-            'saldo' => $event->user->saldo,
-            'fecha' => now(),
-        ]);
+        // Para calcular beneficios del usuario guardamos su saldo una vez completado los ingresos de las rutas, solo si son dias diferentes
+        if($diferencia > -1) {
+            BeneficiosHistorico::create([
+                'user_id' => auth()->id(),
+                'saldo' => $event->user->saldo,
+                'fecha' => now(),
+            ]);
+        }
+
 
         $event->user->ultimaConexion = now();
         $event->user->update();
     }
 
-    public function calcularBeneficio($ruta)
+    public function calcularBeneficio($ruta, $diaDesconexion)
     {
         // Calcula el beneficio de una ruta segun la demanda, los pasajeros estimados de la ruta y la demanda de la ruta
         // Primero calculamos la demanda de los dos aeropuertos destino y llegada
@@ -150,7 +158,7 @@ class ListenerLoggedIn
 
 
         /**
-         * Se cuenta cuantas rutas similares exiten contanodo las del usuario registrado
+         * Se cuenta cuantas rutas similares exiten contando las del usuario registrado
          * y por cada ruta similar se resta 0.005 de la demanda de la ruta
          */
         error_log("demanda antes del calculo de la competencia: $mediaDemanda");
@@ -191,6 +199,15 @@ class ListenerLoggedIn
 
         // Gastos por el uso del avion
         $gastos += $ruta->flota->avion->costePorKm * $ruta->distancia;
+
+
+        // ---- control del METAR ----
+        $this->metar($ingresos, $gastos, $ruta, $diaDesconexion);
+
+        // ---- Eventos Aleatorios ---
+        // Antes de calcular el beneficio de la ruta se mira si ha podido suceder algun imprevisto en la ruta
+        $this->eventosAleatorios($ingresos, $gastos, $ruta);
+
 
         // Calculamos el beneficio de la ruta
         $beneficio = intval($ingresos - $gastos);
@@ -338,5 +355,332 @@ class ListenerLoggedIn
                 error_log("Activando avion $avionActivar->id");
             }
         }
+    }
+
+    /**
+     * Control de eventos aleatorios
+     */
+    public function eventosAleatorios(&$ingresos, &$gastos, &$ruta)
+    {
+        // Todos los eventos posibles con su probabilidad
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
+        $eventos = [
+            "retrasoVuelo" => 2,
+            "falloMecanico" => 0.5,
+            "huelgaAeropuerto" => 0.3,
+            "aumentoDemanda" => 0.5,
+            "perdidaEquipaje" => 1,
+            "impactoAve" => 0.1,
+            "pasajeroProblematico" => 0.2,
+            "personaEnferma" => 0.4,
+            "impactosMenores" => 2.5,
+        ];
+
+        $eventosOcurridos = array();
+        
+
+        foreach ($eventos as $nombre => $probabilidad) {
+            $numeroAleatorio = mt_rand(0, 10000) / 100;
+
+            // Si el numero aleatorio esta dentro de la probabilidad de ocurrir, el evento lo guardamos en eventosOcurridos
+            if ($probabilidad >= $numeroAleatorio ) {
+                array_push($eventosOcurridos, $nombre);
+            }
+        }
+
+        // se ejecutan los eventos
+        foreach ($eventosOcurridos as $evento) {
+            switch ($evento) {
+                case 'retrasoVuelo':
+                    $ingresos *= 0.75;
+
+                    // Guardamos el mensaje
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.retrasoVuelo'),
+                    3]);
+                    break;
+                case 'falloMecanico':
+                    $moneda = mt_rand(0,1);
+
+                    if($moneda === 0){
+                        $gastosReparacion = mt_rand(3500, 6000);
+                        $gastos += $gastosReparacion;
+
+                        array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico1') . ' ' . $gastosReparacion,
+                    3]);
+
+                    } else if($moneda === 1){
+                        $ingresos = 0;
+                        
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.falloMecanico2'),
+                    3]);
+                    }
+                    break;
+                case 'huelgaAeropuerto':
+                    $ingresos *= 0.75;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.huelgaAeropuerto'),
+                    3]);
+                    
+                    break;
+                case 'aumentoDemanda':
+                    $aumentoDemanda = mt_rand(5, 25) / 100 + 1;
+                    $ingresos *= $aumentoDemanda;
+                    $aumentoDemanda = ($aumentoDemanda - 1) * 100;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.aumentoDemanda') . ' ' . $aumentoDemanda . '%',
+                    2]);
+                    
+                    break;
+                case 'perdidaEquipaje':
+                    $perdidaEquipajesPorcentaje = mt_rand(5, 30);
+                    $perdidaEquipajes = 1 - ($perdidaEquipajesPorcentaje / 100);
+                    $ingresos *= $perdidaEquipajes;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.perdidaEquipaje') . ' ' . $perdidaEquipajesPorcentaje . '%',
+                    3]);
+                    
+                    break;
+                case 'impactoAve':
+                    $reparacion = mt_rand(2000,12000);
+                    $gastos += $reparacion;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactoAve') . ' ' . $reparacion . '€',
+                    3]);
+                    
+                    break;
+                case 'pasajeroProblematico':
+                    $pagoAeropuerto = mt_rand(750, 2500);
+                    $ingresos *= 0.75;
+                    $gastos += $pagoAeropuerto;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.pasajeroProblematico') . ' ' . $pagoAeropuerto . '€',
+                    3]);
+                    
+                    break;
+                case 'personaEnferma':
+                    $pagoAeropuerto = mt_rand(750, 2500);
+                    $ingresos *= 0.80;
+                    $gastos += $pagoAeropuerto;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.personaEnferma') . ' ' . $pagoAeropuerto . '€',
+                    3]);
+                    
+                    break;
+                case 'impactosMenores':
+                    $danyos = mt_rand(1,4);
+                    if($ruta->flota->condicion - $danyos < 0.05){
+                        $ruta->flota->condicion -= $danyos;
+                    }
+
+                    $ruta->flota->update();
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.impactosMenores') . ' ' . $danyos . '%',
+                    3]);
+
+                    break;
+                    
+            }
+        }
+
+        // Guardamos los mensajes
+        Session::put('mensajeVuelos', $mensajeVuelos);
+    }
+
+    /**
+     * El metar es un sistema estandarizado en la aviacion para hacer reportes meteorologicos y que todo el mundo pueda entenderlo de manera sencilla.
+     * Se trata de unos bloques de texto que muestran informacion, para mas informacion: https://www.oneair.es/metar-reporte-meteorologico-aeropuertos/
+     * En la aplicacion se utilizan las condiciones meteorologicas reales para dar realismo y ese toque de simulador y que puedan afectar a los vuelos del usuario
+     * 
+     * METARS DE EJMPLO PARA HACER TESTS:
+     * METAR LPMR 020900Z VRB01KT CAVOK 13/11 Q1023
+     * METAR LFOT 021000Z AUTO 27007KT 9999 BKN010 OVC015 13/11 Q1019 TEMPO BKN014 SCT020TCU
+     * METAR LEZG 020900Z 07004KT 040V110 0150 R30R/0450N R12R/0300N R30L/0325N R12L/0400N FG VV001 08/08 Q1025 NOSIG
+     */
+    function metar(&$ingresos, &$gastos, &$ruta, $diaDesconexion) 
+    {
+        $mensajeVuelos = Session::get('mensajeVuelos', []);
+        $ultimaConexion = Carbon::createFromTimeString(auth()->user()->ultimaConexion);
+        $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
+
+        if($diaDesconexion >= 0) {
+            $ultimaConexion->addDays($diaDesconexion);
+            $dateOrigen = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
+            $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
+            $metarOrigen = $this->getMetar($ruta->espacio_departure->aeropuerto->icao, $dateOrigen);
+            $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
+        } else if($diaDesconexion < 0) {
+            $dateOrigen = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
+            $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
+            $metarOrigen = $this->getMetar($ruta->espacio_departure->aeropuerto->icao, $dateOrigen);
+            $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
+        }
+
+        // Eventos generados por las condiciones meteorologicas en el aeropuerto de origen
+        if(isset($metarOrigen["wind"]["speed"]) && $metarOrigen["wind"]["speed"] > 45) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $ingresos *= .7;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent2'),
+                    3]);
+                    break;
+                case 3:
+                    $ingresos *= 0;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent3'),
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windDepEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+        if(isset($metarOrigen["visibility"]) && $metarOrigen["visibility"] < 150) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $ingresos *= .6;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent2'),
+                    3]);
+                    break;
+                case 3:
+                    $ingresos *= 0;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent3'),
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visDepEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+
+        // Eventos generados por las condiciones meteorologicas en el aeropuerto de destino
+        if(isset($metarDestino["wind"]["speed"]) && $metarDestino["wind"]["speed"] > 33) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $gastosAdicionales = rand(1500, 6000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent2') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                case 3:
+                    $gastosAdicionales = rand(3500, 8000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent3') . " " .$gastosAdicionales,
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.windArrEvent1'),
+                    3]);
+                    break;
+            }
+        }
+
+        if(isset($metarDestino["visibility"]) && $metarDestino["visibility"] < 400) {
+            $randomNumber = rand(1, 3);
+
+            switch ($randomNumber) {
+                case 1:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent1'),
+                    3]);
+                    break;
+                case 2:
+                    $gastosAdicionales = rand(1500, 6000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent2') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                case 3:
+                    $gastosAdicionales = rand(3500, 8000);
+                    $gastos += $gastosAdicionales;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent3') . " " . $gastosAdicionales,
+                    3]);
+                    break;
+                default:
+                    $ingresos *= .9;
+
+                    array_push($mensajeVuelos, 
+                    [trans('home.thePlane') ." ". $ruta->flota->matricula ." " .trans('home.wRoute'). " ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " .trans('home.startTime'). " $ruta->horaInicio " . trans('home.visArrEvent1'),
+                    3]);
+                    break;
+                    break;
+            }
+        }
+
+        // Guardamos los mensajes
+        Session::put('mensajeVuelos', $mensajeVuelos);
+    }
+
+    function getMetar($icao, $date)
+    {
+        $metarInfo = Http::get("https://aviationweather.gov/api/data/metar?ids=$icao&date=$date")->body();
+        error_log("Se ha obtenido el metar $metarInfo");
+        return $this->metarService->decode($metarInfo);
     }
 }

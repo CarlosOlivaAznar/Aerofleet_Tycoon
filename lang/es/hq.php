@@ -10,7 +10,7 @@ return [
     'operationalC' => 'Coste operacional:',
     'perFlight' => 'Por vuelo',
     'rentalCost' => 'Coste de alquiler:',
-    'nEngineers' => 'Numero ingenieros:',
+    'nEngineers' => 'Número ingenieros:',
     'costEngineers' => 'Coste Ingenieros de Mantenimiento:',
     'costMonthly' => 'Costes totales:',
     'costMonth' => '€ / mes',
@@ -25,36 +25,36 @@ return [
     'hangar' => 'Hangar',
     'avaSpaces' => 'Espacios disponibles hangar:',
     'expandHangar' => 'Ampliar Hangar',
-    'aircraft' => 'Avion',
-    'condition' => 'Condicion',
+    'aircraft' => 'Avión',
+    'condition' => 'Condición',
     'acctions' => 'Acciones',
     'endMaintenance' => 'Finalizar Mantenimiento',
 
     // Alert
-    'noHangars' => 'No tienes ningun hangar en tu propiedad',
+    'noHangars' => 'No tienes ningún hangar en tu propiedad',
 
     // Modals
     'deny' => 'Denegar',
     'confirm' => 'Confirmar',
 
-    'confirmHanBuy' => '¿Esta seguro que quiere comprar un nuevo hangar?',
+    'confirmHanBuy' => '¿Está seguro que quiere comprar un nuevo hangar?',
     'hangPrice' => 'Precio del nuevo hangar',
-    'confirmEngineer' => '¿Esta seguro que quiere contratar a un nuevo ingeniero?',
-    'engPrice' => 'El gasto mensual de los ingenieros pasara a ser',
-    'newName' => 'Cambiar Nombre de la Compañia Aerea',
+    'confirmEngineer' => '¿Está seguro que quiere contratar a un nuevo ingeniero?',
+    'engPrice' => 'El gasto mensual de los ingenieros pasará a ser',
+    'newName' => 'Cambiar Nombre de la Compañía Aérea',
     'nameModify' => 'Modificar nombre:',
     'hqUpgrades' => 'Mejoras de la Sede',
-    'upgradesNA' => 'Actualmente las mejoras de la sede no estan disponibles',
+    'upgradesNA' => 'Actualmente las mejoras de la sede no están disponibles',
     'quitMaintenance' => 'Retirar Del Mantenimiento',
-    'confirmQuitM' => '¿Esta seguro que quiere quirar el avion del mantenimiento?',
-    'confirmExpand' => '¿Esta seguro que quiere ampliar el hangar?',
+    'confirmQuitM' => '¿Está seguro que quiere quitar el avión del mantenimiento?',
+    'confirmExpand' => '¿Está seguro que quiere ampliar el hangar?',
     'expandPrice' => 'El precio de ampliar el hangar es de',
 
     // Controller Messages
     'hangarBuySuccess' => 'Hangar comprado correctamente',
     'neCash' => 'Saldo insuficiente',
     'hireEngSuccess' => 'Ingeniero contratado correctamente',
-    'maxSpaces' => 'Limite maximo de espacios alcanzado',
+    'maxSpaces' => 'Límite máximo de espacios alcanzado',
     'hangarEnlarge' => 'Hangar ampliado correctamente',
 
 ];
