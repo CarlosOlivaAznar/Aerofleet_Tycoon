@@ -2,7 +2,21 @@
 
 return [
 
-    'changelog' => '<h4>V-0.3.2</h4>
+    'changelog' => '
+    <h4>V-0.3.3</h4>
+    <ul>
+      <li>Se ha añadido eventos aleatorios a las rutas</li>
+      <li>Ahora al rellenar mal una ruta vuelve al formulario con los valores antiguos</li>
+      <li>Las rutas tendrán que tener una separación mínima de 30 minutos</li>
+      <li>Página Road Map terminada con las versiones futuras de la aplicación</li>
+      <li>El layout de crear ruta ha cambiado y ahora se muestra las rutas del avión arriba</li>
+      <li>Los vuelos ahora son afectados por condiciones meteorológicas reales.</li>
+      <li>Nuevos aviones añadidos: a340-500, a220-100, a330neo, a321xlr, b77X y e145</li>
+      <li>Cuando se crea una ruta nueva el avión pasa a un estado inactivo</li>
+    </ul>
+    
+    
+    <h4>V-0.3.2</h4>
               <ul>
                 <li>Ahora se muestra información adicional de los aviones en flota y al comprar aviones</li>
                 <li>Bugfix donde el cuadro de los mensajes se mostraba de manera erronea</li>

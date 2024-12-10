@@ -2,7 +2,21 @@
 
 return [
 
-    'changelog' => '<h4>V-0.3.2</h4>
+  'changelog' => '
+    <h4>V-0.3.3</h4>
+    <ul>
+      <li>Random events have been added to the routes</li>
+      <li>Now, if a route is filled out incorrectly, the form will return with the previous values</li>
+      <li>Routes must have a minimum separation of 30 minutes</li>
+      <li>Road Map page completed with the future versions of the application</li>
+      <li>The layout for creating a route has changed, and now the plane\'s routes are displayed at the top</li>
+      <li>Flights are now affected by real weather conditions</li>
+      <li>New aircraft added: a340-500, a220-100, a330neo, a321xlr, b77X and e145</li>
+      <li>When a new route is created, the plane moves to an inactive state</li>
+    </ul>
+
+    
+    <h4>V-0.3.2</h4>
               <ul>
                 <li>Additional information about aircraft in the fleet and when purchasing planes is now displayed</li>
                 <li>Bugfix where the message box was displayed incorrectly</li>
