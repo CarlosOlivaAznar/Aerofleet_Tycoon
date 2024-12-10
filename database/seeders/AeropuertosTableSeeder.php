@@ -4835,11 +4835,75 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* -------------------- */
+        /* Aeropuertos Lituania */
+        /* -------------------- */
+        /* 
+        MARK: Lituania
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EYKA',
+            'pais' => 'LY',
+            'nombre' => 'Kaunas Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 54.964616,
+            'longitud' => 24.081470,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYPA',
+            'pais' => 'LY',
+            'nombre' => 'Palanga International Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 55.971539,
+            'longitud' => 21.093012,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYVI',
+            'pais' => 'LY',
+            'nombre' => 'Vilnius International Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1800,
+            'latitud' => 54.635807,
+            'longitud' => 25.285664,
+            'demanda' => 0.93,
+            'pasajerosEstimados' => 235,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EYSA',
+            'pais' => 'LY',
+            'nombre' => 'Siauliai International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 55.894361,
+            'longitud' => 23.393924,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'YL',
+            'pais' => 'LY',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
