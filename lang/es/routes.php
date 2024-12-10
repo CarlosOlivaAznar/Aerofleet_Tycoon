@@ -3,10 +3,10 @@
 return [
 
     'routes' => 'Rutas',
-    'airplaneRoutes' => 'Rutas del avion',
+    'airplaneRoutes' => 'Rutas del avión',
     'activateRoute' => 'Activar ruta',
     'createRoute' => 'Crear ruta',
-    'airplane' => 'Avion',
+    'airplane' => 'Avión',
     'departure' => 'Origen',
     'arrival' => 'Destino',
     'distance' => 'Distancia',
@@ -20,13 +20,13 @@ return [
 
     // Messages
     'inactive' => 'RUTA INACTIVA',
-    'maintenance' => 'AVION EN MANTENIMIENTO',
+    'maintenance' => 'AVIÓN EN MANTENIMIENTO',
 
     // Warnings
     'noRoutes' => 'No hay rutas creadas',
-    'needHelp' => 'necesitas ayuda? visita nuestra pagina de',
+    'needHelp' => '¿necesitas ayuda? Visita nuestra página de',
     'needHelpT' => 'tutorial',
-    'noRoutesAirplane' => 'No hay rutas creadas para este avion',
+    'noRoutesAirplane' => 'No hay rutas creadas para este avión',
 
     // Modals
     'deny' => 'Deny',
@@ -36,17 +36,17 @@ return [
     'price' => 'Precio:',
 
     // Create Route
-    'createRoute' => 'Crear Ruta Avion',
+    'createRoute' => 'Crear Ruta Avión',
     'noSlots' => 'No hay espacios disponibles',
-    'actualRoute' => 'Ruta actual del avion',
+    'actualRoute' => 'Ruta actual del avión',
     'newRoute' => 'Nueva Ruta',
     'createNewRoute' => 'Crear Nueva Ruta',
 
     // Controller Messages
-    'maxSize' => 'El avion no puede operar en los aeropuertos seleccionados (el avion supera el tamaño maximo permitido en alguno de los aeropuertos seleccionados)',
+    'maxSize' => 'El avión no puede operar en los aeropuertos seleccionados (el avión supera el tamaño máximo permitido en alguno de los aeropuertos seleccionados)',
     'routeSuccess' => 'Ruta creada correctamente',
-    'maxTime' => 'La hora de llegada excede el limite maximo de llegada (04:00:00z)',
-    'maxRange' => 'El avion tiene un rango inferior al de la ruta',
+    'maxTime' => 'La hora de llegada excede el límite máximo de llegada (04:00:00z)',
+    'maxRange' => 'El avión tiene un rango inferior al de la ruta',
     'noSlotsAva' => 'No hay espacios disponibles',
     'userErr' => 'error al validar los datos del usuario',
     'arrDestEq' => 'El origen no puede ser el mismo que el destino',
@@ -59,7 +59,7 @@ return [
     'modSuccess' => 'Ruta modificada correctamente',
     'modErr' => 'error al modificar la ruta',
     'routeCreated' => 'La ruta ha sido creada correctamente',
-    'minSeparation' => 'El avion debe pasar minimo 30 minutos de espera en el aeropuerto para recibir los servicios necesarios',
+    'minSeparation' => 'El avión debe pasar mínimo 30 minutos de espera en el aeropuerto para recibir los servicios necesarios',
     'destNEq' => 'El destino tiene que ser el mismo que la llegada de la ruta siguiente',
 
 

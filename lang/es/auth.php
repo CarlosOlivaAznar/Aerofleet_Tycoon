@@ -18,23 +18,23 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
     // Confirmacion de correo
-    'gratitude' => '¡Gracias por registrarte! Antes de comenzar, ¿podrías verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar por correo electrónico? Si no has recivido el correo electrónico, le podemos enviar otro.',
-    'issues' => 'Si no aparece en la bandeja de entrada recomendamos revisar la bandeja de spam ya que es probable que se encuentre ahi',
-    'resend' => 'Se ha enviado un nuevo correo de verificacion.',
-    'resendVerification' => 'Reenviar correo de verificacion',
+    'gratitude' => '¡Gracias por registrarte! Antes de comenzar, ¿podrías verificar tu dirección de correo electrónico haciendo clic en el enlace que te acabamos de enviar por correo electrónico? Si no has recibido el correo electrónico, le podemos enviar otro.',
+    'issues' => 'Si no aparece en la bandeja de entrada recomendamos revisar la bandeja de spam',
+    'resend' => 'Se ha enviado un nuevo correo de verificación.',
+    'resendVerification' => 'Reenviar correo de verificación',
     'logout' => 'Cerrar sesión',
 
     // Login y register
-    'email' => 'Correo Electronico',
+    'email' => 'Correo Electrónico',
     'password' => 'Contraseña',
     'confirmPsw' => 'Confirmar contraseña',
-    'rememberMe' => 'Recuerdame',
+    'rememberMe' => 'Recuérdame',
     'pswForgot' => 'Has olvidado tu contraseña?',
     'login' => 'Entrar',
     'name' => 'Nombre',
 
     'tyc1' => 'Acpeto los ',
-    'tyc2' => 'Terminos y condiciones',
+    'tyc2' => 'Términos y condiciones',
 
     'alreadyReg' => 'ya registrado?',
     'register' => 'Registrarse',

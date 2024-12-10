@@ -10,12 +10,12 @@ return [
     'inProperty' => 'Comprados',
     'ocupied' => 'Ocupados',
     'available' => 'Disponibles',
-    'costPerOperation' => 'Coste por Operacion',
+    'costPerOperation' => 'Coste por Operación',
     'pricePerSlot' => 'Precio por espacio',
     'acctions' => 'Acciones',
     'sellSlot' => 'Vender Espacio',
     
-    'noSlots' => 'No tienes ningun espacio en tu propiedad',
+    'noSlots' => 'No tienes ningún espacio en tu propiedad',
 
     // Buy Slots
     'buySlots' => 'Comprar Espacios',
@@ -29,9 +29,9 @@ return [
 
     // Controller Messages
     'noSlotsAva' => 'El aeropuerto no tiene espacios libres disponibles',
-    'maxSlotsAva' => 'La compra de espacios excede el limite maximos de espacios del aeropuerto',
+    'maxSlotsAva' => 'La compra de espacios excede el límite máximos de espacios del aeropuerto',
     'slotBuySuccess' => 'El espacio ha sido comprado correctamente',
-    'neCash' => 'No tiene sufiente saldo',
+    'neCash' => 'No tiene suficiente saldo',
     'sellErrNeSlots' => 'No se puede vender el espacio ya que no tiene espacios disponibles',
     'sellSuccess' => 'Se ha vendido un espacio de:',
     'allSellSuccess' => 'Se han vendido todos los espacios de:',
@@ -40,8 +40,8 @@ return [
 
     //Modal
     'sellSlot' => 'Vender Espacio',
-    'sellConfirm' => '¿Esta seguro que quiere vender el espacio?',
-    'infoSlot' => 'El espacio se vendera por ',
+    'sellConfirm' => '¿Está seguro que quiere vender el espacio?',
+    'infoSlot' => 'El espacio se venderá por ',
     'confirm' => 'Confirmar',
     'deny' => 'Denegar',
 ];
