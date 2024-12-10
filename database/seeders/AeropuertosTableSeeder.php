@@ -4721,11 +4721,90 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* ------------------- */
+        /* Aeropuertos Estonia */
+        /* ------------------- */
+        /* 
+        MARK: Estonia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EEKE',
+            'pais' => 'ES',
+            'nombre' => 'Kuressaare Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.231500,
+            'longitud' => 22.508429,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EEKA',
+            'pais' => 'ES',
+            'nombre' => 'Kardla Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.990928,
+            'longitud' => 22.830704,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EEPU',
+            'pais' => 'ES',
+            'nombre' => 'Parnu Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.421239,
+            'longitud' => 24.472549,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EETN',
+            'pais' => 'ES',
+            'nombre' => 'Tallinn Lennart Meri Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1500,
+            'latitud' => 59.414192,
+            'longitud' => 24.836834,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'EETU',
+            'pais' => 'ES',
+            'nombre' => 'Tartu Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 58.307438,
+            'longitud' => 26.687233,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'HA',
+            'pais' => 'ES',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
