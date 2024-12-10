@@ -18,11 +18,14 @@ class AvionesshTableSeeder extends Seeder
         // Cuando un usuario compra un avion de segunda mano se introduce uno nuevo aleatoriamente
         // Este metodo se encuentra en FlotaController -> comprarSegundaMano y se obtiene el nuevo avion desde el modelo de Avionsh
 
+        // Borra los existentes para que no se dupliquen al ejecutar el seeder
+        Avionsh::truncate();
+
         /* ----------------------- */
         /* Aviones de segunda mano */
         /* ----------------------- */
         Avionsh::create([
-            'avion_id' => 7,
+            'avion_id' => 9,
             'fechaDeFabricacion' => '2010-09-15',
             'img' => 'images/sh/a320_volotea.png',
             'companyia' => 'Volotea',
@@ -46,7 +49,7 @@ class AvionesshTableSeeder extends Seeder
         ]);
 
         Avionsh::create([
-            'avion_id' => 11,
+            'avion_id' => 12,
             'fechaDeFabricacion' => '2011-12-02',
             'img' => 'images/sh/a330_aca.png',
             'companyia' => 'Air Canada',
@@ -62,7 +65,7 @@ class AvionesshTableSeeder extends Seeder
         ]);
 
         Avionsh::create([
-            'avion_id' => 16,
+            'avion_id' => 21,
             'fechaDeFabricacion' => '2002-02-23',
             'img' => 'images/sh/737_ryanair.png',
             'companyia' => 'Ryanair',
@@ -78,7 +81,7 @@ class AvionesshTableSeeder extends Seeder
         ]);
 
         Avionsh::create([
-            'avion_id' => 21,
+            'avion_id' => 26,
             'fechaDeFabricacion' => '2004-04-24',
             'img' => 'images/sh/777_ana.png',
             'companyia' => 'All Nippon Airways',
