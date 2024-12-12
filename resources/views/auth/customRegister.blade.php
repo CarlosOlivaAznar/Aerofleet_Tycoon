@@ -38,6 +38,12 @@
                 <x-input-error class="inputError" :messages="$errors->get('password_confirmation')" />
             </div>
 
+            <!-- Captcha -->
+            <div class="camposLinea">
+              {!! NoCaptcha::renderJs() !!}
+              {!! NoCaptcha::display() !!}
+            </div>
+
             <!-- Terminos y condiciones -->
             <div class="camposLinea">
                 <label for="remember_me" class="checkbox">
