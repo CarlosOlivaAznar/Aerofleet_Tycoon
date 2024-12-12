@@ -45,7 +45,13 @@
                     <td>{{ $error->message }}</td>
                     <td>{{ $error->file }}</td>
                     <td> {{ $error->line }} </td>
-                    <td>{{ $error->user->name }} ({{ $error->user->nombreCompanyia }})</td>
+                    <td>
+                        @if ($error->user_id != 0)
+                            {{ $error->user->name }} ({{ $error->user->nombreCompanyia }})
+                        @else
+                            {{ __('admin.unregisteredUser') }}
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

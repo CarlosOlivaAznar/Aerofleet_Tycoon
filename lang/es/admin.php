@@ -44,6 +44,7 @@ return [
     'file'=> 'Archivo',
     'line' => 'Línea',
     'uid' => 'Id Usuario',
+    'unregisteredUser' => 'Usuario no registrado',
 ];
 
 // Plantilla

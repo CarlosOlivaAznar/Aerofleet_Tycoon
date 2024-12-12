@@ -76,7 +76,7 @@ class CompetenciaController extends Controller
 
     public function rankings()
     {
-        $usuariosa = User::all();
+        $usuariosa = User::where('email_verified_at', '!=', 'null')->get();
 
         $usuarios = $usuariosa->sortByDesc(function ($usuario) {
             return $usuario->patrimonio();

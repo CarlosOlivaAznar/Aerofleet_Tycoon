@@ -635,6 +635,7 @@ MARK: Modal
     border-radius: 25px;
     padding: 10px 0;
     cursor: pointer;
+    color: var(--dark);
 }
 
 .modal .contenido-modal .footer-modal .botones a:hover, .modal .contenido-modal .footer-modal .botones span:hover,
@@ -762,10 +763,12 @@ MARK: Tooltips
     transition: 0.4s;
     font-size: 19px;
     outline: none;
+    color: var(--dark);
 }
 
 .modal form input[type=password]:focus{
     border: 3px solid var(--dark);
+    color: var(--dark);
 }
 
 .modal form input[type=text]{
@@ -779,6 +782,7 @@ MARK: Tooltips
     transition: 0.4s;
     font-size: 19px;
     outline: none;
+    color: var(--dark);
 }
 
 .modal form input[type=text]:focus{
@@ -796,6 +800,7 @@ MARK: Tooltips
     font-size: 19px;
     outline: none;
     margin-top: 5px;
+    color: var(--dark);
 }
 
 .modal form textarea:focus{
@@ -818,9 +823,17 @@ MARK: Tooltips
 .contenido main .informacion div.basico .notificaciones{
     width: 100%;
     height: 40vh;
+    position: relative;
     background-color: var(--grey);
     overflow-y: scroll;
     border-radius: 25px;
+}
+
+.contenido main .informacion div.basico .notificaciones .alert-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .contenido main .informacion div.basico .notificaciones ul{
