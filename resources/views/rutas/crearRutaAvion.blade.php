@@ -171,15 +171,11 @@
 
       <!-- Informacion aeropuertos con espacios -->
       @foreach ($espacios as $espacio)
-        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->latitud }}">
-        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->longitud }}">
-        <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->icao }}, {{  $espacio->aeropuerto->nombre }}">
-      @endforeach
-
-      <!-- Informacion aviones -->
-      @foreach ($rutas as $ruta)
-          <input type="hidden" class="dato-oculto" value="{{ $ruta->horaInicio }}">
-          <input type="hidden" class="dato-oculto" value="{{ $ruta->tiempoEstimado }}">
+        @if ($espacio->espaciosDisponibles() > 0)
+          <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->latitud }}">
+          <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->longitud }}">
+          <input type="hidden" class="aeropuertos" value="{{ $espacio->aeropuerto->icao }}, {{  $espacio->aeropuerto->nombre }}">
+        @endif
       @endforeach
 
       <!-- Informacion aeropuertos -->

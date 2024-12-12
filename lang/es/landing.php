@@ -89,7 +89,7 @@ return [
     'objtDonate' => 'donar',
 
   'smTitle' => 'Mis redes sociales',
-  'smText' => 'ponte en contacto conmigo o sí1gueme en mis redes sociales',
+  'smText' => 'ponte en contacto conmigo o sígueme en mis redes sociales',
 
 
     // Donar
