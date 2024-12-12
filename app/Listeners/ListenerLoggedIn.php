@@ -66,6 +66,10 @@ class ListenerLoggedIn
         // Si la diferencia es mayor que 0 hay mas de 2 dias de diferencia entre la ultima conexion y ahora
         // Calculamos todas las rutas de ese dia completo
         if($diferencia > 0){
+
+            // Comprobamos que los aviones que se tienen que activar
+            $this->activarAviones();
+            
             for ($i=0; $i < $diferencia; $i++) { 
                 foreach ($rutas as $ruta) {
                     if($ruta->flota->estado == 1){
@@ -77,9 +81,6 @@ class ListenerLoggedIn
 
                 // Restamos los gastos mensuales
                 $this->gastosMensuales();
-
-                // Comprobamos que los aviones que se tienen que activar
-                $this->activarAviones();
             }
         }
 
@@ -89,6 +90,10 @@ class ListenerLoggedIn
         // Si es 0 o superior significa que por lo menos hay 2 dias diferentes en el calculo
         // Pero si es -1 significa que la desconexion y conexion ha ocurrido el mismo dia
         if($diferencia >= 0){
+
+            // Comprobamos que los aviones que se tienen que activar
+            $this->activarAviones();
+
             foreach($rutas as $ruta){
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Rutas del dia de desconexion
@@ -101,9 +106,6 @@ class ListenerLoggedIn
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
                     $this->calcularBeneficio($ruta, -1);
                 }
-
-                // Comprobamos que los aviones que se tienen que activar
-                $this->activarAviones();
             }
 
             // Solo por el ultimo dia de conexion calculamos el mantenimiento
