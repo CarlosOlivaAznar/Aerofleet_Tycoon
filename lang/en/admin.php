@@ -44,6 +44,7 @@ return [
     'file' => 'File',
     'line' => 'Line',
     'uid' => 'User ID',
+    'unregisteredUser' => 'Unregistered user',
 ];
 
 // Plantilla
