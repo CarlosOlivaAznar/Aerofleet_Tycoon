@@ -80,7 +80,7 @@
               @endforeach
             </ul>
             @else
-              {{ __('home.noMessages') }}
+              <span class="alert-message">{{ __('home.noMessages') }}</span>
             @endif
           </div>
         </div>
