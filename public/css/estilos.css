@@ -78,6 +78,22 @@ a{
     transition: 0.3s;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--grey); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--dark);
+    border-radius: 15px;
+  }
+
 .move-ef:hover {
 transform: translate(0, -4px);
 }
