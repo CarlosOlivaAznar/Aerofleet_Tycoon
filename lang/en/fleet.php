@@ -64,7 +64,7 @@ return [
 
     // Controller Messages
     'buySucces' => 'The plane has been purchased successfully',
-    'neCash' => 'You do not have enough balance',
+    'neCash' => 'You do not have enough balance to buy the aircraft',
     'sellSucces' => 'The plane has been sold successfully',
     'nyProperty' => 'The plane is not your property',
     'neSpaces' => 'There are no available spaces in the hangars',

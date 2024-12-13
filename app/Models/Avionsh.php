@@ -84,7 +84,7 @@ class Avionsh extends Model
             [21, 'images/sh/b737_ana.png', 'All Nippon Airways'],	
             [21, 'images/sh/b737_airberlin.png', 'Air Berlin'],
             [22, 'images/sh/b739_continental.png', 'Continental Air Lines'],
-            [2, 'images/sh/b739_korean.png', 'Korean Air'],
+            [22, 'images/sh/b739_korean.png', 'Korean Air'],
             [22, 'images/sh/b739_lion.png', 'Lion Air'],
             [5, 'images/sh/a321neo_american.png', 'American Airlines'],
             [5, 'images/sh/a321neo_airasia.png', 'Thai AirAsia'],

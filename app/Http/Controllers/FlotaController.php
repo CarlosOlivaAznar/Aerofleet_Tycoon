@@ -74,6 +74,7 @@ class FlotaController extends Controller
 
             // Mostramos mensaje
             session()->flash('exito', trans('fleet.buySucces'));
+        } else {
             // Mensaje error
             session()->flash('error', trans('fleet.neCash'));
         }
