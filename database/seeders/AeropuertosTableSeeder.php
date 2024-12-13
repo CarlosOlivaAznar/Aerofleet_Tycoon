@@ -5141,6 +5141,427 @@ class AeropuertosTableSeeder extends Seeder
         MARK: Grecia
         */
 
+        Aeropuerto::create([
+            'icao' => 'LGPZ',
+            'pais' => 'SX',
+            'nombre' => 'Aktion National Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 38.928322,
+            'longitud' => 20.773601,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGAL',
+            'pais' => 'SX',
+            'nombre' => 'Alexandroupolis International',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 40.854347,
+            'longitud' => 25.946327,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGRX',
+            'pais' => 'SX',
+            'nombre' => 'Patras Araxos Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 38.151156,
+            'longitud' => 21.425636,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGPL',
+            'pais' => 'SX',
+            'nombre' => 'Astypalaia Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 36.580078,
+            'longitud' => 26.375436,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKV',
+            'pais' => 'SX',
+            'nombre' => 'Kavala International Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 40.917959,
+            'longitud' => 24.624865,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGIK',
+            'pais' => 'SX',
+            'nombre' => 'Ikaria Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 37.683728,
+            'longitud' => 26.346485,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKR',
+            'pais' => 'SX',
+            'nombre' => 'Corfu International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 39.60735,
+            'longitud' => 19.911682,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKY',
+            'pais' => 'SX',
+            'nombre' => 'Kalymnos Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 36.963515,
+            'longitud' => 26.941000,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKP',
+            'pais' => 'SX',
+            'nombre' => 'Karpathos Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 50,
+            'latitud' => 35.421061,
+            'longitud' => 27.145663,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKA',
+            'pais' => 'SX',
+            'nombre' => 'Kastoria National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 40.448278,
+            'longitud' => 21.277646,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKV',
+            'pais' => 'SX',
+            'nombre' => 'Kavala International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 40.918584,
+            'longitud' => 24.626296,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGMK',
+            'pais' => 'SX',
+            'nombre' => 'Mykonos Island National Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 37.435399,
+            'longitud' => 25.348293,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGNX',
+            'pais' => 'SX',
+            'nombre' => 'Naxos Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 37.081192,
+            'longitud' => 25.368592,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGBL',
+            'pais' => 'SX',
+            'nombre' => 'Volos Nea Anchialos National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.219536,
+            'longitud' => 22.795229,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGPA',
+            'pais' => 'SX',
+            'nombre' => 'Paros National Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 37.020154,
+            'longitud' => 25.114015,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGHI',
+            'pais' => 'SX',
+            'nombre' => 'Chios Island National Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 38.344474,
+            'longitud' => 26.141391,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGSR',
+            'pais' => 'SX',
+            'nombre' => 'Santorini Thira National Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 36.399974,
+            'longitud' => 25.477900,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGSK',
+            'pais' => 'SX',
+            'nombre' => 'Skiathos Island National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.178076,
+            'longitud' => 23.503482,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGAV',
+            'pais' => 'SX',
+            'nombre' => 'Athens Eleftherios Venizelos',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 37.936129,
+            'longitud' => 23.944233,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGIR',
+            'pais' => 'SX',
+            'nombre' => 'Heraklion International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 250,
+            'latitud' => 35.339487,
+            'longitud' => 25.176384,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKL',
+            'pais' => 'SX',
+            'nombre' => 'Kalamata International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 37.059216,
+            'longitud' => 22.028085,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGKO',
+            'pais' => 'SX',
+            'nombre' => 'Kos Island International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 36.799720,
+            'longitud' => 27.088498,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGSA',
+            'pais' => 'SX',
+            'nombre' => 'Chania International Airport',
+            'espaciosTotales' => 55,
+            'costeOperacional' => 550,
+            'latitud' => 35.532932,
+            'longitud' => 24.146073,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGLM',
+            'pais' => 'SX',
+            'nombre' => 'Lemnos International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.919782,
+            'longitud' => 25.238309,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGMT',
+            'pais' => 'SX',
+            'nombre' => 'Mytilene International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 39.059074,
+            'longitud' => 26.598209,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGRP',
+            'pais' => 'SX',
+            'nombre' => 'Rhodes International Airport',
+            'espaciosTotales' => 60,
+            'costeOperacional' => 600,
+            'latitud' => 36.405202,
+            'longitud' => 28.089218,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGSM',
+            'pais' => 'SX',
+            'nombre' => 'Samos International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 37.689494,
+            'longitud' => 26.915123,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGTS',
+            'pais' => 'SX',
+            'nombre' => 'Thessaloniki International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 40.520531,
+            'longitud' => 22.971316,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGZA',
+            'pais' => 'SX',
+            'nombre' => 'Zakynthos International Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 37.752483,
+            'longitud' => 20.884330,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LGIO',
+            'pais' => 'SX',
+            'nombre' => 'Ioannina National Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.694610,
+            'longitud' => 20.823149,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
 
 
 
