@@ -4899,11 +4899,257 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* -------------------- */
+        /* Aeropuertos Islandia */
+        /* -------------------- */
+        /* 
+        MARK: Islandia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'BIAR',
+            'pais' => 'TF',
+            'nombre' => 'Akureyri Airport',
+            'espaciosTotales' => 75,
+            'costeOperacional' => 1000,
+            'latitud' => 65.655805,
+            'longitud' => -18.071657,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'BIRK',
+            'pais' => 'TF',
+            'nombre' => 'Reykjavik Airport',
+            'espaciosTotales' => 170,
+            'costeOperacional' => 1100,
+            'latitud' => 64.129798,
+            'longitud' => -21.938937,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 85,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'BIKF',
+            'pais' => 'TF',
+            'nombre' => 'Keflavik International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 63.985015,
+            'longitud' => -22.605615,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* --------------------- */
+        /* Aeropuertos Eslovenia */
+        /* --------------------- */
+        /* 
+        MARK: Eslovenia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LJLJ',
+            'pais' => 'S5',
+            'nombre' => 'Ljubljana Joze Pucnik Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 46.225300,
+            'longitud' => 14.457213,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LJMB',
+            'pais' => 'S5',
+            'nombre' => 'Maribor Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 46.479298,
+            'longitud' => 15.685033,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LJPZ',
+            'pais' => 'S5',
+            'nombre' => 'Portoroz Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.473901,
+            'longitud' => 13.615264,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Croacia */
+        /* ------------------- */
+        /* 
+        MARK: Croacia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LDSB',
+            'pais' => '9A',
+            'nombre' => 'Brac Bol Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.287102,
+            'longitud' => 16.680640,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDDU',
+            'pais' => '9A',
+            'nombre' => 'Dubrovnik Rudjer Boskovic Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 42.562072,
+            'longitud' => 18.264095,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDLO',
+            'pais' => '9A',
+            'nombre' => 'Losinj Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.568602,
+            'longitud' => 14.393882,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDOS',
+            'pais' => '9A',
+            'nombre' => 'Osijek Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.464524,
+            'longitud' => 18.806481,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDPL',
+            'pais' => '9A',
+            'nombre' => 'Pula Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.894910,
+            'longitud' => 13.922527,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDRI',
+            'pais' => '9A',
+            'nombre' => 'Rijeka Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 45.218423,
+            'longitud' => 14.569968,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDSP',
+            'pais' => '9A',
+            'nombre' => 'Split Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.538261,
+            'longitud' => 16.298196,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDZD',
+            'pais' => '9A',
+            'nombre' => 'Zadar Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 44.096331,
+            'longitud' => 15.354856,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LDZA',
+            'pais' => '9A',
+            'nombre' => 'Zagreb Franjo Tudman Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 45.741407,
+            'longitud' => 16.068670,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------ */
+        /* Aeropuertos Grecia */
+        /* ------------------ */
+        /* 
+        MARK: Grecia
+        */
+
+
+
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'LY',
+            'pais' => 'SX',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
