@@ -523,7 +523,7 @@ class ListenerLoggedIn
         $ultimaConexion = Carbon::createFromTimeString(auth()->user()->ultimaConexion);
         $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
 
-        if($diaDesconexion >= 0) {
+        if($diaDesconexion >= 0 && $diaDesconexion < 2) {
             $ultimaConexion->addDays($diaDesconexion);
             $dateOrigen = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
             $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
