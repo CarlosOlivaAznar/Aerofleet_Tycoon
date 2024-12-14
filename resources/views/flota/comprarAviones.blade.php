@@ -23,21 +23,26 @@
         </div>
       </div>
 
+      <div class="resumen-titulo">
+        <i class='bx bx-shopping-bag'></i>
+        <h3>Aviones de primera mano</h3>
+      </div>
+
       <div class="resumen">
         <ul>
-          <a href="{{ route('flota.comprarAirbus') }}"><li>
+          <a href="{{ route('flota.comprarAirbus') }}" class="move-xy"><li>
             <i class="bx clogo"><img src="{{ asset('icons/airbus.svg') }}" alt=""></i>
             <h3>Airbus</h3>
           </li></a>
-          <a href="{{ route('flota.comprarBoeing') }}"><li>
+          <a href="{{ route('flota.comprarBoeing') }}" class="move-xy"><li>
             <i class="bx clogo"><img src="{{ asset('icons/boeing.svg') }}" alt=""></i>
             <h3>Boeing</h3>
           </li></a>
-          <a href="{{ route('flota.comprarEmbraer') }}"><li>
+          <a href="{{ route('flota.comprarEmbraer') }}" class="move-xy"><li>
             <i class="bx clogo"><img src="{{ asset('icons/embraer.png') }}" alt=""></i>
             <h3>Embraer</h3>
           </li></a>
-          <a href="{{ route('flota.comprarBombardier') }}"><li>
+          <a href="{{ route('flota.comprarBombardier') }}" class="move-xy"><li>
             <i class="bx clogo"><img src="{{ asset('icons/bombardier.svg') }}" alt=""></i>
             <h3>Bombardier</h3>
           </li></a>

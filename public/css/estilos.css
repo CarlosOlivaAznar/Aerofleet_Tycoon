@@ -8,6 +8,7 @@
     --grey: #eee;
     --dark-grey: #AAAAAA;
     --dark: #353a3e;
+    --dark-opacity: #353a3e80;
     --danger: #D32F2F;
 	--light-danger: #FECDD3;
     --warning: #FBC02D;
@@ -75,7 +76,27 @@ a{
 
 /* Efecto on hover */
 .move-ef {
-    transition: 0.3s;
+    transition: 0.4s;
+}
+
+.move-ef:hover {
+    transform: translate(0, -4px);
+    transition: 0.4s;
+}
+
+/* Efecto hover diagonal */
+.move-xy{
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.move-xy:hover{
+    transform: translate(5px, -5px);
+    transition: 0.4s;
+    border-radius: 25px;
+    -webkit-box-shadow: 6px 6px 9px -3px var(--dark-opacity);
+    -moz-box-shadow: 6px 6px 9px -3px var(--dark-opacity);
+    box-shadow: 6px 6px 9px -3px var(--dark-opacity);
 }
 
 /* Scrollbar */
@@ -90,10 +111,6 @@ background: var(--grey);
 ::-webkit-scrollbar-thumb {
 background: var(--dark);
 border-radius: 15px;
-}
-
-.move-ef:hover {
-transform: translate(0, -4px);
 }
   
 /* switch */
@@ -523,6 +540,15 @@ a.boton:hover{
 
 .contenido main .resumen ul a:nth-child(4) li .bx.clogo{
     background-color: var(--light-primary);
+}
+
+.contenido main .resumen-titulo{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    color: var(--dark);
+    margin-bottom: -15px;
 }
 
 
