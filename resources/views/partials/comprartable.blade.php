@@ -13,7 +13,7 @@
       @foreach ($aviones as $avion)
       <tr>
           <td>
-              <img src="{{ asset($avion->img) }}" alt="">
+              <img src="{{ asset($avion->img) }}" alt="{{ $avion->modelo }}" data-modal-target="info{{ $avion->id }}">
           </td>
           <td>{{ $avion->modelo }}</td>
           <td>{{ number_format($avion->precio, 0, ',', '.') }}</td>

@@ -71,7 +71,7 @@
             @foreach ($avionessh as $avionsh)
             <tr>
               <td>
-                <img class="img-avion" src="{{ asset($avionsh->img) }}">
+                <img class="img-avion" src="{{ asset($avionsh->img) }}" data-modal-target="info{{ $avionsh->id }}">
               </td>
               <td>{{ $avionsh->avion->modelo }}</td>
               <td>{{ $avionsh->companyia }}</td>

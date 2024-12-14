@@ -50,7 +50,7 @@
               @foreach ($flota as $avion)
               <tr>
                 <td>
-                  <img class="img-avion" src="{{ asset($avion->avion->img) }}">
+                  <img class="img-avion" src="{{ asset($avion->avion->img) }}" data-modal-target="info{{ $avion->id }}">
                 </td>
                 <td>{{ $avion->matricula }}</td>
                 <td>{{ $avion->avion->modelo }}</td>
