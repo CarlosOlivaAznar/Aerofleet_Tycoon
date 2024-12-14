@@ -30,7 +30,8 @@ use Illuminate\Support\Facades\Session;
 
 // Rutas del landing y rutas generales
 Route::get('/', function () {
-    $respuesta = Http::get("https://api.country.is/");
+    /* $respuesta = Http::get("https://api.country.is/");
+    dd($respuesta);
     if(Cookie::get('manualChange') != true){
         if ($respuesta->successful()) {
             $codigoPais = strtolower($respuesta->json()["country"]);
@@ -38,7 +39,7 @@ Route::get('/', function () {
         } else {
             Session::put('locale', "en");
         }
-    }
+    } */
 
     return view('landing.landing');
 })->name('landing.landing');
