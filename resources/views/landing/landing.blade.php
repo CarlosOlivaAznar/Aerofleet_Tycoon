@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     @include('partials.head')
+
+    @php
+        $respuesta = Http::get('https://api.country.is/');
+        if (Cookie::get('manualChange') != true) {
+            if ($respuesta->successful()) {
+                $codigoPais = strtolower($respuesta->json()['country']);
+                Session::put('locale', $codigoPais);
+            } else {
+                Session::put('locale', 'en');
+            }
+        }
+    @endphp
 </head>
 
 <body>
@@ -103,11 +115,11 @@
                     </div>
                 </a>
                 <a href="https://discord.gg/sUueRvrttY" target="_blank">
-                  <div class="card">
-                      <div><i class='bx bxl-discord-alt' ></i></div>
-                      <p>AeroFleet Tycoon</p>
-                  </div>
-              </a>
+                    <div class="card">
+                        <div><i class='bx bxl-discord-alt'></i></div>
+                        <p>AeroFleet Tycoon</p>
+                    </div>
+                </a>
             </div>
         </div>
 
