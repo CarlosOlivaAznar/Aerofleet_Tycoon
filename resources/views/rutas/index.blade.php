@@ -26,7 +26,8 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }}</h3>
+          <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }} </h3>
+          <i class='bx bx-chevron-up collapse-icon' onclick="collapseItem(this)"></i>
           @if ($rutas[0]->flota->estado == 0)
             <span class="rojo">{{ __('routes.inactive') }}</span>
           @elseif($rutas[0]->flota->estado == 2)
@@ -149,6 +150,22 @@
           precio.innerHTML = event.value
         }
   
+      </script>
+      <script>
+        // Collapse tablas
+
+        function collapseItem(elem){
+          elem.parentElement.parentElement.classList.toggle('collapse')
+          console.log(elem.style.transform);
+          
+          if(elem.style.transform != 'rotate(180deg)'){
+            elem.style.transform = 'rotate(180deg)'
+          } else {
+            elem.style.transform = 'rotate(0deg)'
+          }
+        }
+
+
       </script>
 
     </main>
