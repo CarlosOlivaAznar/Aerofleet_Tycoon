@@ -252,8 +252,7 @@ class ListenerLoggedIn
         Session::put('infoAviones', $infoAviones);
 
         $economiaVuelos = Session::get('economiaVuelos', []);
-        $economiaVuelos[$ruta->flota->matricula] = [
-            'ruta' => $ruta->id,
+        $economiaVuelos[$ruta->id] = [
             'ingresos' => $ingresos,
             'gastos' => $gastos,
             'beneficio' => $beneficio,
