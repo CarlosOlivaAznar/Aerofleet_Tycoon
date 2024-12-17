@@ -11,6 +11,7 @@ use App\Models\Espacio;
 use App\Models\Flota;
 use App\Models\Ruta;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class RutasController extends Controller
 {
@@ -25,7 +26,9 @@ class RutasController extends Controller
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('rutas.index', ['grupoRutas' => $grupoRutas]);
+        $economiaVuelos = Session::get('economiaVuelos', []);
+
+        return view('rutas.index', ['grupoRutas' => $grupoRutas, 'economiaVuelos' => $economiaVuelos]);
     }
 
     public function crearRutaAvion($id)

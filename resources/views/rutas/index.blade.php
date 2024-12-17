@@ -56,6 +56,7 @@
               <th>{{ __('routes.timeOfDep') }}</th>
               <th>{{ __('routes.timeOfArr') }}</th>
               <th>{{ __('routes.ticketPrice') }}</th>
+              <th>{{ __('routes.income') }}</th>
               <th>{{ __('routes.actions') }}</th>
             </tr>
           </thead>
@@ -70,6 +71,17 @@
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
               <td>{{ $ruta->precioBillete }}€</td>
+              <td>
+                @if (count($economiaVuelos[$ruta->flota->matricula]) > 0 && $economiaVuelos[$ruta->flota->matricula]['ruta'] == $ruta->id)
+                    @if ($economiaVuelos[$ruta->flota->matricula]['beneficio'] > 0)
+                      <span class="verde">{{ number_format($economiaVuelos[$ruta->flota->matricula]['beneficio'], 0, ',', '.') }}</span>
+                    @elseif($economiaVuelos[$ruta->flota->matricula]['beneficio'] < 0)
+                      <span class="rojo">{{ number_format($economiaVuelos[$ruta->flota->matricula]['beneficio'], 0, ',', '.') }}</span>
+                    @endif
+                @else
+                  n/a
+                @endif
+              </td>
               <td>
                 <a class="vender tooltip" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}">
                   <i class="bx bx-trash move-ef"></i>

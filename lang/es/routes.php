@@ -17,6 +17,7 @@ return [
     'actions' => 'Acciones',
     'deleteRoute' => 'Eliminar Ruta',
     'modifyRoute' => 'Modificar Ruta',
+    'income' => 'Beneficios',
 
     // Messages
     'inactive' => 'RUTA INACTIVA',
