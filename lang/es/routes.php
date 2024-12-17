@@ -18,6 +18,7 @@ return [
     'deleteRoute' => 'Eliminar Ruta',
     'modifyRoute' => 'Modificar Ruta',
     'income' => 'Beneficios',
+    'collapseAll' => 'Encoger todos',
 
     // Messages
     'inactive' => 'RUTA INACTIVA',

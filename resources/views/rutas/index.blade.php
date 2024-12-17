@@ -16,6 +16,10 @@
         <div class="titulo">
           <h1>{{ __('routes.routes') }}</h1>
         </div>
+        <span class="boton" onclick="collapseAll()">
+          <i class='bx bx-collapse-vertical' ></i>
+          {{ __('routes.collapseAll') }}
+        </span>
       </div>
 
       <!-- Alertas -->
@@ -156,13 +160,31 @@
 
         function collapseItem(elem){
           elem.parentElement.parentElement.classList.toggle('collapse')
-          console.log(elem.style.transform);
           
           if(elem.style.transform != 'rotate(180deg)'){
             elem.style.transform = 'rotate(180deg)'
           } else {
             elem.style.transform = 'rotate(0deg)'
           }
+        }
+
+        function collapseAll(){
+          let elements = document.getElementsByClassName("collapse-icon")
+          
+          for (var i = 0; i < elements.length; i++) {
+            let element = elements[i]
+
+            if(!element.parentElement.parentElement.classList.contains('collapse')){
+              element.parentElement.parentElement.classList.add('collapse')
+
+              if(element.style.transform != 'rotate(180deg)'){
+                element.style.transform = 'rotate(180deg)'
+              } else {
+                element.style.transform = 'rotate(0deg)'
+              }
+            }
+          }
+          
         }
 
 

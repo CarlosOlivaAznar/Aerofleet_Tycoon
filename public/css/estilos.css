@@ -467,6 +467,26 @@ a.boton:hover{
     transition: 0.4s;
 }
 
+/* Boton simple de funcionalidad */
+span.boton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 40px;
+    margin-left: auto;
+    color: var(--light);
+    white-space: nowrap;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+span.boton:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
 
 
 /* Muestras de resumenes */
