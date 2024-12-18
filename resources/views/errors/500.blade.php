@@ -7,7 +7,7 @@
   <main>
     <div class="errores">
         <img src="{{ asset('images/errors/500.png') }}" alt="error 500">
-        <h2>{{ $exception->getMessage() }}</h2>
+        <h2>{{ __('admin.500') }}</h2>
         <a href="{{ route('landing.landing') }}" class="boton">
             <i class="bx bx-arrow-back"></i>Volver al inicio
         </a>

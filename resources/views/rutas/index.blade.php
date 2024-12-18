@@ -16,6 +16,10 @@
         <div class="titulo">
           <h1>{{ __('routes.routes') }}</h1>
         </div>
+        <span class="boton" onclick="collapseAll()">
+          <i class='bx bx-collapse-vertical' ></i>
+          {{ __('routes.collapseAll') }}
+        </span>
       </div>
 
       <!-- Alertas -->
@@ -26,7 +30,8 @@
       <div class="tablas">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
-          <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }}</h3>
+          <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }} </h3>
+          <i class='bx bx-chevron-up collapse-icon' onclick="collapseItem(this)"></i>
           @if ($rutas[0]->flota->estado == 0)
             <span class="rojo">{{ __('routes.inactive') }}</span>
           @elseif($rutas[0]->flota->estado == 2)
@@ -56,6 +61,7 @@
               <th>{{ __('routes.timeOfDep') }}</th>
               <th>{{ __('routes.timeOfArr') }}</th>
               <th>{{ __('routes.ticketPrice') }}</th>
+              <th>{{ __('routes.income') }}</th>
               <th>{{ __('routes.actions') }}</th>
             </tr>
           </thead>
@@ -70,6 +76,17 @@
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
               <td>{{ $ruta->precioBillete }}€</td>
+              <td>
+                @if (count($economiaVuelos[$ruta->id]) > 0)
+                    @if ($economiaVuelos[$ruta->id]['beneficio'] > 0)
+                      <span class="verde">{{ number_format($economiaVuelos[$ruta->id]['beneficio'], 0, ',', '.') }}</span>
+                    @elseif($economiaVuelos[$ruta->id]['beneficio'] < 0)
+                      <span class="rojo">{{ number_format($economiaVuelos[$ruta->id]['beneficio'], 0, ',', '.') }}</span>
+                    @endif
+                @else
+                  n/a
+                @endif
+              </td>
               <td>
                 <a class="vender tooltip" href="{{ route('rutas.borrarRuta', ['id' => $ruta->id]) }}">
                   <i class="bx bx-trash move-ef"></i>
@@ -137,6 +154,40 @@
           precio.innerHTML = event.value
         }
   
+      </script>
+      <script>
+        // Collapse tablas
+
+        function collapseItem(elem){
+          elem.parentElement.parentElement.classList.toggle('collapse')
+          
+          if(elem.style.transform != 'rotate(180deg)'){
+            elem.style.transform = 'rotate(180deg)'
+          } else {
+            elem.style.transform = 'rotate(0deg)'
+          }
+        }
+
+        function collapseAll(){
+          let elements = document.getElementsByClassName("collapse-icon")
+          
+          for (var i = 0; i < elements.length; i++) {
+            let element = elements[i]
+
+            if(!element.parentElement.parentElement.classList.contains('collapse')){
+              element.parentElement.parentElement.classList.add('collapse')
+
+              if(element.style.transform != 'rotate(180deg)'){
+                element.style.transform = 'rotate(180deg)'
+              } else {
+                element.style.transform = 'rotate(0deg)'
+              }
+            }
+          }
+          
+        }
+
+
       </script>
 
     </main>

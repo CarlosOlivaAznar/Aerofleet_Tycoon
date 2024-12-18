@@ -45,6 +45,10 @@ return [
     'line' => 'Línea',
     'uid' => 'Id Usuario',
     'unregisteredUser' => 'Usuario no registrado',
+
+    // Http Response
+    '500' => 'Oops! Algo ha ido mal :(',
+    '503' => 'Servicio no disponible :(',
 ];
 
 // Plantilla

@@ -467,6 +467,26 @@ a.boton:hover{
     transition: 0.4s;
 }
 
+/* Boton simple de funcionalidad */
+span.boton{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 40px;
+    margin-left: auto;
+    color: var(--light);
+    white-space: nowrap;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+span.boton:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
 
 
 /* Muestras de resumenes */
@@ -1851,6 +1871,14 @@ footer .contenidoFooter div p.texto a{
     background-color: var(--light);
     color: var(--dark);
     margin-bottom: 30px;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+.contenido main .tablas.collapse{
+    max-height: 92px;
+    transition: max-height .4s ease;
 }
 
 .contenido main .tablas .cabecera{
@@ -1858,6 +1886,17 @@ footer .contenidoFooter div p.texto a{
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
+}
+
+.contenido main .tablas .cabecera .collapse-icon{
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    transition: transform .4s;
+}
+
+.contenido main .tablas .cabecera .collapse-icon.collapse{
+    transition: transform .4s;
 }
 
 .contenido main .tablas .cabecera span{

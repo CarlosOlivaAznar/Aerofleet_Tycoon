@@ -251,6 +251,14 @@ class ListenerLoggedIn
         array_push($infoAviones, trans('home.thePlane') ." ". $ruta->flota->matricula ." ". trans('home.wRoute') ." ". $ruta->espacio_departure->aeropuerto->icao ."-". $ruta->espacio_arrival->aeropuerto->icao . " " . trans('home.startTime') . " $ruta->horaInicio " .trans('home.completedFlight'). " $pasajeros " .trans('home.passengers'). " $beneficio " .trans('home.income'). " $ingresos, " .trans('home.expenses'). " ". number_format($gastos, 2, ',', '.') .")");
         Session::put('infoAviones', $infoAviones);
 
+        $economiaVuelos = Session::get('economiaVuelos', []);
+        $economiaVuelos[$ruta->id] = [
+            'ingresos' => $ingresos,
+            'gastos' => $gastos,
+            'beneficio' => $beneficio,
+        ];
+        Session::put('economiaVuelos', $economiaVuelos);
+
         // Obtenemos la variable de mensajes para que el usuario tenga informacion de los vuelos y fallos que pueda corregir
     if($beneficio < 0 && !$eventoAleatorio){
             array_push($mensajeVuelos, 

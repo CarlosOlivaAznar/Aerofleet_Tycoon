@@ -17,6 +17,8 @@ return [
     'actions' => 'Actions',
     'deleteRoute' => 'Delete Route',
     'modifyRoute' => 'Modify Route',
+    'income' => 'Income',
+    'collapseAll' => 'Collapse all',
 
     // Messages
     'inactive' => 'INACTIVE ROUTE',
