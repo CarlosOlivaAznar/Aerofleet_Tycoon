@@ -45,6 +45,10 @@ return [
     'line' => 'Line',
     'uid' => 'User ID',
     'unregisteredUser' => 'Unregistered user',
+
+    // Http Response
+    '500' => 'Oops! Something went wrong :(',
+    '503' => 'Service unaviable :(',
 ];
 
 // Plantilla
