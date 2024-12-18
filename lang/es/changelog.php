@@ -14,6 +14,8 @@ return [
       <li>Nuevos aviones añadidos: a340-500, a220-100, a330neo, a321xlr, b77X y e145</li>
       <li>Nuevos aviones de segunda mano añadidos</li>
       <li>Cuando se crea una ruta nueva el avión pasa a un estado inactivo</li>
+      <li>Añadido en la página de rutas los beneficios que ha generado el avion</li>
+      <li>Añádido en la página de rutas encoger o extender la información</li>
     </ul>
     
     

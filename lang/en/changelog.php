@@ -14,6 +14,8 @@ return [
       <li>New aircraft added: a340-500, a220-100, a330neo, a321xlr, b77X and e145</li>
       <li>New second hand aircraft added</li>
       <li>When a new route is created, the plane moves to an inactive state</li>
+      <li>Added to the routes page the income that the plane has generated</li>
+      <li>Added on the routes page collapse or expand the information</li>
     </ul>
 
     
