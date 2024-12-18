@@ -77,10 +77,10 @@
               <td>{{ $ruta->horaFin }}</td>
               <td>{{ $ruta->precioBillete }}€</td>
               <td>
-                @if (count($economiaVuelos) > 0)
-                    @if ($economiaVuelos[$ruta->id]['beneficio'] > 0)
+                @if (isset($economiaVuelos["$ruta->id"]) && count($economiaVuelos["$ruta->id"]) > 0)
+                    @if ($economiaVuelos["$ruta->id"]['beneficio'] > 0)
                       <span class="verde">{{ number_format($economiaVuelos[$ruta->id]['beneficio'], 0, ',', '.') }}</span>
-                    @elseif($economiaVuelos[$ruta->id]['beneficio'] < 0)
+                    @elseif($economiaVuelos["$ruta->id"]['beneficio'] < 0)
                       <span class="rojo">{{ number_format($economiaVuelos[$ruta->id]['beneficio'], 0, ',', '.') }}</span>
                     @endif
                 @else
