@@ -2495,6 +2495,63 @@ MARK: Road Map
     transition: background-color .4s;
 }
 
+/* --------------- */
+/* Pagina Economia */
+/* --------------- */
+/*
+    MARK: Economia
+*/
+
+.contenido main .balance{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.contenido main .balance .cabecera{
+    display: flex;
+    gap: 15px;
+}
+
+.contenido main .balance .contenido-balance{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contenido main .balance .contenido-balance h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contenido main .balance .contenido-balance div{
+    width: 45%;
+}
+
+.contenido main .balance .contenido-balance div div{
+    width: 100%;
+    color: var(--dark);
+    margin: 10px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido main .balance .contenido-balance div div span{
+    font-size: .95rem;
+}
+
+.contenido main .balance .contenido-balance div div span:first-child{
+    font-weight: 500;
+}
+
 /* Media */
 @media screen and (max-width: 800px) {
     .menu-lateral{
