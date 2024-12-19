@@ -1072,6 +1072,18 @@ MARK: Login
     transition: 0.4s;
 }
 
+.formularioBasico .campos .hide-show{
+    position: relative;
+}
+
+.formularioBasico .campos .hide-show i{
+    position: absolute;
+    top: calc(50% + 3px);
+    right: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
 .formularioBasico .campos input[type="submit"]:focus{
     border: 0;
 }

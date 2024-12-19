@@ -32,16 +32,22 @@
                         <!-- Password -->
                         <div class="campos">
                             <label for="password">{{ __('Password') }}</label>
-                            <input id="password" type="password" name="password" required autocomplete="new-password"
+                            <div class="hide-show">
+                                <input id="password" type="password" name="password" required autocomplete="new-password"
                                 autocomplete="new-password">
+                                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                            </div>
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
 
                         <!-- Confirm Password -->
                         <div class="campos">
                             <label for="password_confirmation">{{ __('Confirm Password') }}</label>
-                            <input id="password_confirmation" type="password" name="password_confirmation"
+                            <div class="hide-show">
+                                <input id="password_confirmation" type="password" name="password_confirmation"
                                 required autocomplete="new-password">
+                                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                            </div>
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>
 
@@ -53,6 +59,7 @@
             </div>
         </div>
     </main>
+    <script src="{{ asset('js/showhide.js') }}"></script>
 </body>
 
 </html>
