@@ -16,6 +16,7 @@ return [
       <li>When a new route is created, the plane moves to an inactive state</li>
       <li>Added to the routes page the income that the plane has generated</li>
       <li>Added on the routes page collapse or expand the information</li>
+      <li>Now you can show/hide the passwords</li>
     </ul>
 
     

@@ -19,7 +19,10 @@
             <!-- Password -->
             <div class="campos">
               <label for="password">{{ __('auth.password') }}</label>
-              <input id="password" type="password" name="password" required autocomplete="current-password">
+              <div class="hide-show">
+                <input id="password" type="password" name="password" required autocomplete="current-password">
+                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+              </div>
               <x-input-error class="inputError" :messages="$errors->get('password')" />
             </div>
 
@@ -45,4 +48,5 @@
         </div>
     </div>
   </main>
+  <script src="{{ asset('js/showhide.js') }}"></script>
 @endsection
