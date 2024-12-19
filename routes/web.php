@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompetenciaController;
+use App\Http\Controllers\EconomiaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlotaController;
@@ -130,6 +131,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('competencia/rankings', [CompetenciaController::class, 'rankings'])->name('competencia.rankings');
     Route::post('competencia/demandaRuta', [CompetenciaController::class, 'demandaRuta'])->name('competencia.demandaRuta');
     Route::post('competencia/rutas', [CompetenciaController::class, 'rutasCompetencia'])->name('competencia.rutas');
+});
+
+// Rutas Economía
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('economia', [EconomiaController::class, 'index'])->name('economia.index');
 });
 
 Route::get('/dashboard', function () {

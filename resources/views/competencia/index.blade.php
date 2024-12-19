@@ -12,7 +12,7 @@
 
     <!-- Contenido Principal -->
     <main>
-      <div class="cabecera">
+      <div class="cabecera pagina">
         <div class="titulo">
           <h1>{{ __('competence.competence') }}</h1>
         </div>
