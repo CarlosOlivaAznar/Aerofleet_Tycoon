@@ -130,19 +130,28 @@
 
           <div class="campos">
             <label for="update_password_current_password">{{ __('account.currentPwd') }}</label>
-            <input id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
+            <div class="hide-show">
+              <input id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
+              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+            </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('current_password')" />
           </div>
 
           <div class="campos">
             <label for="update_password_password">{{ __('account.newPwd') }}</label>
-            <input id="update_password_password" name="password" type="password" autocomplete="new-password">
+            <div class="hide-show">
+              <input id="update_password_password" name="password" type="password" autocomplete="new-password">
+              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+            </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password')" />
           </div>
 
           <div class="campos">
             <label for="update_password_password_confirmation">{{ __('account.confirmPwd') }}</label>
-            <input id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
+            <div class="hide-show">
+              <input id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
+              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+            </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password_confirmation')" />
           </div>
 
@@ -264,6 +273,7 @@
           document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         }
       </script>
+      <script src="{{ asset('js/showhide.js') }}"></script>
     </main>
   </div>
 @endsection()

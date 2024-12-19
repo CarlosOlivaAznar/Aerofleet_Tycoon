@@ -16,6 +16,7 @@ return [
       <li>Cuando se crea una ruta nueva el avión pasa a un estado inactivo</li>
       <li>Añadido en la página de rutas los beneficios que ha generado el avion</li>
       <li>Añádido en la página de rutas encoger o extender la información</li>
+      <li>Ahora se puede mostrar/ocultar las contraseñas</li>
     </ul>
     
     
