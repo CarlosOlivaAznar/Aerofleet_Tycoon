@@ -11,4 +11,9 @@ class EconomiaController extends Controller
     {
         return view('economia.index');
     }
+
+    public function leasing()
+    {
+        return view('economia.leasing');
+    }
 }

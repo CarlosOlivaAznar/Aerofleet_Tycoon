@@ -2,9 +2,13 @@
 
 return [
     'economy' => 'Economía',
-    'addLeasing' => 'Leasing',
-    'addLoan' => 'Prestamos',
+    'leasing' => 'Leasing',
+    'loan' => 'Prestamos',
     'shares' => 'Acciones',
+
+
+    // Leasing
+    'leasedPlanes' => 'Aviones Arrendados',
 ];
 
 // Plantilla

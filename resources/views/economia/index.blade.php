@@ -20,16 +20,16 @@
 
       <div class="resumen">
         <ul>
-            <a href="">
+            <a href="{{ route('economia.leasing') }}">
                 <li class="move-xy">
                     <i class='bx bxs-plane-alt'></i>
-                    <h3>{{ __('economy.addLeasing') }}</h3>
+                    <h3>{{ __('economy.leasing') }}</h3>
                 </li>
             </a>
             <a href="">
                 <li class="move-xy">
                     <i class='bx bxs-bank'></i>
-                    <h3>{{ __('economy.addLoan') }}</h3>
+                    <h3>{{ __('economy.loan') }}</h3>
                 </li>
             </a>
             <a href="">
@@ -93,10 +93,6 @@
             </div>
         </div>
       </div>
-
-      <!-- Alertas -->
-      @include('partials.alertas')
-
     </main>
   </div>
 @endsection()
