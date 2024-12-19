@@ -70,7 +70,7 @@
                     <span>espacios:</span>
                     <span>4.345.000€</span>
                 </div>
-                <div>
+                <div class="total">
                     <span>Total:</span>
                     <span>250.000.000€</span>
                 </div>
@@ -85,6 +85,10 @@
                 <div>
                     <span>Deudas a largo plazo:</span>
                     <span>1.000.000€</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span>1.503.230€</span>
                 </div>
             </div>
         </div>

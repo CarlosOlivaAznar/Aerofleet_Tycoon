@@ -2462,7 +2462,7 @@ MARK: Road Map
 
 .contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
-    color: var(--success);
+    color: var (--success);
 }
 
 .contenido main .resumen.sede ul li:nth-child(2) .bx{
@@ -2533,15 +2533,27 @@ MARK: Road Map
 
 .contenido main .balance .contenido-balance div{
     width: 45%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contenido main .balance .contenido-balance div div{
     width: 100%;
     color: var(--dark);
-    margin: 10px 0;
     padding: 5px 10px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+}
+
+.contenido main .balance .contenido-balance div div.total{
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.contenido main .balance .contenido-balance div div.total span{
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
 .contenido main .balance .contenido-balance div div span{
