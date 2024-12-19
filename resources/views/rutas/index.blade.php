@@ -27,7 +27,7 @@
 
       @if (count($grupoRutas) > 0)
       @foreach ($grupoRutas as $rutas)
-      <div class="tablas">
+      <div class="tablas max-height">
         <div class="cabecera">
           <i class="bx bx-outline"></i>
           <h3>{{ __('routes.airplaneRoutes') }} {{ $rutas[0]->flota->matricula }} </h3>
