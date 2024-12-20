@@ -49,4 +49,9 @@ class Avion extends Model
                 break;
         }
     }
+
+    public function leasePPD()
+    {
+        return $this->precio * 0.0001084998;
+    }
 }

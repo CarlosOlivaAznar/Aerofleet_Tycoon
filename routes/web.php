@@ -136,7 +136,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // Rutas Economía
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('economia', [EconomiaController::class, 'index'])->name('economia.index');
+
+    // Leasing
     Route::get('economia/leasing', [EconomiaController::class, 'leasing'])->name('economia.leasing');
+    Route::get('economia/leasing/{id}', [EconomiaController::class, 'leasingCompanyia'])->name('economia.leasingCompanyia');
+    Route::post('economia/leasing/contratar', [EconomiaController::class, 'contratarLeasing'])->name('economia.contratarLeasing');
+
 });
 
 Route::get('/dashboard', function () {

@@ -25,25 +25,25 @@
 
       <div class="resumen">
         <ul>
-            <a href="">
+            <a href="{{ route('economia.leasingCompanyia', ['id' => 1]) }}">
                 <li class="move-xy">
                     <i class='bx bxs-plane-alt'></i>
                     <h3>AerCap</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.leasingCompanyia', ['id' => 2]) }}">
                 <li class="move-xy">
                     <i class='bx bxs-bank'></i>
                     <h3>AirLease Corporation</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.leasingCompanyia', ['id' => 3]) }}">
                 <li class="move-xy">
                     <i class='bx bx-coin-stack'></i>
                     <h3>Avolon</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.leasingCompanyia', ['id' => 4]) }}">
                 <li class="move-xy">
                     <i class='bx bx-coin-stack'></i>
                     <h3>SMBC Aviation</h3>
