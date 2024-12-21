@@ -131,7 +131,7 @@
         <img src="{{ asset($avion->img) }}" alt="avion">
 
         <div class="campos-modal">
-            <label for="numeroMeses">Numero de dias</label>
+            <label for="numeroMeses">Numero de dias:</label>
             <input type="number" name="dias" id="dias" required min="1" max="90" onkeyup="calcularPrecio(this, 'precioPorDia{{$avion->id}}', {{ $avion->leasePPD() }})">
         </div>
 
