@@ -135,6 +135,7 @@
             <input type="number" name="dias" id="dias" required min="1" max="90" onkeyup="calcularPrecio(this, 'precioPorDia{{$avion->id}}', {{ $avion->leasePPD() }})">
         </div>
 
+        <input type="hidden" name="avion" value="{{ $avion->id }}">
         <p>Esta seguro que quiere contratar el Leasing del avion?</p>
         <p>El leasing del avion cuesta <span class="rojo">{{ number_format($avion->leasePPD(), 2, ',', '.') }}</span> al dia y saldra por un total de: <span id="precioPorDia{{ $avion->id }}" class="rojo">0</span></p>
         

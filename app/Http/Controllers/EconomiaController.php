@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Avion;
+use App\Models\Flota;
 use Illuminate\Http\Request;
 
 class EconomiaController extends Controller
@@ -48,8 +49,25 @@ class EconomiaController extends Controller
 
     public function contratarLeasing(Request $request)
     {
-        dd($request);
+        $avion = Avion::find($request->avion);
+        
+        if(!$avion->primeraMano) {
+            session()->flash('error', trans('economy.leasingNotFirstHand'));
+            return redirect()->route('economia.leasing');
+        }
 
+        Flota::create([
+            'user_id' => auth()->id(),
+            'avion_id' => $avion->id,
+            'matricula' => $avion->generarMatricula(),
+            'fechaDeFabricacion' => now(),
+            'condicion' => 100,
+            'estado' => 0,
+            'leasing' => true,
+            'finLeasing' => now()->addDays($request->dias),
+        ]);
+
+        session()->flash('exito', trans('economy.leasingSuccess'));
         return redirect()->route('economia.leasing');
     }
 }

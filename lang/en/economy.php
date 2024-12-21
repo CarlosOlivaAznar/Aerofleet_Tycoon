@@ -17,6 +17,8 @@ return [
     'capacity' => 'Capacity',
     'acctions' => 'Acctions',
     'avaialblePlanes' => 'Available Planes',
+    'leasingNotFirstHand' => 'Error Leasing the aircraft selected.',
+    'leasingSuccess' => 'The aircraft has been leased successfully.',
 
 
     // Modales

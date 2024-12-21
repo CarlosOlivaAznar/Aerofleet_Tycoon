@@ -17,6 +17,8 @@ return [
     'capacity' => 'Capacidad',
     'acctions' => 'Acciones',
     'avaialblePlanes' => 'Aviones Disponibles',
+    'leasingNotFirstHand' => 'Error al arrendar el avión seleccionado.',
+    'leasingSuccess' => 'El avión ha sido arrendado correctamente.',
 
 
     // Modales
