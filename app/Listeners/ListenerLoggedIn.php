@@ -81,6 +81,9 @@ class ListenerLoggedIn
 
                 // Restamos los gastos mensuales
                 $this->gastosMensuales();
+
+                // Control de leasings
+                $this->controlLeasing($i + 1);
             }
         }
 
@@ -113,6 +116,9 @@ class ListenerLoggedIn
 
             // Restamos los gastos mensuales
             $this->gastosMensuales();
+
+            // Control de leasings
+            $this->controlLeasing(0);
 
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
@@ -228,14 +234,17 @@ class ListenerLoggedIn
         $mensajeVuelos = Session::get('mensajeVuelos', []);
 
         // Reducimos el estado del avion porque ha completado un vuelo
-        $ruta->flota->condicion -= 0.05;
-        if($ruta->flota->condicion < 5){
-            $ruta->flota->estado = 0;
-            array_push($mensajeVuelos, 
-            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
-            3]);
+        // Si el avion es de leasing no se resta la condicion ya que corre a cargo de la empresa de leasing
+        if(!$ruta->flota->leasing){
+            $ruta->flota->condicion -= 0.05;
+            if($ruta->flota->condicion < 5){
+                $ruta->flota->estado = 0;
+                array_push($mensajeVuelos, 
+                [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
+                3]);
+            }
+            $ruta->flota->update();
         }
-        $ruta->flota->update();
 
 
         // Se añade la informacion de los aviones para dar feedback al usuario
@@ -367,6 +376,30 @@ class ListenerLoggedIn
                 $avionActivar->estado = 1;
                 $avionActivar->update();
                 error_log("Activando avion $avionActivar->id");
+            }
+        }
+    }
+
+    /**
+     * Funcion que controla el leasing del usuario
+     */
+    public function controlLeasing($desconexion)
+    {
+        $flotaLeasing = Flota::where('user_id', auth()->id())->where('leasing', 1)->get();
+
+        foreach ($flotaLeasing as $avion) {
+            $fechaFin = Carbon::createFromFormat('Y-m-d', $avion->finLeasing)->setHours(0)->setMinutes(0)->setSeconds(1);
+            $fechaDesconexion = Carbon::createFromTimeString(User::where('id', auth()->id())->first()->ultimaConexion)->addDays($desconexion);
+            if($fechaFin->gt($fechaDesconexion) || $fechaFin->eq($fechaDesconexion)){
+                $user = User::where('id', auth()->id())->first();
+                $user->saldo -= $avion->avion->leasePPD();
+                error_log("Dia de desconexion: $fechaDesconexion");
+                error_log("Cobrando leasing del avion $avion->id, precio por dia: " . $avion->avion->leasePPD());
+                $user->update();
+            } else {
+                // Elimina el avion si se ha superado la fecha de leasing
+                error_log("Eliminando avion $avion->id por fin del leasing");
+                $avion->delete();
             }
         }
     }
