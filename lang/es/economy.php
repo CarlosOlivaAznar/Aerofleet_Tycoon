@@ -29,6 +29,8 @@ return [
 
     'successEndLease' => 'El avión ha sido devuelto a la compañía de leasing correctamente.',
 
+    'noLeasings' => 'No tienes ningún avión arrendado.',
+
 
     // Modales
     'cancel' => 'Cancelar',

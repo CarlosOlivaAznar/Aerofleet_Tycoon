@@ -55,6 +55,7 @@
       <!-- Alertas -->
       @include('partials.alertas')
 
+      @if(count($leasings) > 0)
       <div class="tablas">
         <div class="cabecera">
           <i class='bx bxs-plane-alt'></i>
@@ -114,6 +115,12 @@
           </tbody>
         </table>
       </div>
+      @else
+          <div class="mensaje">
+            <i class="bx bx-error"></i>
+            <h4>{{ __('economy.noLeasings') }}</h4>
+          </div>
+      @endif
       
       <script src="{{ asset('js/modals.js') }}"></script>
     </main>

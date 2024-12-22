@@ -29,6 +29,8 @@ return [
 
     'successEndLease' => 'The aircraft has been returned to the leasing company successfully.',
 
+    'noLeasings' => 'You do not have any leased aircraft.',
+
 
 
     // Modales
