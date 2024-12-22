@@ -19,6 +19,8 @@ return [
     'avaialblePlanes' => 'Aviones Disponibles',
     'leasingNotFirstHand' => 'Error al arrendar el avión seleccionado.',
     'leasingSuccess' => 'El avión ha sido arrendado correctamente.',
+    'leasingMaxLimit' => 'Has alcanzado el número máximo de aviones arrendados.',
+    'leasingMinAssets' => 'Para arrendar un avion de mas de 200.000.000€ euros debes tener un patrimonio igual o superior de 250.000.000€.',
 
     'registration' => 'Matricula',
     'endLease' => 'Fin del leasing',

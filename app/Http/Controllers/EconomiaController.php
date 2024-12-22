@@ -57,13 +57,26 @@ class EconomiaController extends Controller
     public function contratarLeasing(Request $request)
     {
         $avion = Avion::find($request->avion);
+        $leasings = Flota::where('user_id', auth()->id())->where('leasing', true)->get();
+        $usuario = User::find(auth()->id());
         
         if(!$avion->primeraMano) {
             session()->flash('error', trans('economy.leasingNotFirstHand'));
             return redirect()->route('economia.leasing');
         }
 
-        Flota::create([            'user_id' => auth()->id(),
+        if(count($leasings) > 4) {
+            session()->flash('error', trans('economy.leasingMaxLimit'));
+            return redirect()->route('economia.leasing');
+        }
+
+        if($avion->precio > 200000000 && $usuario->patrimonio() < 250000000) {
+            session()->flash('error', trans('economy.leasingMinAssets'));
+            return redirect()->route('economia.leasing');
+        }
+
+        Flota::create([            
+            'user_id' => auth()->id(),
             'avion_id' => $avion->id,
             'matricula' => $avion->generarMatricula(),
             'fechaDeFabricacion' => now(),
