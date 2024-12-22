@@ -63,18 +63,59 @@
         <table>
           <thead>
             <tr>
-              <th>hola</th>
+              <th>{{ __('fleet.aircraft') }}</th>
+              <th>{{ __('economy.registration') }}</th>
+              <th>{{ __('economy.model') }}</th>
+              <th>{{ __('economy.pricePerDay') }}</th>
+              <th>{{ __('economy.endLease') }}</th>
+              <th>{{ __('economy.acctionEndLesase') }}</th>
             </tr>
           </thead>
           <tbody>
-            {{-- @foreach ($ as $) --}}
+            @foreach ($leasings as $leasing)
             <tr>
-              <td>hola</td>
+              <td>
+                <img class="img-avion" src="{{ asset($leasing->avion->img) }}" alt="{{ $leasing->matricula }}">
+              </td>
+              <td>{{ $leasing->matricula }}</td>
+              <td>{{ $leasing->avion->modelo }}</td>
+              <td>{{ $leasing->avion->leasePPD() }}€</td>
+              <td>{{ $leasing->finLeasing }}</td>
+              <td>
+                <a class="vender tooltip" data-modal-target="endLease{{ $leasing->id }}">
+                  <i class="bx bx-calendar-x move-ef"></i>
+                  <span class="tooltiptext">{{ __('economy.acctionEndLesase') }}</span>
+                </a>
+              </td>
             </tr>
+
+            <div class="modal" id="endLease{{ $leasing->id }}">
+              <div class="contenido-modal">
+                <div class="cabecera-modal">
+                  <span class="cerrar-modal">&times;</span>
+                  <h2>{{ __('economy.acctionEndLesase') }}</h2>
+                </div>
+                <div class="cuerpo-modal">
+      
+                  <p>{{ __('economy.endConfirmation') }}</p><br>
+                  <p>{{ __('economy.endInfo') }} 
+                  <span class="rojo">{{number_format($leasing->avion->leasePPD(), 0, ',', '.')}}€</span></p>
+                  
+                </div>
+                <div class="footer-modal">
+                  <div class="botones">
+                    <span class="cancelar">{{ __('economy.cancel') }}</span>
+                    <a href="{{ route('economia.finLeasing', ["id" => $leasing->id]) }}" class="aceptar">{{ __('economy.confirm') }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
           </tbody>
         </table>
       </div>
       
+      <script src="{{ asset('js/modals.js') }}"></script>
     </main>
   </div>
 @endsection()

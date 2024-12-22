@@ -20,6 +20,16 @@ return [
     'leasingNotFirstHand' => 'Error Leasing the aircraft selected.',
     'leasingSuccess' => 'The aircraft has been leased successfully.',
 
+    'registration' => 'Registration',
+    'endLease' => 'End lease date',
+    'acctionEndLesase' => 'End Lease',
+
+    'endConfirmation' => 'Are you sure you want to end the lease of this aircraft?',
+    'endInfo' => 'The aircraft will be returned to the leasing company and you will pay todays lease fee:',
+
+    'successEndLease' => 'The aircraft has been returned to the leasing company successfully.',
+
+
 
     // Modales
     'cancel' => 'Cancel',

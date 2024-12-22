@@ -5,18 +5,25 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Avion;
 use App\Models\Flota;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EconomiaController extends Controller
 {
     public function index()
     {
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
         return view('economia.index');
     }
 
     public function leasing()
     {
-        return view('economia.leasing');
+        $leasings = Flota::where('user_id', auth()->id())->where('leasing', true)->get();
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
+
+        return view('economia.leasing', ['leasings' => $leasings]);
     }
 
     public function leasingCompanyia($id)
@@ -56,8 +63,7 @@ class EconomiaController extends Controller
             return redirect()->route('economia.leasing');
         }
 
-        Flota::create([
-            'user_id' => auth()->id(),
+        Flota::create([            'user_id' => auth()->id(),
             'avion_id' => $avion->id,
             'matricula' => $avion->generarMatricula(),
             'fechaDeFabricacion' => now(),
@@ -68,6 +74,20 @@ class EconomiaController extends Controller
         ]);
 
         session()->flash('exito', trans('economy.leasingSuccess'));
+        return redirect()->route('economia.leasing');
+    }
+
+    public function finLeasing($id)
+    {
+        $leasing = Flota::find($id);
+
+        $usuario = User::find(auth()->id());
+        $usuario->saldo -= $leasing->avion->leasePPD();
+        $usuario->update();
+
+        $leasing->delete();
+
+        session()->flash('exito', trans('economy.successEndLease'));
         return redirect()->route('economia.leasing');
     }
 }

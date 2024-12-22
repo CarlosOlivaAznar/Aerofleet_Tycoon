@@ -20,6 +20,15 @@ return [
     'leasingNotFirstHand' => 'Error al arrendar el avión seleccionado.',
     'leasingSuccess' => 'El avión ha sido arrendado correctamente.',
 
+    'registration' => 'Matricula',
+    'endLease' => 'Fin del leasing',
+    'acctionEndLesase' => 'Finalizar Leasing',
+
+    'endConfirmation' => '¿Estás seguro que quieres finalizar el leasing de este avión?',
+    'endInfo' => 'El avión será devuelto a la compañía de leasing y pagarás la tarifa de leasing de hoy:',
+
+    'successEndLease' => 'El avión ha sido devuelto a la compañía de leasing correctamente.',
+
 
     // Modales
     'cancel' => 'Cancelar',
