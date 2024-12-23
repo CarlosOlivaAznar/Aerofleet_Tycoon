@@ -5562,15 +5562,185 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Rumania */
+        /* ------------------- */
+        /* 
+        MARK: Rumania
+        */
+        Aeropuerto::create([
+            'icao' => 'LROD',
+            'pais' => 'YR',
+            'nombre' => 'Oradea International Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 380,
+            'latitud' => 47.026988,
+            'longitud' => 21.902910,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
+        Aeropuerto::create([
+            'icao' => 'LRTM',
+            'pais' => 'YR',
+            'nombre' => 'Targu Mures International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.467827,
+            'longitud' => 24.413134,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
+        Aeropuerto::create([
+            'icao' => 'LRBC',
+            'pais' => 'YR',
+            'nombre' => 'Bacau International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 46.524109,
+            'longitud' => 26.910716,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
+        Aeropuerto::create([
+            'icao' => 'LROP',
+            'pais' => 'YR',
+            'nombre' => 'Bucharest Henri Coanda International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2000,
+            'latitud' => 44.572422,
+            'longitud' => 26.092654,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCL',
+            'pais' => 'YR',
+            'nombre' => 'Cluj-Napoca International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 46.785744,
+            'longitud' => 23.686366,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCK',
+            'pais' => 'YR',
+            'nombre' => 'Constanta International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.358305,
+            'longitud' => 28.486425,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCV',
+            'pais' => 'YR',
+            'nombre' => 'Craiova International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 44.317324,
+            'longitud' => 23.885844,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRIA',
+            'pais' => 'YR',
+            'nombre' => 'Iasi International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 47.178204,
+            'longitud' => 27.621326,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSM',
+            'pais' => 'YR',
+            'nombre' => 'Satu Mare International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.705859,
+            'longitud' => 22.883565,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSB',
+            'pais' => 'YR',
+            'nombre' => 'Sibiu International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 45.787019,
+            'longitud' => 24.090661,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSV',
+            'pais' => 'YR',
+            'nombre' => 'Suceava International Airport',
+            'espaciosTotales' => 80,
+            'costeOperacional' => 1000,
+            'latitud' => 47.686308,
+            'longitud' => 26.353129,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRTR',
+            'pais' => 'YR',
+            'nombre' => 'Timisoara Traian Vuia International Airport',
+            'espaciosTotales' => 180,
+            'costeOperacional' => 1100,
+            'latitud' => 45.811068,
+            'longitud' => 21.328559,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 95,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'SX',
+            'pais' => 'YR',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
