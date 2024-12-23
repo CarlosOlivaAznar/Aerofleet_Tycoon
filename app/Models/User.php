@@ -92,7 +92,9 @@ class User extends Authenticatable implements MustVerifyEmail
         $patrimonio = $this->saldo;
         
         foreach ($this->flota as $flota) {
-            $patrimonio += $flota->precioVenta();
+            if(!$flota->leasing){
+                $patrimonio += $flota->avion->precio;
+            }
         }
 
         foreach ($this->espacio as $espacio) {
