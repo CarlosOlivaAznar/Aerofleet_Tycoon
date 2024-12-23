@@ -5801,11 +5801,80 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* ------------------ */
+        /* Aeropuertos Serbia */
+        /* ------------------ */
+        /* 
+        MARK: Serbia
+        */
+        Aeropuerto::create([
+            'icao' => 'LYBE',
+            'pais' => 'YU',
+            'nombre' => 'Belgrade Nikola Tesla Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 44.817785,
+            'longitud' => 20.307020,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYKV',
+            'pais' => 'YU',
+            'nombre' => 'Kraljevo Morava Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.819331,
+            'longitud' => 20.585993,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYNI',
+            'pais' => 'YU',
+            'nombre' => 'Nis Constantine the Great Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 43.336242,
+            'longitud' => 21.857360,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        /* ------------------ */
+        /* Aeropuertos Kosovo */
+        /* ------------------ */
+        /* 
+        MARK: Kosovo
+        */
+        Aeropuerto::create([
+            'icao' => 'BKPR',
+            'pais' => 'Z6',
+            'nombre' => 'Pristina Adem Jashari International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.574142,
+            'longitud' => 21.034565,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'T9',
+            'pais' => 'YU',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
