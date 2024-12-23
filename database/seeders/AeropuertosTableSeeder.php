@@ -5568,6 +5568,7 @@ class AeropuertosTableSeeder extends Seeder
         /* 
         MARK: Rumania
         */
+        
         Aeropuerto::create([
             'icao' => 'LROD',
             'pais' => 'YR',
@@ -5736,11 +5737,75 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* -------------------------------- */
+        /* Aeropuertos Bosnia y Herzegovina */
+        /* -------------------------------- */
+        /* 
+        MARK: Bosnia y Herzegovina
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LQBK',
+            'pais' => 'T9',
+            'nombre' => 'Banja Luka International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.933792,
+            'longitud' => 17.300681,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQMO',
+            'pais' => 'T9',
+            'nombre' => 'Mostar International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.285221,
+            'longitud' => 17.842800,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQSA',
+            'pais' => 'T9',
+            'nombre' => 'Sarajevo International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1800,
+            'latitud' => 43.824399,
+            'longitud' => 18.334215,
+            'demanda' => 0.93,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQTZ',
+            'pais' => 'T9',
+            'nombre' => 'Tuzla International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.459472,
+            'longitud' => 18.725442,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'YR',
+            'pais' => 'T9',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
