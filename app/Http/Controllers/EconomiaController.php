@@ -31,23 +31,23 @@ class EconomiaController extends Controller
         switch ($id) {
             case 1:
                 $nombre = "AerCap";
-                $aviones = Avion::where('fabricante', 'Airbus')->where('primeraMano', 1)->get();
+                $aviones = Avion::where('fabricante', 'Airbus')->where('primeraMano', 1)->orderBy('precio')->get();
                 break;
             case 2:
                 $nombre = "AirLease Corporation";
-                $aviones = Avion::where('fabricante', 'Boeing')->where('primeraMano', 1)->get();
+                $aviones = Avion::where('fabricante', 'Boeing')->where('primeraMano', 1)->orderBy('precio')->get();
                 break;
             case 3:
                 $nombre = "Avolon";
-                $aviones = Avion::where('fabricante', 'Bombardier')->where('primeraMano', 1)->get();
+                $aviones = Avion::where('fabricante', 'Bombardier')->where('primeraMano', 1)->orderBy('precio')->get();
                 break;
             case 4:
                 $nombre = "SMBC Aviation";
-                $aviones = Avion::where('fabricante', 'Embraer')->where('primeraMano', 1)->get();
+                $aviones = Avion::where('fabricante', 'Embraer')->where('primeraMano', 1)->orderBy('precio')->get();
                 break;
             default:
                 $nombre = "AerCap";
-                $aviones = Avion::where('fabricante', 'Airbus')->where('primeraMano', 1)->get();
+                $aviones = Avion::where('fabricante', 'Airbus')->where('primeraMano', 1)->orderBy('precio')->get();
                 break;
         }
 
