@@ -143,6 +143,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('economia/leasing/contratar', [EconomiaController::class, 'contratarLeasing'])->name('economia.contratarLeasing');
     Route::get('economia/endLeasing/{id}', [EconomiaController::class, 'finLeasing'])->name('economia.finLeasing');
 
+    // Prestamos
+    Route::get('economia/prestamos', [EconomiaController::class, 'prestamos'])->name('economia.prestamos');
+
 });
 
 Route::get('/dashboard', function () {

@@ -26,7 +26,7 @@
                     <h3>{{ __('economy.leasing') }}</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.prestamos') }}">
                 <li class="move-xy">
                     <i class='bx bxs-bank'></i>
                     <h3>{{ __('economy.loan') }}</h3>

@@ -103,4 +103,15 @@ class EconomiaController extends Controller
         session()->flash('exito', trans('economy.successEndLease'));
         return redirect()->route('economia.leasing');
     }
+
+
+    // Prestamos
+
+    public function prestamos()
+    {
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
+
+        return view('economia.prestamo');
+    }
 }

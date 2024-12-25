@@ -37,6 +37,9 @@ return [
     // Modales
     'cancel' => 'Cancelar',
     'confirm' => 'Confirmar',
+
+    // Prestamos
+    
 ];
 
 // Plantilla
