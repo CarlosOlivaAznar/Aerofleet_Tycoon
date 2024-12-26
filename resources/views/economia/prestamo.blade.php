@@ -25,22 +25,22 @@
 
       <div class="resumen">
         <ul>
-            <a href="">
+            <a href="{{ route('economia.contratarPrestamo', ['id' => 1]) }}">
                 <li class="move-xy">
                     <i class='bx bx-credit-card-front'></i>
-                    <h3>Linea de credito</h3>
+                    <h3>{{ __('economy.creditLine') }}</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.contratarPrestamo', ['id' => 2]) }}">
                 <li class="move-xy">
                     <i class='bx bx-coin'></i>
-                    <h3>Inversion a corto plazo</h3>
+                    <h3>{{ __('economy.stInvestment') }}</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.contratarPrestamo', ['id' => 3]) }}">
                 <li class="move-xy">
                     <i class='bx bx-coin-stack' ></i>
-                    <h3>Inversion a largo plazo</h3>
+                    <h3>{{ __('economy.ltInvestment') }}</h3>
                 </li>
             </a>
         </ul>
@@ -53,28 +53,28 @@
         <div class="contenedor">
             <div class="cabecera">
                 <i class='bx bx-wallet'></i>
-                <h3>Pestamo 1</h3>
+                <h3>{{ __('economy.loan') }} 1</h3>
             </div>
             <div class="info">
                 <div class="fila">
-                    <span class="titulo">Total a devolver:</span>
+                    <span class="titulo">{{ __('economy.ttReturned') }}:</span>
                     <span class="texto">150.000.000€</span>
                 </div>
                 <div class="fila">
-                    <span class="titulo">Tipo de interes:</span>
+                    <span class="titulo">{{ __('economy.interestRate') }}:</span>
                     <span class="texto">10%</span>
                 </div>
                 <div class="fila">
-                    <span class="titulo">Fecha de finalizacion:</span>
+                    <span class="titulo">{{ __('economy.endDate') }}:</span>
                     <span class="texto">2024-12-31</span>
                 </div>
                 <div class="fila">
-                    <span class="titulo">Dias restantes:</span>
+                    <span class="titulo">{{ __('economy.daysLeft') }}:</span>
                     <span class="texto">5 dias</span>
                 </div>
                 <div class="boton">
                     <a href="">
-                        Devolver prestamo
+                        {{ __('economy.returnLoan') }}
                     </a>
                 </div>
             </div>
@@ -82,25 +82,19 @@
         <div class="contenedor">
             <div class="cabecera">
                 <i class='bx bx-wallet'></i>
-                <h3>Pestamo 1</h3>
+                <h3>{{ __('economy.loan') }} 2</h3>
             </div>
             <div class="info">
-                <div class="fila">
-                    <span class="titulo">Total a devolver:</span>
-                    <span class="texto">150.000.000€</span>
-                </div>
+                <span class="center">Espacio disponible</span>
             </div>
         </div>
         <div class="contenedor">
             <div class="cabecera">
                 <i class='bx bx-wallet'></i>
-                <h3>Pestamo 1</h3>
+                <h3>{{ __('economy.loan') }} 3</h3>
             </div>
             <div class="info">
-                <div class="fila">
-                    <span class="titulo">Total a devolver:</span>
-                    <span class="texto">150.000.000€</span>
-                </div>
+                <span class="center">Espacio disponible</span>
             </div>
         </div>
       </div>

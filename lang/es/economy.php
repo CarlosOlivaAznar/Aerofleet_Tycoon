@@ -39,6 +39,16 @@ return [
     'confirm' => 'Confirmar',
 
     // Prestamos
+    'creditLine' => 'Línea de Crédito',
+    'stInvestment' => 'Inversión a Corto Plazo',
+    'ltInvestment' => 'Investigación a Largo Plazo',
+    'loan' => 'Préstamo',
+    'ttReturned' => 'Total a devolver',
+    'interestRate' => 'Tipo de interés',
+    'endDate' => 'Fecha de finalización',
+    'daysLeft' => 'Días restantes',
+    'returnLoan' => 'Devolver Préstamo',
+    'takeOutLoan' => 'Contratar Préstamo',
     
 ];
 

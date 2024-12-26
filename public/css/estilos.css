@@ -2150,6 +2150,10 @@ footer .contenidoFooter div p.texto a{
     border: 3px solid var(--dark);
 }
 
+.contenido main .rutas .divRepartido .input.w-100 input{
+    width: 100%;
+}
+
 .contenido main .rutas .input.submit{
     display: flex;
     align-items: center;
@@ -2621,6 +2625,7 @@ MARK: Road Map
 }
 
 .contenido main .contenido-responsivo .contenedor{
+    position: relative;
     width: 100%;
     padding: 15px 25px;
     background-color: var(--light);
@@ -2674,6 +2679,13 @@ MARK: Road Map
 .contenido main .contenido-responsivo .contenedor .info .boton a:hover{
     background-color: var(--dark);
     transition: 0.4s;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Media */

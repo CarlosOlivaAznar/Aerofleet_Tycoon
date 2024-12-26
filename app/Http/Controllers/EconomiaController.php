@@ -114,4 +114,28 @@ class EconomiaController extends Controller
 
         return view('economia.prestamo');
     }
+
+    public function contratarPrestamo($id)
+    {
+        switch ($id) {
+            case 1:
+                $limiteMeses = 3;
+                $limitePrestamo = 5000000;
+                break;
+            case 2:
+                $limiteMeses = 12;
+                $limitePrestamo = 50000000;
+                break;
+            case 3:
+                $limiteMeses = 39;
+                $limitePrestamo = 250000000;
+                break;
+            default:
+                $limiteMeses = 3;
+                $limitePrestamo = 5000000;
+                break;
+        }
+
+        return view('economia.contratarPrestamo');
+    }
 }

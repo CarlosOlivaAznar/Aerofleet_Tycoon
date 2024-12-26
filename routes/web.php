@@ -145,6 +145,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Prestamos
     Route::get('economia/prestamos', [EconomiaController::class, 'prestamos'])->name('economia.prestamos');
+    Route::get('economia/prestamos/{id}', [EconomiaController::class, 'contratarPrestamo'])->name('economia.contratarPrestamo');
 
 });
 

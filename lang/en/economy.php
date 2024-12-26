@@ -38,6 +38,18 @@ return [
     // Modales
     'cancel' => 'Cancel',
     'confirm' => 'Confirm',
+
+    // Prestamos
+    'creditLine' => 'Credit Line',
+    'stInvestment' => 'Short Term Investment',
+    'ltInvestment' => 'Long Term Investment',
+    'loan' => 'Loan',
+    'ttReturned' => 'Total to return',
+    'interestRate' => 'Interest Rate',
+    'endDate' => 'End Date',
+    'daysLeft' => 'Days Left',
+    'returnLoan' => 'Return Loan',
+    'takeOutLoan' => 'Take Out Loan',
 ];
 
 // Plantilla
