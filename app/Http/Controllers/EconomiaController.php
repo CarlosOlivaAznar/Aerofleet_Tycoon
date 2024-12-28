@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Avion;
 use App\Models\Flota;
+use App\Models\Prestamo;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -104,7 +105,6 @@ class EconomiaController extends Controller
         return redirect()->route('economia.leasing');
     }
 
-
     // Prestamos
 
     public function prestamos()
@@ -146,7 +146,6 @@ class EconomiaController extends Controller
     {
         $usuario = User::find(auth()->id());
         $prestamo = $request->prestamo;
-        $meses = $request->meses;
         $interes = $this->calcularTipoInteres($usuario->patrimonio());
 
         if($prestamo > 300000000){
@@ -154,7 +153,15 @@ class EconomiaController extends Controller
             return redirect()->back()->withInput();
         }
 
-        dd($prestamo, $meses, $interes);
+        Prestamo::create([
+            'user_id' => auth()->id(),
+            'prestamo' => $request->prestamo,
+            'interes' => $interes,
+            'fechaFin' => now()->addMonths($request->meses),
+        ]);
+
+        session()->flash('exito', 'Préstamo contratado con éxito');
+        return redirect()->route('economia.prestamos');
     }
 
     private function calcularTipoInteres($patrimonio)
