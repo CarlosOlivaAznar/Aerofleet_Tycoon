@@ -29,16 +29,16 @@
       @include('partials.alertas')
 
       <div class="rutas">
-        <form action="" method="POST" autocomplete="off">
+        <form action="{{ route('economia.prestamoFinalizado') }}" method="POST" autocomplete="off">
           @csrf
           <div class="divRepartido centrado">
             <div class="input w-100">
               <h3>Prestamo</h3>
-              <input type="number" id="prestamo" max="{{ $limitePrestamo }}" onkeyup="totalDevolver()" required>
+              <input type="number" name="prestamo" id="prestamo" max="{{ $limitePrestamo }}" onkeyup="totalDevolver()" required>
             </div>
             <div class="input">
               <h3>Meses</h3>
-              <input type="number" id="meses" min="0" max="{{ $limiteMeses }}" onkeyup="totalDevolver()" required>
+              <input type="number" name="meses" id="meses" min="0" max="{{ $limiteMeses }}" onkeyup="totalDevolver()" required>
             </div>
           </div>
           <div class="input submit">
@@ -63,7 +63,7 @@
           </div>
           <div>
             <h3>Total a devolver por mes:</h3>
-            <p id="interesesPorMes">000€</p>
+            <p id="interesesPorMes">0€</p>
           </div>
         </div>
       </div>
@@ -80,8 +80,6 @@
 
             let total = document.getElementById('interesesPorMes');
             total.innerHTML = formatearPrecio(devolverPorMes + interesesMes);
-
-            console.log(tipoInteres, interesesMes, devolverPorMes);
           }
         }
       </script>

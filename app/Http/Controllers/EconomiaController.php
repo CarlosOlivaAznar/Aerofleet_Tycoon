@@ -128,7 +128,7 @@ class EconomiaController extends Controller
                 break;
             case 3:
                 $limiteMeses = 39;
-                $limitePrestamo = 250000000;
+                $limitePrestamo = 300000000;
                 break;
             default:
                 $limiteMeses = 3;
@@ -140,6 +140,21 @@ class EconomiaController extends Controller
         $tipoInteres = $this->calcularTipoInteres($patrimonio) * 100;
 
         return view('economia.contratarPrestamo', ['limiteMeses' => $limiteMeses, 'limitePrestamo' => $limitePrestamo, 'tipoInteres' => $tipoInteres]);
+    }
+
+    public function prestamoFinalizado(Request $request)
+    {
+        $usuario = User::find(auth()->id());
+        $prestamo = $request->prestamo;
+        $meses = $request->meses;
+        $interes = $this->calcularTipoInteres($usuario->patrimonio());
+
+        if($prestamo > 300000000){
+            session()->flash('error', 'No puedes pedir un préstamo mayor a 300.000.000€');
+            return redirect()->back()->withInput();
+        }
+
+        dd($prestamo, $meses, $interes);
     }
 
     private function calcularTipoInteres($patrimonio)
