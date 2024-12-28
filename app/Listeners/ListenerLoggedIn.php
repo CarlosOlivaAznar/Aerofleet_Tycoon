@@ -31,8 +31,8 @@ class ListenerLoggedIn
     public function handle(UserLoggedIn $event): void
     {
         // Se aumenta el tiempo de ejecucion del script de php
-        ini_set('max_execution_time', '300');
-        
+        set_time_limit(300);
+
         // Si el usuario no se ha logeado ninguna vez no se ejecuta esta funcion
         if(!Sede::where('user_id', $event->user->id)->first()){
             // Actualizamos la fecha actual
