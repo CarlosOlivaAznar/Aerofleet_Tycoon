@@ -136,6 +136,20 @@ class EconomiaController extends Controller
                 break;
         }
 
-        return view('economia.contratarPrestamo');
+        $patrimonio = User::find(auth()->id())->patrimonio();
+        $tipoInteres = $this->calcularTipoInteres($patrimonio) * 100;
+
+        return view('economia.contratarPrestamo', ['limiteMeses' => $limiteMeses, 'limitePrestamo' => $limitePrestamo, 'tipoInteres' => $tipoInteres]);
+    }
+
+    private function calcularTipoInteres($patrimonio)
+    {
+        if($patrimonio <= 200000000){
+            return 0.10;
+        } elseif($patrimonio >= 600000000) {
+            return 0.05;
+        } else {
+            return round(0.10 - (0.10 / (600000000 - 200000000)) * ($patrimonio - 200000000), 4);
+        }
     }
 }
