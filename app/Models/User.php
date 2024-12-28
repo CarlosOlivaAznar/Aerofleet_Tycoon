@@ -76,6 +76,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Bugreport::class);
     }
 
+    public function prestamo()
+    {
+        return $this->hasMany(Prestamo::class);
+    }
+
     public function getNumEspacios()
     {
         $numEspacios = 0;
