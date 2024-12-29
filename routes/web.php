@@ -147,6 +147,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('economia/prestamos', [EconomiaController::class, 'prestamos'])->name('economia.prestamos');
     Route::get('economia/prestamos/{id}', [EconomiaController::class, 'contratarPrestamo'])->name('economia.contratarPrestamo');
     Route::post('economia/prestamos/contratar', [EconomiaController::class, 'prestamoFinalizado'])->name('economia.prestamoFinalizado');
+    Route::get('economia/devolverPrestamo/{id}', [EconomiaController::class, 'devolverPrestamo'])->name('economia.devolverPrestamo');
 
 });
 

@@ -84,7 +84,7 @@
                     </span>
                 </div>
                 <div class="boton">
-                    <a href="">
+                    <a data-modal-target="modalDevolverPrestamo{{ $prestamo->id }}">
                         {{ __('economy.returnLoan') }}
                     </a>
                 </div>
@@ -93,6 +93,28 @@
         @php
             $espacios++;
         @endphp
+        <!-- Modales devolver pretamo -->
+        <div class="modal" id="modalDevolverPrestamo{{ $prestamo->id }}">
+            <div class="contenido-modal">
+            <div class="cabecera-modal">
+                <span class="cerrar-modal">&times;</span>
+                <h2></h2>
+            </div>
+            <div class="cuerpo-modal">
+
+                <p></p><br>
+                <p> 
+                <span class="verde">{{number_format($prestamo->prestamo, 0, ',', '.')}}€</span></p>
+                
+            </div>
+            <div class="footer-modal">
+                <div class="botones">
+                <span class="cancelar">{{ __('economy.cancel') }}</span>
+                <a href="{{ route('economia.devolverPrestamo', ["id" => $prestamo->id]) }}" class="aceptar">{{ __('economy.confirm') }}</a>
+                </div>
+            </div>
+            </div>
+        </div> 
         @endforeach
 
 

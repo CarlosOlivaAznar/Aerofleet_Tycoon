@@ -203,4 +203,23 @@ class EconomiaController extends Controller
             return round(0.10 - (($patrimonio - 200000000) / (600000000 - 200000000)) * (0.10 - 0.05), 4);
         }
     }
+
+    public function devolverPrestamo($id)
+    {
+        $prestamo = Prestamo::find($id);
+        $usuario = User::find(auth()->id());
+
+        if($usuario->saldo - $prestamo->prestamo < 0){
+            session()->flash('error', 'No tienes suficiente saldo para devolver el préstamo');
+            return redirect()->route('economia.prestamos');
+        }
+
+        $usuario->saldo -= $prestamo->prestamo;
+        $usuario->update();
+
+        $prestamo->delete();
+
+        session()->flash('exito', 'Préstamo devuelto con éxito');
+        return redirect()->route('economia.prestamos');
+    }
 }
