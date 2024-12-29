@@ -50,6 +50,20 @@ return [
     'daysLeft' => 'Days Left',
     'returnLoan' => 'Return Loan',
     'takeOutLoan' => 'Take Out Loan',
+    'returnLoan' => 'Return Loan',
+    'rlConfirmation' => 'Are you sure you want to return this loan?',
+    'rlInfo' => 'The loan will be returned and you will pay: ',
+    'months' => 'Months',
+    'monthLimit' => 'Month Limit',
+    'LoanLimit' => 'Loan Limit',
+    'totalToReturn' => 'Total to return per month',
+
+    'loanLimitexceeded' => 'You cannot request a loan greater than 300,000,000€',
+    'totalLoanLimitExcedeed' => 'Loan limit reached, you cannot have more than 300,000,000€ borrowed',
+    'loanNumberLimit' => 'You cannot have more than 3 active loans',
+    'loanSuccess' => 'The loan has been contracted successfully.',
+    'neBalance' => 'You do not have enough balance to return the loan',
+    'loanReturned' => 'Loan returned successfully.',
 ];
 
 // Plantilla

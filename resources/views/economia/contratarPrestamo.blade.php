@@ -33,11 +33,11 @@
           @csrf
           <div class="divRepartido centrado">
             <div class="input w-100">
-              <h3>Prestamo</h3>
+              <h3>{{ __('economy.loan') }}</h3>
               <input type="number" name="prestamo" id="prestamo" max="{{ $limitePrestamo }}" onkeyup="totalDevolver()" required>
             </div>
             <div class="input">
-              <h3>Meses</h3>
+              <h3>{{ __('economy.months') }}</h3>
               <input type="number" name="meses" id="meses" min="0" max="{{ $limiteMeses }}" onkeyup="totalDevolver()" required>
             </div>
           </div>
@@ -50,19 +50,19 @@
       <div class="rutas">
         <div class="divRepartido centrado m-0">
           <div>
-            <h3>Tipo de interes</h3>
+            <h3>{{ __('economy.interestRate') }}</h3>
             <p>{{ $tipoInteres }}%</p>
           </div>
           <div>
-            <h3>Limite de meses</h3>
+            <h3>{{ __('economy.monthLimit') }}</h3>
             <p>{{ $limiteMeses }}</p>
           </div>
           <div>
-            <h3>Limite del prestamo</h3>
+            <h3>{{ __('economy.LoanLimit') }}</h3>
             <p>{{ number_format($limitePrestamo, 0, ',', '.') }}€</p>
           </div>
           <div>
-            <h3>Total a devolver por mes:</h3>
+            <h3>{{ __('economy.totalToReturn') }}</h3>
             <p id="interesesPorMes">0€</p>
           </div>
         </div>

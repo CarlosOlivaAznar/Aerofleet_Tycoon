@@ -162,7 +162,7 @@ class EconomiaController extends Controller
         $interes = $this->calcularTipoInteres($usuario->patrimonio());
 
         if($prestamo > 300000000){
-            session()->flash('error', 'No puedes pedir un préstamo mayor a 300.000.000€');
+            session()->flash('error', trans('economy.loanLimitexceeded'));
             return redirect()->back()->withInput();
         }
 
@@ -173,12 +173,12 @@ class EconomiaController extends Controller
         }
 
         if($prestado + $request->prestamo > 300000000){
-            session()->flash('error', 'Limite de prestamo alcanzado, no se puede tener prestado mas de 300.000.000€');
+            session()->flash('error', trans('economy.totalLoanLimitExcedeed'));
             return redirect()->route('economia.prestamos');
         }
 
         if(count($prestamos) >= 3){
-            session()->flash('error', 'No puedes tener más de 3 préstamos activos');
+            session()->flash('error', trans('economy.loanNumberLimit'));
             return redirect()->route('economia.prestamos');
         }
 
@@ -189,7 +189,7 @@ class EconomiaController extends Controller
             'fechaFin' => now()->addMonths($request->meses),
         ]);
 
-        session()->flash('exito', 'Préstamo contratado con éxito');
+        session()->flash('exito', trans('economy.loanSuccess'));
         return redirect()->route('economia.prestamos');
     }
 
@@ -210,7 +210,7 @@ class EconomiaController extends Controller
         $usuario = User::find(auth()->id());
 
         if($usuario->saldo - $prestamo->prestamo < 0){
-            session()->flash('error', 'No tienes suficiente saldo para devolver el préstamo');
+            session()->flash('error', trans('economy.neBalance'));
             return redirect()->route('economia.prestamos');
         }
 
@@ -219,7 +219,7 @@ class EconomiaController extends Controller
 
         $prestamo->delete();
 
-        session()->flash('exito', 'Préstamo devuelto con éxito');
+        session()->flash('exito', trans('economy.loanReturned'));
         return redirect()->route('economia.prestamos');
     }
 }

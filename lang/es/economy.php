@@ -49,6 +49,20 @@ return [
     'daysLeft' => 'Días restantes',
     'returnLoan' => 'Devolver Préstamo',
     'takeOutLoan' => 'Contratar Préstamo',
+    'returnLoan' => 'Devolver Préstamo',
+    'rlConfirmation' => '¿Estás seguro que quieres devolver este préstamo?',
+    'rlInfo' => 'El préstamo será devuelto y se te descontará de tu saldo un total de: ',
+    'months' => 'Meses',
+    'monthLimit' => 'Límite de meses',
+    'LoanLimit' => 'Límite de préstamo',
+    'totalToReturn' => 'Total a devolver por mes',
+
+    'loanLimitexceeded' => 'No puedes pedir un préstamo mayor a 300.000.000€',
+    'totalLoanLimitExcedeed' => 'Limite de prestamo alcanzado, no se puede tener prestado mas de 300.000.000€',
+    'loanNumberLimit' => 'No puedes tener más de 3 préstamos activos',
+    'loanSuccess' => 'Préstamo contratado con éxito',
+    'neBalance' => 'No tienes suficiente saldo para devolver el préstamo',
+    'loanReturned' => 'Préstamo devuelto con éxito',
     
 ];
 

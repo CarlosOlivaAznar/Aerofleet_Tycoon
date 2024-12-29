@@ -98,13 +98,13 @@
             <div class="contenido-modal">
             <div class="cabecera-modal">
                 <span class="cerrar-modal">&times;</span>
-                <h2></h2>
+                <h2>{{ __('economy.returnLoan') }}</h2>
             </div>
             <div class="cuerpo-modal">
 
-                <p></p><br>
-                <p> 
-                <span class="verde">{{number_format($prestamo->prestamo, 0, ',', '.')}}€</span></p>
+                <p>{{ __('economy.rlConfirmation') }}</p><br>
+                <p>{{ __('economy.rlInfo') }}
+                <span class="rojo">{{ number_format($prestamo->prestamo, 0, ',', '.')}}€</span></p>
                 
             </div>
             <div class="footer-modal">
