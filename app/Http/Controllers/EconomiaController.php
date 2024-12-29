@@ -119,10 +119,8 @@ class EconomiaController extends Controller
             $prestado += $prestamo->prestamo;
         }
 
-        if($prestado > 225000000){
-            $loops = 2;
-        } elseif($prestado > 79000000){
-            $loops = 1;
+        if($prestado > 299999999){
+            $loops = 3;
         } else {
             $loops = 0;
         }
@@ -166,6 +164,22 @@ class EconomiaController extends Controller
         if($prestamo > 300000000){
             session()->flash('error', 'No puedes pedir un préstamo mayor a 300.000.000€');
             return redirect()->back()->withInput();
+        }
+
+        $prestamos = Prestamo::where('user_id', auth()->id())->get();
+        $prestado = 0;
+        foreach ($prestamos as $prestamo){
+            $prestado += $prestamo->prestamo;
+        }
+
+        if($prestado + $request->prestamo > 300000000){
+            session()->flash('error', 'Limite de prestamo alcanzado, no se puede tener prestado mas de 300.000.000€');
+            return redirect()->route('economia.prestamos');
+        }
+
+        if(count($prestamos) >= 3){
+            session()->flash('error', 'No puedes tener más de 3 préstamos activos');
+            return redirect()->route('economia.prestamos');
         }
 
         Prestamo::create([
