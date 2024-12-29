@@ -50,27 +50,38 @@
       @include('partials.alertas')
 
       <div class="contenido-responsivo">
+        @php
+            // variable para controlar los espacios de los prestamos
+            $espacios = 0;
+        @endphp
+        @foreach ($prestamos as $prestamo)
         <div class="contenedor">
             <div class="cabecera">
                 <i class='bx bx-wallet'></i>
-                <h3>{{ __('economy.loan') }} 1</h3>
+                <h3>{{ __('economy.loan') }} {{ $loop->index + 1 }}</h3>
             </div>
             <div class="info">
                 <div class="fila">
                     <span class="titulo">{{ __('economy.ttReturned') }}:</span>
-                    <span class="texto">150.000.000€</span>
+                    <span class="texto">{{ number_format($prestamo->prestamo, 0, ',', '.') }}€</span>
                 </div>
                 <div class="fila">
                     <span class="titulo">{{ __('economy.interestRate') }}:</span>
-                    <span class="texto">10%</span>
+                    <span class="texto">{{ $prestamo->interes * 100 }}%</span>
                 </div>
                 <div class="fila">
                     <span class="titulo">{{ __('economy.endDate') }}:</span>
-                    <span class="texto">2024-12-31</span>
+                    <span class="texto">{{ $prestamo->fechaFin }}</span>
                 </div>
                 <div class="fila">
                     <span class="titulo">{{ __('economy.daysLeft') }}:</span>
-                    <span class="texto">5 dias</span>
+                    <span class="texto">
+                        @php
+                            $fechaFin = Carbon\Carbon::createFromFormat('Y-m-d', $prestamo->fechaFin);
+                            $diasRestantes = $fechaFin->diffInDays(Carbon\Carbon::now());
+                            echo $diasRestantes;
+                        @endphp
+                    </span>
                 </div>
                 <div class="boton">
                     <a href="">
@@ -79,25 +90,26 @@
                 </div>
             </div>
         </div>
-        <div class="contenedor">
-            <div class="cabecera">
-                <i class='bx bx-wallet'></i>
-                <h3>{{ __('economy.loan') }} 2</h3>
+        @php
+            $espacios++;
+        @endphp
+        @endforeach
+
+
+        @for ($i = 0; $espacios < 3 - $loops; $i++)
+            <div class="contenedor">
+                <div class="cabecera">
+                    <i class='bx bx-wallet'></i>
+                    <h3>{{ __('economy.loan') }} {{ $espacios + 1 }}</h3>
+                </div>
+                <div class="info">
+                    <span class="center">Espacio disponible</span>
+                </div>
             </div>
-            <div class="info">
-                <span class="center">Espacio disponible</span>
-            </div>
-        </div>
-        <div class="contenedor">
-            <div class="cabecera">
-                <i class='bx bx-wallet'></i>
-                <h3>{{ __('economy.loan') }} 3</h3>
-            </div>
-            <div class="info">
-                <span class="center">Espacio disponible</span>
-            </div>
-        </div>
-      </div>
+            @php
+                $espacios++;    
+            @endphp
+        @endfor
       
       <script src="{{ asset('js/modals.js') }}"></script>
     </main>

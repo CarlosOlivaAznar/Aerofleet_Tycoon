@@ -112,7 +112,22 @@ class EconomiaController extends Controller
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
 
-        return view('economia.prestamo');
+        $prestamos = Prestamo::where('user_id', auth()->id())->get();
+
+        $prestado = 0;
+        foreach ($prestamos as $prestamo){
+            $prestado += $prestamo->prestamo;
+        }
+
+        if($prestado > 225000000){
+            $loops = 2;
+        } elseif($prestado > 79000000){
+            $loops = 1;
+        } else {
+            $loops = 0;
+        }
+
+        return view('economia.prestamo', ['prestamos' => $prestamos, 'loops' => $loops]);
     }
 
     public function contratarPrestamo($id)
@@ -171,7 +186,7 @@ class EconomiaController extends Controller
         } elseif($patrimonio >= 600000000) {
             return 0.05;
         } else {
-            return round(0.10 - (0.10 / (600000000 - 200000000)) * ($patrimonio - 200000000), 4);
+            return round(0.10 - (($patrimonio - 200000000) / (600000000 - 200000000)) * (0.10 - 0.05), 4);
         }
     }
 }
