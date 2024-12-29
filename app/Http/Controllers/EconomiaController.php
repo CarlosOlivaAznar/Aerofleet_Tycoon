@@ -189,6 +189,9 @@ class EconomiaController extends Controller
             'fechaFin' => now()->addMonths($request->meses),
         ]);
 
+        $usuario->saldo += $request->prestamo;
+        $usuario->update();
+
         session()->flash('exito', trans('economy.loanSuccess'));
         return redirect()->route('economia.prestamos');
     }

@@ -2644,6 +2644,7 @@ MARK: Road Map
     display: flex;
     flex-direction: column;
     gap: 15px;
+    min-height: 200px;
 }
 
 .contenido main .contenido-responsivo .contenedor .info .fila{
