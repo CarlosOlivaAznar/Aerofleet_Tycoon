@@ -9,6 +9,7 @@ use App\Models\Ruta;
 use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
+use App\Models\Prestamo;
 use App\Models\Sede;
 use App\Services\decodificadorMETAR;
 use Carbon\Carbon;
@@ -87,6 +88,9 @@ class ListenerLoggedIn
 
                 // Control de leasings
                 $this->controlLeasing($i + 1);
+
+                // Cobrar Prestamos
+                $this->cobrarPrestamos();
             }
         }
 
@@ -122,6 +126,9 @@ class ListenerLoggedIn
 
             // Control de leasings
             $this->controlLeasing(0);
+
+            // Cobrar Prestamos
+            $this->cobrarPrestamos();
 
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
@@ -745,5 +752,23 @@ class ListenerLoggedIn
         $metarInfo = Http::get("https://aviationweather.gov/api/data/metar?ids=$icao&date=$date")->body();
         error_log("Se ha obtenido el metar $metarInfo");
         return $this->metarService->decode($metarInfo);
+    }
+
+    function cobrarPrestamos()
+    {
+        $prestamos = Prestamo::where('user_id', auth()->id())->get();
+        $user = User::find(auth()->id());
+
+        foreach ($prestamos as $prestamo) {
+            $cuota = $prestamo->cuotaPorDia();
+
+            $prestamo->devuelto += $cuota;
+            $prestamo->update();
+
+            $user->saldo -= $cuota;
+            $user->update();
+
+            error_log("Cobrando cuota de prestamo $cuota");
+        }
     }
 }

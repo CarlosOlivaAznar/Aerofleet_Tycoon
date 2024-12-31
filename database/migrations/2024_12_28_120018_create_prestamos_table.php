@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('prestamo');
+            $table->unsignedBigInteger('devuelto')->default(0);
             $table->unsignedFloat('interes');
             $table->date('fechaFin');
             $table->timestamps();
