@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CompetenciaController;
 use App\Http\Controllers\EconomiaController;
 use App\Http\Controllers\ProfileController;
@@ -78,6 +79,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home.index');
     Route::get('home/company', [HomeController::class, 'company'])->name('home.company');
     Route::post('home/company/submit', [HomeController::class, 'submit'])->name('home.submit');
+    Route::get('/loading', [HomeController::class, 'loading'])->name('home.loading');
 });
 
 // Ruta mapa

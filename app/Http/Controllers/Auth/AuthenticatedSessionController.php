@@ -36,12 +36,12 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // Crea el evento de usuario logeado
-        event(new UserLoggedIn(auth()->user()));
+        /* event(new UserLoggedIn(auth()->user())); */
 
         // Pone el idioma del usuario
         Session::put('locale', auth()->user()->preferred_language);
 
-        return redirect()->route('home.index');
+        return redirect()->route('home.loading');
     }
 
     /**

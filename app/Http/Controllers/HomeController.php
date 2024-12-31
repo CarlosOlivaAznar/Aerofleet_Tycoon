@@ -75,4 +75,9 @@ class HomeController extends Controller
 
         return redirect()->route('home.index');
     }
+
+    public function loading()
+    {
+        return view('home.loading');
+    }
 }

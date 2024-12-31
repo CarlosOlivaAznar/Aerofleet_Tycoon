@@ -23,8 +23,8 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 // Crea el evento de usuario logeado
-                event(new UserLoggedIn(auth()->user()));
-                return redirect(RouteServiceProvider::HOME);
+                /* event(new UserLoggedIn(auth()->user())); */
+                return redirect()->route('home.loading');
             }
         }
 
