@@ -65,6 +65,23 @@ return [
     'visArrEvent2' => 'ha sufrido un accidente menor al aterrizar debido a la baja visibilidad, el coste de la reparación ha sido de:',
     'visArrEvent3' => 'se ha desviado a otro aeropuerto debido a la baja visibilidad, se ha facilitado un bus a los pasajeros para llegar al aeropuerto de origen, el gasto del bus ha sido de:',
 
+
+    // Mensajes de loading
+    'txtLoading1' => 'Calculando Rutas',
+    'txtLoading2' => 'Repostando Aviones',
+    'txtLoading3' => 'Embarcando Pasajeros',
+    'txtLoading4' => 'Fumigando civiles',
+    'txtLoading5' => 'Los pilotos se han perdido',
+    'txtLoading6' => '¿Seguro que teniamos combustible de sobra?',
+    'txtLoading7' => 'Verificando el clima',
+    'txtLoading8' => 'Realizando el mantenimiento',
+    'txtLoading9' => 'Contactando con control aéreo',
+    'txtLoading10' => 'Pagando las tasas de aterrizaje',
+    'txtLoading11' => 'Llegando a la terminal',
+    'txtLoading12' => 'Buscando el camino… y las maletas perdidas',
+
+
+
 ];
 
 // Plantilla
