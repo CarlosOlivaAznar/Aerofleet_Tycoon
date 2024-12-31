@@ -762,13 +762,22 @@ class ListenerLoggedIn
         foreach ($prestamos as $prestamo) {
             $cuota = $prestamo->cuotaPorDia();
 
-            $prestamo->devuelto += $cuota;
-            $prestamo->update();
+            if($prestamo->devuelto + $cuota >= $prestamo->prestamo){
+                $user->saldo -= $prestamo->prestamo - $prestamo->devuelto;
 
-            $user->saldo -= $cuota;
-            $user->update();
+                $user->update();
+                $prestamo->delete();
 
-            error_log("Cobrando cuota de prestamo $cuota");
+                error_log("Prestamo devuelto la ultima cuota ha sido de " . $prestamo->prestamo - $prestamo->devuelto);
+            } else {
+                $prestamo->devuelto += $cuota;
+                $prestamo->update();
+    
+                $user->saldo -= $cuota;
+                $user->update();
+
+                error_log("Cobrando cuota de prestamo $cuota");
+            }
         }
     }
 }
