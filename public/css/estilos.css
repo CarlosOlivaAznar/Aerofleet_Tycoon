@@ -733,6 +733,18 @@ MARK: Tooltips
     position: relative;
 }
 
+.tooltip.icon-tooltip{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tooltip.icon-tooltip .bx{
+    font-size: 1.5rem;
+}
+
 .tooltip .tooltiptext{
     visibility: hidden;
     width: 120px;
