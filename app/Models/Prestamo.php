@@ -35,4 +35,9 @@ class Prestamo extends Model
 
         return $cuota + $intereses;
     }
+
+    public function devolver()
+    {
+        return $this->prestamo - $this->devuelto;
+    }
 }

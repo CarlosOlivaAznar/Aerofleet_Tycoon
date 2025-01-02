@@ -96,21 +96,67 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $patrimonio = $this->saldo;
         
-        foreach ($this->flota as $flota) {
-            if(!$flota->leasing){
-                $patrimonio += $flota->avion->precio;
-            }
-        }
+        $patrimonio += $this->patrimonioFlota();
 
-        foreach ($this->espacio as $espacio) {
-            $patrimonio += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
-        }
+        $patrimonio += $this->patrimonioEspacios();
 
-        if($this->sede){
-            $patrimonio += count($this->sede->hangar) * $this->sede->costeHangar();
+        $patrimonio += $this->patrimonioSede();
+
+        $patrimonio -= $this->patrimonioLeasings();
+
+        foreach ($this->prestamo as $prestamo) {
+            $patrimonio -= ($prestamo->devolver());
         }
 
         return $patrimonio;
+    }
+
+    public function patrimonioFlota()
+    {
+        $valor = 0;
+
+        foreach ($this->flota as $flota) {
+            if(!$flota->leasing){
+                $valor += $flota->avion->precio;
+            }
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioEspacios()
+    {
+        $valor = 0;
+
+        foreach ($this->espacio as $espacio) {
+            $valor += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioSede()
+    {
+        $valor = 0;
+
+        if($this->sede){
+            $valor += count($this->sede->hangar) * $this->sede->costeHangar();
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioLeasings()
+    {
+        $valor = 0;
+
+        foreach ($this->flota as $avion) {
+            if($avion->leasing){
+                $valor += $avion->avion->leasePPD() * 31;
+            }
+        }
+
+        return $valor;
     }
 
 

@@ -54,6 +54,7 @@ return [
     'rlConfirmation' => 'Are you sure you want to return this loan?',
     'rlInfo' => 'The loan will be returned and you will pay: ',
     'months' => 'Months',
+    'month' => 'month',
     'monthLimit' => 'Month Limit',
     'LoanLimit' => 'Loan Limit',
     'totalToReturn' => 'Total to return per month',

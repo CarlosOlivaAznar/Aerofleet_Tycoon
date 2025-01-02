@@ -63,7 +63,7 @@
             <div class="info">
                 <div class="fila">
                     <span class="titulo">{{ __('economy.ttReturned') }}:</span>
-                    <span class="texto">{{ number_format($prestamo->prestamo - $prestamo->devuelto, 0, ',', '.') }}€</span>
+                    <span class="texto">{{ number_format($prestamo->devolver(), 0, ',', '.') }}€</span>
                 </div>
                 <div class="fila">
                     <span class="titulo">{{ __('economy.interestRate') }}:</span>

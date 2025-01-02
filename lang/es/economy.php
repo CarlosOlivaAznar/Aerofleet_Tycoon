@@ -53,6 +53,7 @@ return [
     'rlConfirmation' => '¿Estás seguro que quieres devolver este préstamo?',
     'rlInfo' => 'El préstamo será devuelto y se te descontará de tu saldo un total de: ',
     'months' => 'Meses',
+    'month' => 'Mes',
     'monthLimit' => 'Límite de meses',
     'LoanLimit' => 'Límite de préstamo',
     'totalToReturn' => 'Total a devolver por mes',

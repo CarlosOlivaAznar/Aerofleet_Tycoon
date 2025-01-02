@@ -7,15 +7,31 @@ use App\Models\Avion;
 use App\Models\Flota;
 use App\Models\Prestamo;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EconomiaController extends Controller
 {
     public function index()
     {
+        $user = User::find(auth()->id());
+
+        $deudasCP = 0;
+        $deudasLP = 0;
+        foreach ($user->prestamo as $prestamo) {
+            $fechaFin = Carbon::createFromFormat('Y-m-d', $prestamo->fechaFin);
+            $diasRestantes = $fechaFin->diffInDays(Carbon::now());
+
+            if($diasRestantes >= 365){
+                $deudasLP += $prestamo->devolver();
+            } else {
+                $deudasCP += $prestamo->devolver();
+            }
+        }
+
         $saldo = User::getSaldoString();
         session(['saldo' => $saldo]);
-        return view('economia.index');
+        return view('economia.index', ['user' => $user, 'deudasCP' => $deudasCP, 'deudasLP' => $deudasLP]);
     }
 
     public function leasing()
