@@ -5,7 +5,22 @@ return [
     'leasing' => 'Leasing',
     'loan' => 'Loan',
     'shares' => 'Shares',
+    'balance' => 'Company Balance',
+    'currentAssets' => 'Current Assets',
+    'nonCurrentAssets' => 'Non-current Assets',
+    'cash' => 'Cash:',
+    'sharesValue' => 'Shares Value:',
+    'hangarsValue' => 'Hangars:',
+    'aircraftValue' => 'Aircraft:',
+    'slotsValue' => 'Slots:',
 
+    'currentLiabilities' => 'Current Liabilities',
+    'nonCurrentLiabilities' => 'Non-current Liabilities',
+    'shortTermDebt' => 'Short Term Debt:',
+    'longTermDebt' => 'Long Term Debt:',
+    'leasings' => 'Leasings:',
+
+    'total' => 'Total',
 
     // Leasing
     'leasedPlanes' => 'Leased Planes',

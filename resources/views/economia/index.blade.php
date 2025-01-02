@@ -44,56 +44,56 @@
       <div class="balance">
         <div class="cabecera">
             <i class='bx bx-coin'></i>
-            <h3>Balance de la empresa</h3>
+            <h3>{{ __('economy.balance') }}</h3>
         </div>
         <div class="contenido-balance">
             <div class="activo">
-                <h4>Activo corriente</h4>
+                <h4>{{ __('economy.currentAssets') }}</h4>
                 <div>
-                    <span>Saldo:</span>
+                    <span>{{ __('economy.cash') }}</span>
                     <span>{{ number_format($user->saldo, 0, ',', '.') }}€</span>
                 </div>
                 <div>
-                    <span>Acciones:</span>
+                    <span>{{ __('economy.sharesValue') }}</span>
                     <span>{{ number_format(0, 0, ',', '.') }}€</span>
                 </div>
-                <h4>Activo no corriente</h4>
+                <h4>{{ __('economy.nonCurrentAssets') }}</h4>
                 <div>
-                    <span>Hangares:</span>
+                    <span>{{ __('economy.hangarsValue') }}</span>
                     <span>{{ number_format($user->patrimonioSede() , 0, ',', '.') }}€</span>
                 </div>
                 <div>
-                    <span>Aviones:</span>
+                    <span>{{ __('economy.aircraftValue') }}</span>
                     <span>{{ number_format($user->patrimonioFlota(), 0, ',', '.') }}€</span>
                 </div>
                 <div>
-                    <span>espacios:</span>
+                    <span>{{ __('economy.slotsValue') }}</span>
                     <span>{{ number_format($user->patrimonioEspacios(), 0, ',', '.') }}€</span>
                 </div>
                 <div class="total">
-                    <span>Total:</span>
+                    <span>{{ __('economy.total') }}</span>
                     <span class="verde">{{  number_format(
                         $user->saldo + $user->patrimonioSede() + $user->patrimonioFlota() + $user->patrimonioEspacios()
                     , 0, ',', '.') }}€</span>
                 </div>
             </div>
             <div class="pasivo">
-                <h4>Pasivo corriente</h4>
+                <h4>{{ __('economy.currentLiabilities') }}</h4>
                 <div>
-                    <span>Deudas a corto plazo:</span>
+                    <span>{{ __('economy.shortTermDebt') }}</span>
                     <span>{{ number_format($deudasCP, 0, ',', '.') }}€</span>
                 </div>
                 <div>
-                    <span>Leasings:</span>
+                    <span>{{ __('economy.leasings') }}</span>
                     <span>{{ number_format($user->patrimonioLeasings(), 0, ',', '.') }}€/{{ __('economy.month') }}</span>
                 </div>
-                <h4>Pasivo no corriente:</h4>
+                <h4>{{ __('economy.nonCurrentLiabilities') }}</h4>
                 <div>
-                    <span>Deudas a largo plazo:</span>
+                    <span>{{ __('economy.longTermDebt') }}</span>
                     <span>{{ number_format($deudasLP, 0, ',', '.') }}€</span>
                 </div>
                 <div class="total">
-                    <span>Total:</span>
+                    <span>{{ __('economy.total') }}</span>
                     <span class="rojo">{{  number_format(
                         $deudasCP + $deudasLP + $user->patrimonioLeasings()
                     , 0, ',', '.') }}€</span>

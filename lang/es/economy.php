@@ -5,7 +5,24 @@ return [
     'leasing' => 'Leasing',
     'loan' => 'Prestamos',
     'shares' => 'Acciones',
+    'balance' => 'Balance de la Aerolínea',
+    'currentAssets' => 'Activos Corrientes',
+    'nonCurrentAssets' => 'Activo No Corriente',
+    'cash' => 'Efectivo:',
+    'sharesValue' => 'Acciones:',
+    'hangarsValue' => 'Hangares:',
+    'aircraftValue' => 'Aviones:',
+    'slotsValue' => 'Espacios:',
 
+    'currentLiabilities' => 'Pasivo Corriente',
+    'nonCurrentLiabilities' => 'Pasivo No Corriente',
+    'shortTermDebt' => 'Deudas a Corto Plazo:',
+    'longTermDebt' => 'Deudas a Largo Plazo:',
+    'leasings' => 'Leasings:',
+    
+    'total' => 'Total',
+
+    //{{ __('economy.currentAssets') }}
 
     // Leasing
     'leasedPlanes' => 'Aviones Arrendados',
