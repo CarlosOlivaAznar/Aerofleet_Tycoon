@@ -104,7 +104,7 @@
 
                 <p>{{ __('economy.rlConfirmation') }}</p><br>
                 <p>{{ __('economy.rlInfo') }}
-                <span class="rojo">{{ number_format($prestamo->prestamo, 0, ',', '.')}}€</span></p>
+                <span class="rojo">{{ number_format($prestamo->prestamo - $prestamo->devuelto, 0, ',', '.')}}€</span></p>
                 
             </div>
             <div class="footer-modal">

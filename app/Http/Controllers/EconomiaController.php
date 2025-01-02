@@ -211,13 +211,14 @@ class EconomiaController extends Controller
     {
         $prestamo = Prestamo::find($id);
         $usuario = User::find(auth()->id());
+        $devolver = $prestamo->prestamo - $prestamo->devuelto;
 
-        if($usuario->saldo - $prestamo->prestamo < 0){
+        if($usuario->saldo - $devolver < 0){
             session()->flash('error', trans('economy.neBalance'));
             return redirect()->route('economia.prestamos');
         }
 
-        $usuario->saldo -= $prestamo->prestamo;
+        $usuario->saldo -= $devolver;
         $usuario->update();
 
         $prestamo->delete();
