@@ -152,7 +152,7 @@ class ListenerLoggedIn
         if($diferencia > -1) {
             BeneficiosHistorico::create([
                 'user_id' => auth()->id(),
-                'saldo' => $event->user->saldo,
+                'saldo' => $event->user->patrimonio(),
                 'fecha' => now(),
             ]);
         }
