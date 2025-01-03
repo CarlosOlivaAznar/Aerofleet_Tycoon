@@ -5850,6 +5850,7 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
         /* ------------------ */
         /* Aeropuertos Kosovo */
         /* ------------------ */
@@ -5870,11 +5871,183 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* ---------------------- */
+        /* Aeropuertos Montenegro */
+        /* ---------------------- */
+        /* 
+        MARK: Motenegro
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LYPG',
+            'pais' => '4O',
+            'nombre' => 'Podgorica Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => 42.363152,
+            'longitud' => 19.250989,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYTV',
+            'pais' => '4O',
+            'nombre' => 'Tivat Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 42.411732,
+            'longitud' => 18.716039,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Albania */
+        /* ------------------- */
+        /* 
+        MARK: albania
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LATI',
+            'pais' => 'ZA',
+            'nombre' => 'Tirana International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 41.414176,
+            'longitud' => 19.718628,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LAKU',
+            'pais' => 'ZA',
+            'nombre' => 'Kukes International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.036066,
+            'longitud' => 20.416645,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------------------- */
+        /* Aeropuertos Macedonia del norte */
+        /* ------------------------------- */
+        /* 
+        MARK: Macedonia del norte
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LWOH',
+            'pais' => 'Z3',
+            'nombre' => 'Ohrid Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 41.181671,
+            'longitud' => 20.743915,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LWSK',
+            'pais' => 'Z3',
+            'nombre' => 'Skopje International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 41.959984,
+            'longitud' => 21.623664,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------- */
+        /* Aeropuertos Bulgaria */
+        /* -------------------- */
+        /* 
+        MARK: Bulgaria
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LBBG',
+            'pais' => 'LZ',
+            'nombre' => 'Burgas Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 42.568394,
+            'longitud' => 27.514649,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBPD',
+            'pais' => 'LZ',
+            'nombre' => 'Plovdiv Airport',
+            'espaciosTotales' => 27,
+            'costeOperacional' => 270,
+            'latitud' => 42.068538,
+            'longitud' => 24.851421,
+            'demanda' => 0.53,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBSF',
+            'pais' => 'LZ',
+            'nombre' => 'Sofia Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.694799,
+            'longitud' => 23.413244,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBWN',
+            'pais' => 'LZ',
+            'nombre' => 'Varna Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.233350,
+            'longitud' => 27.826321,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'YU',
+            'pais' => 'LZ',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
