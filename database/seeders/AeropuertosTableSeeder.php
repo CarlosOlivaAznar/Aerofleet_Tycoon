@@ -6043,11 +6043,62 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+        /* -------------------- */
+        /* Aeropuertos Bielorrusia */
+        /* -------------------- */
+        /* 
+        MARK: Bielorrusia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'UMBB',
+            'pais' => 'EW',
+            'nombre' => 'Brest Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 52.109192,
+            'longitud' => 23.897291,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'UMGG',
+            'pais' => 'EW',
+            'nombre' => 'Gomel Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 52.526145,
+            'longitud' => 31.014801,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'UMMG',
+            'pais' => 'EW',
+            'nombre' => 'Grodno Hrodna Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 50,
+            'latitud' => 53.605847,
+            'longitud' => 24.050407,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'LZ',
+            'pais' => 'EW',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
