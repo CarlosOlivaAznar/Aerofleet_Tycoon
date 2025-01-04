@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\UserLoggedIn;
+use App\Models\Accion;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Models\Ruta;
@@ -243,7 +244,22 @@ class ListenerLoggedIn
         error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio, ($ingresos ingresos, $gastos gastos)");
 
         $user = User::where('id', auth()->id())->first();
-        $user->saldo += $beneficio;
+
+        // Control de propiedad de la empresa y reparto de beneficios
+        if($user->sede->porcentajeVenta > 0 && $user->sede->porcentajeComprado > 0){
+            $propietarios = Accion::where('sede_id', $user->sede->id)->get();
+
+            foreach ($propietarios as $propietario) {
+                $propietario->user->saldo += $beneficio * $propietario->accionesCompradas;
+                $propietario->user->update();
+
+                $propietario->beneficios += $beneficio * $propietario->accionesCompradas;
+                $propietario->update();
+            }
+        }
+
+        // Multiplicamos los beneficios por el el porcentaje que no tiene en propiedad el usuario
+        $user->saldo += $beneficio * (1 - $user->sede->porcentajeVenta);
         $user->update();
 
         // Guardamos la fecha de desconexion respecto a la hora de finalizacion del vuelo
