@@ -156,6 +156,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('economia/comprarAcciones', [EconomiaController::class, 'comprarAcciones'])->name('economia.comprarAcciones');
     Route::post('economia/venderAcciones', [EconomiaController::class, 'venderAccionesPropias'])->name('economia.venderAccionesPropias');
     Route::post('economia/comprarAcciones/comprar', [EconomiaController::class, 'comprarAccionesPost'])->name('economia.comprarAccionesPost');
+    Route::get('economia/venderAcciones/{id}', [EconomiaController::class, 'venderAcciones'])->name('economia.venderAcciones');
 
 });
 

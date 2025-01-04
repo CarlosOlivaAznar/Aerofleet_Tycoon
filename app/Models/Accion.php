@@ -32,4 +32,9 @@ class Accion extends Model
     {
         return number_format((float)(($this->sede->user->patrimonio() * 100) / $this->valorCompra) - 100, 2, '.', '');
     }
+
+    public function valorPrecio()
+    {
+        return $this->sede->user->patrimonio() * $this->accionesCompradas;
+    }
 }

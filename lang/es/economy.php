@@ -99,6 +99,13 @@ return [
 
     'noShares' => 'No tienes acciones compradas.',
 
+    'sellOtherShares' => 'Vender Acciones',
+    'sellSharesConfirmation' => '¿Estás seguro que quieres vender estas acciones?',
+    'sellSharesInfo' => 'Las acciones serán vendidas y recibirás: ',
+
+    'sellSharesSuccess' => 'Las acciones han sido vendidas correctamente.',
+    'sellSharesError' => 'Error al vender las acciones, no posees las acciones que intentas vender.',
+
 ];
 
 // Plantilla

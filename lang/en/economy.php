@@ -99,6 +99,13 @@ return [
     'buySharesErrorCash' => 'You do not have enough cash to buy the shares.',
 
     'noShares' => 'You do not have any shares.',
+
+    'sellOtherShares' => 'Sell Shares',
+    'sellSharesConfirmation' => 'Are you sure you want to sell these shares?',
+    'sellSharesInfo' => 'The shares will be sold and you will receive: ',
+
+    'sellSharesSuccess' => 'The shares have been sold successfully.',
+    'sellSharesError' => 'Error selling the shares, you dont own the shares that you are trying to sell.',
 ];
 
 // Plantilla

@@ -329,4 +329,26 @@ class EconomiaController extends Controller
         return redirect()->route('economia.comprarAcciones');
     }
 
+    public function venderAcciones($id)
+    {
+        $accion = Accion::find($id);
+        $user = User::find(auth()->id());
+
+        if($user->id != $accion->user->id){
+            session()->flash('error', trans('economy.sellSharesError'));
+            return redirect()->route('economia.acciones');
+        }
+
+        $user->saldo += $accion->valorPrecio();
+
+        $accion->sede->porcentajeComprado -= $accion->accionesCompradas;
+        
+        $accion->sede->update();
+        $user->update();
+        $accion->delete();
+
+        session()->flash('exito', trans('economy.sellSharesSuccess'));
+        return redirect()->route('economia.acciones');
+    }
+
 }

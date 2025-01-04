@@ -76,7 +76,7 @@
                 <td>{{ $accion->sede->user->nombreCompanyia }}</td>
                 <td>{{ $accion->accionesCompradas * 100 }}%</td>
                 <td>
-                  @if ($accion->valorAccion() > 0)
+                  @if ($accion->valorAccion() >= 0)
                       <span class="verde">+{{ $accion->valorAccion() }}%</span>        
                   @else
                       <span class="rojo">{{ $accion->valorAccion() }}%</span>
@@ -84,12 +84,36 @@
                 </td>
                 <td>{{ number_format($accion->beneficios, 0, ',', '.') }}</td>
                 <td>
-                  <a class="vender tooltip" data-modal-target="modalVenderCompanyia">
+                  <a class="vender tooltip" data-modal-target="venderAccion{{ $accion->id }}">
                     <i class='bx bx-shopping-bag'></i>
                     <span class="tooltiptext">Vender Accion</span>
                   </a>
                 </td>
             </tr>
+
+
+            <div class="modal" id="venderAccion{{ $accion->id }}">
+              <div class="contenido-modal">
+                <div class="cabecera-modal">
+                  <span class="cerrar-modal">&times;</span>
+                  <h2>{{ __('economy.sellOtherShares') }}</h2>
+                </div>
+                <div class="cuerpo-modal">
+      
+                  <p>{{ __('economy.sellSharesConfirmation') }}</p><br>
+                  <p>{{ __('economy.sellSharesInfo') }} 
+                  <span class="verde">{{ number_format($accion->valorPrecio(), 0, ',', '.') }}€</span></p>
+                
+                </div>
+                <div class="footer-modal">
+                  <div class="botones">
+                    <span class="cancelar">{{ __('economy.cancel') }}</span>
+                    <a href="{{ route('economia.venderAcciones', ['id' => $accion->id]) }}" class="aceptar">{{ __('economy.confirm') }}</a>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
             @endforeach
           </tbody>
         </table>
@@ -97,7 +121,7 @@
       @else
           <div class="mensaje">
             <i class="bx bx-error"></i>
-            <h4>{{ __('economy.noLeasings') }}</h4>
+            <h4>{{ __('economy.noShares') }}</h4>
           </div>
       @endif
 
