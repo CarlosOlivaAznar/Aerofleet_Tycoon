@@ -87,6 +87,17 @@ return [
     'ownershipStake' => 'Ownership Stake',
     'buyShares' => 'Buy Shares',
     'sellShares' => 'Sell shares of your company',
+
+    'airline' => 'Airline',
+    'percentajeOnProperty' => 'Percentage on property',
+    'sharesValueSincePurchease' => 'Shares value since purchase',
+    'incomeObtained' => 'Income obtained',
+    'sellOwnShares' => 'Sell Shares',
+    'sellShare' => 'Sell Share',
+
+    'sellOwnSharesInfo' => 'Select the percentage of shares you want to sell. The maximun percentage of shares you can sell is 25% of the company.',
+    'sellOwnSharesValue' => 'Value',
+    'sellOwnSharesCash' => 'You will recive the following amount of cash:',
     'yourShares' => 'Your purchased shares',
     'aviableShares' => 'Shares for sale',
     'noShares' => 'There are no shares available for sale',
@@ -106,6 +117,14 @@ return [
 
     'sellSharesSuccess' => 'The shares have been sold successfully.',
     'sellSharesError' => 'Error selling the shares, you dont own the shares that you are trying to sell.',
+
+    'airlineValue' => 'Airline Value',
+    'percentajeOnSale' => 'Percentage On Sale',
+    'totalPrice' => 'Total Purchease Price',
+    'purcheaseShares' => 'Buy Shares',
+
+    'buySharesConfirmation' => 'The shares of the selected airline will be purchased',
+
 ];
 
 // Plantilla

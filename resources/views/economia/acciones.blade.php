@@ -63,11 +63,11 @@
         <table>
           <thead>
             <tr>
-              <th>Aerolinea</th>
-              <th>Porcentaje en propiedad</th>
-              <th>Valor actual desde la compra</th>
-              <th>Beneficios obtenidos</th>
-              <th>Vender</th>
+              <th>{{ __('economy.airline') }}</th>
+              <th>{{ __('economy.percentajeOnProperty') }}</th>
+              <th>{{ __('economy.sharesValueSincePurchease') }}</th>
+              <th>{{ __('economy.incomeObtained') }}</th>
+              <th>{{ __('economy.sellOwnShares') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -86,7 +86,7 @@
                 <td>
                   <a class="vender tooltip" data-modal-target="venderAccion{{ $accion->id }}">
                     <i class='bx bx-shopping-bag'></i>
-                    <span class="tooltiptext">Vender Accion</span>
+                    <span class="tooltiptext">{{ __('economy.sellShare') }}</span>
                   </a>
                 </td>
             </tr>
@@ -133,6 +133,8 @@
       @foreach ($fechas as $fecha)
         <input type="hidden" class="fechaUsuario" value="{{ $fecha }}">
       @endforeach
+
+      <input type="hidden" id="valorEmpresa" value="{{ $sede->user->patrimonio() }}">
       
       <!-- Chart.js -->
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -155,7 +157,7 @@
           data: {
             labels: fechas,
             datasets: [{
-              label: 'Valor de la empresa',
+              label: 'Company value',
               data: beneficios,
               borderWidth: 2
             }]
@@ -208,6 +210,10 @@
         function slide(event){
           var precio = event.nextElementSibling.nextElementSibling;
           precio.innerHTML = event.value
+
+          let valorAccion = document.getElementById('valorAccion');
+          let valorEmpresa = document.getElementById('valorEmpresa');
+          valorAccion.innerHTML = formatearPrecio((event.value / 100) * valorEmpresa.value);
         }
 
       </script>
@@ -216,15 +222,17 @@
           <form action="{{ route('economia.venderAccionesPropias') }}" method="POST">
             <div class="cabecera-modal">
               <span class="cerrar-modal">&times;</span>
-              <h2>{{ __('routes.modifyRoute') }}</h2>
+              <h2>{{ __('economy.sellShares') }}</h2>
             </div>
             <div class="cuerpo-modal">
               
               @csrf
-              <label for="precioBillete">{{ __('routes.modifyTicketPrice') }}</label>
-              <input type="range" name="porcentajeVenta" id="porcentajeVenta" class="precioBilletes" value="1" min="1" max="25" oninput="slide(this)">
-              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">Valor:</p>
+              <label for="precioBillete">{{ __('economy.sellOwnSharesInfo') }}</label>
+              <input type="range" name="porcentajeVenta" id="porcentajeVenta" class="precioBilletes" value="1" min="1" max="{{ 25 - ($sede->porcentajeVenta * 100) }}" oninput="slide(this)">
+              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">{{ __('economy.sellOwnSharesValue') }}</p>
               <span id="precio" class="precio">1</span>%
+              <br>
+              <p>{{ __('economy.sellOwnSharesCash') }} <span class="verde" id="valorAccion"></span></p>
               
             </div>
             <div class="footer-modal">
@@ -236,6 +244,8 @@
           </form>
         </div>
       </div> 
+
+      <script src="{{ asset('js/formatearPrecio.js') }}"></script>
       <script src="{{ asset('js/modals.js') }}"></script>
     </main>
   </div>

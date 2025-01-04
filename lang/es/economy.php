@@ -86,6 +86,18 @@ return [
     'ownershipStake' => 'Porcentaje en propiedad',
     'buyShares' => 'Comprar Acciones',
     'sellShares' => 'Vender Acciones de tu Empresa',
+
+    'airline' => 'Aeroínea',
+    'percentajeOnProperty' => 'Porcentaje en propiedad',
+    'sharesValueSincePurchease' => 'Valor de las acciones desde la compra',
+    'incomeObtained' => 'Ingresos Obtenidos',
+    'sellOwnShares' => 'Vender Acciones',
+    'sellShare' => 'Vender Accion',
+
+    'sellOwnSharesInfo' => 'Selecciona el número de acciones que quieres vender. El maximo valor permitido que puedes vender es un 25% del total de la empresa',
+    'sellOwnSharesValue' => 'Valor',
+    'sellOwnSharesCash' => 'Recibiras un total de: ',
+
     'yourShares' => 'Tus Acciones compradas',
     'aviableShares' => 'Acciones a la venta',
     'noShares' => 'No hay acciones disponibles a la venta',
@@ -105,6 +117,13 @@ return [
 
     'sellSharesSuccess' => 'Las acciones han sido vendidas correctamente.',
     'sellSharesError' => 'Error al vender las acciones, no posees las acciones que intentas vender.',
+
+    'airlineValue' => 'Valor de la Aerolínea',
+    'percentajeOnSale' => 'Porcentaje en Venta',
+    'totalPrice' => 'Precio Total de Compra',
+    'purcheaseShares' => 'Comprar',
+
+    'buySharesConfirmation' => 'Se comprara las acciones de la aerolinea seleccionada',
 
 ];
 

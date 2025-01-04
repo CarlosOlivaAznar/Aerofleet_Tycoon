@@ -37,11 +37,11 @@
         <table>
           <thead>
             <tr>
-                <th>Compañia</th>
-                <th>Valor de la empresa</th>
-                <th>Porcentaje a la venta</th>
-                <th>Precio total de compra</th>
-                <th>comprar</th>
+                <th>{{ __('economy.airline') }}</th>
+                <th>{{ __('economy.airlineValue') }}</th>
+                <th>{{ __('economy.percentajeOnSale') }}</th>
+                <th>{{ __('economy.totalPrice') }}</th>
+                <th>{{ __('economy.purcheaseShares') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@
                 <td>
                   <a class="comprar tooltip" data-modal-target="modalComprarAccion{{ $sede->id }}">
                     <i class='bx bx-shopping-bag'></i>
-                    <span class="tooltiptext">Comprar</span>
+                    <span class="tooltiptext">{{ __('economy.purcheaseShares') }}</span>
                   </a>
                 </td>
             </tr>
@@ -86,10 +86,9 @@
             </div>
             <div class="cuerpo-modal">
 
-              <p>Se comprara las acciones de la empresa seleccionada</p><br>
+              <p>{{ __('economy.buySharesConfirmation') }}</p><br>
               
               @csrf
-              <label for="porcentajeAcciones">{{ __('routes.modifyTicketPrice') }}</label>
               <input type="range" name="porcentajeAcciones" id="porcentajeAcciones" class="precioBilletes" value="1" min="1" max="{{ (($sede->porcentajeVenta - $sede->porcentajeComprado) * 100) }}" oninput="slide(this)">
               <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">Valor:</p>
               <span id="precio" class="precio">1</span>%
