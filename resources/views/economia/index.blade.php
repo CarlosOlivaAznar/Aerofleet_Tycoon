@@ -55,7 +55,7 @@
                 </div>
                 <div>
                     <span>{{ __('economy.sharesValue') }}</span>
-                    <span>{{ number_format(0, 0, ',', '.') }}€</span>
+                    <span>{{ number_format($user->patrimonioValorAcciones(), 0, ',', '.') }}€</span>
                 </div>
                 <h4>{{ __('economy.nonCurrentAssets') }}</h4>
                 <div>
@@ -73,7 +73,7 @@
                 <div class="total">
                     <span>{{ __('economy.total') }}</span>
                     <span class="verde">{{  number_format(
-                        $user->saldo + $user->patrimonioSede() + $user->patrimonioFlota() + $user->patrimonioEspacios()
+                        $user->saldo + $user->patrimonioSede() + $user->patrimonioFlota() + $user->patrimonioEspacios() + $user->patrimonioValorAcciones()
                     , 0, ',', '.') }}€</span>
                 </div>
             </div>

@@ -107,8 +107,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
         $patrimonio += $this->patrimonioSede();
 
-        $patrimonio -= $this->patrimonioLeasings();
+        $patrimonio += $this->patrimonioValorAcciones();
 
+        $patrimonio -= $this->patrimonioLeasings();
+        
         foreach ($this->prestamo as $prestamo) {
             $patrimonio -= ($prestamo->devolver());
         }
@@ -159,6 +161,17 @@ class User extends Authenticatable implements MustVerifyEmail
             if($avion->leasing){
                 $valor += $avion->avion->leasePPD() * 31;
             }
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioValorAcciones()
+    {
+        $valor = 0;
+
+        foreach ($this->accion as $accion) {
+            $valor += $accion->valorPrecio();
         }
 
         return $valor;
