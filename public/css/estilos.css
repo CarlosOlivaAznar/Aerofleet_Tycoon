@@ -580,6 +580,10 @@ span.boton:hover{
     padding: 25px;
 }
 
+.contenido main .informacion .infodatos.patrimonio{
+    width: 75%;
+}
+
 /* Modales */
 /*
 MARK: Modal

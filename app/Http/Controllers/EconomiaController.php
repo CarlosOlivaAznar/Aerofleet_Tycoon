@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Accion;
 use App\Models\Avion;
+use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
 use App\Models\Prestamo;
+use App\Models\Sede;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -121,7 +124,9 @@ class EconomiaController extends Controller
         return redirect()->route('economia.leasing');
     }
 
-    // Prestamos
+    /* --------- */
+    /* PRESTAMOS */
+    /* --------- */
 
     public function prestamos()
     {
@@ -242,4 +247,86 @@ class EconomiaController extends Controller
         session()->flash('exito', trans('economy.loanReturned'));
         return redirect()->route('economia.prestamos');
     }
+
+
+    /* -------- */
+    /* ACCIONES */
+    /* -------- */
+
+    public function acciones()
+    {
+        $saldo = User::getSaldoString();
+        session(['saldo' => $saldo]);
+
+        $beneficiosArr = array();
+        $fechasArr = array();
+
+        $beneficios = BeneficiosHistorico::where('user_id', auth()->id())->get();
+        $acciones = Accion::where('user_id', auth()->id())->get();
+        
+        foreach ($beneficios as $beneficio) {
+            array_push($beneficiosArr, $beneficio->saldo);
+            array_push($fechasArr, $beneficio->fecha);
+        }
+
+        return view('economia.acciones', ['beneficios' => $beneficiosArr, 'fechas' => $fechasArr, 'acciones' => $acciones]);
+    }
+
+    public function comprarAcciones()
+    {
+        $sedes = Sede::where('porcentajeVenta', '>', 0)->where('porcentajeVenta', '>', 'porcentajeComprado')->where('user_id', '!=', auth()->id())->get();
+        return view('economia.comprarAcciones', ['sedes' => $sedes]);
+    }
+
+    public function venderAccionesPropias(Request $request)
+    {
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $user = User::find(auth()->id());
+
+        if(($request->porcentajeVenta / 100) + $sede->porcentajeVenta > 0.25){
+            session()->flash('error', trans('economy.sellOwnSharesError'));
+            return redirect()->route('economia.acciones');
+        }
+
+        $sede->porcentajeVenta += $request->porcentajeVenta / 100;
+        $sede->update();
+
+        $user->saldo += $user->patrimonio() * ($request->porcentajeVenta / 100);
+        $user->update();
+
+        session()->flash('exito', trans('economy.sellOwnSharesSuccess'));
+        return redirect()->route('economia.acciones');
+    }
+
+    public function comprarAccionesPost(Request $request)
+    {
+        $sede = Sede::find($request->sede);
+        $user = User::find(auth()->id());
+
+        if($sede->porcentajeComprado + ($request->porcentajeAcciones / 100) > $sede->porcentajeVenta){
+            session()->flash('error', trans('economy.buySharesErrorPercentaje'));
+            return redirect()->route('economia.comprarAcciones');
+        }
+
+        if($user->saldo - (($sede->porcentajeVenta - ($sede->porcentajeComprado + $request->porcentajeAcciones)) * $sede->user->patrimonio()) < 0){
+            session()->flash('error', trans('economy.buySharesErrorCash'));
+            return redirect()->route('economia.comprarAcciones');
+        }
+
+        Accion::create([
+            'user_id' => auth()->id(),
+            'sede_id' => $sede->id,
+            'accionesCompradas' => ($request->porcentajeAcciones / 100),
+            'valorCompra' => $sede->user->patrimonio(),
+            'beneficios' => 0,
+        ]);
+
+        $sede->porcentajeComprado += $request->porcentajeAcciones / 100;
+        $sede->update();
+
+
+        session()->flash('exito', trans('economy.buySharesSuccess'));
+        return redirect()->route('economia.comprarAcciones');
+    }
+
 }

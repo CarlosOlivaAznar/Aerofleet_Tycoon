@@ -22,8 +22,6 @@ return [
     
     'total' => 'Total',
 
-    //{{ __('economy.currentAssets') }}
-
     // Leasing
     'leasedPlanes' => 'Aviones Arrendados',
     'leasePlane' => 'Arrendar Avión',
@@ -82,6 +80,25 @@ return [
     'neBalance' => 'No tienes suficiente saldo para devolver el préstamo',
     'loanReturned' => 'Préstamo devuelto con éxito',
     
+
+    // Acciones
+    'airlineValue' => 'Valor de la Aerolínea',
+    'ownershipStake' => 'Porcentaje en propiedad',
+    'buyShares' => 'Comprar Acciones',
+    'sellShares' => 'Vender Acciones de tu Empresa',
+    'yourShares' => 'Tus Acciones compradas',
+    'aviableShares' => 'Acciones a la venta',
+    'noShares' => 'No hay acciones disponibles a la venta',
+
+    'sellOwnSharesError' => 'No se puede vender mas de un 25% de la empresa',
+    'sellOwnSharesSuccess' => 'Se han emitido correctamente las acciones',
+
+    'buySharesSuccess' => 'Las acciones han sido compradas correctamente.',
+    'buySharesErrorPercentaje' => 'No puedes comprar más acciones de las que la compañia tiene a la venta.',
+    'buySharesErrorCash' => 'No tienes suficiente dinero para comprar las acciones.',
+
+    'noShares' => 'No tienes acciones compradas.',
+
 ];
 
 // Plantilla

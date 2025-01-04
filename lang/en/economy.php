@@ -80,6 +80,25 @@ return [
     'loanSuccess' => 'The loan has been contracted successfully.',
     'neBalance' => 'You do not have enough balance to return the loan',
     'loanReturned' => 'Loan returned successfully.',
+
+
+    // Acciones
+    'airlineValue' => 'Airline Value',
+    'ownershipStake' => 'Ownership Stake',
+    'buyShares' => 'Buy Shares',
+    'sellShares' => 'Sell shares of your company',
+    'yourShares' => 'Your purchased shares',
+    'aviableShares' => 'Shares for sale',
+    'noShares' => 'There are no shares available for sale',
+
+    'sellOwnSharesError' => 'You cannot sell more than 25% of the company',
+    'sellOwnSharesSuccess' => 'The shares have been issued correctly',
+
+    'buySharesSuccess' => 'The shares have been purchased successfully.',
+    'buySharesErrorPercentaje' => 'You cannot buy more shares than the company has available.',
+    'buySharesErrorCash' => 'You do not have enough cash to buy the shares.',
+
+    'noShares' => 'You do not have any shares.',
 ];
 
 // Plantilla

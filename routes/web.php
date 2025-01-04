@@ -151,6 +151,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('economia/prestamos/contratar', [EconomiaController::class, 'prestamoFinalizado'])->name('economia.prestamoFinalizado');
     Route::get('economia/devolverPrestamo/{id}', [EconomiaController::class, 'devolverPrestamo'])->name('economia.devolverPrestamo');
 
+    // Acciones
+    Route::get('economia/acciones', [EconomiaController::class, 'acciones'])->name('economia.acciones');
+    Route::get('economia/comprarAcciones', [EconomiaController::class, 'comprarAcciones'])->name('economia.comprarAcciones');
+    Route::post('economia/venderAcciones', [EconomiaController::class, 'venderAccionesPropias'])->name('economia.venderAccionesPropias');
+    Route::post('economia/comprarAcciones/comprar', [EconomiaController::class, 'comprarAccionesPost'])->name('economia.comprarAccionesPost');
+
 });
 
 Route::get('/dashboard', function () {

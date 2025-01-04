@@ -32,7 +32,7 @@
                     <h3>{{ __('economy.loan') }}</h3>
                 </li>
             </a>
-            <a href="">
+            <a href="{{ route('economia.acciones') }}">
                 <li class="move-xy">
                     <i class='bx bx-coin-stack'></i>
                     <h3>{{ __('economy.shares') }}</h3>
