@@ -28,7 +28,7 @@
                     <div class="avion"></div>
                 </div>
 
-                <h3 id="titulo">Calculando Rutas</h3>
+                <h3 id="titulo">{{ __('home.txtLoading1') }}</h3>
 
                 <input type="hidden" class="txt" value="{{ __('home.txtLoading1') }}">
                 <input type="hidden" class="txt" value="{{ __('home.txtLoading2') }}">
