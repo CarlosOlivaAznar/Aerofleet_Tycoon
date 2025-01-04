@@ -256,6 +256,7 @@ class EconomiaController extends Controller
     public function acciones()
     {
         $saldo = User::getSaldoString();
+        $sede = Sede::where('user_id', auth()->id())->first();
         session(['saldo' => $saldo]);
 
         $beneficiosArr = array();
@@ -269,7 +270,7 @@ class EconomiaController extends Controller
             array_push($fechasArr, $beneficio->fecha);
         }
 
-        return view('economia.acciones', ['beneficios' => $beneficiosArr, 'fechas' => $fechasArr, 'acciones' => $acciones]);
+        return view('economia.acciones', ['beneficios' => $beneficiosArr, 'fechas' => $fechasArr, 'acciones' => $acciones, 'sede' => $sede]);
     }
 
     public function comprarAcciones()
@@ -342,7 +343,7 @@ class EconomiaController extends Controller
         $user->saldo += $accion->valorPrecio();
 
         $accion->sede->porcentajeComprado -= $accion->accionesCompradas;
-        
+
         $accion->sede->update();
         $user->update();
         $accion->delete();

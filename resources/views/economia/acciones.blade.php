@@ -174,14 +174,20 @@
       <script>
         const doughnut = document.getElementById('posesionEmpresa');
 
+        let sede = @json($sede);
+
+        let ePropiedad = (1 - sede.porcentajeVenta) * 100;
+        let eVendido = sede.porcentajeComprado * 100;
+        let eVenta = (sede.porcentajeVenta - sede.porcentajeComprado) * 100;        
+
         new Chart(doughnut, {
             type: 'doughnut',
             data: {
-                labels: ['Red', 'Blue', 'Yellow'],
+                labels: ['On property', 'Selled', 'For sale'],
                 datasets: [{
-                    label: 'My First Dataset',
-                    data: [300, 50, 100],
-                    backgroundColor: ['#FF5733', '#33A1FF', '#FFEB33'],
+                    label: 'From your company value',
+                    data: [ePropiedad, eVendido, eVenta],
+                    backgroundColor: ['#2d8de8', '#388E3C', '#eee'],
                     hoverOffset: 4
                 }]
             },
