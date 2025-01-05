@@ -6517,11 +6517,144 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+
+        /* ------------------------- */
+        /* Aeropuertos Corea del Sur */
+        /* ------------------------- */
+        /* 
+        MARK: Corea del Sur
+        */
+
+        Aeropuerto::create([
+            'icao' => 'RKSI',
+            'pais' => 'HL',
+            'nombre' => 'Seoul Incheon International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 37.465268,
+            'longitud' => 126.437010,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKSS',
+            'pais' => 'HL',
+            'nombre' => 'Seoul Gimpo International Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 37.557175,
+            'longitud' => 126.792595,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 280,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        Aeropuerto::create([
+            'icao' => 'RKPK',
+            'pais' => 'HL',
+            'nombre' => 'Busan Gimhae International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 35.180192,
+            'longitud' => 128.938324,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 0.85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKTU',
+            'pais' => 'HL',
+            'nombre' => 'Cheongju International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 36.716498,
+            'longitud' => 127.499873,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKJJ',
+            'pais' => 'HL',
+            'nombre' => 'Gwangju Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 35.126781,
+            'longitud' => 126.808176,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------ */
+        /* Aeropuertos Chipre */
+        /* ------------------ */
+        /* 
+        MARK: Chipre
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LCEN',
+            'pais' => '5B',
+            'nombre' => 'Ercan International Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 750,
+            'latitud' => 35.151132,
+            'longitud' => 33.504565,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LCLK',
+            'pais' => '5B',
+            'nombre' => 'Larnaca International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 34.874150,
+            'longitud' => 33.622639,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LCPH',
+            'pais' => '5B',
+            'nombre' => 'Paphos International Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 750,
+            'latitud' => 34.716874,
+            'longitud' => 32.483686,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'ZK',
+            'pais' => '5B',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
