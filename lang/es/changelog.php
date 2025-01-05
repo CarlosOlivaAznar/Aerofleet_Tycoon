@@ -3,6 +3,15 @@
 return [
 
     'changelog' => '
+    <h4>V-0.4.0</h4>
+    <ul>
+      <li>Se ha añadido una nueva pestaña “economía”</li>
+      <li>En la nueva pestaña ahora se pueden contratar leasings de aviones a diferentes empresas de leasing, cada una ofrece una marca de aviones distinta</li>
+      <li>Añadidos los aeropuertos de Rumania, Bosnia y Herzegovina, Serbia, Kosovo, Montenegro, Albania, Macedonia del Norte, Bulgaria, Bielorrusia, Moldavia, Japón, Australia, Nueva Zelanda, Corea del sur, Chipre y algunos aeropuertos de Estados Unidos</li>
+      <li>Ahora se pueden contratar préstamos de corto, largo plazo y líneas de crédito</li>
+      <li>Añadido manejo de comprar, vender y emitir acciones</li>
+    </ul>
+
     <h4>V-0.3.3</h4>
     <ul>
       <li>Se ha añadido eventos aleatorios a las rutas</li>

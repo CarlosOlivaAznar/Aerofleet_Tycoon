@@ -3,6 +3,15 @@
 return [
 
   'changelog' => '
+    <h4>V-0.4.0</h4>
+    <ul>
+      <li>A new "economy" tab has been added</li>
+      <li>In the new tab, aircraft leasing contracts can now be made with different leasing companies, each offering a different aircraft manufacturer</li>
+      <li>Added airports from Romania, Bosnia and Herzegovina, Serbia, Kosovo, Montenegro, Albania, North Macedonia,c Belarus, Moldova, Japan, Australia, New Zealand, South Korea, Cyprus, and some airports in the United States</li>
+      <li>Short-term, long-term loans, and credit lines can now be taken out</li>
+      <li>Added management for buying, selling, and issuing shares</li>
+    </ul>
+
     <h4>V-0.3.3</h4>
     <ul>
       <li>Random events have been added to the routes</li>
