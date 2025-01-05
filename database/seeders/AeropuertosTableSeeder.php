@@ -6564,7 +6564,7 @@ class AeropuertosTableSeeder extends Seeder
             'latitud' => 35.180192,
             'longitud' => 128.938324,
             'demanda' => 0.85,
-            'pasajerosEstimados' => 0.85,
+            'pasajerosEstimados' => 150,
             'categoria' => 3,
             'isla' => false,
         ]);
