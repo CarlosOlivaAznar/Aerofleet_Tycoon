@@ -6138,11 +6138,174 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+
+        
+        /* -------------------- */
+        /* Aeropuertos Japon */
+        /* -------------------- */
+        /* 
+        MARK: Japon
+        */
+
+        Aeropuerto::create([
+            'icao' => 'RJTT',
+            'pais' => 'JA',
+            'nombre' => 'Tokyo Haneda International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 35.551759,
+            'longitud' => 139.785007,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJBB',
+            'pais' => 'JA',
+            'nombre' => 'Osaka Kansai International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 34.43254,
+            'longitud' => 135.230749,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJAA',
+            'pais' => 'JA',
+            'nombre' => 'Tokyo Narita International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 35.767244,
+            'longitud' => 140.386826,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJOA',
+            'pais' => 'JA',
+            'nombre' => 'Hiroshima Airport',
+            'espaciosTotales' => 175,
+            'costeOperacional' => 850,
+            'latitud' => 34.437058,
+            'longitud' => 132.918731,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJOM',
+            'pais' => 'JA',
+            'nombre' => 'Matsuyama Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 33.828078,
+            'longitud' => 132.700168,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJGG',
+            'pais' => 'JA',
+            'nombre' => 'Nagoya Chubu Centrair International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1650,
+            'latitud' => 34.858264,
+            'longitud' => 136.809857,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ROAH',
+            'pais' => 'JA',
+            'nombre' => 'Okinawa Naha Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1800,
+            'latitud' => 26.196625,
+            'longitud' => 127.645087,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSS',
+            'pais' => 'JA',
+            'nombre' => 'Sendai Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 38.137777,
+            'longitud' => 140.918259,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSN',
+            'pais' => 'JA',
+            'nombre' => 'Niigata Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 37.955233,
+            'longitud' => 139.110787,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSK',
+            'pais' => 'JA',
+            'nombre' => 'Akita Airport',
+            'espaciosTotales' => 120,
+            'costeOperacional' => 750,
+            'latitud' => 39.614854,
+            'longitud' => 140.219723,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJCC',
+            'pais' => 'JA',
+            'nombre' => 'Sapporo New Chitose Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 42.787671,
+            'longitud' => 141.682577,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'ER',
+            'pais' => 'JA',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
