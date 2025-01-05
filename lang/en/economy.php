@@ -36,7 +36,7 @@ return [
     'leasingNotFirstHand' => 'Error Leasing the aircraft selected.',
     'leasingSuccess' => 'The aircraft has been leased successfully.',
     'leasingMaxLimit' => 'You have reached the maximum number of leased aircraft.',
-    'leasingMinAssets' => 'To lease an aircraft of more than 200,000,000€, you must have total assets equal or greater than 250,000,000€.',
+    'leasingMinAssets' => 'To lease an aircraft of more than 200,000,000€, you must have total assets equal or greater than 450,000,000€.',
 
     'registration' => 'Registration',
     'endLease' => 'End lease date',

@@ -90,7 +90,7 @@
             <td>{{ $avion->fabricante }}</td>
           </tr>
           <tr>
-            <th>{{ __('fleet.pricePerDay') }}</th>
+            <th>{{ __('economy.pricePerDay') }}</th>
             <td>{{ number_format($avion->leasePPD(), 2, ',', '.') }}</td>
           </tr>
           <tr>

@@ -90,7 +90,7 @@ class EconomiaController extends Controller
             return redirect()->route('economia.leasing');
         }
 
-        if($avion->precio > 200000000 && $usuario->patrimonio() < 250000000) {
+        if($avion->precio > 200000000 && $usuario->patrimonio() < 450000000) {
             session()->flash('error', trans('economy.leasingMinAssets'));
             return redirect()->route('economia.leasing');
         }
