@@ -276,7 +276,7 @@ class EconomiaController extends Controller
     public function comprarAcciones()
     {
         $sedes = Sede::where('porcentajeVenta', '>', 0)->where('porcentajeVenta', '>', 'porcentajeComprado')->whereColumn('porcentajeVenta', '<>', 'porcentajeComprado')->where('user_id', '!=', auth()->id())->get();
-        
+
         return view('economia.comprarAcciones', ['sedes' => $sedes]);
     }
 
@@ -284,6 +284,11 @@ class EconomiaController extends Controller
     {
         $sede = Sede::where('user_id', auth()->id())->first();
         $user = User::find(auth()->id());
+
+        if($user->patrimonio() < 250000000) {
+            session()->flash('error', trans('economy.minimunAssetsError'));
+            return redirect()->route('economia.acciones');
+        }
 
         if(($request->porcentajeVenta / 100) + $sede->porcentajeVenta > 0.25){
             session()->flash('error', trans('economy.sellOwnSharesError'));

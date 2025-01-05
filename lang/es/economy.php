@@ -103,6 +103,7 @@ return [
     'aviableShares' => 'Acciones a la venta',
     'noSharesSell' => 'No hay acciones disponibles a la venta',
 
+    'minimunAssetsError' => 'Para vender acciones propias tu aerolinea debe estar valorada en mas de 250.000.000€',
     'sellOwnSharesError' => 'No se puede vender mas de un 25% de la empresa',
     'sellOwnSharesSuccess' => 'Se han emitido correctamente las acciones',
 
