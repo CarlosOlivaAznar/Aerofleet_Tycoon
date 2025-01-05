@@ -275,7 +275,8 @@ class EconomiaController extends Controller
 
     public function comprarAcciones()
     {
-        $sedes = Sede::where('porcentajeVenta', '>', 0)->where('porcentajeVenta', '>', 'porcentajeComprado')->where('user_id', '!=', auth()->id())->get();
+        $sedes = Sede::where('porcentajeVenta', '>', 0)->where('porcentajeVenta', '>', 'porcentajeComprado')->whereColumn('porcentajeVenta', '<>', 'porcentajeComprado')->where('user_id', '!=', auth()->id())->get();
+        
         return view('economia.comprarAcciones', ['sedes' => $sedes]);
     }
 
@@ -304,7 +305,7 @@ class EconomiaController extends Controller
         $sede = Sede::find($request->sede);
         $user = User::find(auth()->id());
 
-        if($sede->porcentajeComprado + ($request->porcentajeAcciones / 100) > $sede->porcentajeVenta){
+        if(round($sede->porcentajeComprado + ($request->porcentajeAcciones / 100), 2) > $sede->porcentajeVenta){
             session()->flash('error', trans('economy.buySharesErrorPercentaje'));
             return redirect()->route('economia.comprarAcciones');
         }

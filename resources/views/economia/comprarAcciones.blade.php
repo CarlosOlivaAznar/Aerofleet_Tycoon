@@ -65,7 +65,7 @@
       @else
         <div class="mensaje">
           <i class="bx bx-error"></i>
-          <h4>{{ __('economy.noShares') }}</h4>
+          <h4>{{ __('economy.noSharesShell') }}</h4>
         </div>
       @endif
       

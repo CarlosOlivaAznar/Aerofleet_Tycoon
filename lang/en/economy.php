@@ -101,7 +101,7 @@ return [
     'sellOwnSharesCash' => 'You will recive the following amount of cash:',
     'yourShares' => 'Your purchased shares',
     'aviableShares' => 'Shares for sale',
-    'noShares' => 'There are no shares available for sale',
+    'noSharesShell' => 'There are no shares available for sale',
 
     'sellOwnSharesError' => 'You cannot sell more than 25% of the company',
     'sellOwnSharesSuccess' => 'The shares have been issued correctly',

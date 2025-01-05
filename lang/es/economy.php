@@ -101,7 +101,7 @@ return [
 
     'yourShares' => 'Tus Acciones compradas',
     'aviableShares' => 'Acciones a la venta',
-    'noShares' => 'No hay acciones disponibles a la venta',
+    'noSharesSell' => 'No hay acciones disponibles a la venta',
 
     'sellOwnSharesError' => 'No se puede vender mas de un 25% de la empresa',
     'sellOwnSharesSuccess' => 'Se han emitido correctamente las acciones',
