@@ -19,6 +19,7 @@ return [
     'shortTermDebt' => 'Short Term Debt:',
     'longTermDebt' => 'Long Term Debt:',
     'leasings' => 'Leasings:',
+    'issuedShares' => 'Issued Shares:',
 
     'total' => 'Total',
 

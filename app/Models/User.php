@@ -115,6 +115,8 @@ class User extends Authenticatable implements MustVerifyEmail
             $patrimonio -= ($prestamo->devolver());
         }
 
+        $patrimonio = ($patrimonio * 100) / (100 + ($this->sede->porcentajeVenta * 100));
+
         return $patrimonio;
     }
 
@@ -177,8 +179,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $valor;
     }
 
+    public function patrimonioAccionesEmitidas()
+    {
+        return $this->patrimonio() * $this->sede->porcentajeVenta;
+    }
 
-    // Funcion estatica que hace una llamada a la base de datos para retornar el saldo en formato string del usuario que esta logeado
+    
+
+
+    // Funcion estatica que hace una llamada a la base de datos para devolver el saldo en formato string del usuario que esta logeado
     // Se utiliza para mostrar en la parte superior derecha el saldo del usuario
     public static function getSaldoString()
     {

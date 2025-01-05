@@ -19,6 +19,7 @@ return [
     'shortTermDebt' => 'Deudas a Corto Plazo:',
     'longTermDebt' => 'Deudas a Largo Plazo:',
     'leasings' => 'Leasings:',
+    'issuedShares' => 'Acciones Emitidas:',
     
     'total' => 'Total',
 

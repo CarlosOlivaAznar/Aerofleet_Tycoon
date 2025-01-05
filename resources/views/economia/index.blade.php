@@ -87,6 +87,10 @@
                     <span>{{ __('economy.leasings') }}</span>
                     <span>{{ number_format($user->patrimonioLeasings(), 0, ',', '.') }}€/{{ __('economy.month') }}</span>
                 </div>
+                <div>
+                    <span>{{ __('economy.issuedShares') }}</span>
+                    <span>{{ number_format($user->patrimonioAccionesEmitidas(), 0, ',', '.') }}€</span>
+                </div>
                 <h4>{{ __('economy.nonCurrentLiabilities') }}</h4>
                 <div>
                     <span>{{ __('economy.longTermDebt') }}</span>
@@ -95,7 +99,7 @@
                 <div class="total">
                     <span>{{ __('economy.total') }}</span>
                     <span class="rojo">{{  number_format(
-                        $deudasCP + $deudasLP + $user->patrimonioLeasings()
+                        $deudasCP + $deudasLP + $user->patrimonioLeasings() + $user->patrimonioAccionesEmitidas()
                     , 0, ',', '.') }}€</span>
                 </div>
             </div>
