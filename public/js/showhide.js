@@ -4,11 +4,11 @@ function showHidePassword(element) {
     
     if (inputPassword.type === 'password') {
         inputPassword.type = 'text';
-        icon.classList.remove('bx-show');
-        icon.classList.add('bx-hide');
-    } else {
-        inputPassword.type = 'password';
         icon.classList.remove('bx-hide');
         icon.classList.add('bx-show');
+    } else {
+        inputPassword.type = 'password';
+        icon.classList.remove('bx-show');
+        icon.classList.add('bx-hide');
     }
 }

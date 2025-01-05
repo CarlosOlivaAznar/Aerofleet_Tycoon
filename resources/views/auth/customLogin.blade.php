@@ -21,7 +21,7 @@
               <label for="password">{{ __('auth.password') }}</label>
               <div class="hide-show">
                 <input id="password" type="password" name="password" required autocomplete="current-password">
-                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
               </div>
               <x-input-error class="inputError" :messages="$errors->get('password')" />
             </div>
