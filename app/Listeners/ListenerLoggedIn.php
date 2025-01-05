@@ -33,7 +33,7 @@ class ListenerLoggedIn
     public function handle(UserLoggedIn $event): void
     {
         // Se aumenta el tiempo de ejecucion del script de php
-        ini_set('max_execution_time', '300');
+        set_time_limit(300);
 
         // Si el usuario no se ha logeado ninguna vez no se ejecuta esta funcion
         if(!Sede::where('user_id', $event->user->id)->first()){
@@ -604,7 +604,7 @@ class ListenerLoggedIn
     function metar(&$ingresos, &$gastos, &$ruta, Carbon $diaDesconexion, &$eventoAleatorio) 
     {
         $mensajeVuelos = Session::get('mensajeVuelos', []);
-
+      
         if($diaDesconexion->day == now()->day && $diaDesconexion->month == now()->month){
             $dateOrigen = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
             $dateDestino = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
