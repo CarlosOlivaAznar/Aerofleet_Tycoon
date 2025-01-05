@@ -6855,6 +6855,137 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+
+        /* -------------------- */
+        /* Aeropuertos Maryland */
+        /* -------------------- */
+        /* 
+        MARK: Maryland
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KBWI',
+            'pais' => 'N',
+            'nombre' => 'Baltimore Washington International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2900,
+            'latitud' => 39.176224,
+            'longitud' => -76.664356,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KHGR',
+            'pais' => 'N',
+            'nombre' => 'Hagerstown Regional Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.708381,
+            'longitud' => -77.727269,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSBY',
+            'pais' => 'N',
+            'nombre' => 'Salisbury Ocean City Wicomico Regional Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 300,
+            'latitud' => 38.341040,
+            'longitud' => -75.509433,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------------- */
+        /* Aeropuertos Massachusetts */
+        /* ------------------------- */
+        /* 
+        MARK: Massachusetts
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KBED',
+            'pais' => 'N',
+            'nombre' => 'Bedford Hanscom Field',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.469397,
+            'longitud' => -71.288571,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KBOS',
+            'pais' => 'N',
+            'nombre' => 'Boston Logan International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.366424,
+            'longitud' => -71.010281,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KACK',
+            'pais' => 'N',
+            'nombre' => 'Nantucket Memorial Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.256924,
+            'longitud' => -70.059354,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KEWB',
+            'pais' => 'N',
+            'nombre' => 'New Bedford Regional Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.676254,
+            'longitud' => -70.958273,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KPVC',
+            'pais' => 'N',
+            'nombre' => 'Martha\'s Vineyard Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.392510,
+            'longitud' => -70.611774,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+
+
         // Plantilla
         /*
         Aeropuerto::create([
