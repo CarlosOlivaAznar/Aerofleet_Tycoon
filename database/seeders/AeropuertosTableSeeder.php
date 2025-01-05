@@ -6650,11 +6650,216 @@ class AeropuertosTableSeeder extends Seeder
 
 
 
+        /* ========================== */
+        /* Aeropuertos ESTADOS UNIDOS */
+        /* ========================== */
+        /* 
+        MARK: ESTADOS UNIDOS
+        */
+
+        /* ---------------------- */
+        /* Aeropuertos Nueva York */
+        /* ---------------------- */
+        /* 
+        MARK: Nueva York
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KALB',
+            'pais' => 'N',
+            'nombre' => 'Albany International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 42.749322,
+            'longitud' => -73.804695,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KBUF',
+            'pais' => 'N',
+            'nombre' => 'Buffalo Niagara International Airport',
+            'espaciosTotales' => 220,
+            'costeOperacional' => 1400,
+            'latitud' => 42.940376,
+            'longitud' => -78.729583,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KISP',
+            'pais' => 'N',
+            'nombre' => 'Islip Long Island MacArthur Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 40.797386,
+            'longitud' => -73.100899,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KITH',
+            'pais' => 'N',
+            'nombre' => 'Ithaca Tompkins International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 42.490316,
+            'longitud' => -76.458683,
+            'demanda' => 0.58,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KJFK',
+            'pais' => 'N',
+            'nombre' => 'New York John F. Kennedy International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 40.642262,
+            'longitud' => -73.779629,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KLGA',
+            'pais' => 'N',
+            'nombre' => 'New York LaGuardia Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 40.778612,
+            'longitud' => -73.874132,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSWF',
+            'pais' => 'N',
+            'nombre' => 'New York Stewart International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 41.505077,
+            'longitud' => -74.097911,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KROC',
+            'pais' => 'N',
+            'nombre' => 'Rochester International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 43.121750,
+            'longitud' => -77.673114,
+            'demanda' => 0.79,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSYR',
+            'pais' => 'N',
+            'nombre' => 'Syracuse Hancock International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 43.110721,
+            'longitud' => -76.107614,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KHPN',
+            'pais' => 'N',
+            'nombre' => 'White Plains Westchester County Airport',
+            'espaciosTotales' => 175,
+            'costeOperacional' => 1000,
+            'latitud' => 41.067078,
+            'longitud' => -73.708648,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------------ */
+        /* Aeropuertos Nueva Jerjey */
+        /* ------------------------ */
+        /* 
+        MARK: Nueva Jerjey
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KACY',
+            'pais' => 'N',
+            'nombre' => 'Atlantic City International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 39.458204,
+            'longitud' => -74.578409,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KEWR',
+            'pais' => 'N',
+            'nombre' => 'New York Newark Liberty International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 40.689857,
+            'longitud' => -74.175473,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KTTN',
+            'pais' => 'N',
+            'nombre' => 'Philadelphia Trenton Mercer Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 40.276782,
+            'longitud' => -74.811925,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => '5B',
+            'pais' => 'N',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
