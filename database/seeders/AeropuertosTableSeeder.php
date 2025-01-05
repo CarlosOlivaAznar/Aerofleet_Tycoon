@@ -6140,9 +6140,9 @@ class AeropuertosTableSeeder extends Seeder
 
 
         
-        /* -------------------- */
+        /* ----------------- */
         /* Aeropuertos Japon */
-        /* -------------------- */
+        /* ----------------- */
         /* 
         MARK: Japon
         */
@@ -6301,11 +6301,176 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+
+
+
+        /* --------------------- */
+        /* Aeropuertos Australia */
+        /* --------------------- */
+        /* 
+        MARK: Australia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'YPAD',
+            'pais' => 'VH',
+            'nombre' => 'Adelaide Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -34.946124,
+            'longitud' => 138.532997,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 200,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YBBN',
+            'pais' => 'VH',
+            'nombre' => 'Brisbane Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => -27.379459,
+            'longitud' => 153.120187,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YBCS',
+            'pais' => 'VH',
+            'nombre' => 'Cairns Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -16.876823,
+            'longitud' => 145.750426,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 180,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'YSCB',
+            'pais' => 'VH',
+            'nombre' => 'Canberra International Airport',
+            'espaciosTotales' => 225,
+            'costeOperacional' => 1400,
+            'latitud' => -35.305762,
+            'longitud' => 149.193193,
+            'demanda' => 0.89,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YPDN',
+            'pais' => 'VH',
+            'nombre' => 'Darwin International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => -12.414354,
+            'longitud' => 130.879848,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMHB',
+            'pais' => 'VH',
+            'nombre' => 'Hobart International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => -42.835668,
+            'longitud' => 147.509040,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMLT',
+            'pais' => 'VH',
+            'nombre' => 'Launceston Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => -41.543876,
+            'longitud' => 147.209158,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YLRE',
+            'pais' => 'VH',
+            'nombre' => 'Longreach Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => -23.432417,
+            'longitud' => 144.276922,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMML',
+            'pais' => 'VH',
+            'nombre' => 'Melbourne Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => -37.668667,
+            'longitud' => 144.843176,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YPPH',
+            'pais' => 'VH',
+            'nombre' => 'Perth Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -31.941682,
+            'longitud' => 115.966821,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YSSY',
+            'pais' => 'VH',
+            'nombre' => 'Sydney Kingsford Smith Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => -33.941248,
+            'longitud' => 151.174788,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'JA',
+            'pais' => 'VH',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
