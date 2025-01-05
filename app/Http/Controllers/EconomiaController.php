@@ -85,7 +85,7 @@ class EconomiaController extends Controller
             return redirect()->route('economia.leasing');
         }
 
-        if(count($leasings) > 4) {
+        if(count($leasings) > 2) {
             session()->flash('error', trans('economy.leasingMaxLimit'));
             return redirect()->route('economia.leasing');
         }
@@ -302,6 +302,33 @@ class EconomiaController extends Controller
         $user->update();
 
         session()->flash('exito', trans('economy.sellOwnSharesSuccess'));
+        return redirect()->route('economia.acciones');
+    }
+
+    public function recomprarAccionesPropias(Request $request)
+    {
+        $sede = Sede::where('user_id', auth()->id())->first();
+        $user = User::find(auth()->id());
+
+        $valorCompra = $user->patrimonio() * ($request->porcentajeCompra / 100 + 0.01);
+
+        if(round($sede->porcentajeVenta - $request->porcentajeCompra / 100, 2) < round($sede->porcentajeComprado, 2)){
+            session()->flash('error', trans('economy.buyBackSharesErrorLimit'));
+            return redirect()->route('economia.acciones');
+        }
+
+        if($user->saldo - $valorCompra < 0){
+            session()->flash('error', trans('economy.buyBackSharesErrorneCash'));
+            return redirect()->route('economia.acciones');
+        }
+
+        $user->saldo -= $valorCompra;
+        $user->update();
+
+        $sede->porcentajeVenta -= $request->porcentajeCompra / 100;
+        $sede->update();
+
+        session()->flash('exito', trans('economy.buySharesSuccess'));
         return redirect()->route('economia.acciones');
     }
 

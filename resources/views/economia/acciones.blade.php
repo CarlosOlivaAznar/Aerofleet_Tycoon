@@ -48,6 +48,12 @@
                     <h3>{{ __('economy.sellShares') }}</h3>
                 </li>
             </a>
+            <a data-modal-target="modalRecomprarAcciones">
+              <li class="move-xy">
+                <i class='bx bx-pie-chart-alt'></i>
+                  <h3>{{ __('economy.buyBackShares') }}</h3>
+              </li>
+            </a>
         </ul>
       </div>
 
@@ -214,9 +220,16 @@
           let valorAccion = document.getElementById('valorAccion');
           let valorEmpresa = document.getElementById('valorEmpresa');
           valorAccion.innerHTML = formatearPrecio((event.value / 100) * valorEmpresa.value);
+
+
+          let valorRecomprar = document.getElementById('valorRecomprar');
+          valorRecomprar.innerHTML = formatearPrecio(((event.value / 100) + 0.01) * valorEmpresa.value);
+          
         }
 
       </script>
+
+      <!-- Modales -->
       <div class="modal" id="modalVenderCompanyia">
         <div class="contenido-modal">
           <form action="{{ route('economia.venderAccionesPropias') }}" method="POST">
@@ -233,6 +246,34 @@
               <span id="precio" class="precio">1</span>%
               <br>
               <p>{{ __('economy.sellOwnSharesCash') }} <span class="verde" id="valorAccion"></span></p>
+              
+            </div>
+            <div class="footer-modal">
+              <div class="botones">
+                <span class="cancelar">{{ __('economy.cancel') }}</span>
+                <input type="submit" class="aceptar" value="{{ __('economy.confirm') }}">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> 
+
+      <div class="modal" id="modalRecomprarAcciones">
+        <div class="contenido-modal">
+          <form action="{{ route('economia.recomprarAccionesPropias') }}" method="POST">
+            <div class="cabecera-modal">
+              <span class="cerrar-modal">&times;</span>
+              <h2>{{ __('economy.buyBackShares') }}</h2>
+            </div>
+            <div class="cuerpo-modal">
+              
+              @csrf
+              <label for="precioBillete">{{ __('economy.buyBackSharesInfo') }}</label>
+              <input type="range" name="porcentajeCompra" id="porcentajeCompra" class="precioBilletes" value="1" min="1" max="{{ $sede->porcentajeVenta * 100 }}" oninput="slide(this)">
+              <p style="margin: 0 5px 0 0; padding: 0; display: inline-block;">{{ __('economy.sellOwnSharesValue') }}</p>
+              <span id="precio" class="precio">1</span>%
+              <br>
+              <p>{{ __('economy.buyBackSharesCash') }} <span class="rojo" id="valorRecomprar"></span></p>
               
             </div>
             <div class="footer-modal">

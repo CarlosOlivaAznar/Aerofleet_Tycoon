@@ -88,6 +88,7 @@ return [
     'ownershipStake' => 'Ownership Stake',
     'buyShares' => 'Buy Shares',
     'sellShares' => 'Sell shares of your company',
+    'buyBackShares' => 'Buy Back Shares of Your Airline',
 
     'airline' => 'Airline',
     'percentajeOnProperty' => 'Percentage on property',
@@ -102,6 +103,11 @@ return [
     'yourShares' => 'Your purchased shares',
     'aviableShares' => 'Shares for sale',
     'noSharesShell' => 'There are no shares available for sale',
+
+    'buyBackSharesInfo' => 'Select the percentaje of shares that you want to buy back. You will be charged with a 1% plus for commiting this action.',
+    'buyBackSharesCash' => 'You will pay the following amount of cash:',
+    'buyBackSharesErrorLimit' => 'You cannot buy more shares than are available.',
+    'buyBackSharesErrorneCash' => 'You have not enought cash available to buy back the shares.',
 
     'minimunAssetsError' => 'To sell shares, your airline must be valued more than 250.000.000€',
     'sellOwnSharesError' => 'You cannot sell more than 25% of the company',

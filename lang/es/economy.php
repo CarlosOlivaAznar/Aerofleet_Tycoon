@@ -86,7 +86,8 @@ return [
     'airlineValue' => 'Valor de la Aerolínea',
     'ownershipStake' => 'Porcentaje en propiedad',
     'buyShares' => 'Comprar Acciones',
-    'sellShares' => 'Vender Acciones de tu Empresa',
+    'sellShares' => 'Vender Acciones de tu Aerolinea',
+    'buyBackShares' => 'Recomprar Acciones de tu Aerolinea',
 
     'airline' => 'Aeroínea',
     'percentajeOnProperty' => 'Porcentaje en propiedad',
@@ -102,6 +103,11 @@ return [
     'yourShares' => 'Tus Acciones compradas',
     'aviableShares' => 'Acciones a la venta',
     'noSharesSell' => 'No hay acciones disponibles a la venta',
+
+    'buyBackSharesInfo' => 'Selecciona el número de acciones que quieres comprar. Tendras que pagar un 1% extra por realizar esta accion.',
+    'buyBackSharesCash' => 'You will pay the following amount of cash:',
+    'buyBackSharesErrorLimit' => 'No puedes comprar más acciones de las que hay disponibles.',
+    'buyBackSharesErrorneCash' => 'No tienes suficiente saldo para comprar las acciones.',
 
     'minimunAssetsError' => 'Para vender acciones propias tu aerolinea debe estar valorada en mas de 250.000.000€',
     'sellOwnSharesError' => 'No se puede vender mas de un 25% de la empresa',
