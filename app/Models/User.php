@@ -76,6 +76,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Bugreport::class);
     }
 
+    public function prestamo()
+    {
+        return $this->hasMany(Prestamo::class);
+    }
+
+    public function accion()
+    {
+        return $this->hasMany(Accion::class);
+    }
+
     public function getNumEspacios()
     {
         $numEspacios = 0;
@@ -91,23 +101,93 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $patrimonio = $this->saldo;
         
-        foreach ($this->flota as $flota) {
-            $patrimonio += $flota->precioVenta();
+        $patrimonio += $this->patrimonioFlota();
+
+        $patrimonio += $this->patrimonioEspacios();
+
+        $patrimonio += $this->patrimonioSede();
+
+        $patrimonio += $this->patrimonioValorAcciones();
+
+        $patrimonio -= $this->patrimonioLeasings();
+        
+        foreach ($this->prestamo as $prestamo) {
+            $patrimonio -= ($prestamo->devolver());
         }
 
-        foreach ($this->espacio as $espacio) {
-            $patrimonio += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
-        }
-
-        if($this->sede){
-            $patrimonio += count($this->sede->hangar) * $this->sede->costeHangar();
-        }
+        $patrimonio = ($patrimonio * 100) / (100 + ($this->sede->porcentajeVenta * 100));
 
         return $patrimonio;
     }
 
+    public function patrimonioFlota()
+    {
+        $valor = 0;
 
-    // Funcion estatica que hace una llamada a la base de datos para retornar el saldo en formato string del usuario que esta logeado
+        foreach ($this->flota as $flota) {
+            if(!$flota->leasing){
+                $valor += $flota->avion->precio;
+            }
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioEspacios()
+    {
+        $valor = 0;
+
+        foreach ($this->espacio as $espacio) {
+            $valor += $espacio->numeroDeEspacios * $espacio->aeropuerto->precioEspacio();
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioSede()
+    {
+        $valor = 0;
+
+        if($this->sede){
+            $valor += count($this->sede->hangar) * $this->sede->costeHangar();
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioLeasings()
+    {
+        $valor = 0;
+
+        foreach ($this->flota as $avion) {
+            if($avion->leasing){
+                $valor += $avion->avion->leasePPD() * 31;
+            }
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioValorAcciones()
+    {
+        $valor = 0;
+
+        foreach ($this->accion as $accion) {
+            $valor += $accion->valorPrecio();
+        }
+
+        return $valor;
+    }
+
+    public function patrimonioAccionesEmitidas()
+    {
+        return $this->patrimonio() * $this->sede->porcentajeVenta;
+    }
+
+    
+
+
+    // Funcion estatica que hace una llamada a la base de datos para devolver el saldo en formato string del usuario que esta logeado
     // Se utiliza para mostrar en la parte superior derecha el saldo del usuario
     public static function getSaldoString()
     {

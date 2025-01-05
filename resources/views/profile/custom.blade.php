@@ -132,7 +132,7 @@
             <label for="update_password_current_password">{{ __('account.currentPwd') }}</label>
             <div class="hide-show">
               <input id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
-              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+              <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
             </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('current_password')" />
           </div>
@@ -141,7 +141,7 @@
             <label for="update_password_password">{{ __('account.newPwd') }}</label>
             <div class="hide-show">
               <input id="update_password_password" name="password" type="password" autocomplete="new-password">
-              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+              <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
             </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password')" />
           </div>
@@ -150,7 +150,7 @@
             <label for="update_password_password_confirmation">{{ __('account.confirmPwd') }}</label>
             <div class="hide-show">
               <input id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
-              <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+              <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
             </div>
             <x-input-error class="inputError" :messages="$errors->updatePassword->get('password_confirmation')" />
           </div>

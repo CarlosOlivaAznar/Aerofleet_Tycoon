@@ -3,12 +3,14 @@
 namespace App\Listeners;
 
 use App\Events\UserLoggedIn;
+use App\Models\Accion;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Models\Ruta;
 use App\Models\User;
 use App\Models\BeneficiosHistorico;
 use App\Models\Flota;
+use App\Models\Prestamo;
 use App\Models\Sede;
 use App\Services\decodificadorMETAR;
 use Carbon\Carbon;
@@ -60,6 +62,8 @@ class ListenerLoggedIn
         $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
         $fechaActual->setHour(1)->setMinute(0)->setSecond(0);
 
+        $desconexion = Carbon::createFromTimeString($event->user->ultimaConexion);
+
         // calculamos los dias que hay entre medio de las 2 fechas
         $diferencia = $ultimaConexion->diffInDays($fechaActual) - 1;
         // Pruebas
@@ -73,10 +77,12 @@ class ListenerLoggedIn
             // Comprobamos que los aviones que se tienen que activar
             $this->activarAviones();
             
-            for ($i=0; $i < $diferencia; $i++) { 
+            $fechaDesconexion = Carbon::createFromTimeString($event->user->ultimaConexion)->addDay();
+
+            for ($i=0; $i < $diferencia; $i++) {
                 foreach ($rutas as $ruta) {
                     if($ruta->flota->estado == 1){
-                        $this->calcularBeneficio($ruta, $i + 1);
+                        $this->calcularBeneficio($ruta, $fechaDesconexion);
                     }
                 }
                 // Actualizamos por dia el mantenimiento de los aviones
@@ -84,11 +90,19 @@ class ListenerLoggedIn
 
                 // Restamos los gastos mensuales
                 $this->gastosMensuales();
+
+                // Control de leasings
+                $this->controlLeasing($i + 1);
+
+                // Cobrar Prestamos
+                $this->cobrarPrestamos();
+
+                $fechaDesconexion->addDay();
             }
         }
 
         // Queremos calcular la diferencia de horas por lo que el dia se pone hoy para hacer la comparacion de horas correctamente
-        $horaDesconexion = Carbon::createFromTimeString($event->user->ultimaConexion)->setDate(now()->year, now()->month, now()->day);
+        $horaDesconexion = Carbon::create($desconexion)->setDate(now()->year, now()->month, now()->day);
         // Se calcula los dias de ultima conexion y ahora segun sus horas para ver que rutas son afectadas
         // Si es 0 o superior significa que por lo menos hay 2 dias diferentes en el calculo
         // Pero si es -1 significa que la desconexion y conexion ha ocurrido el mismo dia
@@ -102,12 +116,12 @@ class ListenerLoggedIn
                 // Rutas del dia de desconexion
                 if($hora->gt($horaDesconexion) && $ruta->flota->estado == 1){
                     // Rutas que su hora esta por delante de la hora de desconexion
-                    $this->calcularBeneficio($ruta, 0);
+                    $this->calcularBeneficio($ruta, now());
                 }
 
                 // Rutas del calculo de hoy
                 if($hora->lt(now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta, -1);
+                    $this->calcularBeneficio($ruta, now());
                 }
             }
 
@@ -117,12 +131,18 @@ class ListenerLoggedIn
             // Restamos los gastos mensuales
             $this->gastosMensuales();
 
+            // Control de leasings
+            $this->controlLeasing(0);
+
+            // Cobrar Prestamos
+            $this->cobrarPrestamos();
+
         } elseif($diferencia == -1){
             foreach ($rutas as $ruta) {
                 $hora = Carbon::createFromFormat('H:i:s', $ruta->horaFin);
                 // Calculo de las horas que estan entre la desconexion y conexion del usuario
                 if($hora->between($horaDesconexion, now()) && $ruta->flota->estado == 1){
-                    $this->calcularBeneficio($ruta, -1);
+                    $this->calcularBeneficio($ruta, now());
                 }
             }
         }
@@ -133,7 +153,7 @@ class ListenerLoggedIn
         if($diferencia > -1) {
             BeneficiosHistorico::create([
                 'user_id' => auth()->id(),
-                'saldo' => $event->user->saldo,
+                'saldo' => $event->user->patrimonio(),
                 'fecha' => now(),
             ]);
         }
@@ -224,29 +244,58 @@ class ListenerLoggedIn
         error_log("La ruta: $ruta->id, con una demanda de ($pasajerosEstimados) $mediaDemanda y con $pasajeros pasajeros. Tiene un beneficio de $beneficio, ($ingresos ingresos, $gastos gastos)");
 
         $user = User::where('id', auth()->id())->first();
-        $user->saldo += $beneficio;
+
+        // Control de propiedad de la empresa y reparto de beneficios
+        if($user->sede->porcentajeVenta > 0 && $user->sede->porcentajeComprado > 0){
+            $propietarios = Accion::where('sede_id', $user->sede->id)->get();
+
+            foreach ($propietarios as $propietario) {
+                $propietario->user->saldo += $beneficio * $propietario->accionesCompradas;
+                $propietario->user->update();
+
+                $propietario->beneficios += $beneficio * $propietario->accionesCompradas;
+                $propietario->update();
+            }
+        }
+
+        // Multiplicamos los beneficios por el el porcentaje que no tiene en propiedad el usuario
+        $user->saldo += $beneficio * (1 - $user->sede->porcentajeVenta);
+        $user->update();
+
+        // Guardamos la fecha de desconexion respecto a la hora de finalizacion del vuelo
+        // Se hace esto para proteger en caso de error del script y se guarde el ultimo punto en el que se calculo la ruta
+        $horasFinRuta = explode(":", $ruta->horaFin);
+        
+        $user->ultimaConexion = $diaDesconexion->setHour($horasFinRuta[0])->setMinute($horasFinRuta[1])->setSecond(0);
         $user->update();
 
         // Obtenemos la variable de sesion de mensaje vuelos
         $mensajeVuelos = Session::get('mensajeVuelos', []);
 
         // Reducimos el estado del avion porque ha completado un vuelo
-        $ruta->flota->condicion -= 0.05;
-        if($ruta->flota->condicion < 5){
-            $ruta->flota->estado = 0;
-            array_push($mensajeVuelos, 
-            [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
-            3]);
+        // Si el avion es de leasing no se resta la condicion ya que corre a cargo de la empresa de leasing
+        if(!$ruta->flota->leasing){
+            $ruta->flota->condicion -= 0.05;
+            if($ruta->flota->condicion < 5){
+                $ruta->flota->estado = 0;
+                array_push($mensajeVuelos, 
+                [trans('home.thePlane') . " ". $ruta->flota->matricula ." ". trans('home.depCond'),
+                3]);
+            }
+            $ruta->flota->update();
         }
-        $ruta->flota->update();
 
 
         // Se añade la informacion de los aviones para dar feedback al usuario
         $ruta->flota->rutasCompletadas++;
         $horas = explode(":", $ruta->tiempoEstimado);
         $ruta->flota->horasCompletadas += $horas[0] + $horas[1] / 60;
-        $ruta->flota->distanciaCompletada += $ruta->distancia;
-
+        if($ruta->flota->distanciaCompletada + $ruta->distancia >= 999999){
+            $ruta->flota->distanciaCompletada = 999999;
+        } else {
+            $ruta->flota->distanciaCompletada += $ruta->distancia;
+        }
+        
         $ruta->flota->update();
 
         // Guardamos informacion de los vuelos para que el usuario tenga feedback
@@ -370,6 +419,30 @@ class ListenerLoggedIn
                 $avionActivar->estado = 1;
                 $avionActivar->update();
                 error_log("Activando avion $avionActivar->id");
+            }
+        }
+    }
+
+    /**
+     * Funcion que controla el leasing del usuario
+     */
+    public function controlLeasing($desconexion)
+    {
+        $flotaLeasing = Flota::where('user_id', auth()->id())->where('leasing', 1)->get();
+
+        foreach ($flotaLeasing as $avion) {
+            $fechaFin = Carbon::createFromFormat('Y-m-d', $avion->finLeasing)->setHours(0)->setMinutes(0)->setSeconds(1);
+            $fechaDesconexion = Carbon::createFromTimeString(User::where('id', auth()->id())->first()->ultimaConexion);
+            if($fechaFin->gt($fechaDesconexion) || $fechaFin->eq($fechaDesconexion)){
+                $user = User::where('id', auth()->id())->first();
+                $user->saldo -= $avion->avion->leasePPD();
+                error_log("Dia de desconexion: $fechaDesconexion");
+                error_log("Cobrando leasing del avion $avion->id, precio por dia: " . $avion->avion->leasePPD());
+                $user->update();
+            } else {
+                // Elimina el avion si se ha superado la fecha de leasing
+                error_log("Eliminando avion $avion->id por fin del leasing");
+                $avion->delete();
             }
         }
     }
@@ -528,15 +601,13 @@ class ListenerLoggedIn
      * METAR LFOT 021000Z AUTO 27007KT 9999 BKN010 OVC015 13/11 Q1019 TEMPO BKN014 SCT020TCU
      * METAR LEZG 020900Z 07004KT 040V110 0150 R30R/0450N R12R/0300N R30L/0325N R12L/0400N FG VV001 08/08 Q1025 NOSIG
      */
-    function metar(&$ingresos, &$gastos, &$ruta, $diaDesconexion, &$eventoAleatorio) 
+    function metar(&$ingresos, &$gastos, &$ruta, Carbon $diaDesconexion, &$eventoAleatorio) 
     {
         $mensajeVuelos = Session::get('mensajeVuelos', []);
-        $ultimaConexion = Carbon::createFromTimeString(auth()->user()->ultimaConexion);
-        $ultimaConexion->setHour(1)->setMinute(0)->setSecond(0);
-        
-        if($diaDesconexion < 0) {
+      
+        if($diaDesconexion->day == now()->day && $diaDesconexion->month == now()->month){
             $dateOrigen = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaInicio)->format('Hi00') . "Z";
-            $dateDestino = $ultimaConexion->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
+            $dateDestino = now()->format('Ymd') . "_" . Carbon::createFromFormat('H:i:s', $ruta->horaFin)->format('Hi00') . "Z";
             $metarOrigen = $this->getMetar($ruta->espacio_departure->aeropuerto->icao, $dateOrigen);
             $metarDestino = $this->getMetar($ruta->espacio_arrival->aeropuerto->icao, $dateDestino);
         }
@@ -706,5 +777,32 @@ class ListenerLoggedIn
         $metarInfo = Http::get("https://aviationweather.gov/api/data/metar?ids=$icao&date=$date")->body();
         error_log("Se ha obtenido el metar $metarInfo");
         return $this->metarService->decode($metarInfo);
+    }
+
+    function cobrarPrestamos()
+    {
+        $prestamos = Prestamo::where('user_id', auth()->id())->get();
+        $user = User::find(auth()->id());
+
+        foreach ($prestamos as $prestamo) {
+            $cuota = $prestamo->cuotaPorDia();
+
+            if($prestamo->devuelto + $cuota >= $prestamo->prestamo){
+                $user->saldo -= $prestamo->prestamo - $prestamo->devuelto;
+
+                $user->update();
+                $prestamo->delete();
+
+                error_log("Prestamo devuelto la ultima cuota ha sido de " . $prestamo->prestamo - $prestamo->devuelto);
+            } else {
+                $prestamo->devuelto += $cuota;
+                $prestamo->update();
+    
+                $user->saldo -= $cuota;
+                $user->update();
+
+                error_log("Cobrando cuota de prestamo $cuota");
+            }
+        }
     }
 }

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CompetenciaController;
+use App\Http\Controllers\EconomiaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlotaController;
@@ -77,6 +79,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home.index');
     Route::get('home/company', [HomeController::class, 'company'])->name('home.company');
     Route::post('home/company/submit', [HomeController::class, 'submit'])->name('home.submit');
+    Route::get('/loading', [HomeController::class, 'loading'])->name('home.loading');
 });
 
 // Ruta mapa
@@ -130,6 +133,32 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('competencia/rankings', [CompetenciaController::class, 'rankings'])->name('competencia.rankings');
     Route::post('competencia/demandaRuta', [CompetenciaController::class, 'demandaRuta'])->name('competencia.demandaRuta');
     Route::post('competencia/rutas', [CompetenciaController::class, 'rutasCompetencia'])->name('competencia.rutas');
+});
+
+// Rutas Economía
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('economia', [EconomiaController::class, 'index'])->name('economia.index');
+
+    // Leasing
+    Route::get('economia/leasing', [EconomiaController::class, 'leasing'])->name('economia.leasing');
+    Route::get('economia/leasing/{id}', [EconomiaController::class, 'leasingCompanyia'])->name('economia.leasingCompanyia');
+    Route::post('economia/leasing/contratar', [EconomiaController::class, 'contratarLeasing'])->name('economia.contratarLeasing');
+    Route::get('economia/endLeasing/{id}', [EconomiaController::class, 'finLeasing'])->name('economia.finLeasing');
+
+    // Prestamos
+    Route::get('economia/prestamos', [EconomiaController::class, 'prestamos'])->name('economia.prestamos');
+    Route::get('economia/prestamos/{id}', [EconomiaController::class, 'contratarPrestamo'])->name('economia.contratarPrestamo');
+    Route::post('economia/prestamos/contratar', [EconomiaController::class, 'prestamoFinalizado'])->name('economia.prestamoFinalizado');
+    Route::get('economia/devolverPrestamo/{id}', [EconomiaController::class, 'devolverPrestamo'])->name('economia.devolverPrestamo');
+
+    // Acciones
+    Route::get('economia/acciones', [EconomiaController::class, 'acciones'])->name('economia.acciones');
+    Route::get('economia/comprarAcciones', [EconomiaController::class, 'comprarAcciones'])->name('economia.comprarAcciones');
+    Route::post('economia/venderAcciones', [EconomiaController::class, 'venderAccionesPropias'])->name('economia.venderAccionesPropias');
+    Route::post('economia/recomparAcciones', [EconomiaController::class, 'recomprarAccionesPropias'])->name('economia.recomprarAccionesPropias');
+    Route::post('economia/comprarAcciones/comprar', [EconomiaController::class, 'comprarAccionesPost'])->name('economia.comprarAccionesPost');
+    Route::get('economia/venderAcciones/{id}', [EconomiaController::class, 'venderAcciones'])->name('economia.venderAcciones');
+
 });
 
 Route::get('/dashboard', function () {

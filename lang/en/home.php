@@ -66,6 +66,22 @@ return [
     'visArrEvent3' => 'was diverted to another airport due to low visibility, a bus was provided for passengers to reach the original airport, the bus cost was:',
 
 
+    // Mensajes de loading
+    'txtLoading1' => 'Calculating Routes',
+    'txtLoading2' => 'Refueling Planes',
+    'txtLoading3' => 'Boarding Passengers',
+    'txtLoading4' => 'Chemtrailing civilians',
+    'txtLoading5' => 'The pilots are lost',
+    'txtLoading6' => 'Are we sure we had enough fuel?',
+    'txtLoading7' => 'Checking the weather',
+    'txtLoading8' => 'Performing maintenance',
+    'txtLoading9' => 'Contacting air traffic control',
+    'txtLoading10' => 'Paying landing fees',
+    'txtLoading11' => 'Arriving at the terminal',
+    'txtLoading12' => 'Finding the way… and the lost luggage',
+
+
+
 ];
 
 // Plantilla

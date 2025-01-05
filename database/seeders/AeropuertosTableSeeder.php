@@ -5562,7 +5562,1427 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ------------------- */
+        /* Aeropuertos Rumania */
+        /* ------------------- */
+        /* 
+        MARK: Rumania
+        */
+        
+        Aeropuerto::create([
+            'icao' => 'LROD',
+            'pais' => 'YR',
+            'nombre' => 'Oradea International Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 380,
+            'latitud' => 47.026988,
+            'longitud' => 21.902910,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
 
+        Aeropuerto::create([
+            'icao' => 'LRTM',
+            'pais' => 'YR',
+            'nombre' => 'Targu Mures International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 46.467827,
+            'longitud' => 24.413134,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRBC',
+            'pais' => 'YR',
+            'nombre' => 'Bacau International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 46.524109,
+            'longitud' => 26.910716,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LROP',
+            'pais' => 'YR',
+            'nombre' => 'Bucharest Henri Coanda International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2000,
+            'latitud' => 44.572422,
+            'longitud' => 26.092654,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCL',
+            'pais' => 'YR',
+            'nombre' => 'Cluj-Napoca International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 46.785744,
+            'longitud' => 23.686366,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCK',
+            'pais' => 'YR',
+            'nombre' => 'Constanta International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.358305,
+            'longitud' => 28.486425,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRCV',
+            'pais' => 'YR',
+            'nombre' => 'Craiova International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 44.317324,
+            'longitud' => 23.885844,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 65,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRIA',
+            'pais' => 'YR',
+            'nombre' => 'Iasi International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 47.178204,
+            'longitud' => 27.621326,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSM',
+            'pais' => 'YR',
+            'nombre' => 'Satu Mare International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 47.705859,
+            'longitud' => 22.883565,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSB',
+            'pais' => 'YR',
+            'nombre' => 'Sibiu International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 45.787019,
+            'longitud' => 24.090661,
+            'demanda' => 0.60,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRSV',
+            'pais' => 'YR',
+            'nombre' => 'Suceava International Airport',
+            'espaciosTotales' => 80,
+            'costeOperacional' => 1000,
+            'latitud' => 47.686308,
+            'longitud' => 26.353129,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LRTR',
+            'pais' => 'YR',
+            'nombre' => 'Timisoara Traian Vuia International Airport',
+            'espaciosTotales' => 180,
+            'costeOperacional' => 1100,
+            'latitud' => 45.811068,
+            'longitud' => 21.328559,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 95,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------------------- */
+        /* Aeropuertos Bosnia y Herzegovina */
+        /* -------------------------------- */
+        /* 
+        MARK: Bosnia y Herzegovina
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LQBK',
+            'pais' => 'T9',
+            'nombre' => 'Banja Luka International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.933792,
+            'longitud' => 17.300681,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQMO',
+            'pais' => 'T9',
+            'nombre' => 'Mostar International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.285221,
+            'longitud' => 17.842800,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQSA',
+            'pais' => 'T9',
+            'nombre' => 'Sarajevo International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1800,
+            'latitud' => 43.824399,
+            'longitud' => 18.334215,
+            'demanda' => 0.93,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LQTZ',
+            'pais' => 'T9',
+            'nombre' => 'Tuzla International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 44.459472,
+            'longitud' => 18.725442,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------ */
+        /* Aeropuertos Serbia */
+        /* ------------------ */
+        /* 
+        MARK: Serbia
+        */
+        Aeropuerto::create([
+            'icao' => 'LYBE',
+            'pais' => 'YU',
+            'nombre' => 'Belgrade Nikola Tesla Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 44.817785,
+            'longitud' => 20.307020,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYKV',
+            'pais' => 'YU',
+            'nombre' => 'Kraljevo Morava Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 43.819331,
+            'longitud' => 20.585993,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYNI',
+            'pais' => 'YU',
+            'nombre' => 'Nis Constantine the Great Airport',
+            'espaciosTotales' => 40,
+            'costeOperacional' => 400,
+            'latitud' => 43.336242,
+            'longitud' => 21.857360,
+            'demanda' => 0.65,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------ */
+        /* Aeropuertos Kosovo */
+        /* ------------------ */
+        /* 
+        MARK: Kosovo
+        */
+        Aeropuerto::create([
+            'icao' => 'BKPR',
+            'pais' => 'Z6',
+            'nombre' => 'Pristina Adem Jashari International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.574142,
+            'longitud' => 21.034565,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* ---------------------- */
+        /* Aeropuertos Montenegro */
+        /* ---------------------- */
+        /* 
+        MARK: Motenegro
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LYPG',
+            'pais' => '4O',
+            'nombre' => 'Podgorica Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => 42.363152,
+            'longitud' => 19.250989,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LYTV',
+            'pais' => '4O',
+            'nombre' => 'Tivat Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 42.411732,
+            'longitud' => 18.716039,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------- */
+        /* Aeropuertos Albania */
+        /* ------------------- */
+        /* 
+        MARK: albania
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LATI',
+            'pais' => 'ZA',
+            'nombre' => 'Tirana International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 41.414176,
+            'longitud' => 19.718628,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LAKU',
+            'pais' => 'ZA',
+            'nombre' => 'Kukes International Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.036066,
+            'longitud' => 20.416645,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------------------- */
+        /* Aeropuertos Macedonia del norte */
+        /* ------------------------------- */
+        /* 
+        MARK: Macedonia del norte
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LWOH',
+            'pais' => 'Z3',
+            'nombre' => 'Ohrid Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 41.181671,
+            'longitud' => 20.743915,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LWSK',
+            'pais' => 'Z3',
+            'nombre' => 'Skopje International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 41.959984,
+            'longitud' => 21.623664,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------- */
+        /* Aeropuertos Bulgaria */
+        /* -------------------- */
+        /* 
+        MARK: Bulgaria
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LBBG',
+            'pais' => 'LZ',
+            'nombre' => 'Burgas Airport',
+            'espaciosTotales' => 30,
+            'costeOperacional' => 300,
+            'latitud' => 42.568394,
+            'longitud' => 27.514649,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBPD',
+            'pais' => 'LZ',
+            'nombre' => 'Plovdiv Airport',
+            'espaciosTotales' => 27,
+            'costeOperacional' => 270,
+            'latitud' => 42.068538,
+            'longitud' => 24.851421,
+            'demanda' => 0.53,
+            'pasajerosEstimados' => 55,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBSF',
+            'pais' => 'LZ',
+            'nombre' => 'Sofia Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.694799,
+            'longitud' => 23.413244,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LBWN',
+            'pais' => 'LZ',
+            'nombre' => 'Varna Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 43.233350,
+            'longitud' => 27.826321,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ----------------------- */
+        /* Aeropuertos Bielorrusia */
+        /* ----------------------- */
+        /* 
+        MARK: Bielorrusia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'UMBB',
+            'pais' => 'EW',
+            'nombre' => 'Brest Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 52.109192,
+            'longitud' => 23.897291,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'UMGG',
+            'pais' => 'EW',
+            'nombre' => 'Gomel Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 52.526145,
+            'longitud' => 31.014801,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'UMMG',
+            'pais' => 'EW',
+            'nombre' => 'Grodno Hrodna Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 50,
+            'latitud' => 53.605847,
+            'longitud' => 24.050407,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ----------------------- */
+        /* Aeropuertos Islas Feroe */
+        /* ----------------------- */
+        /* 
+        MARK: Islas Feroe
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EKVG',
+            'pais' => 'G',
+            'nombre' => 'Vagar Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 62.065675,
+            'longitud' => -7.280555,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------- */
+        /* Aeropuertos Moldavia */
+        /* -------------------- */
+        /* 
+        MARK: Moldavia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LUKK',
+            'pais' => 'ER',
+            'nombre' => 'Chisinau International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 46.929920,
+            'longitud' => 28.934145,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        
+        /* ----------------- */
+        /* Aeropuertos Japon */
+        /* ----------------- */
+        /* 
+        MARK: Japon
+        */
+
+        Aeropuerto::create([
+            'icao' => 'RJTT',
+            'pais' => 'JA',
+            'nombre' => 'Tokyo Haneda International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 35.551759,
+            'longitud' => 139.785007,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJBB',
+            'pais' => 'JA',
+            'nombre' => 'Osaka Kansai International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 34.43254,
+            'longitud' => 135.230749,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJAA',
+            'pais' => 'JA',
+            'nombre' => 'Tokyo Narita International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 35.767244,
+            'longitud' => 140.386826,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJOA',
+            'pais' => 'JA',
+            'nombre' => 'Hiroshima Airport',
+            'espaciosTotales' => 175,
+            'costeOperacional' => 850,
+            'latitud' => 34.437058,
+            'longitud' => 132.918731,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJOM',
+            'pais' => 'JA',
+            'nombre' => 'Matsuyama Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 33.828078,
+            'longitud' => 132.700168,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJGG',
+            'pais' => 'JA',
+            'nombre' => 'Nagoya Chubu Centrair International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1650,
+            'latitud' => 34.858264,
+            'longitud' => 136.809857,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'ROAH',
+            'pais' => 'JA',
+            'nombre' => 'Okinawa Naha Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1800,
+            'latitud' => 26.196625,
+            'longitud' => 127.645087,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 150,
+            'categoria' => 2,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSS',
+            'pais' => 'JA',
+            'nombre' => 'Sendai Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 38.137777,
+            'longitud' => 140.918259,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSN',
+            'pais' => 'JA',
+            'nombre' => 'Niigata Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 37.955233,
+            'longitud' => 139.110787,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJSK',
+            'pais' => 'JA',
+            'nombre' => 'Akita Airport',
+            'espaciosTotales' => 120,
+            'costeOperacional' => 750,
+            'latitud' => 39.614854,
+            'longitud' => 140.219723,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 80,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RJCC',
+            'pais' => 'JA',
+            'nombre' => 'Sapporo New Chitose Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 42.787671,
+            'longitud' => 141.682577,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+
+
+
+        /* --------------------- */
+        /* Aeropuertos Australia */
+        /* --------------------- */
+        /* 
+        MARK: Australia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'YPAD',
+            'pais' => 'VH',
+            'nombre' => 'Adelaide Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -34.946124,
+            'longitud' => 138.532997,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 200,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YBBN',
+            'pais' => 'VH',
+            'nombre' => 'Brisbane Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => -27.379459,
+            'longitud' => 153.120187,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YBCS',
+            'pais' => 'VH',
+            'nombre' => 'Cairns Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -16.876823,
+            'longitud' => 145.750426,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 180,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+        
+        Aeropuerto::create([
+            'icao' => 'YSCB',
+            'pais' => 'VH',
+            'nombre' => 'Canberra International Airport',
+            'espaciosTotales' => 225,
+            'costeOperacional' => 1400,
+            'latitud' => -35.305762,
+            'longitud' => 149.193193,
+            'demanda' => 0.89,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YPDN',
+            'pais' => 'VH',
+            'nombre' => 'Darwin International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => -12.414354,
+            'longitud' => 130.879848,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMHB',
+            'pais' => 'VH',
+            'nombre' => 'Hobart International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => -42.835668,
+            'longitud' => 147.509040,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMLT',
+            'pais' => 'VH',
+            'nombre' => 'Launceston Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => -41.543876,
+            'longitud' => 147.209158,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YLRE',
+            'pais' => 'VH',
+            'nombre' => 'Longreach Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => -23.432417,
+            'longitud' => 144.276922,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YMML',
+            'pais' => 'VH',
+            'nombre' => 'Melbourne Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => -37.668667,
+            'longitud' => 144.843176,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YPPH',
+            'pais' => 'VH',
+            'nombre' => 'Perth Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -31.941682,
+            'longitud' => 115.966821,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'YSSY',
+            'pais' => 'VH',
+            'nombre' => 'Sydney Kingsford Smith Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => -33.941248,
+            'longitud' => 151.174788,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------------- */
+        /* Aeropuertos Nueva Zelanda */
+        /* ------------------------- */
+        /* 
+        MARK: Nueva Zelanda
+        */
+
+        Aeropuerto::create([
+            'icao' => 'NZAA',
+            'pais' => 'ZK',
+            'nombre' => 'Auckland Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => -37.008700,
+            'longitud' => 174.791117,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'NZWN',
+            'pais' => 'ZK',
+            'nombre' => 'Wellington International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -41.326828,
+            'longitud' => 174.806902,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'NZCH',
+            'pais' => 'ZK',
+            'nombre' => 'Christchurch International Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1900,
+            'latitud' => -43.489148,
+            'longitud' => 172.535458,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------------- */
+        /* Aeropuertos Corea del Sur */
+        /* ------------------------- */
+        /* 
+        MARK: Corea del Sur
+        */
+
+        Aeropuerto::create([
+            'icao' => 'RKSI',
+            'pais' => 'HL',
+            'nombre' => 'Seoul Incheon International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 37.465268,
+            'longitud' => 126.437010,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKSS',
+            'pais' => 'HL',
+            'nombre' => 'Seoul Gimpo International Airport',
+            'espaciosTotales' => 350,
+            'costeOperacional' => 1800,
+            'latitud' => 37.557175,
+            'longitud' => 126.792595,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 280,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+
+        Aeropuerto::create([
+            'icao' => 'RKPK',
+            'pais' => 'HL',
+            'nombre' => 'Busan Gimhae International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 35.180192,
+            'longitud' => 128.938324,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 0.85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKTU',
+            'pais' => 'HL',
+            'nombre' => 'Cheongju International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 36.716498,
+            'longitud' => 127.499873,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'RKJJ',
+            'pais' => 'HL',
+            'nombre' => 'Gwangju Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 35.126781,
+            'longitud' => 126.808176,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 90,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------ */
+        /* Aeropuertos Chipre */
+        /* ------------------ */
+        /* 
+        MARK: Chipre
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LCEN',
+            'pais' => '5B',
+            'nombre' => 'Ercan International Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 750,
+            'latitud' => 35.151132,
+            'longitud' => 33.504565,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LCLK',
+            'pais' => '5B',
+            'nombre' => 'Larnaca International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 34.874150,
+            'longitud' => 33.622639,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'LCPH',
+            'pais' => '5B',
+            'nombre' => 'Paphos International Airport',
+            'espaciosTotales' => 100,
+            'costeOperacional' => 750,
+            'latitud' => 34.716874,
+            'longitud' => 32.483686,
+            'demanda' => 0.75,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* ========================== */
+        /* Aeropuertos ESTADOS UNIDOS */
+        /* ========================== */
+        /* 
+        MARK: ESTADOS UNIDOS
+        */
+
+        /* ---------------------- */
+        /* Aeropuertos Nueva York */
+        /* ---------------------- */
+        /* 
+        MARK: Nueva York
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KALB',
+            'pais' => 'N',
+            'nombre' => 'Albany International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 42.749322,
+            'longitud' => -73.804695,
+            'demanda' => 0.80,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KBUF',
+            'pais' => 'N',
+            'nombre' => 'Buffalo Niagara International Airport',
+            'espaciosTotales' => 220,
+            'costeOperacional' => 1400,
+            'latitud' => 42.940376,
+            'longitud' => -78.729583,
+            'demanda' => 0.88,
+            'pasajerosEstimados' => 150,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KISP',
+            'pais' => 'N',
+            'nombre' => 'Islip Long Island MacArthur Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 40.797386,
+            'longitud' => -73.100899,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KITH',
+            'pais' => 'N',
+            'nombre' => 'Ithaca Tompkins International Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 350,
+            'latitud' => 42.490316,
+            'longitud' => -76.458683,
+            'demanda' => 0.58,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KJFK',
+            'pais' => 'N',
+            'nombre' => 'New York John F. Kennedy International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => 40.642262,
+            'longitud' => -73.779629,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KLGA',
+            'pais' => 'N',
+            'nombre' => 'New York LaGuardia Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 40.778612,
+            'longitud' => -73.874132,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSWF',
+            'pais' => 'N',
+            'nombre' => 'New York Stewart International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 41.505077,
+            'longitud' => -74.097911,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KROC',
+            'pais' => 'N',
+            'nombre' => 'Rochester International Airport',
+            'espaciosTotales' => 150,
+            'costeOperacional' => 1000,
+            'latitud' => 43.121750,
+            'longitud' => -77.673114,
+            'demanda' => 0.79,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSYR',
+            'pais' => 'N',
+            'nombre' => 'Syracuse Hancock International Airport',
+            'espaciosTotales' => 200,
+            'costeOperacional' => 1200,
+            'latitud' => 43.110721,
+            'longitud' => -76.107614,
+            'demanda' => 0.85,
+            'pasajerosEstimados' => 100,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KHPN',
+            'pais' => 'N',
+            'nombre' => 'White Plains Westchester County Airport',
+            'espaciosTotales' => 175,
+            'costeOperacional' => 1000,
+            'latitud' => 41.067078,
+            'longitud' => -73.708648,
+            'demanda' => 0.78,
+            'pasajerosEstimados' => 85,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* ------------------------ */
+        /* Aeropuertos Nueva Jerjey */
+        /* ------------------------ */
+        /* 
+        MARK: Nueva Jerjey
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KACY',
+            'pais' => 'N',
+            'nombre' => 'Atlantic City International Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 39.458204,
+            'longitud' => -74.578409,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KEWR',
+            'pais' => 'N',
+            'nombre' => 'New York Newark Liberty International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 40.689857,
+            'longitud' => -74.175473,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KTTN',
+            'pais' => 'N',
+            'nombre' => 'Philadelphia Trenton Mercer Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 40.276782,
+            'longitud' => -74.811925,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* -------------------- */
+        /* Aeropuertos Maryland */
+        /* -------------------- */
+        /* 
+        MARK: Maryland
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KBWI',
+            'pais' => 'N',
+            'nombre' => 'Baltimore Washington International Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2900,
+            'latitud' => 39.176224,
+            'longitud' => -76.664356,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KHGR',
+            'pais' => 'N',
+            'nombre' => 'Hagerstown Regional Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 39.708381,
+            'longitud' => -77.727269,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KSBY',
+            'pais' => 'N',
+            'nombre' => 'Salisbury Ocean City Wicomico Regional Airport',
+            'espaciosTotales' => 35,
+            'costeOperacional' => 300,
+            'latitud' => 38.341040,
+            'longitud' => -75.509433,
+            'demanda' => 0.55,
+            'pasajerosEstimados' => 60,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+
+        /* ------------------------- */
+        /* Aeropuertos Massachusetts */
+        /* ------------------------- */
+        /* 
+        MARK: Massachusetts
+        */
+
+        Aeropuerto::create([
+            'icao' => 'KBED',
+            'pais' => 'N',
+            'nombre' => 'Bedford Hanscom Field',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 42.469397,
+            'longitud' => -71.288571,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KBOS',
+            'pais' => 'N',
+            'nombre' => 'Boston Logan International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 42.366424,
+            'longitud' => -71.010281,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KACK',
+            'pais' => 'N',
+            'nombre' => 'Nantucket Memorial Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.256924,
+            'longitud' => -70.059354,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KEWB',
+            'pais' => 'N',
+            'nombre' => 'New Bedford Regional Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.676254,
+            'longitud' => -70.958273,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'KPVC',
+            'pais' => 'N',
+            'nombre' => 'Martha\'s Vineyard Airport',
+            'espaciosTotales' => 25,
+            'costeOperacional' => 250,
+            'latitud' => 41.392510,
+            'longitud' => -70.611774,
+            'demanda' => 0.50,
+            'pasajerosEstimados' => 50,
+            'categoria' => 4,
+            'isla' => true,
+        ]);
 
 
 
@@ -5570,7 +6990,7 @@ class AeropuertosTableSeeder extends Seeder
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'SX',
+            'pais' => 'N',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,

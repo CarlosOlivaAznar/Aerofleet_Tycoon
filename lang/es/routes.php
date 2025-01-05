@@ -20,6 +20,15 @@ return [
     'income' => 'Beneficios',
     'collapseAll' => 'Encoger todos',
 
+    'estimatedDemand' => 'Demanda Estimada',
+    'estimatedDemandInfo' => 'La demanda estimada solo tiene en cuenta la demanda de la ruta, no tiene en cuenta las rutas de la comptencia',
+    'h' => 'Alta',
+    'mh' => 'Media-Alta',
+    'm' => 'Media',
+    'ml' => 'Media-Baja',
+    'l' => 'Baja',
+    'vl' => 'Muy Baja',
+
     // Messages
     'inactive' => 'RUTA INACTIVA',
     'maintenance' => 'AVIÓN EN MANTENIMIENTO',

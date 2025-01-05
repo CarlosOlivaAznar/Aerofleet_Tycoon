@@ -133,7 +133,7 @@
           data: {
             labels: fechas,
             datasets: [{
-              label: 'Saldo',
+              label: 'Valor de la empresa',
               data: beneficios,
               borderWidth: 2
             }]

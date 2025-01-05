@@ -55,13 +55,32 @@
                 <td>{{ $avion->matricula }}</td>
                 <td>{{ $avion->avion->modelo }}</td>
                 <td>{{ $avion->avion->capacidad }}</td>
-                <td>{{ $avion->fechaDeFabricacion }}</td>
-                <td>{{ $avion->condicion }}%</td>
+                <td>
+                  @if(!$avion->leasing)
+                    {{ $avion->fechaDeFabricacion }}
+                  @else
+                    {{ __('fleet.leasedPlane') }}
+                  @endif
+                </td>
+                <td>
+                  @if(!$avion->leasing)
+                    {{ $avion->condicion }}%
+                  @else
+                    n/a
+                  @endif
+                </td>
                 <td class="estado">
                   <span class="{{ $avion->estatusC() }}">{{ $avion->estatusS() }}</span>
                 </td>
-                <td>{{ number_format($avion->precioVenta(), 0, ',', '.') }}</td>
                 <td>
+                  @if(!$avion->leasing)
+                    {{ number_format($avion->precioVenta(), 0, ',', '.') }}
+                  @else
+                    {{ number_format($avion->avion->leasePPD(), 0, ',', '.') }}€/day
+                  @endif
+                </td>
+                <td>
+                  @if (!$avion->leasing)
                   <a class="vender tooltip" data-modal-target="modalVender{{ $avion->id }}">
                     <i class="bx bx-money-withdraw move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.sellAircraft') }}</span>
@@ -70,6 +89,7 @@
                     <i class="bx bx-wrench move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.makeMaintenance') }}</span>
                   </a>
+                  @endif
                   <a class="comprar tooltip move-ef" href="{{ route('rutas.crearRutaAvion', ['id' => $avion->id]) }}">
                     <i class="bx bx-add-to-queue move-ef"></i>
                     <span class="tooltiptext">{{ __('fleet.createRoute') }}</span>
@@ -163,8 +183,10 @@
                 <td>{{ $avion->avion->categoria() }}</td>
               </tr>
               <tr>
-                <th>{{ __('fleet.state') }}</th>
-                <td>{{ $avion->condicion }}%</td>
+                @if(!$avion->leasing)
+                  <th>{{ __('fleet.state') }}</th>
+                  <td>{{ $avion->condicion }}%</td>
+                @endif
               </tr>
               <tr>
                 <th>{{ __('fleet.completedRoutes') }}</th>
@@ -179,8 +201,13 @@
                 <td>{{ $avion->distanciaCompletada }} {{ __('fleet.kilometers') }}</td>
               </tr>
               <tr>
-                <th>{{ __('fleet.lastMaintenance') }}</th>
-                <td>{{ $avion->ultimoMantenimiento }}</td>
+                @if(!$avion->leasing)
+                  <th>{{ __('fleet.lastMaintenance') }}</th>
+                  <td>{{ $avion->ultimoMantenimiento }}</td>
+                @else
+                  <th>{{ __('fleet.endLease') }}</th>
+                  <td>{{ $avion->finLeasing }}</td>
+                @endif
               </tr>
             </table>
             

@@ -18,6 +18,8 @@ class Flota extends Model
         'condicion',
         'estado',
         'activacion',
+        'leasing',
+        'finLeasing',
     ];
 
     public function estatusS()

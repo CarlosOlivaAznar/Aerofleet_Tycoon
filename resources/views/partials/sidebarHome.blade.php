@@ -10,6 +10,7 @@
       <li><a href="{{ route('rutas.index') }}"><i class="bx bx-map-pin"></i>{{ __('sidebar.routes') }}</a></li>
       <li><a href="{{ route('espacios.index') }}"><i class="bx bxs-plane-land"></i>{{ __('sidebar.slots') }}</a></li>
       <li><a href="{{ route('sede.index') }}"><i class="bx bx-buildings"></i>{{ __('sidebar.hq') }}</a></li>
+      <li><a href="{{ route('economia.index') }}"><i class='bx bx-dollar-circle'></i>{{ __('economy.economy') }}</a></li>
       <li><a href="{{ route('competencia.index') }}"><i class="bx"><img src="{{ asset('icons/competencia.svg') }}" alt="" class="color-gris"></i>{{ __('sidebar.competition') }}</a></li>
     </ul>
     <ul class="lista-menu">

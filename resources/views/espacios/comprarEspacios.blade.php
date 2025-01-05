@@ -109,6 +109,7 @@
       </script>
       </div>
       
+      <script src="{{ asset('js/formatearPrecio.js') }}"></script>
       <script>
         function mostrarPrecio(elemento)
         {
@@ -195,15 +196,6 @@
           // Coste Operacional
           costeOperacionInfo.innerHTML = aeropuerto.costeOperacional;
           }
-        }
-
-        function formatearPrecio(precio) {
-          return new Intl.NumberFormat('es-ES', {
-            style: 'currency',
-            currency: 'EUR',
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-          }).format(precio);
         }
       </script>
       <script src="{{ asset('js/dropdown.js') }}"></script>

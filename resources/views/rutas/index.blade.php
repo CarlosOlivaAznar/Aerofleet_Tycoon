@@ -57,9 +57,15 @@
               <th>{{ __('routes.departure') }}</th>
               <th>{{ __('routes.arrival') }}</th>
               <th>{{ __('routes.distance') }}</th>
-              <th>{{ __('routes.time') }}</th>
               <th>{{ __('routes.timeOfDep') }}</th>
               <th>{{ __('routes.timeOfArr') }}</th>
+              <th>
+                <div class="tooltip icon-tooltip">
+                  {{ __('routes.estimatedDemand') }}
+                  <i class='bx bx-info-circle'></i>
+                  <span class="tooltiptext">{{ __('routes.estimatedDemandInfo') }}</span>
+                </div>
+              </th>
               <th>{{ __('routes.ticketPrice') }}</th>
               <th>{{ __('routes.income') }}</th>
               <th>{{ __('routes.actions') }}</th>
@@ -72,9 +78,34 @@
               <td>{{ $ruta->espacio_departure->aeropuerto->icao }}</td>
               <td>{{ $ruta->espacio_arrival->aeropuerto->icao }}</td>
               <td>{{ $ruta->distancia }} km</td>
-              <td>{{ $ruta->tiempoEstimado }}</td>
               <td>{{ $ruta->horaInicio }}</td>
               <td>{{ $ruta->horaFin }}</td>
+              <td class="estado">
+              @php
+                  $demanda = ($ruta->espacio_departure->aeropuerto->demanda + $ruta->espacio_arrival->aeropuerto->demanda) / 2;
+
+                  if($demanda > 0.9){
+                    $clase = "exito";
+                    $texto = trans('routes.h');
+                  } elseif($demanda > 0.7){
+                    $clase = "exito";
+                    $texto = trans('routes.mh');
+                  } elseif($demanda > 0.5){
+                    $clase = "warning";
+                    $texto = trans('routes.m');
+                  } elseif($demanda > 0.3){
+                    $clase = "warning";
+                    $texto = trans('routes.ml');
+                  } elseif($demanda > 0.15){
+                    $clase = "error";
+                    $texto = trans('routes.l');
+                  } else {
+                    $clase = "error";
+                    $texto = trans('routes.vl');
+                  }
+              @endphp
+              <span class="{{ $clase }}">{{ $texto }}</span>
+              </td>
               <td>{{ $ruta->precioBillete }}€</td>
               <td>
                 @if (isset($economiaVuelos["$ruta->id"]) && count($economiaVuelos["$ruta->id"]) > 0)

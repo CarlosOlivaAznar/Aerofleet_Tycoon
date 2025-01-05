@@ -14,6 +14,8 @@ class Sede extends Model
         'user_id',
         'aeropuerto_id',
         'hangar_id',
+        'porcentajeVenta',
+        'porcentajeComprado',
     ];
 
     public function costeIngenieros()
@@ -49,5 +51,10 @@ class Sede extends Model
     public function hangar()
     {
         return $this->hasMany(Hangar::class);
+    }
+
+    public function accion()
+    {
+        return $this->hasMany(Accion::class);
     }
 }

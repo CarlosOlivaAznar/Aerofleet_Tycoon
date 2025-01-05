@@ -18,6 +18,7 @@ return [
     'makeMaintenance' => 'Perform Maintenance',
     'createRoute' => 'Create Route',
     'airplaneInformation' => 'Additional Info',
+    'leasedPlane' => 'Leased Aircraft',
 
     // Warnings
     'noAircraft' => 'You do not own any aircraft',
@@ -43,6 +44,7 @@ return [
     'purcheaseConf' => 'Purchease Confirmation',
     'purcheaseText' => 'Are you sure you want to purchease the plane',
     'purcheasePrice' => 'Price of the new airplane',
+    'endLease' => 'End lease date',
 
     // Buy Aircraft
     'shAircraft' => 'Second-hand Aircraft',

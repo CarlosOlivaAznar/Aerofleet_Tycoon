@@ -20,6 +20,15 @@ return [
     'income' => 'Income',
     'collapseAll' => 'Collapse all',
 
+    'estimatedDemand' => 'Estimated Demand',
+    'estimatedDemandInfo' => 'The estimated demand only takes into account the demand of the route, it does not take into account the routes of the competence',
+    'h' => 'High',
+    'mh' => 'Medium-High',
+    'm' => 'Medium',
+    'ml' => 'Medium-Low',
+    'l' => 'Low',
+    'vl' => 'Very Low',
+
     // Messages
     'inactive' => 'INACTIVE ROUTE',
     'maintenance' => 'AIRCRAFT IN MAINTENANCE',

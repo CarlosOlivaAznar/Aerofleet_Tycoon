@@ -18,6 +18,7 @@ return [
     'makeMaintenance' => 'Realizar Mantenimiento',
     'createRoute' => 'Crear Ruta',
     'information' => 'Informacion Adicional',
+    'leasedPlane' => 'Avion Arrendado',
 
     // Warnings
     'noAircraft' => 'No tienes ningún avión en tu propiedad',
@@ -43,6 +44,7 @@ return [
     'purcheaseConf' => 'Confirmación de Compra',
     'purcheaseText' => 'Estás seguro que quieres comprar el avión',
     'purcheasePrice' => 'Precio del nuevo avión',
+    'endLease' => 'Fin del arrendamiento',
 
     // Buy Aircraft
     'shAircraft' => 'Aviones de Segunda Mano',

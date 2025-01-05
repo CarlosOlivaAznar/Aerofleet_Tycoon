@@ -28,7 +28,7 @@
               <label for="password">{{ __('auth.password') }}</label>
               <div class="hide-show">
                 <input id="password" type="password" name="password" required autocomplete="current-password">
-                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
               </div>
               <x-input-error class="inputError" :messages="$errors->get('password')" />
             </div>
@@ -38,7 +38,7 @@
                 <label for="password_confirmation">{{ __('auth.confirmPsw') }}</label>
                 <div class="hide-show">
                   <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password">
-                  <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                  <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
                 </div>
                 <x-input-error class="inputError" :messages="$errors->get('password_confirmation')" />
             </div>

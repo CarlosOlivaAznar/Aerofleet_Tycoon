@@ -35,7 +35,7 @@
                             <div class="hide-show">
                                 <input id="password" type="password" name="password" required autocomplete="new-password"
                                 autocomplete="new-password">
-                                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                                <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
                             </div>
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
@@ -46,7 +46,7 @@
                             <div class="hide-show">
                                 <input id="password_confirmation" type="password" name="password_confirmation"
                                 required autocomplete="new-password">
-                                <i class='bx bx-show' onclick="showHidePassword(this)"></i>
+                                <i class='bx bx-hide' onclick="showHidePassword(this)"></i>
                             </div>
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>

@@ -580,6 +580,10 @@ span.boton:hover{
     padding: 25px;
 }
 
+.contenido main .informacion .infodatos.patrimonio{
+    width: 75%;
+}
+
 /* Modales */
 /*
 MARK: Modal
@@ -733,6 +737,18 @@ MARK: Tooltips
     position: relative;
 }
 
+.tooltip.icon-tooltip{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tooltip.icon-tooltip .bx{
+    font-size: 1.5rem;
+}
+
 .tooltip .tooltiptext{
     visibility: hidden;
     width: 120px;
@@ -807,6 +823,7 @@ MARK: Tooltips
 
 .modal form input[type=range]:focus{
     outline: none;
+    border: none;
 }
 
 .modal form input[type=range]:focus::-webkit-slider-runnable-track{
@@ -865,6 +882,41 @@ MARK: Tooltips
 
 .modal form textarea:focus{
     border: 3px solid var(--dark);
+}
+
+.modal form .campos-modal{
+    margin: 15px 0;
+    width: fit-content;
+}
+
+.modal form .campos-modal label{
+    display: block;
+    font-size: 19px;
+    width: fit-content;
+    color: var(--dark);
+}
+
+.modal form .campos-modal input{
+    display: block;
+    margin-top: 3px;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 3px solid var(--grey);
+    background-color: var(--grey);
+    color: var(--dark);
+    transition: 0.4s;
+    font-size: 19px;
+    outline: none;
+}
+
+.modal form input[type="number"]{
+    width: 200px;
+}
+
+.modal form input:focus{
+    border: 3px solid var(--dark);
+    transition: 0.4s;
 }
 
 /* Tabla de Chart.js */
@@ -1158,6 +1210,101 @@ MARK: Login
     text-decoration: underline;
     outline: none;
 }
+
+/* Pagina Loading */
+.contenido-loading{
+    position: absolute;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light);
+    padding: 15px 30px;
+    border-radius: 25px;
+}
+
+.contenido-loading .loader{
+    margin: 40px auto;
+    position: relative;
+    height: 90px;
+    width: 90px;
+}
+
+.contenido-loading .loader span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--c)));
+}
+
+.contenido-loading .loader span:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    transform: scale(0);
+    animation: girar 2s linear infinite;
+    animation-delay: calc(0.1s * var(--c));
+}
+
+@keyframes girar{
+    0%{
+        transform: scale(0);
+    }
+
+    10%{
+        transform: scale(1.2);
+    }
+
+    80%, 100%{
+        transform: scale(0);
+    }
+}
+
+.contenido-loading .loader .avion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: volar 2s linear infinite;
+    animation-delay: -1s;
+}
+
+.contenido-loading .loader .avion::before{
+    content: "";
+    background-image: url(../icons/defaultPlane.svg);
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    top: 67px;
+    left: 67px;
+    transform: rotate(180deg);
+}
+
+@keyframes volar{
+    0%{
+        transform: rotate(10deg);
+    }
+
+    100%{
+        transform: rotate(370deg);
+    }
+}
+
+.contenido-loading h3{
+    width: 300px;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+
 
 /* -------------- */
 /* Pagina Landing */
@@ -2115,6 +2262,10 @@ footer .contenidoFooter div p.texto a{
     border: 3px solid var(--dark);
 }
 
+.contenido main .rutas .divRepartido .input.w-100 input{
+    width: 100%;
+}
+
 .contenido main .rutas .input.submit{
     display: flex;
     align-items: center;
@@ -2474,7 +2625,7 @@ MARK: Road Map
 
 .contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
-    color: var(--success);
+    color: var (--success);
 }
 
 .contenido main .resumen.sede ul li:nth-child(2) .bx{
@@ -2505,6 +2656,150 @@ MARK: Road Map
 .contenido main .botonTexto:hover{
     background-color: var(--dark);
     transition: background-color .4s;
+}
+
+/* --------------- */
+/* Pagina Economia */
+/* --------------- */
+/*
+    MARK: Economia
+*/
+
+.contenido main .balance{
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+    background-color: var(--light);
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.contenido main .balance .cabecera{
+    display: flex;
+    gap: 15px;
+}
+
+.contenido main .balance .contenido-balance{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contenido main .balance .contenido-balance h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.contenido main .balance .contenido-balance div{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido main .balance .contenido-balance div div{
+    width: 100%;
+    color: var(--dark);
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenido main .balance .contenido-balance div div.total{
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.contenido main .balance .contenido-balance div div.total span{
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.contenido main .balance .contenido-balance div div span{
+    font-size: .95rem;
+}
+
+.contenido main .balance .contenido-balance div div span:first-child{
+    font-weight: 500;
+}
+
+/* Prestamos */
+.contenido main .contenido-responsivo{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contenido main .contenido-responsivo .contenedor{
+    position: relative;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--light);
+    color: var(--dark);
+    border-radius: 25px;
+}
+
+.contenido main .contenido-responsivo .contenedor .cabecera{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contenido main .contenido-responsivo .contenedor .info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 200px;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .fila{
+    display: flex;
+    flex-flow: row;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .fila span.titulo{
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .fila span.texto{
+    margin-left: auto;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .boton{
+    margin: 25px auto;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .boton a{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 40px;
+    color: var(--light);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .boton a:hover{
+    background-color: var(--dark);
+    transition: 0.4s;
+}
+
+.contenido main .contenido-responsivo .contenedor .info .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Media */
