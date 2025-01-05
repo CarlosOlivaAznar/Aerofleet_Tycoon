@@ -6044,9 +6044,9 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
-        /* -------------------- */
+        /* ----------------------- */
         /* Aeropuertos Bielorrusia */
-        /* -------------------- */
+        /* ----------------------- */
         /* 
         MARK: Bielorrusia
         */
@@ -6094,11 +6094,55 @@ class AeropuertosTableSeeder extends Seeder
         ]);
 
 
+        /* ----------------------- */
+        /* Aeropuertos Islas Feroe */
+        /* ----------------------- */
+        /* 
+        MARK: Islas Feroe
+        */
+
+        Aeropuerto::create([
+            'icao' => 'EKVG',
+            'pais' => 'G',
+            'nombre' => 'Vagar Airport',
+            'espaciosTotales' => 50,
+            'costeOperacional' => 500,
+            'latitud' => 62.065675,
+            'longitud' => -7.280555,
+            'demanda' => 0.70,
+            'pasajerosEstimados' => 75,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
+        /* -------------------- */
+        /* Aeropuertos Moldavia */
+        /* -------------------- */
+        /* 
+        MARK: Moldavia
+        */
+
+        Aeropuerto::create([
+            'icao' => 'LUKK',
+            'pais' => 'ER',
+            'nombre' => 'Chisinau International Airport',
+            'espaciosTotales' => 400,
+            'costeOperacional' => 2000,
+            'latitud' => 46.929920,
+            'longitud' => 28.934145,
+            'demanda' => 0.97,
+            'pasajerosEstimados' => 300,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'EW',
+            'pais' => 'ER',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
