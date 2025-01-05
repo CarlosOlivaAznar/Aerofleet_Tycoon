@@ -285,7 +285,7 @@ class EconomiaController extends Controller
         $sede = Sede::where('user_id', auth()->id())->first();
         $user = User::find(auth()->id());
 
-        if($user->patrimonio() < 250000000) {
+        if($user->patrimonio() < 400000000) {
             session()->flash('error', trans('economy.minimunAssetsError'));
             return redirect()->route('economia.acciones');
         }

@@ -116,7 +116,7 @@ return [
     'buyBackSharesErrorLimit' => 'You cannot buy more shares than are available.',
     'buyBackSharesErrorneCash' => 'You have not enought cash available to buy back the shares.',
 
-    'minimunAssetsError' => 'To sell shares, your airline must be valued more than 250.000.000€',
+    'minimunAssetsError' => 'To sell shares, your airline must be valued more than 400.000.000€',
     'sellOwnSharesError' => 'You cannot sell more than 25% of the company',
     'sellOwnSharesSuccess' => 'The shares have been issued correctly',
 
