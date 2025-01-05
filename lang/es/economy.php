@@ -49,6 +49,13 @@ return [
 
     'noLeasings' => 'No tienes ningún avión arrendado.',
 
+    'numberOfDays' => 'Numero de días:',
+    'leasePlaneConfirmation' => '¿Está seguro que quiere contratar el leasing del avión?',
+    'leasePlaneInfo1' => 'El leasing del avion cuesta',
+    'leasePlaneInfo2' => 'al día y saldra por un total de:',
+
+    'leaseValue' => 'Días...',
+
 
     // Modales
     'cancel' => 'Cancelar',

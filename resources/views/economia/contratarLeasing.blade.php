@@ -131,13 +131,13 @@
         <img src="{{ asset($avion->img) }}" alt="avion">
 
         <div class="campos-modal">
-            <label for="numeroMeses">Numero de dias:</label>
-            <input type="number" name="dias" id="dias" required min="1" max="90" onkeyup="calcularPrecio(this, 'precioPorDia{{$avion->id}}', {{ $avion->leasePPD() }})">
+            <label for="numeroMeses">{{ __('economy.numberOfDays') }}</label>
+            <input type="number" name="dias" id="dias" required min="1" max="90" onkeyup="calcularPrecio(this, 'precioPorDia{{$avion->id}}', {{ $avion->leasePPD() }})" placeholder="{{ __('economy.leaseValue') }}">
         </div>
 
         <input type="hidden" name="avion" value="{{ $avion->id }}">
-        <p>Esta seguro que quiere contratar el Leasing del avion?</p>
-        <p>El leasing del avion cuesta <span class="rojo">{{ number_format($avion->leasePPD(), 2, ',', '.') }}</span> al dia y saldra por un total de: <span id="precioPorDia{{ $avion->id }}" class="rojo">0</span></p>
+        <p>{{ __('economy.leasePlaneConfirmation') }}</p>
+        <p>{{ __('economy.leasePlaneInfo1') }} <span class="rojo">{{ number_format($avion->leasePPD(), 2, ',', '.') }}</span> {{ __('economy.leasePlaneInfo2') }} <span id="precioPorDia{{ $avion->id }}" class="rojo">0</span></p>
         
       </div>
       <div class="footer-modal">

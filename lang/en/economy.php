@@ -49,6 +49,13 @@ return [
 
     'noLeasings' => 'You do not have any leased aircraft.',
 
+    'numberOfDays' => 'Number of days:',
+    'leasePlaneConfirmation' => 'Are you sure you want to lease the plane?',
+    'leasePlaneInfo1' => 'The leasing will cost',
+    'leasePlaneInfo2' => 'per day and will cost a total of:',
+
+    'leaseValue' => 'Days...',
+
 
 
     // Modales
