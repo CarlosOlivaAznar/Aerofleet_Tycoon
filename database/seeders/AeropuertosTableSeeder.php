@@ -6466,11 +6466,62 @@ class AeropuertosTableSeeder extends Seeder
             'isla' => false,
         ]);
 
+
+
+        /* ------------------------- */
+        /* Aeropuertos Nueva Zelanda */
+        /* ------------------------- */
+        /* 
+        MARK: Nueva Zelanda
+        */
+
+        Aeropuerto::create([
+            'icao' => 'NZAA',
+            'pais' => 'ZK',
+            'nombre' => 'Auckland Airport',
+            'espaciosTotales' => 450,
+            'costeOperacional' => 2500,
+            'latitud' => -37.008700,
+            'longitud' => 174.791117,
+            'demanda' => 0.99,
+            'pasajerosEstimados' => 350,
+            'categoria' => 1,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'NZWN',
+            'pais' => 'ZK',
+            'nombre' => 'Wellington International Airport',
+            'espaciosTotales' => 250,
+            'costeOperacional' => 1700,
+            'latitud' => -41.326828,
+            'longitud' => 174.806902,
+            'demanda' => 0.90,
+            'pasajerosEstimados' => 200,
+            'categoria' => 3,
+            'isla' => false,
+        ]);
+
+        Aeropuerto::create([
+            'icao' => 'NZCH',
+            'pais' => 'ZK',
+            'nombre' => 'Christchurch International Airport',
+            'espaciosTotales' => 300,
+            'costeOperacional' => 1900,
+            'latitud' => -43.489148,
+            'longitud' => 172.535458,
+            'demanda' => 0.95,
+            'pasajerosEstimados' => 250,
+            'categoria' => 2,
+            'isla' => false,
+        ]);
+
         // Plantilla
         /*
         Aeropuerto::create([
             'icao' => '',
-            'pais' => 'VH',
+            'pais' => 'ZK',
             'nombre' => '',
             'espaciosTotales' => ,
             'costeOperacional' => ,
