@@ -25,4 +25,18 @@ class FlotaFactory extends Factory
             'estado' => 1,
         ];
     }
+
+    public function withUserId($userId)
+    {
+        return $this->state(function (array $attributes) use ($userId) {
+            return [
+                'user_id' => $userId,
+                'avion_id' => rand(1, 30),
+                'matricula' => 'EC-AAA',
+                'fechaDeFabricacion' => now(),
+                'condicion' => 100,
+                'estado' => 1,
+            ];
+        });
+    }
 }
