@@ -19,6 +19,20 @@ class SedeFactory extends Factory
         return [
             'user_id' => 1,
             'aeropuerto_id' => rand(1, 10),
+            'porcentajeVenta' => 0.00,
+            'porcentajeComprado' => 0.00,
         ];
+    }
+
+    public function withUserId($userId)
+    {
+        return $this->state(function (array $attributes) use ($userId) {
+            return [
+                'user_id' => $userId,
+                'aeropuerto_id' => rand(1, 30),
+                'porcentajeVenta' => 0.00,
+                'porcentajeComprado' => 0.00,
+            ];
+        });
     }
 }
