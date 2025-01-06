@@ -22,4 +22,15 @@ class EspacioFactory extends Factory
             'numeroDeEspacios' => rand(1, 10),
         ];
     }
+
+    public function withUserId($userId)
+    {
+        return $this->state(function (array $attributes) use ($userId) {
+            return [
+                'aeropuerto_id' => rand(1, 10),
+                'user_id' => $userId,
+                'numeroDeEspacios' => rand(1, 10),
+            ];
+        });
+    }
 }
