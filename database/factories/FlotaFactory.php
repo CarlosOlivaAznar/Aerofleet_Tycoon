@@ -39,4 +39,20 @@ class FlotaFactory extends Factory
             ];
         });
     }
+
+    public function withUserIdLeasing($userId, $leasing)
+    {
+        return $this->state(function (array $attributes) use ($userId, $leasing) {
+            return [
+                'user_id' => $userId,
+                'avion_id' => rand(1, 30),
+                'matricula' => 'EC-AAA',
+                'fechaDeFabricacion' => now(),
+                'condicion' => 100,
+                'estado' => 1,
+                'leasing' => $leasing,
+                'finLeasing' => now()->addDays(30),
+            ];
+        });
+    }
 }

@@ -46,6 +46,8 @@ return [
     'endInfo' => 'El avión será devuelto a la compañía de leasing y pagarás la tarifa de leasing de hoy:',
 
     'successEndLease' => 'El avión ha sido devuelto a la compañía de leasing correctamente.',
+    'errorEndLeaseNP' => 'El avión no es de tu propiedad.',
+    'errorEndLeaseNL' => 'El avión que se ha intentado dar de baja no es un leasing',
 
     'noLeasings' => 'No tienes ningún avión arrendado.',
 
