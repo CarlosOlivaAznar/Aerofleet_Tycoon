@@ -114,6 +114,16 @@ class EconomiaController extends Controller
     {
         $leasing = Flota::find($id);
 
+        if($leasing->user->id != auth()->id()){
+            session()->flash('error', trans('economy.errorEndLeaseNP'));
+            return redirect()->route('economia.leasing');   
+        }
+
+        if(!$leasing->leasing){
+            session()->flash('error', trans('economy.errorEndLeaseNL'));
+            return redirect()->route('economia.leasing');   
+        }
+
         $usuario = User::find(auth()->id());
         $usuario->saldo -= $leasing->avion->leasePPD();
         $usuario->update();
