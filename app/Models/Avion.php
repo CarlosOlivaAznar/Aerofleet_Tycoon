@@ -52,7 +52,7 @@ class Avion extends Model
 
     public function leasePPD()
     {
-        return $this->precio * 0.0001084998;
+        return intval($this->precio * 0.0001084998);
     }
 
     /**

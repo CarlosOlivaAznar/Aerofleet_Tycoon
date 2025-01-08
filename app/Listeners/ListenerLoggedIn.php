@@ -92,7 +92,7 @@ class ListenerLoggedIn
                 $this->gastosMensuales();
 
                 // Control de leasings
-                $this->controlLeasing($i + 1);
+                $this->controlLeasing();
 
                 // Cobrar Prestamos
                 $this->cobrarPrestamos();
@@ -132,7 +132,7 @@ class ListenerLoggedIn
             $this->gastosMensuales();
 
             // Control de leasings
-            $this->controlLeasing(0);
+            $this->controlLeasing();
 
             // Cobrar Prestamos
             $this->cobrarPrestamos();
@@ -426,7 +426,7 @@ class ListenerLoggedIn
     /**
      * Funcion que controla el leasing del usuario
      */
-    public function controlLeasing($desconexion)
+    public function controlLeasing()
     {
         $flotaLeasing = Flota::where('user_id', auth()->id())->where('leasing', 1)->get();
 
