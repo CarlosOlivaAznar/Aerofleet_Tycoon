@@ -5,10 +5,10 @@
     @include('partials.head')
 
     @php
-        $respuesta = Http::get('https://api.country.is/');
+        $respuesta = json_decode(Http::get('http://ip-api.com/json/?fields=61439'));
         if (Cookie::get('manualChange') != true) {
-            if ($respuesta->successful()) {
-                $codigoPais = strtolower($respuesta->json()['country']);
+            if ($respuesta) {
+                $codigoPais = strtolower($respuesta->countryCode);
                 Session::put('locale', $codigoPais);
             } else {
                 Session::put('locale', 'en');
