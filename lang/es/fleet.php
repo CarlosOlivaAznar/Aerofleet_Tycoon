@@ -47,6 +47,7 @@ return [
     'endLease' => 'Fin del arrendamiento',
 
     // Buy Aircraft
+    'fhAircraft' => 'Aviones de primera mano',
     'shAircraft' => 'Aviones de Segunda Mano',
     'airline' => 'Compañía',
     'price' => 'Precio',
@@ -75,6 +76,13 @@ return [
     'planeMaintenance' => 'El avión está en mantenimiento',
     'errCreateRoute' => 'La ruta no está formada correctamente, los orígenes y destinos no coinciden',
     
+    // Fleet model
+    'case0' => 'En tierra',
+    'case1' => 'En ruta',
+    'case2' => 'En mantenimiento',
+    'case3' => 'Activando',
+    'caseDef' => 'En el triangulo de las Bermudas',
+
 ];
 
 // Plantilla
