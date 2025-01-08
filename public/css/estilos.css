@@ -3059,6 +3059,18 @@ MARK: Road Map
         visibility: hidden;
     }
 
+    .barra-login .titulo-pag img{
+        margin-left: 5px;
+    }
+
+    .barra-login{
+        font-size: .85rem;
+    }
+
+    .barra-login .lang, .barra-login .lang .langbtn{
+        font-size: .85rem;
+    }
+
     /* Roadmap */
     .roadmap-layout .side .side-card h2{
         font-size: 1.2rem;
@@ -3113,6 +3125,5 @@ MARK: Road Map
     /* Ajustar sidebar */
     .menu-lateral .lista-menu{
         margin-top: 25px;
-    } 
-
+    }
 }
