@@ -7,7 +7,7 @@ return [
     'routes' => 'Rutas activas',
     'airplanes' => 'Aviones comprados',
     'airports' => 'Diferentes aeropuertos',
-    'balance' => 'Saldo',
+    'balance' => 'Valor de la aerolinea',
     'messages' => 'Mensajes',
     'noMessages' => 'No hay mensajes disponibles',
     'routeInfo' => 'Información de los vuelos',
