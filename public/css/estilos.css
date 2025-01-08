@@ -2540,6 +2540,23 @@ MARK: Road Map
     transform: translate(-445%, -50%);
 }
 
+/* imagen roadmap */
+.roadmap-layout .imagen{
+    position: relative;
+}
+
+.roadmap-layout .imagen::before{
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark);
+    width: 5px;
+    height: 50%;
+    border-radius: 4px;
+}
+
 
 
 /* Billetes avion y range */
@@ -2871,8 +2888,20 @@ MARK: Road Map
     }
 
     /* Roadmap */
-    .roadmap-layout div img{
+    .roadmap-layout .imagen img{
         margin-right: -100px;
+    }
+
+    .roadmap-layout .imagen::before{
+        content: "";
+        position: absolute;
+        top: 75%;
+        left: calc(50% + 50px);
+        transform: translate(-50%, -50%);
+        background-color: var(--dark);
+        width: 5px;
+        height: 50%;
+        border-radius: 4px;
     }
 
     .roadmap-layout .side .movil{

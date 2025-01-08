@@ -44,7 +44,7 @@
                     <p>{{ __('landing.versionxtxt') }}</p>
                 </div>
             </div>
-            <div><img src="{{ asset('images/roadMap.png') }}" alt="roadMapImage"></div>
+            <div class="imagen"><img src="{{ asset('images/roadMap.png') }}" alt="roadMapImage"></div>
             <div class="side right">
                 <div class="side-card right">
                     <h2>{{ __('landing.version3') }}</h2>
