@@ -2646,7 +2646,7 @@ MARK: Road Map
 
 .contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
-    color: var (--success);
+    color: var(--success);
 }
 
 .contenido main .resumen.sede ul li:nth-child(2) .bx{
