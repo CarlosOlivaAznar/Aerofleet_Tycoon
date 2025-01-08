@@ -1279,13 +1279,17 @@ MARK: Login
 
 .contenido-loading .loader .avion::before{
     content: "";
-    background-image: url(../icons/defaultPlane.svg);
     width: 33px;
     height: 33px;
     position: absolute;
     top: 67px;
     left: 67px;
     transform: rotate(180deg);
+    background-color: var(--dark);
+    -webkit-mask: url(../icons/defaultPlane.svg) no-repeat center;
+    mask: url(../icons/defaultPlane.svg) no-repeat center;
+    -webkit-mask-size: cover;
+    mask-size: cover;
 }
 
 @keyframes volar{
