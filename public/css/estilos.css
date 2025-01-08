@@ -3106,4 +3106,9 @@ MARK: Road Map
         visibility: hidden;
     }
     
+    /* Ajustar sidebar */
+    .menu-lateral .lista-menu{
+        margin-top: 25px;
+    } 
+
 }
