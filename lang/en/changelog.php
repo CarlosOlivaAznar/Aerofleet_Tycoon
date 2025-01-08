@@ -3,6 +3,15 @@
 return [
 
   'changelog' => '
+    <h4>V-0.4.1</h4>
+    <ul>
+      <li>Fixed the bug where returning or paying the leasing was not allowed</li>
+      <li>Fixed the issue with selecting the default language when entering the website for the first time</li>
+      <li>Translated the pages for terms and conditions, privacy policy, and tutorial</li>
+      <li>Corrected the airplane color when the application loads</li>
+      <li>Adjusted the menu bar for mobile devices</li>
+    </ul>
+
     <h4>V-0.4.0</h4>
     <ul>
       <li>A new "economy" tab has been added</li>

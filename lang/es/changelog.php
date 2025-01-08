@@ -3,6 +3,15 @@
 return [
 
     'changelog' => '
+    <h4>V-0.4.1</h4>
+    <ul>
+      <li>Arreglado el bug donde no te dejaba devolver o pagar el leasing</li>
+      <li>Arreglado el fallo de seleccionar lenguaje por defecto al entrar por primera vez en la web</li>
+      <li>Traducido las páginas de términos y condiciones, política de privacidad y tutorial</li>
+      <li>Corregido el color del avión cuando carga la aplicación</li>
+      <li>Ajustado la barra de menú para dispositivos móviles</li>
+    </ul>
+
     <h4>V-0.4.0</h4>
     <ul>
       <li>Se ha añadido una nueva pestaña “economía”</li>
