@@ -26,19 +26,19 @@ class Flota extends Model
     {
         switch ($this->estado) {
             case 0:
-                return "En tierra";
+                return trans('fleet.case0');
                 break;
             case 1:
-                return "En ruta";
+                return trans('fleet.case1');
                 break;
             case 2:
-                return "En mantenimiento";
+                return trans('fleet.case2');
                 break;
             case 3:
-                return "Activando";
+                return trans('fleet.case3');
                 break;
             default:
-                return "En el triangulo de las Bermudas";
+                return trans('fleet.caseDef');
                 break;
         }
     }

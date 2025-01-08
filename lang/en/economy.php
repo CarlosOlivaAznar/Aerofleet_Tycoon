@@ -46,6 +46,8 @@ return [
     'endInfo' => 'The aircraft will be returned to the leasing company and you will pay todays lease fee:',
 
     'successEndLease' => 'The aircraft has been returned to the leasing company successfully.',
+    'errorEndLeaseNP' => 'The plane is not your property.',
+    'errorEndLeaseNL' => 'The plane that was attempted to be deregistered is not a leasing.',
 
     'noLeasings' => 'You do not have any leased aircraft.',
 

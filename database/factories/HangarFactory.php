@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Espacio>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Hangar>
  */
-class EspacioFactory extends Factory
+class HangarFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class EspacioFactory extends Factory
     public function definition(): array
     {
         return [
-            'aeropuerto_id' => rand(1, 10),
-            'user_id' => 1,
-            'numeroDeEspacios' => rand(1, 10),
+            'sede_id' => 1,
+            'espacios' => 2,
         ];
     }
 
@@ -27,9 +26,8 @@ class EspacioFactory extends Factory
     {
         return $this->state(function (array $attributes) use ($userId) {
             return [
-                'aeropuerto_id' => rand(1, 10),
-                'user_id' => $userId,
-                'numeroDeEspacios' => rand(1, 10),
+                'sede_id' => $userId,
+                'espacios' => 2,
             ];
         });
     }

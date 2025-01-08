@@ -5,8 +5,8 @@ return [
     'fleet' => 'Flota',
     'buyAircraft' => 'Comprar Aviones',
     'aircraftInProperty' => 'Aviones en Propiedad',
-    'aircraft' => 'Avion',
-    'registration' => 'Matricula',
+    'aircraft' => 'Avión',
+    'registration' => 'Matrícula',
     'model' => 'Modelo',
     'capacity' => 'Capacidad',
     'buildDate' => 'Fecha de Fabricación',
@@ -17,8 +17,8 @@ return [
     'sellAircraft' => 'Vender Avión',
     'makeMaintenance' => 'Realizar Mantenimiento',
     'createRoute' => 'Crear Ruta',
-    'information' => 'Informacion Adicional',
-    'leasedPlane' => 'Avion Arrendado',
+    'information' => 'Información Adicional',
+    'leasedPlane' => 'Avión Arrendado',
 
     // Warnings
     'noAircraft' => 'No tienes ningún avión en tu propiedad',
@@ -47,6 +47,7 @@ return [
     'endLease' => 'Fin del arrendamiento',
 
     // Buy Aircraft
+    'fhAircraft' => 'Aviones de primera mano',
     'shAircraft' => 'Aviones de Segunda Mano',
     'airline' => 'Compañía',
     'price' => 'Precio',
@@ -66,7 +67,7 @@ return [
     
     // Controller Messages
     'buySucces' => 'El avión se ha comprado correctamente',
-    'neCash' => 'No tiene suficiente saldo para comprar el avion',
+    'neCash' => 'No tiene suficiente saldo para comprar el avión',
     'sellSucces' => 'El avión se ha vendido correctamente',
     'nyProperty' => 'El avión no es de tu propiedad',
     'neSpaces' => 'No hay espacios disponibles en los hangares',
@@ -75,6 +76,13 @@ return [
     'planeMaintenance' => 'El avión está en mantenimiento',
     'errCreateRoute' => 'La ruta no está formada correctamente, los orígenes y destinos no coinciden',
     
+    // Fleet model
+    'case0' => 'En tierra',
+    'case1' => 'En ruta',
+    'case2' => 'En mantenimiento',
+    'case3' => 'Activando',
+    'caseDef' => 'En el triángulo de las Bermudas',
+
 ];
 
 // Plantilla

@@ -47,6 +47,7 @@ return [
     'endLease' => 'End lease date',
 
     // Buy Aircraft
+    'fhAircraft' => 'First-hand Aircraft',
     'shAircraft' => 'Second-hand Aircraft',
     'airline' => 'Airline',
     'price' => 'Price',
@@ -75,6 +76,12 @@ return [
     'planeMaintenance' => 'The plane is in maintenance',
     'errCreateRoute' => 'The route is not formed correctly, the origins and destinations do not match',
 
+    // Fleet model
+    'case0' => 'On ground',
+    'case1' => 'On route',
+    'case2' => 'Under maintenance',
+    'case3' => 'Activating',
+    'caseDef' => 'In the Bermuda Triangle',
     
 ];
 

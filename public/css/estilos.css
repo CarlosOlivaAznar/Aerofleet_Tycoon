@@ -1279,13 +1279,17 @@ MARK: Login
 
 .contenido-loading .loader .avion::before{
     content: "";
-    background-image: url(../icons/defaultPlane.svg);
     width: 33px;
     height: 33px;
     position: absolute;
     top: 67px;
     left: 67px;
     transform: rotate(180deg);
+    background-color: var(--dark);
+    -webkit-mask: url(../icons/defaultPlane.svg) no-repeat center;
+    mask: url(../icons/defaultPlane.svg) no-repeat center;
+    -webkit-mask-size: cover;
+    mask-size: cover;
 }
 
 @keyframes volar{
@@ -2540,6 +2544,23 @@ MARK: Road Map
     transform: translate(-445%, -50%);
 }
 
+/* imagen roadmap */
+.roadmap-layout .imagen{
+    position: relative;
+}
+
+.roadmap-layout .imagen::before{
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark);
+    width: 5px;
+    height: 50%;
+    border-radius: 4px;
+}
+
 
 
 /* Billetes avion y range */
@@ -2625,7 +2646,7 @@ MARK: Road Map
 
 .contenido main .resumen.sede ul li:nth-child(1) .bx{
     background-color: var(--light-success);
-    color: var (--success);
+    color: var(--success);
 }
 
 .contenido main .resumen.sede ul li:nth-child(2) .bx{
@@ -2871,8 +2892,20 @@ MARK: Road Map
     }
 
     /* Roadmap */
-    .roadmap-layout div img{
+    .roadmap-layout .imagen img{
         margin-right: -100px;
+    }
+
+    .roadmap-layout .imagen::before{
+        content: "";
+        position: absolute;
+        top: 75%;
+        left: calc(50% + 50px);
+        transform: translate(-50%, -50%);
+        background-color: var(--dark);
+        width: 5px;
+        height: 50%;
+        border-radius: 4px;
     }
 
     .roadmap-layout .side .movil{
@@ -3026,6 +3059,18 @@ MARK: Road Map
         visibility: hidden;
     }
 
+    .barra-login .titulo-pag img{
+        margin-left: 5px;
+    }
+
+    .barra-login{
+        font-size: .85rem;
+    }
+
+    .barra-login .lang, .barra-login .lang .langbtn{
+        font-size: .85rem;
+    }
+
     /* Roadmap */
     .roadmap-layout .side .side-card h2{
         font-size: 1.2rem;
@@ -3077,4 +3122,8 @@ MARK: Road Map
         visibility: hidden;
     }
     
+    /* Ajustar sidebar */
+    .menu-lateral .lista-menu{
+        margin-top: 25px;
+    }
 }

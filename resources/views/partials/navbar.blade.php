@@ -1,5 +1,5 @@
 <nav>
-    <span class="version">V-0.4.0</span>  
+    <span class="version">V-0.4.1</span>  
     @if (Auth::user()->tipoUsuario === 1)
     <a href="{{ route('admin.index') }}" style="margin-left: 10px"><i class="bx bx-terminal"></i><span>{{ __('navbar.admin') }}</span></a>
     @endif

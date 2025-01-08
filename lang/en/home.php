@@ -7,7 +7,7 @@ return [
     'routes' => 'Active Routes',
     'airplanes' => 'Purchased Aircraft',
     'airports' => 'Different Airports',
-    'balance' => 'Balance',
+    'balance' => 'Company Value',
     'messages' => 'Messages',
     'noMessages' => 'No messages available',
     'routeInfo' => 'Route Information',

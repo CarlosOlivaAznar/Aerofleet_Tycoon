@@ -25,7 +25,7 @@
 
       <div class="resumen-titulo">
         <i class='bx bx-shopping-bag'></i>
-        <h3>Aviones de primera mano</h3>
+        <h3>{{ __('fleet.fhAircraft') }}</h3>
       </div>
 
       <div class="resumen">
