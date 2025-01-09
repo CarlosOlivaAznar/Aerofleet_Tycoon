@@ -285,7 +285,11 @@ class EconomiaController extends Controller
 
     public function comprarAcciones()
     {
-        $sedes = Sede::where('porcentajeVenta', '>', 0)->where('porcentajeVenta', '>', 'porcentajeComprado')->whereColumn('porcentajeVenta', '<>', 'porcentajeComprado')->where('user_id', '!=', auth()->id())->get();
+        $sedes = Sede::where('porcentajeVenta', '>', 0)
+                 ->whereColumn('porcentajeVenta', '>', 'porcentajeComprado')
+                 ->whereColumn('porcentajeVenta', '<>', 'porcentajeComprado')
+                 ->where('user_id', '!=', auth()->id())
+                 ->get();
 
         return view('economia.comprarAcciones', ['sedes' => $sedes]);
     }
@@ -308,7 +312,7 @@ class EconomiaController extends Controller
         $sede->porcentajeVenta += $request->porcentajeVenta / 100;
         $sede->update();
 
-        $user->saldo += $user->patrimonio() * ($request->porcentajeVenta / 100);
+        $user->saldo += intval($user->patrimonio() * ($request->porcentajeVenta / 100));
         $user->update();
 
         session()->flash('exito', trans('economy.sellOwnSharesSuccess'));
@@ -320,7 +324,7 @@ class EconomiaController extends Controller
         $sede = Sede::where('user_id', auth()->id())->first();
         $user = User::find(auth()->id());
 
-        $valorCompra = $user->patrimonio() * ($request->porcentajeCompra / 100 + 0.01);
+        $valorCompra = intval($user->patrimonio() * ($request->porcentajeCompra / 100 + 0.01));
 
         if(round($sede->porcentajeVenta - $request->porcentajeCompra / 100, 2) < round($sede->porcentajeComprado, 2)){
             session()->flash('error', trans('economy.buyBackSharesErrorLimit'));

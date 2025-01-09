@@ -33,7 +33,7 @@ class Prestamo extends Model
         
         $cuota = $this->prestamo / $fechaFin->diffInDays($fechaInicio);
 
-        return $cuota + $intereses;
+        return intval($cuota + $intereses);
     }
 
     public function devolver()
