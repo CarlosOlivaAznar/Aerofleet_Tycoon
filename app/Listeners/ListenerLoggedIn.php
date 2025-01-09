@@ -250,16 +250,16 @@ class ListenerLoggedIn
             $propietarios = Accion::where('sede_id', $user->sede->id)->get();
 
             foreach ($propietarios as $propietario) {
-                $propietario->user->saldo += $beneficio * $propietario->accionesCompradas;
+                $propietario->user->saldo += intval($beneficio * $propietario->accionesCompradas);
                 $propietario->user->update();
 
-                $propietario->beneficios += $beneficio * $propietario->accionesCompradas;
+                $propietario->beneficios += inval($beneficio * $propietario->accionesCompradas);
                 $propietario->update();
             }
         }
 
         // Multiplicamos los beneficios por el el porcentaje que no tiene en propiedad el usuario
-        $user->saldo += $beneficio * (1 - $user->sede->porcentajeVenta);
+        $user->saldo += intval($beneficio * (1 - $user->sede->porcentajeVenta));
         $user->update();
 
         // Guardamos la fecha de desconexion respecto a la hora de finalizacion del vuelo
@@ -385,7 +385,7 @@ class ListenerLoggedIn
     {
         $sede = Sede::where('user_id', auth()->id())->first();
         $user = User::find(auth()->id());
-        $user->saldo -= $sede->costesTotales() / 30;
+        $user->saldo -= intval($sede->costesTotales() / 30);
         $user->update();
         error_log("Se ha cobrado los gastos diarios " . $sede->costesTotales() / 30);
     }
